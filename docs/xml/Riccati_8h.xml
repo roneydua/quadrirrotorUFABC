@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compounddef id="Riccati_8h" kind="file" language="C++">
+    <compoundname>Riccati.h</compoundname>
+    <includes local="yes">Arduino.h</includes>
+    <includes refid="GRUPO__QUAT_8h" local="yes">GRUPO_QUAT.h</includes>
+    <includes local="no">eigen3/Eigen/Dense</includes>
+    <includedby refid="Riccati_8cpp" local="yes">lib/RICCATI/Riccati.cpp</includedby>
+    <includedby refid="Sdre_8h" local="yes">lib/SDRE/Sdre.h</includedby>
+    <incdepgraph>
+      <node id="4">
+        <label>eigen3/Eigen/Dense</label>
+      </node>
+      <node id="1">
+        <label>lib/RICCATI/Riccati.h</label>
+        <link refid="Riccati_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Arduino.h</label>
+      </node>
+      <node id="5">
+        <label>iostream</label>
+      </node>
+      <node id="3">
+        <label>GRUPO_QUAT.h</label>
+        <link refid="GRUPO__QUAT_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="4">
+        <label>lib/CONTROLE/Controle.h</label>
+        <link refid="Controle_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>lib/SDRE/Sdre.cpp</label>
+        <link refid="Sdre_8cpp"/>
+      </node>
+      <node id="3">
+        <label>lib/SDRE/Sdre.h</label>
+        <link refid="Sdre_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>lib/CONTROLE/Controle.cpp</label>
+        <link refid="Controle_8cpp"/>
+      </node>
+      <node id="1">
+        <label>lib/RICCATI/Riccati.h</label>
+        <link refid="Riccati_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>lib/RICCATI/Riccati.cpp</label>
+        <link refid="Riccati_8cpp"/>
+      </node>
+      <node id="6">
+        <label>src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classRiccati" prot="public">Riccati</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>RICCATI_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#define<sp/>RICCATI_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#ifdef<sp/>__GNUC__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>#include<sp/>&quot;../../../quadricopterFinal/lib/GRUPO_QUAT/GRUPO_QUAT.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>DEBUG</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">std;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>PRINT_MAT(X)<sp/>cout<sp/>&lt;&lt;<sp/>#X<sp/>&lt;&lt;<sp/>&quot;:\n&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>X<sp/>&lt;&lt;<sp/>&quot;\n&quot;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&quot;Arduino.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&quot;<ref refid="GRUPO__QUAT_8h" kindref="compound">GRUPO_QUAT.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#include<sp/>&lt;eigen3/Eigen/Dense&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="classRiccati" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classRiccati" kindref="compound">Riccati</ref><sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="29" refid="classRiccati_1a376f84745fd4a33cb6e058e0439f3dfb" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::MatrixXf<sp/><ref refid="classRiccati_1a376f84745fd4a33cb6e058e0439f3dfb" kindref="member">K</ref>,<sp/>K_new;</highlight></codeline>
+<codeline lineno="31" refid="classRiccati_1a9e4a8b9bd057ebcc4f4b90fd0cd8a8b9" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::MatrixXf<sp/>*<ref refid="classRiccati_1a9e4a8b9bd057ebcc4f4b90fd0cd8a8b9" kindref="member">phi</ref>;</highlight></codeline>
+<codeline lineno="33" refid="classRiccati_1ac421d68d5125e3ef11fba379329f2e67" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::MatrixXf<sp/>*<ref refid="classRiccati_1ac421d68d5125e3ef11fba379329f2e67" kindref="member">gamma</ref>;</highlight></codeline>
+<codeline lineno="35" refid="classRiccati_1ab245227419e64ebd2b9dd0e28e1c5243" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::MatrixXf<sp/>*<ref refid="classRiccati_1ab245227419e64ebd2b9dd0e28e1c5243" kindref="member">R</ref>;</highlight></codeline>
+<codeline lineno="37" refid="classRiccati_1ae1d081ecfa2a764d7fc8cc316c376f04" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::MatrixXf<sp/>*<ref refid="classRiccati_1ae1d081ecfa2a764d7fc8cc316c376f04" kindref="member">Q</ref>;</highlight></codeline>
+<codeline lineno="38" refid="classRiccati_1a301a6f535f228e71c09320583bb49d4e" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::MatrixXf<sp/><ref refid="classRiccati_1a301a6f535f228e71c09320583bb49d4e" kindref="member">I</ref>;</highlight></codeline>
+<codeline lineno="40" refid="classRiccati_1aef6ba29bba94e293a8ea4c279b565164" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::MatrixXf<sp/><ref refid="classRiccati_1aef6ba29bba94e293a8ea4c279b565164" kindref="member">Ls</ref>;</highlight></codeline>
+<codeline lineno="41" refid="classRiccati_1ab289ee3b6f819e200510a17344fc74e3" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num_iterations<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><ref refid="classRiccati" kindref="compound">Riccati</ref>(Eigen::MatrixXf<sp/>&amp;_A,<sp/>Eigen::MatrixXf<sp/>&amp;_B,<sp/>Eigen::MatrixXf<sp/>&amp;_Q,</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Eigen::MatrixXf<sp/>&amp;_R);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>dareInteration(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>&amp;tolerance<sp/>=<sp/>1.0E-5,</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint16_t<sp/>iter_max<sp/>=<sp/>100);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>RICCATI_H<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="lib/RICCATI/Riccati.h"/>
+  </compounddef>
+</doxygen>

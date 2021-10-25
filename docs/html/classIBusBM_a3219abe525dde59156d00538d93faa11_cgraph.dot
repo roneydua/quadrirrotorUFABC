@@ -1,0 +1,10 @@
+digraph "IBusBM::loop"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  rankdir="LR";
+  Node1 [label="IBusBM::loop",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node1 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+}

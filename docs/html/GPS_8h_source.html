@@ -1,0 +1,563 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Quadrirrotor: Código-Fonte de lib/EKF/GPS.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Quadrirrotor
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Busca','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_f81b21074929c51f0f8ec4455f2eeb05.html">EKF</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">GPS.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="GPS_8h.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#ifndef GPS_H</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define GPS_H</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;Arduino.h&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;HardwareSerial.h&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="GPS_8h.html#a5d2ecd8f29f7e3e702c8b8bea333f6c6">   17</a></span>&#160;HardwareSerial <a class="code" href="GPS_8h.html#a5d2ecd8f29f7e3e702c8b8bea333f6c6">GPSSERIAL</a>(1);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">// #define serialHW GPSSERIAL;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// Definas quais mensagens deseja que o sistema envie</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// #define GxGGA</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// #define GxGLL</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// #define GxGSA</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// #define GxGSV</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// #define GxRMC</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// #define GxVTG</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="GPS_8h.html#a63332ee69ceebaa458f065465e43f202">   27</a></span>&#160;<span class="preprocessor">#define NAV_PVT</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// #define NAV_VELNED</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// #define NAV_POSLLH</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="GPS_8h.html#a9241bba6283212e1bf773680a3f1a31f">   30</a></span>&#160;<span class="preprocessor">#define NAV_POSECEF</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// Defina a frequencia desejada</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="GPS_8h.html#ad7a8928b2d0331ab5eea166050a41c37">   32</a></span>&#160;<span class="preprocessor">#define RATE_10</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// #define RATE_5</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">// #define RATE_1</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="GPS_8h.html#a4afb4aaa3fa37c26d148c32f7af5a944">   35</a></span>&#160;<span class="preprocessor">#define NAV_MODE_1G</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">// #define NAV_MODE_2G</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="GPS_8h.html#a23eb131661d623c855d4216331834845">   37</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="GPS_8h.html#a23eb131661d623c855d4216331834845">UBX_HEADER</a>[] = {0xB5, 0x62};</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#ifdef NAV_POSLLH</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> NAV_POSLLH_HEADER[] = {0x01, 0x02};</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">struct </span>NAV_POSLLH_STRUCT {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> cls;  <span class="comment">// 0x01</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> id;   <span class="comment">// 0x02</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> len; <span class="comment">// 28</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> iTOW; <span class="comment">// millisecond time of week</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="comment">// long lon;           // longitude</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordtype">long</span> lon;           <span class="comment">// longitude</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordtype">long</span> lat;           <span class="comment">// latitude</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordtype">long</span> height;        <span class="comment">// height above ellipsoid</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordtype">long</span> hMSL;          <span class="comment">// height above mean sea level</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> hAcc; <span class="comment">// horizontal accuracy</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> vAcc; <span class="comment">// vertical accuracy</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;};</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#ifdef NAV_POSECEF</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="GPS_8h.html#a3e09624a99733cc8e95b04f78d7319da">   58</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="GPS_8h.html#a3e09624a99733cc8e95b04f78d7319da">NAV_POSECEF_HEADER</a>[] = {0x01, 0x01};</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="structNAV__POSECEF__STRUCT.html">   59</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structNAV__POSECEF__STRUCT.html">NAV_POSECEF_STRUCT</a> {</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="structNAV__POSECEF__STRUCT.html#aaec8c5597e47db77dbe3cc9ce1aefa8e">   60</a></span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="structNAV__POSECEF__STRUCT.html#aaec8c5597e47db77dbe3cc9ce1aefa8e">cls</a>;  <span class="comment">// 0x01</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="structNAV__POSECEF__STRUCT.html#aadaff22d2b530c65f1a879a4838f223b">   61</a></span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="structNAV__POSECEF__STRUCT.html#aadaff22d2b530c65f1a879a4838f223b">id</a>;   <span class="comment">// 0x02</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="structNAV__POSECEF__STRUCT.html#a4f7633b71bc8cccd1d7ab744659f6d89">   62</a></span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> <a class="code" href="structNAV__POSECEF__STRUCT.html#a4f7633b71bc8cccd1d7ab744659f6d89">len</a>; <span class="comment">// 20</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="structNAV__POSECEF__STRUCT.html#a36711ead60d9cde7974cbeda7de4c35f">   63</a></span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code" href="structNAV__POSECEF__STRUCT.html#a36711ead60d9cde7974cbeda7de4c35f">iTOW</a>; <span class="comment">// millisecond time of week</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="structNAV__POSECEF__STRUCT.html#ad1b8e404ffdeeb1954292e43fe3507b2">   65</a></span>&#160;<span class="comment"></span>  <span class="keywordtype">long</span> <a class="code" href="structNAV__POSECEF__STRUCT.html#ad1b8e404ffdeeb1954292e43fe3507b2">ecefX</a>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="structNAV__POSECEF__STRUCT.html#a9e56104db13a84e53c2dec44e5ff63b2">   67</a></span>&#160;  <span class="keywordtype">long</span> <a class="code" href="structNAV__POSECEF__STRUCT.html#a9e56104db13a84e53c2dec44e5ff63b2">ecefY</a>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="structNAV__POSECEF__STRUCT.html#acff937b434d1a245763b778f1f15ba66">   69</a></span>&#160;  <span class="keywordtype">long</span> <a class="code" href="structNAV__POSECEF__STRUCT.html#acff937b434d1a245763b778f1f15ba66">ecefZ</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="structNAV__POSECEF__STRUCT.html#af6632b8d7323f356aac7f34e1656dbba">   70</a></span>&#160;  <span class="keywordtype">long</span> <a class="code" href="structNAV__POSECEF__STRUCT.html#af6632b8d7323f356aac7f34e1656dbba">pAcc</a>; <span class="comment">// Position Accuracy Estimate</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#ifdef NAV_VELNED</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> NAV_VELNED_HEADER[] = {0x01, 0x12};</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">struct </span>NAV_VELNED_STRUCT {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> cls;  <span class="comment">// 0x01</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> id;   <span class="comment">// 0x12</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> len; <span class="comment">// 36</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> iTOW; <span class="comment">// millisecond time of week</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment"></span>  <span class="keywordtype">long</span> velN;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keywordtype">long</span> velE;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordtype">long</span> velD;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> speed;  <span class="comment">// 3d (cm/s)</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> gSpeed; <span class="comment">// ground speed (2d)</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keywordtype">long</span> heading;         <span class="comment">// heading of motion (2d)</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> sAcc;   <span class="comment">// speed accuracy</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> cAcc;   <span class="comment">// course/heading accuracy</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;};</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#ifdef NAV_PVT</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="GPS_8h.html#a4c90ad3996e1901ce9aa8a364eab6c0d">   95</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="GPS_8h.html#a4c90ad3996e1901ce9aa8a364eab6c0d">NAV_PVT_HEADER</a>[] = {0x01, 0x07};</div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="structNAV__PVT__STRUCT.html">   96</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structNAV__PVT__STRUCT.html">NAV_PVT_STRUCT</a> {</div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="structNAV__PVT__STRUCT.html#a42a6506722356f74e72a6c09b3d36981">   97</a></span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="structNAV__PVT__STRUCT.html#a42a6506722356f74e72a6c09b3d36981">cls</a>;  <span class="comment">// 0x01</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="structNAV__PVT__STRUCT.html#ac7f737a77264a615d090846e8508b15c">   98</a></span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="structNAV__PVT__STRUCT.html#ac7f737a77264a615d090846e8508b15c">id</a>;   <span class="comment">// 0x12</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="structNAV__PVT__STRUCT.html#a45c1c383f15364531cefad7a9689e4cd">   99</a></span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> <a class="code" href="structNAV__PVT__STRUCT.html#a45c1c383f15364531cefad7a9689e4cd">len</a>; <span class="comment">// 92</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="structNAV__PVT__STRUCT.html#a77b13534f916d34c72d828e63f2c685c">  100</a></span>&#160;  <span class="comment">/* 0 */</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code" href="structNAV__PVT__STRUCT.html#a77b13534f916d34c72d828e63f2c685c">iTOW</a>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="structNAV__PVT__STRUCT.html#a6fcb9f165e78a4f81c8891841de5ac62">  101</a></span>&#160;  <span class="comment">/* 4 */</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> <a class="code" href="structNAV__PVT__STRUCT.html#a6fcb9f165e78a4f81c8891841de5ac62">year</a>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="structNAV__PVT__STRUCT.html#a4ca689c97238b68b845f03117f79e789">  102</a></span>&#160;  <span class="comment">/* 6 */</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="structNAV__PVT__STRUCT.html#a4ca689c97238b68b845f03117f79e789">month</a>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="structNAV__PVT__STRUCT.html#aba771368d0601aa15eec99ab7050a095">  103</a></span>&#160;  <span class="comment">/* 7 */</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="structNAV__PVT__STRUCT.html#aba771368d0601aa15eec99ab7050a095">day</a>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="structNAV__PVT__STRUCT.html#a9558a232009d5fe838e22bc9c8eb0ba3">  104</a></span>&#160;  <span class="comment">/* 8 */</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="structNAV__PVT__STRUCT.html#a9558a232009d5fe838e22bc9c8eb0ba3">hour</a>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="structNAV__PVT__STRUCT.html#a863c8316485bbdf439073478fc25343a">  105</a></span>&#160;  <span class="comment">/* 9 */</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="structNAV__PVT__STRUCT.html#a863c8316485bbdf439073478fc25343a">min</a>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="structNAV__PVT__STRUCT.html#a951fd966a0fc28300db089792547d2d8">  106</a></span>&#160;  <span class="comment">/* 10 */</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="structNAV__PVT__STRUCT.html#a951fd966a0fc28300db089792547d2d8">sec</a>;</div>
+<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="structNAV__PVT__STRUCT.html#ab59fe8ccda8098515daa41f135c4f812">  107</a></span>&#160;  <span class="comment">/* 11 */</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="structNAV__PVT__STRUCT.html#ab59fe8ccda8098515daa41f135c4f812">valid</a>;</div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="structNAV__PVT__STRUCT.html#ac04cfb4bf12ae9c3df554629740f3286">  108</a></span>&#160;  <span class="comment">/* 12 */</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code" href="structNAV__PVT__STRUCT.html#ac04cfb4bf12ae9c3df554629740f3286">tAcc</a>;</div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="structNAV__PVT__STRUCT.html#a3b772ad4a5c93eef8db16e6f5bbfcd59">  109</a></span>&#160;  <span class="comment">/* 16 */</span> <span class="keywordtype">long</span> <a class="code" href="structNAV__PVT__STRUCT.html#a3b772ad4a5c93eef8db16e6f5bbfcd59">nano</a>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="structNAV__PVT__STRUCT.html#af38c07f23fd57d4cb4a88dd99492ce3b">  110</a></span>&#160;  <span class="comment">/* 20 */</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="structNAV__PVT__STRUCT.html#af38c07f23fd57d4cb4a88dd99492ce3b">fixType</a>;</div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="structNAV__PVT__STRUCT.html#a3bd1bada160988b8a9c829685b9ec58c">  111</a></span>&#160;  <span class="comment">/* 21 */</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="structNAV__PVT__STRUCT.html#a3bd1bada160988b8a9c829685b9ec58c">flags</a>;</div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="structNAV__PVT__STRUCT.html#a9fac1821733bc6d8829322edcbdb651c">  112</a></span>&#160;  <span class="comment">/* 22 */</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="structNAV__PVT__STRUCT.html#a9fac1821733bc6d8829322edcbdb651c">flags2</a>;</div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="structNAV__PVT__STRUCT.html#a4ec7b63e686800c231126a74722e47ca">  113</a></span>&#160;  <span class="comment">/* 23 */</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="structNAV__PVT__STRUCT.html#a4ec7b63e686800c231126a74722e47ca">numSV</a>;</div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="structNAV__PVT__STRUCT.html#ac884e66d0b3ebd6530680ad23e13a81e">  114</a></span>&#160;  <span class="comment">/* 24 */</span> <span class="keywordtype">long</span> <a class="code" href="structNAV__PVT__STRUCT.html#ac884e66d0b3ebd6530680ad23e13a81e">lon</a>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="structNAV__PVT__STRUCT.html#ab8a62324ff89a0c707884bfc34aba85d">  115</a></span>&#160;  <span class="comment">/* 28 */</span> <span class="keywordtype">long</span> <a class="code" href="structNAV__PVT__STRUCT.html#ab8a62324ff89a0c707884bfc34aba85d">lat</a>;</div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="structNAV__PVT__STRUCT.html#aacdb7b954a1e04eac787d8aa60409eee">  116</a></span>&#160;  <span class="comment">/* 32 */</span> <span class="keywordtype">long</span> <a class="code" href="structNAV__PVT__STRUCT.html#aacdb7b954a1e04eac787d8aa60409eee">height</a>;</div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="structNAV__PVT__STRUCT.html#a593d78a85e8db2a7511396023ac72bd6">  117</a></span>&#160;  <span class="comment">/* 36 */</span> <span class="keywordtype">long</span> <a class="code" href="structNAV__PVT__STRUCT.html#a593d78a85e8db2a7511396023ac72bd6">hMSL</a>;</div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="structNAV__PVT__STRUCT.html#a587393afa60a9c94edbf39f90f876cbb">  118</a></span>&#160;  <span class="comment">/* 40 */</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code" href="structNAV__PVT__STRUCT.html#a587393afa60a9c94edbf39f90f876cbb">hAcc</a>;</div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="structNAV__PVT__STRUCT.html#a5a579a58fac4d536c0a92b0126a6bf1d">  119</a></span>&#160;  <span class="comment">/* 44 */</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code" href="structNAV__PVT__STRUCT.html#a5a579a58fac4d536c0a92b0126a6bf1d">vAcc</a>;</div>
+<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="structNAV__PVT__STRUCT.html#a9f0c42e0df789f5ed086349ad79d1f9c">  121</a></span>&#160;  <span class="comment">/* 48 */</span> <span class="keywordtype">long</span> <a class="code" href="structNAV__PVT__STRUCT.html#a9f0c42e0df789f5ed086349ad79d1f9c">velN</a>;</div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="structNAV__PVT__STRUCT.html#a1abd8ac18139ec0e1148cbea6cd36b18">  123</a></span>&#160;  <span class="comment">/* 52 */</span> <span class="keywordtype">long</span> <a class="code" href="structNAV__PVT__STRUCT.html#a1abd8ac18139ec0e1148cbea6cd36b18">velE</a>;</div>
+<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="structNAV__PVT__STRUCT.html#ae5860d883e58fa8d23dba2c4aa1c3e45">  125</a></span>&#160;  <span class="comment">/* 56 */</span> <span class="keywordtype">long</span> <a class="code" href="structNAV__PVT__STRUCT.html#ae5860d883e58fa8d23dba2c4aa1c3e45">velD</a>;</div>
+<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="structNAV__PVT__STRUCT.html#a0304e9a013eec6cf906793fcfad5fe59">  126</a></span>&#160;  <span class="comment">/* 60 */</span> <span class="keywordtype">long</span> <a class="code" href="structNAV__PVT__STRUCT.html#a0304e9a013eec6cf906793fcfad5fe59">gSpeed</a>;</div>
+<div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="structNAV__PVT__STRUCT.html#acd88d08d72da09efa3edfef59c24f5e3">  127</a></span>&#160;  <span class="comment">/* 64 */</span> <span class="keywordtype">long</span> <a class="code" href="structNAV__PVT__STRUCT.html#acd88d08d72da09efa3edfef59c24f5e3">headMot</a>;</div>
+<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="structNAV__PVT__STRUCT.html#a8bc469b1c7053cc1358d411041266729">  128</a></span>&#160;  <span class="comment">/* 68 */</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code" href="structNAV__PVT__STRUCT.html#a8bc469b1c7053cc1358d411041266729">sAcc</a>;</div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="structNAV__PVT__STRUCT.html#aaf41d738d049ebd1c80396b4b531273b">  129</a></span>&#160;  <span class="comment">/* 72 */</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code" href="structNAV__PVT__STRUCT.html#aaf41d738d049ebd1c80396b4b531273b">headAcc</a>;</div>
+<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="structNAV__PVT__STRUCT.html#a8fbe98b98c20bffb60327748af7d4e6a">  130</a></span>&#160;  <span class="comment">/* 76 */</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> <a class="code" href="structNAV__PVT__STRUCT.html#a8fbe98b98c20bffb60327748af7d4e6a">pDOP</a>;</div>
+<div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="structNAV__PVT__STRUCT.html#ac180d88179b0671dca08121915d55838">  131</a></span>&#160;  <span class="comment">/* 78 */</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="structNAV__PVT__STRUCT.html#ac180d88179b0671dca08121915d55838">reserved1</a>[6];</div>
+<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="structNAV__PVT__STRUCT.html#a03d604d979ea8d066edf62a4a1b2c46e">  132</a></span>&#160;  <span class="comment">/* 84 */</span> <span class="keywordtype">long</span> <a class="code" href="structNAV__PVT__STRUCT.html#a03d604d979ea8d066edf62a4a1b2c46e">headVeh</a>;</div>
+<div class="line"><a name="l00133"></a><span class="lineno"><a class="line" href="structNAV__PVT__STRUCT.html#ad7be043d349fb056d0c47de5282750b4">  133</a></span>&#160;  <span class="comment">/* 85 */</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code" href="structNAV__PVT__STRUCT.html#ad7be043d349fb056d0c47de5282750b4">reserved2</a>;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;};</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="structPacketData.html">  137</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structPacketData.html">PacketData</a> {</div>
+<div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="structPacketData.html#a0a6e39d74d6461dcac04e8a19dcd0b6d">  138</a></span>&#160;  <span class="keywordtype">long</span> <a class="code" href="structPacketData.html#a0a6e39d74d6461dcac04e8a19dcd0b6d">lon</a>;</div>
+<div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="structPacketData.html#a398a83a5119663539a6e0aedebfcd60b">  139</a></span>&#160;  <span class="keywordtype">long</span> <a class="code" href="structPacketData.html#a398a83a5119663539a6e0aedebfcd60b">lat</a>;</div>
+<div class="line"><a name="l00140"></a><span class="lineno"><a class="line" href="structPacketData.html#ac04ae3b7a33e3d1a04650289429d78ec">  140</a></span>&#160;  int32_t <a class="code" href="structPacketData.html#ac04ae3b7a33e3d1a04650289429d78ec">altitude</a>;</div>
+<div class="line"><a name="l00141"></a><span class="lineno"><a class="line" href="structPacketData.html#a9cdf7ee028863b451b3ad3fc22e4827a">  141</a></span>&#160;  <span class="keywordtype">long</span> <a class="code" href="structPacketData.html#a9cdf7ee028863b451b3ad3fc22e4827a">velN</a>;</div>
+<div class="line"><a name="l00142"></a><span class="lineno"><a class="line" href="structPacketData.html#ae937755078f86e2a4c4827b07d31f72c">  142</a></span>&#160;  <span class="keywordtype">long</span> <a class="code" href="structPacketData.html#ae937755078f86e2a4c4827b07d31f72c">velE</a>;</div>
+<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="structPacketData.html#a22515ed8e898933c6b2bdb48e06cc8d7">  143</a></span>&#160;  <span class="keywordtype">long</span> <a class="code" href="structPacketData.html#a22515ed8e898933c6b2bdb48e06cc8d7">velD</a>;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;};</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno"><a class="line" href="GPS_8h.html#a27c939ba1a4f4d927aaa500781293ba7">  146</a></span>&#160;<a class="code" href="structPacketData.html">PacketData</a> <a class="code" href="GPS_8h.html#a27c939ba1a4f4d927aaa500781293ba7">data</a>;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
+<div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="unionUBXMessage.html">  148</a></span>&#160;<span class="keyword">union </span><a class="code" href="unionUBXMessage.html">UBXMessage</a> {</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="preprocessor">#ifdef NAV_POSLLH</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  NAV_POSLLH_STRUCT navPosllh;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="preprocessor">#ifdef NAV_VELNED</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  NAV_VELNED_STRUCT navVelned;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="preprocessor">#ifdef NAV_POSECEF</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno"><a class="line" href="unionUBXMessage.html#aa57d81c1fb373e82012ca3ddadefd79f">  156</a></span>&#160;  <a class="code" href="structNAV__POSECEF__STRUCT.html">NAV_POSECEF_STRUCT</a> <a class="code" href="unionUBXMessage.html#aa57d81c1fb373e82012ca3ddadefd79f">navPosecef</a>;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="preprocessor">#ifdef NAV_PVT</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno"><a class="line" href="unionUBXMessage.html#ae5d0a8c24ea04c5b48614e3af5dadea4">  159</a></span>&#160;  <a class="code" href="structNAV__PVT__STRUCT.html">NAV_PVT_STRUCT</a> <a class="code" href="unionUBXMessage.html#ae5d0a8c24ea04c5b48614e3af5dadea4">navPvt</a>;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;};</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
+<div class="line"><a name="l00163"></a><span class="lineno"><a class="line" href="GPS_8h.html#a9730e8d0bbbe3f1515ed1d0b2acda1e1">  163</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="GPS_8h.html#a9730e8d0bbbe3f1515ed1d0b2acda1e1">_ubxMsgType</a> {</div>
+<div class="line"><a name="l00164"></a><span class="lineno"><a class="line" href="GPS_8h.html#a9730e8d0bbbe3f1515ed1d0b2acda1e1ad2e3f1bdeae0fa235b7dfe6656c46f14">  164</a></span>&#160;  <a class="code" href="GPS_8h.html#a9730e8d0bbbe3f1515ed1d0b2acda1e1ad2e3f1bdeae0fa235b7dfe6656c46f14">MT_NONE</a>,</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="preprocessor">#ifdef NAV_POSLLH</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  MT_NAV_POSLLH,</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="preprocessor">#ifdef NAV_VELNED</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  MT_NAV_VELNED,</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="preprocessor">#ifdef NAV_POSECEF</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno"><a class="line" href="GPS_8h.html#a9730e8d0bbbe3f1515ed1d0b2acda1e1ae2379a504fb11d8e00e11bd567a3b819">  172</a></span>&#160;  <a class="code" href="GPS_8h.html#a9730e8d0bbbe3f1515ed1d0b2acda1e1ae2379a504fb11d8e00e11bd567a3b819">MT_NAV_POSECEF</a>,</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="preprocessor">#ifdef NAV_PVT</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno"><a class="line" href="GPS_8h.html#a9730e8d0bbbe3f1515ed1d0b2acda1e1a87ee2b7c21367a2caa62b0a01491ea23">  175</a></span>&#160;  <a class="code" href="GPS_8h.html#a9730e8d0bbbe3f1515ed1d0b2acda1e1a87ee2b7c21367a2caa62b0a01491ea23">MT_NAV_PVT</a>,</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;};</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
+<div class="line"><a name="l00179"></a><span class="lineno"><a class="line" href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">  179</a></span>&#160;<a class="code" href="unionUBXMessage.html">UBXMessage</a> <a class="code" href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a>;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
+<div class="line"><a name="l00181"></a><span class="lineno"><a class="line" href="GPS_8h.html#a35c55bcf9a6f5a52f34cb1ab02c91479">  181</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="GPS_8h.html#a35c55bcf9a6f5a52f34cb1ab02c91479">gpsSetup</a>() {</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;  <span class="comment">// GPSSERIAL.begin(baud, config = SERIAL_8N1, rxPin,txPin)</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  <a class="code" href="GPS_8h.html#a5d2ecd8f29f7e3e702c8b8bea333f6c6">GPSSERIAL</a>.begin(9600, SERIAL_8N1, 16, 17);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> VALORES_PADROES[] PROGMEM = {</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;      <span class="comment">// valores padroes</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;      0xB5, 0x62, 0x06, 0x09, 0x0D, 0x00, 0xFF, 0xFF, 0x00, 0x00, 0x00,</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;      0x00, 0x00, 0x00, 0xFF, 0xFF, 0x00, 0x00, 0x03, 0x1B, 0x9A,</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  };</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  <span class="comment">// Desabilitar NMEA</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> UBLOX_CONFIGURACAO[] PROGMEM = {</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  <span class="comment">// Desabilitar NMEA</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="preprocessor">#ifndef GxGGA</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;      0xB5, 0x62, 0x06, 0x01, 0x08, 0x00, 0xF0, 0x00, 0x00, 0x00, 0x00, 0x00,</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;      0x00, 0x00, 0xFF, 0x23,</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="preprocessor">#ifndef GxGLL</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;      0xB5, 0x62, 0x06, 0x01, 0x08, 0x00, 0xF0, 0x01, 0x00, 0x00, 0x00, 0x00,</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;      0x00, 0x00, 0x00, 0x2A,</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="preprocessor">#ifndef GxGSA</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;      0xB5, 0x62, 0x06, 0x01, 0x08, 0x00, 0xF0, 0x02, 0x00, 0x00, 0x00, 0x00,</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;      0x00, 0x00, 0x01, 0x31,</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="preprocessor">#ifndef GxGSV</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;      0xB5, 0x62, 0x06, 0x01, 0x08, 0x00, 0xF0, 0x03, 0x00, 0x00, 0x00, 0x00,</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;      0x00, 0x00, 0x02, 0x38,</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="preprocessor">#ifndef GxRMC</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;      0xB5, 0x62, 0x06, 0x01, 0x08, 0x00, 0xF0, 0x04, 0x00, 0x00, 0x00, 0x00,</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;      0x00, 0x00, 0x03, 0x3F,</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="preprocessor">#ifndef GxVTG</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;      0xB5, 0x62, 0x06, 0x01, 0x08, 0x00, 0xF0, 0x05, 0x00, 0x00, 0x00, 0x00,</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;      0x00, 0x00, 0x04, 0x46,</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="comment">// Configuracao de Navegacao</span></div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="preprocessor">#ifdef NAV_VELNED</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;      0xB5, 0x62, 0x06, 0x01, 0x08, 0x00, 0x01, 0x12, 0x00, 0x01, 0x00, 0x00,</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;      0x00, 0x00, 0x23, 0x2E,</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="preprocessor">#ifdef NAV_POSLLH</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;      0xB5, 0x62, 0x06, 0x01, 0x08, 0x00, 0x01, 0x02, 0x00, 0x01, 0x00, 0x00,</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;      0x00, 0x00, 0x13, 0xBE, <span class="comment">//</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="preprocessor">#ifdef NAV_POSECEF</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;      <span class="comment">// 0xB5, 0x62, 0x06, 0x01, 0x08, 0x00, 0x29, 0x01, 0x00, 0x01, 0x00, 0x00,</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;      <span class="comment">// 0x00, 0x00, 0x3A, 0xF7, //</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;      0xB5, 0x62, 0x06, 0x01, 0x08, 0x00, 0x01, 0x01, 0x00, 0x01, 0x00, 0x00,</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;      0x00, 0x00, 0x12, 0xB7, <span class="comment">//</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160; </div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160; </div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;<span class="preprocessor">#ifdef NAV_PVT</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;      0xB5, 0x62, 0x06, 0x01, 0x08, 0x00, 0x01, 0x07, 0x00, 0x01, 0x00, 0x00,</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;      0x00, 0x00, 0x18, 0xE1, <span class="comment">//</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160; </div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;<span class="comment">// frequencia de amostragem</span></div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;<span class="preprocessor">#ifdef RATE_10</span></div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;      0xB5, 0x62, 0x06, 0x08, 0x06, 0x00, 0x64, 0x00, 0x01, 0x00, 0x01, 0x00,</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;      0x7A, 0x12, <span class="comment">//</span></div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;<span class="preprocessor">#ifdef RATE_5</span></div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;      0xB5, 0x62, 0x06, 0x08, 0x06, 0x00, 0xC8, 0x00, 0x01, 0x00, 0x01, 0x00,</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;      0xDE, 0x6A, <span class="comment">//</span></div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="preprocessor">#ifdef RATE_1</span></div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;      0xB5, 0x62, 0x06, 0x08, 0x06, 0x00, 0xE8, 0x03, 0x01, 0x00, 0x01, 0x00,</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;      0x01, 0x39,</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;<span class="preprocessor">#ifdef NAV_MODE_2G</span></div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;      <span class="comment">// Configuracao do NAV MODE  opcao 7- Airbone &lt; 2g</span></div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;      0xB5, 0x62, 0x06, 0x24, 0x24, 0x00, 0xFF, 0xFF, 0x07, 0x03, 0x00, 0x00,</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;      0x00, 0x00, 0x10, 0x27, 0x00, 0x00, 0x05, 0x00, 0xFA, 0x00, 0xFA, 0x00,</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;      0x64, 0x00, 0x5E, 0x01, 0x00, 0x3C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;      0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x85, 0x2A,</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<span class="preprocessor">#ifdef NAV_MODE_1G</span></div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;      <span class="comment">// NAV MODE  opcao 7- Airbone &lt; 1g</span></div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;      0xB5, 0x62, 0x06, 0x24, 0x24, 0x00, 0xFF, 0xFF, 0x06, 0x03, 0x00, 0x00,</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;      0x00, 0x00, 0x10, 0x27, 0x00, 0x00, 0x05, 0x00, 0xFA, 0x00, 0xFA, 0x00,</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;      0x64, 0x00, 0x5E, 0x01, 0x00, 0x3C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;      0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x85,</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;      0x2A, <span class="comment">//</span></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;  };</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160; </div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; (int)<span class="keyword">sizeof</span>(VALORES_PADROES); i++) {</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <a class="code" href="GPS_8h.html#a5d2ecd8f29f7e3e702c8b8bea333f6c6">GPSSERIAL</a>.write(pgm_read_byte(VALORES_PADROES + i));</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    delay(5); <span class="comment">// Simula 38400 baudrate.</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;  }</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;  delay(1000);</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  <span class="comment">// Envia os dados</span></div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; (int)<span class="keyword">sizeof</span>(UBLOX_CONFIGURACAO); i++) {</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <a class="code" href="GPS_8h.html#a5d2ecd8f29f7e3e702c8b8bea333f6c6">GPSSERIAL</a>.write(pgm_read_byte(UBLOX_CONFIGURACAO + i));</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    delay(5); <span class="comment">// Simula 38400 baudrate.</span></div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;  }</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;}</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;<span class="comment">// The last two bytes of the message is a checksum value, used to confirm that</span></div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;<span class="comment">// the received payload is valid. The procedure used to calculate this is given</span></div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;<span class="comment">// as pseudo-code in the uBlox manual.</span></div>
+<div class="line"><a name="l00286"></a><span class="lineno"><a class="line" href="GPS_8h.html#aa2fac937d6e192633f020459321241e7">  286</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="GPS_8h.html#aa2fac937d6e192633f020459321241e7">calcChecksum</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *CK, <span class="keywordtype">int</span> msgSize) {</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;  memset(CK, 0, 2);</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; msgSize; i++) {</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    CK[0] += ((<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *)(&amp;<a class="code" href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a>))[i];</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    CK[1] += CK[0];</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;  }</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;}</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;<span class="comment">// Compares the first two bytes of the ubxMessage struct with a specific message</span></div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;<span class="comment">// header. Returns true if the two bytes match.</span></div>
+<div class="line"><a name="l00296"></a><span class="lineno"><a class="line" href="GPS_8h.html#aecde093c7427cc661daceaa118cf4455">  296</a></span>&#160;<span class="keywordtype">boolean</span> <a class="code" href="GPS_8h.html#aecde093c7427cc661daceaa118cf4455">compareMsgHeader</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *msgHeader) {</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *ptr = (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *)(&amp;<a class="code" href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a>);</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;  <span class="keywordflow">return</span> ptr[0] == msgHeader[0] &amp;&amp; ptr[1] == msgHeader[1];</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;}</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
+<div class="line"><a name="l00301"></a><span class="lineno"><a class="line" href="GPS_8h.html#ad604e63cc857e5663dfba96c37c66bc7">  301</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="GPS_8h.html#ad604e63cc857e5663dfba96c37c66bc7">processGPS</a>() {</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">int</span> fpos = 0;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> checksum[2];</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160; </div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">byte</span> currentMsgType = <a class="code" href="GPS_8h.html#a9730e8d0bbbe3f1515ed1d0b2acda1e1ad2e3f1bdeae0fa235b7dfe6656c46f14">MT_NONE</a>;</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">int</span> payloadSize = <span class="keyword">sizeof</span>(<a class="code" href="unionUBXMessage.html">UBXMessage</a>);</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;  <span class="comment">// trocado while por if para naum travar o processo.</span></div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;  <span class="keywordflow">while</span> (<a class="code" href="GPS_8h.html#a5d2ecd8f29f7e3e702c8b8bea333f6c6">GPSSERIAL</a>.available()) {</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <span class="keywordtype">byte</span> c = <a class="code" href="GPS_8h.html#a5d2ecd8f29f7e3e702c8b8bea333f6c6">GPSSERIAL</a>.read();</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="keywordflow">if</span> (fpos &lt; 2) {</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;      <span class="comment">/* Procura se os primeiro dois bytes sao os cabecalhos(0xB5,0x62)*/</span></div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;      <span class="keywordflow">if</span> (c == <a class="code" href="GPS_8h.html#a23eb131661d623c855d4216331834845">UBX_HEADER</a>[fpos]) {</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        fpos++;</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        fpos = 0;</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;      }</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;      <span class="comment">/* Este trecho é acessado apenas se a mensagem coincide com UBX_HEADER.*/</span></div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;      <span class="comment">// Place the incoming byte into the ubxMessage struct. The position is</span></div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;      <span class="comment">// fpos-2 because the struct does not include the initial two-byte header</span></div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;      <span class="comment">// (UBX_HEADER).</span></div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;      <span class="keywordflow">if</span> ((fpos - 2) &lt; payloadSize)</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        ((<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *)(&amp;<a class="code" href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a>))[fpos - 2] = c;</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160; </div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;      fpos++;</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160; </div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;      <span class="keywordflow">if</span> (fpos == 4) {</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        <span class="comment">// We have just received the second byte of the message type header,</span></div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <span class="comment">// so now we can check to see what kind of message it is.</span></div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;<span class="preprocessor">#ifdef NAV_POSLLH</span></div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="GPS_8h.html#aecde093c7427cc661daceaa118cf4455">compareMsgHeader</a>(NAV_POSLLH_HEADER)) {</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;          currentMsgType = MT_NAV_POSLLH;</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;          payloadSize = <span class="keyword">sizeof</span>(NAV_POSLLH_STRUCT);</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        } <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;<span class="preprocessor">#ifdef NAV_VELNED</span></div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="GPS_8h.html#aecde093c7427cc661daceaa118cf4455">compareMsgHeader</a>(NAV_VELNED_HEADER)) {</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;          currentMsgType = MT_NAV_VELNED;</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;          payloadSize = <span class="keyword">sizeof</span>(NAV_VELNED_STRUCT);</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        } <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;<span class="preprocessor">#ifdef NAV_POSECEF</span></div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="GPS_8h.html#aecde093c7427cc661daceaa118cf4455">compareMsgHeader</a>(<a class="code" href="GPS_8h.html#a3e09624a99733cc8e95b04f78d7319da">NAV_POSECEF_HEADER</a>)) {</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;          currentMsgType = <a class="code" href="GPS_8h.html#a9730e8d0bbbe3f1515ed1d0b2acda1e1ae2379a504fb11d8e00e11bd567a3b819">MT_NAV_POSECEF</a>;</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;          payloadSize = <span class="keyword">sizeof</span>(<a class="code" href="structNAV__POSECEF__STRUCT.html">NAV_POSECEF_STRUCT</a>);</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        } <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;<span class="preprocessor">#ifdef NAV_PVT</span></div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="GPS_8h.html#aecde093c7427cc661daceaa118cf4455">compareMsgHeader</a>(<a class="code" href="GPS_8h.html#a4c90ad3996e1901ce9aa8a364eab6c0d">NAV_PVT_HEADER</a>)) {</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;          currentMsgType = <a class="code" href="GPS_8h.html#a9730e8d0bbbe3f1515ed1d0b2acda1e1a87ee2b7c21367a2caa62b0a01491ea23">MT_NAV_PVT</a>;</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;          payloadSize = <span class="keyword">sizeof</span>(<a class="code" href="structNAV__PVT__STRUCT.html">NAV_PVT_STRUCT</a>);</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160; </div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        } <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        {</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;          <span class="comment">// unknown message type, bail</span></div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;          fpos = 0;</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;          <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        }</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;      }</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160; </div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;      <span class="keywordflow">if</span> (fpos == (payloadSize + 2)) {</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        <span class="comment">// All payload bytes have now been received, so we can calculate the</span></div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        <span class="comment">// expected checksum value to compare with the next two incoming bytes.</span></div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        <a class="code" href="GPS_8h.html#aa2fac937d6e192633f020459321241e7">calcChecksum</a>(checksum, payloadSize);</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (fpos == (payloadSize + 3)) {</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        <span class="comment">// First byte after the payload, ie. first byte of the checksum.</span></div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        <span class="comment">// Does it match the first byte of the checksum we calculated?</span></div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        <span class="keywordflow">if</span> (c != checksum[0]) {</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;          <span class="comment">// Checksum doesn&#39;t match, reset to beginning state and try again.</span></div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;          fpos = 0;</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        }</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (fpos == (payloadSize + 4)) {</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        <span class="comment">// Second byte after the payload, ie. second byte of the checksum.</span></div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        <span class="comment">// Does it match the second byte of the checksum we calculated?</span></div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;        fpos = 0; <span class="comment">// We will reset the state regardless of whether the checksum</span></div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;                  <span class="comment">// matches.</span></div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        <span class="keywordflow">if</span> (c == checksum[1]) {</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;          <span class="comment">// Checksum matches, we have a valid message.</span></div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;          <span class="keywordflow">return</span> currentMsgType;</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;        }</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (fpos &gt; (payloadSize + 4)) {</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        <span class="comment">// We have now read more bytes than both the expected payload and</span></div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        <span class="comment">// checksum together, so something went wrong. Reset to beginning state</span></div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        <span class="comment">// and try again.</span></div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        fpos = 0;</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;      }</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    }</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;  }</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="GPS_8h.html#a9730e8d0bbbe3f1515ed1d0b2acda1e1ad2e3f1bdeae0fa235b7dfe6656c46f14">MT_NONE</a>;</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;}</div>
+<div class="line"><a name="l00392"></a><span class="lineno"><a class="line" href="GPS_8h.html#aaab66558a5f695df7a6fcc3baa340da3">  392</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="GPS_8h.html#aaab66558a5f695df7a6fcc3baa340da3">gps_imprime</a>() {</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160; </div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;  <span class="keywordflow">while</span> (<a class="code" href="GPS_8h.html#a5d2ecd8f29f7e3e702c8b8bea333f6c6">GPSSERIAL</a>.available()) {</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    <span class="comment">// Serial.write(GPSSERIAL.read());</span></div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    <span class="keywordtype">int</span> msgType = <a class="code" href="GPS_8h.html#ad604e63cc857e5663dfba96c37c66bc7">processGPS</a>();</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;<span class="preprocessor">#ifdef NAV_VELNED</span></div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    <span class="keywordflow">if</span> (msgType == MT_NAV_VELNED) {</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;      printf(<span class="stringliteral">&quot;MT_NAV_VELNED: %lu\t %f\t %f\t %f\t \n&quot;</span>,</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;             <a class="code" href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a>.navVelned.iTOW,</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;             <span class="keywordtype">float</span>(<a class="code" href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a>.navVelned.velD) * 0.01f,</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;             <span class="keywordtype">float</span>(<a class="code" href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a>.navVelned.velD) * 0.01f,</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;             <span class="keywordtype">float</span>(<a class="code" href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a>.navVelned.velD) * 0.01f);</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    } <span class="comment">// else</span></div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;<span class="preprocessor">#ifdef NAV_POSLLH</span></div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    <span class="keywordflow">if</span> (msgType == MT_NAV_POSLLH) {</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;      printf(<span class="stringliteral">&quot;MT_NAV_POSLLH: %lu\t %ld\t \t%ld \t\n&quot;</span>, <a class="code" href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a>.navPosllh.iTOW,</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;             <a class="code" href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a>.navPosllh.lat, <a class="code" href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a>.navPosllh.lon);</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    } <span class="comment">// else</span></div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;<span class="preprocessor">#ifdef NAV_POSECEF</span></div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    <span class="keywordflow">if</span> (msgType == <a class="code" href="GPS_8h.html#a9730e8d0bbbe3f1515ed1d0b2acda1e1ae2379a504fb11d8e00e11bd567a3b819">MT_NAV_POSECEF</a>) {</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;      printf(<span class="stringliteral">&quot;NAV_POSECEF : %lu \t %ld\t \t%ld \t%ld \t\n&quot;</span>,</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;             <a class="code" href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a>.<a class="code" href="unionUBXMessage.html#aa57d81c1fb373e82012ca3ddadefd79f">navPosecef</a>.<a class="code" href="structNAV__POSECEF__STRUCT.html#a36711ead60d9cde7974cbeda7de4c35f">iTOW</a>, <a class="code" href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a>.<a class="code" href="unionUBXMessage.html#aa57d81c1fb373e82012ca3ddadefd79f">navPosecef</a>.<a class="code" href="structNAV__POSECEF__STRUCT.html#ad1b8e404ffdeeb1954292e43fe3507b2">ecefX</a>,</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;             <a class="code" href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a>.<a class="code" href="unionUBXMessage.html#aa57d81c1fb373e82012ca3ddadefd79f">navPosecef</a>.<a class="code" href="structNAV__POSECEF__STRUCT.html#a9e56104db13a84e53c2dec44e5ff63b2">ecefY</a>, <a class="code" href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a>.<a class="code" href="unionUBXMessage.html#aa57d81c1fb373e82012ca3ddadefd79f">navPosecef</a>.<a class="code" href="structNAV__POSECEF__STRUCT.html#acff937b434d1a245763b778f1f15ba66">ecefZ</a>);</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    } <span class="comment">// else</span></div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160; </div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;<span class="preprocessor">#ifdef NAV_PVT</span></div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    <span class="keywordflow">if</span> (msgType == <a class="code" href="GPS_8h.html#a9730e8d0bbbe3f1515ed1d0b2acda1e1a87ee2b7c21367a2caa62b0a01491ea23">MT_NAV_PVT</a>) {</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;      printf(<span class="stringliteral">&quot;MT_NAV_PVT:\t %lu\t %ul\t  %f\t %f\t %f\t %f\t %f\t %f \n&quot;</span>,</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;             <a class="code" href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a>.<a class="code" href="unionUBXMessage.html#ae5d0a8c24ea04c5b48614e3af5dadea4">navPvt</a>.<a class="code" href="structNAV__PVT__STRUCT.html#a77b13534f916d34c72d828e63f2c685c">iTOW</a>, <a class="code" href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a>.<a class="code" href="unionUBXMessage.html#ae5d0a8c24ea04c5b48614e3af5dadea4">navPvt</a>.<a class="code" href="structNAV__PVT__STRUCT.html#af38c07f23fd57d4cb4a88dd99492ce3b">fixType</a>,</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;             0.001 * (<span class="keywordtype">float</span>)<a class="code" href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a>.<a class="code" href="unionUBXMessage.html#ae5d0a8c24ea04c5b48614e3af5dadea4">navPvt</a>.<a class="code" href="structNAV__PVT__STRUCT.html#a9f0c42e0df789f5ed086349ad79d1f9c">velN</a>,</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;             0.001 * (<span class="keywordtype">float</span>)<a class="code" href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a>.<a class="code" href="unionUBXMessage.html#ae5d0a8c24ea04c5b48614e3af5dadea4">navPvt</a>.<a class="code" href="structNAV__PVT__STRUCT.html#a1abd8ac18139ec0e1148cbea6cd36b18">velE</a>,</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;             0.001 * (<span class="keywordtype">float</span>)<a class="code" href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a>.<a class="code" href="unionUBXMessage.html#ae5d0a8c24ea04c5b48614e3af5dadea4">navPvt</a>.<a class="code" href="structNAV__PVT__STRUCT.html#ae5860d883e58fa8d23dba2c4aa1c3e45">velD</a>,</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;             1e-7 * DEG_TO_RAD * (<span class="keywordtype">float</span>)<a class="code" href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a>.<a class="code" href="unionUBXMessage.html#ae5d0a8c24ea04c5b48614e3af5dadea4">navPvt</a>.<a class="code" href="structNAV__PVT__STRUCT.html#ab8a62324ff89a0c707884bfc34aba85d">lat</a>,</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;             1e-7 * DEG_TO_RAD * (<span class="keywordtype">float</span>)<a class="code" href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a>.<a class="code" href="unionUBXMessage.html#ae5d0a8c24ea04c5b48614e3af5dadea4">navPvt</a>.<a class="code" href="structNAV__PVT__STRUCT.html#ac884e66d0b3ebd6530680ad23e13a81e">lon</a>,</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;             0.001f * (<span class="keywordtype">float</span>)<a class="code" href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a>.<a class="code" href="unionUBXMessage.html#ae5d0a8c24ea04c5b48614e3af5dadea4">navPvt</a>.<a class="code" href="structNAV__PVT__STRUCT.html#a593d78a85e8db2a7511396023ac72bd6">hMSL</a>);</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;    }</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;  }</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;}</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160; </div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* GPS_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aGPS_8h_html_a23eb131661d623c855d4216331834845"><div class="ttname"><a href="GPS_8h.html#a23eb131661d623c855d4216331834845">UBX_HEADER</a></div><div class="ttdeci">const unsigned char UBX_HEADER[]</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00037">GPS.h:37</a></div></div>
+<div class="ttc" id="aGPS_8h_html_a27c939ba1a4f4d927aaa500781293ba7"><div class="ttname"><a href="GPS_8h.html#a27c939ba1a4f4d927aaa500781293ba7">data</a></div><div class="ttdeci">PacketData data</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00146">GPS.h:146</a></div></div>
+<div class="ttc" id="aGPS_8h_html_a35c55bcf9a6f5a52f34cb1ab02c91479"><div class="ttname"><a href="GPS_8h.html#a35c55bcf9a6f5a52f34cb1ab02c91479">gpsSetup</a></div><div class="ttdeci">void gpsSetup()</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00181">GPS.h:181</a></div></div>
+<div class="ttc" id="aGPS_8h_html_a3e09624a99733cc8e95b04f78d7319da"><div class="ttname"><a href="GPS_8h.html#a3e09624a99733cc8e95b04f78d7319da">NAV_POSECEF_HEADER</a></div><div class="ttdeci">const unsigned char NAV_POSECEF_HEADER[]</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00058">GPS.h:58</a></div></div>
+<div class="ttc" id="aGPS_8h_html_a4c90ad3996e1901ce9aa8a364eab6c0d"><div class="ttname"><a href="GPS_8h.html#a4c90ad3996e1901ce9aa8a364eab6c0d">NAV_PVT_HEADER</a></div><div class="ttdeci">const unsigned char NAV_PVT_HEADER[]</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00095">GPS.h:95</a></div></div>
+<div class="ttc" id="aGPS_8h_html_a4ff3f4ce55f117a43c4e117d850ca5a8"><div class="ttname"><a href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a></div><div class="ttdeci">UBXMessage ubxMessage</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00179">GPS.h:179</a></div></div>
+<div class="ttc" id="aGPS_8h_html_a5d2ecd8f29f7e3e702c8b8bea333f6c6"><div class="ttname"><a href="GPS_8h.html#a5d2ecd8f29f7e3e702c8b8bea333f6c6">GPSSERIAL</a></div><div class="ttdeci">HardwareSerial GPSSERIAL(1)</div></div>
+<div class="ttc" id="aGPS_8h_html_a9730e8d0bbbe3f1515ed1d0b2acda1e1"><div class="ttname"><a href="GPS_8h.html#a9730e8d0bbbe3f1515ed1d0b2acda1e1">_ubxMsgType</a></div><div class="ttdeci">_ubxMsgType</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00163">GPS.h:163</a></div></div>
+<div class="ttc" id="aGPS_8h_html_a9730e8d0bbbe3f1515ed1d0b2acda1e1a87ee2b7c21367a2caa62b0a01491ea23"><div class="ttname"><a href="GPS_8h.html#a9730e8d0bbbe3f1515ed1d0b2acda1e1a87ee2b7c21367a2caa62b0a01491ea23">MT_NAV_PVT</a></div><div class="ttdeci">@ MT_NAV_PVT</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00175">GPS.h:175</a></div></div>
+<div class="ttc" id="aGPS_8h_html_a9730e8d0bbbe3f1515ed1d0b2acda1e1ad2e3f1bdeae0fa235b7dfe6656c46f14"><div class="ttname"><a href="GPS_8h.html#a9730e8d0bbbe3f1515ed1d0b2acda1e1ad2e3f1bdeae0fa235b7dfe6656c46f14">MT_NONE</a></div><div class="ttdeci">@ MT_NONE</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00164">GPS.h:164</a></div></div>
+<div class="ttc" id="aGPS_8h_html_a9730e8d0bbbe3f1515ed1d0b2acda1e1ae2379a504fb11d8e00e11bd567a3b819"><div class="ttname"><a href="GPS_8h.html#a9730e8d0bbbe3f1515ed1d0b2acda1e1ae2379a504fb11d8e00e11bd567a3b819">MT_NAV_POSECEF</a></div><div class="ttdeci">@ MT_NAV_POSECEF</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00172">GPS.h:172</a></div></div>
+<div class="ttc" id="aGPS_8h_html_aa2fac937d6e192633f020459321241e7"><div class="ttname"><a href="GPS_8h.html#aa2fac937d6e192633f020459321241e7">calcChecksum</a></div><div class="ttdeci">void calcChecksum(unsigned char *CK, int msgSize)</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00286">GPS.h:286</a></div></div>
+<div class="ttc" id="aGPS_8h_html_aaab66558a5f695df7a6fcc3baa340da3"><div class="ttname"><a href="GPS_8h.html#aaab66558a5f695df7a6fcc3baa340da3">gps_imprime</a></div><div class="ttdeci">void gps_imprime()</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00392">GPS.h:392</a></div></div>
+<div class="ttc" id="aGPS_8h_html_ad604e63cc857e5663dfba96c37c66bc7"><div class="ttname"><a href="GPS_8h.html#ad604e63cc857e5663dfba96c37c66bc7">processGPS</a></div><div class="ttdeci">int processGPS()</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00301">GPS.h:301</a></div></div>
+<div class="ttc" id="aGPS_8h_html_aecde093c7427cc661daceaa118cf4455"><div class="ttname"><a href="GPS_8h.html#aecde093c7427cc661daceaa118cf4455">compareMsgHeader</a></div><div class="ttdeci">boolean compareMsgHeader(const unsigned char *msgHeader)</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00296">GPS.h:296</a></div></div>
+<div class="ttc" id="astructNAV__POSECEF__STRUCT_html"><div class="ttname"><a href="structNAV__POSECEF__STRUCT.html">NAV_POSECEF_STRUCT</a></div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00059">GPS.h:59</a></div></div>
+<div class="ttc" id="astructNAV__POSECEF__STRUCT_html_a36711ead60d9cde7974cbeda7de4c35f"><div class="ttname"><a href="structNAV__POSECEF__STRUCT.html#a36711ead60d9cde7974cbeda7de4c35f">NAV_POSECEF_STRUCT::iTOW</a></div><div class="ttdeci">unsigned long iTOW</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00063">GPS.h:63</a></div></div>
+<div class="ttc" id="astructNAV__POSECEF__STRUCT_html_a4f7633b71bc8cccd1d7ab744659f6d89"><div class="ttname"><a href="structNAV__POSECEF__STRUCT.html#a4f7633b71bc8cccd1d7ab744659f6d89">NAV_POSECEF_STRUCT::len</a></div><div class="ttdeci">unsigned short len</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00062">GPS.h:62</a></div></div>
+<div class="ttc" id="astructNAV__POSECEF__STRUCT_html_a9e56104db13a84e53c2dec44e5ff63b2"><div class="ttname"><a href="structNAV__POSECEF__STRUCT.html#a9e56104db13a84e53c2dec44e5ff63b2">NAV_POSECEF_STRUCT::ecefY</a></div><div class="ttdeci">long ecefY</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00067">GPS.h:67</a></div></div>
+<div class="ttc" id="astructNAV__POSECEF__STRUCT_html_aadaff22d2b530c65f1a879a4838f223b"><div class="ttname"><a href="structNAV__POSECEF__STRUCT.html#aadaff22d2b530c65f1a879a4838f223b">NAV_POSECEF_STRUCT::id</a></div><div class="ttdeci">unsigned char id</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00061">GPS.h:61</a></div></div>
+<div class="ttc" id="astructNAV__POSECEF__STRUCT_html_aaec8c5597e47db77dbe3cc9ce1aefa8e"><div class="ttname"><a href="structNAV__POSECEF__STRUCT.html#aaec8c5597e47db77dbe3cc9ce1aefa8e">NAV_POSECEF_STRUCT::cls</a></div><div class="ttdeci">unsigned char cls</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00060">GPS.h:60</a></div></div>
+<div class="ttc" id="astructNAV__POSECEF__STRUCT_html_acff937b434d1a245763b778f1f15ba66"><div class="ttname"><a href="structNAV__POSECEF__STRUCT.html#acff937b434d1a245763b778f1f15ba66">NAV_POSECEF_STRUCT::ecefZ</a></div><div class="ttdeci">long ecefZ</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00069">GPS.h:69</a></div></div>
+<div class="ttc" id="astructNAV__POSECEF__STRUCT_html_ad1b8e404ffdeeb1954292e43fe3507b2"><div class="ttname"><a href="structNAV__POSECEF__STRUCT.html#ad1b8e404ffdeeb1954292e43fe3507b2">NAV_POSECEF_STRUCT::ecefX</a></div><div class="ttdeci">long ecefX</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00065">GPS.h:65</a></div></div>
+<div class="ttc" id="astructNAV__POSECEF__STRUCT_html_af6632b8d7323f356aac7f34e1656dbba"><div class="ttname"><a href="structNAV__POSECEF__STRUCT.html#af6632b8d7323f356aac7f34e1656dbba">NAV_POSECEF_STRUCT::pAcc</a></div><div class="ttdeci">long pAcc</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00070">GPS.h:70</a></div></div>
+<div class="ttc" id="astructNAV__PVT__STRUCT_html"><div class="ttname"><a href="structNAV__PVT__STRUCT.html">NAV_PVT_STRUCT</a></div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00096">GPS.h:96</a></div></div>
+<div class="ttc" id="astructNAV__PVT__STRUCT_html_a0304e9a013eec6cf906793fcfad5fe59"><div class="ttname"><a href="structNAV__PVT__STRUCT.html#a0304e9a013eec6cf906793fcfad5fe59">NAV_PVT_STRUCT::gSpeed</a></div><div class="ttdeci">long gSpeed</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00126">GPS.h:126</a></div></div>
+<div class="ttc" id="astructNAV__PVT__STRUCT_html_a03d604d979ea8d066edf62a4a1b2c46e"><div class="ttname"><a href="structNAV__PVT__STRUCT.html#a03d604d979ea8d066edf62a4a1b2c46e">NAV_PVT_STRUCT::headVeh</a></div><div class="ttdeci">long headVeh</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00132">GPS.h:132</a></div></div>
+<div class="ttc" id="astructNAV__PVT__STRUCT_html_a1abd8ac18139ec0e1148cbea6cd36b18"><div class="ttname"><a href="structNAV__PVT__STRUCT.html#a1abd8ac18139ec0e1148cbea6cd36b18">NAV_PVT_STRUCT::velE</a></div><div class="ttdeci">long velE</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00123">GPS.h:123</a></div></div>
+<div class="ttc" id="astructNAV__PVT__STRUCT_html_a3b772ad4a5c93eef8db16e6f5bbfcd59"><div class="ttname"><a href="structNAV__PVT__STRUCT.html#a3b772ad4a5c93eef8db16e6f5bbfcd59">NAV_PVT_STRUCT::nano</a></div><div class="ttdeci">long nano</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00109">GPS.h:109</a></div></div>
+<div class="ttc" id="astructNAV__PVT__STRUCT_html_a3bd1bada160988b8a9c829685b9ec58c"><div class="ttname"><a href="structNAV__PVT__STRUCT.html#a3bd1bada160988b8a9c829685b9ec58c">NAV_PVT_STRUCT::flags</a></div><div class="ttdeci">unsigned char flags</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00111">GPS.h:111</a></div></div>
+<div class="ttc" id="astructNAV__PVT__STRUCT_html_a42a6506722356f74e72a6c09b3d36981"><div class="ttname"><a href="structNAV__PVT__STRUCT.html#a42a6506722356f74e72a6c09b3d36981">NAV_PVT_STRUCT::cls</a></div><div class="ttdeci">unsigned char cls</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00097">GPS.h:97</a></div></div>
+<div class="ttc" id="astructNAV__PVT__STRUCT_html_a45c1c383f15364531cefad7a9689e4cd"><div class="ttname"><a href="structNAV__PVT__STRUCT.html#a45c1c383f15364531cefad7a9689e4cd">NAV_PVT_STRUCT::len</a></div><div class="ttdeci">unsigned short len</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00099">GPS.h:99</a></div></div>
+<div class="ttc" id="astructNAV__PVT__STRUCT_html_a4ca689c97238b68b845f03117f79e789"><div class="ttname"><a href="structNAV__PVT__STRUCT.html#a4ca689c97238b68b845f03117f79e789">NAV_PVT_STRUCT::month</a></div><div class="ttdeci">unsigned char month</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00102">GPS.h:102</a></div></div>
+<div class="ttc" id="astructNAV__PVT__STRUCT_html_a4ec7b63e686800c231126a74722e47ca"><div class="ttname"><a href="structNAV__PVT__STRUCT.html#a4ec7b63e686800c231126a74722e47ca">NAV_PVT_STRUCT::numSV</a></div><div class="ttdeci">unsigned char numSV</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00113">GPS.h:113</a></div></div>
+<div class="ttc" id="astructNAV__PVT__STRUCT_html_a587393afa60a9c94edbf39f90f876cbb"><div class="ttname"><a href="structNAV__PVT__STRUCT.html#a587393afa60a9c94edbf39f90f876cbb">NAV_PVT_STRUCT::hAcc</a></div><div class="ttdeci">unsigned long hAcc</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00118">GPS.h:118</a></div></div>
+<div class="ttc" id="astructNAV__PVT__STRUCT_html_a593d78a85e8db2a7511396023ac72bd6"><div class="ttname"><a href="structNAV__PVT__STRUCT.html#a593d78a85e8db2a7511396023ac72bd6">NAV_PVT_STRUCT::hMSL</a></div><div class="ttdeci">long hMSL</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00117">GPS.h:117</a></div></div>
+<div class="ttc" id="astructNAV__PVT__STRUCT_html_a5a579a58fac4d536c0a92b0126a6bf1d"><div class="ttname"><a href="structNAV__PVT__STRUCT.html#a5a579a58fac4d536c0a92b0126a6bf1d">NAV_PVT_STRUCT::vAcc</a></div><div class="ttdeci">unsigned long vAcc</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00119">GPS.h:119</a></div></div>
+<div class="ttc" id="astructNAV__PVT__STRUCT_html_a6fcb9f165e78a4f81c8891841de5ac62"><div class="ttname"><a href="structNAV__PVT__STRUCT.html#a6fcb9f165e78a4f81c8891841de5ac62">NAV_PVT_STRUCT::year</a></div><div class="ttdeci">unsigned short year</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00101">GPS.h:101</a></div></div>
+<div class="ttc" id="astructNAV__PVT__STRUCT_html_a77b13534f916d34c72d828e63f2c685c"><div class="ttname"><a href="structNAV__PVT__STRUCT.html#a77b13534f916d34c72d828e63f2c685c">NAV_PVT_STRUCT::iTOW</a></div><div class="ttdeci">unsigned long iTOW</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00100">GPS.h:100</a></div></div>
+<div class="ttc" id="astructNAV__PVT__STRUCT_html_a863c8316485bbdf439073478fc25343a"><div class="ttname"><a href="structNAV__PVT__STRUCT.html#a863c8316485bbdf439073478fc25343a">NAV_PVT_STRUCT::min</a></div><div class="ttdeci">unsigned char min</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00105">GPS.h:105</a></div></div>
+<div class="ttc" id="astructNAV__PVT__STRUCT_html_a8bc469b1c7053cc1358d411041266729"><div class="ttname"><a href="structNAV__PVT__STRUCT.html#a8bc469b1c7053cc1358d411041266729">NAV_PVT_STRUCT::sAcc</a></div><div class="ttdeci">unsigned long sAcc</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00128">GPS.h:128</a></div></div>
+<div class="ttc" id="astructNAV__PVT__STRUCT_html_a8fbe98b98c20bffb60327748af7d4e6a"><div class="ttname"><a href="structNAV__PVT__STRUCT.html#a8fbe98b98c20bffb60327748af7d4e6a">NAV_PVT_STRUCT::pDOP</a></div><div class="ttdeci">unsigned short pDOP</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00130">GPS.h:130</a></div></div>
+<div class="ttc" id="astructNAV__PVT__STRUCT_html_a951fd966a0fc28300db089792547d2d8"><div class="ttname"><a href="structNAV__PVT__STRUCT.html#a951fd966a0fc28300db089792547d2d8">NAV_PVT_STRUCT::sec</a></div><div class="ttdeci">unsigned char sec</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00106">GPS.h:106</a></div></div>
+<div class="ttc" id="astructNAV__PVT__STRUCT_html_a9558a232009d5fe838e22bc9c8eb0ba3"><div class="ttname"><a href="structNAV__PVT__STRUCT.html#a9558a232009d5fe838e22bc9c8eb0ba3">NAV_PVT_STRUCT::hour</a></div><div class="ttdeci">unsigned char hour</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00104">GPS.h:104</a></div></div>
+<div class="ttc" id="astructNAV__PVT__STRUCT_html_a9f0c42e0df789f5ed086349ad79d1f9c"><div class="ttname"><a href="structNAV__PVT__STRUCT.html#a9f0c42e0df789f5ed086349ad79d1f9c">NAV_PVT_STRUCT::velN</a></div><div class="ttdeci">long velN</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00121">GPS.h:121</a></div></div>
+<div class="ttc" id="astructNAV__PVT__STRUCT_html_a9fac1821733bc6d8829322edcbdb651c"><div class="ttname"><a href="structNAV__PVT__STRUCT.html#a9fac1821733bc6d8829322edcbdb651c">NAV_PVT_STRUCT::flags2</a></div><div class="ttdeci">unsigned char flags2</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00112">GPS.h:112</a></div></div>
+<div class="ttc" id="astructNAV__PVT__STRUCT_html_aacdb7b954a1e04eac787d8aa60409eee"><div class="ttname"><a href="structNAV__PVT__STRUCT.html#aacdb7b954a1e04eac787d8aa60409eee">NAV_PVT_STRUCT::height</a></div><div class="ttdeci">long height</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00116">GPS.h:116</a></div></div>
+<div class="ttc" id="astructNAV__PVT__STRUCT_html_aaf41d738d049ebd1c80396b4b531273b"><div class="ttname"><a href="structNAV__PVT__STRUCT.html#aaf41d738d049ebd1c80396b4b531273b">NAV_PVT_STRUCT::headAcc</a></div><div class="ttdeci">unsigned long headAcc</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00129">GPS.h:129</a></div></div>
+<div class="ttc" id="astructNAV__PVT__STRUCT_html_ab59fe8ccda8098515daa41f135c4f812"><div class="ttname"><a href="structNAV__PVT__STRUCT.html#ab59fe8ccda8098515daa41f135c4f812">NAV_PVT_STRUCT::valid</a></div><div class="ttdeci">unsigned char valid</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00107">GPS.h:107</a></div></div>
+<div class="ttc" id="astructNAV__PVT__STRUCT_html_ab8a62324ff89a0c707884bfc34aba85d"><div class="ttname"><a href="structNAV__PVT__STRUCT.html#ab8a62324ff89a0c707884bfc34aba85d">NAV_PVT_STRUCT::lat</a></div><div class="ttdeci">long lat</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00115">GPS.h:115</a></div></div>
+<div class="ttc" id="astructNAV__PVT__STRUCT_html_aba771368d0601aa15eec99ab7050a095"><div class="ttname"><a href="structNAV__PVT__STRUCT.html#aba771368d0601aa15eec99ab7050a095">NAV_PVT_STRUCT::day</a></div><div class="ttdeci">unsigned char day</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00103">GPS.h:103</a></div></div>
+<div class="ttc" id="astructNAV__PVT__STRUCT_html_ac04cfb4bf12ae9c3df554629740f3286"><div class="ttname"><a href="structNAV__PVT__STRUCT.html#ac04cfb4bf12ae9c3df554629740f3286">NAV_PVT_STRUCT::tAcc</a></div><div class="ttdeci">unsigned long tAcc</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00108">GPS.h:108</a></div></div>
+<div class="ttc" id="astructNAV__PVT__STRUCT_html_ac180d88179b0671dca08121915d55838"><div class="ttname"><a href="structNAV__PVT__STRUCT.html#ac180d88179b0671dca08121915d55838">NAV_PVT_STRUCT::reserved1</a></div><div class="ttdeci">unsigned char reserved1[6]</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00131">GPS.h:131</a></div></div>
+<div class="ttc" id="astructNAV__PVT__STRUCT_html_ac7f737a77264a615d090846e8508b15c"><div class="ttname"><a href="structNAV__PVT__STRUCT.html#ac7f737a77264a615d090846e8508b15c">NAV_PVT_STRUCT::id</a></div><div class="ttdeci">unsigned char id</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00098">GPS.h:98</a></div></div>
+<div class="ttc" id="astructNAV__PVT__STRUCT_html_ac884e66d0b3ebd6530680ad23e13a81e"><div class="ttname"><a href="structNAV__PVT__STRUCT.html#ac884e66d0b3ebd6530680ad23e13a81e">NAV_PVT_STRUCT::lon</a></div><div class="ttdeci">long lon</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00114">GPS.h:114</a></div></div>
+<div class="ttc" id="astructNAV__PVT__STRUCT_html_acd88d08d72da09efa3edfef59c24f5e3"><div class="ttname"><a href="structNAV__PVT__STRUCT.html#acd88d08d72da09efa3edfef59c24f5e3">NAV_PVT_STRUCT::headMot</a></div><div class="ttdeci">long headMot</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00127">GPS.h:127</a></div></div>
+<div class="ttc" id="astructNAV__PVT__STRUCT_html_ad7be043d349fb056d0c47de5282750b4"><div class="ttname"><a href="structNAV__PVT__STRUCT.html#ad7be043d349fb056d0c47de5282750b4">NAV_PVT_STRUCT::reserved2</a></div><div class="ttdeci">unsigned long reserved2</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00133">GPS.h:133</a></div></div>
+<div class="ttc" id="astructNAV__PVT__STRUCT_html_ae5860d883e58fa8d23dba2c4aa1c3e45"><div class="ttname"><a href="structNAV__PVT__STRUCT.html#ae5860d883e58fa8d23dba2c4aa1c3e45">NAV_PVT_STRUCT::velD</a></div><div class="ttdeci">long velD</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00125">GPS.h:125</a></div></div>
+<div class="ttc" id="astructNAV__PVT__STRUCT_html_af38c07f23fd57d4cb4a88dd99492ce3b"><div class="ttname"><a href="structNAV__PVT__STRUCT.html#af38c07f23fd57d4cb4a88dd99492ce3b">NAV_PVT_STRUCT::fixType</a></div><div class="ttdeci">unsigned char fixType</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00110">GPS.h:110</a></div></div>
+<div class="ttc" id="astructPacketData_html"><div class="ttname"><a href="structPacketData.html">PacketData</a></div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00137">GPS.h:137</a></div></div>
+<div class="ttc" id="astructPacketData_html_a0a6e39d74d6461dcac04e8a19dcd0b6d"><div class="ttname"><a href="structPacketData.html#a0a6e39d74d6461dcac04e8a19dcd0b6d">PacketData::lon</a></div><div class="ttdeci">long lon</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00138">GPS.h:138</a></div></div>
+<div class="ttc" id="astructPacketData_html_a22515ed8e898933c6b2bdb48e06cc8d7"><div class="ttname"><a href="structPacketData.html#a22515ed8e898933c6b2bdb48e06cc8d7">PacketData::velD</a></div><div class="ttdeci">long velD</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00143">GPS.h:143</a></div></div>
+<div class="ttc" id="astructPacketData_html_a398a83a5119663539a6e0aedebfcd60b"><div class="ttname"><a href="structPacketData.html#a398a83a5119663539a6e0aedebfcd60b">PacketData::lat</a></div><div class="ttdeci">long lat</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00139">GPS.h:139</a></div></div>
+<div class="ttc" id="astructPacketData_html_a9cdf7ee028863b451b3ad3fc22e4827a"><div class="ttname"><a href="structPacketData.html#a9cdf7ee028863b451b3ad3fc22e4827a">PacketData::velN</a></div><div class="ttdeci">long velN</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00141">GPS.h:141</a></div></div>
+<div class="ttc" id="astructPacketData_html_ac04ae3b7a33e3d1a04650289429d78ec"><div class="ttname"><a href="structPacketData.html#ac04ae3b7a33e3d1a04650289429d78ec">PacketData::altitude</a></div><div class="ttdeci">int32_t altitude</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00140">GPS.h:140</a></div></div>
+<div class="ttc" id="astructPacketData_html_ae937755078f86e2a4c4827b07d31f72c"><div class="ttname"><a href="structPacketData.html#ae937755078f86e2a4c4827b07d31f72c">PacketData::velE</a></div><div class="ttdeci">long velE</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00142">GPS.h:142</a></div></div>
+<div class="ttc" id="aunionUBXMessage_html"><div class="ttname"><a href="unionUBXMessage.html">UBXMessage</a></div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00148">GPS.h:148</a></div></div>
+<div class="ttc" id="aunionUBXMessage_html_aa57d81c1fb373e82012ca3ddadefd79f"><div class="ttname"><a href="unionUBXMessage.html#aa57d81c1fb373e82012ca3ddadefd79f">UBXMessage::navPosecef</a></div><div class="ttdeci">NAV_POSECEF_STRUCT navPosecef</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00156">GPS.h:156</a></div></div>
+<div class="ttc" id="aunionUBXMessage_html_ae5d0a8c24ea04c5b48614e3af5dadea4"><div class="ttname"><a href="unionUBXMessage.html#ae5d0a8c24ea04c5b48614e3af5dadea4">UBXMessage::navPvt</a></div><div class="ttdeci">NAV_PVT_STRUCT navPvt</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00159">GPS.h:159</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

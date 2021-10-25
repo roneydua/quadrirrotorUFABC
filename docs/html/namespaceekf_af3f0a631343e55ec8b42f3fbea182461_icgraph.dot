@@ -1,0 +1,28 @@
+digraph "ekf::skew"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  rankdir="RL";
+  Node1 [label="ekf::skew",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Matrix antissimetrica."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node2 [label="ekf::computeMcdFromQuaternion",height=0.2,width=0.4,color="black",URL="$namespaceekf.html#ac031eda654b199bd45807eed2acdb3ec",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node3 [label="ekf::Q_l",height=0.2,width=0.4,color="black",URL="$namespaceekf.html#a34993a331b6837e5274d556e4f0a1bea",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node4 [label="Controle::computeRotational\lTarget",height=0.2,width=0.4,color="black",URL="$classControle.html#a8ac9e933ce30f9c88ed421d4c0afcf99",tooltip=" "];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node5 [label="Controle::controlLoop",height=0.2,width=0.4,color="black",URL="$classControle.html#a78e5f662130811f409342a706d5c0d2f",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node6 [label="ekf::Q_r",height=0.2,width=0.4,color="black",URL="$namespaceekf.html#abd4511440a60041d2e32a0dcbd28e29b",tooltip=" "];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node7 [label="ekf::S_l",height=0.2,width=0.4,color="black",URL="$namespaceekf.html#a8177897fe9b962d8e0927a913fc36242",tooltip="Calcula a Matriz Lefth-Quaternion a partir do quaternion q."];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node8 [label="Controle::computeRotational\lControl",height=0.2,width=0.4,color="black",URL="$classControle.html#abcf05dcff157e963fd65c09d45261a8f",tooltip=" "];
+  Node8 -> Node5 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node9 [label="ekf::S_r",height=0.2,width=0.4,color="black",URL="$namespaceekf.html#a97bc65b3f2d630a876b271fc21e9da9c",tooltip="Calcula a Matriz Right-Quaternion a partir do quaternion q."];
+  Node1 -> Node10 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node10 [label="Drone::updateStateMatrices",height=0.2,width=0.4,color="black",URL="$classDrone.html#a1531c9d38e26bb12a8b650ba40d915ca",tooltip=" "];
+}

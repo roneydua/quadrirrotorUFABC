@@ -1,0 +1,272 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compounddef id="GRUPO__QUAT_8cpp" kind="file" language="C++">
+    <compoundname>GRUPO_QUAT.cpp</compoundname>
+    <includes refid="GRUPO__QUAT_8h" local="yes">GRUPO_QUAT.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>lib/GRUPO_QUAT/GRUPO_QUAT.cpp</label>
+        <link refid="GRUPO__QUAT_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>eigen3/Eigen/Dense</label>
+      </node>
+      <node id="4">
+        <label>iostream</label>
+      </node>
+      <node id="2">
+        <label>GRUPO_QUAT.h</label>
+        <link refid="GRUPO__QUAT_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceekf">ekf</innernamespace>
+    <briefdescription>
+<para>Cabecalho com funcoes de quaternion. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>@Author: roney @Date: 2021-08-16T10:17:42-03:00 @Last modified by: roney @Last modified time: 2021-08-18T14:32:09-03:00</para>
+<para><simplesect kind="author"><para>Roney D da Silva </para>
+</simplesect>
+<simplesect kind="date"><para>7 Apr 2021 </para>
+</simplesect>
+<simplesect kind="copyright"><para>2021 Roney D da Silva Email: <ulink url="mailto:roneyddasilva@gmail.com">roneyddasilva@gmail.com</ulink> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="GRUPO__QUAT_8h" kindref="compound">GRUPO_QUAT.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__XTENSA__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">//<sp/>#include<sp/>&lt;Arduino.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceekf" kindref="compound">ekf</ref><sp/>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="namespaceekf_1a6cebd8d5c8351ad9e2ae4de5bc0065c2" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="namespaceekf_1a6cebd8d5c8351ad9e2ae4de5bc0065c2" kindref="member">TOLERANCE</ref><sp/>=<sp/>1e-6;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="namespaceekf_1abd4511440a60041d2e32a0dcbd28e29b" refkind="member"><highlight class="normal">Eigen::MatrixXf<sp/><ref refid="namespaceekf_1abd4511440a60041d2e32a0dcbd28e29b" kindref="member">Q_r</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Ref&lt;Eigen::Vector4f&gt;<sp/>&amp;q)<sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/>Eigen::MatrixXf<sp/>M<sp/>=<sp/>Eigen::MatrixXf::Zero(4,<sp/>3);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/>M.row(0)<sp/>=<sp/>-q.tail(3);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/>M.bottomLeftCorner(3,<sp/>3)<sp/>=</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>q(0)<sp/>*<sp/>Eigen::Matrix3f::Identity()<sp/>-<sp/><ref refid="namespaceekf_1af3f0a631343e55ec8b42f3fbea182461" kindref="member">skew</ref>(q.tail(3));</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>M;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="namespaceekf_1a34993a331b6837e5274d556e4f0a1bea" refkind="member"><highlight class="normal">Eigen::MatrixXf<sp/><ref refid="namespaceekf_1a34993a331b6837e5274d556e4f0a1bea" kindref="member">Q_l</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Ref&lt;Eigen::Vector4f&gt;<sp/>&amp;q)<sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/>Eigen::MatrixXf<sp/>M<sp/>=<sp/>Eigen::MatrixXf::Zero(4,<sp/>3);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/>M.row(0)<sp/>=<sp/>-q.tail(3);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/>M.bottomLeftCorner(3,<sp/>3)<sp/>=</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>q(0)<sp/>*<sp/>Eigen::Matrix3f::Identity()<sp/>+<sp/><ref refid="namespaceekf_1af3f0a631343e55ec8b42f3fbea182461" kindref="member">skew</ref>(q.tail(3));</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>M;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="namespaceekf_1af3f0a631343e55ec8b42f3fbea182461" refkind="member"><highlight class="normal">Eigen::Matrix3f<sp/><ref refid="namespaceekf_1af3f0a631343e55ec8b42f3fbea182461" kindref="member">skew</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Vector3f<sp/>&amp;v)<sp/>{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/>Eigen::Matrix3f<sp/>M<sp/>=<sp/>Eigen::Matrix3f::Zero();</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/>M<sp/>&lt;&lt;<sp/>0,<sp/>-v(2),<sp/>v(1),<sp/>v(2),<sp/>0,<sp/>-v(0),<sp/>-v(1),<sp/>v(0),<sp/>0;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>M;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="75" refid="namespaceekf_1a97bc65b3f2d630a876b271fc21e9da9c" refkind="member"><highlight class="normal">Eigen::Matrix4f<sp/><ref refid="namespaceekf_1a97bc65b3f2d630a876b271fc21e9da9c" kindref="member">S_r</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Ref&lt;Eigen::Vector4f&gt;<sp/>q)<sp/>{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/>Eigen::Matrix4f<sp/>mS_r<sp/>=<sp/>Eigen::Matrix4f::Identity()<sp/>*<sp/>q(0);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/>mS_r.block&lt;1,<sp/>3&gt;(0,<sp/>1)<sp/>=<sp/>-q.segment&lt;3&gt;(1);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/>mS_r.block&lt;3,<sp/>1&gt;(1,<sp/>0)<sp/>=<sp/>q.segment&lt;3&gt;(1);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/>mS_r.block&lt;3,<sp/>3&gt;(1,<sp/>1)<sp/>-=<sp/><ref refid="namespaceekf_1af3f0a631343e55ec8b42f3fbea182461" kindref="member">skew</ref>(q.segment&lt;3&gt;(1));</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mS_r;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="90" refid="namespaceekf_1a8177897fe9b962d8e0927a913fc36242" refkind="member"><highlight class="normal">Eigen::Matrix4f<sp/><ref refid="namespaceekf_1a8177897fe9b962d8e0927a913fc36242" kindref="member">S_l</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Ref&lt;Eigen::Vector4f&gt;<sp/>&amp;q)<sp/>{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/>Eigen::Matrix4f<sp/>mS_r<sp/>=<sp/>Eigen::Matrix4f::Identity()<sp/>*<sp/>q(0);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/>mS_r.block&lt;1,<sp/>3&gt;(0,<sp/>1)<sp/>=<sp/>-q.segment&lt;3&gt;(1);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/>mS_r.block&lt;3,<sp/>1&gt;(1,<sp/>0)<sp/>=<sp/>q.segment&lt;3&gt;(1);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/>mS_r.block&lt;3,<sp/>3&gt;(1,<sp/>1)<sp/>+=<sp/><ref refid="namespaceekf_1af3f0a631343e55ec8b42f3fbea182461" kindref="member">skew</ref>(q.segment&lt;3&gt;(1));</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mS_r;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="102" refid="namespaceekf_1ac031eda654b199bd45807eed2acdb3ec" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceekf_1ac031eda654b199bd45807eed2acdb3ec" kindref="member">computeMcdFromQuaternion</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Vector4f<sp/>&amp;q,<sp/>Eigen::Matrix3f<sp/>&amp;mcd)<sp/>{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/>mcd<sp/>=<sp/>Eigen::Matrix3f::Identity()<sp/>*<sp/>(2.0f<sp/>*<sp/>q(0)<sp/>*<sp/>q(0)<sp/>-<sp/>1.0f)<sp/>+</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2.0f<sp/>*<sp/>(q.tail(3)<sp/>*<sp/>q.tail(3).transpose())<sp/>+</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2.0f<sp/>*<sp/>q(0)<sp/>*<sp/><ref refid="namespaceekf_1af3f0a631343e55ec8b42f3fbea182461" kindref="member">skew</ref>(q.tail(3));</highlight></codeline>
+<codeline lineno="106"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="111" refid="namespaceekf_1ae9e1aaaa7793db099f4ef88b44aab8d5" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceekf_1ae9e1aaaa7793db099f4ef88b44aab8d5" kindref="member">printEigen</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::MatrixXf<sp/>&amp;<ref refid="namespacedrone_1a7475c0a87d5c8ae96bdc6cb6e9d54a29" kindref="member">m</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>c<sp/>=<sp/><ref refid="namespacedrone_1a7475c0a87d5c8ae96bdc6cb6e9d54a29" kindref="member">m</ref>.cols();</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>l<sp/>=<sp/><ref refid="namespacedrone_1a7475c0a87d5c8ae96bdc6cb6e9d54a29" kindref="member">m</ref>.rows();</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>l;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>0;<sp/>j<sp/>&lt;<sp/>c;<sp/>j++)<sp/>{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>printf(&quot;%f\t&quot;,<sp/>m(i,<sp/>j));</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;,%f&quot;</highlight><highlight class="normal">,<sp/><ref refid="namespacedrone_1a7475c0a87d5c8ae96bdc6cb6e9d54a29" kindref="member">m</ref>(i,<sp/>j));</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;%s\n&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;,&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="121"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="130" refid="namespaceekf_1a4e04862fd7bb992a28c1dada9a939716" refkind="member"><highlight class="normal">Eigen::Vector3f<sp/><ref refid="namespaceekf_1a4e04862fd7bb992a28c1dada9a939716" kindref="member">computeVectorProjection</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Ref&lt;Eigen::Vector3f&gt;<sp/>&amp;v,</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Ref&lt;Eigen::Vector3f&gt;<sp/>&amp;u)<sp/>{</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(v<sp/>-<sp/>v.dot(u)<sp/>*<sp/>u);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142" refid="namespaceekf_1a0ae7d9ae45fba00d81bfe71ad73d7fee" refkind="member"><highlight class="normal">Eigen::Vector4f<sp/><ref refid="namespaceekf_1a0ae7d9ae45fba00d81bfe71ad73d7fee" kindref="member">multiplyQuaternions</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Ref&lt;Eigen::VectorXf&gt;<sp/>&amp;p,</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Ref&lt;Eigen::VectorXf&gt;<sp/>&amp;q)<sp/>{</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/>Eigen::Vector4f<sp/>pq;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/>pq(0)<sp/>=<sp/>p(0)<sp/>*<sp/>q(0)<sp/>-<sp/>p(1)<sp/>*<sp/>q(1)<sp/>-<sp/>p(2)<sp/>*<sp/>q(2)<sp/>-<sp/>p(3)<sp/>*<sp/>q(3);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/>pq(1)<sp/>=<sp/>p(0)<sp/>*<sp/>q(1)<sp/>+<sp/>p(1)<sp/>*<sp/>q(0)<sp/>+<sp/>p(2)<sp/>*<sp/>q(3)<sp/>-<sp/>p(3)<sp/>*<sp/>q(2);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/>pq(2)<sp/>=<sp/>p(0)<sp/>*<sp/>q(2)<sp/>-<sp/>p(1)<sp/>*<sp/>q(3)<sp/>+<sp/>p(2)<sp/>*<sp/>q(0)<sp/>+<sp/>p(3)<sp/>*<sp/>q(1);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/>pq(3)<sp/>=<sp/>p(0)<sp/>*<sp/>q(3)<sp/>+<sp/>p(1)<sp/>*<sp/>q(2)<sp/>-<sp/>p(2)<sp/>*<sp/>q(1)<sp/>+<sp/>p(3)<sp/>*<sp/>q(0);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pq;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152" refid="namespaceekf_1aab2dcd522b40c160064cfae69cae6d98" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceekf_1aab2dcd522b40c160064cfae69cae6d98" kindref="member">quaternion2Euler</ref>(Eigen::Ref&lt;Eigen::Vector3f&gt;<sp/>_euler,</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Ref&lt;const<sp/>Eigen::Vector4f&gt;<sp/>&amp;_q)<sp/>{</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>calculo<sp/>de<sp/>fi</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/>_euler(0)<sp/>=<sp/><ref refid="GRUPO__QUAT_8h_1a89e47af0449640d4f15191aba5ca24c6" kindref="member">RAD_TO_DEG</ref><sp/>*<sp/>atan2f(_q(2)<sp/>*<sp/>_q(3)<sp/>+<sp/>_q(0)<sp/>*<sp/>_q(1),</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_q(0)<sp/>*<sp/>_q(0)<sp/>+<sp/>_q(3)<sp/>*<sp/>_q(3)<sp/>-<sp/>0.5f);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>calculo<sp/>de<sp/>theta</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/>_euler(1)<sp/>=<sp/><ref refid="GRUPO__QUAT_8h_1a89e47af0449640d4f15191aba5ca24c6" kindref="member">RAD_TO_DEG</ref><sp/>*<sp/>asinf(2.0f<sp/>*<sp/>(_q(0)<sp/>*<sp/>_q(2)<sp/>-<sp/>_q(1)<sp/>*<sp/>_q(3)));</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>calculo<sp/>de<sp/>psi</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/>_euler(2)<sp/>=<sp/><ref refid="GRUPO__QUAT_8h_1a89e47af0449640d4f15191aba5ca24c6" kindref="member">RAD_TO_DEG</ref><sp/>*<sp/>atan2f(_q(1)<sp/>*<sp/>_q(2)<sp/>+<sp/>_q(0)<sp/>*<sp/>_q(3),</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_q(0)<sp/>*<sp/>_q(0)<sp/>+<sp/>_q(1)<sp/>*<sp/>_q(1)<sp/>-<sp/>0.5f);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="168" refid="namespaceekf_1a0bb5c9402b49d6ba5be7c97ef269ceb1" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceekf_1a0bb5c9402b49d6ba5be7c97ef269ceb1" kindref="member">integrationQuaternion</ref>(Eigen::Vector4f<sp/>&amp;_quat,</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Ref&lt;const<sp/>Eigen::VectorXf&gt;<sp/>&amp;_gyroscopio,</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>&amp;_dt)<sp/>{</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>_gyroscopio_norm<sp/>=<sp/>_gyroscopio.norm();</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(_gyroscopio_norm<sp/>&gt;<sp/><ref refid="namespaceekf_1a6cebd8d5c8351ad9e2ae4de5bc0065c2" kindref="member">TOLERANCE</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Vector4f<sp/>expMap;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>_dt_gyroscopio_norm_half<sp/>=<sp/>0.5f<sp/>*<sp/>_dt<sp/>*<sp/>_gyroscopio_norm;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>expMap(0)<sp/>=<sp/>cosf(_dt_gyroscopio_norm_half);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>expMap.tail(3)<sp/>=</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_gyroscopio<sp/>/<sp/>_gyroscopio_norm<sp/>*<sp/>sinf(_dt_gyroscopio_norm_half);</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/>_quat<sp/>=<sp/><ref refid="namespaceekf_1a0ae7d9ae45fba00d81bfe71ad73d7fee" kindref="member">multiplyQuaternions</ref>(_quat,<sp/>expMap);</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="188"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="198" refid="namespaceekf_1aaf74eae63658c0bd11df320327ecdb74" refkind="member"><highlight class="normal">Eigen::Vector3f<sp/><ref refid="namespaceekf_1aaf74eae63658c0bd11df320327ecdb74" kindref="member">rotateVectorWithQuaternion</ref>(Eigen::Vector4f<sp/>&amp;q,</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Eigen::Vector3f<sp/>&amp;v_old)<sp/>{</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>v_old<sp/>+</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2.0f<sp/>*<sp/>q.tail&lt;3&gt;().cross(q.tail&lt;3&gt;().cross(v_old)<sp/>+<sp/>q(0)<sp/>*<sp/>v_old);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213" refid="namespaceekf_1acb1dc12948420927eff91ed90c24b342" refkind="member"><highlight class="normal">Eigen::Vector3f<sp/><ref refid="namespaceekf_1acb1dc12948420927eff91ed90c24b342" kindref="member">rotateVectorWithQuaternion_Conjugate</ref>(Eigen::Vector4f<sp/>&amp;q,</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Eigen::Vector3f<sp/>&amp;v_old)<sp/>{</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>v_old<sp/>+</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2.0f<sp/>*</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(-q.tail&lt;3&gt;()).cross((-q.tail&lt;3&gt;()).cross(v_old)<sp/>+<sp/>q(0)<sp/>*<sp/>v_old);</highlight></codeline>
+<codeline lineno="218"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227" refid="namespaceekf_1ab55e144edf7066b67232e15cca7b4646" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="namespaceekf_1ab55e144edf7066b67232e15cca7b4646" kindref="member">invSqrt</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>_x)<sp/>{</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>halfx<sp/>=<sp/>0.5f<sp/>*<sp/>_x;</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">union<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>_y;</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>_i;</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/>}<sp/>conv<sp/>=<sp/>{._y<sp/>=<sp/>_x};</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>float<sp/>_y<sp/>=<sp/>_x;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>long<sp/>i<sp/>=<sp/>*(long<sp/>*)&amp;_y;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/>conv._i<sp/>=<sp/>0x5f3759df<sp/>-<sp/>(conv._i<sp/>&gt;&gt;<sp/>1);</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>_y<sp/>=<sp/>*(float<sp/>*)&amp;i;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/>conv._y<sp/>*=<sp/>(1.5f<sp/>-<sp/>(halfx<sp/>*<sp/>conv._y<sp/>*<sp/>conv._y));</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>segunda<sp/>iteracao.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>_y<sp/>=<sp/>_y<sp/>*<sp/>(1.5f<sp/>-<sp/>(halfx<sp/>*<sp/>_y<sp/>*<sp/>_y));</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>conv._y;</highlight></codeline>
+<codeline lineno="241"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="249"><highlight class="comment">void<sp/>computeQuaternionFromMCDShepperd(Eigen::Matrix3f<sp/>&amp;m,<sp/>Eigen::Vector4f<sp/>&amp;q)<sp/>{</highlight></codeline>
+<codeline lineno="250"><highlight class="comment"><sp/><sp/>Eigen::Vector4f<sp/>indexVector;</highlight></codeline>
+<codeline lineno="251"><highlight class="comment"><sp/><sp/>indexVector<sp/>&lt;&lt;<sp/>m.trace(),<sp/>m.diagonal();</highlight></codeline>
+<codeline lineno="252"><highlight class="comment"><sp/><sp/>Eigen::Vector4f::Index<sp/>max_index;</highlight></codeline>
+<codeline lineno="253"><highlight class="comment"><sp/><sp/>indexVector.maxCoeff(&amp;max_index);</highlight></codeline>
+<codeline lineno="254"><highlight class="comment"><sp/><sp/>printf(&quot;indice<sp/>%d\n&quot;,<sp/>max_index);</highlight></codeline>
+<codeline lineno="255"><highlight class="comment"><sp/><sp/>float<sp/>inv_q;</highlight></codeline>
+<codeline lineno="256"><highlight class="comment"><sp/><sp/>switch<sp/>(max_index)<sp/>{</highlight></codeline>
+<codeline lineno="257"><highlight class="comment"><sp/><sp/>case<sp/>0:</highlight></codeline>
+<codeline lineno="258"><highlight class="comment"><sp/><sp/><sp/><sp/>q(0)<sp/>=<sp/>sqrtf(1.0f<sp/>+<sp/>m.trace());</highlight></codeline>
+<codeline lineno="259"><highlight class="comment"><sp/><sp/><sp/><sp/>inv_q<sp/>=<sp/>0.5<sp/>/<sp/>q(0);</highlight></codeline>
+<codeline lineno="260"><highlight class="comment"><sp/><sp/><sp/><sp/>q(0)<sp/>*=<sp/>0.5;</highlight></codeline>
+<codeline lineno="261"><highlight class="comment"><sp/><sp/><sp/><sp/>q(1)<sp/>=<sp/>inv_q<sp/>*<sp/>(m(2,<sp/>1)<sp/>-<sp/>m(1,<sp/>2));</highlight></codeline>
+<codeline lineno="262"><highlight class="comment"><sp/><sp/><sp/><sp/>q(2)<sp/>=<sp/>inv_q<sp/>*<sp/>(m(0,<sp/>2)<sp/>-<sp/>m(2,<sp/>0));</highlight></codeline>
+<codeline lineno="263"><highlight class="comment"><sp/><sp/><sp/><sp/>q(3)<sp/>=<sp/>inv_q<sp/>*<sp/>(m(1,<sp/>0)<sp/>-<sp/>m(0,<sp/>1));</highlight></codeline>
+<codeline lineno="264"><highlight class="comment"><sp/><sp/><sp/><sp/>break;</highlight></codeline>
+<codeline lineno="265"><highlight class="comment"><sp/><sp/>case<sp/>1:</highlight></codeline>
+<codeline lineno="266"><highlight class="comment"><sp/><sp/><sp/><sp/>q(1)<sp/>=<sp/>sqrtf(1.0f<sp/>+<sp/>m(0,<sp/>0)<sp/>-<sp/>m(1,<sp/>1)<sp/>-<sp/>m(2,<sp/>2));</highlight></codeline>
+<codeline lineno="267"><highlight class="comment"><sp/><sp/><sp/><sp/>inv_q<sp/>=<sp/>0.5f<sp/>/<sp/>q(1);</highlight></codeline>
+<codeline lineno="268"><highlight class="comment"><sp/><sp/><sp/><sp/>q(1)<sp/>*=<sp/>0.5f;</highlight></codeline>
+<codeline lineno="269"><highlight class="comment"><sp/><sp/><sp/><sp/>q(0)<sp/>=<sp/>inv_q<sp/>*<sp/>(m(2,<sp/>1)<sp/>-<sp/>m(1,<sp/>2));</highlight></codeline>
+<codeline lineno="270"><highlight class="comment"><sp/><sp/><sp/><sp/>q(2)<sp/>=<sp/>inv_q<sp/>*<sp/>(m(0,<sp/>1)<sp/>+<sp/>m(1,<sp/>0));</highlight></codeline>
+<codeline lineno="271"><highlight class="comment"><sp/><sp/><sp/><sp/>q(3)<sp/>=<sp/>inv_q<sp/>*<sp/>(m(2,<sp/>0)<sp/>+<sp/>m(0,<sp/>2));</highlight></codeline>
+<codeline lineno="272"><highlight class="comment"><sp/><sp/><sp/><sp/>break;</highlight></codeline>
+<codeline lineno="273"><highlight class="comment"><sp/><sp/>case<sp/>2:</highlight></codeline>
+<codeline lineno="274"><highlight class="comment"><sp/><sp/><sp/><sp/>q(2)<sp/>=<sp/>sqrtf(1.0f<sp/>-<sp/>m(0,<sp/>0)<sp/>+<sp/>m(1,<sp/>1)<sp/>-<sp/>m(2,<sp/>2));</highlight></codeline>
+<codeline lineno="275"><highlight class="comment"><sp/><sp/><sp/><sp/>inv_q<sp/>=<sp/>0.5f<sp/>/<sp/>q(2);</highlight></codeline>
+<codeline lineno="276"><highlight class="comment"><sp/><sp/><sp/><sp/>q(2)<sp/>*=<sp/>0.5f;</highlight></codeline>
+<codeline lineno="277"><highlight class="comment"><sp/><sp/><sp/><sp/>q(0)<sp/>=<sp/>inv_q<sp/>*<sp/>(m(0,<sp/>2)<sp/>-<sp/>m(2,<sp/>0));</highlight></codeline>
+<codeline lineno="278"><highlight class="comment"><sp/><sp/><sp/><sp/>q(1)<sp/>=<sp/>inv_q<sp/>*<sp/>(m(0,<sp/>1)<sp/>+<sp/>m(1,<sp/>0));</highlight></codeline>
+<codeline lineno="279"><highlight class="comment"><sp/><sp/><sp/><sp/>q(3)<sp/>=<sp/>inv_q<sp/>*<sp/>(m(1,<sp/>2)<sp/>+<sp/>m(2,<sp/>1));</highlight></codeline>
+<codeline lineno="280"><highlight class="comment"><sp/><sp/><sp/><sp/>break;</highlight></codeline>
+<codeline lineno="281"><highlight class="comment"><sp/><sp/>default:</highlight></codeline>
+<codeline lineno="282"><highlight class="comment"><sp/><sp/><sp/><sp/>q(3)<sp/>=<sp/>sqrtf(1.0f<sp/>-<sp/>m(0,<sp/>0)<sp/>-<sp/>m(1,<sp/>1)<sp/>+<sp/>m(2,<sp/>2));</highlight></codeline>
+<codeline lineno="283"><highlight class="comment"><sp/><sp/><sp/><sp/>inv_q<sp/>=<sp/>0.5f<sp/>/<sp/>q(3);</highlight></codeline>
+<codeline lineno="284"><highlight class="comment"><sp/><sp/><sp/><sp/>q(3)<sp/>*=<sp/>0.5f;</highlight></codeline>
+<codeline lineno="285"><highlight class="comment"><sp/><sp/><sp/><sp/>q(0)<sp/>=<sp/>inv_q<sp/>*<sp/>(m(1,<sp/>0)<sp/>-<sp/>m(0,<sp/>1));</highlight></codeline>
+<codeline lineno="286"><highlight class="comment"><sp/><sp/><sp/><sp/>q(1)<sp/>=<sp/>inv_q<sp/>*<sp/>(m(2,<sp/>0)<sp/>+<sp/>m(0,<sp/>2));</highlight></codeline>
+<codeline lineno="287"><highlight class="comment"><sp/><sp/><sp/><sp/>q(2)<sp/>=<sp/>inv_q<sp/>*<sp/>(m(2,<sp/>1)<sp/>+<sp/>m(1,<sp/>2));</highlight></codeline>
+<codeline lineno="288"><highlight class="comment"><sp/><sp/><sp/><sp/>break;</highlight></codeline>
+<codeline lineno="289"><highlight class="comment"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="290"><highlight class="comment">}</highlight></codeline>
+<codeline lineno="291"><highlight class="comment"></highlight></codeline>
+<codeline lineno="292"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="293" refid="namespaceekf_1afe4fb3935c9dc91fcc8b57793f03a170" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceekf_1afe4fb3935c9dc91fcc8b57793f03a170" kindref="member">computeQuaternionFromMCDMarkley</ref>(Eigen::Matrix3f<sp/>&amp;<ref refid="namespacedrone_1a7475c0a87d5c8ae96bdc6cb6e9d54a29" kindref="member">m</ref>,</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Eigen::Ref&lt;Eigen::Vector4f&gt;<sp/>q)<sp/>{</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/>Eigen::Vector4f<sp/>indexVector;</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>_trace<sp/>=<sp/><ref refid="namespacedrone_1a7475c0a87d5c8ae96bdc6cb6e9d54a29" kindref="member">m</ref>.trace();</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/>indexVector<sp/>&lt;&lt;<sp/>_trace,<sp/><ref refid="namespacedrone_1a7475c0a87d5c8ae96bdc6cb6e9d54a29" kindref="member">m</ref>.diagonal();</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/>Eigen::Vector4f::Index<sp/>max_index;</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/>indexVector.maxCoeff(&amp;max_index);</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(max_index)<sp/>{</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>0:</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/>q(0)<sp/>=<sp/>1.0f<sp/>+<sp/>_trace;</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/>q(1)<sp/>=<sp/><ref refid="namespacedrone_1a7475c0a87d5c8ae96bdc6cb6e9d54a29" kindref="member">m</ref>(2,<sp/>1)<sp/>-<sp/><ref refid="namespacedrone_1a7475c0a87d5c8ae96bdc6cb6e9d54a29" kindref="member">m</ref>(1,<sp/>2);</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/>q(2)<sp/>=<sp/><ref refid="namespacedrone_1a7475c0a87d5c8ae96bdc6cb6e9d54a29" kindref="member">m</ref>(0,<sp/>2)<sp/>-<sp/><ref refid="namespacedrone_1a7475c0a87d5c8ae96bdc6cb6e9d54a29" kindref="member">m</ref>(2,<sp/>0);</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/>q(3)<sp/>=<sp/><ref refid="namespacedrone_1a7475c0a87d5c8ae96bdc6cb6e9d54a29" kindref="member">m</ref>(1,<sp/>0)<sp/>-<sp/><ref refid="namespacedrone_1a7475c0a87d5c8ae96bdc6cb6e9d54a29" kindref="member">m</ref>(0,<sp/>1);</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>1:</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/>q(0)<sp/>=<sp/><ref refid="namespacedrone_1a7475c0a87d5c8ae96bdc6cb6e9d54a29" kindref="member">m</ref>(2,<sp/>1)<sp/>-<sp/><ref refid="namespacedrone_1a7475c0a87d5c8ae96bdc6cb6e9d54a29" kindref="member">m</ref>(1,<sp/>2);</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/>q(1)<sp/>=<sp/>1.0f<sp/>+<sp/><ref refid="namespacedrone_1a7475c0a87d5c8ae96bdc6cb6e9d54a29" kindref="member">m</ref>(0,<sp/>0)<sp/>-<sp/><ref refid="namespacedrone_1a7475c0a87d5c8ae96bdc6cb6e9d54a29" kindref="member">m</ref>(1,<sp/>1)<sp/>-<sp/><ref refid="namespacedrone_1a7475c0a87d5c8ae96bdc6cb6e9d54a29" kindref="member">m</ref>(2,<sp/>2);</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/>q(2)<sp/>=<sp/><ref refid="namespacedrone_1a7475c0a87d5c8ae96bdc6cb6e9d54a29" kindref="member">m</ref>(0,<sp/>1)<sp/>+<sp/><ref refid="namespacedrone_1a7475c0a87d5c8ae96bdc6cb6e9d54a29" kindref="member">m</ref>(1,<sp/>0);</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/>q(3)<sp/>=<sp/><ref refid="namespacedrone_1a7475c0a87d5c8ae96bdc6cb6e9d54a29" kindref="member">m</ref>(2,<sp/>0)<sp/>+<sp/><ref refid="namespacedrone_1a7475c0a87d5c8ae96bdc6cb6e9d54a29" kindref="member">m</ref>(0,<sp/>2);</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>2:</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/>q(0)<sp/>=<sp/><ref refid="namespacedrone_1a7475c0a87d5c8ae96bdc6cb6e9d54a29" kindref="member">m</ref>(2,<sp/>0)<sp/>-<sp/><ref refid="namespacedrone_1a7475c0a87d5c8ae96bdc6cb6e9d54a29" kindref="member">m</ref>(0,<sp/>2);</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/>q(1)<sp/>=<sp/><ref refid="namespacedrone_1a7475c0a87d5c8ae96bdc6cb6e9d54a29" kindref="member">m</ref>(0,<sp/>1)<sp/>+<sp/><ref refid="namespacedrone_1a7475c0a87d5c8ae96bdc6cb6e9d54a29" kindref="member">m</ref>(1,<sp/>0);</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/>q(2)<sp/>=<sp/>1.0f<sp/>-<sp/><ref refid="namespacedrone_1a7475c0a87d5c8ae96bdc6cb6e9d54a29" kindref="member">m</ref>(0,<sp/>0)<sp/>+<sp/><ref refid="namespacedrone_1a7475c0a87d5c8ae96bdc6cb6e9d54a29" kindref="member">m</ref>(1,<sp/>1)<sp/>-<sp/><ref refid="namespacedrone_1a7475c0a87d5c8ae96bdc6cb6e9d54a29" kindref="member">m</ref>(2,<sp/>2);</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/>q(3)<sp/>=<sp/><ref refid="namespacedrone_1a7475c0a87d5c8ae96bdc6cb6e9d54a29" kindref="member">m</ref>(1,<sp/>2)<sp/>+<sp/><ref refid="namespacedrone_1a7475c0a87d5c8ae96bdc6cb6e9d54a29" kindref="member">m</ref>(2,<sp/>1);</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/>q(0)<sp/>=<sp/><ref refid="namespacedrone_1a7475c0a87d5c8ae96bdc6cb6e9d54a29" kindref="member">m</ref>(1,<sp/>0)<sp/>-<sp/><ref refid="namespacedrone_1a7475c0a87d5c8ae96bdc6cb6e9d54a29" kindref="member">m</ref>(0,<sp/>1);</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/>q(1)<sp/>=<sp/><ref refid="namespacedrone_1a7475c0a87d5c8ae96bdc6cb6e9d54a29" kindref="member">m</ref>(2,<sp/>0)<sp/>+<sp/><ref refid="namespacedrone_1a7475c0a87d5c8ae96bdc6cb6e9d54a29" kindref="member">m</ref>(0,<sp/>2);</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/>q(2)<sp/>=<sp/><ref refid="namespacedrone_1a7475c0a87d5c8ae96bdc6cb6e9d54a29" kindref="member">m</ref>(2,<sp/>1)<sp/>+<sp/><ref refid="namespacedrone_1a7475c0a87d5c8ae96bdc6cb6e9d54a29" kindref="member">m</ref>(1,<sp/>2);</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/>q(3)<sp/>=<sp/>1.0f<sp/>-<sp/><ref refid="namespacedrone_1a7475c0a87d5c8ae96bdc6cb6e9d54a29" kindref="member">m</ref>(0,<sp/>0)<sp/>-<sp/><ref refid="namespacedrone_1a7475c0a87d5c8ae96bdc6cb6e9d54a29" kindref="member">m</ref>(1,<sp/>1)<sp/>+<sp/><ref refid="namespacedrone_1a7475c0a87d5c8ae96bdc6cb6e9d54a29" kindref="member">m</ref>(2,<sp/>2);</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/>q.normalize();</highlight></codeline>
+<codeline lineno="327"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="328" refid="namespaceekf_1adf3091ade6b7c85db9dd5e6c238b57d0" refkind="member"><highlight class="normal">Eigen::VectorXf<sp/><ref refid="namespaceekf_1adf3091ade6b7c85db9dd5e6c238b57d0" kindref="member">RK</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>h,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen<sp/>::Ref&lt;Eigen::VectorXf&gt;<sp/>&amp;xk,</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen<sp/>::Ref&lt;Eigen::VectorXf&gt;<sp/>&amp;u,</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Eigen::VectorXf(fn)(Eigen::VectorXf<sp/>x,<sp/>Eigen::VectorXf<sp/>u))<sp/>{</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/>Eigen::VectorXf<sp/>k1(xk.rows()),<sp/>k2(xk.rows()),<sp/>k3(xk.rows()),<sp/>k4(xk.rows());</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/>k1<sp/>=<sp/>h<sp/>*<sp/>(*fn)(xk,<sp/>u);</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/>k2<sp/>=<sp/>h<sp/>*<sp/>(*fn)(xk<sp/>+<sp/>0.5<sp/>*<sp/>k1,<sp/>u);</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/>k3<sp/>=<sp/>h<sp/>*<sp/>(*fn)(xk<sp/>+<sp/>0.5<sp/>*<sp/>k2,<sp/>u);</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/>k4<sp/>=<sp/>h<sp/>*<sp/>(*fn)(xk<sp/>+<sp/>k3,<sp/>u);</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>xk<sp/>+<sp/>(k1<sp/>+<sp/>2.0f<sp/>*<sp/>(k2<sp/>+<sp/>k3)<sp/>+<sp/>k4)<sp/>/<sp/>6.0;</highlight></codeline>
+<codeline lineno="337"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="343" refid="namespaceekf_1a9a53e61c76edeebffe35da19a63b983f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceekf_1a9a53e61c76edeebffe35da19a63b983f" kindref="member">conjugate</ref>(Eigen::Ref&lt;Eigen::Vector4f&gt;<sp/>_q)<sp/>{<sp/>_q.tail(3)<sp/>*=<sp/>-1.0f;<sp/>}</highlight></codeline>
+<codeline lineno="344"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>ekf</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="lib/GRUPO_QUAT/GRUPO_QUAT.cpp"/>
+  </compounddef>
+</doxygen>

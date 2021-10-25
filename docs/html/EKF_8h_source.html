@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Quadrirrotor: Código-Fonte de lib/EKF/EKF.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Quadrirrotor
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Busca','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_f81b21074929c51f0f8ec4455f2eeb05.html">EKF</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">EKF.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="EKF_8h.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#ifndef EKF_H</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define EKF_H</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;eigen3/Eigen/Dense&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifdef __XTENSA__</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;../../src/COMMON.h&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;Arduino.h&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">// #include &quot;GPS.h&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;./../READWRITEEIGEN/readWriteEigen.h&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="structBASE.html">   22</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structBASE.html">BASE</a> {</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="structBASE.html#a76e12d3fb168dc1ce3f163c985382129">   24</a></span>&#160;  <span class="keywordtype">float</span> <a class="code" href="structBASE.html#a76e12d3fb168dc1ce3f163c985382129">lat</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="structBASE.html#ac118821d55d84bee606a64e60098c7d4">   26</a></span>&#160;  <span class="keywordtype">float</span> <a class="code" href="structBASE.html#ac118821d55d84bee606a64e60098c7d4">lon</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="structBASE.html#a24573bad2d025ea1b7023eb23b59a46e">   28</a></span>&#160;  <span class="keywordtype">float</span> <a class="code" href="structBASE.html#a24573bad2d025ea1b7023eb23b59a46e">hMSL</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="structBASE.html#ab4bcf2a27b373820efe4f530a101704d">   30</a></span>&#160;  Eigen::Matrix3f <a class="code" href="structBASE.html#ab4bcf2a27b373820efe4f530a101704d">Recef2ned</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="structBASE.html#ae9e7517ae5f24d671f404d18c1d0b90b">   32</a></span>&#160;  <span class="keywordtype">long</span> <a class="code" href="structBASE.html#ae9e7517ae5f24d671f404d18c1d0b90b">rECEF</a>[3];</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;};</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceekf.html">ekf</a> {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classekf_1_1EKF.html">   37</a></span>&#160;<span class="keyword">class </span><a class="code" href="classekf_1_1EKF.html">EKF</a> {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classekf_1_1EKF.html#a1aecb83d5af684f4f8637981089002b9">   39</a></span>&#160;  <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="classekf_1_1EKF.html#a1aecb83d5af684f4f8637981089002b9">DEG_TO_RAD_BY_10000000</a> =</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;      1e-7 / 57.295779513082320876798154814105f;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classekf_1_1EKF.html#abd8ccdb99191c1f3a7a5c03421f93d87">   44</a></span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classekf_1_1EKF.html#abd8ccdb99191c1f3a7a5c03421f93d87">nFull</a> = 15;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classekf_1_1EKF.html#ac02e28e5bd4b3e90d3ccb3dd1127e7b2">   46</a></span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classekf_1_1EKF.html#ac02e28e5bd4b3e90d3ccb3dd1127e7b2">pFull</a> = 7;</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classekf_1_1EKF.html#a88f92d86fabe318656e5ba458bc2e042">   48</a></span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classekf_1_1EKF.html#a88f92d86fabe318656e5ba458bc2e042">nAtitude</a> = 6;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classekf_1_1EKF.html#ad3a628fffe1f640b4968b8f6f8ef3b14">   50</a></span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classekf_1_1EKF.html#ad3a628fffe1f640b4968b8f6f8ef3b14">pAtitude</a> = 4;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <a class="code" href="classekf_1_1EKF.html#aea7bda69ce19f724930eb8c691272508">EKF</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classekf_1_1EKF.html#acd0f4714eb8ba12355d529580e928439">   52</a></span>&#160;  <a class="code" href="structBASE.html">BASE</a> <a class="code" href="classekf_1_1EKF.html#acd0f4714eb8ba12355d529580e928439">base</a>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classekf_1_1EKF.html#a4a6998123529ab0d0844ad21419fc895">begin</a>(<span class="keywordtype">float</span> <a class="code" href="classekf_1_1EKF.html#aee84ca91742c11dd89683930a58d59e3">dt</a>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classekf_1_1EKF.html#a651814ff64d234394572e2e7c5703a43">loopEKF</a>();</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classekf_1_1EKF.html#aee84ca91742c11dd89683930a58d59e3">   56</a></span>&#160;  <span class="keywordtype">float</span> <a class="code" href="classekf_1_1EKF.html#aee84ca91742c11dd89683930a58d59e3">dt</a> = 0.0f;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classekf_1_1EKF.html#a30d3adf68cc6ee599fec8fa45a697bbb">   58</a></span>&#160;  Eigen::Vector3f <a class="code" href="classekf_1_1EKF.html#a30d3adf68cc6ee599fec8fa45a697bbb">accel</a> = Eigen::Vector3f::Zero();</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classekf_1_1EKF.html#a440b83cfd38de4133d8071a158028c86">   60</a></span>&#160;  <span class="keyword">const</span> Eigen::Vector3f <a class="code" href="classekf_1_1EKF.html#a440b83cfd38de4133d8071a158028c86">navegationGravity</a>{0.0f, 0.0f, 9.786171951281709f};</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classekf_1_1EKF.html#af990ea0dbcd3f286f04584ab663d08e6">   62</a></span>&#160;  Eigen::Vector3f <a class="code" href="classekf_1_1EKF.html#af990ea0dbcd3f286f04584ab663d08e6">gyro</a> = Eigen::Vector3f::Zero();</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classekf_1_1EKF.html#a3f84435c646a27ad0f922e5205c13eb3">   64</a></span>&#160;  Eigen::Vector3f <a class="code" href="classekf_1_1EKF.html#a3f84435c646a27ad0f922e5205c13eb3">mag</a> = Eigen::Vector3f::Zero();</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classekf_1_1EKF.html#a803ccbdd54bfbd96cccf57afa60578a9">   68</a></span>&#160;  Eigen::Vector4f <a class="code" href="classekf_1_1EKF.html#a803ccbdd54bfbd96cccf57afa60578a9">qObs</a>{1.0f, 0.0f, 0.0f, 0.0f};</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="classekf_1_1EKF.html#aa38bc83dfb656519cfcda0c0a589ef16">   70</a></span>&#160;  Eigen::Vector4f <a class="code" href="classekf_1_1EKF.html#aa38bc83dfb656519cfcda0c0a589ef16">q</a>{1.0f, 0.0f, 0.0f, 0.0f};</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classekf_1_1EKF.html#adc3de40884689bb897ebe90979d6f28f">   72</a></span>&#160;  Eigen::Vector3f <a class="code" href="classekf_1_1EKF.html#adc3de40884689bb897ebe90979d6f28f">euler</a>{0.0f, 0.0f, 0.0f};</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="classekf_1_1EKF.html#a833f15f8790f86633d8b02eb2fe3616e">   78</a></span>&#160;  Eigen::Vector3f <a class="code" href="classekf_1_1EKF.html#a833f15f8790f86633d8b02eb2fe3616e">rNED</a> = Eigen::Vector3f::Zero();</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classekf_1_1EKF.html#a649f7d975dc55413be50d8f1e6bc2559">   80</a></span>&#160;  Eigen::Vector3f <a class="code" href="classekf_1_1EKF.html#a649f7d975dc55413be50d8f1e6bc2559">rNEDgps</a> = Eigen::Vector3f::Zero();</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="classekf_1_1EKF.html#a93f50b0576c3243487442a9f0934e038">   82</a></span>&#160;  Eigen::Vector3f <a class="code" href="classekf_1_1EKF.html#a93f50b0576c3243487442a9f0934e038">drNED</a> = Eigen::Vector3f::Zero();</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classekf_1_1EKF.html#ad27f8aac391293234c9e21c02b944cc4">   84</a></span>&#160;  Eigen::Vector3f <a class="code" href="classekf_1_1EKF.html#ad27f8aac391293234c9e21c02b944cc4">drNEDgps</a> = Eigen::Vector3f::Zero();</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="classekf_1_1EKF.html#a7dbea0d7c0f7376e7391b6a6a99521b5">   86</a></span>&#160;  Eigen::Vector3f <a class="code" href="classekf_1_1EKF.html#a7dbea0d7c0f7376e7391b6a6a99521b5">ddr</a> = Eigen::Vector3f::Zero();</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="classekf_1_1EKF.html#a2f7f579eb38461f7396cca2a9a846bbb">   88</a></span>&#160;  Eigen::Matrix3f <a class="code" href="classekf_1_1EKF.html#a2f7f579eb38461f7396cca2a9a846bbb">mcd</a> = Eigen::Matrix3f::Identity();</div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="classekf_1_1EKF.html#a8d016a5adf9aa5f33a8c9e1f7dd73592">   89</a></span>&#160;  uint8_t <a class="code" href="classekf_1_1EKF.html#a8d016a5adf9aa5f33a8c9e1f7dd73592">messageGPS</a> = 0;</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="classekf_1_1EKF.html#af019016496e0328e5d9ea3cb6462e52c">   92</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="classekf_1_1EKF.html#af019016496e0328e5d9ea3cb6462e52c">p</a> = <a class="code" href="classekf_1_1EKF.html#ac02e28e5bd4b3e90d3ccb3dd1127e7b2">pFull</a>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="classekf_1_1EKF.html#ae4417522e93314005316a236b324f2a5">   94</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="classekf_1_1EKF.html#ae4417522e93314005316a236b324f2a5">n</a> = 15;</div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="classekf_1_1EKF.html#a5d610d6e3174f24f9be38e7da3d44bc0">   96</a></span>&#160;  <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="classekf_1_1EKF.html#a5d610d6e3174f24f9be38e7da3d44bc0">sigma_giro_squared</a> = 1e-3;</div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="classekf_1_1EKF.html#a883bdaa556cb199f75216286386523c1">   98</a></span>&#160;  <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="classekf_1_1EKF.html#a883bdaa556cb199f75216286386523c1">sigma_bias_giro_squared</a> = 1e-6;</div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="classekf_1_1EKF.html#a32f1a9dbf7d18465284fb3517a1d9423">  100</a></span>&#160;  <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="classekf_1_1EKF.html#a32f1a9dbf7d18465284fb3517a1d9423">sigma_acel_squared</a> = 1e-3;</div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="classekf_1_1EKF.html#a74da314972c8273b5ffe17078c6642e3">  102</a></span>&#160;  <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="classekf_1_1EKF.html#a74da314972c8273b5ffe17078c6642e3">sigma_bias_acel_squared</a> = 1e-6;</div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="classekf_1_1EKF.html#a2ea4005a93d82e6b448fdb4fd4e36dd1">  104</a></span>&#160;  <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="classekf_1_1EKF.html#a2ea4005a93d82e6b448fdb4fd4e36dd1">sigma_aqua_squared</a> = 1e-3;</div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="classekf_1_1EKF.html#af1d82a9698078624dd2e65c808126510">  106</a></span>&#160;  <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="classekf_1_1EKF.html#af1d82a9698078624dd2e65c808126510">sigma_vel_squared</a> = 0.02f * 0.02f;</div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="classekf_1_1EKF.html#a02c9e5ede2b47a773c2f59fb9cf9169c">  108</a></span>&#160;  <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="classekf_1_1EKF.html#a02c9e5ede2b47a773c2f59fb9cf9169c">sigma_pos_squared</a> = 5.0f * 5.0f;</div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="classekf_1_1EKF.html#a0e5efc2e95419aaea976414f246a378a">  110</a></span>&#160;  Eigen::Matrix&lt;float, nFull, nFull&gt; <a class="code" href="classekf_1_1EKF.html#a0e5efc2e95419aaea976414f246a378a">Q_k</a> =</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;      Eigen::MatrixXf::Identity(<a class="code" href="classekf_1_1EKF.html#abd8ccdb99191c1f3a7a5c03421f93d87">nFull</a>, <a class="code" href="classekf_1_1EKF.html#abd8ccdb99191c1f3a7a5c03421f93d87">nFull</a>);</div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="classekf_1_1EKF.html#ad55e1ba3736ea08721dec76f03dd9715">  113</a></span>&#160;  Eigen::Matrix&lt;float, pFull, pFull&gt; <a class="code" href="classekf_1_1EKF.html#ad55e1ba3736ea08721dec76f03dd9715">R</a> =</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;      Eigen::MatrixXf::Identity(<a class="code" href="classekf_1_1EKF.html#ac02e28e5bd4b3e90d3ccb3dd1127e7b2">pFull</a>, <a class="code" href="classekf_1_1EKF.html#ac02e28e5bd4b3e90d3ccb3dd1127e7b2">pFull</a>);</div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="classekf_1_1EKF.html#aae2ea65c4362a5f798db195112fb094a">  117</a></span>&#160;  Eigen::Matrix&lt;float, nFull, nFull&gt; <a class="code" href="classekf_1_1EKF.html#aae2ea65c4362a5f798db195112fb094a">mF</a> = Eigen::MatrixXf::Zero(<a class="code" href="classekf_1_1EKF.html#abd8ccdb99191c1f3a7a5c03421f93d87">nFull</a>, <a class="code" href="classekf_1_1EKF.html#abd8ccdb99191c1f3a7a5c03421f93d87">nFull</a>);</div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="classekf_1_1EKF.html#a78dd6de9d37bc221394db5e9cca2086f">  119</a></span>&#160;  Eigen::Matrix&lt;float, nFull, nFull&gt; <a class="code" href="classekf_1_1EKF.html#a78dd6de9d37bc221394db5e9cca2086f">fi</a> = Eigen::MatrixXf::Zero(<a class="code" href="classekf_1_1EKF.html#abd8ccdb99191c1f3a7a5c03421f93d87">nFull</a>, <a class="code" href="classekf_1_1EKF.html#abd8ccdb99191c1f3a7a5c03421f93d87">nFull</a>);</div>
+<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="classekf_1_1EKF.html#a110201c01d9ce3c63a1de068e87be75d">  121</a></span>&#160;  Eigen::Matrix&lt;float, nFull, 12&gt; <a class="code" href="classekf_1_1EKF.html#a110201c01d9ce3c63a1de068e87be75d">G</a> = Eigen::MatrixXf::Zero(<a class="code" href="classekf_1_1EKF.html#abd8ccdb99191c1f3a7a5c03421f93d87">nFull</a>, 12);</div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="classekf_1_1EKF.html#aec9a3a7de4a079cd1dd1baae26a7a6fc">  123</a></span>&#160;  Eigen::Matrix&lt;float, nFull, nFull&gt; <a class="code" href="classekf_1_1EKF.html#aec9a3a7de4a079cd1dd1baae26a7a6fc">P</a> =</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;      ((Eigen::VectorXf(<a class="code" href="classekf_1_1EKF.html#ae4417522e93314005316a236b324f2a5">n</a>) &lt;&lt; .5, .5, .5, .1, .10, .10, 1, 1, 1, .1, .10, .10,</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        1e8, 1e8, 1e8)</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;           .finished())</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;          .asDiagonal();</div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="classekf_1_1EKF.html#abd11bc2722fab1c582cc91a39372f2ac">  129</a></span>&#160;  Eigen::Matrix&lt;float, pFull, nFull&gt; <a class="code" href="classekf_1_1EKF.html#abd11bc2722fab1c582cc91a39372f2ac">H</a> = Eigen::MatrixXf::Zero(<a class="code" href="classekf_1_1EKF.html#ac02e28e5bd4b3e90d3ccb3dd1127e7b2">pFull</a>, <a class="code" href="classekf_1_1EKF.html#abd8ccdb99191c1f3a7a5c03421f93d87">nFull</a>);</div>
+<div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="classekf_1_1EKF.html#a87a29899f611c68db72263cc0be496c7">  131</a></span>&#160;  Eigen::Matrix&lt;float, nFull, pFull&gt; <a class="code" href="classekf_1_1EKF.html#a87a29899f611c68db72263cc0be496c7">K</a> =</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;      Eigen::MatrixXf::Identity(<a class="code" href="classekf_1_1EKF.html#abd8ccdb99191c1f3a7a5c03421f93d87">nFull</a>, <a class="code" href="classekf_1_1EKF.html#ac02e28e5bd4b3e90d3ccb3dd1127e7b2">pFull</a>);</div>
+<div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="classekf_1_1EKF.html#ad1c353f958f3c41141c88339793745aa">  138</a></span>&#160;  Eigen::Vector&lt;float, nFull + 1&gt; <a class="code" href="classekf_1_1EKF.html#ad1c353f958f3c41141c88339793745aa">deltaChi</a> = Eigen::VectorXf::Zero(<a class="code" href="classekf_1_1EKF.html#abd8ccdb99191c1f3a7a5c03421f93d87">nFull</a> + 1);</div>
+<div class="line"><a name="l00140"></a><span class="lineno"><a class="line" href="classekf_1_1EKF.html#ae4be03b8440c0f1185141ecc359534df">  140</a></span>&#160;  Eigen::Vector&lt;float, pFull&gt; <a class="code" href="classekf_1_1EKF.html#ae4be03b8440c0f1185141ecc359534df">deltaYObs</a> = Eigen::VectorXf::Zero(<a class="code" href="classekf_1_1EKF.html#ac02e28e5bd4b3e90d3ccb3dd1127e7b2">pFull</a>);</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  <span class="comment">// /*! Observações preditas */</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  <span class="comment">// Eigen::VectorXf yPreditas = Eigen::VectorXf::Zero(15);</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  <span class="keywordtype">void</span> integrationOfStates();</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  <span class="keywordtype">void</span> updateStates();</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  <span class="keywordtype">void</span> predictionStage();</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  <span class="keywordtype">void</span> updateStage();</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  <span class="keywordtype">void</span> updateF();</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  <span class="keywordtype">void</span> updatefi();</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  <span class="keywordtype">void</span> updateHq();</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  <span class="keywordtype">void</span> updateHv();</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  <span class="keywordtype">void</span> updateHp();</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="preprocessor">#ifdef __XTENSA__</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  <span class="keywordtype">void</span> calibrationMethods();</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  <span class="keywordtype">void</span> updateOfMeasurements();</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  <span class="keywordtype">void</span> positionIntegration();</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  <span class="keywordtype">void</span> updateBaseRef();</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  <span class="keywordtype">void</span> updateNedPos();</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  <span class="keywordtype">void</span> updateNedVel();</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
+<div class="line"><a name="l00163"></a><span class="lineno"><a class="line" href="classekf_1_1EKF.html#a50b05a6fb2c055d9c37e44138a05b08e">  163</a></span>&#160;  Eigen::Vector3f *<a class="code" href="classekf_1_1EKF.html#a50b05a6fb2c055d9c37e44138a05b08e">biasGyro</a>;</div>
+<div class="line"><a name="l00165"></a><span class="lineno"><a class="line" href="classekf_1_1EKF.html#a1ac62c76df373623c4cfa0b2b37564db">  165</a></span>&#160;  Eigen::Vector3f *<a class="code" href="classekf_1_1EKF.html#a1ac62c76df373623c4cfa0b2b37564db">biasAccel</a>;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;};</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;} <span class="comment">// namespace ekf</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="comment">/* EKF_H */</span></div>
+<div class="ttc" id="aclassekf_1_1EKF_html"><div class="ttname"><a href="classekf_1_1EKF.html">ekf::EKF</a></div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00037">EKF.h:37</a></div></div>
+<div class="ttc" id="aclassekf_1_1EKF_html_a02c9e5ede2b47a773c2f59fb9cf9169c"><div class="ttname"><a href="classekf_1_1EKF.html#a02c9e5ede2b47a773c2f59fb9cf9169c">ekf::EKF::sigma_pos_squared</a></div><div class="ttdeci">const float sigma_pos_squared</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00108">EKF.h:108</a></div></div>
+<div class="ttc" id="aclassekf_1_1EKF_html_a0e5efc2e95419aaea976414f246a378a"><div class="ttname"><a href="classekf_1_1EKF.html#a0e5efc2e95419aaea976414f246a378a">ekf::EKF::Q_k</a></div><div class="ttdeci">Eigen::Matrix&lt; float, nFull, nFull &gt; Q_k</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00110">EKF.h:110</a></div></div>
+<div class="ttc" id="aclassekf_1_1EKF_html_a110201c01d9ce3c63a1de068e87be75d"><div class="ttname"><a href="classekf_1_1EKF.html#a110201c01d9ce3c63a1de068e87be75d">ekf::EKF::G</a></div><div class="ttdeci">Eigen::Matrix&lt; float, nFull, 12 &gt; G</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00121">EKF.h:121</a></div></div>
+<div class="ttc" id="aclassekf_1_1EKF_html_a1ac62c76df373623c4cfa0b2b37564db"><div class="ttname"><a href="classekf_1_1EKF.html#a1ac62c76df373623c4cfa0b2b37564db">ekf::EKF::biasAccel</a></div><div class="ttdeci">Eigen::Vector3f * biasAccel</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00165">EKF.h:165</a></div></div>
+<div class="ttc" id="aclassekf_1_1EKF_html_a1aecb83d5af684f4f8637981089002b9"><div class="ttname"><a href="classekf_1_1EKF.html#a1aecb83d5af684f4f8637981089002b9">ekf::EKF::DEG_TO_RAD_BY_10000000</a></div><div class="ttdeci">const float DEG_TO_RAD_BY_10000000</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00039">EKF.h:39</a></div></div>
+<div class="ttc" id="aclassekf_1_1EKF_html_a2ea4005a93d82e6b448fdb4fd4e36dd1"><div class="ttname"><a href="classekf_1_1EKF.html#a2ea4005a93d82e6b448fdb4fd4e36dd1">ekf::EKF::sigma_aqua_squared</a></div><div class="ttdeci">const float sigma_aqua_squared</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00104">EKF.h:104</a></div></div>
+<div class="ttc" id="aclassekf_1_1EKF_html_a2f7f579eb38461f7396cca2a9a846bbb"><div class="ttname"><a href="classekf_1_1EKF.html#a2f7f579eb38461f7396cca2a9a846bbb">ekf::EKF::mcd</a></div><div class="ttdeci">Eigen::Matrix3f mcd</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00088">EKF.h:88</a></div></div>
+<div class="ttc" id="aclassekf_1_1EKF_html_a30d3adf68cc6ee599fec8fa45a697bbb"><div class="ttname"><a href="classekf_1_1EKF.html#a30d3adf68cc6ee599fec8fa45a697bbb">ekf::EKF::accel</a></div><div class="ttdeci">Eigen::Vector3f accel</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00058">EKF.h:58</a></div></div>
+<div class="ttc" id="aclassekf_1_1EKF_html_a32f1a9dbf7d18465284fb3517a1d9423"><div class="ttname"><a href="classekf_1_1EKF.html#a32f1a9dbf7d18465284fb3517a1d9423">ekf::EKF::sigma_acel_squared</a></div><div class="ttdeci">const float sigma_acel_squared</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00100">EKF.h:100</a></div></div>
+<div class="ttc" id="aclassekf_1_1EKF_html_a3f84435c646a27ad0f922e5205c13eb3"><div class="ttname"><a href="classekf_1_1EKF.html#a3f84435c646a27ad0f922e5205c13eb3">ekf::EKF::mag</a></div><div class="ttdeci">Eigen::Vector3f mag</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00064">EKF.h:64</a></div></div>
+<div class="ttc" id="aclassekf_1_1EKF_html_a440b83cfd38de4133d8071a158028c86"><div class="ttname"><a href="classekf_1_1EKF.html#a440b83cfd38de4133d8071a158028c86">ekf::EKF::navegationGravity</a></div><div class="ttdeci">const Eigen::Vector3f navegationGravity</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00060">EKF.h:60</a></div></div>
+<div class="ttc" id="aclassekf_1_1EKF_html_a4a6998123529ab0d0844ad21419fc895"><div class="ttname"><a href="classekf_1_1EKF.html#a4a6998123529ab0d0844ad21419fc895">ekf::EKF::begin</a></div><div class="ttdeci">void begin(float dt)</div><div class="ttdoc">Inicializacao do filtro de Kalman.</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8cpp_source.html#l00039">EKF.cpp:39</a></div></div>
+<div class="ttc" id="aclassekf_1_1EKF_html_a50b05a6fb2c055d9c37e44138a05b08e"><div class="ttname"><a href="classekf_1_1EKF.html#a50b05a6fb2c055d9c37e44138a05b08e">ekf::EKF::biasGyro</a></div><div class="ttdeci">Eigen::Vector3f * biasGyro</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00163">EKF.h:163</a></div></div>
+<div class="ttc" id="aclassekf_1_1EKF_html_a5d610d6e3174f24f9be38e7da3d44bc0"><div class="ttname"><a href="classekf_1_1EKF.html#a5d610d6e3174f24f9be38e7da3d44bc0">ekf::EKF::sigma_giro_squared</a></div><div class="ttdeci">const float sigma_giro_squared</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00096">EKF.h:96</a></div></div>
+<div class="ttc" id="aclassekf_1_1EKF_html_a649f7d975dc55413be50d8f1e6bc2559"><div class="ttname"><a href="classekf_1_1EKF.html#a649f7d975dc55413be50d8f1e6bc2559">ekf::EKF::rNEDgps</a></div><div class="ttdeci">Eigen::Vector3f rNEDgps</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00080">EKF.h:80</a></div></div>
+<div class="ttc" id="aclassekf_1_1EKF_html_a651814ff64d234394572e2e7c5703a43"><div class="ttname"><a href="classekf_1_1EKF.html#a651814ff64d234394572e2e7c5703a43">ekf::EKF::loopEKF</a></div><div class="ttdeci">void loopEKF()</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8cpp_source.html#l00093">EKF.cpp:93</a></div></div>
+<div class="ttc" id="aclassekf_1_1EKF_html_a74da314972c8273b5ffe17078c6642e3"><div class="ttname"><a href="classekf_1_1EKF.html#a74da314972c8273b5ffe17078c6642e3">ekf::EKF::sigma_bias_acel_squared</a></div><div class="ttdeci">const float sigma_bias_acel_squared</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00102">EKF.h:102</a></div></div>
+<div class="ttc" id="aclassekf_1_1EKF_html_a78dd6de9d37bc221394db5e9cca2086f"><div class="ttname"><a href="classekf_1_1EKF.html#a78dd6de9d37bc221394db5e9cca2086f">ekf::EKF::fi</a></div><div class="ttdeci">Eigen::Matrix&lt; float, nFull, nFull &gt; fi</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00119">EKF.h:119</a></div></div>
+<div class="ttc" id="aclassekf_1_1EKF_html_a7dbea0d7c0f7376e7391b6a6a99521b5"><div class="ttname"><a href="classekf_1_1EKF.html#a7dbea0d7c0f7376e7391b6a6a99521b5">ekf::EKF::ddr</a></div><div class="ttdeci">Eigen::Vector3f ddr</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00086">EKF.h:86</a></div></div>
+<div class="ttc" id="aclassekf_1_1EKF_html_a803ccbdd54bfbd96cccf57afa60578a9"><div class="ttname"><a href="classekf_1_1EKF.html#a803ccbdd54bfbd96cccf57afa60578a9">ekf::EKF::qObs</a></div><div class="ttdeci">Eigen::Vector4f qObs</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00068">EKF.h:68</a></div></div>
+<div class="ttc" id="aclassekf_1_1EKF_html_a833f15f8790f86633d8b02eb2fe3616e"><div class="ttname"><a href="classekf_1_1EKF.html#a833f15f8790f86633d8b02eb2fe3616e">ekf::EKF::rNED</a></div><div class="ttdeci">Eigen::Vector3f rNED</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00078">EKF.h:78</a></div></div>
+<div class="ttc" id="aclassekf_1_1EKF_html_a87a29899f611c68db72263cc0be496c7"><div class="ttname"><a href="classekf_1_1EKF.html#a87a29899f611c68db72263cc0be496c7">ekf::EKF::K</a></div><div class="ttdeci">Eigen::Matrix&lt; float, nFull, pFull &gt; K</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00131">EKF.h:131</a></div></div>
+<div class="ttc" id="aclassekf_1_1EKF_html_a883bdaa556cb199f75216286386523c1"><div class="ttname"><a href="classekf_1_1EKF.html#a883bdaa556cb199f75216286386523c1">ekf::EKF::sigma_bias_giro_squared</a></div><div class="ttdeci">const float sigma_bias_giro_squared</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00098">EKF.h:98</a></div></div>
+<div class="ttc" id="aclassekf_1_1EKF_html_a88f92d86fabe318656e5ba458bc2e042"><div class="ttname"><a href="classekf_1_1EKF.html#a88f92d86fabe318656e5ba458bc2e042">ekf::EKF::nAtitude</a></div><div class="ttdeci">const int nAtitude</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00048">EKF.h:48</a></div></div>
+<div class="ttc" id="aclassekf_1_1EKF_html_a8d016a5adf9aa5f33a8c9e1f7dd73592"><div class="ttname"><a href="classekf_1_1EKF.html#a8d016a5adf9aa5f33a8c9e1f7dd73592">ekf::EKF::messageGPS</a></div><div class="ttdeci">uint8_t messageGPS</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00089">EKF.h:89</a></div></div>
+<div class="ttc" id="aclassekf_1_1EKF_html_a93f50b0576c3243487442a9f0934e038"><div class="ttname"><a href="classekf_1_1EKF.html#a93f50b0576c3243487442a9f0934e038">ekf::EKF::drNED</a></div><div class="ttdeci">Eigen::Vector3f drNED</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00082">EKF.h:82</a></div></div>
+<div class="ttc" id="aclassekf_1_1EKF_html_aa38bc83dfb656519cfcda0c0a589ef16"><div class="ttname"><a href="classekf_1_1EKF.html#aa38bc83dfb656519cfcda0c0a589ef16">ekf::EKF::q</a></div><div class="ttdeci">Eigen::Vector4f q</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00070">EKF.h:70</a></div></div>
+<div class="ttc" id="aclassekf_1_1EKF_html_aae2ea65c4362a5f798db195112fb094a"><div class="ttname"><a href="classekf_1_1EKF.html#aae2ea65c4362a5f798db195112fb094a">ekf::EKF::mF</a></div><div class="ttdeci">Eigen::Matrix&lt; float, nFull, nFull &gt; mF</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00117">EKF.h:117</a></div></div>
+<div class="ttc" id="aclassekf_1_1EKF_html_abd11bc2722fab1c582cc91a39372f2ac"><div class="ttname"><a href="classekf_1_1EKF.html#abd11bc2722fab1c582cc91a39372f2ac">ekf::EKF::H</a></div><div class="ttdeci">Eigen::Matrix&lt; float, pFull, nFull &gt; H</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00129">EKF.h:129</a></div></div>
+<div class="ttc" id="aclassekf_1_1EKF_html_abd8ccdb99191c1f3a7a5c03421f93d87"><div class="ttname"><a href="classekf_1_1EKF.html#abd8ccdb99191c1f3a7a5c03421f93d87">ekf::EKF::nFull</a></div><div class="ttdeci">static const int nFull</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00044">EKF.h:44</a></div></div>
+<div class="ttc" id="aclassekf_1_1EKF_html_ac02e28e5bd4b3e90d3ccb3dd1127e7b2"><div class="ttname"><a href="classekf_1_1EKF.html#ac02e28e5bd4b3e90d3ccb3dd1127e7b2">ekf::EKF::pFull</a></div><div class="ttdeci">static const int pFull</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00046">EKF.h:46</a></div></div>
+<div class="ttc" id="aclassekf_1_1EKF_html_acd0f4714eb8ba12355d529580e928439"><div class="ttname"><a href="classekf_1_1EKF.html#acd0f4714eb8ba12355d529580e928439">ekf::EKF::base</a></div><div class="ttdeci">BASE base</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00052">EKF.h:52</a></div></div>
+<div class="ttc" id="aclassekf_1_1EKF_html_ad1c353f958f3c41141c88339793745aa"><div class="ttname"><a href="classekf_1_1EKF.html#ad1c353f958f3c41141c88339793745aa">ekf::EKF::deltaChi</a></div><div class="ttdeci">Eigen::Vector&lt; float, nFull+1 &gt; deltaChi</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00138">EKF.h:138</a></div></div>
+<div class="ttc" id="aclassekf_1_1EKF_html_ad27f8aac391293234c9e21c02b944cc4"><div class="ttname"><a href="classekf_1_1EKF.html#ad27f8aac391293234c9e21c02b944cc4">ekf::EKF::drNEDgps</a></div><div class="ttdeci">Eigen::Vector3f drNEDgps</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00084">EKF.h:84</a></div></div>
+<div class="ttc" id="aclassekf_1_1EKF_html_ad3a628fffe1f640b4968b8f6f8ef3b14"><div class="ttname"><a href="classekf_1_1EKF.html#ad3a628fffe1f640b4968b8f6f8ef3b14">ekf::EKF::pAtitude</a></div><div class="ttdeci">const int pAtitude</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00050">EKF.h:50</a></div></div>
+<div class="ttc" id="aclassekf_1_1EKF_html_ad55e1ba3736ea08721dec76f03dd9715"><div class="ttname"><a href="classekf_1_1EKF.html#ad55e1ba3736ea08721dec76f03dd9715">ekf::EKF::R</a></div><div class="ttdeci">Eigen::Matrix&lt; float, pFull, pFull &gt; R</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00113">EKF.h:113</a></div></div>
+<div class="ttc" id="aclassekf_1_1EKF_html_adc3de40884689bb897ebe90979d6f28f"><div class="ttname"><a href="classekf_1_1EKF.html#adc3de40884689bb897ebe90979d6f28f">ekf::EKF::euler</a></div><div class="ttdeci">Eigen::Vector3f euler</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00072">EKF.h:72</a></div></div>
+<div class="ttc" id="aclassekf_1_1EKF_html_ae4417522e93314005316a236b324f2a5"><div class="ttname"><a href="classekf_1_1EKF.html#ae4417522e93314005316a236b324f2a5">ekf::EKF::n</a></div><div class="ttdeci">int n</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00094">EKF.h:94</a></div></div>
+<div class="ttc" id="aclassekf_1_1EKF_html_ae4be03b8440c0f1185141ecc359534df"><div class="ttname"><a href="classekf_1_1EKF.html#ae4be03b8440c0f1185141ecc359534df">ekf::EKF::deltaYObs</a></div><div class="ttdeci">Eigen::Vector&lt; float, pFull &gt; deltaYObs</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00140">EKF.h:140</a></div></div>
+<div class="ttc" id="aclassekf_1_1EKF_html_aea7bda69ce19f724930eb8c691272508"><div class="ttname"><a href="classekf_1_1EKF.html#aea7bda69ce19f724930eb8c691272508">ekf::EKF::EKF</a></div><div class="ttdeci">EKF()</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8cpp_source.html#l00032">EKF.cpp:32</a></div></div>
+<div class="ttc" id="aclassekf_1_1EKF_html_aec9a3a7de4a079cd1dd1baae26a7a6fc"><div class="ttname"><a href="classekf_1_1EKF.html#aec9a3a7de4a079cd1dd1baae26a7a6fc">ekf::EKF::P</a></div><div class="ttdeci">Eigen::Matrix&lt; float, nFull, nFull &gt; P</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00123">EKF.h:123</a></div></div>
+<div class="ttc" id="aclassekf_1_1EKF_html_aee84ca91742c11dd89683930a58d59e3"><div class="ttname"><a href="classekf_1_1EKF.html#aee84ca91742c11dd89683930a58d59e3">ekf::EKF::dt</a></div><div class="ttdeci">float dt</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00056">EKF.h:56</a></div></div>
+<div class="ttc" id="aclassekf_1_1EKF_html_af019016496e0328e5d9ea3cb6462e52c"><div class="ttname"><a href="classekf_1_1EKF.html#af019016496e0328e5d9ea3cb6462e52c">ekf::EKF::p</a></div><div class="ttdeci">int p</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00092">EKF.h:92</a></div></div>
+<div class="ttc" id="aclassekf_1_1EKF_html_af1d82a9698078624dd2e65c808126510"><div class="ttname"><a href="classekf_1_1EKF.html#af1d82a9698078624dd2e65c808126510">ekf::EKF::sigma_vel_squared</a></div><div class="ttdeci">const float sigma_vel_squared</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00106">EKF.h:106</a></div></div>
+<div class="ttc" id="aclassekf_1_1EKF_html_af990ea0dbcd3f286f04584ab663d08e6"><div class="ttname"><a href="classekf_1_1EKF.html#af990ea0dbcd3f286f04584ab663d08e6">ekf::EKF::gyro</a></div><div class="ttdeci">Eigen::Vector3f gyro</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00062">EKF.h:62</a></div></div>
+<div class="ttc" id="anamespaceekf_html"><div class="ttname"><a href="namespaceekf.html">ekf</a></div><div class="ttdoc">Funções genéricas com álgebra de quatérnions e demais.</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8cpp_source.html#l00023">EKF.cpp:23</a></div></div>
+<div class="ttc" id="astructBASE_html"><div class="ttname"><a href="structBASE.html">BASE</a></div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00022">EKF.h:22</a></div></div>
+<div class="ttc" id="astructBASE_html_a24573bad2d025ea1b7023eb23b59a46e"><div class="ttname"><a href="structBASE.html#a24573bad2d025ea1b7023eb23b59a46e">BASE::hMSL</a></div><div class="ttdeci">float hMSL</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00028">EKF.h:28</a></div></div>
+<div class="ttc" id="astructBASE_html_a76e12d3fb168dc1ce3f163c985382129"><div class="ttname"><a href="structBASE.html#a76e12d3fb168dc1ce3f163c985382129">BASE::lat</a></div><div class="ttdeci">float lat</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00024">EKF.h:24</a></div></div>
+<div class="ttc" id="astructBASE_html_ab4bcf2a27b373820efe4f530a101704d"><div class="ttname"><a href="structBASE.html#ab4bcf2a27b373820efe4f530a101704d">BASE::Recef2ned</a></div><div class="ttdeci">Eigen::Matrix3f Recef2ned</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00030">EKF.h:30</a></div></div>
+<div class="ttc" id="astructBASE_html_ac118821d55d84bee606a64e60098c7d4"><div class="ttname"><a href="structBASE.html#ac118821d55d84bee606a64e60098c7d4">BASE::lon</a></div><div class="ttdeci">float lon</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00026">EKF.h:26</a></div></div>
+<div class="ttc" id="astructBASE_html_ae9e7517ae5f24d671f404d18c1d0b90b"><div class="ttname"><a href="structBASE.html#ae9e7517ae5f24d671f404d18c1d0b90b">BASE::rECEF</a></div><div class="ttdeci">long rECEF[3]</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00032">EKF.h:32</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

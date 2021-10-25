@@ -1,0 +1,249 @@
+.TH "Rpm" 3 "Sexta, 17 de Setembro de 2021" "Quadrirrotor" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Rpm
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <rpm\&.h>\fP
+.SS "Membros Públicos"
+
+.in +1c
+.ti -1c
+.RI "\fBRpm\fP (gpio_num_t \fBsensor\fP, pcnt_unit_t \fBpcnt_unit\fP=PCNT_UNIT_0, uint8_t \fBciclos_por_volta\fP=1)"
+.br
+.ti -1c
+.RI "void \fBupdate_rpm\fP ()"
+.br
+.ti -1c
+.RI "void \fBrestart_conter\fP ()"
+.br
+.ti -1c
+.RI "void \fBget_pulses\fP ()"
+.br
+.in -1c
+.SS "Campos de Dados"
+
+.in +1c
+.ti -1c
+.RI "int16_t \fBrpm\fP = 2"
+.br
+.ti -1c
+.RI "int8_t \fBciclos_por_volta\fP"
+.br
+.ti -1c
+.RI "const int16_t \fBMAX_H_LIM\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBrpm_factor\fP"
+.br
+.ti -1c
+.RI "pcnt_unit_t \fBpcnt_unit\fP"
+.br
+.ti -1c
+.RI "int16_t \fBpulses\fP = 0"
+.br
+.in -1c
+.SS "Membros Privados"
+
+.in +1c
+.ti -1c
+.RI "void \fBinit\fP ()"
+.br
+.in -1c
+.SS "Atributos Privados"
+
+.in +1c
+.ti -1c
+.RI "gpio_num_t \fBsensor\fP"
+.br
+.ti -1c
+.RI "uint64_t \fBtime_array\fP [2] = {}"
+.br
+.ti -1c
+.RI "uint8_t \fBindex_time_array\fP = 0"
+.br
+.ti -1c
+.RI "uint32_t \fBdt\fP = 1000000"
+.br
+.in -1c
+.SH "Descrição detalhada"
+.PP 
+Definição na linha 13 do arquivo rpm\&.h\&.
+.SH "Construtores e Destrutores"
+.PP 
+.SS "Rpm::Rpm (gpio_num_t sensor, pcnt_unit_t pcnt_unit = \fCPCNT_UNIT_0\fP, uint8_t ciclos_por_volta = \fC1\fP)"
+
+.PP
+Definição na linha 21 do arquivo rpm\&.cpp\&.
+.PP
+.nf
+21                                                                            {
+22 
+23   pointer_Rpm = this;
+24   this->sensor = sensor;
+25   this->pcnt_unit = pcnt_unit;
+26   this->ciclos_por_volta = ciclos_por_volta;
+27   this->rpm_factor = 60 * this->MAX_H_LIM * 1000000 / this->ciclos_por_volta;
+28   init();
+29 }
+.fi
+.PP
+Referencias ciclos_por_volta, init(), MAX_H_LIM, pcnt_unit, pointer_Rpm, rpm_factor e sensor\&.
+.SH "Funções membros"
+.PP 
+.SS "void Rpm::get_pulses ()"
+
+.PP
+Definição na linha 72 do arquivo rpm\&.cpp\&.
+.PP
+.nf
+72 { pcnt_get_counter_value(this->pcnt_unit, &pulses); }
+.fi
+.PP
+Referencias pcnt_unit e pulses\&.
+.SS "void Rpm::init ()\fC [private]\fP"
+
+.PP
+Definição na linha 31 do arquivo rpm\&.cpp\&.
+.PP
+.nf
+31                {
+32   gpio_set_pull_mode(this->sensor, GPIO_PULLUP_ONLY);
+33   pcnt_config_t pcnt_config = {
+34       \&.pulse_gpio_num = this->sensor, // configura a gpiou de leitura
+35       \&.ctrl_gpio_num = -1,            // define o controle
+36       \&.lctrl_mode = PCNT_MODE_KEEP,   // when control signal is low, keep the
+37                                       // primary counter mode
+38       \&.hctrl_mode = PCNT_MODE_KEEP,   // when control signal is high, keep the
+39                                       // primary counter mode
+40       \&.pos_mode = PCNT_COUNT_INC,     // incrementa com a subida do sinal
+41       \&.neg_mode = PCNT_COUNT_DIS,     // ignora a contagem com a decida
+42       \&.counter_h_lim = MAX_H_LIM,     // limita o numero maximo de contagem
+43       \&.counter_l_lim = 0,             // limite inferior
+44       \&.unit = this->pcnt_unit,        // PCNT unit number
+45       \&.channel = PCNT_CHANNEL_0};
+46   pcnt_unit_config(&pcnt_config);
+47   time_array[index_time_array] = esp_timer_get_time();
+48   restart_conter();
+49   pcnt_get_counter_value(this->pcnt_unit, &pulses);
+50   update_rpm();
+51   /* set max value\&. Important! this interruption reset counter!*/
+52   pcnt_event_enable(this->pcnt_unit, PCNT_EVT_H_LIM);
+53   /* set a value diferent of maximum or minumum\&.*/
+54   pcnt_isr_service_install(0);
+55   // pcnt_isr_handler_add(this->pcnt_unit, outside_interrupt_handler,
+56   //                      (void *)pcnt_unit);
+57 }
+.fi
+.PP
+Referencias index_time_array, MAX_H_LIM, pcnt_unit, pulses, restart_conter(), sensor, time_array e update_rpm()\&.
+.PP
+Referenciado(a) por Rpm()\&.
+.SS "void Rpm::restart_conter ()"
+
+.PP
+Definição na linha 58 do arquivo rpm\&.cpp\&.
+.PP
+.nf
+58                          {
+59   pcnt_counter_pause(this->pcnt_unit);
+60   pcnt_counter_clear(this->pcnt_unit);
+61   pcnt_counter_resume(this->pcnt_unit);
+62   // change between 0 and 1 for update time_array
+63 }
+.fi
+.PP
+Referencias pcnt_unit\&.
+.PP
+Referenciado(a) por init()\&.
+.SS "void Rpm::update_rpm ()"
+
+.PP
+Definição na linha 65 do arquivo rpm\&.cpp\&.
+.PP
+.nf
+65                      {
+66   index_time_array = 1 - index_time_array;
+67   time_array[index_time_array] = esp_timer_get_time();
+68   dt = time_array[index_time_array] - time_array[1 - index_time_array];
+69   rpm = this->rpm_factor / dt;
+70 }
+.fi
+.PP
+Referencias dt, index_time_array, rpm, rpm_factor e time_array\&.
+.PP
+Referenciado(a) por init() e outside_interrupt_handler()\&.
+.SH "Campos"
+.PP 
+.SS "int8_t Rpm::ciclos_por_volta"
+
+.PP
+Definição na linha 25 do arquivo rpm\&.h\&.
+.PP
+Referenciado(a) por Rpm()\&.
+.SS "uint32_t Rpm::dt = 1000000\fC [private]\fP"
+
+.PP
+Definição na linha 42 do arquivo rpm\&.h\&.
+.PP
+Referenciado(a) por update_rpm()\&.
+.SS "uint8_t Rpm::index_time_array = 0\fC [private]\fP"
+
+.PP
+Definição na linha 41 do arquivo rpm\&.h\&.
+.PP
+Referenciado(a) por init() e update_rpm()\&.
+.SS "const int16_t Rpm::MAX_H_LIM"
+\fBValor inicial:\fP
+.PP
+.nf
+=
+      28 + 1
+.fi
+.PP
+Definição na linha 26 do arquivo rpm\&.h\&.
+.PP
+Referenciado(a) por init() e Rpm()\&.
+.SS "pcnt_unit_t Rpm::pcnt_unit"
+
+.PP
+Definição na linha 30 do arquivo rpm\&.h\&.
+.PP
+Referenciado(a) por get_pulses(), init(), restart_conter() e Rpm()\&.
+.SS "int16_t Rpm::pulses = 0"
+
+.PP
+Definição na linha 32 do arquivo rpm\&.h\&.
+.PP
+Referenciado(a) por get_pulses() e init()\&.
+.SS "int16_t Rpm::rpm = 2"
+
+.PP
+Definição na linha 22 do arquivo rpm\&.h\&.
+.PP
+Referenciado(a) por update_rpm()\&.
+.SS "uint32_t Rpm::rpm_factor"
+
+.PP
+Definição na linha 28 do arquivo rpm\&.h\&.
+.PP
+Referenciado(a) por Rpm() e update_rpm()\&.
+.SS "gpio_num_t Rpm::sensor\fC [private]\fP"
+
+.PP
+Definição na linha 36 do arquivo rpm\&.h\&.
+.PP
+Referenciado(a) por init() e Rpm()\&.
+.SS "uint64_t Rpm::time_array[2] = {}\fC [private]\fP"
+
+.PP
+Definição na linha 40 do arquivo rpm\&.h\&.
+.PP
+Referenciado(a) por init() e update_rpm()\&.
+
+.SH "Autor"
+.PP 
+Gerado automaticamente por Doxygen para Quadrirrotor a partir do código-fonte\&.

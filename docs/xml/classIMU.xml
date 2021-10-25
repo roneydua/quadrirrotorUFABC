@@ -1,0 +1,2571 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compounddef id="classIMU" kind="class" language="C++" prot="public">
+    <compoundname>IMU</compoundname>
+    <includes refid="IMU_8h" local="no">IMU.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classIMU_1aeb363437539137b5c1eabd3641d242d1" prot="public" static="no" strong="no">
+        <type></type>
+        <name>GyroRange</name>
+        <enumvalue id="classIMU_1aeb363437539137b5c1eabd3641d242d1a1726a676d603df0b5c73ff7f1fff00d3" prot="public">
+          <name>GYRO_RANGE_250DPS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classIMU_1aeb363437539137b5c1eabd3641d242d1a8a24172a6bd08e9402c83af2f12bed57" prot="public">
+          <name>GYRO_RANGE_500DPS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classIMU_1aeb363437539137b5c1eabd3641d242d1ac11c26d662eb1906caf70fb73d96e8bb" prot="public">
+          <name>GYRO_RANGE_1000DPS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classIMU_1aeb363437539137b5c1eabd3641d242d1aa9e87e7d062d3bb23e1c9b5a1e85af11" prot="public">
+          <name>GYRO_RANGE_2000DPS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="21" column="3" bodyfile="lib/IMU/IMU.h" bodystart="21" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="enum" id="classIMU_1acdbd8690acc2a34f12d568cb39486cc6" prot="public" static="no" strong="no">
+        <type></type>
+        <name>AccelRange</name>
+        <enumvalue id="classIMU_1acdbd8690acc2a34f12d568cb39486cc6a808bf1fd48b91e042cfde2d0fd570823" prot="public">
+          <name>ACCEL_RANGE_2G</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classIMU_1acdbd8690acc2a34f12d568cb39486cc6a4afca3881c874d1d4e0d28a21bfe926a" prot="public">
+          <name>ACCEL_RANGE_4G</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classIMU_1acdbd8690acc2a34f12d568cb39486cc6a19c2caa0c23242f9dfd88326f2922719" prot="public">
+          <name>ACCEL_RANGE_8G</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classIMU_1acdbd8690acc2a34f12d568cb39486cc6a5398002690dded81a155ebdf7baea27f" prot="public">
+          <name>ACCEL_RANGE_16G</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="27" column="3" bodyfile="lib/IMU/IMU.h" bodystart="27" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="enum" id="classIMU_1a90c4f91f60185430b763f152ecb39521" prot="public" static="no" strong="no">
+        <type></type>
+        <name>DlpfBandwidth</name>
+        <enumvalue id="classIMU_1a90c4f91f60185430b763f152ecb39521a461c657b4bc9c4f82936a9cb3b5ef54e" prot="public">
+          <name>DLPF_BANDWIDTH_184HZ</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classIMU_1a90c4f91f60185430b763f152ecb39521ac652b0fb4733da213152970ebc6ab53d" prot="public">
+          <name>DLPF_BANDWIDTH_92HZ</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classIMU_1a90c4f91f60185430b763f152ecb39521afcbbbba2e520cdd50dcb40da160137f0" prot="public">
+          <name>DLPF_BANDWIDTH_41HZ</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classIMU_1a90c4f91f60185430b763f152ecb39521a174ee7819d598dcbb0d29cf8d0f17e8f" prot="public">
+          <name>DLPF_BANDWIDTH_20HZ</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classIMU_1a90c4f91f60185430b763f152ecb39521a38fa7998dfeb640e0289bc7407c40285" prot="public">
+          <name>DLPF_BANDWIDTH_10HZ</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classIMU_1a90c4f91f60185430b763f152ecb39521a1d05af591f93fc300ae7ef2608c62f51" prot="public">
+          <name>DLPF_BANDWIDTH_5HZ</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="33" column="3" bodyfile="lib/IMU/IMU.h" bodystart="33" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="enum" id="classIMU_1a2c0603234e00be75c6c4249516ad2f3f" prot="public" static="no" strong="no">
+        <type></type>
+        <name>LpAccelOdr</name>
+        <enumvalue id="classIMU_1a2c0603234e00be75c6c4249516ad2f3fa075213b5e4f97307e699068a3a5a3477" prot="public">
+          <name>LP_ACCEL_ODR_0_24HZ</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classIMU_1a2c0603234e00be75c6c4249516ad2f3faf89517a8ecb4855f3234f4462b91c823" prot="public">
+          <name>LP_ACCEL_ODR_0_49HZ</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classIMU_1a2c0603234e00be75c6c4249516ad2f3fad02147081ed0eb82e65dd8752f44f888" prot="public">
+          <name>LP_ACCEL_ODR_0_98HZ</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classIMU_1a2c0603234e00be75c6c4249516ad2f3fa131f700c7f40e022a15fc0cfc0105402" prot="public">
+          <name>LP_ACCEL_ODR_1_95HZ</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classIMU_1a2c0603234e00be75c6c4249516ad2f3faf707c0714db95cadd2d4da425deb5711" prot="public">
+          <name>LP_ACCEL_ODR_3_91HZ</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classIMU_1a2c0603234e00be75c6c4249516ad2f3faf77d40ed8aeeb739022b877a82e34427" prot="public">
+          <name>LP_ACCEL_ODR_7_81HZ</name>
+          <initializer>= 5</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classIMU_1a2c0603234e00be75c6c4249516ad2f3fa96c09bd185599c742376c74188b15f06" prot="public">
+          <name>LP_ACCEL_ODR_15_63HZ</name>
+          <initializer>= 6</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classIMU_1a2c0603234e00be75c6c4249516ad2f3fabaa705a55660759564c56f323317aa0c" prot="public">
+          <name>LP_ACCEL_ODR_31_25HZ</name>
+          <initializer>= 7</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classIMU_1a2c0603234e00be75c6c4249516ad2f3fa6093b5c31fad290dc15497ba31181f8a" prot="public">
+          <name>LP_ACCEL_ODR_62_50HZ</name>
+          <initializer>= 8</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classIMU_1a2c0603234e00be75c6c4249516ad2f3faba9570866d4810bc609345c435edc2a8" prot="public">
+          <name>LP_ACCEL_ODR_125HZ</name>
+          <initializer>= 9</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classIMU_1a2c0603234e00be75c6c4249516ad2f3faf7e601fd99ca8179e3fec8aa3edb0dfa" prot="public">
+          <name>LP_ACCEL_ODR_250HZ</name>
+          <initializer>= 10</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classIMU_1a2c0603234e00be75c6c4249516ad2f3facad3564a280a8a7399dc664e68adefc3" prot="public">
+          <name>LP_ACCEL_ODR_500HZ</name>
+          <initializer>= 11</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="41" column="3" bodyfile="lib/IMU/IMU.h" bodystart="41" bodyend="54"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classIMU_1a0efdfa77f452641689be4e9a4bae6a12" prot="public" static="no" mutable="no">
+        <type>Vector3f *</type>
+        <definition>Vector3f* IMU::_acel</definition>
+        <argsstring></argsstring>
+        <name>_acel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Ponteiro das medidas do acelerômetro </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="56" column="12" bodyfile="lib/IMU/IMU.h" bodystart="56" bodyend="-1"/>
+        <referencedby refid="classIMU_1ae0d964d2f8ec122be068c41b84bc18a8" compoundref="IMU_8cpp" startline="29" endline="115">begin</referencedby>
+        <referencedby refid="classIMU_1ac574728dbbc752155239a35c8bbd6e79" compoundref="IMU_8cpp" startline="290" endline="335">readSensor</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a72d1d4fe1027a9b0d6eed394e18ea97b" prot="public" static="no" mutable="no">
+        <type>Vector3f *</type>
+        <definition>Vector3f* IMU::_gyro</definition>
+        <argsstring></argsstring>
+        <name>_gyro</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Ponteiro das medidas do giroscópio </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="58" column="12" bodyfile="lib/IMU/IMU.h" bodystart="58" bodyend="-1"/>
+        <referencedby refid="classIMU_1ae0d964d2f8ec122be068c41b84bc18a8" compoundref="IMU_8cpp" startline="29" endline="115">begin</referencedby>
+        <referencedby refid="classIMU_1a5f096cb37d4b16851381bf09d6809403" compoundref="IMU_8cpp" startline="343" endline="358">calibraGyro</referencedby>
+        <referencedby refid="classIMU_1ac574728dbbc752155239a35c8bbd6e79" compoundref="IMU_8cpp" startline="290" endline="335">readSensor</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a54e4834bdf8648b7ec11ca460b92facf" prot="public" static="no" mutable="no">
+        <type>Vector3f *</type>
+        <definition>Vector3f* IMU::_mag</definition>
+        <argsstring></argsstring>
+        <name>_mag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Ponteiro das medidas do Magnetômetro </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="60" column="12" bodyfile="lib/IMU/IMU.h" bodystart="60" bodyend="-1"/>
+        <referencedby refid="classIMU_1ae0d964d2f8ec122be068c41b84bc18a8" compoundref="IMU_8cpp" startline="29" endline="115">begin</referencedby>
+        <referencedby refid="classIMU_1ac574728dbbc752155239a35c8bbd6e79" compoundref="IMU_8cpp" startline="290" endline="335">readSensor</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1ae628afbcc858c70ea5d36a13d59998f2" prot="public" static="no" mutable="no">
+        <type>Vector3f</type>
+        <definition>Vector3f IMU::magTemp</definition>
+        <argsstring></argsstring>
+        <name>magTemp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="61" column="12" bodyfile="lib/IMU/IMU.h" bodystart="61" bodyend="-1"/>
+        <referencedby refid="classIMU_1a3546779010d9128859f465195eff77f5" compoundref="IMU_8cpp" startline="458" endline="472">calibracaoMagnetometro</referencedby>
+        <referencedby refid="classIMU_1ac574728dbbc752155239a35c8bbd6e79" compoundref="IMU_8cpp" startline="290" endline="335">readSensor</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a23880868a20bc15879232b9ed3c1cbbd" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float IMU::_t</definition>
+        <argsstring></argsstring>
+        <name>_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="62" column="9" bodyfile="lib/IMU/IMU.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a377a386f44cf1d85d31b4f2a6b1a43d1" prot="public" static="no" mutable="no">
+        <type>const Matrix3f</type>
+        <definition>const Matrix3f IMU::sFAccel</definition>
+        <argsstring></argsstring>
+        <name>sFAccel</name>
+        <initializer>=
+      (Matrix3f() &lt;&lt; 0.00477306f, -2.94365e-05, 3.90831e-05, 4.92044e-05,
+       0.00477824f, 5.7648e-05, 1.55692e-05, -7.4314e-05, 0.00474654f)
+          .finished()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Matriz fator de escala do acelerometro. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="65" column="18" bodyfile="lib/IMU/IMU.h" bodystart="65" bodyend="-1"/>
+        <referencedby refid="classIMU_1ac574728dbbc752155239a35c8bbd6e79" compoundref="IMU_8cpp" startline="290" endline="335">readSensor</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a9a145f45e2e08cae0f363747c5603bd1" prot="public" static="no" mutable="no">
+        <type>Vector3f</type>
+        <definition>Vector3f IMU::_biasAccel</definition>
+        <argsstring></argsstring>
+        <name>_biasAccel</name>
+        <initializer>{-0.37238f, -0.109074f, 0.121389f}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Vetor bias do acelerometro. <xrefsect id="todo_1_todo000002"><xreftitle>Atividades futuras</xreftitle><xrefdescription><para>A MARG eh capaz de registrar os bias/Offset nos resgistradores. Feito isso as medidas <linebreak/>
+ </para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="73" column="12" bodyfile="lib/IMU/IMU.h" bodystart="73" bodyend="-1"/>
+        <referencedby refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" compoundref="EKF_8cpp" startline="39" endline="89">ekf::EKF::begin</referencedby>
+        <referencedby refid="classIMU_1ac574728dbbc752155239a35c8bbd6e79" compoundref="IMU_8cpp" startline="290" endline="335">readSensor</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a9d22cd7cb7bb93f2e04aa713aed73532" prot="public" static="no" mutable="no">
+        <type>Vector3f</type>
+        <definition>Vector3f IMU::_biasGyro</definition>
+        <argsstring></argsstring>
+        <name>_biasGyro</name>
+        <initializer>= Vector3f::Zero()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Bias do Giroscópio. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="76" column="12" bodyfile="lib/IMU/IMU.h" bodystart="76" bodyend="-1"/>
+        <referencedby refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" compoundref="EKF_8cpp" startline="39" endline="89">ekf::EKF::begin</referencedby>
+        <referencedby refid="classIMU_1a5f096cb37d4b16851381bf09d6809403" compoundref="IMU_8cpp" startline="343" endline="358">calibraGyro</referencedby>
+        <referencedby refid="classIMU_1ac574728dbbc752155239a35c8bbd6e79" compoundref="IMU_8cpp" startline="290" endline="335">readSensor</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a3ba42ad7f598311689e5eccd75daa019" prot="public" static="no" mutable="no">
+        <type>Vector3f</type>
+        <definition>Vector3f IMU::_biasMag</definition>
+        <argsstring></argsstring>
+        <name>_biasMag</name>
+        <initializer>= Vector3f::Zero()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Bias do Magnetômetro. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="78" column="12" bodyfile="lib/IMU/IMU.h" bodystart="78" bodyend="-1"/>
+        <referencedby refid="classIMU_1a3546779010d9128859f465195eff77f5" compoundref="IMU_8cpp" startline="458" endline="472">calibracaoMagnetometro</referencedby>
+        <referencedby refid="classIMU_1ac574728dbbc752155239a35c8bbd6e79" compoundref="IMU_8cpp" startline="290" endline="335">readSensor</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1af5d90aa5410529450fd31da2e1b1f296" prot="public" static="no" mutable="no">
+        <type>Matrix3f</type>
+        <definition>Matrix3f IMU::_sM</definition>
+        <argsstring></argsstring>
+        <name>_sM</name>
+        <initializer>= Matrix3f::Identity()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Matriz fator de escala. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="80" column="12" bodyfile="lib/IMU/IMU.h" bodystart="80" bodyend="-1"/>
+        <referencedby refid="classIMU_1a3546779010d9128859f465195eff77f5" compoundref="IMU_8cpp" startline="458" endline="472">calibracaoMagnetometro</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a18fe8e6be1b14c9e6c1b47d884dae375" prot="public" static="no" mutable="no">
+        <type>TwoWire *</type>
+        <definition>TwoWire* IMU::_i2c</definition>
+        <argsstring></argsstring>
+        <name>_i2c</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="90" column="11" bodyfile="lib/IMU/IMU.h" bodystart="90" bodyend="-1"/>
+        <referencedby refid="classIMU_1ae0d964d2f8ec122be068c41b84bc18a8" compoundref="IMU_8cpp" startline="29" endline="115">begin</referencedby>
+        <referencedby refid="classIMU_1acad2acbbf58db76230da27dba2afe8de" compoundref="IMU_8cpp" startline="17" endline="21">IMU</referencedby>
+        <referencedby refid="classIMU_1a87c200faa130ff4d2d3416b2d83f4f49" compoundref="IMU_8cpp" startline="424" endline="437">readRegisters</referencedby>
+        <referencedby refid="classIMU_1a37694424e4502ffc69bbb6c540c1a400" compoundref="IMU_8cpp" startline="402" endline="416">writeRegister</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classIMU_1a36ebf3acc2b8f819d6f08650ddd98ca3" prot="protected" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t IMU::_buffer[21]</definition>
+        <argsstring>[21]</argsstring>
+        <name>_buffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>buffer de leitura do sensor </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="94" column="11" bodyfile="lib/IMU/IMU.h" bodystart="94" bodyend="-1"/>
+        <referencedby refid="classIMU_1ae0d964d2f8ec122be068c41b84bc18a8" compoundref="IMU_8cpp" startline="29" endline="115">begin</referencedby>
+        <referencedby refid="classIMU_1a914f8b4262fba70e6d8fd0e584fa7996" compoundref="IMU_8cpp" startline="360" endline="367">readAK8963Registers</referencedby>
+        <referencedby refid="classIMU_1ac574728dbbc752155239a35c8bbd6e79" compoundref="IMU_8cpp" startline="290" endline="335">readSensor</referencedby>
+        <referencedby refid="classIMU_1a0481a2f76feaf06534e9473118d55ee3" compoundref="IMU_8cpp" startline="442" endline="445">whoAmI</referencedby>
+        <referencedby refid="classIMU_1acd2af48f4eb0a0321080332016e3c1f7" compoundref="IMU_8cpp" startline="449" endline="457">whoAmIAK8963</referencedby>
+        <referencedby refid="classIMU_1af3b90e0b20d4bd55091be99f7aa67737" compoundref="IMU_8cpp" startline="368" endline="394">writeAK8963Register</referencedby>
+        <referencedby refid="classIMU_1a37694424e4502ffc69bbb6c540c1a400" compoundref="IMU_8cpp" startline="402" endline="416">writeRegister</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a412a6ac9638ce35bc63f1eedc7e152de" prot="protected" static="no" mutable="no">
+        <type>int16_t</type>
+        <definition>int16_t IMU::_axcounts</definition>
+        <argsstring></argsstring>
+        <name>_axcounts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Contadores para leitura das medidas. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="97" column="11" bodyfile="lib/IMU/IMU.h" bodystart="97" bodyend="-1"/>
+        <referencedby refid="classIMU_1ac574728dbbc752155239a35c8bbd6e79" compoundref="IMU_8cpp" startline="290" endline="335">readSensor</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a43dd65a4322fcfe0b802c0440849d7d5" prot="protected" static="no" mutable="no">
+        <type>int16_t</type>
+        <definition>int16_t IMU::_aycounts</definition>
+        <argsstring></argsstring>
+        <name>_aycounts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="97" column="21" bodyfile="lib/IMU/IMU.h" bodystart="97" bodyend="-1"/>
+        <referencedby refid="classIMU_1ac574728dbbc752155239a35c8bbd6e79" compoundref="IMU_8cpp" startline="290" endline="335">readSensor</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1abfa89c440ef5607207713d1781eded13" prot="protected" static="no" mutable="no">
+        <type>int16_t</type>
+        <definition>int16_t IMU::_azcounts</definition>
+        <argsstring></argsstring>
+        <name>_azcounts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="97" column="31" bodyfile="lib/IMU/IMU.h" bodystart="97" bodyend="-1"/>
+        <referencedby refid="classIMU_1ac574728dbbc752155239a35c8bbd6e79" compoundref="IMU_8cpp" startline="290" endline="335">readSensor</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1ab27df333316fef090c6c66c850dcea6d" prot="protected" static="no" mutable="no">
+        <type>int16_t</type>
+        <definition>int16_t IMU::_gxcounts</definition>
+        <argsstring></argsstring>
+        <name>_gxcounts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="98" column="11" bodyfile="lib/IMU/IMU.h" bodystart="98" bodyend="-1"/>
+        <referencedby refid="classIMU_1ac574728dbbc752155239a35c8bbd6e79" compoundref="IMU_8cpp" startline="290" endline="335">readSensor</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1aa37b00f8fffb584f96166e6be835fc1c" prot="protected" static="no" mutable="no">
+        <type>int16_t</type>
+        <definition>int16_t IMU::_gycounts</definition>
+        <argsstring></argsstring>
+        <name>_gycounts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="98" column="21" bodyfile="lib/IMU/IMU.h" bodystart="98" bodyend="-1"/>
+        <referencedby refid="classIMU_1ac574728dbbc752155239a35c8bbd6e79" compoundref="IMU_8cpp" startline="290" endline="335">readSensor</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a16dd1d47613d444e8711704cb2225996" prot="protected" static="no" mutable="no">
+        <type>int16_t</type>
+        <definition>int16_t IMU::_gzcounts</definition>
+        <argsstring></argsstring>
+        <name>_gzcounts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="98" column="31" bodyfile="lib/IMU/IMU.h" bodystart="98" bodyend="-1"/>
+        <referencedby refid="classIMU_1ac574728dbbc752155239a35c8bbd6e79" compoundref="IMU_8cpp" startline="290" endline="335">readSensor</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1afdba3ec94b88b71f4f3608ec7d5d7fc4" prot="protected" static="no" mutable="no">
+        <type>int16_t</type>
+        <definition>int16_t IMU::_hxcounts</definition>
+        <argsstring></argsstring>
+        <name>_hxcounts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="99" column="11" bodyfile="lib/IMU/IMU.h" bodystart="99" bodyend="-1"/>
+        <referencedby refid="classIMU_1ac574728dbbc752155239a35c8bbd6e79" compoundref="IMU_8cpp" startline="290" endline="335">readSensor</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a49e29687dad5486c588df50035c8b5e0" prot="protected" static="no" mutable="no">
+        <type>int16_t</type>
+        <definition>int16_t IMU::_hycounts</definition>
+        <argsstring></argsstring>
+        <name>_hycounts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="99" column="21" bodyfile="lib/IMU/IMU.h" bodystart="99" bodyend="-1"/>
+        <referencedby refid="classIMU_1ac574728dbbc752155239a35c8bbd6e79" compoundref="IMU_8cpp" startline="290" endline="335">readSensor</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1adc2810ff775c9d2474aeb1cdc6737979" prot="protected" static="no" mutable="no">
+        <type>int16_t</type>
+        <definition>int16_t IMU::_hzcounts</definition>
+        <argsstring></argsstring>
+        <name>_hzcounts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="99" column="31" bodyfile="lib/IMU/IMU.h" bodystart="99" bodyend="-1"/>
+        <referencedby refid="classIMU_1ac574728dbbc752155239a35c8bbd6e79" compoundref="IMU_8cpp" startline="290" endline="335">readSensor</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a4274d743239871f6cbc54de5c84eca3a" prot="protected" static="no" mutable="no">
+        <type>int16_t</type>
+        <definition>int16_t IMU::_tcounts</definition>
+        <argsstring></argsstring>
+        <name>_tcounts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="100" column="11" bodyfile="lib/IMU/IMU.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1ac538fc9a09f4d60b73fb477738b0d602" prot="protected" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t IMU::_address</definition>
+        <argsstring></argsstring>
+        <name>_address</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="103" column="11" bodyfile="lib/IMU/IMU.h" bodystart="103" bodyend="-1"/>
+        <referencedby refid="classIMU_1acad2acbbf58db76230da27dba2afe8de" compoundref="IMU_8cpp" startline="17" endline="21">IMU</referencedby>
+        <referencedby refid="classIMU_1a87c200faa130ff4d2d3416b2d83f4f49" compoundref="IMU_8cpp" startline="424" endline="437">readRegisters</referencedby>
+        <referencedby refid="classIMU_1a37694424e4502ffc69bbb6c540c1a400" compoundref="IMU_8cpp" startline="402" endline="416">writeRegister</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a6911d1a81b2cbbefde2357df0c77428d" prot="protected" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t IMU::_numBytes</definition>
+        <argsstring></argsstring>
+        <name>_numBytes</name>
+        <briefdescription>
+<para>numero de bytes para leitura funcao readRegisters </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="105" column="10" bodyfile="lib/IMU/IMU.h" bodystart="105" bodyend="-1"/>
+        <referencedby refid="classIMU_1a87c200faa130ff4d2d3416b2d83f4f49" compoundref="IMU_8cpp" startline="424" endline="437">readRegisters</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a6b598b99829fa0fcd5c3d9903eb7b293" prot="protected" static="no" mutable="no">
+        <type>const uint32_t</type>
+        <definition>const uint32_t IMU::_i2cRate</definition>
+        <argsstring></argsstring>
+        <name>_i2cRate</name>
+        <initializer>= 400000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="108" column="18" bodyfile="lib/IMU/IMU.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a279015ea1ea0a32b45a9a1a26b2d4fda" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int IMU::_status</definition>
+        <argsstring></argsstring>
+        <name>_status</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="110" column="7" bodyfile="lib/IMU/IMU.h" bodystart="110" bodyend="-1"/>
+        <referencedby refid="classIMU_1a914f8b4262fba70e6d8fd0e584fa7996" compoundref="IMU_8cpp" startline="360" endline="367">readAK8963Registers</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1ac33cd97144f35683cfda7776ea16243e" prot="protected" static="no" mutable="no">
+        <type>const float</type>
+        <definition>const float IMU::gG</definition>
+        <argsstring></argsstring>
+        <name>gG</name>
+        <initializer>= 9.786171951281709f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="112" column="15" bodyfile="lib/IMU/IMU.h" bodystart="112" bodyend="-1"/>
+        <referencedby refid="classIMU_1a5567bbe0d211f1e6d386eb69ffd960a7" compoundref="IMU_8cpp" startline="121" endline="158">setAccelRange</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a28eb12db9c58ca68e4ddb5020dd9dd20" prot="protected" static="no" mutable="no">
+        <type>float</type>
+        <definition>float IMU::_accelScale</definition>
+        <argsstring></argsstring>
+        <name>_accelScale</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="114" column="9" bodyfile="lib/IMU/IMU.h" bodystart="114" bodyend="-1"/>
+        <referencedby refid="classIMU_1a5567bbe0d211f1e6d386eb69ffd960a7" compoundref="IMU_8cpp" startline="121" endline="158">setAccelRange</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a13aac4d32bd5e5bd5893a46adea43ba6" prot="protected" static="no" mutable="no">
+        <type>float</type>
+        <definition>float IMU::_gyroScale</definition>
+        <argsstring></argsstring>
+        <name>_gyroScale</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="115" column="9" bodyfile="lib/IMU/IMU.h" bodystart="115" bodyend="-1"/>
+        <referencedby refid="classIMU_1ac574728dbbc752155239a35c8bbd6e79" compoundref="IMU_8cpp" startline="290" endline="335">readSensor</referencedby>
+        <referencedby refid="classIMU_1a834f21762003f831e5e632cc7974ba75" compoundref="IMU_8cpp" startline="165" endline="206">setGyroRange</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1aca68ebe4db6de0261ad0c18ab93baa0c" prot="protected" static="no" mutable="no">
+        <type>float</type>
+        <definition>float IMU::_magScaleX</definition>
+        <argsstring></argsstring>
+        <name>_magScaleX</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="116" column="9" bodyfile="lib/IMU/IMU.h" bodystart="116" bodyend="-1"/>
+        <referencedby refid="classIMU_1ae0d964d2f8ec122be068c41b84bc18a8" compoundref="IMU_8cpp" startline="29" endline="115">begin</referencedby>
+        <referencedby refid="classIMU_1ac574728dbbc752155239a35c8bbd6e79" compoundref="IMU_8cpp" startline="290" endline="335">readSensor</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a7ec96517f746cb52f51c7df54316c133" prot="protected" static="no" mutable="no">
+        <type>float</type>
+        <definition>float IMU::_magScaleY</definition>
+        <argsstring></argsstring>
+        <name>_magScaleY</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="116" column="20" bodyfile="lib/IMU/IMU.h" bodystart="116" bodyend="-1"/>
+        <referencedby refid="classIMU_1ae0d964d2f8ec122be068c41b84bc18a8" compoundref="IMU_8cpp" startline="29" endline="115">begin</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a47b29b6c4ab5bdb220547362363fa988" prot="protected" static="no" mutable="no">
+        <type>float</type>
+        <definition>float IMU::_magScaleZ</definition>
+        <argsstring></argsstring>
+        <name>_magScaleZ</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="116" column="31" bodyfile="lib/IMU/IMU.h" bodystart="116" bodyend="-1"/>
+        <referencedby refid="classIMU_1ae0d964d2f8ec122be068c41b84bc18a8" compoundref="IMU_8cpp" startline="29" endline="115">begin</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a81407c3f7e8e63735dfc672b53fd99dd" prot="protected" static="no" mutable="no">
+        <type><ref refid="classIMU_1acdbd8690acc2a34f12d568cb39486cc6" kindref="member">AccelRange</ref></type>
+        <definition>AccelRange IMU::_accelRange</definition>
+        <argsstring></argsstring>
+        <name>_accelRange</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="117" column="14" bodyfile="lib/IMU/IMU.h" bodystart="117" bodyend="-1"/>
+        <referencedby refid="classIMU_1a5567bbe0d211f1e6d386eb69ffd960a7" compoundref="IMU_8cpp" startline="121" endline="158">setAccelRange</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1abc2f9849bd27b4d423b2140ebdc8701a" prot="protected" static="no" mutable="no">
+        <type><ref refid="classIMU_1aeb363437539137b5c1eabd3641d242d1" kindref="member">GyroRange</ref></type>
+        <definition>GyroRange IMU::_gyroRange</definition>
+        <argsstring></argsstring>
+        <name>_gyroRange</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="118" column="13" bodyfile="lib/IMU/IMU.h" bodystart="118" bodyend="-1"/>
+        <referencedby refid="classIMU_1a834f21762003f831e5e632cc7974ba75" compoundref="IMU_8cpp" startline="165" endline="206">setGyroRange</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a1301777da9bc68eee7dc744a62b06ac3" prot="protected" static="no" mutable="no">
+        <type><ref refid="classIMU_1a90c4f91f60185430b763f152ecb39521" kindref="member">DlpfBandwidth</ref></type>
+        <definition>DlpfBandwidth IMU::_bandwidth</definition>
+        <argsstring></argsstring>
+        <name>_bandwidth</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="122" column="17" bodyfile="lib/IMU/IMU.h" bodystart="122" bodyend="-1"/>
+        <referencedby refid="classIMU_1ae0d964d2f8ec122be068c41b84bc18a8" compoundref="IMU_8cpp" startline="29" endline="115">begin</referencedby>
+        <referencedby refid="classIMU_1a928fa5e2db05bd402a3fa93bd3584527" compoundref="IMU_8cpp" startline="213" endline="284">setDlpfBandwidth</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a3eb0783394601a5a41fa7079e4c929b0" prot="protected" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t IMU::_srd</definition>
+        <argsstring></argsstring>
+        <name>_srd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="123" column="11" bodyfile="lib/IMU/IMU.h" bodystart="123" bodyend="-1"/>
+        <referencedby refid="classIMU_1ae0d964d2f8ec122be068c41b84bc18a8" compoundref="IMU_8cpp" startline="29" endline="115">begin</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a5e6bc8a1984acb82321f9b48db9e8a79" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::ACCEL_OUT</definition>
+        <argsstring></argsstring>
+        <name>ACCEL_OUT</name>
+        <initializer>= 0x3B</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="126" column="17" bodyfile="lib/IMU/IMU.h" bodystart="126" bodyend="-1"/>
+        <referencedby refid="classIMU_1ac574728dbbc752155239a35c8bbd6e79" compoundref="IMU_8cpp" startline="290" endline="335">readSensor</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a59053815a5a71f5bebc2e65f16659ded" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::GYRO_OUT</definition>
+        <argsstring></argsstring>
+        <name>GYRO_OUT</name>
+        <initializer>= 0x43</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="127" column="17" bodyfile="lib/IMU/IMU.h" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1aa9c1984c97e26df587281692f60e2949" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::TEMP_OUT</definition>
+        <argsstring></argsstring>
+        <name>TEMP_OUT</name>
+        <initializer>= 0x41</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="128" column="17" bodyfile="lib/IMU/IMU.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1af28bfb59bb04bc759038078a4db01993" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::EXT_SENS_DATA_00</definition>
+        <argsstring></argsstring>
+        <name>EXT_SENS_DATA_00</name>
+        <initializer>= 0x49</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="129" column="17" bodyfile="lib/IMU/IMU.h" bodystart="129" bodyend="-1"/>
+        <referencedby refid="classIMU_1a914f8b4262fba70e6d8fd0e584fa7996" compoundref="IMU_8cpp" startline="360" endline="367">readAK8963Registers</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a71dae5b97d1b74436843e3e822ff4a32" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::ACCEL_CONFIG</definition>
+        <argsstring></argsstring>
+        <name>ACCEL_CONFIG</name>
+        <initializer>= 0x1C</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="130" column="17" bodyfile="lib/IMU/IMU.h" bodystart="130" bodyend="-1"/>
+        <referencedby refid="classIMU_1a5567bbe0d211f1e6d386eb69ffd960a7" compoundref="IMU_8cpp" startline="121" endline="158">setAccelRange</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1ac90c7b0bb203e2dff90306482614433e" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::ACCEL_FS_SEL_2G</definition>
+        <argsstring></argsstring>
+        <name>ACCEL_FS_SEL_2G</name>
+        <initializer>= 0x00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="134" column="17" bodyfile="lib/IMU/IMU.h" bodystart="134" bodyend="-1"/>
+        <referencedby refid="classIMU_1a5567bbe0d211f1e6d386eb69ffd960a7" compoundref="IMU_8cpp" startline="121" endline="158">setAccelRange</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a6d4e8157bb4c0dc204b66c9bbf7c6cb0" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::ACCEL_FS_SEL_4G</definition>
+        <argsstring></argsstring>
+        <name>ACCEL_FS_SEL_4G</name>
+        <initializer>= 0x08</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="135" column="17" bodyfile="lib/IMU/IMU.h" bodystart="135" bodyend="-1"/>
+        <referencedby refid="classIMU_1a5567bbe0d211f1e6d386eb69ffd960a7" compoundref="IMU_8cpp" startline="121" endline="158">setAccelRange</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a62e76f7ca4450fbff9ba169a7bf5d183" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::ACCEL_FS_SEL_8G</definition>
+        <argsstring></argsstring>
+        <name>ACCEL_FS_SEL_8G</name>
+        <initializer>= 0x10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="136" column="17" bodyfile="lib/IMU/IMU.h" bodystart="136" bodyend="-1"/>
+        <referencedby refid="classIMU_1a5567bbe0d211f1e6d386eb69ffd960a7" compoundref="IMU_8cpp" startline="121" endline="158">setAccelRange</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a920aa5f13b9c8e5bc927927330ac8af2" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::ACCEL_FS_SEL_16G</definition>
+        <argsstring></argsstring>
+        <name>ACCEL_FS_SEL_16G</name>
+        <initializer>= 0x18</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="137" column="17" bodyfile="lib/IMU/IMU.h" bodystart="137" bodyend="-1"/>
+        <referencedby refid="classIMU_1a5567bbe0d211f1e6d386eb69ffd960a7" compoundref="IMU_8cpp" startline="121" endline="158">setAccelRange</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a7d417d3c235bd4218a9cecb6c39b684d" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::GYRO_CONFIG</definition>
+        <argsstring></argsstring>
+        <name>GYRO_CONFIG</name>
+        <initializer>= 0x1B</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="138" column="17" bodyfile="lib/IMU/IMU.h" bodystart="138" bodyend="-1"/>
+        <referencedby refid="classIMU_1a834f21762003f831e5e632cc7974ba75" compoundref="IMU_8cpp" startline="165" endline="206">setGyroRange</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1abaece728935c77934691fc678c971de4" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::GYRO_FS_SEL_250DPS</definition>
+        <argsstring></argsstring>
+        <name>GYRO_FS_SEL_250DPS</name>
+        <initializer>= 0x00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="139" column="17" bodyfile="lib/IMU/IMU.h" bodystart="139" bodyend="-1"/>
+        <referencedby refid="classIMU_1a834f21762003f831e5e632cc7974ba75" compoundref="IMU_8cpp" startline="165" endline="206">setGyroRange</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a57d0058b144d11d64aa644ed1d3b313e" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::GYRO_FS_SEL_500DPS</definition>
+        <argsstring></argsstring>
+        <name>GYRO_FS_SEL_500DPS</name>
+        <initializer>= 0x08</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="140" column="17" bodyfile="lib/IMU/IMU.h" bodystart="140" bodyend="-1"/>
+        <referencedby refid="classIMU_1a834f21762003f831e5e632cc7974ba75" compoundref="IMU_8cpp" startline="165" endline="206">setGyroRange</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1ab8e2494d9e3021bf039323cf3440de1e" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::GYRO_FS_SEL_1000DPS</definition>
+        <argsstring></argsstring>
+        <name>GYRO_FS_SEL_1000DPS</name>
+        <initializer>= 0x10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="141" column="17" bodyfile="lib/IMU/IMU.h" bodystart="141" bodyend="-1"/>
+        <referencedby refid="classIMU_1a834f21762003f831e5e632cc7974ba75" compoundref="IMU_8cpp" startline="165" endline="206">setGyroRange</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a040f0183e93dc2c87f28f727c328a313" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::GYRO_FS_SEL_2000DPS</definition>
+        <argsstring></argsstring>
+        <name>GYRO_FS_SEL_2000DPS</name>
+        <initializer>= 0x18</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="142" column="17" bodyfile="lib/IMU/IMU.h" bodystart="142" bodyend="-1"/>
+        <referencedby refid="classIMU_1a834f21762003f831e5e632cc7974ba75" compoundref="IMU_8cpp" startline="165" endline="206">setGyroRange</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a0b4c0cfc28087ec72de6155da46de0d9" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::ACCEL_CONFIG2</definition>
+        <argsstring></argsstring>
+        <name>ACCEL_CONFIG2</name>
+        <initializer>= 0x1D</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="143" column="17" bodyfile="lib/IMU/IMU.h" bodystart="143" bodyend="-1"/>
+        <referencedby refid="classIMU_1a928fa5e2db05bd402a3fa93bd3584527" compoundref="IMU_8cpp" startline="213" endline="284">setDlpfBandwidth</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a3f74d7d2c5a8c93151ae2bee4e0b4887" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::ACCEL_DLPF_184</definition>
+        <argsstring></argsstring>
+        <name>ACCEL_DLPF_184</name>
+        <initializer>= 0x01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="144" column="17" bodyfile="lib/IMU/IMU.h" bodystart="144" bodyend="-1"/>
+        <referencedby refid="classIMU_1a928fa5e2db05bd402a3fa93bd3584527" compoundref="IMU_8cpp" startline="213" endline="284">setDlpfBandwidth</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1ac87ed9eeb0d6fd20e987410155fee53f" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::ACCEL_DLPF_92</definition>
+        <argsstring></argsstring>
+        <name>ACCEL_DLPF_92</name>
+        <initializer>= 0x02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="145" column="17" bodyfile="lib/IMU/IMU.h" bodystart="145" bodyend="-1"/>
+        <referencedby refid="classIMU_1a928fa5e2db05bd402a3fa93bd3584527" compoundref="IMU_8cpp" startline="213" endline="284">setDlpfBandwidth</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1ae2df48f29311f232432a16284b9159ed" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::ACCEL_DLPF_41</definition>
+        <argsstring></argsstring>
+        <name>ACCEL_DLPF_41</name>
+        <initializer>= 0x03</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="146" column="17" bodyfile="lib/IMU/IMU.h" bodystart="146" bodyend="-1"/>
+        <referencedby refid="classIMU_1a928fa5e2db05bd402a3fa93bd3584527" compoundref="IMU_8cpp" startline="213" endline="284">setDlpfBandwidth</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a524d9af6cbaa1df5f15db87b1157467c" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::ACCEL_DLPF_20</definition>
+        <argsstring></argsstring>
+        <name>ACCEL_DLPF_20</name>
+        <initializer>= 0x04</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="147" column="17" bodyfile="lib/IMU/IMU.h" bodystart="147" bodyend="-1"/>
+        <referencedby refid="classIMU_1a928fa5e2db05bd402a3fa93bd3584527" compoundref="IMU_8cpp" startline="213" endline="284">setDlpfBandwidth</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1af0554e2b6db872868f21b6953a1e8585" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::ACCEL_DLPF_10</definition>
+        <argsstring></argsstring>
+        <name>ACCEL_DLPF_10</name>
+        <initializer>= 0x05</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="148" column="17" bodyfile="lib/IMU/IMU.h" bodystart="148" bodyend="-1"/>
+        <referencedby refid="classIMU_1a928fa5e2db05bd402a3fa93bd3584527" compoundref="IMU_8cpp" startline="213" endline="284">setDlpfBandwidth</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1aa1d7a036cec01526451187434785b0ef" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::ACCEL_DLPF_5</definition>
+        <argsstring></argsstring>
+        <name>ACCEL_DLPF_5</name>
+        <initializer>= 0x06</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="149" column="17" bodyfile="lib/IMU/IMU.h" bodystart="149" bodyend="-1"/>
+        <referencedby refid="classIMU_1a928fa5e2db05bd402a3fa93bd3584527" compoundref="IMU_8cpp" startline="213" endline="284">setDlpfBandwidth</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a8b8013c6ee050d9a1c0c9aeb25b80cce" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::CONFIG</definition>
+        <argsstring></argsstring>
+        <name>CONFIG</name>
+        <initializer>= 0x1A</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="150" column="17" bodyfile="lib/IMU/IMU.h" bodystart="150" bodyend="-1"/>
+        <referencedby refid="classIMU_1a928fa5e2db05bd402a3fa93bd3584527" compoundref="IMU_8cpp" startline="213" endline="284">setDlpfBandwidth</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a2b7230a7c84242e46ffb1b801df342bd" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::GYRO_DLPF_184</definition>
+        <argsstring></argsstring>
+        <name>GYRO_DLPF_184</name>
+        <initializer>= 0x01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="151" column="17" bodyfile="lib/IMU/IMU.h" bodystart="151" bodyend="-1"/>
+        <referencedby refid="classIMU_1a928fa5e2db05bd402a3fa93bd3584527" compoundref="IMU_8cpp" startline="213" endline="284">setDlpfBandwidth</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a51863a08fe8094125b63498b591d0a54" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::GYRO_DLPF_92</definition>
+        <argsstring></argsstring>
+        <name>GYRO_DLPF_92</name>
+        <initializer>= 0x02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="152" column="17" bodyfile="lib/IMU/IMU.h" bodystart="152" bodyend="-1"/>
+        <referencedby refid="classIMU_1a928fa5e2db05bd402a3fa93bd3584527" compoundref="IMU_8cpp" startline="213" endline="284">setDlpfBandwidth</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a178f00ee16f64288cc8d15f3fa4400f7" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::GYRO_DLPF_41</definition>
+        <argsstring></argsstring>
+        <name>GYRO_DLPF_41</name>
+        <initializer>= 0x03</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="153" column="17" bodyfile="lib/IMU/IMU.h" bodystart="153" bodyend="-1"/>
+        <referencedby refid="classIMU_1a928fa5e2db05bd402a3fa93bd3584527" compoundref="IMU_8cpp" startline="213" endline="284">setDlpfBandwidth</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a1f673a77bab71d2ae30959e7b9ddf5be" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::GYRO_DLPF_20</definition>
+        <argsstring></argsstring>
+        <name>GYRO_DLPF_20</name>
+        <initializer>= 0x04</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="154" column="17" bodyfile="lib/IMU/IMU.h" bodystart="154" bodyend="-1"/>
+        <referencedby refid="classIMU_1a928fa5e2db05bd402a3fa93bd3584527" compoundref="IMU_8cpp" startline="213" endline="284">setDlpfBandwidth</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a2675b7bb5b5d4a9d1333472248ff7d18" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::GYRO_DLPF_10</definition>
+        <argsstring></argsstring>
+        <name>GYRO_DLPF_10</name>
+        <initializer>= 0x05</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="155" column="17" bodyfile="lib/IMU/IMU.h" bodystart="155" bodyend="-1"/>
+        <referencedby refid="classIMU_1a928fa5e2db05bd402a3fa93bd3584527" compoundref="IMU_8cpp" startline="213" endline="284">setDlpfBandwidth</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a34c9619f6639e3ddda87b018eb94214e" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::GYRO_DLPF_5</definition>
+        <argsstring></argsstring>
+        <name>GYRO_DLPF_5</name>
+        <initializer>= 0x06</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="156" column="17" bodyfile="lib/IMU/IMU.h" bodystart="156" bodyend="-1"/>
+        <referencedby refid="classIMU_1a928fa5e2db05bd402a3fa93bd3584527" compoundref="IMU_8cpp" startline="213" endline="284">setDlpfBandwidth</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a1baa422b103a5b9c2677c8e447b11ebe" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::SMPDIV</definition>
+        <argsstring></argsstring>
+        <name>SMPDIV</name>
+        <initializer>= 0x19</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="157" column="17" bodyfile="lib/IMU/IMU.h" bodystart="157" bodyend="-1"/>
+        <referencedby refid="classIMU_1ae0d964d2f8ec122be068c41b84bc18a8" compoundref="IMU_8cpp" startline="29" endline="115">begin</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1ac9be008941488be4fb726c2021946ef0" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::INT_PIN_CFG</definition>
+        <argsstring></argsstring>
+        <name>INT_PIN_CFG</name>
+        <initializer>= 0x37</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="158" column="17" bodyfile="lib/IMU/IMU.h" bodystart="158" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1aa465f1843da6c3a27b32234d1c76b746" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::INT_ENABLE</definition>
+        <argsstring></argsstring>
+        <name>INT_ENABLE</name>
+        <initializer>= 0x38</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="159" column="17" bodyfile="lib/IMU/IMU.h" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a525a5ff38a1084f951bbb982b5eda84f" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::INT_DISABLE</definition>
+        <argsstring></argsstring>
+        <name>INT_DISABLE</name>
+        <initializer>= 0x00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="160" column="17" bodyfile="lib/IMU/IMU.h" bodystart="160" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1af46a4d410ba22aa7ce6e5f3df41c8e6e" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::INT_PULSE_50US</definition>
+        <argsstring></argsstring>
+        <name>INT_PULSE_50US</name>
+        <initializer>= 0x00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="161" column="17" bodyfile="lib/IMU/IMU.h" bodystart="161" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a7d797231f1773fff9c0fe7924a0b3960" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::INT_WOM_EN</definition>
+        <argsstring></argsstring>
+        <name>INT_WOM_EN</name>
+        <initializer>= 0x40</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="162" column="17" bodyfile="lib/IMU/IMU.h" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1adef065984587c7e17ee4641a1cf55ce0" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::INT_RAW_RDY_EN</definition>
+        <argsstring></argsstring>
+        <name>INT_RAW_RDY_EN</name>
+        <initializer>= 0x01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="163" column="17" bodyfile="lib/IMU/IMU.h" bodystart="163" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a66529d6102c44bc6be8d8ef167f27058" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::PWR_MGMNT_1</definition>
+        <argsstring></argsstring>
+        <name>PWR_MGMNT_1</name>
+        <initializer>= 0x6B</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="164" column="17" bodyfile="lib/IMU/IMU.h" bodystart="164" bodyend="-1"/>
+        <referencedby refid="classIMU_1ae0d964d2f8ec122be068c41b84bc18a8" compoundref="IMU_8cpp" startline="29" endline="115">begin</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1aa1c569cb683d1f2b24074a561cbb1b44" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::PWR_CYCLE</definition>
+        <argsstring></argsstring>
+        <name>PWR_CYCLE</name>
+        <initializer>= 0x20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="165" column="17" bodyfile="lib/IMU/IMU.h" bodystart="165" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a045e1ec896d0e207d640d1fb7930328f" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::PWR_RESET</definition>
+        <argsstring></argsstring>
+        <name>PWR_RESET</name>
+        <initializer>= 0x80</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="166" column="17" bodyfile="lib/IMU/IMU.h" bodystart="166" bodyend="-1"/>
+        <referencedby refid="classIMU_1ae0d964d2f8ec122be068c41b84bc18a8" compoundref="IMU_8cpp" startline="29" endline="115">begin</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1aed128bfb60251b9016454f9b491b0d3e" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::CLOCK_SEL_PLL</definition>
+        <argsstring></argsstring>
+        <name>CLOCK_SEL_PLL</name>
+        <initializer>= 0x01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="167" column="17" bodyfile="lib/IMU/IMU.h" bodystart="167" bodyend="-1"/>
+        <referencedby refid="classIMU_1ae0d964d2f8ec122be068c41b84bc18a8" compoundref="IMU_8cpp" startline="29" endline="115">begin</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a8e2a7777d4356a5c4cf6cb52e9aeed4b" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::PWR_MGMNT_2</definition>
+        <argsstring></argsstring>
+        <name>PWR_MGMNT_2</name>
+        <initializer>= 0x6C</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="168" column="17" bodyfile="lib/IMU/IMU.h" bodystart="168" bodyend="-1"/>
+        <referencedby refid="classIMU_1ae0d964d2f8ec122be068c41b84bc18a8" compoundref="IMU_8cpp" startline="29" endline="115">begin</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1ad52e1d65ca1b23161ff28ea6a0891a1b" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::SEN_ENABLE</definition>
+        <argsstring></argsstring>
+        <name>SEN_ENABLE</name>
+        <initializer>= 0x00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="169" column="17" bodyfile="lib/IMU/IMU.h" bodystart="169" bodyend="-1"/>
+        <referencedby refid="classIMU_1ae0d964d2f8ec122be068c41b84bc18a8" compoundref="IMU_8cpp" startline="29" endline="115">begin</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a5dbb6af50b6cb4f752b971d073049980" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::DIS_GYRO</definition>
+        <argsstring></argsstring>
+        <name>DIS_GYRO</name>
+        <initializer>= 0x07</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="170" column="17" bodyfile="lib/IMU/IMU.h" bodystart="170" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a82f56158c28ca51ed7fe9a667b668080" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::USER_CTRL</definition>
+        <argsstring></argsstring>
+        <name>USER_CTRL</name>
+        <initializer>= 0x6A</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="171" column="17" bodyfile="lib/IMU/IMU.h" bodystart="171" bodyend="-1"/>
+        <referencedby refid="classIMU_1ae0d964d2f8ec122be068c41b84bc18a8" compoundref="IMU_8cpp" startline="29" endline="115">begin</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1aac5f67e0f33068d9ca184e8338cea69b" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::I2C_MST_EN</definition>
+        <argsstring></argsstring>
+        <name>I2C_MST_EN</name>
+        <initializer>= 0x20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="172" column="17" bodyfile="lib/IMU/IMU.h" bodystart="172" bodyend="-1"/>
+        <referencedby refid="classIMU_1ae0d964d2f8ec122be068c41b84bc18a8" compoundref="IMU_8cpp" startline="29" endline="115">begin</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a19704607249a2df9ae115cf5ec42b065" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::I2C_MST_CLK</definition>
+        <argsstring></argsstring>
+        <name>I2C_MST_CLK</name>
+        <initializer>= 0x0D</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="173" column="17" bodyfile="lib/IMU/IMU.h" bodystart="173" bodyend="-1"/>
+        <referencedby refid="classIMU_1ae0d964d2f8ec122be068c41b84bc18a8" compoundref="IMU_8cpp" startline="29" endline="115">begin</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a40a6c474b6590faa545bcef6796e0b09" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::I2C_MST_CTRL</definition>
+        <argsstring></argsstring>
+        <name>I2C_MST_CTRL</name>
+        <initializer>= 0x24</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="174" column="17" bodyfile="lib/IMU/IMU.h" bodystart="174" bodyend="-1"/>
+        <referencedby refid="classIMU_1ae0d964d2f8ec122be068c41b84bc18a8" compoundref="IMU_8cpp" startline="29" endline="115">begin</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a6ae19caaa47d77d07abf79af77e501e8" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::I2C_SLV0_ADDR</definition>
+        <argsstring></argsstring>
+        <name>I2C_SLV0_ADDR</name>
+        <initializer>= 0x25</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="175" column="17" bodyfile="lib/IMU/IMU.h" bodystart="175" bodyend="-1"/>
+        <referencedby refid="classIMU_1a914f8b4262fba70e6d8fd0e584fa7996" compoundref="IMU_8cpp" startline="360" endline="367">readAK8963Registers</referencedby>
+        <referencedby refid="classIMU_1af3b90e0b20d4bd55091be99f7aa67737" compoundref="IMU_8cpp" startline="368" endline="394">writeAK8963Register</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a45b93a6a2bd367d73428482805ee65ce" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::I2C_SLV0_REG</definition>
+        <argsstring></argsstring>
+        <name>I2C_SLV0_REG</name>
+        <initializer>= 0x26</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="176" column="17" bodyfile="lib/IMU/IMU.h" bodystart="176" bodyend="-1"/>
+        <referencedby refid="classIMU_1a914f8b4262fba70e6d8fd0e584fa7996" compoundref="IMU_8cpp" startline="360" endline="367">readAK8963Registers</referencedby>
+        <referencedby refid="classIMU_1af3b90e0b20d4bd55091be99f7aa67737" compoundref="IMU_8cpp" startline="368" endline="394">writeAK8963Register</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1ab6fc887f35142051d1b1fe3cba25aff0" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::I2C_SLV0_DO</definition>
+        <argsstring></argsstring>
+        <name>I2C_SLV0_DO</name>
+        <initializer>= 0x63</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="177" column="17" bodyfile="lib/IMU/IMU.h" bodystart="177" bodyend="-1"/>
+        <referencedby refid="classIMU_1af3b90e0b20d4bd55091be99f7aa67737" compoundref="IMU_8cpp" startline="368" endline="394">writeAK8963Register</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a3b6c38493eed68a58509e8be8b451ccf" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::I2C_SLV0_CTRL</definition>
+        <argsstring></argsstring>
+        <name>I2C_SLV0_CTRL</name>
+        <initializer>= 0x27</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="178" column="17" bodyfile="lib/IMU/IMU.h" bodystart="178" bodyend="-1"/>
+        <referencedby refid="classIMU_1a914f8b4262fba70e6d8fd0e584fa7996" compoundref="IMU_8cpp" startline="360" endline="367">readAK8963Registers</referencedby>
+        <referencedby refid="classIMU_1af3b90e0b20d4bd55091be99f7aa67737" compoundref="IMU_8cpp" startline="368" endline="394">writeAK8963Register</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a73733d4a18041bbc1f094a52be517118" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::I2C_SLV0_EN</definition>
+        <argsstring></argsstring>
+        <name>I2C_SLV0_EN</name>
+        <initializer>= 0x80</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="179" column="17" bodyfile="lib/IMU/IMU.h" bodystart="179" bodyend="-1"/>
+        <referencedby refid="classIMU_1a914f8b4262fba70e6d8fd0e584fa7996" compoundref="IMU_8cpp" startline="360" endline="367">readAK8963Registers</referencedby>
+        <referencedby refid="classIMU_1af3b90e0b20d4bd55091be99f7aa67737" compoundref="IMU_8cpp" startline="368" endline="394">writeAK8963Register</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a1ff3bc7d6cd3c4035ae2619248b9dd86" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::I2C_READ_FLAG</definition>
+        <argsstring></argsstring>
+        <name>I2C_READ_FLAG</name>
+        <initializer>= 0x80</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="180" column="17" bodyfile="lib/IMU/IMU.h" bodystart="180" bodyend="-1"/>
+        <referencedby refid="classIMU_1a914f8b4262fba70e6d8fd0e584fa7996" compoundref="IMU_8cpp" startline="360" endline="367">readAK8963Registers</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1ad71aa14a790197de3eff414f6f9dfcec" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::MOT_DETECT_CTRL</definition>
+        <argsstring></argsstring>
+        <name>MOT_DETECT_CTRL</name>
+        <initializer>= 0x69</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="181" column="17" bodyfile="lib/IMU/IMU.h" bodystart="181" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a5ffc27f0c3bca71b7df305a66348a23e" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::ACCEL_INTEL_EN</definition>
+        <argsstring></argsstring>
+        <name>ACCEL_INTEL_EN</name>
+        <initializer>= 0x80</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="182" column="17" bodyfile="lib/IMU/IMU.h" bodystart="182" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1aca3b94b1ea5f63ed99123135f9684d75" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::ACCEL_INTEL_MODE</definition>
+        <argsstring></argsstring>
+        <name>ACCEL_INTEL_MODE</name>
+        <initializer>= 0x40</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="183" column="17" bodyfile="lib/IMU/IMU.h" bodystart="183" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a981e7149fad7f85b241d9205df62e464" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::LP_ACCEL_ODR</definition>
+        <argsstring></argsstring>
+        <name>LP_ACCEL_ODR</name>
+        <initializer>= 0x1E</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="184" column="17" bodyfile="lib/IMU/IMU.h" bodystart="184" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a9ca3d7b64ffa73ab222221294f9afe7b" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::WOM_THR</definition>
+        <argsstring></argsstring>
+        <name>WOM_THR</name>
+        <initializer>= 0x1F</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="185" column="17" bodyfile="lib/IMU/IMU.h" bodystart="185" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1ad608d0b182a0da8574b85194f5707d14" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::WHO_AM_I</definition>
+        <argsstring></argsstring>
+        <name>WHO_AM_I</name>
+        <initializer>= 0x75</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="186" column="17" bodyfile="lib/IMU/IMU.h" bodystart="186" bodyend="-1"/>
+        <referencedby refid="classIMU_1a0481a2f76feaf06534e9473118d55ee3" compoundref="IMU_8cpp" startline="442" endline="445">whoAmI</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a4906bf7080228a00a2726fab0bc9deb1" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::AK8963_I2C_ADDR</definition>
+        <argsstring></argsstring>
+        <name>AK8963_I2C_ADDR</name>
+        <initializer>= 0x0C</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="195" column="17" bodyfile="lib/IMU/IMU.h" bodystart="195" bodyend="-1"/>
+        <referencedby refid="classIMU_1a914f8b4262fba70e6d8fd0e584fa7996" compoundref="IMU_8cpp" startline="360" endline="367">readAK8963Registers</referencedby>
+        <referencedby refid="classIMU_1af3b90e0b20d4bd55091be99f7aa67737" compoundref="IMU_8cpp" startline="368" endline="394">writeAK8963Register</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1af5582b84ecf8829cfc7da6ad1ed3296a" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::AK8963_HXL</definition>
+        <argsstring></argsstring>
+        <name>AK8963_HXL</name>
+        <initializer>= 0x03</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="196" column="17" bodyfile="lib/IMU/IMU.h" bodystart="196" bodyend="-1"/>
+        <referencedby refid="classIMU_1ae0d964d2f8ec122be068c41b84bc18a8" compoundref="IMU_8cpp" startline="29" endline="115">begin</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1aa8691a633c35d2f7d7951f68b187adb3" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::AK8963_CNTL1</definition>
+        <argsstring></argsstring>
+        <name>AK8963_CNTL1</name>
+        <initializer>= 0x0A</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="197" column="17" bodyfile="lib/IMU/IMU.h" bodystart="197" bodyend="-1"/>
+        <referencedby refid="classIMU_1ae0d964d2f8ec122be068c41b84bc18a8" compoundref="IMU_8cpp" startline="29" endline="115">begin</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1aa96e1f69db3a08f6ac0c0115d9e8e880" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::AK8963_PWR_DOWN</definition>
+        <argsstring></argsstring>
+        <name>AK8963_PWR_DOWN</name>
+        <initializer>= 0x00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="198" column="17" bodyfile="lib/IMU/IMU.h" bodystart="198" bodyend="-1"/>
+        <referencedby refid="classIMU_1ae0d964d2f8ec122be068c41b84bc18a8" compoundref="IMU_8cpp" startline="29" endline="115">begin</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a0e2fe28ad7e635876a061dcf0b338bcb" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::AK8963_CNT_MEAS1</definition>
+        <argsstring></argsstring>
+        <name>AK8963_CNT_MEAS1</name>
+        <initializer>= 0x12</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="199" column="17" bodyfile="lib/IMU/IMU.h" bodystart="199" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a81aa27b2da74539d88966ab71c28337d" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::AK8963_CNT_MEAS2</definition>
+        <argsstring></argsstring>
+        <name>AK8963_CNT_MEAS2</name>
+        <initializer>= 0x16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="200" column="17" bodyfile="lib/IMU/IMU.h" bodystart="200" bodyend="-1"/>
+        <referencedby refid="classIMU_1ae0d964d2f8ec122be068c41b84bc18a8" compoundref="IMU_8cpp" startline="29" endline="115">begin</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1aefe9d58c962b042b5e772342fe510170" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::AK8963_FUSE_ROM</definition>
+        <argsstring></argsstring>
+        <name>AK8963_FUSE_ROM</name>
+        <initializer>= 0x0F</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="201" column="17" bodyfile="lib/IMU/IMU.h" bodystart="201" bodyend="-1"/>
+        <referencedby refid="classIMU_1ae0d964d2f8ec122be068c41b84bc18a8" compoundref="IMU_8cpp" startline="29" endline="115">begin</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1ab6945cc8ff2e84fa2f0927388d74fec1" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::AK8963_CNTL2</definition>
+        <argsstring></argsstring>
+        <name>AK8963_CNTL2</name>
+        <initializer>= 0x0B</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="202" column="17" bodyfile="lib/IMU/IMU.h" bodystart="202" bodyend="-1"/>
+        <referencedby refid="classIMU_1ae0d964d2f8ec122be068c41b84bc18a8" compoundref="IMU_8cpp" startline="29" endline="115">begin</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1ad170d8561fc4600092a29e1b3ff214a6" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::AK8963_RESET</definition>
+        <argsstring></argsstring>
+        <name>AK8963_RESET</name>
+        <initializer>= 0x01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="203" column="17" bodyfile="lib/IMU/IMU.h" bodystart="203" bodyend="-1"/>
+        <referencedby refid="classIMU_1ae0d964d2f8ec122be068c41b84bc18a8" compoundref="IMU_8cpp" startline="29" endline="115">begin</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1a5dc26b210ba9adcc176b9e837238d87d" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::AK8963_ASA</definition>
+        <argsstring></argsstring>
+        <name>AK8963_ASA</name>
+        <initializer>= 0x10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="204" column="17" bodyfile="lib/IMU/IMU.h" bodystart="204" bodyend="-1"/>
+        <referencedby refid="classIMU_1ae0d964d2f8ec122be068c41b84bc18a8" compoundref="IMU_8cpp" startline="29" endline="115">begin</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIMU_1afbf16a57d58c858beda5ccf36ee4b81f" prot="protected" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t IMU::AK8963_WHO_AM_I</definition>
+        <argsstring></argsstring>
+        <name>AK8963_WHO_AM_I</name>
+        <initializer>= 0x00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="205" column="17" bodyfile="lib/IMU/IMU.h" bodystart="205" bodyend="-1"/>
+        <referencedby refid="classIMU_1acd2af48f4eb0a0321080332016e3c1f7" compoundref="IMU_8cpp" startline="449" endline="457">whoAmIAK8963</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classIMU_1acad2acbbf58db76230da27dba2afe8de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>IMU::IMU</definition>
+        <argsstring>(TwoWire &amp;bus, uint8_t address)</argsstring>
+        <name>IMU</name>
+        <param>
+          <type>TwoWire &amp;</type>
+          <declname>bus</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>address</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Construtor da classe <ref refid="classIMU" kindref="compound">IMU</ref>. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>bus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>classe de comunicacao Wire. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Endereço do imu. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="81" column="3" bodyfile="lib/IMU/IMU.cpp" bodystart="17" bodyend="21"/>
+        <references refid="classIMU_1ac538fc9a09f4d60b73fb477738b0d602" compoundref="IMU_8h" startline="103">_address</references>
+        <references refid="classIMU_1a18fe8e6be1b14c9e6c1b47d884dae375" compoundref="IMU_8h" startline="90">_i2c</references>
+      </memberdef>
+      <memberdef kind="function" id="classIMU_1ae0d964d2f8ec122be068c41b84bc18a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int IMU::begin</definition>
+        <argsstring>(Vector3f &amp;acel, Vector3f &amp;gyro, Vector3f &amp;mag)</argsstring>
+        <name>begin</name>
+        <param>
+          <type>Vector3f &amp;</type>
+          <declname>acel</declname>
+        </param>
+        <param>
+          <type>Vector3f &amp;</type>
+          <declname>gyro</declname>
+        </param>
+        <param>
+          <type>Vector3f &amp;</type>
+          <declname>mag</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Inicialização e configuração da unidade MARG. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>acel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vetor de medidas do acelerômetro. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>gyro</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vetor de medidas do giroscópio. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vetor de medidas do Magnetômetro. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>inteiro positivo para ok ou negativo para erros. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="82" column="7" bodyfile="lib/IMU/IMU.cpp" bodystart="29" bodyend="115"/>
+        <references refid="classIMU_1a0efdfa77f452641689be4e9a4bae6a12" compoundref="IMU_8h" startline="56">_acel</references>
+        <references refid="classIMU_1a1301777da9bc68eee7dc744a62b06ac3" compoundref="IMU_8h" startline="122">_bandwidth</references>
+        <references refid="classIMU_1a36ebf3acc2b8f819d6f08650ddd98ca3" compoundref="IMU_8h" startline="94">_buffer</references>
+        <references refid="classIMU_1a72d1d4fe1027a9b0d6eed394e18ea97b" compoundref="IMU_8h" startline="58">_gyro</references>
+        <references refid="classIMU_1a18fe8e6be1b14c9e6c1b47d884dae375" compoundref="IMU_8h" startline="90">_i2c</references>
+        <references refid="classIMU_1a54e4834bdf8648b7ec11ca460b92facf" compoundref="IMU_8h" startline="60">_mag</references>
+        <references refid="classIMU_1aca68ebe4db6de0261ad0c18ab93baa0c" compoundref="IMU_8h" startline="116">_magScaleX</references>
+        <references refid="classIMU_1a7ec96517f746cb52f51c7df54316c133" compoundref="IMU_8h" startline="116">_magScaleY</references>
+        <references refid="classIMU_1a47b29b6c4ab5bdb220547362363fa988" compoundref="IMU_8h" startline="116">_magScaleZ</references>
+        <references refid="classIMU_1a3eb0783394601a5a41fa7079e4c929b0" compoundref="IMU_8h" startline="123">_srd</references>
+        <references refid="classIMU_1acdbd8690acc2a34f12d568cb39486cc6a5398002690dded81a155ebdf7baea27f" compoundref="IMU_8h" startline="31">ACCEL_RANGE_16G</references>
+        <references refid="classIMU_1a5dc26b210ba9adcc176b9e837238d87d" compoundref="IMU_8h" startline="204">AK8963_ASA</references>
+        <references refid="classIMU_1a81aa27b2da74539d88966ab71c28337d" compoundref="IMU_8h" startline="200">AK8963_CNT_MEAS2</references>
+        <references refid="classIMU_1aa8691a633c35d2f7d7951f68b187adb3" compoundref="IMU_8h" startline="197">AK8963_CNTL1</references>
+        <references refid="classIMU_1ab6945cc8ff2e84fa2f0927388d74fec1" compoundref="IMU_8h" startline="202">AK8963_CNTL2</references>
+        <references refid="classIMU_1aefe9d58c962b042b5e772342fe510170" compoundref="IMU_8h" startline="201">AK8963_FUSE_ROM</references>
+        <references refid="classIMU_1af5582b84ecf8829cfc7da6ad1ed3296a" compoundref="IMU_8h" startline="196">AK8963_HXL</references>
+        <references refid="classIMU_1aa96e1f69db3a08f6ac0c0115d9e8e880" compoundref="IMU_8h" startline="198">AK8963_PWR_DOWN</references>
+        <references refid="classIMU_1ad170d8561fc4600092a29e1b3ff214a6" compoundref="IMU_8h" startline="203">AK8963_RESET</references>
+        <references refid="classIMU_1aed128bfb60251b9016454f9b491b0d3e" compoundref="IMU_8h" startline="167">CLOCK_SEL_PLL</references>
+        <references refid="classIMU_1a90c4f91f60185430b763f152ecb39521a1d05af591f93fc300ae7ef2608c62f51" compoundref="IMU_8h" startline="39">DLPF_BANDWIDTH_5HZ</references>
+        <references refid="classIMU_1aeb363437539137b5c1eabd3641d242d1ac11c26d662eb1906caf70fb73d96e8bb" compoundref="IMU_8h" startline="24">GYRO_RANGE_1000DPS</references>
+        <references refid="classIMU_1a19704607249a2df9ae115cf5ec42b065" compoundref="IMU_8h" startline="173">I2C_MST_CLK</references>
+        <references refid="classIMU_1a40a6c474b6590faa545bcef6796e0b09" compoundref="IMU_8h" startline="174">I2C_MST_CTRL</references>
+        <references refid="classIMU_1aac5f67e0f33068d9ca184e8338cea69b" compoundref="IMU_8h" startline="172">I2C_MST_EN</references>
+        <references refid="classIMU_1a66529d6102c44bc6be8d8ef167f27058" compoundref="IMU_8h" startline="164">PWR_MGMNT_1</references>
+        <references refid="classIMU_1a8e2a7777d4356a5c4cf6cb52e9aeed4b" compoundref="IMU_8h" startline="168">PWR_MGMNT_2</references>
+        <references refid="classIMU_1a045e1ec896d0e207d640d1fb7930328f" compoundref="IMU_8h" startline="166">PWR_RESET</references>
+        <references refid="classIMU_1a914f8b4262fba70e6d8fd0e584fa7996" compoundref="IMU_8cpp" startline="360" endline="367">readAK8963Registers</references>
+        <references refid="classIMU_1ad52e1d65ca1b23161ff28ea6a0891a1b" compoundref="IMU_8h" startline="169">SEN_ENABLE</references>
+        <references refid="classIMU_1a5567bbe0d211f1e6d386eb69ffd960a7" compoundref="IMU_8cpp" startline="121" endline="158">setAccelRange</references>
+        <references refid="classIMU_1a928fa5e2db05bd402a3fa93bd3584527" compoundref="IMU_8cpp" startline="213" endline="284">setDlpfBandwidth</references>
+        <references refid="classIMU_1a834f21762003f831e5e632cc7974ba75" compoundref="IMU_8cpp" startline="165" endline="206">setGyroRange</references>
+        <references refid="classIMU_1a1baa422b103a5b9c2677c8e447b11ebe" compoundref="IMU_8h" startline="157">SMPDIV</references>
+        <references refid="classIMU_1a82f56158c28ca51ed7fe9a667b668080" compoundref="IMU_8h" startline="171">USER_CTRL</references>
+        <references refid="classIMU_1acd2af48f4eb0a0321080332016e3c1f7" compoundref="IMU_8cpp" startline="449" endline="457">whoAmIAK8963</references>
+        <references refid="classIMU_1af3b90e0b20d4bd55091be99f7aa67737" compoundref="IMU_8cpp" startline="368" endline="394">writeAK8963Register</references>
+        <references refid="classIMU_1a37694424e4502ffc69bbb6c540c1a400" compoundref="IMU_8cpp" startline="402" endline="416">writeRegister</references>
+        <referencedby refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" compoundref="EKF_8cpp" startline="39" endline="89">ekf::EKF::begin</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classIMU_1ac574728dbbc752155239a35c8bbd6e79" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int IMU::readSensor</definition>
+        <argsstring>()</argsstring>
+        <name>readSensor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Faz leitura da MARG. <simplesect kind="return"><para>Positivo se ok, negativo para ok contrário.</para>
+</simplesect>
+As variáveis <ref refid="classIMU_1a0efdfa77f452641689be4e9a4bae6a12" kindref="member">_acel</ref>, <ref refid="classIMU_1a72d1d4fe1027a9b0d6eed394e18ea97b" kindref="member">_gyro</ref> e <ref refid="classIMU_1a54e4834bdf8648b7ec11ca460b92facf" kindref="member">_mag</ref> são modificadas. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="83" column="7" bodyfile="lib/IMU/IMU.cpp" bodystart="290" bodyend="335"/>
+        <references refid="classIMU_1a0efdfa77f452641689be4e9a4bae6a12" compoundref="IMU_8h" startline="56">_acel</references>
+        <references refid="classIMU_1a412a6ac9638ce35bc63f1eedc7e152de" compoundref="IMU_8h" startline="97">_axcounts</references>
+        <references refid="classIMU_1a43dd65a4322fcfe0b802c0440849d7d5" compoundref="IMU_8h" startline="97">_aycounts</references>
+        <references refid="classIMU_1abfa89c440ef5607207713d1781eded13" compoundref="IMU_8h" startline="97">_azcounts</references>
+        <references refid="classIMU_1a9a145f45e2e08cae0f363747c5603bd1" compoundref="IMU_8h" startline="73">_biasAccel</references>
+        <references refid="classIMU_1a9d22cd7cb7bb93f2e04aa713aed73532" compoundref="IMU_8h" startline="76">_biasGyro</references>
+        <references refid="classIMU_1a3ba42ad7f598311689e5eccd75daa019" compoundref="IMU_8h" startline="78">_biasMag</references>
+        <references refid="classIMU_1a36ebf3acc2b8f819d6f08650ddd98ca3" compoundref="IMU_8h" startline="94">_buffer</references>
+        <references refid="classIMU_1ab27df333316fef090c6c66c850dcea6d" compoundref="IMU_8h" startline="98">_gxcounts</references>
+        <references refid="classIMU_1aa37b00f8fffb584f96166e6be835fc1c" compoundref="IMU_8h" startline="98">_gycounts</references>
+        <references refid="classIMU_1a72d1d4fe1027a9b0d6eed394e18ea97b" compoundref="IMU_8h" startline="58">_gyro</references>
+        <references refid="classIMU_1a13aac4d32bd5e5bd5893a46adea43ba6" compoundref="IMU_8h" startline="115">_gyroScale</references>
+        <references refid="classIMU_1a16dd1d47613d444e8711704cb2225996" compoundref="IMU_8h" startline="98">_gzcounts</references>
+        <references refid="classIMU_1afdba3ec94b88b71f4f3608ec7d5d7fc4" compoundref="IMU_8h" startline="99">_hxcounts</references>
+        <references refid="classIMU_1a49e29687dad5486c588df50035c8b5e0" compoundref="IMU_8h" startline="99">_hycounts</references>
+        <references refid="classIMU_1adc2810ff775c9d2474aeb1cdc6737979" compoundref="IMU_8h" startline="99">_hzcounts</references>
+        <references refid="classIMU_1a54e4834bdf8648b7ec11ca460b92facf" compoundref="IMU_8h" startline="60">_mag</references>
+        <references refid="classIMU_1aca68ebe4db6de0261ad0c18ab93baa0c" compoundref="IMU_8h" startline="116">_magScaleX</references>
+        <references refid="classIMU_1a5e6bc8a1984acb82321f9b48db9e8a79" compoundref="IMU_8h" startline="126">ACCEL_OUT</references>
+        <references refid="classIMU_1ae628afbcc858c70ea5d36a13d59998f2" compoundref="IMU_8h" startline="61">magTemp</references>
+        <references refid="classIMU_1a87c200faa130ff4d2d3416b2d83f4f49" compoundref="IMU_8cpp" startline="424" endline="437">readRegisters</references>
+        <references refid="classIMU_1a377a386f44cf1d85d31b4f2a6b1a43d1" compoundref="IMU_8h" startline="65">sFAccel</references>
+        <referencedby refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" compoundref="EKF_8cpp" startline="39" endline="89">ekf::EKF::begin</referencedby>
+        <referencedby refid="classIMU_1a3546779010d9128859f465195eff77f5" compoundref="IMU_8cpp" startline="458" endline="472">calibracaoMagnetometro</referencedby>
+        <referencedby refid="classIMU_1a5f096cb37d4b16851381bf09d6809403" compoundref="IMU_8cpp" startline="343" endline="358">calibraGyro</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classIMU_1a928fa5e2db05bd402a3fa93bd3584527" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int IMU::setDlpfBandwidth</definition>
+        <argsstring>(DlpfBandwidth bandwidth)</argsstring>
+        <name>setDlpfBandwidth</name>
+        <param>
+          <type><ref refid="classIMU_1a90c4f91f60185430b763f152ecb39521" kindref="member">DlpfBandwidth</ref></type>
+          <declname>bandwidth</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Configura a o filtro passa baixa do acelerômetro e do giroscópio. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>bandwidth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>de operação </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>positivo se ok, negativo se falhar. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="84" column="7" bodyfile="lib/IMU/IMU.cpp" bodystart="213" bodyend="284"/>
+        <references refid="classIMU_1a1301777da9bc68eee7dc744a62b06ac3" compoundref="IMU_8h" startline="122">_bandwidth</references>
+        <references refid="classIMU_1a0b4c0cfc28087ec72de6155da46de0d9" compoundref="IMU_8h" startline="143">ACCEL_CONFIG2</references>
+        <references refid="classIMU_1af0554e2b6db872868f21b6953a1e8585" compoundref="IMU_8h" startline="148">ACCEL_DLPF_10</references>
+        <references refid="classIMU_1a3f74d7d2c5a8c93151ae2bee4e0b4887" compoundref="IMU_8h" startline="144">ACCEL_DLPF_184</references>
+        <references refid="classIMU_1a524d9af6cbaa1df5f15db87b1157467c" compoundref="IMU_8h" startline="147">ACCEL_DLPF_20</references>
+        <references refid="classIMU_1ae2df48f29311f232432a16284b9159ed" compoundref="IMU_8h" startline="146">ACCEL_DLPF_41</references>
+        <references refid="classIMU_1aa1d7a036cec01526451187434785b0ef" compoundref="IMU_8h" startline="149">ACCEL_DLPF_5</references>
+        <references refid="classIMU_1ac87ed9eeb0d6fd20e987410155fee53f" compoundref="IMU_8h" startline="145">ACCEL_DLPF_92</references>
+        <references refid="classIMU_1a8b8013c6ee050d9a1c0c9aeb25b80cce" compoundref="IMU_8h" startline="150">CONFIG</references>
+        <references refid="classIMU_1a90c4f91f60185430b763f152ecb39521a38fa7998dfeb640e0289bc7407c40285" compoundref="IMU_8h" startline="38">DLPF_BANDWIDTH_10HZ</references>
+        <references refid="classIMU_1a90c4f91f60185430b763f152ecb39521a461c657b4bc9c4f82936a9cb3b5ef54e" compoundref="IMU_8h" startline="34">DLPF_BANDWIDTH_184HZ</references>
+        <references refid="classIMU_1a90c4f91f60185430b763f152ecb39521a174ee7819d598dcbb0d29cf8d0f17e8f" compoundref="IMU_8h" startline="37">DLPF_BANDWIDTH_20HZ</references>
+        <references refid="classIMU_1a90c4f91f60185430b763f152ecb39521afcbbbba2e520cdd50dcb40da160137f0" compoundref="IMU_8h" startline="36">DLPF_BANDWIDTH_41HZ</references>
+        <references refid="classIMU_1a90c4f91f60185430b763f152ecb39521a1d05af591f93fc300ae7ef2608c62f51" compoundref="IMU_8h" startline="39">DLPF_BANDWIDTH_5HZ</references>
+        <references refid="classIMU_1a90c4f91f60185430b763f152ecb39521ac652b0fb4733da213152970ebc6ab53d" compoundref="IMU_8h" startline="35">DLPF_BANDWIDTH_92HZ</references>
+        <references refid="classIMU_1a2675b7bb5b5d4a9d1333472248ff7d18" compoundref="IMU_8h" startline="155">GYRO_DLPF_10</references>
+        <references refid="classIMU_1a2b7230a7c84242e46ffb1b801df342bd" compoundref="IMU_8h" startline="151">GYRO_DLPF_184</references>
+        <references refid="classIMU_1a1f673a77bab71d2ae30959e7b9ddf5be" compoundref="IMU_8h" startline="154">GYRO_DLPF_20</references>
+        <references refid="classIMU_1a178f00ee16f64288cc8d15f3fa4400f7" compoundref="IMU_8h" startline="153">GYRO_DLPF_41</references>
+        <references refid="classIMU_1a34c9619f6639e3ddda87b018eb94214e" compoundref="IMU_8h" startline="156">GYRO_DLPF_5</references>
+        <references refid="classIMU_1a51863a08fe8094125b63498b591d0a54" compoundref="IMU_8h" startline="152">GYRO_DLPF_92</references>
+        <references refid="classIMU_1a37694424e4502ffc69bbb6c540c1a400" compoundref="IMU_8cpp" startline="402" endline="416">writeRegister</references>
+        <referencedby refid="classIMU_1ae0d964d2f8ec122be068c41b84bc18a8" compoundref="IMU_8cpp" startline="29" endline="115">begin</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classIMU_1a834f21762003f831e5e632cc7974ba75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int IMU::setGyroRange</definition>
+        <argsstring>(GyroRange range)</argsstring>
+        <name>setGyroRange</name>
+        <param>
+          <type><ref refid="classIMU_1aeb363437539137b5c1eabd3641d242d1" kindref="member">GyroRange</ref></type>
+          <declname>range</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Configura a sensibilidade de operação do giroscópio. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>range</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>de operação </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>positivo se ok, negativo se falhar. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="85" column="7" bodyfile="lib/IMU/IMU.cpp" bodystart="165" bodyend="206"/>
+        <references refid="classIMU_1abc2f9849bd27b4d423b2140ebdc8701a" compoundref="IMU_8h" startline="118">_gyroRange</references>
+        <references refid="classIMU_1a13aac4d32bd5e5bd5893a46adea43ba6" compoundref="IMU_8h" startline="115">_gyroScale</references>
+        <references refid="classIMU_1a7d417d3c235bd4218a9cecb6c39b684d" compoundref="IMU_8h" startline="138">GYRO_CONFIG</references>
+        <references refid="classIMU_1ab8e2494d9e3021bf039323cf3440de1e" compoundref="IMU_8h" startline="141">GYRO_FS_SEL_1000DPS</references>
+        <references refid="classIMU_1a040f0183e93dc2c87f28f727c328a313" compoundref="IMU_8h" startline="142">GYRO_FS_SEL_2000DPS</references>
+        <references refid="classIMU_1abaece728935c77934691fc678c971de4" compoundref="IMU_8h" startline="139">GYRO_FS_SEL_250DPS</references>
+        <references refid="classIMU_1a57d0058b144d11d64aa644ed1d3b313e" compoundref="IMU_8h" startline="140">GYRO_FS_SEL_500DPS</references>
+        <references refid="classIMU_1aeb363437539137b5c1eabd3641d242d1ac11c26d662eb1906caf70fb73d96e8bb" compoundref="IMU_8h" startline="24">GYRO_RANGE_1000DPS</references>
+        <references refid="classIMU_1aeb363437539137b5c1eabd3641d242d1aa9e87e7d062d3bb23e1c9b5a1e85af11" compoundref="IMU_8h" startline="25">GYRO_RANGE_2000DPS</references>
+        <references refid="classIMU_1aeb363437539137b5c1eabd3641d242d1a1726a676d603df0b5c73ff7f1fff00d3" compoundref="IMU_8h" startline="22">GYRO_RANGE_250DPS</references>
+        <references refid="classIMU_1aeb363437539137b5c1eabd3641d242d1a8a24172a6bd08e9402c83af2f12bed57" compoundref="IMU_8h" startline="23">GYRO_RANGE_500DPS</references>
+        <references refid="classIMU_1a37694424e4502ffc69bbb6c540c1a400" compoundref="IMU_8cpp" startline="402" endline="416">writeRegister</references>
+        <referencedby refid="classIMU_1ae0d964d2f8ec122be068c41b84bc18a8" compoundref="IMU_8cpp" startline="29" endline="115">begin</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classIMU_1a5567bbe0d211f1e6d386eb69ffd960a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int IMU::setAccelRange</definition>
+        <argsstring>(AccelRange range)</argsstring>
+        <name>setAccelRange</name>
+        <param>
+          <type><ref refid="classIMU_1acdbd8690acc2a34f12d568cb39486cc6" kindref="member">AccelRange</ref></type>
+          <declname>range</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Configura a sensibilidade de operação do acelerômetro. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>range</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>de operação </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>positivo se ok, negativo se falhar. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="86" column="7" bodyfile="lib/IMU/IMU.cpp" bodystart="121" bodyend="158"/>
+        <references refid="classIMU_1a81407c3f7e8e63735dfc672b53fd99dd" compoundref="IMU_8h" startline="117">_accelRange</references>
+        <references refid="classIMU_1a28eb12db9c58ca68e4ddb5020dd9dd20" compoundref="IMU_8h" startline="114">_accelScale</references>
+        <references refid="classIMU_1a71dae5b97d1b74436843e3e822ff4a32" compoundref="IMU_8h" startline="130">ACCEL_CONFIG</references>
+        <references refid="classIMU_1a920aa5f13b9c8e5bc927927330ac8af2" compoundref="IMU_8h" startline="137">ACCEL_FS_SEL_16G</references>
+        <references refid="classIMU_1ac90c7b0bb203e2dff90306482614433e" compoundref="IMU_8h" startline="134">ACCEL_FS_SEL_2G</references>
+        <references refid="classIMU_1a6d4e8157bb4c0dc204b66c9bbf7c6cb0" compoundref="IMU_8h" startline="135">ACCEL_FS_SEL_4G</references>
+        <references refid="classIMU_1a62e76f7ca4450fbff9ba169a7bf5d183" compoundref="IMU_8h" startline="136">ACCEL_FS_SEL_8G</references>
+        <references refid="classIMU_1acdbd8690acc2a34f12d568cb39486cc6a5398002690dded81a155ebdf7baea27f" compoundref="IMU_8h" startline="31">ACCEL_RANGE_16G</references>
+        <references refid="classIMU_1acdbd8690acc2a34f12d568cb39486cc6a808bf1fd48b91e042cfde2d0fd570823" compoundref="IMU_8h" startline="28">ACCEL_RANGE_2G</references>
+        <references refid="classIMU_1acdbd8690acc2a34f12d568cb39486cc6a4afca3881c874d1d4e0d28a21bfe926a" compoundref="IMU_8h" startline="29">ACCEL_RANGE_4G</references>
+        <references refid="classIMU_1acdbd8690acc2a34f12d568cb39486cc6a19c2caa0c23242f9dfd88326f2922719" compoundref="IMU_8h" startline="30">ACCEL_RANGE_8G</references>
+        <references refid="classIMU_1ac33cd97144f35683cfda7776ea16243e" compoundref="IMU_8h" startline="112">gG</references>
+        <references refid="classIMU_1a37694424e4502ffc69bbb6c540c1a400" compoundref="IMU_8cpp" startline="402" endline="416">writeRegister</references>
+        <referencedby refid="classIMU_1ae0d964d2f8ec122be068c41b84bc18a8" compoundref="IMU_8cpp" startline="29" endline="115">begin</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classIMU_1a5f096cb37d4b16851381bf09d6809403" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void IMU::calibraGyro</definition>
+        <argsstring>(int N=100)</argsstring>
+        <name>calibraGyro</name>
+        <param>
+          <type>int</type>
+          <declname>N</declname>
+          <defval>100</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Metódo de calibração do giroscópio. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>N</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>número de dados coletados para computodo da média</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Compensa-se o erro sistemático eliminando calculando a médida de #N medidas. O valor compensando é dado por gyro_c = _gyroScale*(gyro_m - _biasGyro) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="88" column="8" bodyfile="lib/IMU/IMU.cpp" bodystart="343" bodyend="358"/>
+        <references refid="classIMU_1a9d22cd7cb7bb93f2e04aa713aed73532" compoundref="IMU_8h" startline="76">_biasGyro</references>
+        <references refid="classIMU_1a72d1d4fe1027a9b0d6eed394e18ea97b" compoundref="IMU_8h" startline="58">_gyro</references>
+        <references refid="classIMU_1ac574728dbbc752155239a35c8bbd6e79" compoundref="IMU_8cpp" startline="290" endline="335">readSensor</references>
+      </memberdef>
+      <memberdef kind="function" id="classIMU_1a3546779010d9128859f465195eff77f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int IMU::calibracaoMagnetometro</definition>
+        <argsstring>(float moduloCampo)</argsstring>
+        <name>calibracaoMagnetometro</name>
+        <param>
+          <type>float</type>
+          <declname>moduloCampo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="89" column="7" bodyfile="lib/IMU/IMU.cpp" bodystart="458" bodyend="472"/>
+        <references refid="classIMU_1a3ba42ad7f598311689e5eccd75daa019" compoundref="IMU_8h" startline="78">_biasMag</references>
+        <references refid="classIMU_1af5d90aa5410529450fd31da2e1b1f296" compoundref="IMU_8h" startline="80">_sM</references>
+        <references refid="classMETODOSCALIBRACAO_1af0478ed112a1139bafefe7833568e641" compoundref="METODOSCALIBRACAO_8h" startline="43" endline="91">METODOSCALIBRACAO::calibracaoGeometrica</references>
+        <references refid="classIMU_1ae628afbcc858c70ea5d36a13d59998f2" compoundref="IMU_8h" startline="61">magTemp</references>
+        <references refid="classIMU_1ac574728dbbc752155239a35c8bbd6e79" compoundref="IMU_8cpp" startline="290" endline="335">readSensor</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classIMU_1a37694424e4502ffc69bbb6c540c1a400" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int IMU::writeRegister</definition>
+        <argsstring>(uint8_t subAddress, uint8_t data)</argsstring>
+        <name>writeRegister</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>subAddress</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Escreve nos registros da Marg <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>subAddress</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para>
+</simplesect>
+Esada para ler os dados e configurar a MARG. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="207" column="7" bodyfile="lib/IMU/IMU.cpp" bodystart="402" bodyend="416"/>
+        <references refid="classIMU_1ac538fc9a09f4d60b73fb477738b0d602" compoundref="IMU_8h" startline="103">_address</references>
+        <references refid="classIMU_1a36ebf3acc2b8f819d6f08650ddd98ca3" compoundref="IMU_8h" startline="94">_buffer</references>
+        <references refid="classIMU_1a18fe8e6be1b14c9e6c1b47d884dae375" compoundref="IMU_8h" startline="90">_i2c</references>
+        <references refid="GPS_8h_1a27c939ba1a4f4d927aaa500781293ba7" compoundref="GPS_8h" startline="146">data</references>
+        <references refid="classIMU_1a87c200faa130ff4d2d3416b2d83f4f49" compoundref="IMU_8cpp" startline="424" endline="437">readRegisters</references>
+        <referencedby refid="classIMU_1ae0d964d2f8ec122be068c41b84bc18a8" compoundref="IMU_8cpp" startline="29" endline="115">begin</referencedby>
+        <referencedby refid="classIMU_1a914f8b4262fba70e6d8fd0e584fa7996" compoundref="IMU_8cpp" startline="360" endline="367">readAK8963Registers</referencedby>
+        <referencedby refid="classIMU_1a5567bbe0d211f1e6d386eb69ffd960a7" compoundref="IMU_8cpp" startline="121" endline="158">setAccelRange</referencedby>
+        <referencedby refid="classIMU_1a928fa5e2db05bd402a3fa93bd3584527" compoundref="IMU_8cpp" startline="213" endline="284">setDlpfBandwidth</referencedby>
+        <referencedby refid="classIMU_1a834f21762003f831e5e632cc7974ba75" compoundref="IMU_8cpp" startline="165" endline="206">setGyroRange</referencedby>
+        <referencedby refid="classIMU_1af3b90e0b20d4bd55091be99f7aa67737" compoundref="IMU_8cpp" startline="368" endline="394">writeAK8963Register</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classIMU_1a87c200faa130ff4d2d3416b2d83f4f49" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int IMU::readRegisters</definition>
+        <argsstring>(uint8_t subAddress, uint8_t count, uint8_t *dest)</argsstring>
+        <name>readRegisters</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>subAddress</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>count</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>dest</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Leitura dos registros da MARG <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>subAddress</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>positivo se ok, negativo para o contrário. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="208" column="7" bodyfile="lib/IMU/IMU.cpp" bodystart="424" bodyend="437"/>
+        <references refid="classIMU_1ac538fc9a09f4d60b73fb477738b0d602" compoundref="IMU_8h" startline="103">_address</references>
+        <references refid="classIMU_1a18fe8e6be1b14c9e6c1b47d884dae375" compoundref="IMU_8h" startline="90">_i2c</references>
+        <references refid="classIMU_1a6911d1a81b2cbbefde2357df0c77428d" compoundref="IMU_8h" startline="105">_numBytes</references>
+        <referencedby refid="classIMU_1a914f8b4262fba70e6d8fd0e584fa7996" compoundref="IMU_8cpp" startline="360" endline="367">readAK8963Registers</referencedby>
+        <referencedby refid="classIMU_1ac574728dbbc752155239a35c8bbd6e79" compoundref="IMU_8cpp" startline="290" endline="335">readSensor</referencedby>
+        <referencedby refid="classIMU_1a0481a2f76feaf06534e9473118d55ee3" compoundref="IMU_8cpp" startline="442" endline="445">whoAmI</referencedby>
+        <referencedby refid="classIMU_1a37694424e4502ffc69bbb6c540c1a400" compoundref="IMU_8cpp" startline="402" endline="416">writeRegister</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classIMU_1af3b90e0b20d4bd55091be99f7aa67737" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int IMU::writeAK8963Register</definition>
+        <argsstring>(uint8_t subAddress, uint8_t data)</argsstring>
+        <name>writeAK8963Register</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>subAddress</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="209" column="7" bodyfile="lib/IMU/IMU.cpp" bodystart="368" bodyend="394"/>
+        <references refid="classIMU_1a36ebf3acc2b8f819d6f08650ddd98ca3" compoundref="IMU_8h" startline="94">_buffer</references>
+        <references refid="classIMU_1a4906bf7080228a00a2726fab0bc9deb1" compoundref="IMU_8h" startline="195">AK8963_I2C_ADDR</references>
+        <references refid="GPS_8h_1a27c939ba1a4f4d927aaa500781293ba7" compoundref="GPS_8h" startline="146">data</references>
+        <references refid="classIMU_1a6ae19caaa47d77d07abf79af77e501e8" compoundref="IMU_8h" startline="175">I2C_SLV0_ADDR</references>
+        <references refid="classIMU_1a3b6c38493eed68a58509e8be8b451ccf" compoundref="IMU_8h" startline="178">I2C_SLV0_CTRL</references>
+        <references refid="classIMU_1ab6fc887f35142051d1b1fe3cba25aff0" compoundref="IMU_8h" startline="177">I2C_SLV0_DO</references>
+        <references refid="classIMU_1a73733d4a18041bbc1f094a52be517118" compoundref="IMU_8h" startline="179">I2C_SLV0_EN</references>
+        <references refid="classIMU_1a45b93a6a2bd367d73428482805ee65ce" compoundref="IMU_8h" startline="176">I2C_SLV0_REG</references>
+        <references refid="classIMU_1a914f8b4262fba70e6d8fd0e584fa7996" compoundref="IMU_8cpp" startline="360" endline="367">readAK8963Registers</references>
+        <references refid="classIMU_1a37694424e4502ffc69bbb6c540c1a400" compoundref="IMU_8cpp" startline="402" endline="416">writeRegister</references>
+        <referencedby refid="classIMU_1ae0d964d2f8ec122be068c41b84bc18a8" compoundref="IMU_8cpp" startline="29" endline="115">begin</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classIMU_1a0481a2f76feaf06534e9473118d55ee3" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int IMU::whoAmI</definition>
+        <argsstring>()</argsstring>
+        <name>whoAmI</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Checa o registro de um dispositivo.</para>
+<para>usado para o acelerômetro e giroscópio. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="210" column="7" bodyfile="lib/IMU/IMU.cpp" bodystart="442" bodyend="445"/>
+        <references refid="classIMU_1a36ebf3acc2b8f819d6f08650ddd98ca3" compoundref="IMU_8h" startline="94">_buffer</references>
+        <references refid="classIMU_1a87c200faa130ff4d2d3416b2d83f4f49" compoundref="IMU_8cpp" startline="424" endline="437">readRegisters</references>
+        <references refid="classIMU_1ad608d0b182a0da8574b85194f5707d14" compoundref="IMU_8h" startline="186">WHO_AM_I</references>
+      </memberdef>
+      <memberdef kind="function" id="classIMU_1acd2af48f4eb0a0321080332016e3c1f7" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int IMU::whoAmIAK8963</definition>
+        <argsstring>()</argsstring>
+        <name>whoAmIAK8963</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Verifica se o Magnetômetro está ok. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="211" column="7" bodyfile="lib/IMU/IMU.cpp" bodystart="449" bodyend="457"/>
+        <references refid="classIMU_1a36ebf3acc2b8f819d6f08650ddd98ca3" compoundref="IMU_8h" startline="94">_buffer</references>
+        <references refid="classIMU_1afbf16a57d58c858beda5ccf36ee4b81f" compoundref="IMU_8h" startline="205">AK8963_WHO_AM_I</references>
+        <references refid="classIMU_1a914f8b4262fba70e6d8fd0e584fa7996" compoundref="IMU_8cpp" startline="360" endline="367">readAK8963Registers</references>
+        <referencedby refid="classIMU_1ae0d964d2f8ec122be068c41b84bc18a8" compoundref="IMU_8cpp" startline="29" endline="115">begin</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classIMU_1a914f8b4262fba70e6d8fd0e584fa7996" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int IMU::readAK8963Registers</definition>
+        <argsstring>(uint8_t subAddress, uint8_t count, uint8_t *dest)</argsstring>
+        <name>readAK8963Registers</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>subAddress</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>count</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>dest</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/IMU.h" line="212" column="7" bodyfile="lib/IMU/IMU.cpp" bodystart="360" bodyend="367"/>
+        <references refid="classIMU_1a36ebf3acc2b8f819d6f08650ddd98ca3" compoundref="IMU_8h" startline="94">_buffer</references>
+        <references refid="classIMU_1a279015ea1ea0a32b45a9a1a26b2d4fda" compoundref="IMU_8h" startline="110">_status</references>
+        <references refid="classIMU_1a4906bf7080228a00a2726fab0bc9deb1" compoundref="IMU_8h" startline="195">AK8963_I2C_ADDR</references>
+        <references refid="classIMU_1af28bfb59bb04bc759038078a4db01993" compoundref="IMU_8h" startline="129">EXT_SENS_DATA_00</references>
+        <references refid="classIMU_1a1ff3bc7d6cd3c4035ae2619248b9dd86" compoundref="IMU_8h" startline="180">I2C_READ_FLAG</references>
+        <references refid="classIMU_1a6ae19caaa47d77d07abf79af77e501e8" compoundref="IMU_8h" startline="175">I2C_SLV0_ADDR</references>
+        <references refid="classIMU_1a3b6c38493eed68a58509e8be8b451ccf" compoundref="IMU_8h" startline="178">I2C_SLV0_CTRL</references>
+        <references refid="classIMU_1a73733d4a18041bbc1f094a52be517118" compoundref="IMU_8h" startline="179">I2C_SLV0_EN</references>
+        <references refid="classIMU_1a45b93a6a2bd367d73428482805ee65ce" compoundref="IMU_8h" startline="176">I2C_SLV0_REG</references>
+        <references refid="classIMU_1a87c200faa130ff4d2d3416b2d83f4f49" compoundref="IMU_8cpp" startline="424" endline="437">readRegisters</references>
+        <references refid="classIMU_1a37694424e4502ffc69bbb6c540c1a400" compoundref="IMU_8cpp" startline="402" endline="416">writeRegister</references>
+        <referencedby refid="classIMU_1ae0d964d2f8ec122be068c41b84bc18a8" compoundref="IMU_8cpp" startline="29" endline="115">begin</referencedby>
+        <referencedby refid="classIMU_1acd2af48f4eb0a0321080332016e3c1f7" compoundref="IMU_8cpp" startline="449" endline="457">whoAmIAK8963</referencedby>
+        <referencedby refid="classIMU_1af3b90e0b20d4bd55091be99f7aa67737" compoundref="IMU_8cpp" startline="368" endline="394">writeAK8963Register</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>IMU</label>
+        <link refid="classIMU"/>
+      </node>
+    </collaborationgraph>
+    <location file="lib/IMU/IMU.h" line="19" column="1" bodyfile="lib/IMU/IMU.h" bodystart="19" bodyend="213"/>
+    <listofallmembers>
+      <member refid="classIMU_1a81407c3f7e8e63735dfc672b53fd99dd" prot="protected" virt="non-virtual"><scope>IMU</scope><name>_accelRange</name></member>
+      <member refid="classIMU_1a28eb12db9c58ca68e4ddb5020dd9dd20" prot="protected" virt="non-virtual"><scope>IMU</scope><name>_accelScale</name></member>
+      <member refid="classIMU_1a0efdfa77f452641689be4e9a4bae6a12" prot="public" virt="non-virtual"><scope>IMU</scope><name>_acel</name></member>
+      <member refid="classIMU_1ac538fc9a09f4d60b73fb477738b0d602" prot="protected" virt="non-virtual"><scope>IMU</scope><name>_address</name></member>
+      <member refid="classIMU_1a412a6ac9638ce35bc63f1eedc7e152de" prot="protected" virt="non-virtual"><scope>IMU</scope><name>_axcounts</name></member>
+      <member refid="classIMU_1a43dd65a4322fcfe0b802c0440849d7d5" prot="protected" virt="non-virtual"><scope>IMU</scope><name>_aycounts</name></member>
+      <member refid="classIMU_1abfa89c440ef5607207713d1781eded13" prot="protected" virt="non-virtual"><scope>IMU</scope><name>_azcounts</name></member>
+      <member refid="classIMU_1a1301777da9bc68eee7dc744a62b06ac3" prot="protected" virt="non-virtual"><scope>IMU</scope><name>_bandwidth</name></member>
+      <member refid="classIMU_1a9a145f45e2e08cae0f363747c5603bd1" prot="public" virt="non-virtual"><scope>IMU</scope><name>_biasAccel</name></member>
+      <member refid="classIMU_1a9d22cd7cb7bb93f2e04aa713aed73532" prot="public" virt="non-virtual"><scope>IMU</scope><name>_biasGyro</name></member>
+      <member refid="classIMU_1a3ba42ad7f598311689e5eccd75daa019" prot="public" virt="non-virtual"><scope>IMU</scope><name>_biasMag</name></member>
+      <member refid="classIMU_1a36ebf3acc2b8f819d6f08650ddd98ca3" prot="protected" virt="non-virtual"><scope>IMU</scope><name>_buffer</name></member>
+      <member refid="classIMU_1ab27df333316fef090c6c66c850dcea6d" prot="protected" virt="non-virtual"><scope>IMU</scope><name>_gxcounts</name></member>
+      <member refid="classIMU_1aa37b00f8fffb584f96166e6be835fc1c" prot="protected" virt="non-virtual"><scope>IMU</scope><name>_gycounts</name></member>
+      <member refid="classIMU_1a72d1d4fe1027a9b0d6eed394e18ea97b" prot="public" virt="non-virtual"><scope>IMU</scope><name>_gyro</name></member>
+      <member refid="classIMU_1abc2f9849bd27b4d423b2140ebdc8701a" prot="protected" virt="non-virtual"><scope>IMU</scope><name>_gyroRange</name></member>
+      <member refid="classIMU_1a13aac4d32bd5e5bd5893a46adea43ba6" prot="protected" virt="non-virtual"><scope>IMU</scope><name>_gyroScale</name></member>
+      <member refid="classIMU_1a16dd1d47613d444e8711704cb2225996" prot="protected" virt="non-virtual"><scope>IMU</scope><name>_gzcounts</name></member>
+      <member refid="classIMU_1afdba3ec94b88b71f4f3608ec7d5d7fc4" prot="protected" virt="non-virtual"><scope>IMU</scope><name>_hxcounts</name></member>
+      <member refid="classIMU_1a49e29687dad5486c588df50035c8b5e0" prot="protected" virt="non-virtual"><scope>IMU</scope><name>_hycounts</name></member>
+      <member refid="classIMU_1adc2810ff775c9d2474aeb1cdc6737979" prot="protected" virt="non-virtual"><scope>IMU</scope><name>_hzcounts</name></member>
+      <member refid="classIMU_1a18fe8e6be1b14c9e6c1b47d884dae375" prot="public" virt="non-virtual"><scope>IMU</scope><name>_i2c</name></member>
+      <member refid="classIMU_1a6b598b99829fa0fcd5c3d9903eb7b293" prot="protected" virt="non-virtual"><scope>IMU</scope><name>_i2cRate</name></member>
+      <member refid="classIMU_1a54e4834bdf8648b7ec11ca460b92facf" prot="public" virt="non-virtual"><scope>IMU</scope><name>_mag</name></member>
+      <member refid="classIMU_1aca68ebe4db6de0261ad0c18ab93baa0c" prot="protected" virt="non-virtual"><scope>IMU</scope><name>_magScaleX</name></member>
+      <member refid="classIMU_1a7ec96517f746cb52f51c7df54316c133" prot="protected" virt="non-virtual"><scope>IMU</scope><name>_magScaleY</name></member>
+      <member refid="classIMU_1a47b29b6c4ab5bdb220547362363fa988" prot="protected" virt="non-virtual"><scope>IMU</scope><name>_magScaleZ</name></member>
+      <member refid="classIMU_1a6911d1a81b2cbbefde2357df0c77428d" prot="protected" virt="non-virtual"><scope>IMU</scope><name>_numBytes</name></member>
+      <member refid="classIMU_1af5d90aa5410529450fd31da2e1b1f296" prot="public" virt="non-virtual"><scope>IMU</scope><name>_sM</name></member>
+      <member refid="classIMU_1a3eb0783394601a5a41fa7079e4c929b0" prot="protected" virt="non-virtual"><scope>IMU</scope><name>_srd</name></member>
+      <member refid="classIMU_1a279015ea1ea0a32b45a9a1a26b2d4fda" prot="protected" virt="non-virtual"><scope>IMU</scope><name>_status</name></member>
+      <member refid="classIMU_1a23880868a20bc15879232b9ed3c1cbbd" prot="public" virt="non-virtual"><scope>IMU</scope><name>_t</name></member>
+      <member refid="classIMU_1a4274d743239871f6cbc54de5c84eca3a" prot="protected" virt="non-virtual"><scope>IMU</scope><name>_tcounts</name></member>
+      <member refid="classIMU_1a71dae5b97d1b74436843e3e822ff4a32" prot="protected" virt="non-virtual"><scope>IMU</scope><name>ACCEL_CONFIG</name></member>
+      <member refid="classIMU_1a0b4c0cfc28087ec72de6155da46de0d9" prot="protected" virt="non-virtual"><scope>IMU</scope><name>ACCEL_CONFIG2</name></member>
+      <member refid="classIMU_1af0554e2b6db872868f21b6953a1e8585" prot="protected" virt="non-virtual"><scope>IMU</scope><name>ACCEL_DLPF_10</name></member>
+      <member refid="classIMU_1a3f74d7d2c5a8c93151ae2bee4e0b4887" prot="protected" virt="non-virtual"><scope>IMU</scope><name>ACCEL_DLPF_184</name></member>
+      <member refid="classIMU_1a524d9af6cbaa1df5f15db87b1157467c" prot="protected" virt="non-virtual"><scope>IMU</scope><name>ACCEL_DLPF_20</name></member>
+      <member refid="classIMU_1ae2df48f29311f232432a16284b9159ed" prot="protected" virt="non-virtual"><scope>IMU</scope><name>ACCEL_DLPF_41</name></member>
+      <member refid="classIMU_1aa1d7a036cec01526451187434785b0ef" prot="protected" virt="non-virtual"><scope>IMU</scope><name>ACCEL_DLPF_5</name></member>
+      <member refid="classIMU_1ac87ed9eeb0d6fd20e987410155fee53f" prot="protected" virt="non-virtual"><scope>IMU</scope><name>ACCEL_DLPF_92</name></member>
+      <member refid="classIMU_1a920aa5f13b9c8e5bc927927330ac8af2" prot="protected" virt="non-virtual"><scope>IMU</scope><name>ACCEL_FS_SEL_16G</name></member>
+      <member refid="classIMU_1ac90c7b0bb203e2dff90306482614433e" prot="protected" virt="non-virtual"><scope>IMU</scope><name>ACCEL_FS_SEL_2G</name></member>
+      <member refid="classIMU_1a6d4e8157bb4c0dc204b66c9bbf7c6cb0" prot="protected" virt="non-virtual"><scope>IMU</scope><name>ACCEL_FS_SEL_4G</name></member>
+      <member refid="classIMU_1a62e76f7ca4450fbff9ba169a7bf5d183" prot="protected" virt="non-virtual"><scope>IMU</scope><name>ACCEL_FS_SEL_8G</name></member>
+      <member refid="classIMU_1a5ffc27f0c3bca71b7df305a66348a23e" prot="protected" virt="non-virtual"><scope>IMU</scope><name>ACCEL_INTEL_EN</name></member>
+      <member refid="classIMU_1aca3b94b1ea5f63ed99123135f9684d75" prot="protected" virt="non-virtual"><scope>IMU</scope><name>ACCEL_INTEL_MODE</name></member>
+      <member refid="classIMU_1a5e6bc8a1984acb82321f9b48db9e8a79" prot="protected" virt="non-virtual"><scope>IMU</scope><name>ACCEL_OUT</name></member>
+      <member refid="classIMU_1acdbd8690acc2a34f12d568cb39486cc6a5398002690dded81a155ebdf7baea27f" prot="public" virt="non-virtual"><scope>IMU</scope><name>ACCEL_RANGE_16G</name></member>
+      <member refid="classIMU_1acdbd8690acc2a34f12d568cb39486cc6a808bf1fd48b91e042cfde2d0fd570823" prot="public" virt="non-virtual"><scope>IMU</scope><name>ACCEL_RANGE_2G</name></member>
+      <member refid="classIMU_1acdbd8690acc2a34f12d568cb39486cc6a4afca3881c874d1d4e0d28a21bfe926a" prot="public" virt="non-virtual"><scope>IMU</scope><name>ACCEL_RANGE_4G</name></member>
+      <member refid="classIMU_1acdbd8690acc2a34f12d568cb39486cc6a19c2caa0c23242f9dfd88326f2922719" prot="public" virt="non-virtual"><scope>IMU</scope><name>ACCEL_RANGE_8G</name></member>
+      <member refid="classIMU_1acdbd8690acc2a34f12d568cb39486cc6" prot="public" virt="non-virtual"><scope>IMU</scope><name>AccelRange</name></member>
+      <member refid="classIMU_1a5dc26b210ba9adcc176b9e837238d87d" prot="protected" virt="non-virtual"><scope>IMU</scope><name>AK8963_ASA</name></member>
+      <member refid="classIMU_1a0e2fe28ad7e635876a061dcf0b338bcb" prot="protected" virt="non-virtual"><scope>IMU</scope><name>AK8963_CNT_MEAS1</name></member>
+      <member refid="classIMU_1a81aa27b2da74539d88966ab71c28337d" prot="protected" virt="non-virtual"><scope>IMU</scope><name>AK8963_CNT_MEAS2</name></member>
+      <member refid="classIMU_1aa8691a633c35d2f7d7951f68b187adb3" prot="protected" virt="non-virtual"><scope>IMU</scope><name>AK8963_CNTL1</name></member>
+      <member refid="classIMU_1ab6945cc8ff2e84fa2f0927388d74fec1" prot="protected" virt="non-virtual"><scope>IMU</scope><name>AK8963_CNTL2</name></member>
+      <member refid="classIMU_1aefe9d58c962b042b5e772342fe510170" prot="protected" virt="non-virtual"><scope>IMU</scope><name>AK8963_FUSE_ROM</name></member>
+      <member refid="classIMU_1af5582b84ecf8829cfc7da6ad1ed3296a" prot="protected" virt="non-virtual"><scope>IMU</scope><name>AK8963_HXL</name></member>
+      <member refid="classIMU_1a4906bf7080228a00a2726fab0bc9deb1" prot="protected" virt="non-virtual"><scope>IMU</scope><name>AK8963_I2C_ADDR</name></member>
+      <member refid="classIMU_1aa96e1f69db3a08f6ac0c0115d9e8e880" prot="protected" virt="non-virtual"><scope>IMU</scope><name>AK8963_PWR_DOWN</name></member>
+      <member refid="classIMU_1ad170d8561fc4600092a29e1b3ff214a6" prot="protected" virt="non-virtual"><scope>IMU</scope><name>AK8963_RESET</name></member>
+      <member refid="classIMU_1afbf16a57d58c858beda5ccf36ee4b81f" prot="protected" virt="non-virtual"><scope>IMU</scope><name>AK8963_WHO_AM_I</name></member>
+      <member refid="classIMU_1ae0d964d2f8ec122be068c41b84bc18a8" prot="public" virt="non-virtual"><scope>IMU</scope><name>begin</name></member>
+      <member refid="classIMU_1a3546779010d9128859f465195eff77f5" prot="public" virt="non-virtual"><scope>IMU</scope><name>calibracaoMagnetometro</name></member>
+      <member refid="classIMU_1a5f096cb37d4b16851381bf09d6809403" prot="public" virt="non-virtual"><scope>IMU</scope><name>calibraGyro</name></member>
+      <member refid="classIMU_1aed128bfb60251b9016454f9b491b0d3e" prot="protected" virt="non-virtual"><scope>IMU</scope><name>CLOCK_SEL_PLL</name></member>
+      <member refid="classIMU_1a8b8013c6ee050d9a1c0c9aeb25b80cce" prot="protected" virt="non-virtual"><scope>IMU</scope><name>CONFIG</name></member>
+      <member refid="classIMU_1a5dbb6af50b6cb4f752b971d073049980" prot="protected" virt="non-virtual"><scope>IMU</scope><name>DIS_GYRO</name></member>
+      <member refid="classIMU_1a90c4f91f60185430b763f152ecb39521a38fa7998dfeb640e0289bc7407c40285" prot="public" virt="non-virtual"><scope>IMU</scope><name>DLPF_BANDWIDTH_10HZ</name></member>
+      <member refid="classIMU_1a90c4f91f60185430b763f152ecb39521a461c657b4bc9c4f82936a9cb3b5ef54e" prot="public" virt="non-virtual"><scope>IMU</scope><name>DLPF_BANDWIDTH_184HZ</name></member>
+      <member refid="classIMU_1a90c4f91f60185430b763f152ecb39521a174ee7819d598dcbb0d29cf8d0f17e8f" prot="public" virt="non-virtual"><scope>IMU</scope><name>DLPF_BANDWIDTH_20HZ</name></member>
+      <member refid="classIMU_1a90c4f91f60185430b763f152ecb39521afcbbbba2e520cdd50dcb40da160137f0" prot="public" virt="non-virtual"><scope>IMU</scope><name>DLPF_BANDWIDTH_41HZ</name></member>
+      <member refid="classIMU_1a90c4f91f60185430b763f152ecb39521a1d05af591f93fc300ae7ef2608c62f51" prot="public" virt="non-virtual"><scope>IMU</scope><name>DLPF_BANDWIDTH_5HZ</name></member>
+      <member refid="classIMU_1a90c4f91f60185430b763f152ecb39521ac652b0fb4733da213152970ebc6ab53d" prot="public" virt="non-virtual"><scope>IMU</scope><name>DLPF_BANDWIDTH_92HZ</name></member>
+      <member refid="classIMU_1a90c4f91f60185430b763f152ecb39521" prot="public" virt="non-virtual"><scope>IMU</scope><name>DlpfBandwidth</name></member>
+      <member refid="classIMU_1af28bfb59bb04bc759038078a4db01993" prot="protected" virt="non-virtual"><scope>IMU</scope><name>EXT_SENS_DATA_00</name></member>
+      <member refid="classIMU_1ac33cd97144f35683cfda7776ea16243e" prot="protected" virt="non-virtual"><scope>IMU</scope><name>gG</name></member>
+      <member refid="classIMU_1a7d417d3c235bd4218a9cecb6c39b684d" prot="protected" virt="non-virtual"><scope>IMU</scope><name>GYRO_CONFIG</name></member>
+      <member refid="classIMU_1a2675b7bb5b5d4a9d1333472248ff7d18" prot="protected" virt="non-virtual"><scope>IMU</scope><name>GYRO_DLPF_10</name></member>
+      <member refid="classIMU_1a2b7230a7c84242e46ffb1b801df342bd" prot="protected" virt="non-virtual"><scope>IMU</scope><name>GYRO_DLPF_184</name></member>
+      <member refid="classIMU_1a1f673a77bab71d2ae30959e7b9ddf5be" prot="protected" virt="non-virtual"><scope>IMU</scope><name>GYRO_DLPF_20</name></member>
+      <member refid="classIMU_1a178f00ee16f64288cc8d15f3fa4400f7" prot="protected" virt="non-virtual"><scope>IMU</scope><name>GYRO_DLPF_41</name></member>
+      <member refid="classIMU_1a34c9619f6639e3ddda87b018eb94214e" prot="protected" virt="non-virtual"><scope>IMU</scope><name>GYRO_DLPF_5</name></member>
+      <member refid="classIMU_1a51863a08fe8094125b63498b591d0a54" prot="protected" virt="non-virtual"><scope>IMU</scope><name>GYRO_DLPF_92</name></member>
+      <member refid="classIMU_1ab8e2494d9e3021bf039323cf3440de1e" prot="protected" virt="non-virtual"><scope>IMU</scope><name>GYRO_FS_SEL_1000DPS</name></member>
+      <member refid="classIMU_1a040f0183e93dc2c87f28f727c328a313" prot="protected" virt="non-virtual"><scope>IMU</scope><name>GYRO_FS_SEL_2000DPS</name></member>
+      <member refid="classIMU_1abaece728935c77934691fc678c971de4" prot="protected" virt="non-virtual"><scope>IMU</scope><name>GYRO_FS_SEL_250DPS</name></member>
+      <member refid="classIMU_1a57d0058b144d11d64aa644ed1d3b313e" prot="protected" virt="non-virtual"><scope>IMU</scope><name>GYRO_FS_SEL_500DPS</name></member>
+      <member refid="classIMU_1a59053815a5a71f5bebc2e65f16659ded" prot="protected" virt="non-virtual"><scope>IMU</scope><name>GYRO_OUT</name></member>
+      <member refid="classIMU_1aeb363437539137b5c1eabd3641d242d1ac11c26d662eb1906caf70fb73d96e8bb" prot="public" virt="non-virtual"><scope>IMU</scope><name>GYRO_RANGE_1000DPS</name></member>
+      <member refid="classIMU_1aeb363437539137b5c1eabd3641d242d1aa9e87e7d062d3bb23e1c9b5a1e85af11" prot="public" virt="non-virtual"><scope>IMU</scope><name>GYRO_RANGE_2000DPS</name></member>
+      <member refid="classIMU_1aeb363437539137b5c1eabd3641d242d1a1726a676d603df0b5c73ff7f1fff00d3" prot="public" virt="non-virtual"><scope>IMU</scope><name>GYRO_RANGE_250DPS</name></member>
+      <member refid="classIMU_1aeb363437539137b5c1eabd3641d242d1a8a24172a6bd08e9402c83af2f12bed57" prot="public" virt="non-virtual"><scope>IMU</scope><name>GYRO_RANGE_500DPS</name></member>
+      <member refid="classIMU_1aeb363437539137b5c1eabd3641d242d1" prot="public" virt="non-virtual"><scope>IMU</scope><name>GyroRange</name></member>
+      <member refid="classIMU_1a19704607249a2df9ae115cf5ec42b065" prot="protected" virt="non-virtual"><scope>IMU</scope><name>I2C_MST_CLK</name></member>
+      <member refid="classIMU_1a40a6c474b6590faa545bcef6796e0b09" prot="protected" virt="non-virtual"><scope>IMU</scope><name>I2C_MST_CTRL</name></member>
+      <member refid="classIMU_1aac5f67e0f33068d9ca184e8338cea69b" prot="protected" virt="non-virtual"><scope>IMU</scope><name>I2C_MST_EN</name></member>
+      <member refid="classIMU_1a1ff3bc7d6cd3c4035ae2619248b9dd86" prot="protected" virt="non-virtual"><scope>IMU</scope><name>I2C_READ_FLAG</name></member>
+      <member refid="classIMU_1a6ae19caaa47d77d07abf79af77e501e8" prot="protected" virt="non-virtual"><scope>IMU</scope><name>I2C_SLV0_ADDR</name></member>
+      <member refid="classIMU_1a3b6c38493eed68a58509e8be8b451ccf" prot="protected" virt="non-virtual"><scope>IMU</scope><name>I2C_SLV0_CTRL</name></member>
+      <member refid="classIMU_1ab6fc887f35142051d1b1fe3cba25aff0" prot="protected" virt="non-virtual"><scope>IMU</scope><name>I2C_SLV0_DO</name></member>
+      <member refid="classIMU_1a73733d4a18041bbc1f094a52be517118" prot="protected" virt="non-virtual"><scope>IMU</scope><name>I2C_SLV0_EN</name></member>
+      <member refid="classIMU_1a45b93a6a2bd367d73428482805ee65ce" prot="protected" virt="non-virtual"><scope>IMU</scope><name>I2C_SLV0_REG</name></member>
+      <member refid="classIMU_1acad2acbbf58db76230da27dba2afe8de" prot="public" virt="non-virtual"><scope>IMU</scope><name>IMU</name></member>
+      <member refid="classIMU_1a525a5ff38a1084f951bbb982b5eda84f" prot="protected" virt="non-virtual"><scope>IMU</scope><name>INT_DISABLE</name></member>
+      <member refid="classIMU_1aa465f1843da6c3a27b32234d1c76b746" prot="protected" virt="non-virtual"><scope>IMU</scope><name>INT_ENABLE</name></member>
+      <member refid="classIMU_1ac9be008941488be4fb726c2021946ef0" prot="protected" virt="non-virtual"><scope>IMU</scope><name>INT_PIN_CFG</name></member>
+      <member refid="classIMU_1af46a4d410ba22aa7ce6e5f3df41c8e6e" prot="protected" virt="non-virtual"><scope>IMU</scope><name>INT_PULSE_50US</name></member>
+      <member refid="classIMU_1adef065984587c7e17ee4641a1cf55ce0" prot="protected" virt="non-virtual"><scope>IMU</scope><name>INT_RAW_RDY_EN</name></member>
+      <member refid="classIMU_1a7d797231f1773fff9c0fe7924a0b3960" prot="protected" virt="non-virtual"><scope>IMU</scope><name>INT_WOM_EN</name></member>
+      <member refid="classIMU_1a981e7149fad7f85b241d9205df62e464" prot="protected" virt="non-virtual"><scope>IMU</scope><name>LP_ACCEL_ODR</name></member>
+      <member refid="classIMU_1a2c0603234e00be75c6c4249516ad2f3fa075213b5e4f97307e699068a3a5a3477" prot="public" virt="non-virtual"><scope>IMU</scope><name>LP_ACCEL_ODR_0_24HZ</name></member>
+      <member refid="classIMU_1a2c0603234e00be75c6c4249516ad2f3faf89517a8ecb4855f3234f4462b91c823" prot="public" virt="non-virtual"><scope>IMU</scope><name>LP_ACCEL_ODR_0_49HZ</name></member>
+      <member refid="classIMU_1a2c0603234e00be75c6c4249516ad2f3fad02147081ed0eb82e65dd8752f44f888" prot="public" virt="non-virtual"><scope>IMU</scope><name>LP_ACCEL_ODR_0_98HZ</name></member>
+      <member refid="classIMU_1a2c0603234e00be75c6c4249516ad2f3faba9570866d4810bc609345c435edc2a8" prot="public" virt="non-virtual"><scope>IMU</scope><name>LP_ACCEL_ODR_125HZ</name></member>
+      <member refid="classIMU_1a2c0603234e00be75c6c4249516ad2f3fa96c09bd185599c742376c74188b15f06" prot="public" virt="non-virtual"><scope>IMU</scope><name>LP_ACCEL_ODR_15_63HZ</name></member>
+      <member refid="classIMU_1a2c0603234e00be75c6c4249516ad2f3fa131f700c7f40e022a15fc0cfc0105402" prot="public" virt="non-virtual"><scope>IMU</scope><name>LP_ACCEL_ODR_1_95HZ</name></member>
+      <member refid="classIMU_1a2c0603234e00be75c6c4249516ad2f3faf7e601fd99ca8179e3fec8aa3edb0dfa" prot="public" virt="non-virtual"><scope>IMU</scope><name>LP_ACCEL_ODR_250HZ</name></member>
+      <member refid="classIMU_1a2c0603234e00be75c6c4249516ad2f3fabaa705a55660759564c56f323317aa0c" prot="public" virt="non-virtual"><scope>IMU</scope><name>LP_ACCEL_ODR_31_25HZ</name></member>
+      <member refid="classIMU_1a2c0603234e00be75c6c4249516ad2f3faf707c0714db95cadd2d4da425deb5711" prot="public" virt="non-virtual"><scope>IMU</scope><name>LP_ACCEL_ODR_3_91HZ</name></member>
+      <member refid="classIMU_1a2c0603234e00be75c6c4249516ad2f3facad3564a280a8a7399dc664e68adefc3" prot="public" virt="non-virtual"><scope>IMU</scope><name>LP_ACCEL_ODR_500HZ</name></member>
+      <member refid="classIMU_1a2c0603234e00be75c6c4249516ad2f3fa6093b5c31fad290dc15497ba31181f8a" prot="public" virt="non-virtual"><scope>IMU</scope><name>LP_ACCEL_ODR_62_50HZ</name></member>
+      <member refid="classIMU_1a2c0603234e00be75c6c4249516ad2f3faf77d40ed8aeeb739022b877a82e34427" prot="public" virt="non-virtual"><scope>IMU</scope><name>LP_ACCEL_ODR_7_81HZ</name></member>
+      <member refid="classIMU_1a2c0603234e00be75c6c4249516ad2f3f" prot="public" virt="non-virtual"><scope>IMU</scope><name>LpAccelOdr</name></member>
+      <member refid="classIMU_1ae628afbcc858c70ea5d36a13d59998f2" prot="public" virt="non-virtual"><scope>IMU</scope><name>magTemp</name></member>
+      <member refid="classIMU_1ad71aa14a790197de3eff414f6f9dfcec" prot="protected" virt="non-virtual"><scope>IMU</scope><name>MOT_DETECT_CTRL</name></member>
+      <member refid="classIMU_1aa1c569cb683d1f2b24074a561cbb1b44" prot="protected" virt="non-virtual"><scope>IMU</scope><name>PWR_CYCLE</name></member>
+      <member refid="classIMU_1a66529d6102c44bc6be8d8ef167f27058" prot="protected" virt="non-virtual"><scope>IMU</scope><name>PWR_MGMNT_1</name></member>
+      <member refid="classIMU_1a8e2a7777d4356a5c4cf6cb52e9aeed4b" prot="protected" virt="non-virtual"><scope>IMU</scope><name>PWR_MGMNT_2</name></member>
+      <member refid="classIMU_1a045e1ec896d0e207d640d1fb7930328f" prot="protected" virt="non-virtual"><scope>IMU</scope><name>PWR_RESET</name></member>
+      <member refid="classIMU_1a914f8b4262fba70e6d8fd0e584fa7996" prot="protected" virt="non-virtual"><scope>IMU</scope><name>readAK8963Registers</name></member>
+      <member refid="classIMU_1a87c200faa130ff4d2d3416b2d83f4f49" prot="protected" virt="non-virtual"><scope>IMU</scope><name>readRegisters</name></member>
+      <member refid="classIMU_1ac574728dbbc752155239a35c8bbd6e79" prot="public" virt="non-virtual"><scope>IMU</scope><name>readSensor</name></member>
+      <member refid="classIMU_1ad52e1d65ca1b23161ff28ea6a0891a1b" prot="protected" virt="non-virtual"><scope>IMU</scope><name>SEN_ENABLE</name></member>
+      <member refid="classIMU_1a5567bbe0d211f1e6d386eb69ffd960a7" prot="public" virt="non-virtual"><scope>IMU</scope><name>setAccelRange</name></member>
+      <member refid="classIMU_1a928fa5e2db05bd402a3fa93bd3584527" prot="public" virt="non-virtual"><scope>IMU</scope><name>setDlpfBandwidth</name></member>
+      <member refid="classIMU_1a834f21762003f831e5e632cc7974ba75" prot="public" virt="non-virtual"><scope>IMU</scope><name>setGyroRange</name></member>
+      <member refid="classIMU_1a377a386f44cf1d85d31b4f2a6b1a43d1" prot="public" virt="non-virtual"><scope>IMU</scope><name>sFAccel</name></member>
+      <member refid="classIMU_1a1baa422b103a5b9c2677c8e447b11ebe" prot="protected" virt="non-virtual"><scope>IMU</scope><name>SMPDIV</name></member>
+      <member refid="classIMU_1aa9c1984c97e26df587281692f60e2949" prot="protected" virt="non-virtual"><scope>IMU</scope><name>TEMP_OUT</name></member>
+      <member refid="classIMU_1a82f56158c28ca51ed7fe9a667b668080" prot="protected" virt="non-virtual"><scope>IMU</scope><name>USER_CTRL</name></member>
+      <member refid="classIMU_1ad608d0b182a0da8574b85194f5707d14" prot="protected" virt="non-virtual"><scope>IMU</scope><name>WHO_AM_I</name></member>
+      <member refid="classIMU_1a0481a2f76feaf06534e9473118d55ee3" prot="protected" virt="non-virtual"><scope>IMU</scope><name>whoAmI</name></member>
+      <member refid="classIMU_1acd2af48f4eb0a0321080332016e3c1f7" prot="protected" virt="non-virtual"><scope>IMU</scope><name>whoAmIAK8963</name></member>
+      <member refid="classIMU_1a9ca3d7b64ffa73ab222221294f9afe7b" prot="protected" virt="non-virtual"><scope>IMU</scope><name>WOM_THR</name></member>
+      <member refid="classIMU_1af3b90e0b20d4bd55091be99f7aa67737" prot="protected" virt="non-virtual"><scope>IMU</scope><name>writeAK8963Register</name></member>
+      <member refid="classIMU_1a37694424e4502ffc69bbb6c540c1a400" prot="protected" virt="non-virtual"><scope>IMU</scope><name>writeRegister</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

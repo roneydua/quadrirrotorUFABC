@@ -1,0 +1,532 @@
+.TH "ekf::EKF" 3 "Sexta, 17 de Setembro de 2021" "Quadrirrotor" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ekf::EKF
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <EKF\&.h>\fP
+.SS "Membros Públicos"
+
+.in +1c
+.ti -1c
+.RI "\fBEKF\fP ()"
+.br
+.ti -1c
+.RI "void \fBbegin\fP (float \fBdt\fP)"
+.br
+.RI "Inicializacao do filtro de Kalman\&. "
+.ti -1c
+.RI "void \fBloopEKF\fP ()"
+.br
+.in -1c
+.SS "Campos de Dados"
+
+.in +1c
+.ti -1c
+.RI "const int \fBnAtitude\fP = 6"
+.br
+.ti -1c
+.RI "const int \fBpAtitude\fP = 4"
+.br
+.ti -1c
+.RI "\fBBASE\fP \fBbase\fP"
+.br
+.ti -1c
+.RI "float \fBdt\fP = 0\&.0f"
+.br
+.ti -1c
+.RI "Eigen::Vector3f \fBaccel\fP = Eigen::Vector3f::Zero()"
+.br
+.ti -1c
+.RI "const Eigen::Vector3f \fBnavegationGravity\fP {0\&.0f, 0\&.0f, 9\&.786171951281709f}"
+.br
+.ti -1c
+.RI "Eigen::Vector3f \fBgyro\fP = Eigen::Vector3f::Zero()"
+.br
+.ti -1c
+.RI "Eigen::Vector3f \fBmag\fP = Eigen::Vector3f::Zero()"
+.br
+.ti -1c
+.RI "Eigen::Vector4f \fBqObs\fP {1\&.0f, 0\&.0f, 0\&.0f, 0\&.0f}"
+.br
+.ti -1c
+.RI "Eigen::Vector4f \fBq\fP {1\&.0f, 0\&.0f, 0\&.0f, 0\&.0f}"
+.br
+.ti -1c
+.RI "Eigen::Vector3f \fBeuler\fP {0\&.0f, 0\&.0f, 0\&.0f}"
+.br
+.ti -1c
+.RI "Eigen::Vector3f \fBrNED\fP = Eigen::Vector3f::Zero()"
+.br
+.ti -1c
+.RI "Eigen::Vector3f \fBrNEDgps\fP = Eigen::Vector3f::Zero()"
+.br
+.ti -1c
+.RI "Eigen::Vector3f \fBdrNED\fP = Eigen::Vector3f::Zero()"
+.br
+.ti -1c
+.RI "Eigen::Vector3f \fBdrNEDgps\fP = Eigen::Vector3f::Zero()"
+.br
+.ti -1c
+.RI "Eigen::Vector3f \fBddr\fP = Eigen::Vector3f::Zero()"
+.br
+.ti -1c
+.RI "Eigen::Matrix3f \fBmcd\fP = Eigen::Matrix3f::Identity()"
+.br
+.ti -1c
+.RI "uint8_t \fBmessageGPS\fP = 0"
+.br
+.ti -1c
+.RI "int \fBp\fP = \fBpFull\fP"
+.br
+.ti -1c
+.RI "int \fBn\fP = 15"
+.br
+.ti -1c
+.RI "const float \fBsigma_giro_squared\fP = 1e\-3"
+.br
+.ti -1c
+.RI "const float \fBsigma_bias_giro_squared\fP = 1e\-6"
+.br
+.ti -1c
+.RI "const float \fBsigma_acel_squared\fP = 1e\-3"
+.br
+.ti -1c
+.RI "const float \fBsigma_bias_acel_squared\fP = 1e\-6"
+.br
+.ti -1c
+.RI "const float \fBsigma_aqua_squared\fP = 1e\-3"
+.br
+.ti -1c
+.RI "const float \fBsigma_vel_squared\fP = 0\&.02f * 0\&.02f"
+.br
+.ti -1c
+.RI "const float \fBsigma_pos_squared\fP = 5\&.0f * 5\&.0f"
+.br
+.ti -1c
+.RI "Eigen::Matrix< float, \fBnFull\fP, \fBnFull\fP > \fBQ_k\fP"
+.br
+.ti -1c
+.RI "Eigen::Matrix< float, \fBpFull\fP, \fBpFull\fP > \fBR\fP"
+.br
+.ti -1c
+.RI "Eigen::Matrix< float, \fBnFull\fP, \fBnFull\fP > \fBmF\fP = Eigen::MatrixXf::Zero(\fBnFull\fP, \fBnFull\fP)"
+.br
+.ti -1c
+.RI "Eigen::Matrix< float, \fBnFull\fP, \fBnFull\fP > \fBfi\fP = Eigen::MatrixXf::Zero(\fBnFull\fP, \fBnFull\fP)"
+.br
+.ti -1c
+.RI "Eigen::Matrix< float, \fBnFull\fP, 12 > \fBG\fP = Eigen::MatrixXf::Zero(\fBnFull\fP, 12)"
+.br
+.ti -1c
+.RI "Eigen::Matrix< float, \fBnFull\fP, \fBnFull\fP > \fBP\fP"
+.br
+.ti -1c
+.RI "Eigen::Matrix< float, \fBpFull\fP, \fBnFull\fP > \fBH\fP = Eigen::MatrixXf::Zero(\fBpFull\fP, \fBnFull\fP)"
+.br
+.ti -1c
+.RI "Eigen::Matrix< float, \fBnFull\fP, \fBpFull\fP > \fBK\fP"
+.br
+.ti -1c
+.RI "Eigen::Vector< float, \fBnFull\fP+1 > \fBdeltaChi\fP = Eigen::VectorXf::Zero(\fBnFull\fP + 1)"
+.br
+.ti -1c
+.RI "Eigen::Vector< float, \fBpFull\fP > \fBdeltaYObs\fP = Eigen::VectorXf::Zero(\fBpFull\fP)"
+.br
+.ti -1c
+.RI "Eigen::Vector3f * \fBbiasGyro\fP"
+.br
+.ti -1c
+.RI "Eigen::Vector3f * \fBbiasAccel\fP"
+.br
+.in -1c
+.SS "Atributos Estáticos Públicos"
+
+.in +1c
+.ti -1c
+.RI "static const int \fBnFull\fP = 15"
+.br
+.ti -1c
+.RI "static const int \fBpFull\fP = 7"
+.br
+.in -1c
+.SS "Atributos Privados"
+
+.in +1c
+.ti -1c
+.RI "const float \fBDEG_TO_RAD_BY_10000000\fP"
+.br
+.in -1c
+.SH "Descrição detalhada"
+.PP 
+Definição na linha 37 do arquivo EKF\&.h\&.
+.SH "Construtores e Destrutores"
+.PP 
+.SS "ekf::EKF::EKF ()"
+
+.PP
+Definição na linha 32 do arquivo EKF\&.cpp\&.
+.PP
+.nf
+32 {}
+.fi
+.SH "Funções membros"
+.PP 
+.SS "void ekf::EKF::begin (float _dt)"
+
+.PP
+Inicializacao do filtro de Kalman\&. Inicializa e configura:o GPS, a classe timeClass, instancia os sensores \fBaccel\fP, \fBgyro\fP e \fBmag\fP; e Configura os valores padrões da matrizes #F, \fBG\fP e \fBH\fP\&. HACK: 
+.PP
+\fB( ͡❛ ͜ʖ ͡❛) \fP
+.RS 4
+
+.br
+ \fBaccel\fP, \fBgyro\fP e \fBmag\fP são ponteiros\&. Quando as medidas são atualizadas na biblioteca \fBIMU\fP, o vetor é modificado na \fBEKF\fP\&. 
+.RE
+.PP
+
+.PP
+Definição na linha 39 do arquivo EKF\&.cpp\&.
+.PP
+.nf
+39                          {
+40 
+41   this->dt = _dt;
+42 #ifdef __XTENSA__
+43   gpsSetup();
+44 
+45   timeClass\&.begin();
+46 #endif
+47 
+48   // Instancia o vetor de medidas na biblioteca da IMU\&.
+51 #ifdef __XTENSA__
+52   imu\&.begin(accel, gyro, mag);
+53   // refencia o bias da classe IMU\&.
+54   biasGyro = &imu\&._biasGyro;
+55   biasAccel = &imu\&._biasAccel;
+56 #endif
+57   // Atualiza valor do bias do giroscópio com uma média de amostras
+58   // valores constantes das matriz F
+59   mF\&.block<3, 3>(0, 3) = -0\&.5f * Eigen::Matrix3f::Identity();
+60   mF\&.block<3, 3>(12, 6) = Eigen::Matrix3f::Identity();
+61   // Valores constantes da matriz G
+62   G\&.topLeftCorner(3, 3) = -0\&.5f * Eigen::Matrix3f::Identity();
+63   G\&.block<3, 3>(3, 3) = Eigen::Matrix3f::Identity();
+64   G\&.block(6, 6, 3, 3) = -Eigen::Matrix3f::Identity();
+65   G\&.block<3, 3>(9, 9) = Eigen::Matrix3f::Identity();
+66   // matrix de covariâncias do processo continuo
+67   Eigen::MatrixXf Q = Eigen::MatrixXf::Identity(12, 12);
+68   Eigen::Matrix3f _I = Eigen::Matrix3f::Identity();
+69   Q\&.block<3, 3>(0, 0) = _I * _dt * _dt * sigma_giro_squared;
+70   Q\&.block<3, 3>(3, 3) = _I * _dt * sigma_bias_giro_squared;
+71   Q\&.block<3, 3>(6, 6) = _I * _dt * _dt * sigma_acel_squared;
+72   Q\&.block<3, 3>(9, 9) = _I * _dt * sigma_bias_acel_squared;
+73   Q_k = G * Q * G\&.transpose();
+74   R\&.block<4, 4>(0, 0) = Eigen::Matrix4f::Identity() * sigma_aqua_squared;
+75 
+76 #ifndef __XTENSA__
+77   Q_k = csvLeia<Eigen::MatrixXf>("Q");
+78   R = csvLeia<Eigen::MatrixXf>("R");
+79 #endif
+80   // condições iniciais da posicao
+81   aqua\&.begin(qObs, accel, mag);
+82 #ifdef __XTENSA__
+83   updateBaseRef();
+84   imu\&.readSensor();
+85 #endif
+86   // valor inicial a partir da medida
+87   aqua\&.computeAQUAQuaternion();
+88   q = qObs;
+89 }
+.fi
+.PP
+Referencias IMU::_biasAccel, IMU::_biasGyro, accel, ekf::aqua, TIME::begin(), AQUA::begin(), IMU::begin(), biasAccel, biasGyro, AQUA::computeAQUAQuaternion(), dt, G, gpsSetup(), gyro, mag, mF, q, Q_k, qObs, R, IMU::readSensor(), sigma_acel_squared, sigma_aqua_squared, sigma_bias_acel_squared, sigma_bias_giro_squared e sigma_giro_squared\&.
+.PP
+Referenciado(a) por setup()\&.
+.SS "void ekf::EKF::loopEKF ()"
+Loop do Filtro de Kalaman 
+.PP
+Definição na linha 93 do arquivo EKF\&.cpp\&.
+.PP
+.nf
+93                   {
+94   // le os sensores
+95   updateOfMeasurements();
+96   predictionStage();
+97   updateStage();
+98   updateStates();
+99 }
+.fi
+.PP
+Referenciado(a) por loop()\&.
+.SH "Campos"
+.PP 
+.SS "Eigen::Vector3f ekf::EKF::accel = Eigen::Vector3f::Zero()"
+Vetor com as medidas do aceleromeotro 
+.PP
+Definição na linha 58 do arquivo EKF\&.h\&.
+.PP
+Referenciado(a) por begin() e loop()\&.
+.SS "\fBBASE\fP ekf::EKF::base"
+
+.PP
+Definição na linha 52 do arquivo EKF\&.h\&.
+.SS "Eigen::Vector3f* ekf::EKF::biasAccel"
+Vetor ponteiro do bias do acelerômetro 
+.PP
+Definição na linha 165 do arquivo EKF\&.h\&.
+.PP
+Referenciado(a) por begin()\&.
+.SS "Eigen::Vector3f* ekf::EKF::biasGyro"
+Observações preditas */ Eigen::VectorXf yPreditas = Eigen::VectorXf::Zero(15); void integrationOfStates(); void updateStates(); void predictionStage(); void updateStage(); void updateF(); void updatefi(); void updateHq(); void updateHv(); void updateHp();
+.PP
+void updateOfMeasurements(); void positionIntegration(); void updateBaseRef(); void updateNedPos(); void updateNedVel();
+.PP
+/*! Vetor ponteiro do bias do giroscópio 
+.PP
+Definição na linha 163 do arquivo EKF\&.h\&.
+.PP
+Referenciado(a) por begin()\&.
+.SS "Eigen::Vector3f ekf::EKF::ddr = Eigen::Vector3f::Zero()"
+Aceleração linear m/s^2 
+.PP
+Definição na linha 86 do arquivo EKF\&.h\&.
+.SS "const float ekf::EKF::DEG_TO_RAD_BY_10000000\fC [private]\fP"
+\fBValor inicial:\fP
+.PP
+.nf
+=
+      1e-7 / 57\&.295779513082320876798154814105f
+.fi
+.PP
+Definição na linha 39 do arquivo EKF\&.h\&.
+.SS "Eigen::Vector<float, \fBnFull\fP + 1> ekf::EKF::deltaChi = Eigen::VectorXf::Zero(\fBnFull\fP + 1)"
+Vetor de estados perturbados do estados estimados do \fBEKF\fP\&. 
+.PP
+\fBAviso\fP
+.RS 4
+deltaChi possui dimensão 15+1, o primeiro elemento não é calculado pelo filtro mas computado na #updateStates()\&. 
+.RE
+.PP
+
+.PP
+Definição na linha 138 do arquivo EKF\&.h\&.
+.SS "Eigen::Vector<float, \fBpFull\fP> ekf::EKF::deltaYObs = Eigen::VectorXf::Zero(\fBpFull\fP)"
+Erro das observações 
+.PP
+Definição na linha 140 do arquivo EKF\&.h\&.
+.SS "Eigen::Vector3f ekf::EKF::drNED = Eigen::Vector3f::Zero()"
+Velocidade linear m/s 
+.PP
+Definição na linha 82 do arquivo EKF\&.h\&.
+.SS "Eigen::Vector3f ekf::EKF::drNEDgps = Eigen::Vector3f::Zero()"
+Velocidade linear sistema NED de observação\&. 
+.PP
+Definição na linha 84 do arquivo EKF\&.h\&.
+.PP
+Referenciado(a) por loop()\&.
+.SS "float ekf::EKF::dt = 0\&.0f"
+Intervalo de tempo para integração da atitude 
+.PP
+Definição na linha 56 do arquivo EKF\&.h\&.
+.PP
+Referenciado(a) por begin() e loop()\&.
+.SS "Eigen::Vector3f ekf::EKF::euler {0\&.0f, 0\&.0f, 0\&.0f}"
+Ângulos de Euler na convenção 3-2-1 Tait-Bryan 
+.PP
+Definição na linha 72 do arquivo EKF\&.h\&.
+.SS "Eigen::Matrix<float, \fBnFull\fP, \fBnFull\fP> ekf::EKF::fi = Eigen::MatrixXf::Zero(\fBnFull\fP, \fBnFull\fP)"
+Matriz Jacobiana dos estados\&. 
+.PP
+Definição na linha 119 do arquivo EKF\&.h\&.
+.SS "Eigen::Matrix<float, \fBnFull\fP, 12> ekf::EKF::G = Eigen::MatrixXf::Zero(\fBnFull\fP, 12)"
+Matriz G de ruido do processo\&. 
+.PP
+Definição na linha 121 do arquivo EKF\&.h\&.
+.PP
+Referenciado(a) por begin()\&.
+.SS "Eigen::Vector3f ekf::EKF::gyro = Eigen::Vector3f::Zero()"
+Vetor com as medidas do giroscopios 
+.PP
+Definição na linha 62 do arquivo EKF\&.h\&.
+.PP
+Referenciado(a) por begin() e loop()\&.
+.SS "Eigen::Matrix<float, \fBpFull\fP, \fBnFull\fP> ekf::EKF::H = Eigen::MatrixXf::Zero(\fBpFull\fP, \fBnFull\fP)"
+Matriz sensibilidade 
+.PP
+Definição na linha 129 do arquivo EKF\&.h\&.
+.SS "Eigen::Matrix<float, \fBnFull\fP, \fBpFull\fP> ekf::EKF::K"
+\fBValor inicial:\fP
+.PP
+.nf
+=
+      Eigen::MatrixXf::Identity(nFull, pFull)
+.fi
+Ganho de Kalman 
+.PP
+Definição na linha 131 do arquivo EKF\&.h\&.
+.SS "Eigen::Vector3f ekf::EKF::mag = Eigen::Vector3f::Zero()"
+Vetor com as medidas do magnetometros 
+.PP
+Definição na linha 64 do arquivo EKF\&.h\&.
+.PP
+Referenciado(a) por begin() e loop()\&.
+.SS "Eigen::Matrix3f ekf::EKF::mcd = Eigen::Matrix3f::Identity()"
+Matrix de cossenos diretores 
+.PP
+Definição na linha 88 do arquivo EKF\&.h\&.
+.SS "uint8_t ekf::EKF::messageGPS = 0"
+
+.PP
+Definição na linha 89 do arquivo EKF\&.h\&.
+.PP
+Referenciado(a) por loop()\&.
+.SS "Eigen::Matrix<float, \fBnFull\fP, \fBnFull\fP> ekf::EKF::mF = Eigen::MatrixXf::Zero(\fBnFull\fP, \fBnFull\fP)"
+Matrix de estados linearizada\&. 
+.PP
+\fBObservação\fP
+.RS 4
+mF é utilizado como simbolo de F pq F é um simbolo reservado\&. 
+.RE
+.PP
+
+.PP
+Definição na linha 117 do arquivo EKF\&.h\&.
+.PP
+Referenciado(a) por begin()\&.
+.SS "int ekf::EKF::n = 15"
+Números de estados\&. q, b_giro, vel, b_acel, posicao 
+.PP
+Definição na linha 94 do arquivo EKF\&.h\&.
+.SS "const int ekf::EKF::nAtitude = 6"
+Número de estados de atitude\&. 
+.PP
+Definição na linha 48 do arquivo EKF\&.h\&.
+.SS "const Eigen::Vector3f ekf::EKF::navegationGravity {0\&.0f, 0\&.0f, 9\&.786171951281709f}"
+Gravidade no sistema de navegação 
+.PP
+Definição na linha 60 do arquivo EKF\&.h\&.
+.SS "const int ekf::EKF::nFull = 15\fC [static]\fP"
+Número de estados do sistema completo\&. 
+.PP
+Definição na linha 44 do arquivo EKF\&.h\&.
+.SS "int ekf::EKF::p = \fBpFull\fP"
+Número de linhas da matriz H\&. Assume 3 quando apenas a MARG está disponível e 6 quando MARG/GPS estão disponíveis\&. 
+.PP
+Definição na linha 92 do arquivo EKF\&.h\&.
+.SS "Eigen::Matrix<float, \fBnFull\fP, \fBnFull\fP> ekf::EKF::P"
+\fBValor inicial:\fP
+.PP
+.nf
+=
+      ((Eigen::VectorXf(n) << \&.5, \&.5, \&.5, \&.1, \&.10, \&.10, 1, 1, 1, \&.1, \&.10, \&.10,
+        1e8, 1e8, 1e8)
+           \&.finished())
+          \&.asDiagonal()
+.fi
+Matriz Covariancia 
+.PP
+Definição na linha 123 do arquivo EKF\&.h\&.
+.SS "const int ekf::EKF::pAtitude = 4"
+Número de observações da atitude 
+.PP
+Definição na linha 50 do arquivo EKF\&.h\&.
+.SS "const int ekf::EKF::pFull = 7\fC [static]\fP"
+Número total de observações 
+.PP
+Definição na linha 46 do arquivo EKF\&.h\&.
+.SS "Eigen::Vector4f ekf::EKF::q {1\&.0f, 0\&.0f, 0\&.0f, 0\&.0f}"
+Quaternion de atitude 
+.PP
+Definição na linha 70 do arquivo EKF\&.h\&.
+.PP
+Referenciado(a) por begin() e drone\&.Drone::updateStates()\&.
+.SS "Eigen::Matrix<float, \fBnFull\fP, \fBnFull\fP> ekf::EKF::Q_k"
+\fBValor inicial:\fP
+.PP
+.nf
+=
+      Eigen::MatrixXf::Identity(nFull, nFull)
+.fi
+Matriz de covariancia de processo discretizada\&. 
+.PP
+Definição na linha 110 do arquivo EKF\&.h\&.
+.PP
+Referenciado(a) por begin()\&.
+.SS "Eigen::Vector4f ekf::EKF::qObs {1\&.0f, 0\&.0f, 0\&.0f, 0\&.0f}"
+Vetor com as medias do magnetometro sem as projeções na direção do vetor gravitacional
+.PP
+Quaternion de observação 
+.PP
+Definição na linha 68 do arquivo EKF\&.h\&.
+.PP
+Referenciado(a) por begin()\&.
+.SS "Eigen::Matrix<float, \fBpFull\fP, \fBpFull\fP> ekf::EKF::R"
+\fBValor inicial:\fP
+.PP
+.nf
+=
+      Eigen::MatrixXf::Identity(pFull, pFull)
+.fi
+Matriz de covariancia de medidas\&. 
+.PP
+Definição na linha 113 do arquivo EKF\&.h\&.
+.PP
+Referenciado(a) por begin()\&.
+.SS "Eigen::Vector3f ekf::EKF::rNED = Eigen::Vector3f::Zero()"
+Vetor de estados estimados do \fBEKF\fP\&. O erros são: as três componetes da parte vetorial do quaternion, os três bias do giroscópio e as compoenentes da velocidade no sistema NED\&. [ \fBq\fP \fBb\fP \fBr\fP]
+.PP
+Posicoes no sistema NED 
+.PP
+Definição na linha 78 do arquivo EKF\&.h\&.
+.SS "Eigen::Vector3f ekf::EKF::rNEDgps = Eigen::Vector3f::Zero()"
+Posicao no sistema NED de observação\&. 
+.PP
+Definição na linha 80 do arquivo EKF\&.h\&.
+.PP
+Referenciado(a) por loop()\&.
+.SS "const float ekf::EKF::sigma_acel_squared = 1e\-3"
+Quadrado do desvio padrão do acelerômetro\&. 
+.PP
+Definição na linha 100 do arquivo EKF\&.h\&.
+.PP
+Referenciado(a) por begin()\&.
+.SS "const float ekf::EKF::sigma_aqua_squared = 1e\-3"
+Quadrado do desvio padrão da observação do quatérnion\&. 
+.PP
+Definição na linha 104 do arquivo EKF\&.h\&.
+.PP
+Referenciado(a) por begin()\&.
+.SS "const float ekf::EKF::sigma_bias_acel_squared = 1e\-6"
+Quadrado do desvio padrão do bias do acelerômetro\&. 
+.PP
+Definição na linha 102 do arquivo EKF\&.h\&.
+.PP
+Referenciado(a) por begin()\&.
+.SS "const float ekf::EKF::sigma_bias_giro_squared = 1e\-6"
+Quadrado do desvio padrão do bias do giroscópio\&. 
+.PP
+Definição na linha 98 do arquivo EKF\&.h\&.
+.PP
+Referenciado(a) por begin()\&.
+.SS "const float ekf::EKF::sigma_giro_squared = 1e\-3"
+Quadrado do desvio padrão do giroscópio\&. 
+.PP
+Definição na linha 96 do arquivo EKF\&.h\&.
+.PP
+Referenciado(a) por begin()\&.
+.SS "const float ekf::EKF::sigma_pos_squared = 5\&.0f * 5\&.0f"
+Quadrado do desvio padrão da posição no gps\&. 
+.PP
+Definição na linha 108 do arquivo EKF\&.h\&.
+.SS "const float ekf::EKF::sigma_vel_squared = 0\&.02f * 0\&.02f"
+Quadrado do desvio padrão da velocidade no gps\&. 
+.PP
+Definição na linha 106 do arquivo EKF\&.h\&.
+
+.SH "Autor"
+.PP 
+Gerado automaticamente por Doxygen para Quadrirrotor a partir do código-fonte\&.

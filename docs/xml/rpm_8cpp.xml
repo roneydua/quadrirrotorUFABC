@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compounddef id="rpm_8cpp" kind="file" language="C++">
+    <compoundname>rpm.cpp</compoundname>
+    <includes refid="rpm_8h" local="yes">rpm.h</includes>
+    <includes local="no">Arduino.h</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>rpm.h</label>
+        <link refid="rpm_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>driver/pcnt.h</label>
+      </node>
+      <node id="4">
+        <label>Arduino.h</label>
+      </node>
+      <node id="1">
+        <label>lib/RPM/rpm.cpp</label>
+        <link refid="rpm_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="rpm_8cpp_1a86daeaf64f729140c847f4e326c45f92" prot="public" static="no" mutable="no">
+        <type><ref refid="classRpm" kindref="compound">Rpm</ref> *</type>
+        <definition>Rpm* pointer_Rpm</definition>
+        <argsstring></argsstring>
+        <name>pointer_Rpm</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/RPM/rpm.cpp" line="14" column="5" bodyfile="lib/RPM/rpm.cpp" bodystart="14" bodyend="-1"/>
+        <referencedby refid="rpm_8cpp_1acf2356782b1ac2ca382a6b124ad84819" compoundref="rpm_8cpp" startline="17" endline="19">outside_interrupt_handler</referencedby>
+        <referencedby refid="classRpm_1a121340fc34d14d36ec48bef0b38909f1" compoundref="rpm_8cpp" startline="21" endline="29">Rpm::Rpm</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="rpm_8cpp_1acf2356782b1ac2ca382a6b124ad84819" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void outside_interrupt_handler</definition>
+        <argsstring>(void *arg)</argsstring>
+        <name>outside_interrupt_handler</name>
+        <param>
+          <type>void *</type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/RPM/rpm.cpp" line="17" column="1" bodyfile="lib/RPM/rpm.cpp" bodystart="17" bodyend="19"/>
+        <references refid="rpm_8cpp_1a86daeaf64f729140c847f4e326c45f92" compoundref="rpm_8cpp" startline="14">pointer_Rpm</references>
+        <references refid="classRpm_1acdcf8286b888e4ffd0aa41d1f37c5b15" compoundref="rpm_8cpp" startline="65" endline="70">Rpm::update_rpm</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>: Roney Silva (roneydua) </para>
+</simplesect>
+<simplesect kind="date"><para>: 16-Aug-2021 Email: <ulink url="mailto:roneyddasilva@gmail.com">roneyddasilva@gmail.com</ulink> Project: quadrirrotorUFABC</para>
+</simplesect>
+Last modified by: roneydua Last modified time: 25-Aug-2021 </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="rpm_8h" kindref="compound">rpm.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Arduino.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Fora<sp/>da<sp/>classe<sp/>eh<sp/>declarado<sp/>um<sp/>ponteiro<sp/>para<sp/>a<sp/>classe</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="rpm_8cpp_1a86daeaf64f729140c847f4e326c45f92" refkind="member"><highlight class="normal"><ref refid="classRpm" kindref="compound">Rpm</ref><sp/>*<ref refid="rpm_8cpp_1a86daeaf64f729140c847f4e326c45f92" kindref="member">pointer_Rpm</ref>;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//<sp/>defini-se<sp/>um<sp/>manipulador<sp/>globlal</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="rpm_8cpp_1acf2356782b1ac2ca382a6b124ad84819" refkind="member"><highlight class="normal"><ref refid="rpm_8cpp_1acf2356782b1ac2ca382a6b124ad84819" kindref="member">outside_interrupt_handler</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*arg)<sp/>{<sp/></highlight><highlight class="comment">//<sp/>define<sp/>o<sp/>manipulador<sp/>global</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><ref refid="rpm_8cpp_1a86daeaf64f729140c847f4e326c45f92" kindref="member">pointer_Rpm</ref>-&gt;<ref refid="classRpm_1acdcf8286b888e4ffd0aa41d1f37c5b15" kindref="member">update_rpm</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>chama<sp/>membro<sp/>da<sp/>classe</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="classRpm_1a121340fc34d14d36ec48bef0b38909f1" refkind="member"><highlight class="normal"><ref refid="classRpm_1a121340fc34d14d36ec48bef0b38909f1" kindref="member">Rpm::Rpm</ref>(gpio_num_t<sp/>sensor,<sp/>pcnt_unit_t<sp/>pcnt_unit,<sp/>uint8_t<sp/>ciclos_por_volta)<sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><ref refid="rpm_8cpp_1a86daeaf64f729140c847f4e326c45f92" kindref="member">pointer_Rpm</ref><sp/>=<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/>this-&gt;sensor<sp/>=<sp/><ref refid="classRpm_1a1fb0f83d82726133d5814adb6e06d0bf" kindref="member">sensor</ref>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/>this-&gt;pcnt_unit<sp/>=<sp/><ref refid="classRpm_1a0683829851e4011132c048b20df3d73a" kindref="member">pcnt_unit</ref>;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/>this-&gt;ciclos_por_volta<sp/>=<sp/><ref refid="classRpm_1ae7f22ed32ee4e3c1242fd7ff2895e883" kindref="member">ciclos_por_volta</ref>;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/>this-&gt;<ref refid="classRpm_1a3e22a7563c57f2eb1f5df770e58351fb" kindref="member">rpm_factor</ref><sp/>=<sp/>60<sp/>*<sp/>this-&gt;<ref refid="classRpm_1a5e8240e66073f461ae884a08c6be84c5" kindref="member">MAX_H_LIM</ref><sp/>*<sp/>1000000<sp/>/<sp/>this-&gt;<ref refid="classRpm_1ae7f22ed32ee4e3c1242fd7ff2895e883" kindref="member">ciclos_por_volta</ref>;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><ref refid="classRpm_1ac6a52231cd6967bd6c565615638cc50c" kindref="member">init</ref>();</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="classRpm_1ac6a52231cd6967bd6c565615638cc50c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classRpm_1ac6a52231cd6967bd6c565615638cc50c" kindref="member">Rpm::init</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/>gpio_set_pull_mode(this-&gt;<ref refid="classRpm_1a1fb0f83d82726133d5814adb6e06d0bf" kindref="member">sensor</ref>,<sp/>GPIO_PULLUP_ONLY);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/>pcnt_config_t<sp/>pcnt_config<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.pulse_gpio_num<sp/>=<sp/>this-&gt;<ref refid="classRpm_1a1fb0f83d82726133d5814adb6e06d0bf" kindref="member">sensor</ref>,<sp/></highlight><highlight class="comment">//<sp/>configura<sp/>a<sp/>gpiou<sp/>de<sp/>leitura</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.ctrl_gpio_num<sp/>=<sp/>-1,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>define<sp/>o<sp/>controle</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.lctrl_mode<sp/>=<sp/>PCNT_MODE_KEEP,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>when<sp/>control<sp/>signal<sp/>is<sp/>low,<sp/>keep<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>primary<sp/>counter<sp/>mode</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.hctrl_mode<sp/>=<sp/>PCNT_MODE_KEEP,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>when<sp/>control<sp/>signal<sp/>is<sp/>high,<sp/>keep<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>primary<sp/>counter<sp/>mode</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.pos_mode<sp/>=<sp/>PCNT_COUNT_INC,<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>incrementa<sp/>com<sp/>a<sp/>subida<sp/>do<sp/>sinal</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.neg_mode<sp/>=<sp/>PCNT_COUNT_DIS,<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>ignora<sp/>a<sp/>contagem<sp/>com<sp/>a<sp/>decida</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.counter_h_lim<sp/>=<sp/><ref refid="classRpm_1a5e8240e66073f461ae884a08c6be84c5" kindref="member">MAX_H_LIM</ref>,<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>limita<sp/>o<sp/>numero<sp/>maximo<sp/>de<sp/>contagem</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.counter_l_lim<sp/>=<sp/>0,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>limite<sp/>inferior</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.unit<sp/>=<sp/>this-&gt;<ref refid="classRpm_1a0683829851e4011132c048b20df3d73a" kindref="member">pcnt_unit</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>PCNT<sp/>unit<sp/>number</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.channel<sp/>=<sp/>PCNT_CHANNEL_0};</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/>pcnt_unit_config(&amp;pcnt_config);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><ref refid="classRpm_1ac44e73f7678c35183e856295c2e7eceb" kindref="member">time_array</ref>[<ref refid="classRpm_1a57664781b6348e2a781ff631a5a258d1" kindref="member">index_time_array</ref>]<sp/>=<sp/>esp_timer_get_time();</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><ref refid="classRpm_1a940dfab8b4369e418b8afc1627d74d2b" kindref="member">restart_conter</ref>();</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/>pcnt_get_counter_value(this-&gt;<ref refid="classRpm_1a0683829851e4011132c048b20df3d73a" kindref="member">pcnt_unit</ref>,<sp/>&amp;<ref refid="classRpm_1aec0d7e9e181fc5eaa546bbf7378811dd" kindref="member">pulses</ref>);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><ref refid="classRpm_1acdcf8286b888e4ffd0aa41d1f37c5b15" kindref="member">update_rpm</ref>();</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>set<sp/>max<sp/>value.<sp/>Important!<sp/>this<sp/>interruption<sp/>reset<sp/>counter!*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/>pcnt_event_enable(this-&gt;<ref refid="classRpm_1a0683829851e4011132c048b20df3d73a" kindref="member">pcnt_unit</ref>,<sp/>PCNT_EVT_H_LIM);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>set<sp/>a<sp/>value<sp/>diferent<sp/>of<sp/>maximum<sp/>or<sp/>minumum.*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/>pcnt_isr_service_install(0);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>pcnt_isr_handler_add(this-&gt;pcnt_unit,<sp/>outside_interrupt_handler,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(void<sp/>*)pcnt_unit);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="58" refid="classRpm_1a940dfab8b4369e418b8afc1627d74d2b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classRpm_1a940dfab8b4369e418b8afc1627d74d2b" kindref="member">Rpm::restart_conter</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/>pcnt_counter_pause(this-&gt;<ref refid="classRpm_1a0683829851e4011132c048b20df3d73a" kindref="member">pcnt_unit</ref>);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/>pcnt_counter_clear(this-&gt;<ref refid="classRpm_1a0683829851e4011132c048b20df3d73a" kindref="member">pcnt_unit</ref>);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/>pcnt_counter_resume(this-&gt;<ref refid="classRpm_1a0683829851e4011132c048b20df3d73a" kindref="member">pcnt_unit</ref>);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>change<sp/>between<sp/>0<sp/>and<sp/>1<sp/>for<sp/>update<sp/>time_array</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="classRpm_1acdcf8286b888e4ffd0aa41d1f37c5b15" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classRpm_1acdcf8286b888e4ffd0aa41d1f37c5b15" kindref="member">Rpm::update_rpm</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><ref refid="classRpm_1a57664781b6348e2a781ff631a5a258d1" kindref="member">index_time_array</ref><sp/>=<sp/>1<sp/>-<sp/><ref refid="classRpm_1a57664781b6348e2a781ff631a5a258d1" kindref="member">index_time_array</ref>;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><ref refid="classRpm_1ac44e73f7678c35183e856295c2e7eceb" kindref="member">time_array</ref>[<ref refid="classRpm_1a57664781b6348e2a781ff631a5a258d1" kindref="member">index_time_array</ref>]<sp/>=<sp/>esp_timer_get_time();</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><ref refid="classRpm_1a752569e792e4187bf57ab7d010157413" kindref="member">dt</ref><sp/>=<sp/><ref refid="classRpm_1ac44e73f7678c35183e856295c2e7eceb" kindref="member">time_array</ref>[<ref refid="classRpm_1a57664781b6348e2a781ff631a5a258d1" kindref="member">index_time_array</ref>]<sp/>-<sp/><ref refid="classRpm_1ac44e73f7678c35183e856295c2e7eceb" kindref="member">time_array</ref>[1<sp/>-<sp/><ref refid="classRpm_1a57664781b6348e2a781ff631a5a258d1" kindref="member">index_time_array</ref>];</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><ref refid="classRpm_1ad84394fa85418225c8a3b0f82110bc09" kindref="member">rpm</ref><sp/>=<sp/>this-&gt;<ref refid="classRpm_1a3e22a7563c57f2eb1f5df770e58351fb" kindref="member">rpm_factor</ref><sp/>/<sp/><ref refid="classRpm_1a752569e792e4187bf57ab7d010157413" kindref="member">dt</ref>;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="classRpm_1ae4aa3e158ba93af30da3e1353bb3959f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classRpm_1ae4aa3e158ba93af30da3e1353bb3959f" kindref="member">Rpm::get_pulses</ref>()<sp/>{<sp/>pcnt_get_counter_value(this-&gt;<ref refid="classRpm_1a0683829851e4011132c048b20df3d73a" kindref="member">pcnt_unit</ref>,<sp/>&amp;<ref refid="classRpm_1aec0d7e9e181fc5eaa546bbf7378811dd" kindref="member">pulses</ref>);<sp/>}</highlight></codeline>
+    </programlisting>
+    <location file="lib/RPM/rpm.cpp"/>
+  </compounddef>
+</doxygen>

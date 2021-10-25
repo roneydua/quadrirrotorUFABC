@@ -1,0 +1,8 @@
+digraph "TELEMETRIA"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  Node1 [label="{TELEMETRIA\n|+ uint8_t _broadcast\l+  mensagem\l+  controle\l+ uint8_t _quantDados\l+ static uint8_t comAceito\l|+  TELEMETRIA()\l+ void begin()\l+ void envia(VectorXf a)\l+ void enviaMensagem\l(char *aviso)\l+ void pisca(uint8_t\l porta)\l+ struct __attribute\l__((packed)) mensagem\l+ struct __attribute\l__((packed)) controle\l- static void OnDataRecv\l(const uint8_t *_broadcast,\l const uint8_t *data, int\l data_len)\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

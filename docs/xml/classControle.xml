@@ -1,0 +1,645 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compounddef id="classControle" kind="class" language="C++" prot="public">
+    <compoundname>Controle</compoundname>
+    <includes refid="Controle_8h" local="no">Controle.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classControle_1adf6b85a6ab34600ac480a5cf9c4c1f8e" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Controle::minimalDigitalCommand</definition>
+        <argsstring></argsstring>
+        <name>minimalDigitalCommand</name>
+        <initializer>= 7700</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CONTROLE/Controle.h" line="30" column="7" bodyfile="lib/CONTROLE/Controle.h" bodystart="30" bodyend="-1"/>
+        <referencedby refid="classControle_1a42aee0a4592b84bd793c8be0fde0095b" compoundref="Controle_8cpp" startline="102" endline="109">virtualCommandToMotorCommand</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classControle_1a913b2b49e44d1b633b55d2d95413b259" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Controle::maximalDigitalCommand</definition>
+        <argsstring></argsstring>
+        <name>maximalDigitalCommand</name>
+        <initializer>= 15400</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CONTROLE/Controle.h" line="31" column="7" bodyfile="lib/CONTROLE/Controle.h" bodystart="31" bodyend="-1"/>
+        <referencedby refid="classControle_1a42aee0a4592b84bd793c8be0fde0095b" compoundref="Controle_8cpp" startline="102" endline="109">virtualCommandToMotorCommand</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classControle_1ae08c605ba3028486392d9f5aa2b2142b" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Controle::gravidade</definition>
+        <argsstring></argsstring>
+        <name>gravidade</name>
+        <initializer>= 9.80f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CONTROLE/Controle.h" line="32" column="9" bodyfile="lib/CONTROLE/Controle.h" bodystart="32" bodyend="-1"/>
+        <referencedby refid="classControle_1add7378d03597a45ff09b2432d7739dfe" compoundref="Controle_8cpp" startline="41" endline="50">computeTranslationalControl</referencedby>
+        <referencedby refid="classControle_1abbe044aad705ef7d663c45275948fd12" compoundref="Controle_8cpp" startline="14" endline="36">Controle</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classControle_1a4fc1f7f2b69a021f4bb433daada38430" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t Controle::index_alt</definition>
+        <argsstring></argsstring>
+        <name>index_alt</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CONTROLE/Controle.h" line="33" column="11" bodyfile="lib/CONTROLE/Controle.h" bodystart="33" bodyend="-1"/>
+        <referencedby refid="classControle_1abcf05dcff157e963fd65c09d45261a8f" compoundref="Controle_8cpp" startline="84" endline="96">computeRotationalControl</referencedby>
+        <referencedby refid="classControle_1a8ac9e933ce30f9c88ed421d4c0afcf99" compoundref="Controle_8cpp" startline="51" endline="80">computeRotationalTarget</referencedby>
+        <referencedby refid="classControle_1add7378d03597a45ff09b2432d7739dfe" compoundref="Controle_8cpp" startline="41" endline="50">computeTranslationalControl</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classControle_1a94276b811077802165f17603428e475e" prot="public" static="no" mutable="no">
+        <type><ref refid="classDrone" kindref="compound">Drone</ref> *</type>
+        <definition>Drone* Controle::drone</definition>
+        <argsstring></argsstring>
+        <name>drone</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CONTROLE/Controle.h" line="34" column="9" bodyfile="lib/CONTROLE/Controle.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classControle_1ad67e192b12bfba4d5a68ee59870863b2" prot="public" static="no" mutable="no">
+        <type><ref refid="classSdre" kindref="compound">Sdre</ref> *</type>
+        <definition>Sdre* Controle::sdre</definition>
+        <argsstring></argsstring>
+        <name>sdre</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CONTROLE/Controle.h" line="35" column="8" bodyfile="lib/CONTROLE/Controle.h" bodystart="35" bodyend="-1"/>
+        <referencedby refid="classControle_1abcf05dcff157e963fd65c09d45261a8f" compoundref="Controle_8cpp" startline="84" endline="96">computeRotationalControl</referencedby>
+        <referencedby refid="classControle_1abbe044aad705ef7d663c45275948fd12" compoundref="Controle_8cpp" startline="14" endline="36">Controle</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classControle_1abea037d2953202894021efd9e5c4fcaf" prot="public" static="no" mutable="no">
+        <type>Eigen::Vector3f</type>
+        <definition>Eigen::Vector3f Controle::rI</definition>
+        <argsstring></argsstring>
+        <name>rI</name>
+        <initializer>= Eigen::Vector3f::Zero()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Integral da referência de velocidade tranlacional </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CONTROLE/Controle.h" line="37" column="19" bodyfile="lib/CONTROLE/Controle.h" bodystart="37" bodyend="-1"/>
+        <referencedby refid="classControle_1add7378d03597a45ff09b2432d7739dfe" compoundref="Controle_8cpp" startline="41" endline="50">computeTranslationalControl</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classControle_1a7b4f1db8c2182de9f1999819aace78e3" prot="public" static="no" mutable="no">
+        <type>Eigen::Vector3f</type>
+        <definition>Eigen::Vector3f Controle::r</definition>
+        <argsstring></argsstring>
+        <name>r</name>
+        <initializer>= Eigen::Vector3f::Zero()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Referência de velocidade tranlacional </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CONTROLE/Controle.h" line="39" column="19" bodyfile="lib/CONTROLE/Controle.h" bodystart="39" bodyend="-1"/>
+        <referencedby refid="classControle_1add7378d03597a45ff09b2432d7739dfe" compoundref="Controle_8cpp" startline="41" endline="50">computeTranslationalControl</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classControle_1a065d96653d6891c3e9aeffd5d202200d" prot="public" static="no" mutable="no">
+        <type>Eigen::MatrixXf</type>
+        <definition>Eigen::MatrixXf Controle::qa</definition>
+        <argsstring></argsstring>
+        <name>qa</name>
+        <initializer>= Eigen::MatrixXf::Zero(4, 2)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Quaternion alvo de atitude </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CONTROLE/Controle.h" line="41" column="19" bodyfile="lib/CONTROLE/Controle.h" bodystart="41" bodyend="-1"/>
+        <referencedby refid="classControle_1abcf05dcff157e963fd65c09d45261a8f" compoundref="Controle_8cpp" startline="84" endline="96">computeRotationalControl</referencedby>
+        <referencedby refid="classControle_1a8ac9e933ce30f9c88ed421d4c0afcf99" compoundref="Controle_8cpp" startline="51" endline="80">computeRotationalTarget</referencedby>
+        <referencedby refid="classControle_1abbe044aad705ef7d663c45275948fd12" compoundref="Controle_8cpp" startline="14" endline="36">Controle</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classControle_1a3e4c231b2af8c3c96550cd022d410c83" prot="public" static="no" mutable="no">
+        <type>Eigen::Vector4f</type>
+        <definition>Eigen::Vector4f Controle::qe</definition>
+        <argsstring></argsstring>
+        <name>qe</name>
+        <initializer>{1, 0, 0, 0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CONTROLE/Controle.h" line="42" column="19" bodyfile="lib/CONTROLE/Controle.h" bodystart="42" bodyend="-1"/>
+        <referencedby refid="classControle_1abcf05dcff157e963fd65c09d45261a8f" compoundref="Controle_8cpp" startline="84" endline="96">computeRotationalControl</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classControle_1a51cecade068048c7a97a9dd4cb6a75b8" prot="public" static="no" mutable="no">
+        <type>Eigen::Vector3f</type>
+        <definition>Eigen::Vector3f Controle::wa</definition>
+        <argsstring></argsstring>
+        <name>wa</name>
+        <initializer>= Eigen::Vector3f::Zero()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Velocidade angular alvo </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CONTROLE/Controle.h" line="44" column="19" bodyfile="lib/CONTROLE/Controle.h" bodystart="44" bodyend="-1"/>
+        <referencedby refid="classControle_1abcf05dcff157e963fd65c09d45261a8f" compoundref="Controle_8cpp" startline="84" endline="96">computeRotationalControl</referencedby>
+        <referencedby refid="classControle_1a8ac9e933ce30f9c88ed421d4c0afcf99" compoundref="Controle_8cpp" startline="51" endline="80">computeRotationalTarget</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classControle_1aa873dca8a6cf31541df846aa5cbe7a61" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Controle::psi</definition>
+        <argsstring></argsstring>
+        <name>psi</name>
+        <initializer>= 0.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Ponteiros de velocidade angular</para>
+<para>Psi alvo </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CONTROLE/Controle.h" line="48" column="9" bodyfile="lib/CONTROLE/Controle.h" bodystart="48" bodyend="-1"/>
+        <referencedby refid="classControle_1a8ac9e933ce30f9c88ed421d4c0afcf99" compoundref="Controle_8cpp" startline="51" endline="80">computeRotationalTarget</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classControle_1a92913e2274b1d3b1fc0177425695b59d" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Controle::dpsi</definition>
+        <argsstring></argsstring>
+        <name>dpsi</name>
+        <initializer>= 0.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Velocidade Psi alvo </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CONTROLE/Controle.h" line="51" column="9" bodyfile="lib/CONTROLE/Controle.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classControle_1a822f7e0d38f422c6097e2126ed9a9ec9" prot="public" static="no" mutable="no">
+        <type>Eigen::MatrixXf</type>
+        <definition>Eigen::MatrixXf Controle::Lt</definition>
+        <argsstring></argsstring>
+        <name>Lt</name>
+        <initializer>= Eigen::MatrixXf::Identity(3, 3)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Matriz Ganho de Kalman. u = -L * x da dinâmica translacional </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CONTROLE/Controle.h" line="53" column="19" bodyfile="lib/CONTROLE/Controle.h" bodystart="53" bodyend="-1"/>
+        <referencedby refid="classControle_1add7378d03597a45ff09b2432d7739dfe" compoundref="Controle_8cpp" startline="41" endline="50">computeTranslationalControl</referencedby>
+        <referencedby refid="classControle_1abbe044aad705ef7d663c45275948fd12" compoundref="Controle_8cpp" startline="14" endline="36">Controle</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classControle_1a9fa6356305a7fa27ea7b9dd5ebf620c9" prot="public" static="no" mutable="no">
+        <type>Eigen::MatrixXf</type>
+        <definition>Eigen::MatrixXf Controle::Ls_G</definition>
+        <argsstring></argsstring>
+        <name>Ls_G</name>
+        <initializer>= Eigen::MatrixXf::Identity(3, 3)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CONTROLE/Controle.h" line="54" column="19" bodyfile="lib/CONTROLE/Controle.h" bodystart="54" bodyend="-1"/>
+        <referencedby refid="classControle_1abbe044aad705ef7d663c45275948fd12" compoundref="Controle_8cpp" startline="14" endline="36">Controle</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classControle_1a442eb8225f58938b2a9a5308895e1d18" prot="public" static="no" mutable="no">
+        <type>Eigen::MatrixXf</type>
+        <definition>Eigen::MatrixXf Controle::Rt</definition>
+        <argsstring></argsstring>
+        <name>Rt</name>
+        <initializer>= .5 * Eigen::MatrixXf::Identity(3, 3)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Matriz de ponderação do controle translacional. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CONTROLE/Controle.h" line="56" column="19" bodyfile="lib/CONTROLE/Controle.h" bodystart="56" bodyend="-1"/>
+        <referencedby refid="classControle_1abbe044aad705ef7d663c45275948fd12" compoundref="Controle_8cpp" startline="14" endline="36">Controle</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classControle_1a217f8f02b01c63725bc14f7679412fc0" prot="public" static="no" mutable="no">
+        <type>Eigen::MatrixXf</type>
+        <definition>Eigen::MatrixXf Controle::Qt</definition>
+        <argsstring></argsstring>
+        <name>Qt</name>
+        <initializer>=
+      50 * (Eigen::VectorXf(6) &lt;&lt; 1, 1, 1, 1, 1, 1).finished().asDiagonal()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Matriz de ponderação do estado translacional. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CONTROLE/Controle.h" line="58" column="19" bodyfile="lib/CONTROLE/Controle.h" bodystart="58" bodyend="-1"/>
+        <referencedby refid="classControle_1abbe044aad705ef7d663c45275948fd12" compoundref="Controle_8cpp" startline="14" endline="36">Controle</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classControle_1a5322dd0d474b5f5f92dceda8266c8cfd" prot="public" static="no" mutable="no">
+        <type>Eigen::MatrixXf</type>
+        <definition>Eigen::MatrixXf Controle::Rr</definition>
+        <argsstring></argsstring>
+        <name>Rr</name>
+        <initializer>=
+      .01 * (Eigen::VectorXf(3) &lt;&lt; 1, 1, 1).finished().asDiagonal()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Matriz de ponderação do controle rotacional. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CONTROLE/Controle.h" line="61" column="19" bodyfile="lib/CONTROLE/Controle.h" bodystart="61" bodyend="-1"/>
+        <referencedby refid="classControle_1abbe044aad705ef7d663c45275948fd12" compoundref="Controle_8cpp" startline="14" endline="36">Controle</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classControle_1a299b06de76fde5b6eb7e47a4a45938bb" prot="public" static="no" mutable="no">
+        <type>Eigen::MatrixXf</type>
+        <definition>Eigen::MatrixXf Controle::Qr</definition>
+        <argsstring></argsstring>
+        <name>Qr</name>
+        <initializer>=
+      2 * (Eigen::VectorXf(6) &lt;&lt; 1, 1, 1, .1, .1, .1).finished().asDiagonal()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Matriz de ponderação do estado rotacional. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CONTROLE/Controle.h" line="65" column="19" bodyfile="lib/CONTROLE/Controle.h" bodystart="65" bodyend="-1"/>
+        <referencedby refid="classControle_1abbe044aad705ef7d663c45275948fd12" compoundref="Controle_8cpp" startline="14" endline="36">Controle</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classControle_1ad418683f52bf07661b72e9fbf463ecd1" prot="public" static="no" mutable="no">
+        <type>Eigen::Vector3f</type>
+        <definition>Eigen::Vector3f Controle::ut</definition>
+        <argsstring></argsstring>
+        <name>ut</name>
+        <initializer>= Eigen::Vector3f::Zero()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Vetor de controle da dinâmica translacional </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CONTROLE/Controle.h" line="71" column="19" bodyfile="lib/CONTROLE/Controle.h" bodystart="71" bodyend="-1"/>
+        <referencedby refid="classControle_1a8ac9e933ce30f9c88ed421d4c0afcf99" compoundref="Controle_8cpp" startline="51" endline="80">computeRotationalTarget</referencedby>
+        <referencedby refid="classControle_1add7378d03597a45ff09b2432d7739dfe" compoundref="Controle_8cpp" startline="41" endline="50">computeTranslationalControl</referencedby>
+        <referencedby refid="classControle_1abbe044aad705ef7d663c45275948fd12" compoundref="Controle_8cpp" startline="14" endline="36">Controle</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classControle_1a05ff4316f906c1e57a27ef81d983fba8" prot="public" static="no" mutable="no">
+        <type>Eigen::Vector4f</type>
+        <definition>Eigen::Vector4f Controle::u</definition>
+        <argsstring></argsstring>
+        <name>u</name>
+        <initializer>= Eigen::Vector4f::Zero()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Vetor de controle da dinâmica rotacional <emphasis><zwj/>/ Eigen::Vector3f ur = Eigen::Vector3f::Zero(); /</emphasis>! Vetor de tração específica e momentos no corpo. <simplesect kind="note"><para>que a tração já esta considerando a massa. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CONTROLE/Controle.h" line="77" column="19" bodyfile="lib/CONTROLE/Controle.h" bodystart="77" bodyend="-1"/>
+        <referencedby refid="classControle_1abcf05dcff157e963fd65c09d45261a8f" compoundref="Controle_8cpp" startline="84" endline="96">computeRotationalControl</referencedby>
+        <referencedby refid="classControle_1a8ac9e933ce30f9c88ed421d4c0afcf99" compoundref="Controle_8cpp" startline="51" endline="80">computeRotationalTarget</referencedby>
+        <referencedby refid="classControle_1add7378d03597a45ff09b2432d7739dfe" compoundref="Controle_8cpp" startline="41" endline="50">computeTranslationalControl</referencedby>
+        <referencedby refid="classControle_1abbe044aad705ef7d663c45275948fd12" compoundref="Controle_8cpp" startline="14" endline="36">Controle</referencedby>
+        <referencedby refid="classControle_1a42aee0a4592b84bd793c8be0fde0095b" compoundref="Controle_8cpp" startline="102" endline="109">virtualCommandToMotorCommand</referencedby>
+        <referencedby refid="classControle_1a9b3718425d8602487eb9b14d6ee1c781" compoundref="Controle_8cpp" startline="110" endline="114">virtualCommandToMotorRpm</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classControle_1aacd18c8929cb59d7390a58d8dd68de6d" prot="public" static="no" mutable="no">
+        <type>Eigen::Vector4i</type>
+        <definition>Eigen::Vector4i Controle::motorCommands</definition>
+        <argsstring></argsstring>
+        <name>motorCommands</name>
+        <initializer>= Eigen::Vector4i::Zero()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Comandos digitais </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CONTROLE/Controle.h" line="79" column="19" bodyfile="lib/CONTROLE/Controle.h" bodystart="79" bodyend="-1"/>
+        <referencedby refid="classControle_1a42aee0a4592b84bd793c8be0fde0095b" compoundref="Controle_8cpp" startline="102" endline="109">virtualCommandToMotorCommand</referencedby>
+        <referencedby refid="classControle_1a9b3718425d8602487eb9b14d6ee1c781" compoundref="Controle_8cpp" startline="110" endline="114">virtualCommandToMotorRpm</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classControle_1a8439a8b9ac6c7d0ec7f052b742f8a24b" prot="public" static="no" mutable="no">
+        <type>Eigen::Vector4f</type>
+        <definition>Eigen::Vector4f Controle::rotationsOfMotors</definition>
+        <argsstring></argsstring>
+        <name>rotationsOfMotors</name>
+        <initializer>= Eigen::Vector4f::Zero()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Vetor de rotação dos motores </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CONTROLE/Controle.h" line="81" column="19" bodyfile="lib/CONTROLE/Controle.h" bodystart="81" bodyend="-1"/>
+        <referencedby refid="classControle_1a9b3718425d8602487eb9b14d6ee1c781" compoundref="Controle_8cpp" startline="110" endline="114">virtualCommandToMotorRpm</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classControle_1a8bc7d1c142a5364ebdc15daf61a81900" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Controle::oldPsi</definition>
+        <argsstring></argsstring>
+        <name>oldPsi</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CONTROLE/Controle.h" line="83" column="9" bodyfile="lib/CONTROLE/Controle.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classControle_1aa30ed7f98e0eb42b27525a060ce3968c" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Controle::negativeq0</definition>
+        <argsstring></argsstring>
+        <name>negativeq0</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CONTROLE/Controle.h" line="91" column="8" bodyfile="lib/CONTROLE/Controle.h" bodystart="91" bodyend="-1"/>
+        <referencedby refid="classControle_1a8ac9e933ce30f9c88ed421d4c0afcf99" compoundref="Controle_8cpp" startline="51" endline="80">computeRotationalTarget</referencedby>
+        <referencedby refid="classControle_1a78e5f662130811f409342a706d5c0d2f" compoundref="Controle_8cpp" startline="118" endline="129">controlLoop</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classControle_1abbe044aad705ef7d663c45275948fd12" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Controle::Controle</definition>
+        <argsstring>()</argsstring>
+        <name>Controle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Control class. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CONTROLE/Controle.h" line="84" column="3" bodyfile="lib/CONTROLE/Controle.cpp" bodystart="14" bodyend="36"/>
+        <references refid="classSdre_1a4848cfbce14035e6b3733a628de9e24f" compoundref="Sdre_8cpp" startline="51" endline="57">Sdre::closeLoopEig</references>
+        <references refid="classSdre_1ad244c5cc1e70a1b08e8e4d5655993d8b" compoundref="Sdre_8h" startline="39">Sdre::G</references>
+        <references refid="classControle_1ae08c605ba3028486392d9f5aa2b2142b" compoundref="Controle_8h" startline="32">gravidade</references>
+        <references refid="classSdre_1aad912686f9a487dce4ea7e4875efd563" compoundref="Sdre_8h" startline="35">Sdre::L</references>
+        <references refid="classRiccati_1aef6ba29bba94e293a8ea4c279b565164" compoundref="Riccati_8h" startline="40">Riccati::Ls</references>
+        <references refid="classControle_1a9fa6356305a7fa27ea7b9dd5ebf620c9" compoundref="Controle_8h" startline="54">Ls_G</references>
+        <references refid="classControle_1a822f7e0d38f422c6097e2126ed9a9ec9" compoundref="Controle_8h" startline="53">Lt</references>
+        <references refid="Controle_8h_1a92102ea2f9ade1cc1a6dcce355db1677" compoundref="Controle_8h" startline="18">PRINT_MAT</references>
+        <references refid="classControle_1a065d96653d6891c3e9aeffd5d202200d" compoundref="Controle_8h" startline="41">qa</references>
+        <references refid="classControle_1a299b06de76fde5b6eb7e47a4a45938bb" compoundref="Controle_8h" startline="65">Qr</references>
+        <references refid="classControle_1a217f8f02b01c63725bc14f7679412fc0" compoundref="Controle_8h" startline="58">Qt</references>
+        <references refid="classSdre_1ac29f58dd81643087f49ccbed42b794df" compoundref="Sdre_8h" startline="29">Sdre::ricObj</references>
+        <references refid="classControle_1a5322dd0d474b5f5f92dceda8266c8cfd" compoundref="Controle_8h" startline="61">Rr</references>
+        <references refid="classControle_1a442eb8225f58938b2a9a5308895e1d18" compoundref="Controle_8h" startline="56">Rt</references>
+        <references refid="classControle_1ad67e192b12bfba4d5a68ee59870863b2" compoundref="Controle_8h" startline="35">sdre</references>
+        <references refid="classControle_1a05ff4316f906c1e57a27ef81d983fba8" compoundref="Controle_8h" startline="77">u</references>
+        <references refid="classSdre_1af2f380ec3d018b60686e304ca7026846" compoundref="Sdre_8cpp" startline="30" endline="46">Sdre::updateControl</references>
+        <references refid="classControle_1ad418683f52bf07661b72e9fbf463ecd1" compoundref="Controle_8h" startline="71">ut</references>
+        <references refid="classSdre_1a887dbd01f9f6846839114a4d5ff64102" compoundref="Sdre_8cpp" startline="25" endline="25">Sdre::~Sdre</references>
+      </memberdef>
+      <memberdef kind="function" id="classControle_1add7378d03597a45ff09b2432d7739dfe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Controle::computeTranslationalControl</definition>
+        <argsstring>()</argsstring>
+        <name>computeTranslationalControl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Calcula o controle de tranlação. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CONTROLE/Controle.h" line="85" column="8" bodyfile="lib/CONTROLE/Controle.cpp" bodystart="41" bodyend="50"/>
+        <references refid="classControle_1ae08c605ba3028486392d9f5aa2b2142b" compoundref="Controle_8h" startline="32">gravidade</references>
+        <references refid="classControle_1a4fc1f7f2b69a021f4bb433daada38430" compoundref="Controle_8h" startline="33">index_alt</references>
+        <references refid="classControle_1a822f7e0d38f422c6097e2126ed9a9ec9" compoundref="Controle_8h" startline="53">Lt</references>
+        <references refid="classControle_1a7b4f1db8c2182de9f1999819aace78e3" compoundref="Controle_8h" startline="39">r</references>
+        <references refid="classControle_1abea037d2953202894021efd9e5c4fcaf" compoundref="Controle_8h" startline="37">rI</references>
+        <references refid="classControle_1a05ff4316f906c1e57a27ef81d983fba8" compoundref="Controle_8h" startline="77">u</references>
+        <references refid="classControle_1ad418683f52bf07661b72e9fbf463ecd1" compoundref="Controle_8h" startline="71">ut</references>
+        <referencedby refid="classControle_1a78e5f662130811f409342a706d5c0d2f" compoundref="Controle_8cpp" startline="118" endline="129">controlLoop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classControle_1abcf05dcff157e963fd65c09d45261a8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Controle::computeRotationalControl</definition>
+        <argsstring>()</argsstring>
+        <name>computeRotationalControl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Computa do controle da dinâmica rotacional. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CONTROLE/Controle.h" line="86" column="8" bodyfile="lib/CONTROLE/Controle.cpp" bodystart="84" bodyend="96"/>
+        <references refid="classControle_1a4fc1f7f2b69a021f4bb433daada38430" compoundref="Controle_8h" startline="33">index_alt</references>
+        <references refid="classSdre_1aad912686f9a487dce4ea7e4875efd563" compoundref="Sdre_8h" startline="35">Sdre::L</references>
+        <references refid="classControle_1a065d96653d6891c3e9aeffd5d202200d" compoundref="Controle_8h" startline="41">qa</references>
+        <references refid="classControle_1a3e4c231b2af8c3c96550cd022d410c83" compoundref="Controle_8h" startline="42">qe</references>
+        <references refid="namespaceekf_1a8177897fe9b962d8e0927a913fc36242" compoundref="GRUPO__QUAT_8cpp" startline="90" endline="96">ekf::S_l</references>
+        <references refid="classControle_1ad67e192b12bfba4d5a68ee59870863b2" compoundref="Controle_8h" startline="35">sdre</references>
+        <references refid="classControle_1a05ff4316f906c1e57a27ef81d983fba8" compoundref="Controle_8h" startline="77">u</references>
+        <references refid="classSdre_1af2f380ec3d018b60686e304ca7026846" compoundref="Sdre_8cpp" startline="30" endline="46">Sdre::updateControl</references>
+        <references refid="classControle_1a51cecade068048c7a97a9dd4cb6a75b8" compoundref="Controle_8h" startline="44">wa</references>
+        <referencedby refid="classControle_1a78e5f662130811f409342a706d5c0d2f" compoundref="Controle_8cpp" startline="118" endline="129">controlLoop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classControle_1a8ac9e933ce30f9c88ed421d4c0afcf99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Controle::computeRotationalTarget</definition>
+        <argsstring>()</argsstring>
+        <name>computeRotationalTarget</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>attention ut(2) já comtém a gravidade adicionada no método &amp;computeTranslationalControl</para>
+        </inbodydescription>
+        <location file="lib/CONTROLE/Controle.h" line="87" column="8" bodyfile="lib/CONTROLE/Controle.cpp" bodystart="51" bodyend="80"/>
+        <references refid="classControle_1a4fc1f7f2b69a021f4bb433daada38430" compoundref="Controle_8h" startline="33">index_alt</references>
+        <references refid="classControle_1aa30ed7f98e0eb42b27525a060ce3968c" compoundref="Controle_8h" startline="91">negativeq0</references>
+        <references refid="classControle_1aa873dca8a6cf31541df846aa5cbe7a61" compoundref="Controle_8h" startline="48">psi</references>
+        <references refid="namespaceekf_1a34993a331b6837e5274d556e4f0a1bea" compoundref="GRUPO__QUAT_8cpp" startline="45" endline="52">ekf::Q_l</references>
+        <references refid="classControle_1a065d96653d6891c3e9aeffd5d202200d" compoundref="Controle_8h" startline="41">qa</references>
+        <references refid="classControle_1a05ff4316f906c1e57a27ef81d983fba8" compoundref="Controle_8h" startline="77">u</references>
+        <references refid="classControle_1ad418683f52bf07661b72e9fbf463ecd1" compoundref="Controle_8h" startline="71">ut</references>
+        <references refid="classControle_1a51cecade068048c7a97a9dd4cb6a75b8" compoundref="Controle_8h" startline="44">wa</references>
+        <referencedby refid="classControle_1a78e5f662130811f409342a706d5c0d2f" compoundref="Controle_8cpp" startline="118" endline="129">controlLoop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classControle_1a42aee0a4592b84bd793c8be0fde0095b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Controle::virtualCommandToMotorCommand</definition>
+        <argsstring>()</argsstring>
+        <name>virtualCommandToMotorCommand</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Converte a tração e os momentos em valores digitais de entrada do ESC na classe #Motores.h <simplesect kind="note"><para>: Esta funcao liminta os </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CONTROLE/Controle.h" line="88" column="8" bodyfile="lib/CONTROLE/Controle.cpp" bodystart="102" bodyend="109"/>
+        <references refid="classControle_1a913b2b49e44d1b633b55d2d95413b259" compoundref="Controle_8h" startline="31">maximalDigitalCommand</references>
+        <references refid="classControle_1adf6b85a6ab34600ac480a5cf9c4c1f8e" compoundref="Controle_8h" startline="30">minimalDigitalCommand</references>
+        <references refid="classControle_1aacd18c8929cb59d7390a58d8dd68de6d" compoundref="Controle_8h" startline="79">motorCommands</references>
+        <references refid="classControle_1a05ff4316f906c1e57a27ef81d983fba8" compoundref="Controle_8h" startline="77">u</references>
+        <referencedby refid="classControle_1a78e5f662130811f409342a706d5c0d2f" compoundref="Controle_8cpp" startline="118" endline="129">controlLoop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classControle_1a9b3718425d8602487eb9b14d6ee1c781" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Controle::virtualCommandToMotorRpm</definition>
+        <argsstring>()</argsstring>
+        <name>virtualCommandToMotorRpm</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CONTROLE/Controle.h" line="89" column="8" bodyfile="lib/CONTROLE/Controle.cpp" bodystart="110" bodyend="114"/>
+        <references refid="classControle_1aacd18c8929cb59d7390a58d8dd68de6d" compoundref="Controle_8h" startline="79">motorCommands</references>
+        <references refid="classControle_1a8439a8b9ac6c7d0ec7f052b742f8a24b" compoundref="Controle_8h" startline="81">rotationsOfMotors</references>
+        <references refid="classControle_1a05ff4316f906c1e57a27ef81d983fba8" compoundref="Controle_8h" startline="77">u</references>
+        <referencedby refid="classControle_1a78e5f662130811f409342a706d5c0d2f" compoundref="Controle_8cpp" startline="118" endline="129">controlLoop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classControle_1a78e5f662130811f409342a706d5c0d2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Controle::controlLoop</definition>
+        <argsstring>()</argsstring>
+        <name>controlLoop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Loop de controle. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CONTROLE/Controle.h" line="90" column="8" bodyfile="lib/CONTROLE/Controle.cpp" bodystart="118" bodyend="129"/>
+        <references refid="classControle_1abcf05dcff157e963fd65c09d45261a8f" compoundref="Controle_8cpp" startline="84" endline="96">computeRotationalControl</references>
+        <references refid="classControle_1a8ac9e933ce30f9c88ed421d4c0afcf99" compoundref="Controle_8cpp" startline="51" endline="80">computeRotationalTarget</references>
+        <references refid="classControle_1add7378d03597a45ff09b2432d7739dfe" compoundref="Controle_8cpp" startline="41" endline="50">computeTranslationalControl</references>
+        <references refid="classControle_1aa30ed7f98e0eb42b27525a060ce3968c" compoundref="Controle_8h" startline="91">negativeq0</references>
+        <references refid="classControle_1a42aee0a4592b84bd793c8be0fde0095b" compoundref="Controle_8cpp" startline="102" endline="109">virtualCommandToMotorCommand</references>
+        <references refid="classControle_1a9b3718425d8602487eb9b14d6ee1c781" compoundref="Controle_8cpp" startline="110" endline="114">virtualCommandToMotorRpm</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>Controle</label>
+        <link refid="classControle"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+sdre</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>+drone</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Sdre</label>
+        <link refid="classSdre"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>+ricObj</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Riccati</label>
+        <link refid="classRiccati"/>
+      </node>
+      <node id="4">
+        <label>Drone</label>
+        <link refid="classDrone"/>
+      </node>
+    </collaborationgraph>
+    <location file="lib/CONTROLE/Controle.h" line="26" column="1" bodyfile="lib/CONTROLE/Controle.h" bodystart="26" bodyend="92"/>
+    <listofallmembers>
+      <member refid="classControle_1abcf05dcff157e963fd65c09d45261a8f" prot="public" virt="non-virtual"><scope>Controle</scope><name>computeRotationalControl</name></member>
+      <member refid="classControle_1a8ac9e933ce30f9c88ed421d4c0afcf99" prot="public" virt="non-virtual"><scope>Controle</scope><name>computeRotationalTarget</name></member>
+      <member refid="classControle_1add7378d03597a45ff09b2432d7739dfe" prot="public" virt="non-virtual"><scope>Controle</scope><name>computeTranslationalControl</name></member>
+      <member refid="classControle_1abbe044aad705ef7d663c45275948fd12" prot="public" virt="non-virtual"><scope>Controle</scope><name>Controle</name></member>
+      <member refid="classControle_1a78e5f662130811f409342a706d5c0d2f" prot="public" virt="non-virtual"><scope>Controle</scope><name>controlLoop</name></member>
+      <member refid="classControle_1a92913e2274b1d3b1fc0177425695b59d" prot="public" virt="non-virtual"><scope>Controle</scope><name>dpsi</name></member>
+      <member refid="classControle_1a94276b811077802165f17603428e475e" prot="public" virt="non-virtual"><scope>Controle</scope><name>drone</name></member>
+      <member refid="classControle_1ae08c605ba3028486392d9f5aa2b2142b" prot="public" virt="non-virtual"><scope>Controle</scope><name>gravidade</name></member>
+      <member refid="classControle_1a4fc1f7f2b69a021f4bb433daada38430" prot="public" virt="non-virtual"><scope>Controle</scope><name>index_alt</name></member>
+      <member refid="classControle_1a9fa6356305a7fa27ea7b9dd5ebf620c9" prot="public" virt="non-virtual"><scope>Controle</scope><name>Ls_G</name></member>
+      <member refid="classControle_1a822f7e0d38f422c6097e2126ed9a9ec9" prot="public" virt="non-virtual"><scope>Controle</scope><name>Lt</name></member>
+      <member refid="classControle_1a913b2b49e44d1b633b55d2d95413b259" prot="public" virt="non-virtual"><scope>Controle</scope><name>maximalDigitalCommand</name></member>
+      <member refid="classControle_1adf6b85a6ab34600ac480a5cf9c4c1f8e" prot="public" virt="non-virtual"><scope>Controle</scope><name>minimalDigitalCommand</name></member>
+      <member refid="classControle_1aacd18c8929cb59d7390a58d8dd68de6d" prot="public" virt="non-virtual"><scope>Controle</scope><name>motorCommands</name></member>
+      <member refid="classControle_1aa30ed7f98e0eb42b27525a060ce3968c" prot="public" virt="non-virtual"><scope>Controle</scope><name>negativeq0</name></member>
+      <member refid="classControle_1a8bc7d1c142a5364ebdc15daf61a81900" prot="public" virt="non-virtual"><scope>Controle</scope><name>oldPsi</name></member>
+      <member refid="classControle_1aa873dca8a6cf31541df846aa5cbe7a61" prot="public" virt="non-virtual"><scope>Controle</scope><name>psi</name></member>
+      <member refid="classControle_1a065d96653d6891c3e9aeffd5d202200d" prot="public" virt="non-virtual"><scope>Controle</scope><name>qa</name></member>
+      <member refid="classControle_1a3e4c231b2af8c3c96550cd022d410c83" prot="public" virt="non-virtual"><scope>Controle</scope><name>qe</name></member>
+      <member refid="classControle_1a299b06de76fde5b6eb7e47a4a45938bb" prot="public" virt="non-virtual"><scope>Controle</scope><name>Qr</name></member>
+      <member refid="classControle_1a217f8f02b01c63725bc14f7679412fc0" prot="public" virt="non-virtual"><scope>Controle</scope><name>Qt</name></member>
+      <member refid="classControle_1a7b4f1db8c2182de9f1999819aace78e3" prot="public" virt="non-virtual"><scope>Controle</scope><name>r</name></member>
+      <member refid="classControle_1abea037d2953202894021efd9e5c4fcaf" prot="public" virt="non-virtual"><scope>Controle</scope><name>rI</name></member>
+      <member refid="classControle_1a8439a8b9ac6c7d0ec7f052b742f8a24b" prot="public" virt="non-virtual"><scope>Controle</scope><name>rotationsOfMotors</name></member>
+      <member refid="classControle_1a5322dd0d474b5f5f92dceda8266c8cfd" prot="public" virt="non-virtual"><scope>Controle</scope><name>Rr</name></member>
+      <member refid="classControle_1a442eb8225f58938b2a9a5308895e1d18" prot="public" virt="non-virtual"><scope>Controle</scope><name>Rt</name></member>
+      <member refid="classControle_1ad67e192b12bfba4d5a68ee59870863b2" prot="public" virt="non-virtual"><scope>Controle</scope><name>sdre</name></member>
+      <member refid="classControle_1a05ff4316f906c1e57a27ef81d983fba8" prot="public" virt="non-virtual"><scope>Controle</scope><name>u</name></member>
+      <member refid="classControle_1ad418683f52bf07661b72e9fbf463ecd1" prot="public" virt="non-virtual"><scope>Controle</scope><name>ut</name></member>
+      <member refid="classControle_1a42aee0a4592b84bd793c8be0fde0095b" prot="public" virt="non-virtual"><scope>Controle</scope><name>virtualCommandToMotorCommand</name></member>
+      <member refid="classControle_1a9b3718425d8602487eb9b14d6ee1c781" prot="public" virt="non-virtual"><scope>Controle</scope><name>virtualCommandToMotorRpm</name></member>
+      <member refid="classControle_1a51cecade068048c7a97a9dd4cb6a75b8" prot="public" virt="non-virtual"><scope>Controle</scope><name>wa</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,19 @@
+digraph "AQUA::computeAQUAQuaternion"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  rankdir="LR";
+  Node1 [label="AQUA::computeAQUAQuaternion",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node2 [label="AQUA::computeQuaternionAccel",height=0.2,width=0.4,color="black",URL="$classAQUA.html#abdff34437c9c066d046a342525a01b52",tooltip="Calcula o quaternion de inclinacao."];
+  Node1 -> Node3 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node3 [label="AQUA::computeQuaternionMag",height=0.2,width=0.4,color="black",URL="$classAQUA.html#a6adb2b857affb225b29fb91e6f6a7194",tooltip=" "];
+  Node3 -> Node4 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node4 [label="ekf::invSqrt",height=0.2,width=0.4,color="black",URL="$namespaceekf.html#ab55e144edf7066b67232e15cca7b4646",tooltip="Calcula o inverso do raiz de um float."];
+  Node1 -> Node5 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node5 [label="ekf::multiplyQuaternions",height=0.2,width=0.4,color="black",URL="$namespaceekf.html#a0ae7d9ae45fba00d81bfe71ad73d7fee",tooltip="Produto de quaternions aplicado."];
+  Node1 -> Node6 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node6 [label="ekf::rotateVectorWithQuaternion\l_Conjugate",height=0.2,width=0.4,color="black",URL="$namespaceekf.html#acb1dc12948420927eff91ed90c24b342",tooltip="Rotaciona um vetor tridimensional com um quaternion conjugado."];
+}

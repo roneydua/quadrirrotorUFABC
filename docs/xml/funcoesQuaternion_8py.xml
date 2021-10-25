@@ -1,0 +1,184 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compounddef id="funcoesQuaternion_8py" kind="file" language="Python">
+    <compoundname>funcoesQuaternion.py</compoundname>
+    <innernamespace refid="namespacefuncoesQuaternion">funcoesQuaternion</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1" refid="namespacefuncoesQuaternion" refkind="compound"><highlight class="comment">#!/usr/bin/env<sp/>python3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">#<sp/>-*-<sp/>coding:<sp/>utf-8<sp/>-*-</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="4"><highlight class="stringliteral">Created<sp/>on<sp/>Tue<sp/>Sep<sp/><sp/>1<sp/>09:36:05<sp/>2020</highlight></codeline>
+<codeline lineno="5"><highlight class="stringliteral">@author:<sp/>roney</highlight></codeline>
+<codeline lineno="6"><highlight class="stringliteral">&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>numpy<sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>np</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>numpy<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>cos,<sp/>sin</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="namespacefuncoesQuaternion_1a7efd86bc50646d0d79ba1944a2622f08" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacefuncoesQuaternion_1a7efd86bc50646d0d79ba1944a2622f08" kindref="member">screwMatrix</ref>(quat):</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;Computa<sp/>a<sp/>matriz<sp/>anti-simetrica<sp/>a<sp/>partir<sp/>do<sp/>quaternion<sp/>quat.</highlight></codeline>
+<codeline lineno="13"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="14"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Parameters</highlight></codeline>
+<codeline lineno="15"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>----------</highlight></codeline>
+<codeline lineno="16"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>quat<sp/>:<sp/>quanternio<sp/>de<sp/>atitude.</highlight></codeline>
+<codeline lineno="17"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="18"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Returns</highlight></codeline>
+<codeline lineno="19"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>-------</highlight></codeline>
+<codeline lineno="20"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>q_x<sp/>:<sp/>3x3<sp/>matrix<sp/>anti-simetrica</highlight></codeline>
+<codeline lineno="21"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>q_x<sp/>=<sp/>np.zeros((3,<sp/>3))</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>q_x[0,<sp/>1]<sp/>=<sp/>-quat[3]</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>q_x[1,<sp/>0]<sp/>=<sp/>quat[3]</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>q_x[0,<sp/>2]<sp/>=<sp/>quat[2]</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>q_x[2,<sp/>0]<sp/>=<sp/>-quat[2]</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>q_x[1,<sp/>2]<sp/>=<sp/>-quat[1]</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>q_x[2,<sp/>1]<sp/>=<sp/>quat[1]</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>q_x</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="namespacefuncoesQuaternion_1ae6403803c70ef98b5fe361ed2ef6c0fb" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacefuncoesQuaternion_1ae6403803c70ef98b5fe361ed2ef6c0fb" kindref="member">matrixQ</ref>(quat,<sp/>right=False):</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;Compute<sp/>Q<sp/>matrix.</highlight></codeline>
+<codeline lineno="34"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="35"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Parameters</highlight></codeline>
+<codeline lineno="36"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>----------</highlight></codeline>
+<codeline lineno="37"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>quat<sp/>:<sp/>quaternion<sp/>orientation<sp/>4x1</highlight></codeline>
+<codeline lineno="38"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>right<sp/>:<sp/>boolean.<sp/>The<sp/>default<sp/>is<sp/>False.</highlight></codeline>
+<codeline lineno="39"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="40"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Returns</highlight></codeline>
+<codeline lineno="41"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>-------</highlight></codeline>
+<codeline lineno="42"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Q<sp/>:<sp/>Q<sp/>matrix.</highlight></codeline>
+<codeline lineno="43"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>Q<sp/>=<sp/>np.zeros((4,<sp/>3))</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>Q[0,<sp/>0]<sp/>=<sp/>-quat[1]</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>Q[0,<sp/>1]<sp/>=<sp/>-quat[2]</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>Q[0,<sp/>2]<sp/>=<sp/>-quat[3]</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>right:</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Q[1:,<sp/>:]<sp/>=<sp/>quat[0]*np.identity(3)<sp/>-<sp/><ref refid="namespacefuncoesQuaternion_1a7efd86bc50646d0d79ba1944a2622f08" kindref="member">screwMatrix</ref>(quat)</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Q[1:,<sp/>:]<sp/>=<sp/>quat[0]*np.eye(3)<sp/>+<sp/><ref refid="namespacefuncoesQuaternion_1a7efd86bc50646d0d79ba1944a2622f08" kindref="member">screwMatrix</ref>(quat)</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Q</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="namespacefuncoesQuaternion_1ac2a07ac7ff5a03fc94498dee3cbd56c0" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacefuncoesQuaternion_1ac2a07ac7ff5a03fc94498dee3cbd56c0" kindref="member">matrixS</ref>(quat,<sp/>right=False):</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;Compute<sp/>S<sp/>matrix.</highlight></codeline>
+<codeline lineno="57"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="58"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Parameters</highlight></codeline>
+<codeline lineno="59"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>----------</highlight></codeline>
+<codeline lineno="60"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>quat<sp/>:<sp/>quaternion<sp/>4x1.</highlight></codeline>
+<codeline lineno="61"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>right<sp/>:<sp/>boolean,<sp/>optional.<sp/>The<sp/>default<sp/>is<sp/>False.</highlight></codeline>
+<codeline lineno="62"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="63"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Returns</highlight></codeline>
+<codeline lineno="64"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>-------</highlight></codeline>
+<codeline lineno="65"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>S<sp/>:<sp/>Matrix<sp/>S.</highlight></codeline>
+<codeline lineno="66"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>S<sp/>=<sp/>np.zeros((4,<sp/>4))</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>right:</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>S[:,<sp/>1:]<sp/>=<sp/><ref refid="namespacefuncoesQuaternion_1ae6403803c70ef98b5fe361ed2ef6c0fb" kindref="member">matrixQ</ref>(quat)</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>S[:,<sp/>1:]<sp/>=<sp/><ref refid="namespacefuncoesQuaternion_1ae6403803c70ef98b5fe361ed2ef6c0fb" kindref="member">matrixQ</ref>(quat,<sp/>right=</highlight><highlight class="keyword">True</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>S[:,<sp/>0]<sp/>=<sp/>quat</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>S</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="namespacefuncoesQuaternion_1a2567fcb1ea8884d17ffe68c39bcfc3b0" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacefuncoesQuaternion_1a2567fcb1ea8884d17ffe68c39bcfc3b0" kindref="member">MultQuat</ref>(r,<sp/>q,<sp/>p):</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;Parameters.</highlight></codeline>
+<codeline lineno="79"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="80"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>r,<sp/>q<sp/>:<sp/>quaternion<sp/>attitude<sp/>input.</highlight></codeline>
+<codeline lineno="81"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>p<sp/>:<sp/>result<sp/>of<sp/>multiplication.</highlight></codeline>
+<codeline lineno="82"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>r[0]<sp/>=<sp/>q[0]<sp/>*<sp/>p[0]<sp/>-<sp/>q[1]*p[1]-q[2]*p[2]-q[3]*p[3]</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>r[1]<sp/>=<sp/>q[1]<sp/>*<sp/>p[0]<sp/>+<sp/>q[0]*p[1]-q[3]*p[2]+q[2]*p[3]</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>r[2]<sp/>=<sp/>q[2]<sp/>*<sp/>p[0]<sp/>+<sp/>q[3]*p[1]+q[0]*p[2]-q[1]*p[3]</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>r[3]<sp/>=<sp/>q[3]<sp/>*<sp/>p[0]<sp/>-<sp/>q[2]*p[1]+q[1]*p[2]+q[0]*p[3]</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="namespacefuncoesQuaternion_1ab8840c85b3a0a7c2861e04d6aed132e3" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacefuncoesQuaternion_1ab8840c85b3a0a7c2861e04d6aed132e3" kindref="member">conj</ref>(q):</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;Retorna<sp/>o<sp/>conjugado<sp/>do<sp/>quaternion<sp/>q.</highlight></codeline>
+<codeline lineno="91"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="92"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Parameters</highlight></codeline>
+<codeline lineno="93"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>----------</highlight></codeline>
+<codeline lineno="94"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>q<sp/>:<sp/>quaternion<sp/>de<sp/>atitude.</highlight></codeline>
+<codeline lineno="95"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="96"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Returns</highlight></codeline>
+<codeline lineno="97"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>-------</highlight></codeline>
+<codeline lineno="98"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>p<sp/>:<sp/>conjugado<sp/>do<sp/>quaternion<sp/>de<sp/>atitude<sp/>q.</highlight></codeline>
+<codeline lineno="99"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>p<sp/>=<sp/>1<sp/>*<sp/>q</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>p[:1]<sp/>*=<sp/>-1.0</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>p</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="namespacefuncoesQuaternion_1a12afb91adfd22c19dd46387658f9724e" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacefuncoesQuaternion_1a12afb91adfd22c19dd46387658f9724e" kindref="member">quat2Euler</ref>(q,<sp/>deg=0):</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;Parameters.</highlight></codeline>
+<codeline lineno="107"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="108"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>q<sp/>:<sp/>quaternion<sp/>attitude.</highlight></codeline>
+<codeline lineno="109"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>deg<sp/>:<sp/>TYPE,<sp/>optional</highlight></codeline>
+<codeline lineno="110"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DESCRIPTION.<sp/>1<sp/>to<sp/>return<sp/>in<sp/>degrees.<sp/>The<sp/>default<sp/>is<sp/>0.</highlight></codeline>
+<codeline lineno="111"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="112"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Returns</highlight></codeline>
+<codeline lineno="113"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>-------</highlight></codeline>
+<codeline lineno="114"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>TYPE</highlight></codeline>
+<codeline lineno="115"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DESCRIPTION.</highlight></codeline>
+<codeline lineno="116"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>e<sp/>:<sp/>3x1<sp/>euler<sp/>angles</highlight></codeline>
+<codeline lineno="117"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>e<sp/>=<sp/>np.array([0.,<sp/>0.,<sp/>0.])</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>e[0]<sp/>=<sp/>np.arctan2(q[0]*q[1]+q[2]*q[3],<sp/>q[0]**2+q[3]**2-0.5)</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>e[1]<sp/>=<sp/>np.arcsin(2*(q[0]*q[2]-q[1]*q[3]))</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>e[2]<sp/>=<sp/>np.arctan2(q[0]*q[3]+q[1]*q[2],<sp/>q[0]**2+q[1]**2-0.5)</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>deg:</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>180.0*e/np.pi</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>e</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128" refid="namespacefuncoesQuaternion_1ada70be41ba6ffe4e79d0748e7a7c5bb6" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacefuncoesQuaternion_1ada70be41ba6ffe4e79d0748e7a7c5bb6" kindref="member">rotationMatrix</ref>(q):</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;Computa<sp/>a<sp/>matriz<sp/>de<sp/>rotacao<sp/>a<sp/>partir<sp/>do<sp/>quaternio<sp/>de<sp/>attitude.</highlight></codeline>
+<codeline lineno="130"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="131"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Parameters</highlight></codeline>
+<codeline lineno="132"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>----------</highlight></codeline>
+<codeline lineno="133"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>q<sp/>:<sp/>quaternion<sp/>de<sp/>atitude.</highlight></codeline>
+<codeline lineno="134"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="135"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Returns</highlight></codeline>
+<codeline lineno="136"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>-------</highlight></codeline>
+<codeline lineno="137"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Matrix<sp/>de<sp/>rotacao</highlight></codeline>
+<codeline lineno="138"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(np.eye(3)*(q[0]*q[0]<sp/>-<sp/>np.dot(q[1:],<sp/>q[1:]))</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/>2.0*q[0]<sp/>*<sp/><ref refid="namespacefuncoesQuaternion_1a7efd86bc50646d0d79ba1944a2622f08" kindref="member">screwMatrix</ref>(q)</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/>2.0<sp/>*<sp/>q[1:].reshape(3,<sp/>1)</highlight><highlight class="preprocessor">@q</highlight><highlight class="normal">[1:].reshape(1,<sp/>3))</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144" refid="namespacefuncoesQuaternion_1ac5e7d2e2bdeb2446c1130323b55b5ef5" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacefuncoesQuaternion_1ac5e7d2e2bdeb2446c1130323b55b5ef5" kindref="member">eulerQuaternion</ref>(yaw,<sp/>pitch,<sp/>roll,<sp/>deg=True):</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;Calcula<sp/>o<sp/>quaternio<sp/>a<sp/>partir<sp/>dos<sp/>Angulos<sp/>de<sp/>Euler.</highlight></codeline>
+<codeline lineno="146"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="147"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Parameters</highlight></codeline>
+<codeline lineno="148"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>----------</highlight></codeline>
+<codeline lineno="149"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>yaw<sp/>:<sp/>angulo<sp/>de<sp/>guinad<sp/>[rad]</highlight></codeline>
+<codeline lineno="150"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>pitch<sp/>:<sp/>angulo<sp/>de<sp/>guinad<sp/>[rad]</highlight></codeline>
+<codeline lineno="151"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>roll<sp/>:<sp/>angulo<sp/>de<sp/>guinad<sp/>[rad]</highlight></codeline>
+<codeline lineno="152"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>deg<sp/>:<sp/>se<sp/>1<sp/>informa<sp/>que<sp/>os<sp/>angulos<sp/>estao<sp/>em<sp/>graus</highlight></codeline>
+<codeline lineno="153"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>q<sp/>:<sp/>quaternio<sp/>atitude</highlight></codeline>
+<codeline lineno="154"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>deg:</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>yaw<sp/>*=<sp/>np.pi/180.0</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pitch<sp/>*=<sp/>np.pi/180.0</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>roll<sp/>*=<sp/>np.pi/180.0</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>cy<sp/>=<sp/>cos(yaw<sp/>*<sp/>0.5)</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>sy<sp/>=<sp/>sin(yaw<sp/>*<sp/>0.5)</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>cp<sp/>=<sp/>cos(pitch<sp/>*<sp/>0.5)</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>sp<sp/>=<sp/>sin(pitch<sp/>*<sp/>0.5)</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>cr<sp/>=<sp/>cos(roll<sp/>*<sp/>0.5)</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>sr<sp/>=<sp/>sin(roll<sp/>*<sp/>0.5)</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>q<sp/>=<sp/>np.zeros(4)</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>q[0]<sp/>=<sp/>cr<sp/>*<sp/>cp<sp/>*<sp/>cy<sp/>+<sp/>sr<sp/>*<sp/>sp<sp/>*<sp/>sy</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>q[1]<sp/>=<sp/>sr<sp/>*<sp/>cp<sp/>*<sp/>cy<sp/>-<sp/>cr<sp/>*<sp/>sp<sp/>*<sp/>sy</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>q[2]<sp/>=<sp/>cr<sp/>*<sp/>sp<sp/>*<sp/>cy<sp/>+<sp/>sr<sp/>*<sp/>cp<sp/>*<sp/>sy</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/>q[3]<sp/>=<sp/>cr<sp/>*<sp/>cp<sp/>*<sp/>sy<sp/>-<sp/>sr<sp/>*<sp/>sp<sp/>*<sp/>cy</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>q</highlight></codeline>
+    </programlisting>
+    <location file="python/funcoesQuaternion.py"/>
+  </compounddef>
+</doxygen>

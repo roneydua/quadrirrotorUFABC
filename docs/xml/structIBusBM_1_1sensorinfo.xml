@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compounddef id="structIBusBM_1_1sensorinfo" kind="struct" language="C++" prot="private">
+    <compoundname>IBusBM::sensorinfo</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structIBusBM_1_1sensorinfo_1abd881da866db85793dcdd020d8eecb5c" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t IBusBM::sensorinfo::sensorType</definition>
+        <argsstring></argsstring>
+        <name>sensorType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IBUSBM/IBusBM.h" line="100" column="13" bodyfile="lib/IBUSBM/IBusBM.h" bodystart="100" bodyend="-1"/>
+        <referencedby refid="classIBusBM_1a126cc857adec1367f7264f27ae68a347" compoundref="IBusBM_8cpp" startline="298" endline="310">IBusBM::addSensor</referencedby>
+        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="171" endline="288">IBusBM::loop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structIBusBM_1_1sensorinfo_1a0838975a9991ce94a7009f237cd7edc2" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t IBusBM::sensorinfo::sensorLength</definition>
+        <argsstring></argsstring>
+        <name>sensorLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IBUSBM/IBusBM.h" line="101" column="13" bodyfile="lib/IBUSBM/IBusBM.h" bodystart="101" bodyend="-1"/>
+        <referencedby refid="classIBusBM_1a126cc857adec1367f7264f27ae68a347" compoundref="IBusBM_8cpp" startline="298" endline="310">IBusBM::addSensor</referencedby>
+        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="171" endline="288">IBusBM::loop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structIBusBM_1_1sensorinfo_1a07cfd12b2c2a8982a88aeecf85bd322b" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t IBusBM::sensorinfo::sensorValue</definition>
+        <argsstring></argsstring>
+        <name>sensorValue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IBUSBM/IBusBM.h" line="102" column="13" bodyfile="lib/IBUSBM/IBusBM.h" bodystart="102" bodyend="-1"/>
+        <referencedby refid="classIBusBM_1a126cc857adec1367f7264f27ae68a347" compoundref="IBusBM_8cpp" startline="298" endline="310">IBusBM::addSensor</referencedby>
+        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="171" endline="288">IBusBM::loop</referencedby>
+        <referencedby refid="classIBusBM_1acbd0bcad0529b872c72d4e7a49233460" compoundref="IBusBM_8cpp" startline="312" endline="315">IBusBM::setSensorMeasurement</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>IBusBM::sensorinfo</label>
+        <link refid="structIBusBM_1_1sensorinfo"/>
+      </node>
+    </collaborationgraph>
+    <location file="lib/IBUSBM/IBusBM.h" line="99" column="3" bodyfile="lib/IBUSBM/IBusBM.h" bodystart="99" bodyend="103"/>
+    <listofallmembers>
+      <member refid="structIBusBM_1_1sensorinfo_1a0838975a9991ce94a7009f237cd7edc2" prot="public" virt="non-virtual"><scope>IBusBM::sensorinfo</scope><name>sensorLength</name></member>
+      <member refid="structIBusBM_1_1sensorinfo_1abd881da866db85793dcdd020d8eecb5c" prot="public" virt="non-virtual"><scope>IBusBM::sensorinfo</scope><name>sensorType</name></member>
+      <member refid="structIBusBM_1_1sensorinfo_1a07cfd12b2c2a8982a88aeecf85bd322b" prot="public" virt="non-virtual"><scope>IBusBM::sensorinfo</scope><name>sensorValue</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

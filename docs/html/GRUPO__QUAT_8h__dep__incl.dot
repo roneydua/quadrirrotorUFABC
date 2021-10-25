@@ -1,0 +1,38 @@
+digraph "lib/GRUPO_QUAT/GRUPO_QUAT.h"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  Node1 [label="lib/GRUPO_QUAT/GRUPO\l_QUAT.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Cabecalho com funcoes de quaternion."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node2 [label="lib/AQUA/AQUA.h",height=0.2,width=0.4,color="black",URL="$AQUA_8h.html",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node3 [label="lib/AQUA/AQUA.cpp",height=0.2,width=0.4,color="black",URL="$AQUA_8cpp.html",tooltip=" "];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node4 [label="lib/EKF/EKF.cpp",height=0.2,width=0.4,color="black",URL="$EKF_8cpp.html",tooltip="Classe que implementa o filtro de Kalman estendido."];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node5 [label="lib/CONTROLE/Controle.h",height=0.2,width=0.4,color="black",URL="$Controle_8h.html",tooltip=" "];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node6 [label="lib/CONTROLE/Controle.cpp",height=0.2,width=0.4,color="black",URL="$Controle_8cpp.html",tooltip=" "];
+  Node5 -> Node7 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node7 [label="src/main.cpp",height=0.2,width=0.4,color="black",URL="$main_8cpp.html",tooltip=" "];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node8 [label="lib/DRONE/Drone.h",height=0.2,width=0.4,color="black",URL="$Drone_8h.html",tooltip=" "];
+  Node8 -> Node5 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node8 -> Node9 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node9 [label="lib/DRONE/Drone.cpp",height=0.2,width=0.4,color="black",URL="$Drone_8cpp.html",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node1 -> Node10 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node10 [label="lib/GRUPO_QUAT/GRUPO\l_QUAT.cpp",height=0.2,width=0.4,color="black",URL="$GRUPO__QUAT_8cpp.html",tooltip="Cabecalho com funcoes de quaternion."];
+  Node1 -> Node11 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node11 [label="lib/RICCATI/Riccati.h",height=0.2,width=0.4,color="black",URL="$Riccati_8h.html",tooltip=" "];
+  Node11 -> Node12 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node12 [label="lib/RICCATI/Riccati.cpp",height=0.2,width=0.4,color="black",URL="$Riccati_8cpp.html",tooltip=" "];
+  Node11 -> Node13 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node13 [label="lib/SDRE/Sdre.h",height=0.2,width=0.4,color="black",URL="$Sdre_8h.html",tooltip=" "];
+  Node13 -> Node5 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node13 -> Node14 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node14 [label="lib/SDRE/Sdre.cpp",height=0.2,width=0.4,color="black",URL="$Sdre_8cpp.html",tooltip=" "];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+}

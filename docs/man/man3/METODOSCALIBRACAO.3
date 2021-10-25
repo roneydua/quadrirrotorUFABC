@@ -1,0 +1,245 @@
+.TH "METODOSCALIBRACAO" 3 "Sexta, 17 de Setembro de 2021" "Quadrirrotor" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+METODOSCALIBRACAO
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <METODOSCALIBRACAO\&.h>\fP
+.SS "Membros Públicos"
+
+.in +1c
+.ti -1c
+.RI "int \fBcalibracaoGeometrica\fP (MatrixXf &\fBdata\fP, Matrix3f &sF, Vector3f &bias, float moduloCampo)"
+.br
+.ti -1c
+.RI "int \fBcalibracaoAcelerometro\fP (Matrix3f &sF, int16_t(&bias)[3], MatrixXf \fBdata\fP)"
+.br
+.ti -1c
+.RI "int \fBcalibracaoAcelerometro\fP (Matrix3f &sF, Vector3f &bias, MatrixXf \fBdata\fP)"
+.br
+.in -1c
+.SH "Descrição detalhada"
+.PP 
+Definição na linha 25 do arquivo METODOSCALIBRACAO\&.h\&.
+.SH "Funções membros"
+.PP 
+.SS "int METODOSCALIBRACAO::calibracaoAcelerometro (Matrix3f & sF, int16_t(&) bias[3], MatrixXf data)\fC [inline]\fP"
+Calibração do acelerômetro\&. Os valores compensador sao obtidos: \fBYc = sF * (Ym - bias)\fP Ym: medidas diretas do sensor Yc: meddias compensadas 
+.PP
+\fBParâmetros\fP
+.RS 4
+\fIsF\fP (MatriX3f) Referência da matrix que contem corrige os fatores de escala e dos desalinhamentos\&. 
+.br
+\fIbias\fP (int16_t array) 
+.br
+\fIdata\fP Medidas para calibração de dimensão n3 
+.RE
+.PP
+\fBRetorna\fP
+.RS 4
+1 para positivo e 0 para a falha\&. 
+.RE
+.PP
+
+.PP
+Definição na linha 103 do arquivo METODOSCALIBRACAO\&.h\&.
+.PP
+.nf
+103                                                                               {
+104     // data eh uma matrix com N x 3, sendo N o numero de medidas coletadas
+105     if (data\&.rows() == 3) {
+106       data\&.transposeInPlace();
+107     }
+108     int indice;
+109     int N = data\&.rows();
+110     MatrixXf Y = MatrixXf::Zero(N, 3);
+111     MatrixXf w = MatrixXf::Ones(N, 4);
+112     MatrixXf X = MatrixXf::Zero(4, 3);
+113     Vector3f _bias;
+114     for (int var = 0; var < N; var++) {
+115       data\&.row(var)\&.maxCoeff(&indice);
+116       if (data(var, indice) > 1000\&.0f) {
+117         Y(var, indice) = 9\&.786171951281709f;
+118         w\&.row(var) << data\&.row(var), 1\&.0;
+119       } else {
+120         data\&.row(var)\&.minCoeff(&indice);
+121         Y(var, indice) = -9\&.786171951281709f;
+122         w\&.row(var) << data\&.row(var), 1\&.0;
+123       }
+124     }
+125     X = w\&.colPivHouseholderQr()\&.solve(Y);
+126     X\&.transposeInPlace();
+127 #ifndef __GNUC__
+128     for (int i = 0; i < X\&.rows(); ++i) {
+129       for (int j = 0; j < X\&.cols(); ++j) {
+130         if (isnan(X(i, j)) || isinf(X(i, j))) {
+131           return 0;
+132         }
+133       }
+134     }
+135 #endif
+136     sF = X\&.block(0, 0, 3, 3);
+137     _bias = -sF\&.inverse() * X\&.col(3);
+138     // bias
+139     // bias = -X\&.col(3);
+140     // bias[0] = (int16_t)_bias[0];
+141     // bias[1] = (int16_t)_bias[1];
+142     // bias[2] = (int16_t)_bias[2];
+143     return 1;
+144   }
+.fi
+.PP
+Referencias data\&.
+.SS "int METODOSCALIBRACAO::calibracaoAcelerometro (Matrix3f & sF, Vector3f & bias, MatrixXf data)\fC [inline]\fP"
+Calibração do acelerômetro\&. Os valores compensador sao obtidos: \fBYc = sF * (Ym - bias)\fP Ym: medidas diretas do sensor Yc: meddias compensadas 
+.PP
+\fBParâmetros\fP
+.RS 4
+\fIsF\fP (MatriX3f) Referência da matrix que contem corrige os fatores de escala e dos desalinhamentos\&. 
+.br
+\fIbias\fP (Vector3f) Referência do bias\&. 
+.br
+\fIdata\fP Medidas para calibração de dimensão n3 
+.RE
+.PP
+\fBRetorna\fP
+.RS 4
+1 para positivo e 0 para a falha\&. 
+.RE
+.PP
+
+.PP
+Definição na linha 156 do arquivo METODOSCALIBRACAO\&.h\&.
+.PP
+.nf
+156                                                                           {
+157     // data eh uma matrix com N x 3, sendo N o numero de medidas coletadas
+158     if (data\&.rows() == 3) {
+159       data\&.transposeInPlace();
+160     }
+161     int indice;
+162     int N = data\&.rows();
+163     MatrixXf Y = MatrixXf::Zero(N, 3);
+164     MatrixXf w = MatrixXf::Ones(N, 4);
+165     MatrixXf X = MatrixXf::Zero(4, 3);
+166     Vector3f _bias;
+167     for (int var = 0; var < N; var++) {
+168       data\&.row(var)\&.maxCoeff(&indice);
+169       if (data(var, indice) > 1000\&.0f) {
+170         Y(var, indice) = 9\&.786171951281709f;
+171         w\&.row(var) << data\&.row(var), 1\&.0;
+172       } else {
+173         data\&.row(var)\&.minCoeff(&indice);
+174         Y(var, indice) = -9\&.786171951281709f;
+175         w\&.row(var) << data\&.row(var), 1\&.0;
+176       }
+177     }
+178     X = w\&.colPivHouseholderQr()\&.solve(Y);
+179     X\&.transposeInPlace();
+180 #ifndef __GNUC__
+181     for (int i = 0; i < X\&.rows(); ++i) {
+182       for (int j = 0; j < X\&.cols(); ++j) {
+183         if (isnan(X(i, j)) || isinf(X(i, j))) {
+184           return 0;
+185         }
+186       }
+187     }
+188 #endif
+189     sF = X\&.block(0, 0, 3, 3);
+190     bias = X\&.col(3);
+191     return 1;
+192   }
+.fi
+.PP
+Referencias data\&.
+.SS "int METODOSCALIBRACAO::calibracaoGeometrica (MatrixXf & data, Matrix3f & sF, Vector3f & bias, float moduloCampo)\fC [inline]\fP"
+Metodo geometrico para calibracao de magnetometros 
+.PP
+\fBParâmetros\fP
+.RS 4
+\fIdata\fP <Matrix com N linha e 3 colunas contendo os dados de amostra para a calibracao> [Matrix de scala] sF Matrix 3x3 com diagonal contendo os fatores de escalas 
+.br
+\fIbias\fP Vector 3x1 with the bias - ellipsoid center 
+.br
+\fImoduloCampo\fP values in uT of earth field 
+.br
+\fIsF\fP Matriz com fatores de escala na diagonal 
+.br
+\fIbias\fP vetor com o centro da elipsoide 
+.RE
+.PP
+\fBRetorna\fP
+.RS 4
+1 para sucesso e -1 para falha 
+.RE
+.PP
+\fBObservação\fP
+.RS 4
+The method fitting an ellipsoid with least squares method\&. The compensated measures M_c are obtained with the mensures M proceeding as follows: M_c = sF (M - bias) The method needs a full rotations for a good performance 
+.RE
+.PP
+
+.PP
+Definição na linha 43 do arquivo METODOSCALIBRACAO\&.h\&.
+.PP
+.nf
+44                                               {
+45 
+46     // data eh uma matrix com N x 3, sendo N o numero de medidas coletadas
+47     if (data\&.rows() == 3) {
+48       data\&.transposeInPlace();
+49     }
+50     sF = Matrix3f::Identity();
+51     bias = Vector3f::Zero();
+52     int N = data\&.rows();
+53     MatrixXf H = MatrixXf::Ones(N, 6);
+54     VectorXf w(N), X(6), tmp(3);
+55     H\&.col(0) = data\&.col(0);
+56     H\&.col(1) = data\&.col(1);
+57     H\&.col(2) = data\&.col(2);
+58     H\&.col(3) = -data\&.col(1)\&.array()\&.pow(2)\&.matrix();
+59     H\&.col(4) = -data\&.col(2)\&.array()\&.pow(2)\&.matrix();
+60     w = data\&.col(0)\&.array()\&.pow(2)\&.matrix();
+61     data\&.resize(0, 0); // libera memoria
+62     // X = (H\&.transpose() * H)\&.inverse() * H\&.transpose() * w;
+63     X = H\&.fullPivHouseholderQr()\&.solve(w);
+64     H\&.resize(0, 0); // libera memoria
+65     bias(0) = X(0) / 2\&.0;
+66     bias(1) = X(1) / (2\&.0 * X(3));
+67     bias(2) = X(2) / (2\&.0 * X(4));
+68     tmp(0) = (X(5) + bias(0) * bias(0) + X(3) * bias(1) * bias(1) +
+69               X(4) * bias(2) * bias(2)) /
+70              (moduloCampo * moduloCampo);
+71     tmp(1) = tmp(0) / X(3);
+72     tmp(2) = tmp(0) / X(4);
+73     sF(0, 0) = 1\&.0 / sqrt(tmp(0));
+74     sF(1, 1) = 1\&.0 / sqrt(tmp(1));
+75     sF(2, 2) = 1\&.0 / sqrt(tmp(2));
+76 // checa se ha numero INFINITOS ou INVALIDOS retornoando -2
+77 // quando encontra numeros NaN e -1 para numeros insfinitos
+78 #ifndef __GNUC__
+79     for (int i = 0; i < 3; i++) {
+80       for (size_t j = 0; j < 3; j++) {
+81         if (isnan(sF(i, j)) || isinf(sF(i, j))) {
+82           return -2;
+83         }
+84       }
+85       if (isnan(bias(i)) || isinf(bias(i))) {
+86         return -1;
+87       }
+88     }
+89 #endif
+90     return 1;
+91   }
+.fi
+.PP
+Referencias data\&.
+.PP
+Referenciado(a) por IMU::calibracaoMagnetometro()\&.
+
+.SH "Autor"
+.PP 
+Gerado automaticamente por Doxygen para Quadrirrotor a partir do código-fonte\&.

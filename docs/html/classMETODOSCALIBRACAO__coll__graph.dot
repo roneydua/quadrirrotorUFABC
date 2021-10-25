@@ -1,0 +1,8 @@
+digraph "METODOSCALIBRACAO"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  Node1 [label="{METODOSCALIBRACAO\n||+ int calibracaoGeometrica\l(MatrixXf &data, Matrix3f\l &sF, Vector3f &bias, float\l moduloCampo)\l+ int calibracaoAcelerometro\l(Matrix3f &sF, int16_t(&bias)\l[3], MatrixXf data)\l+ int calibracaoAcelerometro\l(Matrix3f &sF, Vector3f\l &bias, MatrixXf data)\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

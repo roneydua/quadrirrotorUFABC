@@ -1,0 +1,238 @@
+.TH "AQUA" 3 "Sexta, 17 de Setembro de 2021" "Quadrirrotor" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AQUA
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <AQUA\&.h>\fP
+.SS "Membros Públicos"
+
+.in +1c
+.ti -1c
+.RI "\fBAQUA\fP ()"
+.br
+.ti -1c
+.RI "void \fBbegin\fP (Eigen::Vector4f &_qObs, Eigen::Vector3f &\fBaccel\fP, Eigen::Vector3f &\fBmag\fP)"
+.br
+.ti -1c
+.RI "int \fBcomputeAQUAQuaternion\fP ()"
+.br
+.ti -1c
+.RI "void \fBcomputeQuaternionAccel\fP ()"
+.br
+.RI "Calcula o quaternion de inclinacao\&. "
+.ti -1c
+.RI "void \fBcomputeQuaternionMag\fP ()"
+.br
+.in -1c
+.SS "Campos de Dados"
+
+.in +1c
+.ti -1c
+.RI "Eigen::Vector4f \fBqAcc\fP = Eigen::Vector4f::Zero()"
+.br
+.ti -1c
+.RI "Eigen::Vector4f \fBqMag\fP = Eigen::Vector4f::Zero()"
+.br
+.ti -1c
+.RI "Eigen::Vector3f \fBgravNormalized\fP = Eigen::Vector3f::Zero()"
+.br
+.ti -1c
+.RI "Eigen::Vector3f \fBmagNormalized\fP = Eigen::Vector3f::Zero()"
+.br
+.ti -1c
+.RI "Eigen::Vector3f \fBl\fP = Eigen::Vector3f::Zero()"
+.br
+.ti -1c
+.RI "Eigen::Vector4f * \fBqAQUA\fP"
+.br
+.ti -1c
+.RI "Eigen::Vector3f * \fBaccel\fP"
+.br
+.ti -1c
+.RI "Eigen::Vector3f * \fBmag\fP"
+.br
+.in -1c
+.SH "Descrição detalhada"
+.PP 
+Definição na linha 21 do arquivo AQUA\&.h\&.
+.SH "Construtores e Destrutores"
+.PP 
+.SS "AQUA::AQUA ()"
+Intância da classe \fBAQUA\fP\&. 
+.PP
+Definição na linha 17 do arquivo AQUA\&.cpp\&.
+.PP
+.nf
+17 {}
+.fi
+.SH "Funções membros"
+.PP 
+.SS "void AQUA::begin (Eigen::Vector4f & _qObs, Eigen::Vector3f & accel, Eigen::Vector3f & mag)"
+
+.PP
+Definição na linha 18 do arquivo AQUA\&.cpp\&.
+.PP
+.nf
+19                                      {
+20   qAQUA = &_qObs;
+21   this->accel = &accel;
+22   this->mag = &mag;
+23 }
+.fi
+.PP
+Referencias accel, mag e qAQUA\&.
+.PP
+Referenciado(a) por ekf::EKF::begin()\&.
+.SS "int AQUA::computeAQUAQuaternion ()"
+Calcula o quaternion de atitude com o algoritimo \fBAQUA\fP\&. 
+.PP
+\fBParâmetros\fP
+.RS 4
+\fIacel\fP Vetor de medidas do acelerometro 
+.br
+\fImag\fP Vetor de medidas do magnetometro 
+.RE
+.PP
+\fBRetorna\fP
+.RS 4
+0 se falhar ou 1 se sucesso\&. 
+.RE
+.PP
+
+.PP
+Definição na linha 66 do arquivo AQUA\&.cpp\&.
+.PP
+.nf
+66                                 {
+67   Eigen::Vector4f _qLast = *qAQUA;
+68   gravNormalized = (*accel)\&.normalized();
+69   magNormalized = (*mag)\&.normalized();
+70   computeQuaternionAccel();
+71   l = rotateVectorWithQuaternion_Conjugate(qAcc, magNormalized);
+72   // leva as medidas do magnetometro para o sistema intermediario;
+73   computeQuaternionMag();
+74   *qAQUA = multiplyQuaternions(qAcc, qMag);
+75   (*qAQUA)\&.tail(3) *= -1\&.0f;
+76   if (_qLast\&.dot((*qAQUA)) < 0\&.0f) {
+77     (*qAQUA) *= -1\&.0f;
+78     _qLast = (*qAQUA);
+79   } else {
+80     _qLast = (*qAQUA);
+81   }
+82   return 1;
+83 }
+.fi
+.PP
+Referencias computeQuaternionAccel(), computeQuaternionMag(), gravNormalized, l, magNormalized, ekf::multiplyQuaternions(), qAcc, qAQUA, qMag e ekf::rotateVectorWithQuaternion_Conjugate()\&.
+.PP
+Referenciado(a) por ekf::EKF::begin()\&.
+.SS "void AQUA::computeQuaternionAccel ()"
+
+.PP
+Calcula o quaternion de inclinacao\&. 
+.PP
+Definição na linha 28 do arquivo AQUA\&.cpp\&.
+.PP
+.nf
+28                                   {
+29 
+30   if (gravNormalized(2) < 0) {
+31     qAcc(1) = INVERSE_SQUARE_2 * sqrtf(1\&.0 - gravNormalized(2));
+32     float _k = 0\&.5f / qAcc(1);
+33     qAcc(0) = -_k * gravNormalized(1);
+34     qAcc(2) = 0\&.0f;
+35     qAcc(3) = _k * gravNormalized(0);
+36   } else {
+37     qAcc(0) = INVERSE_SQUARE_2 * sqrtf(1\&.0 + gravNormalized(2));
+38     float _k = 0\&.5f / qAcc(0);
+39     qAcc(1) = -_k * gravNormalized(1);
+40     qAcc(2) = _k * gravNormalized(0);
+41     qAcc(3) = 0\&.0f;
+42   }
+43 }
+.fi
+.PP
+Referencias gravNormalized, INVERSE_SQUARE_2 e qAcc\&.
+.PP
+Referenciado(a) por computeAQUAQuaternion()\&.
+.SS "void AQUA::computeQuaternionMag ()"
+Computa o quaternion de guinada\&. 
+.PP
+Definição na linha 47 do arquivo AQUA\&.cpp\&.
+.PP
+.nf
+47                                 {
+48   float gama = l(0) * l(0) + l(1) * l(1);
+49   if (l(0) < 0) {
+50     float k3 = sqrtf(gama - l(0) * sqrtf(gama));
+51     qMag(3) = INVERSE_SQUARE_2 * k3 * invSqrt(gama);
+52     qMag(0) = INVERSE_SQUARE_2 * l(1) / k3;
+53   } else {
+54     float k3 = sqrtf(gama + l(0) * sqrtf(gama));
+55     qMag(0) = INVERSE_SQUARE_2 * k3 * invSqrt(gama);
+56     qMag(3) = INVERSE_SQUARE_2 * l(1) / k3;
+57   }
+58 }
+.fi
+.PP
+Referencias INVERSE_SQUARE_2, ekf::invSqrt(), l e qMag\&.
+.PP
+Referenciado(a) por computeAQUAQuaternion()\&.
+.SH "Campos"
+.PP 
+.SS "Eigen::Vector3f* AQUA::accel"
+Ponteiros do acelerometro e do magnetometro 
+.PP
+Definição na linha 38 do arquivo AQUA\&.h\&.
+.PP
+Referenciado(a) por begin()\&.
+.SS "Eigen::Vector3f AQUA::gravNormalized = Eigen::Vector3f::Zero()"
+Campo gravitacional normalizado no sistema do corpo 
+.PP
+Definição na linha 30 do arquivo AQUA\&.h\&.
+.PP
+Referenciado(a) por computeAQUAQuaternion() e computeQuaternionAccel()\&.
+.SS "Eigen::Vector3f AQUA::l = Eigen::Vector3f::Zero()"
+Campo magnetico expresso no sistema intermediario 
+.PP
+Definição na linha 34 do arquivo AQUA\&.h\&.
+.PP
+Referenciado(a) por computeAQUAQuaternion() e computeQuaternionMag()\&.
+.SS "Eigen::Vector3f * AQUA::mag"
+
+.PP
+Definição na linha 38 do arquivo AQUA\&.h\&.
+.PP
+Referenciado(a) por begin()\&.
+.SS "Eigen::Vector3f AQUA::magNormalized = Eigen::Vector3f::Zero()"
+Campo magnetico normalizado no sistema do corpo 
+.PP
+Definição na linha 32 do arquivo AQUA\&.h\&.
+.PP
+Referenciado(a) por computeAQUAQuaternion()\&.
+.SS "Eigen::Vector4f AQUA::qAcc = Eigen::Vector4f::Zero()"
+Quaternion de inclinacao\&. 
+.PP
+Definição na linha 26 do arquivo AQUA\&.h\&.
+.PP
+Referenciado(a) por computeAQUAQuaternion() e computeQuaternionAccel()\&.
+.SS "Eigen::Vector4f* AQUA::qAQUA"
+Ponteiro do quaternion de atititude\&. 
+.PP
+Definição na linha 36 do arquivo AQUA\&.h\&.
+.PP
+Referenciado(a) por begin() e computeAQUAQuaternion()\&.
+.SS "Eigen::Vector4f AQUA::qMag = Eigen::Vector4f::Zero()"
+Quaternion de Guinada\&. 
+.PP
+Definição na linha 28 do arquivo AQUA\&.h\&.
+.PP
+Referenciado(a) por computeAQUAQuaternion() e computeQuaternionMag()\&.
+
+.SH "Autor"
+.PP 
+Gerado automaticamente por Doxygen para Quadrirrotor a partir do código-fonte\&.

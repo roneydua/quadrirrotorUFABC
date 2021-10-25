@@ -1,0 +1,12 @@
+digraph "lib/IMU/METODOSCALIBRACAO.h"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  Node1 [label="lib/IMU/METODOSCALIBRACAO.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="biblioteca contendo algoritmos de calibracao para acelerometro e magnetometro. Para correto funcionam..."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node2 [label="lib/IMU/IMU.h",height=0.2,width=0.4,color="black",URL="$IMU_8h.html",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node3 [label="lib/IMU/IMU.cpp",height=0.2,width=0.4,color="black",URL="$IMU_8cpp.html",tooltip=" "];
+}

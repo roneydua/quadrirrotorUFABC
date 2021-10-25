@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compounddef id="dir_31d08e41878a863c8a5e98e00113eeba" kind="dir">
+    <compoundname>lib/AQUA</compoundname>
+    <innerfile refid="AQUA_8cpp">AQUA.cpp</innerfile>
+    <innerfile refid="AQUA_8h">AQUA.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="lib/AQUA/"/>
+  </compounddef>
+</doxygen>

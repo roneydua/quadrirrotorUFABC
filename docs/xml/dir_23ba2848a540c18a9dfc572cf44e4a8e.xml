@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compounddef id="dir_23ba2848a540c18a9dfc572cf44e4a8e" kind="dir">
+    <compoundname>lib/CONTROLE</compoundname>
+    <innerfile refid="Controle_8cpp">Controle.cpp</innerfile>
+    <innerfile refid="Controle_8h">Controle.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="lib/CONTROLE/"/>
+  </compounddef>
+</doxygen>

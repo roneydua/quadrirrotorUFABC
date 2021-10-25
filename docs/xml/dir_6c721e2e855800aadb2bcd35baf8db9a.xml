@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compounddef id="dir_6c721e2e855800aadb2bcd35baf8db9a" kind="dir">
+    <compoundname>lib/TIME</compoundname>
+    <innerfile refid="TIME_8cpp">TIME.cpp</innerfile>
+    <innerfile refid="TIME_8h">TIME.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="lib/TIME/"/>
+  </compounddef>
+</doxygen>

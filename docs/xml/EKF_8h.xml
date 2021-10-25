@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compounddef id="EKF_8h" kind="file" language="C++">
+    <compoundname>EKF.h</compoundname>
+    <includes local="yes">eigen3/Eigen/Dense</includes>
+    <includes local="yes">./../READWRITEEIGEN/readWriteEigen.h</includes>
+    <includedby refid="EKF_8cpp" local="yes">lib/EKF/EKF.cpp</includedby>
+    <includedby refid="main_8cpp" local="yes">src/main.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>lib/EKF/EKF.h</label>
+        <link refid="EKF_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>eigen3/Eigen/Dense</label>
+      </node>
+      <node id="3">
+        <label>./../READWRITEEIGEN/readWriteEigen.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>lib/EKF/EKF.h</label>
+        <link refid="EKF_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>lib/EKF/EKF.cpp</label>
+        <link refid="EKF_8cpp"/>
+      </node>
+      <node id="3">
+        <label>src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structBASE" prot="public">BASE</innerclass>
+    <innerclass refid="classekf_1_1EKF" prot="public">ekf::EKF</innerclass>
+    <innernamespace refid="namespaceekf">ekf</innernamespace>
+    <briefdescription>
+<para>Classe que implementa o filtro de Kalman estendido. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>: Roney Silva (roney) </para>
+</simplesect>
+<simplesect kind="date"><para>: 16-Aug-2021 Email: <ulink url="mailto:roneyddasilva@gmail.com">roneyddasilva@gmail.com</ulink> Project: quadrirrotorUFABC</para>
+</simplesect>
+Last modified by: roney Last modified time: 01-Sep-2021 </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>EKF_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EKF_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;eigen3/Eigen/Dense&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__XTENSA__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../../src/COMMON.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Arduino.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">//<sp/>#include<sp/>&quot;GPS.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;./../READWRITEEIGEN/readWriteEigen.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="structBASE" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structBASE" kindref="compound">BASE</ref><sp/>{</highlight></codeline>
+<codeline lineno="24" refid="structBASE_1a76e12d3fb168dc1ce3f163c985382129" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structBASE_1a76e12d3fb168dc1ce3f163c985382129" kindref="member">lat</ref>;</highlight></codeline>
+<codeline lineno="26" refid="structBASE_1ac118821d55d84bee606a64e60098c7d4" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structBASE_1ac118821d55d84bee606a64e60098c7d4" kindref="member">lon</ref>;</highlight></codeline>
+<codeline lineno="28" refid="structBASE_1a24573bad2d025ea1b7023eb23b59a46e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structBASE_1a24573bad2d025ea1b7023eb23b59a46e" kindref="member">hMSL</ref>;</highlight></codeline>
+<codeline lineno="30" refid="structBASE_1ab4bcf2a27b373820efe4f530a101704d" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Matrix3f<sp/><ref refid="structBASE_1ab4bcf2a27b373820efe4f530a101704d" kindref="member">Recef2ned</ref>;</highlight></codeline>
+<codeline lineno="32" refid="structBASE_1ae9e7517ae5f24d671f404d18c1d0b90b" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="structBASE_1ae9e7517ae5f24d671f404d18c1d0b90b" kindref="member">rECEF</ref>[3];</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceekf" kindref="compound">ekf</ref><sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="classekf_1_1EKF" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classekf_1_1EKF" kindref="compound">EKF</ref><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="39" refid="classekf_1_1EKF_1a1aecb83d5af684f4f8637981089002b9" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classekf_1_1EKF_1a1aecb83d5af684f4f8637981089002b9" kindref="member">DEG_TO_RAD_BY_10000000</ref><sp/>=</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>1e-7<sp/>/<sp/>57.295779513082320876798154814105f;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="44" refid="classekf_1_1EKF_1abd8ccdb99191c1f3a7a5c03421f93d87" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classekf_1_1EKF_1abd8ccdb99191c1f3a7a5c03421f93d87" kindref="member">nFull</ref><sp/>=<sp/>15;</highlight></codeline>
+<codeline lineno="46" refid="classekf_1_1EKF_1ac02e28e5bd4b3e90d3ccb3dd1127e7b2" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classekf_1_1EKF_1ac02e28e5bd4b3e90d3ccb3dd1127e7b2" kindref="member">pFull</ref><sp/>=<sp/>7;</highlight></codeline>
+<codeline lineno="48" refid="classekf_1_1EKF_1a88f92d86fabe318656e5ba458bc2e042" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classekf_1_1EKF_1a88f92d86fabe318656e5ba458bc2e042" kindref="member">nAtitude</ref><sp/>=<sp/>6;</highlight></codeline>
+<codeline lineno="50" refid="classekf_1_1EKF_1ad3a628fffe1f640b4968b8f6f8ef3b14" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classekf_1_1EKF_1ad3a628fffe1f640b4968b8f6f8ef3b14" kindref="member">pAtitude</ref><sp/>=<sp/>4;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><ref refid="classekf_1_1EKF_1aea7bda69ce19f724930eb8c691272508" kindref="member">EKF</ref>();</highlight></codeline>
+<codeline lineno="52" refid="classekf_1_1EKF_1acd0f4714eb8ba12355d529580e928439" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structBASE" kindref="compound">BASE</ref><sp/><ref refid="classekf_1_1EKF_1acd0f4714eb8ba12355d529580e928439" kindref="member">base</ref>;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" kindref="member">begin</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classekf_1_1EKF_1aee84ca91742c11dd89683930a58d59e3" kindref="member">dt</ref>);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classekf_1_1EKF_1a651814ff64d234394572e2e7c5703a43" kindref="member">loopEKF</ref>();</highlight></codeline>
+<codeline lineno="56" refid="classekf_1_1EKF_1aee84ca91742c11dd89683930a58d59e3" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classekf_1_1EKF_1aee84ca91742c11dd89683930a58d59e3" kindref="member">dt</ref><sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="58" refid="classekf_1_1EKF_1a30d3adf68cc6ee599fec8fa45a697bbb" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Vector3f<sp/><ref refid="classekf_1_1EKF_1a30d3adf68cc6ee599fec8fa45a697bbb" kindref="member">accel</ref><sp/>=<sp/>Eigen::Vector3f::Zero();</highlight></codeline>
+<codeline lineno="60" refid="classekf_1_1EKF_1a440b83cfd38de4133d8071a158028c86" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Vector3f<sp/><ref refid="classekf_1_1EKF_1a440b83cfd38de4133d8071a158028c86" kindref="member">navegationGravity</ref>{0.0f,<sp/>0.0f,<sp/>9.786171951281709f};</highlight></codeline>
+<codeline lineno="62" refid="classekf_1_1EKF_1af990ea0dbcd3f286f04584ab663d08e6" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Vector3f<sp/><ref refid="classekf_1_1EKF_1af990ea0dbcd3f286f04584ab663d08e6" kindref="member">gyro</ref><sp/>=<sp/>Eigen::Vector3f::Zero();</highlight></codeline>
+<codeline lineno="64" refid="classekf_1_1EKF_1a3f84435c646a27ad0f922e5205c13eb3" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Vector3f<sp/><ref refid="classekf_1_1EKF_1a3f84435c646a27ad0f922e5205c13eb3" kindref="member">mag</ref><sp/>=<sp/>Eigen::Vector3f::Zero();</highlight></codeline>
+<codeline lineno="68" refid="classekf_1_1EKF_1a803ccbdd54bfbd96cccf57afa60578a9" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Vector4f<sp/><ref refid="classekf_1_1EKF_1a803ccbdd54bfbd96cccf57afa60578a9" kindref="member">qObs</ref>{1.0f,<sp/>0.0f,<sp/>0.0f,<sp/>0.0f};</highlight></codeline>
+<codeline lineno="70" refid="classekf_1_1EKF_1aa38bc83dfb656519cfcda0c0a589ef16" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Vector4f<sp/><ref refid="classekf_1_1EKF_1aa38bc83dfb656519cfcda0c0a589ef16" kindref="member">q</ref>{1.0f,<sp/>0.0f,<sp/>0.0f,<sp/>0.0f};</highlight></codeline>
+<codeline lineno="72" refid="classekf_1_1EKF_1adc3de40884689bb897ebe90979d6f28f" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Vector3f<sp/><ref refid="classekf_1_1EKF_1adc3de40884689bb897ebe90979d6f28f" kindref="member">euler</ref>{0.0f,<sp/>0.0f,<sp/>0.0f};</highlight></codeline>
+<codeline lineno="78" refid="classekf_1_1EKF_1a833f15f8790f86633d8b02eb2fe3616e" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Vector3f<sp/><ref refid="classekf_1_1EKF_1a833f15f8790f86633d8b02eb2fe3616e" kindref="member">rNED</ref><sp/>=<sp/>Eigen::Vector3f::Zero();</highlight></codeline>
+<codeline lineno="80" refid="classekf_1_1EKF_1a649f7d975dc55413be50d8f1e6bc2559" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Vector3f<sp/><ref refid="classekf_1_1EKF_1a649f7d975dc55413be50d8f1e6bc2559" kindref="member">rNEDgps</ref><sp/>=<sp/>Eigen::Vector3f::Zero();</highlight></codeline>
+<codeline lineno="82" refid="classekf_1_1EKF_1a93f50b0576c3243487442a9f0934e038" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Vector3f<sp/><ref refid="classekf_1_1EKF_1a93f50b0576c3243487442a9f0934e038" kindref="member">drNED</ref><sp/>=<sp/>Eigen::Vector3f::Zero();</highlight></codeline>
+<codeline lineno="84" refid="classekf_1_1EKF_1ad27f8aac391293234c9e21c02b944cc4" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Vector3f<sp/><ref refid="classekf_1_1EKF_1ad27f8aac391293234c9e21c02b944cc4" kindref="member">drNEDgps</ref><sp/>=<sp/>Eigen::Vector3f::Zero();</highlight></codeline>
+<codeline lineno="86" refid="classekf_1_1EKF_1a7dbea0d7c0f7376e7391b6a6a99521b5" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Vector3f<sp/><ref refid="classekf_1_1EKF_1a7dbea0d7c0f7376e7391b6a6a99521b5" kindref="member">ddr</ref><sp/>=<sp/>Eigen::Vector3f::Zero();</highlight></codeline>
+<codeline lineno="88" refid="classekf_1_1EKF_1a2f7f579eb38461f7396cca2a9a846bbb" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Matrix3f<sp/><ref refid="classekf_1_1EKF_1a2f7f579eb38461f7396cca2a9a846bbb" kindref="member">mcd</ref><sp/>=<sp/>Eigen::Matrix3f::Identity();</highlight></codeline>
+<codeline lineno="89" refid="classekf_1_1EKF_1a8d016a5adf9aa5f33a8c9e1f7dd73592" refkind="member"><highlight class="normal"><sp/><sp/>uint8_t<sp/><ref refid="classekf_1_1EKF_1a8d016a5adf9aa5f33a8c9e1f7dd73592" kindref="member">messageGPS</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="92" refid="classekf_1_1EKF_1af019016496e0328e5d9ea3cb6462e52c" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classekf_1_1EKF_1af019016496e0328e5d9ea3cb6462e52c" kindref="member">p</ref><sp/>=<sp/><ref refid="classekf_1_1EKF_1ac02e28e5bd4b3e90d3ccb3dd1127e7b2" kindref="member">pFull</ref>;</highlight></codeline>
+<codeline lineno="94" refid="classekf_1_1EKF_1ae4417522e93314005316a236b324f2a5" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classekf_1_1EKF_1ae4417522e93314005316a236b324f2a5" kindref="member">n</ref><sp/>=<sp/>15;</highlight></codeline>
+<codeline lineno="96" refid="classekf_1_1EKF_1a5d610d6e3174f24f9be38e7da3d44bc0" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classekf_1_1EKF_1a5d610d6e3174f24f9be38e7da3d44bc0" kindref="member">sigma_giro_squared</ref><sp/>=<sp/>1e-3;</highlight></codeline>
+<codeline lineno="98" refid="classekf_1_1EKF_1a883bdaa556cb199f75216286386523c1" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classekf_1_1EKF_1a883bdaa556cb199f75216286386523c1" kindref="member">sigma_bias_giro_squared</ref><sp/>=<sp/>1e-6;</highlight></codeline>
+<codeline lineno="100" refid="classekf_1_1EKF_1a32f1a9dbf7d18465284fb3517a1d9423" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classekf_1_1EKF_1a32f1a9dbf7d18465284fb3517a1d9423" kindref="member">sigma_acel_squared</ref><sp/>=<sp/>1e-3;</highlight></codeline>
+<codeline lineno="102" refid="classekf_1_1EKF_1a74da314972c8273b5ffe17078c6642e3" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classekf_1_1EKF_1a74da314972c8273b5ffe17078c6642e3" kindref="member">sigma_bias_acel_squared</ref><sp/>=<sp/>1e-6;</highlight></codeline>
+<codeline lineno="104" refid="classekf_1_1EKF_1a2ea4005a93d82e6b448fdb4fd4e36dd1" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classekf_1_1EKF_1a2ea4005a93d82e6b448fdb4fd4e36dd1" kindref="member">sigma_aqua_squared</ref><sp/>=<sp/>1e-3;</highlight></codeline>
+<codeline lineno="106" refid="classekf_1_1EKF_1af1d82a9698078624dd2e65c808126510" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classekf_1_1EKF_1af1d82a9698078624dd2e65c808126510" kindref="member">sigma_vel_squared</ref><sp/>=<sp/>0.02f<sp/>*<sp/>0.02f;</highlight></codeline>
+<codeline lineno="108" refid="classekf_1_1EKF_1a02c9e5ede2b47a773c2f59fb9cf9169c" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classekf_1_1EKF_1a02c9e5ede2b47a773c2f59fb9cf9169c" kindref="member">sigma_pos_squared</ref><sp/>=<sp/>5.0f<sp/>*<sp/>5.0f;</highlight></codeline>
+<codeline lineno="110" refid="classekf_1_1EKF_1a0e5efc2e95419aaea976414f246a378a" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Matrix&lt;float,<sp/>nFull,<sp/>nFull&gt;<sp/><ref refid="classekf_1_1EKF_1a0e5efc2e95419aaea976414f246a378a" kindref="member">Q_k</ref><sp/>=</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Eigen::MatrixXf::Identity(<ref refid="classekf_1_1EKF_1abd8ccdb99191c1f3a7a5c03421f93d87" kindref="member">nFull</ref>,<sp/><ref refid="classekf_1_1EKF_1abd8ccdb99191c1f3a7a5c03421f93d87" kindref="member">nFull</ref>);</highlight></codeline>
+<codeline lineno="113" refid="classekf_1_1EKF_1ad55e1ba3736ea08721dec76f03dd9715" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Matrix&lt;float,<sp/>pFull,<sp/>pFull&gt;<sp/><ref refid="classekf_1_1EKF_1ad55e1ba3736ea08721dec76f03dd9715" kindref="member">R</ref><sp/>=</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Eigen::MatrixXf::Identity(<ref refid="classekf_1_1EKF_1ac02e28e5bd4b3e90d3ccb3dd1127e7b2" kindref="member">pFull</ref>,<sp/><ref refid="classekf_1_1EKF_1ac02e28e5bd4b3e90d3ccb3dd1127e7b2" kindref="member">pFull</ref>);</highlight></codeline>
+<codeline lineno="117" refid="classekf_1_1EKF_1aae2ea65c4362a5f798db195112fb094a" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Matrix&lt;float,<sp/>nFull,<sp/>nFull&gt;<sp/><ref refid="classekf_1_1EKF_1aae2ea65c4362a5f798db195112fb094a" kindref="member">mF</ref><sp/>=<sp/>Eigen::MatrixXf::Zero(<ref refid="classekf_1_1EKF_1abd8ccdb99191c1f3a7a5c03421f93d87" kindref="member">nFull</ref>,<sp/><ref refid="classekf_1_1EKF_1abd8ccdb99191c1f3a7a5c03421f93d87" kindref="member">nFull</ref>);</highlight></codeline>
+<codeline lineno="119" refid="classekf_1_1EKF_1a78dd6de9d37bc221394db5e9cca2086f" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Matrix&lt;float,<sp/>nFull,<sp/>nFull&gt;<sp/><ref refid="classekf_1_1EKF_1a78dd6de9d37bc221394db5e9cca2086f" kindref="member">fi</ref><sp/>=<sp/>Eigen::MatrixXf::Zero(<ref refid="classekf_1_1EKF_1abd8ccdb99191c1f3a7a5c03421f93d87" kindref="member">nFull</ref>,<sp/><ref refid="classekf_1_1EKF_1abd8ccdb99191c1f3a7a5c03421f93d87" kindref="member">nFull</ref>);</highlight></codeline>
+<codeline lineno="121" refid="classekf_1_1EKF_1a110201c01d9ce3c63a1de068e87be75d" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Matrix&lt;float,<sp/>nFull,<sp/>12&gt;<sp/><ref refid="classekf_1_1EKF_1a110201c01d9ce3c63a1de068e87be75d" kindref="member">G</ref><sp/>=<sp/>Eigen::MatrixXf::Zero(<ref refid="classekf_1_1EKF_1abd8ccdb99191c1f3a7a5c03421f93d87" kindref="member">nFull</ref>,<sp/>12);</highlight></codeline>
+<codeline lineno="123" refid="classekf_1_1EKF_1aec9a3a7de4a079cd1dd1baae26a7a6fc" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Matrix&lt;float,<sp/>nFull,<sp/>nFull&gt;<sp/><ref refid="classekf_1_1EKF_1aec9a3a7de4a079cd1dd1baae26a7a6fc" kindref="member">P</ref><sp/>=</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>((Eigen::VectorXf(<ref refid="classekf_1_1EKF_1ae4417522e93314005316a236b324f2a5" kindref="member">n</ref>)<sp/>&lt;&lt;<sp/>.5,<sp/>.5,<sp/>.5,<sp/>.1,<sp/>.10,<sp/>.10,<sp/>1,<sp/>1,<sp/>1,<sp/>.1,<sp/>.10,<sp/>.10,</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1e8,<sp/>1e8,<sp/>1e8)</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.finished())</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.asDiagonal();</highlight></codeline>
+<codeline lineno="129" refid="classekf_1_1EKF_1abd11bc2722fab1c582cc91a39372f2ac" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Matrix&lt;float,<sp/>pFull,<sp/>nFull&gt;<sp/><ref refid="classekf_1_1EKF_1abd11bc2722fab1c582cc91a39372f2ac" kindref="member">H</ref><sp/>=<sp/>Eigen::MatrixXf::Zero(<ref refid="classekf_1_1EKF_1ac02e28e5bd4b3e90d3ccb3dd1127e7b2" kindref="member">pFull</ref>,<sp/><ref refid="classekf_1_1EKF_1abd8ccdb99191c1f3a7a5c03421f93d87" kindref="member">nFull</ref>);</highlight></codeline>
+<codeline lineno="131" refid="classekf_1_1EKF_1a87a29899f611c68db72263cc0be496c7" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Matrix&lt;float,<sp/>nFull,<sp/>pFull&gt;<sp/><ref refid="classekf_1_1EKF_1a87a29899f611c68db72263cc0be496c7" kindref="member">K</ref><sp/>=</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Eigen::MatrixXf::Identity(<ref refid="classekf_1_1EKF_1abd8ccdb99191c1f3a7a5c03421f93d87" kindref="member">nFull</ref>,<sp/><ref refid="classekf_1_1EKF_1ac02e28e5bd4b3e90d3ccb3dd1127e7b2" kindref="member">pFull</ref>);</highlight></codeline>
+<codeline lineno="138" refid="classekf_1_1EKF_1ad1c353f958f3c41141c88339793745aa" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Vector&lt;float,<sp/>nFull<sp/>+<sp/>1&gt;<sp/><ref refid="classekf_1_1EKF_1ad1c353f958f3c41141c88339793745aa" kindref="member">deltaChi</ref><sp/>=<sp/>Eigen::VectorXf::Zero(<ref refid="classekf_1_1EKF_1abd8ccdb99191c1f3a7a5c03421f93d87" kindref="member">nFull</ref><sp/>+<sp/>1);</highlight></codeline>
+<codeline lineno="140" refid="classekf_1_1EKF_1ae4be03b8440c0f1185141ecc359534df" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Vector&lt;float,<sp/>pFull&gt;<sp/><ref refid="classekf_1_1EKF_1ae4be03b8440c0f1185141ecc359534df" kindref="member">deltaYObs</ref><sp/>=<sp/>Eigen::VectorXf::Zero(<ref refid="classekf_1_1EKF_1ac02e28e5bd4b3e90d3ccb3dd1127e7b2" kindref="member">pFull</ref>);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>/*!<sp/>Observações<sp/>preditas<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Eigen::VectorXf<sp/>yPreditas<sp/>=<sp/>Eigen::VectorXf::Zero(15);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>integrationOfStates();</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>updateStates();</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>predictionStage();</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>updateStage();</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>updateF();</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>updatefi();</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>updateHq();</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>updateHv();</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>updateHp();</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__XTENSA__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>calibrationMethods();</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>updateOfMeasurements();</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>positionIntegration();</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>updateBaseRef();</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>updateNedPos();</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>updateNedVel();</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163" refid="classekf_1_1EKF_1a50b05a6fb2c055d9c37e44138a05b08e" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Vector3f<sp/>*<ref refid="classekf_1_1EKF_1a50b05a6fb2c055d9c37e44138a05b08e" kindref="member">biasGyro</ref>;</highlight></codeline>
+<codeline lineno="165" refid="classekf_1_1EKF_1a1ac62c76df373623c4cfa0b2b37564db" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Vector3f<sp/>*<ref refid="classekf_1_1EKF_1a1ac62c76df373623c4cfa0b2b37564db" kindref="member">biasAccel</ref>;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="167"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>ekf</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>EKF_H<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="lib/EKF/EKF.h"/>
+  </compounddef>
+</doxygen>

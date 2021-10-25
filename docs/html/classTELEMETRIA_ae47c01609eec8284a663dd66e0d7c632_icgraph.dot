@@ -1,0 +1,16 @@
+digraph "TELEMETRIA::TELEMETRIA"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  rankdir="RL";
+  Node1 [label="TELEMETRIA::TELEMETRIA",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node2 [label="TELEMETRIA::OnDataRecv",height=0.2,width=0.4,color="black",URL="$classTELEMETRIA.html#ace27ccd5888ebc3802a4eb22cc3fd9da",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node3 [label="TELEMETRIA::begin",height=0.2,width=0.4,color="black",URL="$classTELEMETRIA.html#a780be82ef9be2da12601a0ea7d10e647",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node4 [label="setup",height=0.2,width=0.4,color="black",URL="$main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d",tooltip=" "];
+  Node3 -> Node1 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+}

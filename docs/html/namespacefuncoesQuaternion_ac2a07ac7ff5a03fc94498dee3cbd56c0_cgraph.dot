@@ -1,0 +1,13 @@
+digraph "funcoesQuaternion.matrixS"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  rankdir="LR";
+  Node1 [label="funcoesQuaternion.matrixS",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node2 [label="funcoesQuaternion.matrixQ",height=0.2,width=0.4,color="black",URL="$namespacefuncoesQuaternion.html#ae6403803c70ef98b5fe361ed2ef6c0fb",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node3 [label="funcoesQuaternion.screwMatrix",height=0.2,width=0.4,color="black",URL="$namespacefuncoesQuaternion.html#a7efd86bc50646d0d79ba1944a2622f08",tooltip=" "];
+}

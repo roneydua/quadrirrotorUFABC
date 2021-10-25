@@ -1,0 +1,205 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compounddef id="Controle_8h" kind="file" language="C++">
+    <compoundname>Controle.h</compoundname>
+    <includes refid="Drone_8h" local="yes">../DRONE/Drone.h</includes>
+    <includes refid="Sdre_8h" local="yes">../SDRE/Sdre.h</includes>
+    <includes refid="GRUPO__QUAT_8h" local="yes">../../../quadricopterFinal/lib/GRUPO_QUAT/GRUPO_QUAT.h</includes>
+    <includes local="no">iostream</includes>
+    <includes local="yes">../READWRITEEIGEN/readWriteEigen.h</includes>
+    <includes local="no">eigen3/Eigen/Dense</includes>
+    <includedby refid="Controle_8cpp" local="yes">lib/CONTROLE/Controle.cpp</includedby>
+    <includedby refid="main_8cpp" local="yes">src/main.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>lib/CONTROLE/Controle.h</label>
+        <link refid="Controle_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>../SDRE/Sdre.h</label>
+        <link refid="Sdre_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>eigen3/Eigen/Dense</label>
+      </node>
+      <node id="2">
+        <label>../DRONE/Drone.h</label>
+        <link refid="Drone_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>../RICCATI/Riccati.h</label>
+        <link refid="Riccati_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>../READWRITEEIGEN/readWriteEigen.h</label>
+      </node>
+      <node id="3">
+        <label>Arduino.h</label>
+      </node>
+      <node id="6">
+        <label>iostream</label>
+      </node>
+      <node id="4">
+        <label>GRUPO_QUAT.h</label>
+        <link refid="GRUPO__QUAT_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>lib/CONTROLE/Controle.h</label>
+        <link refid="Controle_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>lib/CONTROLE/Controle.cpp</label>
+        <link refid="Controle_8cpp"/>
+      </node>
+      <node id="3">
+        <label>src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classControle" prot="public">Controle</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="Controle_8h_1ad72dbcf6d0153db1b8d8a58001feed83" prot="public" static="no">
+        <name>DEBUG</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CONTROLE/Controle.h" line="15" column="9" bodyfile="lib/CONTROLE/Controle.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="Controle_8h_1a92102ea2f9ade1cc1a6dcce355db1677" prot="public" static="no">
+        <name>PRINT_MAT</name>
+        <param><defname>X</defname></param>
+        <initializer>cout &lt;&lt; #X &lt;&lt; &quot;:\n&quot; &lt;&lt; X &lt;&lt; &quot;\n&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/CONTROLE/Controle.h" line="18" column="11" bodyfile="lib/CONTROLE/Controle.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>: Roney Silva (roneydua) </para>
+</simplesect>
+<simplesect kind="date"><para>: 16-Aug-2021 Email: <ulink url="mailto:roneyddasilva@gmail.com">roneyddasilva@gmail.com</ulink> Project: quadrirrotorUFABC</para>
+</simplesect>
+Last modified by: roneydua Last modified time: 25-Aug-2021 </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>CONTROLE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONTROLE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../DRONE/Drone.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../SDRE/Sdre.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__XTENSA__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="Controle_8h_1ad72dbcf6d0153db1b8d8a58001feed83" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DEBUG</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../../../quadricopterFinal/lib/GRUPO_QUAT/GRUPO_QUAT.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="Controle_8h_1a92102ea2f9ade1cc1a6dcce355db1677" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PRINT_MAT(X)<sp/>cout<sp/>&lt;&lt;<sp/>#X<sp/>&lt;&lt;<sp/>&quot;:\n&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>X<sp/>&lt;&lt;<sp/>&quot;\n&quot;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../READWRITEEIGEN/readWriteEigen.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Arduino.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="GRUPO__QUAT_8h" kindref="compound">GRUPO_QUAT.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;eigen3/Eigen/Dense&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="classControle" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classControle" kindref="compound">Controle</ref><sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="30" refid="classControle_1adf6b85a6ab34600ac480a5cf9c4c1f8e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classControle_1adf6b85a6ab34600ac480a5cf9c4c1f8e" kindref="member">minimalDigitalCommand</ref><sp/>=<sp/>7700;</highlight></codeline>
+<codeline lineno="31" refid="classControle_1a913b2b49e44d1b633b55d2d95413b259" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classControle_1a913b2b49e44d1b633b55d2d95413b259" kindref="member">maximalDigitalCommand</ref><sp/>=<sp/>15400;</highlight></codeline>
+<codeline lineno="32" refid="classControle_1ae08c605ba3028486392d9f5aa2b2142b" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classControle_1ae08c605ba3028486392d9f5aa2b2142b" kindref="member">gravidade</ref><sp/>=<sp/>9.80f;</highlight></codeline>
+<codeline lineno="33" refid="classControle_1a4fc1f7f2b69a021f4bb433daada38430" refkind="member"><highlight class="normal"><sp/><sp/>uint8_t<sp/><ref refid="classControle_1a4fc1f7f2b69a021f4bb433daada38430" kindref="member">index_alt</ref><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="34" refid="classControle_1a94276b811077802165f17603428e475e" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classDrone" kindref="compound">Drone</ref><sp/>*<ref refid="classControle_1a94276b811077802165f17603428e475e" kindref="member">drone</ref>;</highlight></codeline>
+<codeline lineno="35" refid="classControle_1ad67e192b12bfba4d5a68ee59870863b2" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classSdre" kindref="compound">Sdre</ref><sp/>*<ref refid="classControle_1ad67e192b12bfba4d5a68ee59870863b2" kindref="member">sdre</ref>;</highlight></codeline>
+<codeline lineno="37" refid="classControle_1abea037d2953202894021efd9e5c4fcaf" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Vector3f<sp/><ref refid="classControle_1abea037d2953202894021efd9e5c4fcaf" kindref="member">rI</ref><sp/>=<sp/>Eigen::Vector3f::Zero();</highlight></codeline>
+<codeline lineno="39" refid="classControle_1a7b4f1db8c2182de9f1999819aace78e3" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Vector3f<sp/><ref refid="classControle_1a7b4f1db8c2182de9f1999819aace78e3" kindref="member">r</ref><sp/>=<sp/>Eigen::Vector3f::Zero();</highlight></codeline>
+<codeline lineno="41" refid="classControle_1a065d96653d6891c3e9aeffd5d202200d" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::MatrixXf<sp/><ref refid="classControle_1a065d96653d6891c3e9aeffd5d202200d" kindref="member">qa</ref><sp/>=<sp/>Eigen::MatrixXf::Zero(4,<sp/>2);</highlight></codeline>
+<codeline lineno="42" refid="classControle_1a3e4c231b2af8c3c96550cd022d410c83" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Vector4f<sp/><ref refid="classControle_1a3e4c231b2af8c3c96550cd022d410c83" kindref="member">qe</ref>{1,<sp/>0,<sp/>0,<sp/>0};</highlight></codeline>
+<codeline lineno="44" refid="classControle_1a51cecade068048c7a97a9dd4cb6a75b8" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Vector3f<sp/><ref refid="classControle_1a51cecade068048c7a97a9dd4cb6a75b8" kindref="member">wa</ref><sp/>=<sp/>Eigen::Vector3f::Zero();</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Eigen::Vector3f<sp/>*wb;<sp/>//<sp/>=<sp/>Eigen::Vector3f::Zero();</highlight></codeline>
+<codeline lineno="48" refid="classControle_1aa873dca8a6cf31541df846aa5cbe7a61" refkind="member"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classControle_1aa873dca8a6cf31541df846aa5cbe7a61" kindref="member">psi</ref><sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="classControle_1a92913e2274b1d3b1fc0177425695b59d" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classControle_1a92913e2274b1d3b1fc0177425695b59d" kindref="member">dpsi</ref><sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="53" refid="classControle_1a822f7e0d38f422c6097e2126ed9a9ec9" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::MatrixXf<sp/><ref refid="classControle_1a822f7e0d38f422c6097e2126ed9a9ec9" kindref="member">Lt</ref><sp/>=<sp/>Eigen::MatrixXf::Identity(3,<sp/>3);</highlight></codeline>
+<codeline lineno="54" refid="classControle_1a9fa6356305a7fa27ea7b9dd5ebf620c9" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::MatrixXf<sp/><ref refid="classControle_1a9fa6356305a7fa27ea7b9dd5ebf620c9" kindref="member">Ls_G</ref><sp/>=<sp/>Eigen::MatrixXf::Identity(3,<sp/>3);</highlight></codeline>
+<codeline lineno="56" refid="classControle_1a442eb8225f58938b2a9a5308895e1d18" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::MatrixXf<sp/><ref refid="classControle_1a442eb8225f58938b2a9a5308895e1d18" kindref="member">Rt</ref><sp/>=<sp/>.5<sp/>*<sp/>Eigen::MatrixXf::Identity(3,<sp/>3);</highlight></codeline>
+<codeline lineno="58" refid="classControle_1a217f8f02b01c63725bc14f7679412fc0" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::MatrixXf<sp/><ref refid="classControle_1a217f8f02b01c63725bc14f7679412fc0" kindref="member">Qt</ref><sp/>=</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>50<sp/>*<sp/>(Eigen::VectorXf(6)<sp/>&lt;&lt;<sp/>1,<sp/>1,<sp/>1,<sp/>1,<sp/>1,<sp/>1).finished().asDiagonal();</highlight></codeline>
+<codeline lineno="61" refid="classControle_1a5322dd0d474b5f5f92dceda8266c8cfd" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::MatrixXf<sp/><ref refid="classControle_1a5322dd0d474b5f5f92dceda8266c8cfd" kindref="member">Rr</ref><sp/>=</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.01<sp/>*<sp/>(Eigen::VectorXf(3)<sp/>&lt;&lt;<sp/>1,<sp/>1,<sp/>1).finished().asDiagonal();</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>100<sp/>*<sp/>(Eigen::VectorXf(3)<sp/>&lt;&lt;<sp/>1,<sp/>1,<sp/>1).finished().asDiagonal();</highlight></codeline>
+<codeline lineno="65" refid="classControle_1a299b06de76fde5b6eb7e47a4a45938bb" refkind="member"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/>Eigen::MatrixXf<sp/><ref refid="classControle_1a299b06de76fde5b6eb7e47a4a45938bb" kindref="member">Qr</ref><sp/>=</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>2<sp/>*<sp/>(Eigen::VectorXf(6)<sp/>&lt;&lt;<sp/>1,<sp/>1,<sp/>1,<sp/>.1,<sp/>.1,<sp/>.1).finished().asDiagonal();</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>10.0f<sp/>*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>(Eigen::VectorXf(6)<sp/>&lt;&lt;<sp/>1,<sp/>1,<sp/>1,<sp/>.001,<sp/>.001,<sp/>.001).finished().asDiagonal();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Contoles<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="classControle_1ad418683f52bf07661b72e9fbf463ecd1" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Vector3f<sp/><ref refid="classControle_1ad418683f52bf07661b72e9fbf463ecd1" kindref="member">ut</ref><sp/>=<sp/>Eigen::Vector3f::Zero();</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>/*!<sp/>Vetor<sp/>de<sp/>controle<sp/>da<sp/>dinâmica<sp/>rotacional<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Eigen::Vector3f<sp/>ur<sp/>=<sp/>Eigen::Vector3f::Zero();</highlight></codeline>
+<codeline lineno="77" refid="classControle_1a05ff4316f906c1e57a27ef81d983fba8" refkind="member"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/>Eigen::Vector4f<sp/><ref refid="classControle_1a05ff4316f906c1e57a27ef81d983fba8" kindref="member">u</ref><sp/>=<sp/>Eigen::Vector4f::Zero();</highlight></codeline>
+<codeline lineno="79" refid="classControle_1aacd18c8929cb59d7390a58d8dd68de6d" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Vector4i<sp/><ref refid="classControle_1aacd18c8929cb59d7390a58d8dd68de6d" kindref="member">motorCommands</ref><sp/>=<sp/>Eigen::Vector4i::Zero();</highlight></codeline>
+<codeline lineno="81" refid="classControle_1a8439a8b9ac6c7d0ec7f052b742f8a24b" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Vector4f<sp/><ref refid="classControle_1a8439a8b9ac6c7d0ec7f052b742f8a24b" kindref="member">rotationsOfMotors</ref><sp/>=<sp/>Eigen::Vector4f::Zero();</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="classControle_1a8bc7d1c142a5364ebdc15daf61a81900" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classControle_1a8bc7d1c142a5364ebdc15daf61a81900" kindref="member">oldPsi</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><ref refid="classControle_1abbe044aad705ef7d663c45275948fd12" kindref="member">Controle</ref>();</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classControle_1add7378d03597a45ff09b2432d7739dfe" kindref="member">computeTranslationalControl</ref>();</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classControle_1abcf05dcff157e963fd65c09d45261a8f" kindref="member">computeRotationalControl</ref>();</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classControle_1a8ac9e933ce30f9c88ed421d4c0afcf99" kindref="member">computeRotationalTarget</ref>();</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classControle_1a42aee0a4592b84bd793c8be0fde0095b" kindref="member">virtualCommandToMotorCommand</ref>();</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classControle_1a9b3718425d8602487eb9b14d6ee1c781" kindref="member">virtualCommandToMotorRpm</ref>();</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classControle_1a78e5f662130811f409342a706d5c0d2f" kindref="member">controlLoop</ref>();</highlight></codeline>
+<codeline lineno="91" refid="classControle_1aa30ed7f98e0eb42b27525a060ce3968c" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classControle_1aa30ed7f98e0eb42b27525a060ce3968c" kindref="member">negativeq0</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>CONTROLE_H<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="lib/CONTROLE/Controle.h"/>
+  </compounddef>
+</doxygen>

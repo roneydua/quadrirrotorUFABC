@@ -1,0 +1,11 @@
+digraph "gpsSetup"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  rankdir="LR";
+  Node1 [label="gpsSetup",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node2 [label="GPSSERIAL",height=0.2,width=0.4,color="black",URL="$GPS_8h.html#a5d2ecd8f29f7e3e702c8b8bea333f6c6",tooltip=" "];
+}

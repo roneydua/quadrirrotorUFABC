@@ -1,0 +1,262 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compounddef id="IMU_8h" kind="file" language="C++">
+    <compoundname>IMU.h</compoundname>
+    <includes refid="METODOSCALIBRACAO_8h" local="yes">METODOSCALIBRACAO.h</includes>
+    <includes local="no">Arduino.h</includes>
+    <includes local="no">Wire.h</includes>
+    <includes local="no">eigen3/Eigen/Dense</includes>
+    <includedby refid="IMU_8cpp" local="yes">lib/IMU/IMU.cpp</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>eigen3/Eigen/Dense</label>
+      </node>
+      <node id="2">
+        <label>METODOSCALIBRACAO.h</label>
+        <link refid="METODOSCALIBRACAO_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>Wire.h</label>
+      </node>
+      <node id="4">
+        <label>Arduino.h</label>
+      </node>
+      <node id="1">
+        <label>lib/IMU/IMU.h</label>
+        <link refid="IMU_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>lib/IMU/IMU.cpp</label>
+        <link refid="IMU_8cpp"/>
+      </node>
+      <node id="1">
+        <label>lib/IMU/IMU.h</label>
+        <link refid="IMU_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classIMU" prot="public">IMU</innerclass>
+    <innernamespace refid="namespaceEigen">Eigen</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>: roney </para>
+</simplesect>
+<simplesect kind="date"><para>: 2021-05-03T16:29:30-03:00 email: <ulink url="mailto:roneyddasilva@gmail.com">roneyddasilva@gmail.com</ulink></para>
+</simplesect>
+biblioteca criada com base na biblioteca dinivel no GitHub : <ulink url="https://github.com/bolderflight/MPU9250">https://github.com/bolderflight/MPU9250</ulink> </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>IMU_h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IMU_h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="METODOSCALIBRACAO_8h" kindref="compound">METODOSCALIBRACAO.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Arduino.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Wire.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;eigen3/Eigen/Dense&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">Eigen;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="classIMU" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classIMU" kindref="compound">IMU</ref><sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="21" refid="classIMU_1aeb363437539137b5c1eabd3641d242d1" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="classIMU_1aeb363437539137b5c1eabd3641d242d1" kindref="member">GyroRange</ref><sp/>{</highlight></codeline>
+<codeline lineno="22" refid="classIMU_1aeb363437539137b5c1eabd3641d242d1a1726a676d603df0b5c73ff7f1fff00d3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classIMU_1aeb363437539137b5c1eabd3641d242d1a1726a676d603df0b5c73ff7f1fff00d3" kindref="member">GYRO_RANGE_250DPS</ref>,</highlight></codeline>
+<codeline lineno="23" refid="classIMU_1aeb363437539137b5c1eabd3641d242d1a8a24172a6bd08e9402c83af2f12bed57" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classIMU_1aeb363437539137b5c1eabd3641d242d1a8a24172a6bd08e9402c83af2f12bed57" kindref="member">GYRO_RANGE_500DPS</ref>,</highlight></codeline>
+<codeline lineno="24" refid="classIMU_1aeb363437539137b5c1eabd3641d242d1ac11c26d662eb1906caf70fb73d96e8bb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classIMU_1aeb363437539137b5c1eabd3641d242d1ac11c26d662eb1906caf70fb73d96e8bb" kindref="member">GYRO_RANGE_1000DPS</ref>,</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>GYRO_RANGE_2000DPS</highlight></codeline>
+<codeline lineno="26" refid="classIMU_1aeb363437539137b5c1eabd3641d242d1aa9e87e7d062d3bb23e1c9b5a1e85af11" refkind="member"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="27" refid="classIMU_1acdbd8690acc2a34f12d568cb39486cc6" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="classIMU_1acdbd8690acc2a34f12d568cb39486cc6" kindref="member">AccelRange</ref><sp/>{</highlight></codeline>
+<codeline lineno="28" refid="classIMU_1acdbd8690acc2a34f12d568cb39486cc6a808bf1fd48b91e042cfde2d0fd570823" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classIMU_1acdbd8690acc2a34f12d568cb39486cc6a808bf1fd48b91e042cfde2d0fd570823" kindref="member">ACCEL_RANGE_2G</ref>,</highlight></codeline>
+<codeline lineno="29" refid="classIMU_1acdbd8690acc2a34f12d568cb39486cc6a4afca3881c874d1d4e0d28a21bfe926a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classIMU_1acdbd8690acc2a34f12d568cb39486cc6a4afca3881c874d1d4e0d28a21bfe926a" kindref="member">ACCEL_RANGE_4G</ref>,</highlight></codeline>
+<codeline lineno="30" refid="classIMU_1acdbd8690acc2a34f12d568cb39486cc6a19c2caa0c23242f9dfd88326f2922719" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classIMU_1acdbd8690acc2a34f12d568cb39486cc6a19c2caa0c23242f9dfd88326f2922719" kindref="member">ACCEL_RANGE_8G</ref>,</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>ACCEL_RANGE_16G</highlight></codeline>
+<codeline lineno="32" refid="classIMU_1acdbd8690acc2a34f12d568cb39486cc6a5398002690dded81a155ebdf7baea27f" refkind="member"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="33" refid="classIMU_1a90c4f91f60185430b763f152ecb39521" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="classIMU_1a90c4f91f60185430b763f152ecb39521" kindref="member">DlpfBandwidth</ref><sp/>{</highlight></codeline>
+<codeline lineno="34" refid="classIMU_1a90c4f91f60185430b763f152ecb39521a461c657b4bc9c4f82936a9cb3b5ef54e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classIMU_1a90c4f91f60185430b763f152ecb39521a461c657b4bc9c4f82936a9cb3b5ef54e" kindref="member">DLPF_BANDWIDTH_184HZ</ref>,</highlight></codeline>
+<codeline lineno="35" refid="classIMU_1a90c4f91f60185430b763f152ecb39521ac652b0fb4733da213152970ebc6ab53d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classIMU_1a90c4f91f60185430b763f152ecb39521ac652b0fb4733da213152970ebc6ab53d" kindref="member">DLPF_BANDWIDTH_92HZ</ref>,</highlight></codeline>
+<codeline lineno="36" refid="classIMU_1a90c4f91f60185430b763f152ecb39521afcbbbba2e520cdd50dcb40da160137f0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classIMU_1a90c4f91f60185430b763f152ecb39521afcbbbba2e520cdd50dcb40da160137f0" kindref="member">DLPF_BANDWIDTH_41HZ</ref>,</highlight></codeline>
+<codeline lineno="37" refid="classIMU_1a90c4f91f60185430b763f152ecb39521a174ee7819d598dcbb0d29cf8d0f17e8f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classIMU_1a90c4f91f60185430b763f152ecb39521a174ee7819d598dcbb0d29cf8d0f17e8f" kindref="member">DLPF_BANDWIDTH_20HZ</ref>,</highlight></codeline>
+<codeline lineno="38" refid="classIMU_1a90c4f91f60185430b763f152ecb39521a38fa7998dfeb640e0289bc7407c40285" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classIMU_1a90c4f91f60185430b763f152ecb39521a38fa7998dfeb640e0289bc7407c40285" kindref="member">DLPF_BANDWIDTH_10HZ</ref>,</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>DLPF_BANDWIDTH_5HZ</highlight></codeline>
+<codeline lineno="40" refid="classIMU_1a90c4f91f60185430b763f152ecb39521a1d05af591f93fc300ae7ef2608c62f51" refkind="member"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="41" refid="classIMU_1a2c0603234e00be75c6c4249516ad2f3f" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="classIMU_1a2c0603234e00be75c6c4249516ad2f3f" kindref="member">LpAccelOdr</ref><sp/>{</highlight></codeline>
+<codeline lineno="42" refid="classIMU_1a2c0603234e00be75c6c4249516ad2f3fa075213b5e4f97307e699068a3a5a3477" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>LP_ACCEL_ODR_0_24HZ<sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="43" refid="classIMU_1a2c0603234e00be75c6c4249516ad2f3faf89517a8ecb4855f3234f4462b91c823" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>LP_ACCEL_ODR_0_49HZ<sp/>=<sp/>1,</highlight></codeline>
+<codeline lineno="44" refid="classIMU_1a2c0603234e00be75c6c4249516ad2f3fad02147081ed0eb82e65dd8752f44f888" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>LP_ACCEL_ODR_0_98HZ<sp/>=<sp/>2,</highlight></codeline>
+<codeline lineno="45" refid="classIMU_1a2c0603234e00be75c6c4249516ad2f3fa131f700c7f40e022a15fc0cfc0105402" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>LP_ACCEL_ODR_1_95HZ<sp/>=<sp/>3,</highlight></codeline>
+<codeline lineno="46" refid="classIMU_1a2c0603234e00be75c6c4249516ad2f3faf707c0714db95cadd2d4da425deb5711" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>LP_ACCEL_ODR_3_91HZ<sp/>=<sp/>4,</highlight></codeline>
+<codeline lineno="47" refid="classIMU_1a2c0603234e00be75c6c4249516ad2f3faf77d40ed8aeeb739022b877a82e34427" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>LP_ACCEL_ODR_7_81HZ<sp/>=<sp/>5,</highlight></codeline>
+<codeline lineno="48" refid="classIMU_1a2c0603234e00be75c6c4249516ad2f3fa96c09bd185599c742376c74188b15f06" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>LP_ACCEL_ODR_15_63HZ<sp/>=<sp/>6,</highlight></codeline>
+<codeline lineno="49" refid="classIMU_1a2c0603234e00be75c6c4249516ad2f3fabaa705a55660759564c56f323317aa0c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>LP_ACCEL_ODR_31_25HZ<sp/>=<sp/>7,</highlight></codeline>
+<codeline lineno="50" refid="classIMU_1a2c0603234e00be75c6c4249516ad2f3fa6093b5c31fad290dc15497ba31181f8a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>LP_ACCEL_ODR_62_50HZ<sp/>=<sp/>8,</highlight></codeline>
+<codeline lineno="51" refid="classIMU_1a2c0603234e00be75c6c4249516ad2f3faba9570866d4810bc609345c435edc2a8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>LP_ACCEL_ODR_125HZ<sp/>=<sp/>9,</highlight></codeline>
+<codeline lineno="52" refid="classIMU_1a2c0603234e00be75c6c4249516ad2f3faf7e601fd99ca8179e3fec8aa3edb0dfa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>LP_ACCEL_ODR_250HZ<sp/>=<sp/>10,</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>LP_ACCEL_ODR_500HZ<sp/>=<sp/>11</highlight></codeline>
+<codeline lineno="54" refid="classIMU_1a2c0603234e00be75c6c4249516ad2f3facad3564a280a8a7399dc664e68adefc3" refkind="member"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="56" refid="classIMU_1a0efdfa77f452641689be4e9a4bae6a12" refkind="member"><highlight class="normal"><sp/><sp/>Vector3f<sp/>*<ref refid="classIMU_1a0efdfa77f452641689be4e9a4bae6a12" kindref="member">_acel</ref>;</highlight></codeline>
+<codeline lineno="58" refid="classIMU_1a72d1d4fe1027a9b0d6eed394e18ea97b" refkind="member"><highlight class="normal"><sp/><sp/>Vector3f<sp/>*<ref refid="classIMU_1a72d1d4fe1027a9b0d6eed394e18ea97b" kindref="member">_gyro</ref>;</highlight></codeline>
+<codeline lineno="60" refid="classIMU_1a54e4834bdf8648b7ec11ca460b92facf" refkind="member"><highlight class="normal"><sp/><sp/>Vector3f<sp/>*<ref refid="classIMU_1a54e4834bdf8648b7ec11ca460b92facf" kindref="member">_mag</ref>;</highlight></codeline>
+<codeline lineno="61" refid="classIMU_1ae628afbcc858c70ea5d36a13d59998f2" refkind="member"><highlight class="normal"><sp/><sp/>Vector3f<sp/><ref refid="classIMU_1ae628afbcc858c70ea5d36a13d59998f2" kindref="member">magTemp</ref>;</highlight></codeline>
+<codeline lineno="62" refid="classIMU_1a23880868a20bc15879232b9ed3c1cbbd" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classIMU_1a23880868a20bc15879232b9ed3c1cbbd" kindref="member">_t</ref>;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="classIMU_1a377a386f44cf1d85d31b4f2a6b1a43d1" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Matrix3f<sp/>sFAccel<sp/>=</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>(Matrix3f()<sp/>&lt;&lt;<sp/>0.00477306f,<sp/>-2.94365e-05,<sp/>3.90831e-05,<sp/>4.92044e-05,</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.00477824f,<sp/>5.7648e-05,<sp/>1.55692e-05,<sp/>-7.4314e-05,<sp/>0.00474654f)</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.finished();</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//</highlight></codeline>
+<codeline lineno="73" refid="classIMU_1a9a145f45e2e08cae0f363747c5603bd1" refkind="member"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/>Vector3f<sp/>_biasAccel{-0.37238f,<sp/>-0.109074f,<sp/>0.121389f};</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>const<sp/>int16_t<sp/>_biasAccel[3]{50,<sp/>17,<sp/>-19};</highlight></codeline>
+<codeline lineno="76" refid="classIMU_1a9d22cd7cb7bb93f2e04aa713aed73532" refkind="member"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/>Vector3f<sp/>_biasGyro<sp/>=<sp/>Vector3f::Zero();</highlight></codeline>
+<codeline lineno="78" refid="classIMU_1a3ba42ad7f598311689e5eccd75daa019" refkind="member"><highlight class="normal"><sp/><sp/>Vector3f<sp/>_biasMag<sp/>=<sp/>Vector3f::Zero();</highlight></codeline>
+<codeline lineno="80" refid="classIMU_1af5d90aa5410529450fd31da2e1b1f296" refkind="member"><highlight class="normal"><sp/><sp/>Matrix3f<sp/>_sM<sp/>=<sp/>Matrix3f::Identity();</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><ref refid="classIMU" kindref="compound">IMU</ref>(TwoWire<sp/>&amp;bus,<sp/>uint8_t<sp/>address);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>begin(Vector3f<sp/>&amp;acel,<sp/>Vector3f<sp/>&amp;gyro,<sp/>Vector3f<sp/>&amp;mag);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>readSensor();</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>setDlpfBandwidth(<ref refid="classIMU_1a90c4f91f60185430b763f152ecb39521" kindref="member">DlpfBandwidth</ref><sp/>bandwidth);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>setGyroRange(<ref refid="classIMU_1aeb363437539137b5c1eabd3641d242d1" kindref="member">GyroRange</ref><sp/>range);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>setAccelRange(<ref refid="classIMU_1acdbd8690acc2a34f12d568cb39486cc6" kindref="member">AccelRange</ref><sp/>range);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>calibraGyro(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N<sp/>=<sp/>100);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>calibracaoMagnetometro(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>moduloCampo);</highlight></codeline>
+<codeline lineno="90" refid="classIMU_1a18fe8e6be1b14c9e6c1b47d884dae375" refkind="member"><highlight class="normal"><sp/><sp/>TwoWire<sp/>*<ref refid="classIMU_1a18fe8e6be1b14c9e6c1b47d884dae375" kindref="member">_i2c</ref>;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="94" refid="classIMU_1a36ebf3acc2b8f819d6f08650ddd98ca3" refkind="member"><highlight class="normal"><sp/><sp/>uint8_t<sp/>_buffer[21];</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="classIMU_1a412a6ac9638ce35bc63f1eedc7e152de" refkind="member"><highlight class="normal"><sp/><sp/>int16_t<sp/><ref refid="classIMU_1a412a6ac9638ce35bc63f1eedc7e152de" kindref="member">_axcounts</ref>,<sp/>_aycounts,<sp/>_azcounts;</highlight></codeline>
+<codeline lineno="98" refid="classIMU_1ab27df333316fef090c6c66c850dcea6d" refkind="member"><highlight class="normal"><sp/><sp/>int16_t<sp/><ref refid="classIMU_1ab27df333316fef090c6c66c850dcea6d" kindref="member">_gxcounts</ref>,<sp/>_gycounts,<sp/>_gzcounts;</highlight></codeline>
+<codeline lineno="99" refid="classIMU_1afdba3ec94b88b71f4f3608ec7d5d7fc4" refkind="member"><highlight class="normal"><sp/><sp/>int16_t<sp/><ref refid="classIMU_1afdba3ec94b88b71f4f3608ec7d5d7fc4" kindref="member">_hxcounts</ref>,<sp/>_hycounts,<sp/>_hzcounts;</highlight></codeline>
+<codeline lineno="100" refid="classIMU_1a4274d743239871f6cbc54de5c84eca3a" refkind="member"><highlight class="normal"><sp/><sp/>int16_t<sp/><ref refid="classIMU_1a4274d743239871f6cbc54de5c84eca3a" kindref="member">_tcounts</ref>;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>vetores<sp/>de<sp/>leitura</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="classIMU_1ac538fc9a09f4d60b73fb477738b0d602" refkind="member"><highlight class="normal"><sp/><sp/>uint8_t<sp/><ref refid="classIMU_1ac538fc9a09f4d60b73fb477738b0d602" kindref="member">_address</ref>;</highlight></codeline>
+<codeline lineno="105" refid="classIMU_1a6911d1a81b2cbbefde2357df0c77428d" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classIMU_1a6911d1a81b2cbbefde2357df0c77428d" kindref="member">_numBytes</ref>;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>frequencia<sp/>do<sp/>i2c;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="classIMU_1a6b598b99829fa0fcd5c3d9903eb7b293" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t<sp/>_i2cRate<sp/>=<sp/>400000;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>verificacao<sp/>de<sp/>sucesso<sp/>na<sp/>comunicacao<sp/>com<sp/>sensor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110" refid="classIMU_1a279015ea1ea0a32b45a9a1a26b2d4fda" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classIMU_1a279015ea1ea0a32b45a9a1a26b2d4fda" kindref="member">_status</ref>;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>constantes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112" refid="classIMU_1ac33cd97144f35683cfda7776ea16243e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>gG<sp/>=<sp/>9.786171951281709f;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>escalas<sp/>e<sp/>faixa<sp/>de<sp/>trabalho</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114" refid="classIMU_1a28eb12db9c58ca68e4ddb5020dd9dd20" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classIMU_1a28eb12db9c58ca68e4ddb5020dd9dd20" kindref="member">_accelScale</ref>;</highlight></codeline>
+<codeline lineno="115" refid="classIMU_1a13aac4d32bd5e5bd5893a46adea43ba6" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classIMU_1a13aac4d32bd5e5bd5893a46adea43ba6" kindref="member">_gyroScale</ref>;</highlight></codeline>
+<codeline lineno="116" refid="classIMU_1aca68ebe4db6de0261ad0c18ab93baa0c" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classIMU_1aca68ebe4db6de0261ad0c18ab93baa0c" kindref="member">_magScaleX</ref>,<sp/>_magScaleY,<sp/>_magScaleZ;</highlight></codeline>
+<codeline lineno="117" refid="classIMU_1a81407c3f7e8e63735dfc672b53fd99dd" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classIMU_1acdbd8690acc2a34f12d568cb39486cc6" kindref="member">AccelRange</ref><sp/><ref refid="classIMU_1a81407c3f7e8e63735dfc672b53fd99dd" kindref="member">_accelRange</ref>;</highlight></codeline>
+<codeline lineno="118" refid="classIMU_1abc2f9849bd27b4d423b2140ebdc8701a" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classIMU_1aeb363437539137b5c1eabd3641d242d1" kindref="member">GyroRange</ref><sp/><ref refid="classIMU_1abc2f9849bd27b4d423b2140ebdc8701a" kindref="member">_gyroRange</ref>;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>configuracoes<sp/>das<sp/>faixas<sp/>de<sp/>trabalho</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>AccelRange<sp/><sp/>ACCEL_FS_SEL_16G</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>GyroRange<sp/>GYRO_FS_SEL_2000DPS;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122" refid="classIMU_1a1301777da9bc68eee7dc744a62b06ac3" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classIMU_1a90c4f91f60185430b763f152ecb39521" kindref="member">DlpfBandwidth</ref><sp/><ref refid="classIMU_1a1301777da9bc68eee7dc744a62b06ac3" kindref="member">_bandwidth</ref>;</highlight></codeline>
+<codeline lineno="123" refid="classIMU_1a3eb0783394601a5a41fa7079e4c929b0" refkind="member"><highlight class="normal"><sp/><sp/>uint8_t<sp/><ref refid="classIMU_1a3eb0783394601a5a41fa7079e4c929b0" kindref="member">_srd</ref>;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>char<sp/>_buf[32];</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>MPU9250<sp/>registers</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126" refid="classIMU_1a5e6bc8a1984acb82321f9b48db9e8a79" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>ACCEL_OUT<sp/>=<sp/>0x3B;</highlight></codeline>
+<codeline lineno="127" refid="classIMU_1a59053815a5a71f5bebc2e65f16659ded" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>GYRO_OUT<sp/>=<sp/>0x43;</highlight></codeline>
+<codeline lineno="128" refid="classIMU_1aa9c1984c97e26df587281692f60e2949" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>TEMP_OUT<sp/>=<sp/>0x41;</highlight></codeline>
+<codeline lineno="129" refid="classIMU_1af28bfb59bb04bc759038078a4db01993" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>EXT_SENS_DATA_00<sp/>=<sp/>0x49;</highlight></codeline>
+<codeline lineno="130" refid="classIMU_1a71dae5b97d1b74436843e3e822ff4a32" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>ACCEL_CONFIG<sp/>=<sp/>0x1C;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Quanto<sp/>menor<sp/>a<sp/>faixa<sp/>que<sp/>o<sp/>acelerometro<sp/>trabalho<sp/>maior<sp/>sua</highlight></codeline>
+<codeline lineno="132"><highlight class="comment">sensibilidade.<sp/>Com<sp/>o<sp/>intuido<sp/>de<sp/>reduzir<sp/>a<sp/>quantidade<sp/>de<sp/>ruidos</highlight></codeline>
+<codeline lineno="133"><highlight class="comment">usaremos<sp/>as<sp/>maiores<sp/>escalas<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134" refid="classIMU_1ac90c7b0bb203e2dff90306482614433e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>ACCEL_FS_SEL_2G<sp/>=<sp/>0x00;</highlight></codeline>
+<codeline lineno="135" refid="classIMU_1a6d4e8157bb4c0dc204b66c9bbf7c6cb0" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>ACCEL_FS_SEL_4G<sp/>=<sp/>0x08;</highlight></codeline>
+<codeline lineno="136" refid="classIMU_1a62e76f7ca4450fbff9ba169a7bf5d183" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>ACCEL_FS_SEL_8G<sp/>=<sp/>0x10;</highlight></codeline>
+<codeline lineno="137" refid="classIMU_1a920aa5f13b9c8e5bc927927330ac8af2" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>ACCEL_FS_SEL_16G<sp/>=<sp/>0x18;</highlight></codeline>
+<codeline lineno="138" refid="classIMU_1a7d417d3c235bd4218a9cecb6c39b684d" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>GYRO_CONFIG<sp/>=<sp/>0x1B;</highlight></codeline>
+<codeline lineno="139" refid="classIMU_1abaece728935c77934691fc678c971de4" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>GYRO_FS_SEL_250DPS<sp/>=<sp/>0x00;</highlight></codeline>
+<codeline lineno="140" refid="classIMU_1a57d0058b144d11d64aa644ed1d3b313e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>GYRO_FS_SEL_500DPS<sp/>=<sp/>0x08;</highlight></codeline>
+<codeline lineno="141" refid="classIMU_1ab8e2494d9e3021bf039323cf3440de1e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>GYRO_FS_SEL_1000DPS<sp/>=<sp/>0x10;</highlight></codeline>
+<codeline lineno="142" refid="classIMU_1a040f0183e93dc2c87f28f727c328a313" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>GYRO_FS_SEL_2000DPS<sp/>=<sp/>0x18;</highlight></codeline>
+<codeline lineno="143" refid="classIMU_1a0b4c0cfc28087ec72de6155da46de0d9" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>ACCEL_CONFIG2<sp/>=<sp/>0x1D;</highlight></codeline>
+<codeline lineno="144" refid="classIMU_1a3f74d7d2c5a8c93151ae2bee4e0b4887" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>ACCEL_DLPF_184<sp/>=<sp/>0x01;</highlight></codeline>
+<codeline lineno="145" refid="classIMU_1ac87ed9eeb0d6fd20e987410155fee53f" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>ACCEL_DLPF_92<sp/>=<sp/>0x02;</highlight></codeline>
+<codeline lineno="146" refid="classIMU_1ae2df48f29311f232432a16284b9159ed" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>ACCEL_DLPF_41<sp/>=<sp/>0x03;</highlight></codeline>
+<codeline lineno="147" refid="classIMU_1a524d9af6cbaa1df5f15db87b1157467c" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>ACCEL_DLPF_20<sp/>=<sp/>0x04;</highlight></codeline>
+<codeline lineno="148" refid="classIMU_1af0554e2b6db872868f21b6953a1e8585" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>ACCEL_DLPF_10<sp/>=<sp/>0x05;</highlight></codeline>
+<codeline lineno="149" refid="classIMU_1aa1d7a036cec01526451187434785b0ef" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>ACCEL_DLPF_5<sp/>=<sp/>0x06;</highlight></codeline>
+<codeline lineno="150" refid="classIMU_1a8b8013c6ee050d9a1c0c9aeb25b80cce" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>CONFIG<sp/>=<sp/>0x1A;</highlight></codeline>
+<codeline lineno="151" refid="classIMU_1a2b7230a7c84242e46ffb1b801df342bd" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>GYRO_DLPF_184<sp/>=<sp/>0x01;</highlight></codeline>
+<codeline lineno="152" refid="classIMU_1a51863a08fe8094125b63498b591d0a54" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>GYRO_DLPF_92<sp/>=<sp/>0x02;</highlight></codeline>
+<codeline lineno="153" refid="classIMU_1a178f00ee16f64288cc8d15f3fa4400f7" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>GYRO_DLPF_41<sp/>=<sp/>0x03;</highlight></codeline>
+<codeline lineno="154" refid="classIMU_1a1f673a77bab71d2ae30959e7b9ddf5be" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>GYRO_DLPF_20<sp/>=<sp/>0x04;</highlight></codeline>
+<codeline lineno="155" refid="classIMU_1a2675b7bb5b5d4a9d1333472248ff7d18" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>GYRO_DLPF_10<sp/>=<sp/>0x05;</highlight></codeline>
+<codeline lineno="156" refid="classIMU_1a34c9619f6639e3ddda87b018eb94214e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>GYRO_DLPF_5<sp/>=<sp/>0x06;</highlight></codeline>
+<codeline lineno="157" refid="classIMU_1a1baa422b103a5b9c2677c8e447b11ebe" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>SMPDIV<sp/>=<sp/>0x19;</highlight></codeline>
+<codeline lineno="158" refid="classIMU_1ac9be008941488be4fb726c2021946ef0" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>INT_PIN_CFG<sp/>=<sp/>0x37;</highlight></codeline>
+<codeline lineno="159" refid="classIMU_1aa465f1843da6c3a27b32234d1c76b746" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>INT_ENABLE<sp/>=<sp/>0x38;</highlight></codeline>
+<codeline lineno="160" refid="classIMU_1a525a5ff38a1084f951bbb982b5eda84f" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>INT_DISABLE<sp/>=<sp/>0x00;</highlight></codeline>
+<codeline lineno="161" refid="classIMU_1af46a4d410ba22aa7ce6e5f3df41c8e6e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>INT_PULSE_50US<sp/>=<sp/>0x00;</highlight></codeline>
+<codeline lineno="162" refid="classIMU_1a7d797231f1773fff9c0fe7924a0b3960" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>INT_WOM_EN<sp/>=<sp/>0x40;</highlight></codeline>
+<codeline lineno="163" refid="classIMU_1adef065984587c7e17ee4641a1cf55ce0" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>INT_RAW_RDY_EN<sp/>=<sp/>0x01;</highlight></codeline>
+<codeline lineno="164" refid="classIMU_1a66529d6102c44bc6be8d8ef167f27058" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>PWR_MGMNT_1<sp/>=<sp/>0x6B;</highlight></codeline>
+<codeline lineno="165" refid="classIMU_1aa1c569cb683d1f2b24074a561cbb1b44" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>PWR_CYCLE<sp/>=<sp/>0x20;</highlight></codeline>
+<codeline lineno="166" refid="classIMU_1a045e1ec896d0e207d640d1fb7930328f" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>PWR_RESET<sp/>=<sp/>0x80;</highlight></codeline>
+<codeline lineno="167" refid="classIMU_1aed128bfb60251b9016454f9b491b0d3e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>CLOCK_SEL_PLL<sp/>=<sp/>0x01;</highlight></codeline>
+<codeline lineno="168" refid="classIMU_1a8e2a7777d4356a5c4cf6cb52e9aeed4b" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>PWR_MGMNT_2<sp/>=<sp/>0x6C;</highlight></codeline>
+<codeline lineno="169" refid="classIMU_1ad52e1d65ca1b23161ff28ea6a0891a1b" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>SEN_ENABLE<sp/>=<sp/>0x00;</highlight></codeline>
+<codeline lineno="170" refid="classIMU_1a5dbb6af50b6cb4f752b971d073049980" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>DIS_GYRO<sp/>=<sp/>0x07;</highlight></codeline>
+<codeline lineno="171" refid="classIMU_1a82f56158c28ca51ed7fe9a667b668080" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>USER_CTRL<sp/>=<sp/>0x6A;</highlight></codeline>
+<codeline lineno="172" refid="classIMU_1aac5f67e0f33068d9ca184e8338cea69b" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>I2C_MST_EN<sp/>=<sp/>0x20;</highlight></codeline>
+<codeline lineno="173" refid="classIMU_1a19704607249a2df9ae115cf5ec42b065" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>I2C_MST_CLK<sp/>=<sp/>0x0D;</highlight></codeline>
+<codeline lineno="174" refid="classIMU_1a40a6c474b6590faa545bcef6796e0b09" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>I2C_MST_CTRL<sp/>=<sp/>0x24;</highlight></codeline>
+<codeline lineno="175" refid="classIMU_1a6ae19caaa47d77d07abf79af77e501e8" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>I2C_SLV0_ADDR<sp/>=<sp/>0x25;</highlight></codeline>
+<codeline lineno="176" refid="classIMU_1a45b93a6a2bd367d73428482805ee65ce" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>I2C_SLV0_REG<sp/>=<sp/>0x26;</highlight></codeline>
+<codeline lineno="177" refid="classIMU_1ab6fc887f35142051d1b1fe3cba25aff0" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>I2C_SLV0_DO<sp/>=<sp/>0x63;</highlight></codeline>
+<codeline lineno="178" refid="classIMU_1a3b6c38493eed68a58509e8be8b451ccf" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>I2C_SLV0_CTRL<sp/>=<sp/>0x27;</highlight></codeline>
+<codeline lineno="179" refid="classIMU_1a73733d4a18041bbc1f094a52be517118" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>I2C_SLV0_EN<sp/>=<sp/>0x80;</highlight></codeline>
+<codeline lineno="180" refid="classIMU_1a1ff3bc7d6cd3c4035ae2619248b9dd86" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>I2C_READ_FLAG<sp/>=<sp/>0x80;</highlight></codeline>
+<codeline lineno="181" refid="classIMU_1ad71aa14a790197de3eff414f6f9dfcec" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>MOT_DETECT_CTRL<sp/>=<sp/>0x69;</highlight></codeline>
+<codeline lineno="182" refid="classIMU_1a5ffc27f0c3bca71b7df305a66348a23e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>ACCEL_INTEL_EN<sp/>=<sp/>0x80;</highlight></codeline>
+<codeline lineno="183" refid="classIMU_1aca3b94b1ea5f63ed99123135f9684d75" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>ACCEL_INTEL_MODE<sp/>=<sp/>0x40;</highlight></codeline>
+<codeline lineno="184" refid="classIMU_1a981e7149fad7f85b241d9205df62e464" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>LP_ACCEL_ODR<sp/>=<sp/>0x1E;</highlight></codeline>
+<codeline lineno="185" refid="classIMU_1a9ca3d7b64ffa73ab222221294f9afe7b" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>WOM_THR<sp/>=<sp/>0x1F;</highlight></codeline>
+<codeline lineno="186" refid="classIMU_1ad608d0b182a0da8574b85194f5707d14" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>WHO_AM_I<sp/>=<sp/>0x75;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>const<sp/>uint8_t<sp/>FIFO_EN<sp/>=<sp/>0x23;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>const<sp/>uint8_t<sp/>FIFO_TEMP<sp/>=<sp/>0x80;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>const<sp/>uint8_t<sp/>FIFO_GYRO<sp/>=<sp/>0x70;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>const<sp/>uint8_t<sp/>FIFO_ACCEL<sp/>=<sp/>0x08;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>const<sp/>uint8_t<sp/>FIFO_MAG<sp/>=<sp/>0x01;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>const<sp/>uint8_t<sp/>FIFO_COUNT<sp/>=<sp/>0x72;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>const<sp/>uint8_t<sp/>FIFO_READ<sp/>=<sp/>0x74;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>registro<sp/>do<sp/>magnetometro<sp/>AK8963</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="195" refid="classIMU_1a4906bf7080228a00a2726fab0bc9deb1" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>AK8963_I2C_ADDR<sp/>=<sp/>0x0C;</highlight></codeline>
+<codeline lineno="196" refid="classIMU_1af5582b84ecf8829cfc7da6ad1ed3296a" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>AK8963_HXL<sp/>=<sp/>0x03;</highlight></codeline>
+<codeline lineno="197" refid="classIMU_1aa8691a633c35d2f7d7951f68b187adb3" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>AK8963_CNTL1<sp/>=<sp/>0x0A;</highlight></codeline>
+<codeline lineno="198" refid="classIMU_1aa96e1f69db3a08f6ac0c0115d9e8e880" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>AK8963_PWR_DOWN<sp/>=<sp/>0x00;</highlight></codeline>
+<codeline lineno="199" refid="classIMU_1a0e2fe28ad7e635876a061dcf0b338bcb" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>AK8963_CNT_MEAS1<sp/>=<sp/>0x12;</highlight></codeline>
+<codeline lineno="200" refid="classIMU_1a81aa27b2da74539d88966ab71c28337d" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>AK8963_CNT_MEAS2<sp/>=<sp/>0x16;</highlight></codeline>
+<codeline lineno="201" refid="classIMU_1aefe9d58c962b042b5e772342fe510170" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>AK8963_FUSE_ROM<sp/>=<sp/>0x0F;</highlight></codeline>
+<codeline lineno="202" refid="classIMU_1ab6945cc8ff2e84fa2f0927388d74fec1" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>AK8963_CNTL2<sp/>=<sp/>0x0B;</highlight></codeline>
+<codeline lineno="203" refid="classIMU_1ad170d8561fc4600092a29e1b3ff214a6" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>AK8963_RESET<sp/>=<sp/>0x01;</highlight></codeline>
+<codeline lineno="204" refid="classIMU_1a5dc26b210ba9adcc176b9e837238d87d" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>AK8963_ASA<sp/>=<sp/>0x10;</highlight></codeline>
+<codeline lineno="205" refid="classIMU_1afbf16a57d58c858beda5ccf36ee4b81f" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>AK8963_WHO_AM_I<sp/>=<sp/>0x00;</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>funcoes<sp/>privadas</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>writeRegister(uint8_t<sp/>subAddress,<sp/>uint8_t<sp/><ref refid="GPS_8h_1a27c939ba1a4f4d927aaa500781293ba7" kindref="member">data</ref>);</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>readRegisters(uint8_t<sp/>subAddress,<sp/>uint8_t<sp/>count,<sp/>uint8_t<sp/>*dest);</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>writeAK8963Register(uint8_t<sp/>subAddress,<sp/>uint8_t<sp/><ref refid="GPS_8h_1a27c939ba1a4f4d927aaa500781293ba7" kindref="member">data</ref>);</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>whoAmI();</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>whoAmIAK8963();</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>readAK8963Registers(uint8_t<sp/>subAddress,<sp/>uint8_t<sp/>count,<sp/>uint8_t<sp/>*dest);</highlight></codeline>
+<codeline lineno="213"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>IMU_H_<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="lib/IMU/IMU.h"/>
+  </compounddef>
+</doxygen>

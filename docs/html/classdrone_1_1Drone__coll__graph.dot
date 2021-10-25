@@ -1,0 +1,8 @@
+digraph "drone.Drone"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  Node1 [label="{drone.Drone\n|+  Ix\l+  Iy\l+  Iz\l+  kf\l+  km\l+  b\l+  grav\l+  m\l+  omegaSquareMin\l+  omegaSquareMax\l+  q\l|+ def __init__(self,\l *args, **kwargs)\l+ def updateStates(self)\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

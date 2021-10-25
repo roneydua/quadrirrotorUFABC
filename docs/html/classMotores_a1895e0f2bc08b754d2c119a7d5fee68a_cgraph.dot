@@ -1,0 +1,13 @@
+digraph "Motores::inicializa"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  rankdir="LR";
+  Node1 [label="Motores::inicializa",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node2 [label="Motores::set_portas",height=0.2,width=0.4,color="black",URL="$classMotores.html#abd97787aacf452410d0fb21bbe5c9287",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node3 [label="Motores::set_vel_mot",height=0.2,width=0.4,color="black",URL="$classMotores.html#ac6264dc2b71015a3c9641025151edd4a",tooltip=" "];
+}

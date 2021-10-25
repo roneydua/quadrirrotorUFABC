@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compounddef id="dir_e938b59efd27c0d7e7402c87a3faf3f8" kind="dir">
+    <compoundname>lib/DRONE</compoundname>
+    <innerfile refid="Drone_8cpp">Drone.cpp</innerfile>
+    <innerfile refid="Drone_8h">Drone.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="lib/DRONE/"/>
+  </compounddef>
+</doxygen>

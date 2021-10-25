@@ -1,0 +1,23 @@
+digraph "lib/EKF/EKF.cpp"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  Node1 [label="lib/EKF/EKF.cpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Classe que implementa o filtro de Kalman estendido."];
+  Node1 -> Node2 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node2 [label="EKF.h",height=0.2,width=0.4,color="black",URL="$EKF_8h.html",tooltip="Classe que implementa o filtro de Kalman estendido."];
+  Node2 -> Node3 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node3 [label="eigen3/Eigen/Dense",height=0.2,width=0.4,color="grey75",tooltip=" "];
+  Node2 -> Node4 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node4 [label="./../READWRITEEIGEN\l/readWriteEigen.h",height=0.2,width=0.4,color="grey75",tooltip=" "];
+  Node1 -> Node5 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node5 [label="../AQUA/AQUA.h",height=0.2,width=0.4,color="black",URL="$AQUA_8h.html",tooltip=" "];
+  Node5 -> Node3 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node5 -> Node6 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node6 [label="../GRUPO_QUAT/GRUPO\l_QUAT.h",height=0.2,width=0.4,color="black",URL="$GRUPO__QUAT_8h.html",tooltip="Cabecalho com funcoes de quaternion."];
+  Node6 -> Node3 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node6 -> Node7 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node7 [label="iostream",height=0.2,width=0.4,color="grey75",tooltip=" "];
+  Node1 -> Node6 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+}

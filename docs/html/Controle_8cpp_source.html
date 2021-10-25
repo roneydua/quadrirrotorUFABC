@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Quadrirrotor: Código-Fonte de lib/CONTROLE/Controle.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Quadrirrotor
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Busca','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_23ba2848a540c18a9dfc572cf44e4a8e.html">CONTROLE</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Controle.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="Controle_8cpp.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Controle_8h.html">Controle.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classControle.html#abbe044aad705ef7d663c45275948fd12">   14</a></span>&#160;<a class="code" href="classControle.html#abbe044aad705ef7d663c45275948fd12">Controle::Controle</a>() {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifdef __GNUC__</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keywordtype">string</span> _folderPlace = <span class="stringliteral">&quot;include/CONTROLE/&quot;</span>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <a class="code" href="classControle.html#a217f8f02b01c63725bc14f7679412fc0">Qt</a> = csvLeia&lt;Eigen::MatrixXf&gt;(_folderPlace + <span class="stringliteral">&quot;Qt_66&quot;</span>);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <a class="code" href="classControle.html#a442eb8225f58938b2a9a5308895e1d18">Rt</a> = csvLeia&lt;Eigen::MatrixXf&gt;(_folderPlace + <span class="stringliteral">&quot;Rt_66&quot;</span>);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <a class="code" href="classControle.html#a299b06de76fde5b6eb7e47a4a45938bb">Qr</a> = csvLeia&lt;Eigen::MatrixXf&gt;(_folderPlace + <span class="stringliteral">&quot;Qr&quot;</span>);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <a class="code" href="classControle.html#a5322dd0d474b5f5f92dceda8266c8cfd">Rr</a> = csvLeia&lt;Eigen::MatrixXf&gt;(_folderPlace + <span class="stringliteral">&quot;Rr&quot;</span>);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <a class="code" href="namespacedrone.html">drone</a> = <span class="keyword">new</span> <a class="code" href="classDrone.html">Drone</a>(0.04);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <a class="code" href="classControle.html#a05ff4316f906c1e57a27ef81d983fba8">u</a>(0) = <a class="code" href="namespacedrone.html">drone</a>-&gt;massa * <a class="code" href="classControle.html#ae08c605ba3028486392d9f5aa2b2142b">gravidade</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <a class="code" href="classControle.html#ad418683f52bf07661b72e9fbf463ecd1">ut</a>(2) = <a class="code" href="namespacedrone.html">drone</a>-&gt;massa * <a class="code" href="classControle.html#ae08c605ba3028486392d9f5aa2b2142b">gravidade</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <a class="code" href="classControle.html#a065d96653d6891c3e9aeffd5d202200d">qa</a>(0, 1) = 1.0f;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="comment">/*Calcula o ganho para controle da dinâmica translacional*/</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="classControle.html#ad67e192b12bfba4d5a68ee59870863b2">sdre</a> = <span class="keyword">new</span> <a class="code" href="classSdre.html">Sdre</a>(<a class="code" href="namespacedrone.html">drone</a>-&gt;matAT, <a class="code" href="namespacedrone.html">drone</a>-&gt;matBT, <a class="code" href="classControle.html#a217f8f02b01c63725bc14f7679412fc0">Qt</a>, <a class="code" href="classControle.html#a442eb8225f58938b2a9a5308895e1d18">Rt</a>);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <a class="code" href="classControle.html#ad67e192b12bfba4d5a68ee59870863b2">sdre</a>-&gt;<a class="code" href="classSdre.html#af2f380ec3d018b60686e304ca7026846">updateControl</a>();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <a class="code" href="classControle.html#a822f7e0d38f422c6097e2126ed9a9ec9">Lt</a> = <a class="code" href="classControle.html#ad67e192b12bfba4d5a68ee59870863b2">sdre</a>-&gt;<a class="code" href="classSdre.html#aad912686f9a487dce4ea7e4875efd563">L</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <a class="code" href="classControle.html#a9fa6356305a7fa27ea7b9dd5ebf620c9">Ls_G</a> = <a class="code" href="classControle.html#ad67e192b12bfba4d5a68ee59870863b2">sdre</a>-&gt;<a class="code" href="classSdre.html#ac29f58dd81643087f49ccbed42b794df">ricObj</a>-&gt;<a class="code" href="classRiccati.html#aef6ba29bba94e293a8ea4c279b565164">Ls</a> * <a class="code" href="classControle.html#ad67e192b12bfba4d5a68ee59870863b2">sdre</a>-&gt;<a class="code" href="classSdre.html#ad244c5cc1e70a1b08e8e4d5655993d8b">G</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <a class="code" href="Controle_8h.html#a92102ea2f9ade1cc1a6dcce355db1677">PRINT_MAT</a>(<a class="code" href="classControle.html#ad67e192b12bfba4d5a68ee59870863b2">sdre</a>-&gt;<a class="code" href="classSdre.html#a4848cfbce14035e6b3733a628de9e24f">closeLoopEig</a>());</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <a class="code" href="classControle.html#ad67e192b12bfba4d5a68ee59870863b2">sdre</a>-&gt;<a class="code" href="classSdre.html#a887dbd01f9f6846839114a4d5ff64102">~Sdre</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="comment">/* Instância a classe SDRE para computo da dinâmica rotacional.*/</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <a class="code" href="classControle.html#ad67e192b12bfba4d5a68ee59870863b2">sdre</a> = <span class="keyword">new</span> <a class="code" href="classSdre.html">Sdre</a>(<a class="code" href="namespacedrone.html">drone</a>-&gt;matAR, <a class="code" href="namespacedrone.html">drone</a>-&gt;matBR, <a class="code" href="classControle.html#a299b06de76fde5b6eb7e47a4a45938bb">Qr</a>, <a class="code" href="classControle.html#a5322dd0d474b5f5f92dceda8266c8cfd">Rr</a>);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classControle.html#add7378d03597a45ff09b2432d7739dfe">   41</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classControle.html#add7378d03597a45ff09b2432d7739dfe">Controle::computeTranslationalControl</a>() { <span class="comment">/* */</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="classControle.html#a4fc1f7f2b69a021f4bb433daada38430">index_alt</a> = 1 - <a class="code" href="classControle.html#a4fc1f7f2b69a021f4bb433daada38430">index_alt</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  Eigen::VectorXf _x(6);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  _x &lt;&lt; <a class="code" href="namespacedrone.html">drone</a>-&gt;p - <a class="code" href="classControle.html#abea037d2953202894021efd9e5c4fcaf">rI</a>, <a class="code" href="namespacedrone.html">drone</a>-&gt;v - <a class="code" href="classControle.html#a7b4f1db8c2182de9f1999819aace78e3">r</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <a class="code" href="classControle.html#ad418683f52bf07661b72e9fbf463ecd1">ut</a> = -<a class="code" href="classControle.html#a822f7e0d38f422c6097e2126ed9a9ec9">Lt</a> * _x; <span class="comment">// + Ls_G * r;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="comment">// ut = -Lt * (drone-&gt;v - r); // + Ls_G * r;</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <a class="code" href="classControle.html#ad418683f52bf07661b72e9fbf463ecd1">ut</a>(2) -= <a class="code" href="classControle.html#ae08c605ba3028486392d9f5aa2b2142b">gravidade</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="comment">// u(0) = -ut.norm() * drone-&gt;massa;</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <a class="code" href="classControle.html#a05ff4316f906c1e57a27ef81d983fba8">u</a>(0) = -<a class="code" href="classControle.html#ad418683f52bf07661b72e9fbf463ecd1">ut</a>.norm(); <span class="comment">// * drone-&gt;massa;</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classControle.html#a8ac9e933ce30f9c88ed421d4c0afcf99">   51</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classControle.html#a8ac9e933ce30f9c88ed421d4c0afcf99">Controle::computeRotationalTarget</a>() {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordtype">float</span> qc0 = sqrtf(0.5 * (<a class="code" href="classControle.html#ad418683f52bf07661b72e9fbf463ecd1">ut</a>(2) / <a class="code" href="classControle.html#a05ff4316f906c1e57a27ef81d983fba8">u</a>(0) + 1.0f));</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordtype">float</span> cosPhi_2 = cosf(0.5f * <a class="code" href="classControle.html#aa873dca8a6cf31541df846aa5cbe7a61">psi</a>);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordtype">float</span> sinPhi_2 = sinf(0.5f * <a class="code" href="classControle.html#aa873dca8a6cf31541df846aa5cbe7a61">psi</a>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="comment">/* Calculo do quaternion de atitude alvo.*/</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <a class="code" href="classControle.html#a065d96653d6891c3e9aeffd5d202200d">qa</a>(0, <a class="code" href="classControle.html#a4fc1f7f2b69a021f4bb433daada38430">index_alt</a>) = qc0 * cosPhi_2;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <a class="code" href="classControle.html#a065d96653d6891c3e9aeffd5d202200d">qa</a>(1, <a class="code" href="classControle.html#a4fc1f7f2b69a021f4bb433daada38430">index_alt</a>) =</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      (<a class="code" href="classControle.html#ad418683f52bf07661b72e9fbf463ecd1">ut</a>(1) * cosPhi_2 - <a class="code" href="classControle.html#ad418683f52bf07661b72e9fbf463ecd1">ut</a>(0) * sinPhi_2) * .5f / (-<a class="code" href="classControle.html#a05ff4316f906c1e57a27ef81d983fba8">u</a>(0)) / qc0;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <a class="code" href="classControle.html#a065d96653d6891c3e9aeffd5d202200d">qa</a>(2, <a class="code" href="classControle.html#a4fc1f7f2b69a021f4bb433daada38430">index_alt</a>) = (<a class="code" href="classControle.html#ad418683f52bf07661b72e9fbf463ecd1">ut</a>(0) * cosPhi_2 + <a class="code" href="classControle.html#ad418683f52bf07661b72e9fbf463ecd1">ut</a>(1) * sinPhi_2) * .5f / <a class="code" href="classControle.html#a05ff4316f906c1e57a27ef81d983fba8">u</a>(0) / qc0;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <a class="code" href="classControle.html#a065d96653d6891c3e9aeffd5d202200d">qa</a>(3, <a class="code" href="classControle.html#a4fc1f7f2b69a021f4bb433daada38430">index_alt</a>) = qc0 * sinPhi_2;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="comment">// Continuidade do quaternion de atitude.</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="comment">// if (isless(qa.col(index_alt).dot(qa.col(1 - index_alt)), 0.0f)) {</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="comment">//   qa.col(index_alt) *= -1.0f;</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="comment">// }</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="comment">// if (isless(qa.col(index_alt).dot(drone-&gt;q), 0.0f)) {</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="comment">//   qa.col(index_alt) *= -1.0f;</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="comment">// }</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="comment">// Atualiza a flag da parte escalar do quatenrion alvo.</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  (<a class="code" href="classControle.html#a065d96653d6891c3e9aeffd5d202200d">qa</a>(0, <a class="code" href="classControle.html#a4fc1f7f2b69a021f4bb433daada38430">index_alt</a>)) &lt; 0.0f ? <a class="code" href="classControle.html#aa30ed7f98e0eb42b27525a060ce3968c">negativeq0</a> = <span class="keyword">true</span> : <a class="code" href="classControle.html#aa30ed7f98e0eb42b27525a060ce3968c">negativeq0</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="comment">// Calcula a velocidade ângular.</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <a class="code" href="classControle.html#a51cecade068048c7a97a9dd4cb6a75b8">wa</a> = 2.0f / <a class="code" href="namespacedrone.html">drone</a>-&gt;dt * (<a class="code" href="namespaceekf.html#a34993a331b6837e5274d556e4f0a1bea">ekf::Q_l</a>(<a class="code" href="classControle.html#a065d96653d6891c3e9aeffd5d202200d">qa</a>.col(1 - <a class="code" href="classControle.html#a4fc1f7f2b69a021f4bb433daada38430">index_alt</a>))).transpose() *</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;       <a class="code" href="classControle.html#a065d96653d6891c3e9aeffd5d202200d">qa</a>.col(<a class="code" href="classControle.html#a4fc1f7f2b69a021f4bb433daada38430">index_alt</a>);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="comment">// Eigen::Vector3f _wg = 2.0f / drone-&gt;dt *</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="comment">//                       (ekf::Q_r(qa.col(1 - index_alt))).transpose() *</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="comment">//                       qa.col(index_alt);</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="comment">// wa = ekf::rotateVectorWithQuaternion_Conjugate(drone-&gt;q, _wg);</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <a class="code" href="classControle.html#a05ff4316f906c1e57a27ef81d983fba8">u</a>(0) *= <a class="code" href="namespacedrone.html">drone</a>-&gt;massa;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classControle.html#abcf05dcff157e963fd65c09d45261a8f">   84</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classControle.html#abcf05dcff157e963fd65c09d45261a8f">Controle::computeRotationalControl</a>() {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <a class="code" href="classControle.html#ad67e192b12bfba4d5a68ee59870863b2">sdre</a>-&gt;<a class="code" href="classSdre.html#af2f380ec3d018b60686e304ca7026846">updateControl</a>();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  Eigen::VectorXf _r(6), _x(6);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="comment">// #ifdef __GNUC__</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <a class="code" href="classControle.html#a3e4c231b2af8c3c96550cd022d410c83">qe</a> = (<a class="code" href="namespaceekf.html#a8177897fe9b962d8e0927a913fc36242">ekf::S_l</a>(<a class="code" href="namespacedrone.html">drone</a>-&gt;q)).transpose() * <a class="code" href="classControle.html#a065d96653d6891c3e9aeffd5d202200d">qa</a>.col(<a class="code" href="classControle.html#a4fc1f7f2b69a021f4bb433daada38430">index_alt</a>);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="comment">// #endif</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  _x &lt;&lt; <a class="code" href="classControle.html#a3e4c231b2af8c3c96550cd022d410c83">qe</a>.tail(3), <a class="code" href="namespacedrone.html">drone</a>-&gt;w - <a class="code" href="classControle.html#a51cecade068048c7a97a9dd4cb6a75b8">wa</a>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="comment">// _x &lt;&lt; drone-&gt;q.tail(3), drone-&gt;w;</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="comment">// _r &lt;&lt; qa.block(1, index_alt, 3, 1), wa;</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="comment">// u.tail(3) = -sdre-&gt;L * _x + sdre-&gt;ricObj-&gt;Ls * sdre-&gt;G * Qr * _r;</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <a class="code" href="classControle.html#a05ff4316f906c1e57a27ef81d983fba8">u</a>.tail(3) = -<a class="code" href="classControle.html#ad67e192b12bfba4d5a68ee59870863b2">sdre</a>-&gt;<a class="code" href="classSdre.html#aad912686f9a487dce4ea7e4875efd563">L</a> * _x; <span class="comment">// + sdre-&gt;ricObj-&gt;Ls * sdre-&gt;G * Qr * _r;</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="classControle.html#a42aee0a4592b84bd793c8be0fde0095b">  102</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classControle.html#a42aee0a4592b84bd793c8be0fde0095b">Controle::virtualCommandToMotorCommand</a>() {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <a class="code" href="classControle.html#aacd18c8929cb59d7390a58d8dd68de6d">motorCommands</a> =</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;      (<a class="code" href="namespacedrone.html">drone</a>-&gt;Hinv * ((<a class="code" href="namespacedrone.html">drone</a>-&gt;Jinv * <a class="code" href="classControle.html#a05ff4316f906c1e57a27ef81d983fba8">u</a>).cwiseSqrt() - <a class="code" href="namespacedrone.html">drone</a>-&gt;h)).cast&lt;<span class="keywordtype">int</span>&gt;();</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <a class="code" href="classControle.html#aacd18c8929cb59d7390a58d8dd68de6d">motorCommands</a> = <a class="code" href="classControle.html#aacd18c8929cb59d7390a58d8dd68de6d">motorCommands</a>.array()</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                      .min(<a class="code" href="classControle.html#a913b2b49e44d1b633b55d2d95413b259">maximalDigitalCommand</a>)</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                      .max(<a class="code" href="classControle.html#adf6b85a6ab34600ac480a5cf9c4c1f8e">minimalDigitalCommand</a>)</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                      .matrix();</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="classControle.html#a9b3718425d8602487eb9b14d6ee1c781">  110</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classControle.html#a9b3718425d8602487eb9b14d6ee1c781">Controle::virtualCommandToMotorRpm</a>() { <span class="comment">/* */</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="comment">// rotationsOfMotors &lt;&lt; (drone-&gt;Jinv * u).array().sqrt().matrix();</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <a class="code" href="classControle.html#a8439a8b9ac6c7d0ec7f052b742f8a24b">rotationsOfMotors</a> &lt;&lt; <a class="code" href="namespacedrone.html">drone</a>-&gt;H * (<a class="code" href="classControle.html#aacd18c8929cb59d7390a58d8dd68de6d">motorCommands</a>.cast&lt;<span class="keywordtype">float</span>&gt;()) + <a class="code" href="namespacedrone.html">drone</a>-&gt;h;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <a class="code" href="classControle.html#a05ff4316f906c1e57a27ef81d983fba8">u</a> = <a class="code" href="namespacedrone.html">drone</a>-&gt;J * <a class="code" href="classControle.html#a8439a8b9ac6c7d0ec7f052b742f8a24b">rotationsOfMotors</a>.array().square().matrix();</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;}</div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="classControle.html#a78e5f662130811f409342a706d5c0d2f">  118</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classControle.html#a78e5f662130811f409342a706d5c0d2f">Controle::controlLoop</a>() {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <span class="comment">// atualiza as matriz com os valores de q e wb</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <a class="code" href="namespacedrone.html">drone</a>-&gt;updateStateMatrices(<a class="code" href="classControle.html#aa30ed7f98e0eb42b27525a060ce3968c">negativeq0</a>);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <a class="code" href="classControle.html#add7378d03597a45ff09b2432d7739dfe">computeTranslationalControl</a>();</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <a class="code" href="classControle.html#a8ac9e933ce30f9c88ed421d4c0afcf99">computeRotationalTarget</a>();</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <a class="code" href="classControle.html#abcf05dcff157e963fd65c09d45261a8f">computeRotationalControl</a>();</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <a class="code" href="classControle.html#a42aee0a4592b84bd793c8be0fde0095b">virtualCommandToMotorCommand</a>();</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="preprocessor">#ifdef __GNUC__</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <span class="comment">//  Na aplicação embarcda esta etapana não eh necessária.</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <a class="code" href="classControle.html#a9b3718425d8602487eb9b14d6ee1c781">virtualCommandToMotorRpm</a>();</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;}</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="comment">// void Controle::computeRotationalTarget() {</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="comment">//   // integra a velocidade $psi</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="comment">//   // psi = oldPsi + drone-&gt;dt * dpsi;</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="comment">//   /* Compute quaternion alvos*/</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="comment">//   Eigen::Matrix3f _m;</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="comment">//   _m.col(2) = -ut.col(index_alt).normalized();</span></div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="comment">//   Eigen::Vector3f x_c{cosf(psi), sinf(psi), 0.0f};</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="comment">//   // Eigen::Vector3f y_c{-sinf(psi), cosf(psi), 0.0f};</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="comment">//   _m.col(1) = (_m.col(2).cross(x_c)).normalized();</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="comment">//   _m.col(0) = (_m.col(1).cross(_m.col(2)));</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="comment">//   ekf::computeQuaternionFromMCDMarkley(_m, qa.col(index_alt));</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="comment">//   if (isless(qa.col(index_alt).dot(qa.col(1 - index_alt)), 0.0f)) {</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="comment">//     qa.col(index_alt) *= -1.0f;</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="comment">//   }</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="comment">//   qa(0, index_alt) &lt; 0.0f ? negativeq0 = true : negativeq0 = false;</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="comment">//   wa = 2.0f / drone-&gt;dt * (ekf::Q_l(qa.col(1 - index_alt))).transpose() *</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="comment">//        qa.col(index_alt);</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="comment">//   // qa.block&lt;3, 1&gt;(1, index_alt).dot(wa) &gt; 0.0f ? negativeq0 = true</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="comment">//   //                                             : negativeq0 = false;</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="comment">//   // printf(&quot;%f\n&quot;, qa.block&lt;3, 1&gt;(1, index_alt).dot(wa));</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="comment">//   /* Compute velociades angulares alvos*/</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="comment">//   dpsi = (psi - oldPsi) / drone-&gt;dt;</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="comment">//   //</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="comment">//   omega_dif_flat(2) = dpsi * _m(2, 2);</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="comment">//   oldPsi = psi;</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="comment">//   Eigen::Vector3f _wz =</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="comment">//       1.0f / u(0) * ekf::computeVectorProjection(j, _m.col(2));</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="comment">//   omega_dif_flat(0) = -_wz.dot(_m.col(1));</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="comment">//   omega_dif_flat(1) = _wz.dot(_m.col(0));</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="comment">// }</span></div>
+<div class="ttc" id="aControle_8h_html"><div class="ttname"><a href="Controle_8h.html">Controle.h</a></div></div>
+<div class="ttc" id="aControle_8h_html_a92102ea2f9ade1cc1a6dcce355db1677"><div class="ttname"><a href="Controle_8h.html#a92102ea2f9ade1cc1a6dcce355db1677">PRINT_MAT</a></div><div class="ttdeci">#define PRINT_MAT(X)</div><div class="ttdef"><b>Definition:</b> <a href="Controle_8h_source.html#l00018">Controle.h:18</a></div></div>
+<div class="ttc" id="aclassControle_html_a05ff4316f906c1e57a27ef81d983fba8"><div class="ttname"><a href="classControle.html#a05ff4316f906c1e57a27ef81d983fba8">Controle::u</a></div><div class="ttdeci">Eigen::Vector4f u</div><div class="ttdef"><b>Definition:</b> <a href="Controle_8h_source.html#l00077">Controle.h:77</a></div></div>
+<div class="ttc" id="aclassControle_html_a065d96653d6891c3e9aeffd5d202200d"><div class="ttname"><a href="classControle.html#a065d96653d6891c3e9aeffd5d202200d">Controle::qa</a></div><div class="ttdeci">Eigen::MatrixXf qa</div><div class="ttdef"><b>Definition:</b> <a href="Controle_8h_source.html#l00041">Controle.h:41</a></div></div>
+<div class="ttc" id="aclassControle_html_a217f8f02b01c63725bc14f7679412fc0"><div class="ttname"><a href="classControle.html#a217f8f02b01c63725bc14f7679412fc0">Controle::Qt</a></div><div class="ttdeci">Eigen::MatrixXf Qt</div><div class="ttdef"><b>Definition:</b> <a href="Controle_8h_source.html#l00058">Controle.h:58</a></div></div>
+<div class="ttc" id="aclassControle_html_a299b06de76fde5b6eb7e47a4a45938bb"><div class="ttname"><a href="classControle.html#a299b06de76fde5b6eb7e47a4a45938bb">Controle::Qr</a></div><div class="ttdeci">Eigen::MatrixXf Qr</div><div class="ttdef"><b>Definition:</b> <a href="Controle_8h_source.html#l00065">Controle.h:65</a></div></div>
+<div class="ttc" id="aclassControle_html_a3e4c231b2af8c3c96550cd022d410c83"><div class="ttname"><a href="classControle.html#a3e4c231b2af8c3c96550cd022d410c83">Controle::qe</a></div><div class="ttdeci">Eigen::Vector4f qe</div><div class="ttdef"><b>Definition:</b> <a href="Controle_8h_source.html#l00042">Controle.h:42</a></div></div>
+<div class="ttc" id="aclassControle_html_a42aee0a4592b84bd793c8be0fde0095b"><div class="ttname"><a href="classControle.html#a42aee0a4592b84bd793c8be0fde0095b">Controle::virtualCommandToMotorCommand</a></div><div class="ttdeci">void virtualCommandToMotorCommand()</div><div class="ttdef"><b>Definition:</b> <a href="Controle_8cpp_source.html#l00102">Controle.cpp:102</a></div></div>
+<div class="ttc" id="aclassControle_html_a442eb8225f58938b2a9a5308895e1d18"><div class="ttname"><a href="classControle.html#a442eb8225f58938b2a9a5308895e1d18">Controle::Rt</a></div><div class="ttdeci">Eigen::MatrixXf Rt</div><div class="ttdef"><b>Definition:</b> <a href="Controle_8h_source.html#l00056">Controle.h:56</a></div></div>
+<div class="ttc" id="aclassControle_html_a4fc1f7f2b69a021f4bb433daada38430"><div class="ttname"><a href="classControle.html#a4fc1f7f2b69a021f4bb433daada38430">Controle::index_alt</a></div><div class="ttdeci">uint8_t index_alt</div><div class="ttdef"><b>Definition:</b> <a href="Controle_8h_source.html#l00033">Controle.h:33</a></div></div>
+<div class="ttc" id="aclassControle_html_a51cecade068048c7a97a9dd4cb6a75b8"><div class="ttname"><a href="classControle.html#a51cecade068048c7a97a9dd4cb6a75b8">Controle::wa</a></div><div class="ttdeci">Eigen::Vector3f wa</div><div class="ttdef"><b>Definition:</b> <a href="Controle_8h_source.html#l00044">Controle.h:44</a></div></div>
+<div class="ttc" id="aclassControle_html_a5322dd0d474b5f5f92dceda8266c8cfd"><div class="ttname"><a href="classControle.html#a5322dd0d474b5f5f92dceda8266c8cfd">Controle::Rr</a></div><div class="ttdeci">Eigen::MatrixXf Rr</div><div class="ttdef"><b>Definition:</b> <a href="Controle_8h_source.html#l00061">Controle.h:61</a></div></div>
+<div class="ttc" id="aclassControle_html_a78e5f662130811f409342a706d5c0d2f"><div class="ttname"><a href="classControle.html#a78e5f662130811f409342a706d5c0d2f">Controle::controlLoop</a></div><div class="ttdeci">void controlLoop()</div><div class="ttdef"><b>Definition:</b> <a href="Controle_8cpp_source.html#l00118">Controle.cpp:118</a></div></div>
+<div class="ttc" id="aclassControle_html_a7b4f1db8c2182de9f1999819aace78e3"><div class="ttname"><a href="classControle.html#a7b4f1db8c2182de9f1999819aace78e3">Controle::r</a></div><div class="ttdeci">Eigen::Vector3f r</div><div class="ttdef"><b>Definition:</b> <a href="Controle_8h_source.html#l00039">Controle.h:39</a></div></div>
+<div class="ttc" id="aclassControle_html_a822f7e0d38f422c6097e2126ed9a9ec9"><div class="ttname"><a href="classControle.html#a822f7e0d38f422c6097e2126ed9a9ec9">Controle::Lt</a></div><div class="ttdeci">Eigen::MatrixXf Lt</div><div class="ttdef"><b>Definition:</b> <a href="Controle_8h_source.html#l00053">Controle.h:53</a></div></div>
+<div class="ttc" id="aclassControle_html_a8439a8b9ac6c7d0ec7f052b742f8a24b"><div class="ttname"><a href="classControle.html#a8439a8b9ac6c7d0ec7f052b742f8a24b">Controle::rotationsOfMotors</a></div><div class="ttdeci">Eigen::Vector4f rotationsOfMotors</div><div class="ttdef"><b>Definition:</b> <a href="Controle_8h_source.html#l00081">Controle.h:81</a></div></div>
+<div class="ttc" id="aclassControle_html_a8ac9e933ce30f9c88ed421d4c0afcf99"><div class="ttname"><a href="classControle.html#a8ac9e933ce30f9c88ed421d4c0afcf99">Controle::computeRotationalTarget</a></div><div class="ttdeci">void computeRotationalTarget()</div><div class="ttdef"><b>Definition:</b> <a href="Controle_8cpp_source.html#l00051">Controle.cpp:51</a></div></div>
+<div class="ttc" id="aclassControle_html_a913b2b49e44d1b633b55d2d95413b259"><div class="ttname"><a href="classControle.html#a913b2b49e44d1b633b55d2d95413b259">Controle::maximalDigitalCommand</a></div><div class="ttdeci">int maximalDigitalCommand</div><div class="ttdef"><b>Definition:</b> <a href="Controle_8h_source.html#l00031">Controle.h:31</a></div></div>
+<div class="ttc" id="aclassControle_html_a9b3718425d8602487eb9b14d6ee1c781"><div class="ttname"><a href="classControle.html#a9b3718425d8602487eb9b14d6ee1c781">Controle::virtualCommandToMotorRpm</a></div><div class="ttdeci">void virtualCommandToMotorRpm()</div><div class="ttdef"><b>Definition:</b> <a href="Controle_8cpp_source.html#l00110">Controle.cpp:110</a></div></div>
+<div class="ttc" id="aclassControle_html_a9fa6356305a7fa27ea7b9dd5ebf620c9"><div class="ttname"><a href="classControle.html#a9fa6356305a7fa27ea7b9dd5ebf620c9">Controle::Ls_G</a></div><div class="ttdeci">Eigen::MatrixXf Ls_G</div><div class="ttdef"><b>Definition:</b> <a href="Controle_8h_source.html#l00054">Controle.h:54</a></div></div>
+<div class="ttc" id="aclassControle_html_aa30ed7f98e0eb42b27525a060ce3968c"><div class="ttname"><a href="classControle.html#aa30ed7f98e0eb42b27525a060ce3968c">Controle::negativeq0</a></div><div class="ttdeci">bool negativeq0</div><div class="ttdef"><b>Definition:</b> <a href="Controle_8h_source.html#l00091">Controle.h:91</a></div></div>
+<div class="ttc" id="aclassControle_html_aa873dca8a6cf31541df846aa5cbe7a61"><div class="ttname"><a href="classControle.html#aa873dca8a6cf31541df846aa5cbe7a61">Controle::psi</a></div><div class="ttdeci">float psi</div><div class="ttdef"><b>Definition:</b> <a href="Controle_8h_source.html#l00048">Controle.h:48</a></div></div>
+<div class="ttc" id="aclassControle_html_aacd18c8929cb59d7390a58d8dd68de6d"><div class="ttname"><a href="classControle.html#aacd18c8929cb59d7390a58d8dd68de6d">Controle::motorCommands</a></div><div class="ttdeci">Eigen::Vector4i motorCommands</div><div class="ttdef"><b>Definition:</b> <a href="Controle_8h_source.html#l00079">Controle.h:79</a></div></div>
+<div class="ttc" id="aclassControle_html_abbe044aad705ef7d663c45275948fd12"><div class="ttname"><a href="classControle.html#abbe044aad705ef7d663c45275948fd12">Controle::Controle</a></div><div class="ttdeci">Controle()</div><div class="ttdef"><b>Definition:</b> <a href="Controle_8cpp_source.html#l00014">Controle.cpp:14</a></div></div>
+<div class="ttc" id="aclassControle_html_abcf05dcff157e963fd65c09d45261a8f"><div class="ttname"><a href="classControle.html#abcf05dcff157e963fd65c09d45261a8f">Controle::computeRotationalControl</a></div><div class="ttdeci">void computeRotationalControl()</div><div class="ttdef"><b>Definition:</b> <a href="Controle_8cpp_source.html#l00084">Controle.cpp:84</a></div></div>
+<div class="ttc" id="aclassControle_html_abea037d2953202894021efd9e5c4fcaf"><div class="ttname"><a href="classControle.html#abea037d2953202894021efd9e5c4fcaf">Controle::rI</a></div><div class="ttdeci">Eigen::Vector3f rI</div><div class="ttdef"><b>Definition:</b> <a href="Controle_8h_source.html#l00037">Controle.h:37</a></div></div>
+<div class="ttc" id="aclassControle_html_ad418683f52bf07661b72e9fbf463ecd1"><div class="ttname"><a href="classControle.html#ad418683f52bf07661b72e9fbf463ecd1">Controle::ut</a></div><div class="ttdeci">Eigen::Vector3f ut</div><div class="ttdef"><b>Definition:</b> <a href="Controle_8h_source.html#l00071">Controle.h:71</a></div></div>
+<div class="ttc" id="aclassControle_html_ad67e192b12bfba4d5a68ee59870863b2"><div class="ttname"><a href="classControle.html#ad67e192b12bfba4d5a68ee59870863b2">Controle::sdre</a></div><div class="ttdeci">Sdre * sdre</div><div class="ttdef"><b>Definition:</b> <a href="Controle_8h_source.html#l00035">Controle.h:35</a></div></div>
+<div class="ttc" id="aclassControle_html_add7378d03597a45ff09b2432d7739dfe"><div class="ttname"><a href="classControle.html#add7378d03597a45ff09b2432d7739dfe">Controle::computeTranslationalControl</a></div><div class="ttdeci">void computeTranslationalControl()</div><div class="ttdef"><b>Definition:</b> <a href="Controle_8cpp_source.html#l00041">Controle.cpp:41</a></div></div>
+<div class="ttc" id="aclassControle_html_adf6b85a6ab34600ac480a5cf9c4c1f8e"><div class="ttname"><a href="classControle.html#adf6b85a6ab34600ac480a5cf9c4c1f8e">Controle::minimalDigitalCommand</a></div><div class="ttdeci">int minimalDigitalCommand</div><div class="ttdef"><b>Definition:</b> <a href="Controle_8h_source.html#l00030">Controle.h:30</a></div></div>
+<div class="ttc" id="aclassControle_html_ae08c605ba3028486392d9f5aa2b2142b"><div class="ttname"><a href="classControle.html#ae08c605ba3028486392d9f5aa2b2142b">Controle::gravidade</a></div><div class="ttdeci">float gravidade</div><div class="ttdef"><b>Definition:</b> <a href="Controle_8h_source.html#l00032">Controle.h:32</a></div></div>
+<div class="ttc" id="aclassDrone_html"><div class="ttname"><a href="classDrone.html">Drone</a></div><div class="ttdef"><b>Definition:</b> <a href="Drone_8h_source.html#l00022">Drone.h:22</a></div></div>
+<div class="ttc" id="aclassRiccati_html_aef6ba29bba94e293a8ea4c279b565164"><div class="ttname"><a href="classRiccati.html#aef6ba29bba94e293a8ea4c279b565164">Riccati::Ls</a></div><div class="ttdeci">Eigen::MatrixXf Ls</div><div class="ttdef"><b>Definition:</b> <a href="Riccati_8h_source.html#l00040">Riccati.h:40</a></div></div>
+<div class="ttc" id="aclassSdre_html"><div class="ttname"><a href="classSdre.html">Sdre</a></div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8h_source.html#l00020">Sdre.h:20</a></div></div>
+<div class="ttc" id="aclassSdre_html_a4848cfbce14035e6b3733a628de9e24f"><div class="ttname"><a href="classSdre.html#a4848cfbce14035e6b3733a628de9e24f">Sdre::closeLoopEig</a></div><div class="ttdeci">Eigen::MatrixXcf closeLoopEig()</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8cpp_source.html#l00051">Sdre.cpp:51</a></div></div>
+<div class="ttc" id="aclassSdre_html_a887dbd01f9f6846839114a4d5ff64102"><div class="ttname"><a href="classSdre.html#a887dbd01f9f6846839114a4d5ff64102">Sdre::~Sdre</a></div><div class="ttdeci">~Sdre()</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8cpp_source.html#l00025">Sdre.cpp:25</a></div></div>
+<div class="ttc" id="aclassSdre_html_aad912686f9a487dce4ea7e4875efd563"><div class="ttname"><a href="classSdre.html#aad912686f9a487dce4ea7e4875efd563">Sdre::L</a></div><div class="ttdeci">Eigen::MatrixXf L</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8h_source.html#l00035">Sdre.h:35</a></div></div>
+<div class="ttc" id="aclassSdre_html_ac29f58dd81643087f49ccbed42b794df"><div class="ttname"><a href="classSdre.html#ac29f58dd81643087f49ccbed42b794df">Sdre::ricObj</a></div><div class="ttdeci">Riccati * ricObj</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8h_source.html#l00029">Sdre.h:29</a></div></div>
+<div class="ttc" id="aclassSdre_html_ad244c5cc1e70a1b08e8e4d5655993d8b"><div class="ttname"><a href="classSdre.html#ad244c5cc1e70a1b08e8e4d5655993d8b">Sdre::G</a></div><div class="ttdeci">Eigen::MatrixXf G</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8h_source.html#l00039">Sdre.h:39</a></div></div>
+<div class="ttc" id="aclassSdre_html_af2f380ec3d018b60686e304ca7026846"><div class="ttname"><a href="classSdre.html#af2f380ec3d018b60686e304ca7026846">Sdre::updateControl</a></div><div class="ttdeci">bool updateControl()</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8cpp_source.html#l00030">Sdre.cpp:30</a></div></div>
+<div class="ttc" id="anamespacedrone_html"><div class="ttname"><a href="namespacedrone.html">drone</a></div><div class="ttdef"><b>Definition:</b> <a href="drone_8py_source.html#l00001">drone.py:1</a></div></div>
+<div class="ttc" id="anamespaceekf_html_a34993a331b6837e5274d556e4f0a1bea"><div class="ttname"><a href="namespaceekf.html#a34993a331b6837e5274d556e4f0a1bea">ekf::Q_l</a></div><div class="ttdeci">Eigen::MatrixXf Q_l(const Eigen::Ref&lt; Eigen::Vector4f &gt; &amp;q)</div><div class="ttdef"><b>Definition:</b> <a href="GRUPO__QUAT_8cpp_source.html#l00045">GRUPO_QUAT.cpp:45</a></div></div>
+<div class="ttc" id="anamespaceekf_html_a8177897fe9b962d8e0927a913fc36242"><div class="ttname"><a href="namespaceekf.html#a8177897fe9b962d8e0927a913fc36242">ekf::S_l</a></div><div class="ttdeci">Eigen::Matrix4f S_l(const Eigen::Ref&lt; Eigen::Vector4f &gt; &amp;q)</div><div class="ttdoc">Calcula a Matriz Lefth-Quaternion a partir do quaternion q.</div><div class="ttdef"><b>Definition:</b> <a href="GRUPO__QUAT_8cpp_source.html#l00090">GRUPO_QUAT.cpp:90</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

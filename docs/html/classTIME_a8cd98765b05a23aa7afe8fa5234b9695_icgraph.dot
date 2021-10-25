@@ -1,0 +1,15 @@
+digraph "TIME::begin"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  rankdir="RL";
+  Node1 [label="TIME::begin",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node2 [label="ekf::EKF::begin",height=0.2,width=0.4,color="black",URL="$classekf_1_1EKF.html#a4a6998123529ab0d0844ad21419fc895",tooltip="Inicializacao do filtro de Kalman."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node3 [label="setup",height=0.2,width=0.4,color="black",URL="$main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node4 [label="TIME::TIME",height=0.2,width=0.4,color="black",URL="$classTIME.html#a4c5fe33dea0e598fd2e1b0dd8073dff3",tooltip="Instância da classe Time."];
+}

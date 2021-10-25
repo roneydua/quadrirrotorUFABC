@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Quadrirrotor: Código-Fonte de lib/RPM/rpm.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Quadrirrotor
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Busca','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_07959693ce74aed3e838ce3cb441c741.html">RPM</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">rpm.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="rpm_8h.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;driver/pcnt.h&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;Arduino.h&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classRpm.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="classRpm.html">Rpm</a> {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="comment">// Rpm(gpio_num_t sensor, pcnt_unit_t pcnt_unit = PCNT_UNIT_0,</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="comment">//     uint32_t sample_period_millisecond = 1000, uint8_t ciclos_por_volta =</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="comment">//     1);</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <a class="code" href="classRpm.html#a121340fc34d14d36ec48bef0b38909f1">Rpm</a>(gpio_num_t <a class="code" href="classRpm.html#a1fb0f83d82726133d5814adb6e06d0bf">sensor</a>, pcnt_unit_t <a class="code" href="classRpm.html#a0683829851e4011132c048b20df3d73a">pcnt_unit</a> = PCNT_UNIT_0,</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;      uint8_t <a class="code" href="classRpm.html#ae7f22ed32ee4e3c1242fd7ff2895e883">ciclos_por_volta</a> = 1);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classRpm.html#ad84394fa85418225c8a3b0f82110bc09">   22</a></span>&#160;  int16_t <a class="code" href="classRpm.html#ad84394fa85418225c8a3b0f82110bc09">rpm</a> = 2;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classRpm.html#acdcf8286b888e4ffd0aa41d1f37c5b15">update_rpm</a>();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="comment">// uint64_t get_pulses();</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classRpm.html#ae7f22ed32ee4e3c1242fd7ff2895e883">   25</a></span>&#160;  int8_t <a class="code" href="classRpm.html#ae7f22ed32ee4e3c1242fd7ff2895e883">ciclos_por_volta</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classRpm.html#a5e8240e66073f461ae884a08c6be84c5">   26</a></span>&#160;  <span class="keyword">const</span> int16_t <a class="code" href="classRpm.html#a5e8240e66073f461ae884a08c6be84c5">MAX_H_LIM</a> =</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;      28 + 1;          <span class="comment">// Numero maximo de pulsos para chamar a interrupcao</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classRpm.html#a3e22a7563c57f2eb1f5df770e58351fb">   28</a></span>&#160;  uint32_t <a class="code" href="classRpm.html#a3e22a7563c57f2eb1f5df770e58351fb">rpm_factor</a>; <span class="comment">// 1000000 * (MAX_H_LIM / ciclos_por_volta)</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classRpm.html#a940dfab8b4369e418b8afc1627d74d2b">restart_conter</a>();</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classRpm.html#a0683829851e4011132c048b20df3d73a">   30</a></span>&#160;  pcnt_unit_t <a class="code" href="classRpm.html#a0683829851e4011132c048b20df3d73a">pcnt_unit</a>; <span class="comment">// numero da contadora de pulso</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classRpm.html#aec0d7e9e181fc5eaa546bbf7378811dd">   32</a></span>&#160;  int16_t <a class="code" href="classRpm.html#aec0d7e9e181fc5eaa546bbf7378811dd">pulses</a> = 0;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classRpm.html#ae4aa3e158ba93af30da3e1353bb3959f">get_pulses</a>();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classRpm.html#a1fb0f83d82726133d5814adb6e06d0bf">   36</a></span>&#160;  gpio_num_t <a class="code" href="classRpm.html#a1fb0f83d82726133d5814adb6e06d0bf">sensor</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classRpm.html#ac6a52231cd6967bd6c565615638cc50c">init</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="comment">// float sample_periode_second_normalized_per_cicle;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="comment">// this array stores the last two get_time</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classRpm.html#ac44e73f7678c35183e856295c2e7eceb">   40</a></span>&#160;  uint64_t <a class="code" href="classRpm.html#ac44e73f7678c35183e856295c2e7eceb">time_array</a>[2] = {};</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classRpm.html#a57664781b6348e2a781ff631a5a258d1">   41</a></span>&#160;  uint8_t <a class="code" href="classRpm.html#a57664781b6348e2a781ff631a5a258d1">index_time_array</a> = 0;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classRpm.html#a752569e792e4187bf57ab7d010157413">   42</a></span>&#160;  uint32_t <a class="code" href="classRpm.html#a752569e792e4187bf57ab7d010157413">dt</a> = 1000000;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;};</div>
+<div class="ttc" id="aclassRpm_html"><div class="ttname"><a href="classRpm.html">Rpm</a></div><div class="ttdef"><b>Definition:</b> <a href="rpm_8h_source.html#l00013">rpm.h:13</a></div></div>
+<div class="ttc" id="aclassRpm_html_a0683829851e4011132c048b20df3d73a"><div class="ttname"><a href="classRpm.html#a0683829851e4011132c048b20df3d73a">Rpm::pcnt_unit</a></div><div class="ttdeci">pcnt_unit_t pcnt_unit</div><div class="ttdef"><b>Definition:</b> <a href="rpm_8h_source.html#l00030">rpm.h:30</a></div></div>
+<div class="ttc" id="aclassRpm_html_a121340fc34d14d36ec48bef0b38909f1"><div class="ttname"><a href="classRpm.html#a121340fc34d14d36ec48bef0b38909f1">Rpm::Rpm</a></div><div class="ttdeci">Rpm(gpio_num_t sensor, pcnt_unit_t pcnt_unit=PCNT_UNIT_0, uint8_t ciclos_por_volta=1)</div><div class="ttdef"><b>Definition:</b> <a href="rpm_8cpp_source.html#l00021">rpm.cpp:21</a></div></div>
+<div class="ttc" id="aclassRpm_html_a1fb0f83d82726133d5814adb6e06d0bf"><div class="ttname"><a href="classRpm.html#a1fb0f83d82726133d5814adb6e06d0bf">Rpm::sensor</a></div><div class="ttdeci">gpio_num_t sensor</div><div class="ttdef"><b>Definition:</b> <a href="rpm_8h_source.html#l00036">rpm.h:36</a></div></div>
+<div class="ttc" id="aclassRpm_html_a3e22a7563c57f2eb1f5df770e58351fb"><div class="ttname"><a href="classRpm.html#a3e22a7563c57f2eb1f5df770e58351fb">Rpm::rpm_factor</a></div><div class="ttdeci">uint32_t rpm_factor</div><div class="ttdef"><b>Definition:</b> <a href="rpm_8h_source.html#l00028">rpm.h:28</a></div></div>
+<div class="ttc" id="aclassRpm_html_a57664781b6348e2a781ff631a5a258d1"><div class="ttname"><a href="classRpm.html#a57664781b6348e2a781ff631a5a258d1">Rpm::index_time_array</a></div><div class="ttdeci">uint8_t index_time_array</div><div class="ttdef"><b>Definition:</b> <a href="rpm_8h_source.html#l00041">rpm.h:41</a></div></div>
+<div class="ttc" id="aclassRpm_html_a5e8240e66073f461ae884a08c6be84c5"><div class="ttname"><a href="classRpm.html#a5e8240e66073f461ae884a08c6be84c5">Rpm::MAX_H_LIM</a></div><div class="ttdeci">const int16_t MAX_H_LIM</div><div class="ttdef"><b>Definition:</b> <a href="rpm_8h_source.html#l00026">rpm.h:26</a></div></div>
+<div class="ttc" id="aclassRpm_html_a752569e792e4187bf57ab7d010157413"><div class="ttname"><a href="classRpm.html#a752569e792e4187bf57ab7d010157413">Rpm::dt</a></div><div class="ttdeci">uint32_t dt</div><div class="ttdef"><b>Definition:</b> <a href="rpm_8h_source.html#l00042">rpm.h:42</a></div></div>
+<div class="ttc" id="aclassRpm_html_a940dfab8b4369e418b8afc1627d74d2b"><div class="ttname"><a href="classRpm.html#a940dfab8b4369e418b8afc1627d74d2b">Rpm::restart_conter</a></div><div class="ttdeci">void restart_conter()</div><div class="ttdef"><b>Definition:</b> <a href="rpm_8cpp_source.html#l00058">rpm.cpp:58</a></div></div>
+<div class="ttc" id="aclassRpm_html_ac44e73f7678c35183e856295c2e7eceb"><div class="ttname"><a href="classRpm.html#ac44e73f7678c35183e856295c2e7eceb">Rpm::time_array</a></div><div class="ttdeci">uint64_t time_array[2]</div><div class="ttdef"><b>Definition:</b> <a href="rpm_8h_source.html#l00040">rpm.h:40</a></div></div>
+<div class="ttc" id="aclassRpm_html_ac6a52231cd6967bd6c565615638cc50c"><div class="ttname"><a href="classRpm.html#ac6a52231cd6967bd6c565615638cc50c">Rpm::init</a></div><div class="ttdeci">void init()</div><div class="ttdef"><b>Definition:</b> <a href="rpm_8cpp_source.html#l00031">rpm.cpp:31</a></div></div>
+<div class="ttc" id="aclassRpm_html_acdcf8286b888e4ffd0aa41d1f37c5b15"><div class="ttname"><a href="classRpm.html#acdcf8286b888e4ffd0aa41d1f37c5b15">Rpm::update_rpm</a></div><div class="ttdeci">void update_rpm()</div><div class="ttdef"><b>Definition:</b> <a href="rpm_8cpp_source.html#l00065">rpm.cpp:65</a></div></div>
+<div class="ttc" id="aclassRpm_html_ad84394fa85418225c8a3b0f82110bc09"><div class="ttname"><a href="classRpm.html#ad84394fa85418225c8a3b0f82110bc09">Rpm::rpm</a></div><div class="ttdeci">int16_t rpm</div><div class="ttdef"><b>Definition:</b> <a href="rpm_8h_source.html#l00022">rpm.h:22</a></div></div>
+<div class="ttc" id="aclassRpm_html_ae4aa3e158ba93af30da3e1353bb3959f"><div class="ttname"><a href="classRpm.html#ae4aa3e158ba93af30da3e1353bb3959f">Rpm::get_pulses</a></div><div class="ttdeci">void get_pulses()</div><div class="ttdef"><b>Definition:</b> <a href="rpm_8cpp_source.html#l00072">rpm.cpp:72</a></div></div>
+<div class="ttc" id="aclassRpm_html_ae7f22ed32ee4e3c1242fd7ff2895e883"><div class="ttname"><a href="classRpm.html#ae7f22ed32ee4e3c1242fd7ff2895e883">Rpm::ciclos_por_volta</a></div><div class="ttdeci">int8_t ciclos_por_volta</div><div class="ttdef"><b>Definition:</b> <a href="rpm_8h_source.html#l00025">rpm.h:25</a></div></div>
+<div class="ttc" id="aclassRpm_html_aec0d7e9e181fc5eaa546bbf7378811dd"><div class="ttname"><a href="classRpm.html#aec0d7e9e181fc5eaa546bbf7378811dd">Rpm::pulses</a></div><div class="ttdeci">int16_t pulses</div><div class="ttdef"><b>Definition:</b> <a href="rpm_8h_source.html#l00032">rpm.h:32</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

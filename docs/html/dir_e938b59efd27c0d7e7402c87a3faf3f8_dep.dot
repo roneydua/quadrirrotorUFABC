@@ -1,0 +1,12 @@
+digraph "lib/DRONE" {
+  bgcolor=transparent;
+  compound=true
+  node [ fontsize="8", fontname="DejaVuSansMono"];
+  edge [ labelfontsize="8", labelfontname="DejaVuSansMono"];
+  subgraph clusterdir_97aefd0d527b934f1d99a682da8fe6a9 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="lib" fontname="DejaVuSansMono", fontsize="8", URL="dir_97aefd0d527b934f1d99a682da8fe6a9.html"]
+  dir_12ce51c2f27d7b7c42f475577e8e188a [shape=box label="GRUPO_QUAT" URL="dir_12ce51c2f27d7b7c42f475577e8e188a.html"];
+  dir_e938b59efd27c0d7e7402c87a3faf3f8 [shape=box, label="DRONE", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_e938b59efd27c0d7e7402c87a3faf3f8.html"];
+  }
+  dir_e938b59efd27c0d7e7402c87a3faf3f8->dir_12ce51c2f27d7b7c42f475577e8e188a [headlabel="1", labeldistance=1.5 headhref="dir_000003_000005.html"];
+}

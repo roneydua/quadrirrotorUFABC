@@ -1,0 +1,11 @@
+digraph "TIME::TIME"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  rankdir="LR";
+  Node1 [label="TIME::TIME",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Instância da classe Time."];
+  Node1 -> Node2 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node2 [label="TIME::begin",height=0.2,width=0.4,color="black",URL="$classTIME.html#a8cd98765b05a23aa7afe8fa5234b9695",tooltip=" "];
+}

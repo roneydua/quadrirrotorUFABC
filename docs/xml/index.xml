@@ -1,0 +1,695 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compound refid="classAQUA" kind="class"><name>AQUA</name>
+    <member refid="classAQUA_1a288e646d31498e19d5ec68bcf6a12272" kind="variable"><name>qAcc</name></member>
+    <member refid="classAQUA_1ac3283e2209f2a22409bf701c6a381e85" kind="variable"><name>qMag</name></member>
+    <member refid="classAQUA_1a9da4c7495ececdfd099949b8ab7bd34d" kind="variable"><name>gravNormalized</name></member>
+    <member refid="classAQUA_1ad374de1bdc463f6fe179e1c7b16e64dc" kind="variable"><name>magNormalized</name></member>
+    <member refid="classAQUA_1a396021bd861ef78e46c78e5d72fe7cdd" kind="variable"><name>l</name></member>
+    <member refid="classAQUA_1a1c408cae6b02beae92ba10513fdb61e3" kind="variable"><name>qAQUA</name></member>
+    <member refid="classAQUA_1a372bd06e8afc3bd745c5bf97b56e1354" kind="variable"><name>accel</name></member>
+    <member refid="classAQUA_1a1025f41d2f30997822088d1982383019" kind="variable"><name>mag</name></member>
+    <member refid="classAQUA_1a38e150b644efa5f4c6f348de89da8934" kind="function"><name>AQUA</name></member>
+    <member refid="classAQUA_1a8809dddd7e4f74f3eb7bd1fc4a604ae4" kind="function"><name>begin</name></member>
+    <member refid="classAQUA_1ae3ddff89a969a0d2a3d3c675ed5b8065" kind="function"><name>computeAQUAQuaternion</name></member>
+    <member refid="classAQUA_1abdff34437c9c066d046a342525a01b52" kind="function"><name>computeQuaternionAccel</name></member>
+    <member refid="classAQUA_1a6adb2b857affb225b29fb91e6f6a7194" kind="function"><name>computeQuaternionMag</name></member>
+  </compound>
+  <compound refid="structBASE" kind="struct"><name>BASE</name>
+    <member refid="structBASE_1a76e12d3fb168dc1ce3f163c985382129" kind="variable"><name>lat</name></member>
+    <member refid="structBASE_1ac118821d55d84bee606a64e60098c7d4" kind="variable"><name>lon</name></member>
+    <member refid="structBASE_1a24573bad2d025ea1b7023eb23b59a46e" kind="variable"><name>hMSL</name></member>
+    <member refid="structBASE_1ab4bcf2a27b373820efe4f530a101704d" kind="variable"><name>Recef2ned</name></member>
+    <member refid="structBASE_1ae9e7517ae5f24d671f404d18c1d0b90b" kind="variable"><name>rECEF</name></member>
+  </compound>
+  <compound refid="classControle" kind="class"><name>Controle</name>
+    <member refid="classControle_1adf6b85a6ab34600ac480a5cf9c4c1f8e" kind="variable"><name>minimalDigitalCommand</name></member>
+    <member refid="classControle_1a913b2b49e44d1b633b55d2d95413b259" kind="variable"><name>maximalDigitalCommand</name></member>
+    <member refid="classControle_1ae08c605ba3028486392d9f5aa2b2142b" kind="variable"><name>gravidade</name></member>
+    <member refid="classControle_1a4fc1f7f2b69a021f4bb433daada38430" kind="variable"><name>index_alt</name></member>
+    <member refid="classControle_1a94276b811077802165f17603428e475e" kind="variable"><name>drone</name></member>
+    <member refid="classControle_1ad67e192b12bfba4d5a68ee59870863b2" kind="variable"><name>sdre</name></member>
+    <member refid="classControle_1abea037d2953202894021efd9e5c4fcaf" kind="variable"><name>rI</name></member>
+    <member refid="classControle_1a7b4f1db8c2182de9f1999819aace78e3" kind="variable"><name>r</name></member>
+    <member refid="classControle_1a065d96653d6891c3e9aeffd5d202200d" kind="variable"><name>qa</name></member>
+    <member refid="classControle_1a3e4c231b2af8c3c96550cd022d410c83" kind="variable"><name>qe</name></member>
+    <member refid="classControle_1a51cecade068048c7a97a9dd4cb6a75b8" kind="variable"><name>wa</name></member>
+    <member refid="classControle_1aa873dca8a6cf31541df846aa5cbe7a61" kind="variable"><name>psi</name></member>
+    <member refid="classControle_1a92913e2274b1d3b1fc0177425695b59d" kind="variable"><name>dpsi</name></member>
+    <member refid="classControle_1a822f7e0d38f422c6097e2126ed9a9ec9" kind="variable"><name>Lt</name></member>
+    <member refid="classControle_1a9fa6356305a7fa27ea7b9dd5ebf620c9" kind="variable"><name>Ls_G</name></member>
+    <member refid="classControle_1a442eb8225f58938b2a9a5308895e1d18" kind="variable"><name>Rt</name></member>
+    <member refid="classControle_1a217f8f02b01c63725bc14f7679412fc0" kind="variable"><name>Qt</name></member>
+    <member refid="classControle_1a5322dd0d474b5f5f92dceda8266c8cfd" kind="variable"><name>Rr</name></member>
+    <member refid="classControle_1a299b06de76fde5b6eb7e47a4a45938bb" kind="variable"><name>Qr</name></member>
+    <member refid="classControle_1ad418683f52bf07661b72e9fbf463ecd1" kind="variable"><name>ut</name></member>
+    <member refid="classControle_1a05ff4316f906c1e57a27ef81d983fba8" kind="variable"><name>u</name></member>
+    <member refid="classControle_1aacd18c8929cb59d7390a58d8dd68de6d" kind="variable"><name>motorCommands</name></member>
+    <member refid="classControle_1a8439a8b9ac6c7d0ec7f052b742f8a24b" kind="variable"><name>rotationsOfMotors</name></member>
+    <member refid="classControle_1a8bc7d1c142a5364ebdc15daf61a81900" kind="variable"><name>oldPsi</name></member>
+    <member refid="classControle_1aa30ed7f98e0eb42b27525a060ce3968c" kind="variable"><name>negativeq0</name></member>
+    <member refid="classControle_1abbe044aad705ef7d663c45275948fd12" kind="function"><name>Controle</name></member>
+    <member refid="classControle_1add7378d03597a45ff09b2432d7739dfe" kind="function"><name>computeTranslationalControl</name></member>
+    <member refid="classControle_1abcf05dcff157e963fd65c09d45261a8f" kind="function"><name>computeRotationalControl</name></member>
+    <member refid="classControle_1a8ac9e933ce30f9c88ed421d4c0afcf99" kind="function"><name>computeRotationalTarget</name></member>
+    <member refid="classControle_1a42aee0a4592b84bd793c8be0fde0095b" kind="function"><name>virtualCommandToMotorCommand</name></member>
+    <member refid="classControle_1a9b3718425d8602487eb9b14d6ee1c781" kind="function"><name>virtualCommandToMotorRpm</name></member>
+    <member refid="classControle_1a78e5f662130811f409342a706d5c0d2f" kind="function"><name>controlLoop</name></member>
+  </compound>
+  <compound refid="classDrone" kind="class"><name>Drone</name>
+    <member refid="classDrone_1aa44361841fbfc3ac45bed2cdfb598262" kind="variable"><name>L</name></member>
+    <member refid="classDrone_1ae68802ad8fe8bbb370a19326fd7b5aef" kind="variable"><name>half_dt</name></member>
+    <member refid="classDrone_1a30d56665a907276e7ca50ab3c75d730a" kind="variable"><name>J</name></member>
+    <member refid="classDrone_1adcfd685c1857b1b6b20984daac7e56e3" kind="variable"><name>Jinv</name></member>
+    <member refid="classDrone_1a0f5dde1e661b072ffd1dcd2cde690e2b" kind="variable"><name>dt</name></member>
+    <member refid="classDrone_1acc28d2a6d7fc4265e8ad012910b41add" kind="variable"><name>dx</name></member>
+    <member refid="classDrone_1ad04507c1b20ac5822461193ac819d929" kind="variable"><name>massa</name></member>
+    <member refid="classDrone_1a01882d591197d6978b479f0788ce01fc" kind="variable"><name>matrizInercia</name></member>
+    <member refid="classDrone_1a06cb6081fc81dd73b0fe9f9d68e5e8f7" kind="variable"><name>inverseMatrizInercia</name></member>
+    <member refid="classDrone_1a21bc2b617f8741c1733829d7498f610a" kind="variable"><name>p</name></member>
+    <member refid="classDrone_1a178db613c8b400ef949969d1ca5a5169" kind="variable"><name>v</name></member>
+    <member refid="classDrone_1a3d47c909c26ca68f771eb7ec0026e752" kind="variable"><name>q</name></member>
+    <member refid="classDrone_1a0b41e19233070e221d0eaa03ce213bf5" kind="variable"><name>w</name></member>
+    <member refid="classDrone_1a7441826ef17c5566c910dc76844fbde3" kind="variable"><name>matAT</name></member>
+    <member refid="classDrone_1aadb4722611d7c3bf7f397361f6cd208e" kind="variable"><name>matBT</name></member>
+    <member refid="classDrone_1ad10e4c0ff42b803d922bff24ff9a1710" kind="variable"><name>matAR</name></member>
+    <member refid="classDrone_1a8b19688fe7deefa69ab8a864cd5b6024" kind="variable"><name>matBR</name></member>
+    <member refid="classDrone_1ac6e19b1cde8263a3e9a96b965bdd71d7" kind="variable"><name>H</name></member>
+    <member refid="classDrone_1a4e3fa542ac32a6564c83adaf62cc34b3" kind="variable"><name>Hinv</name></member>
+    <member refid="classDrone_1adecfbf29f2f305ec0987c8742994d185" kind="variable"><name>h</name></member>
+    <member refid="classDrone_1aa715343de198585f9266431776d58784" kind="variable"><name>flagSDC</name></member>
+    <member refid="classDrone_1aad2198acbdcbc49c22173ad156ccab99" kind="function"><name>Drone</name></member>
+    <member refid="classDrone_1a1531c9d38e26bb12a8b650ba40d915ca" kind="function"><name>updateStateMatrices</name></member>
+    <member refid="classDrone_1a1f2103ef38b08c79aa88b3e790c16c5d" kind="function"><name>constructJ</name></member>
+  </compound>
+  <compound refid="classdrone_1_1Drone" kind="class"><name>drone::Drone</name>
+    <member refid="classdrone_1_1Drone_1aabc825782675cacf5cb90697307ffcda" kind="variable"><name>Ix</name></member>
+    <member refid="classdrone_1_1Drone_1a8b798f66003e45a5d247cc82fcc72e56" kind="variable"><name>Iy</name></member>
+    <member refid="classdrone_1_1Drone_1a9db59ee7bf789b5a95093b62f174c1bb" kind="variable"><name>Iz</name></member>
+    <member refid="classdrone_1_1Drone_1a943c21f6157d09063f82a66096b44c41" kind="variable"><name>kf</name></member>
+    <member refid="classdrone_1_1Drone_1af9c6bf08da282fc597d8254f1baaf712" kind="variable"><name>km</name></member>
+    <member refid="classdrone_1_1Drone_1a78f0f79a324e30e11d256be5606460dd" kind="variable"><name>b</name></member>
+    <member refid="classdrone_1_1Drone_1ae0e8a53e20ef086117887ff8620f4c27" kind="variable"><name>grav</name></member>
+    <member refid="classdrone_1_1Drone_1a3f9b2ff1babea99866d2e6c3247f99c5" kind="variable"><name>m</name></member>
+    <member refid="classdrone_1_1Drone_1a87dd118ef29eda628d846147cb2acc03" kind="variable"><name>omegaSquareMin</name></member>
+    <member refid="classdrone_1_1Drone_1afa9cda5efc38f9e83462d9ce4a7a0b48" kind="variable"><name>omegaSquareMax</name></member>
+    <member refid="classdrone_1_1Drone_1aac6da8f1354e10c00e27b024d71ffbeb" kind="variable"><name>q</name></member>
+    <member refid="classdrone_1_1Drone_1a53ec705858db58590204fd0078526c4c" kind="function"><name>__init__</name></member>
+    <member refid="classdrone_1_1Drone_1a76f6bdaa9ba1a10abd1b727c1681a2f1" kind="function"><name>updateStates</name></member>
+  </compound>
+  <compound refid="classekf_1_1EKF" kind="class"><name>ekf::EKF</name>
+    <member refid="classekf_1_1EKF_1a1aecb83d5af684f4f8637981089002b9" kind="variable"><name>DEG_TO_RAD_BY_10000000</name></member>
+    <member refid="classekf_1_1EKF_1abd8ccdb99191c1f3a7a5c03421f93d87" kind="variable"><name>nFull</name></member>
+    <member refid="classekf_1_1EKF_1ac02e28e5bd4b3e90d3ccb3dd1127e7b2" kind="variable"><name>pFull</name></member>
+    <member refid="classekf_1_1EKF_1a88f92d86fabe318656e5ba458bc2e042" kind="variable"><name>nAtitude</name></member>
+    <member refid="classekf_1_1EKF_1ad3a628fffe1f640b4968b8f6f8ef3b14" kind="variable"><name>pAtitude</name></member>
+    <member refid="classekf_1_1EKF_1acd0f4714eb8ba12355d529580e928439" kind="variable"><name>base</name></member>
+    <member refid="classekf_1_1EKF_1aee84ca91742c11dd89683930a58d59e3" kind="variable"><name>dt</name></member>
+    <member refid="classekf_1_1EKF_1a30d3adf68cc6ee599fec8fa45a697bbb" kind="variable"><name>accel</name></member>
+    <member refid="classekf_1_1EKF_1a440b83cfd38de4133d8071a158028c86" kind="variable"><name>navegationGravity</name></member>
+    <member refid="classekf_1_1EKF_1af990ea0dbcd3f286f04584ab663d08e6" kind="variable"><name>gyro</name></member>
+    <member refid="classekf_1_1EKF_1a3f84435c646a27ad0f922e5205c13eb3" kind="variable"><name>mag</name></member>
+    <member refid="classekf_1_1EKF_1a803ccbdd54bfbd96cccf57afa60578a9" kind="variable"><name>qObs</name></member>
+    <member refid="classekf_1_1EKF_1aa38bc83dfb656519cfcda0c0a589ef16" kind="variable"><name>q</name></member>
+    <member refid="classekf_1_1EKF_1adc3de40884689bb897ebe90979d6f28f" kind="variable"><name>euler</name></member>
+    <member refid="classekf_1_1EKF_1a833f15f8790f86633d8b02eb2fe3616e" kind="variable"><name>rNED</name></member>
+    <member refid="classekf_1_1EKF_1a649f7d975dc55413be50d8f1e6bc2559" kind="variable"><name>rNEDgps</name></member>
+    <member refid="classekf_1_1EKF_1a93f50b0576c3243487442a9f0934e038" kind="variable"><name>drNED</name></member>
+    <member refid="classekf_1_1EKF_1ad27f8aac391293234c9e21c02b944cc4" kind="variable"><name>drNEDgps</name></member>
+    <member refid="classekf_1_1EKF_1a7dbea0d7c0f7376e7391b6a6a99521b5" kind="variable"><name>ddr</name></member>
+    <member refid="classekf_1_1EKF_1a2f7f579eb38461f7396cca2a9a846bbb" kind="variable"><name>mcd</name></member>
+    <member refid="classekf_1_1EKF_1a8d016a5adf9aa5f33a8c9e1f7dd73592" kind="variable"><name>messageGPS</name></member>
+    <member refid="classekf_1_1EKF_1af019016496e0328e5d9ea3cb6462e52c" kind="variable"><name>p</name></member>
+    <member refid="classekf_1_1EKF_1ae4417522e93314005316a236b324f2a5" kind="variable"><name>n</name></member>
+    <member refid="classekf_1_1EKF_1a5d610d6e3174f24f9be38e7da3d44bc0" kind="variable"><name>sigma_giro_squared</name></member>
+    <member refid="classekf_1_1EKF_1a883bdaa556cb199f75216286386523c1" kind="variable"><name>sigma_bias_giro_squared</name></member>
+    <member refid="classekf_1_1EKF_1a32f1a9dbf7d18465284fb3517a1d9423" kind="variable"><name>sigma_acel_squared</name></member>
+    <member refid="classekf_1_1EKF_1a74da314972c8273b5ffe17078c6642e3" kind="variable"><name>sigma_bias_acel_squared</name></member>
+    <member refid="classekf_1_1EKF_1a2ea4005a93d82e6b448fdb4fd4e36dd1" kind="variable"><name>sigma_aqua_squared</name></member>
+    <member refid="classekf_1_1EKF_1af1d82a9698078624dd2e65c808126510" kind="variable"><name>sigma_vel_squared</name></member>
+    <member refid="classekf_1_1EKF_1a02c9e5ede2b47a773c2f59fb9cf9169c" kind="variable"><name>sigma_pos_squared</name></member>
+    <member refid="classekf_1_1EKF_1a0e5efc2e95419aaea976414f246a378a" kind="variable"><name>Q_k</name></member>
+    <member refid="classekf_1_1EKF_1ad55e1ba3736ea08721dec76f03dd9715" kind="variable"><name>R</name></member>
+    <member refid="classekf_1_1EKF_1aae2ea65c4362a5f798db195112fb094a" kind="variable"><name>mF</name></member>
+    <member refid="classekf_1_1EKF_1a78dd6de9d37bc221394db5e9cca2086f" kind="variable"><name>fi</name></member>
+    <member refid="classekf_1_1EKF_1a110201c01d9ce3c63a1de068e87be75d" kind="variable"><name>G</name></member>
+    <member refid="classekf_1_1EKF_1aec9a3a7de4a079cd1dd1baae26a7a6fc" kind="variable"><name>P</name></member>
+    <member refid="classekf_1_1EKF_1abd11bc2722fab1c582cc91a39372f2ac" kind="variable"><name>H</name></member>
+    <member refid="classekf_1_1EKF_1a87a29899f611c68db72263cc0be496c7" kind="variable"><name>K</name></member>
+    <member refid="classekf_1_1EKF_1ad1c353f958f3c41141c88339793745aa" kind="variable"><name>deltaChi</name></member>
+    <member refid="classekf_1_1EKF_1ae4be03b8440c0f1185141ecc359534df" kind="variable"><name>deltaYObs</name></member>
+    <member refid="classekf_1_1EKF_1a50b05a6fb2c055d9c37e44138a05b08e" kind="variable"><name>biasGyro</name></member>
+    <member refid="classekf_1_1EKF_1a1ac62c76df373623c4cfa0b2b37564db" kind="variable"><name>biasAccel</name></member>
+    <member refid="classekf_1_1EKF_1aea7bda69ce19f724930eb8c691272508" kind="function"><name>EKF</name></member>
+    <member refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" kind="function"><name>begin</name></member>
+    <member refid="classekf_1_1EKF_1a651814ff64d234394572e2e7c5703a43" kind="function"><name>loopEKF</name></member>
+  </compound>
+  <compound refid="classIBusBM" kind="class"><name>IBusBM</name>
+    <member refid="classIBusBM_1aed184764706c5dcb4b82ae4a53b917ec" kind="enum"><name>State</name></member>
+    <member refid="classIBusBM_1aed184764706c5dcb4b82ae4a53b917eca0c01e1a9f134347f73969aeba38df424" kind="enumvalue"><name>GET_LENGTH</name></member>
+    <member refid="classIBusBM_1aed184764706c5dcb4b82ae4a53b917eca4ed4c7f6e05b116601121d0bac402f42" kind="enumvalue"><name>GET_DATA</name></member>
+    <member refid="classIBusBM_1aed184764706c5dcb4b82ae4a53b917ecaa7f315ef3b8eab0e0f6abc1b3f25bcc0" kind="enumvalue"><name>GET_CHKSUML</name></member>
+    <member refid="classIBusBM_1aed184764706c5dcb4b82ae4a53b917ecaf7c395fada4d5074ad979c56cfde8ed0" kind="enumvalue"><name>GET_CHKSUMH</name></member>
+    <member refid="classIBusBM_1aed184764706c5dcb4b82ae4a53b917eca9c69e26c2830eb900cd5603714acd289" kind="enumvalue"><name>DISCARD</name></member>
+    <member refid="classIBusBM_1ae980c3b427d1c12d93c2fc13322f7665" kind="variable"><name>cnt_poll</name></member>
+    <member refid="classIBusBM_1a4bf0677885cb0944adfc7725fffe0ccc" kind="variable"><name>cnt_sensor</name></member>
+    <member refid="classIBusBM_1a15332b57310d1cbca77180befc27cd99" kind="variable"><name>cnt_rec</name></member>
+    <member refid="classIBusBM_1a93d315b20e2ef3696db2123eedb1a5df" kind="variable"><name>PROTOCOL_LENGTH</name></member>
+    <member refid="classIBusBM_1ad79ec4b372325fcfb0fa542093250583" kind="variable"><name>PROTOCOL_OVERHEAD</name></member>
+    <member refid="classIBusBM_1a7432721ad94f78fc5df8fd3004e7b84b" kind="variable"><name>PROTOCOL_TIMEGAP</name></member>
+    <member refid="classIBusBM_1ac1d183fc712d8136da488fcc823715a1" kind="variable"><name>PROTOCOL_CHANNELS</name></member>
+    <member refid="classIBusBM_1a04af78a0dfdab275bdb2fa82253c8b49" kind="variable"><name>PROTOCOL_COMMAND40</name></member>
+    <member refid="classIBusBM_1a5a474b243c8a027b395314b052d283e7" kind="variable"><name>PROTOCOL_COMMAND_DISCOVER</name></member>
+    <member refid="classIBusBM_1a270b74b38e646b87402d4a2340187e20" kind="variable"><name>PROTOCOL_COMMAND_TYPE</name></member>
+    <member refid="classIBusBM_1af7d9b5d197f47071a8d6d8723cb14a72" kind="variable"><name>PROTOCOL_COMMAND_VALUE</name></member>
+    <member refid="classIBusBM_1abf1b1c4c0bac139f0d5f9cfb78d5f88f" kind="variable"><name>SENSORMAX</name></member>
+    <member refid="classIBusBM_1a2a316d2088ea51aeea5ce8c025687eef" kind="variable"><name>state</name></member>
+    <member refid="classIBusBM_1a00c0e49a0d4fcb8ac567b2e92bc74d3d" kind="variable"><name>stream</name></member>
+    <member refid="classIBusBM_1a20f49c47b7c40cb6f5bee2f3d4649fe3" kind="variable"><name>last</name></member>
+    <member refid="classIBusBM_1a5e950d8524d32e3adfad0a654a9e69d1" kind="variable"><name>buffer</name></member>
+    <member refid="classIBusBM_1a4a9932e9c78e976e9adb4ff09d9ed69a" kind="variable"><name>ptr</name></member>
+    <member refid="classIBusBM_1af10cf8a59adab541e055aaac1fa21cb8" kind="variable"><name>len</name></member>
+    <member refid="classIBusBM_1ac1f54297358da1bd0dcfe3af9eed31ea" kind="variable"><name>channel</name></member>
+    <member refid="classIBusBM_1a60daa234d83a024b0e626a85d80b7c6c" kind="variable"><name>chksum</name></member>
+    <member refid="classIBusBM_1a025b034376f9e774e70b74207d9ea9f0" kind="variable"><name>lchksum</name></member>
+    <member refid="classIBusBM_1a2f6eb7d18ab2dccf0a87c0bbf4c15dfc" kind="variable"><name>sensors</name></member>
+    <member refid="classIBusBM_1afd1a0be2e13c31156d32e242383915b5" kind="variable"><name>NumberSensors</name></member>
+    <member refid="classIBusBM_1a2308638e357b6a34e0752e9f7d6e2ae6" kind="variable"><name>IBusBMnext</name></member>
+    <member refid="classIBusBM_1afb01e4a762c8f575d8466fc8dadaa5cd" kind="function"><name>begin</name></member>
+    <member refid="classIBusBM_1af21822cffd62a1f2f8da19c407c00b94" kind="function"><name>readChannel</name></member>
+    <member refid="classIBusBM_1a126cc857adec1367f7264f27ae68a347" kind="function"><name>addSensor</name></member>
+    <member refid="classIBusBM_1acbd0bcad0529b872c72d4e7a49233460" kind="function"><name>setSensorMeasurement</name></member>
+    <member refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" kind="function"><name>loop</name></member>
+  </compound>
+  <compound refid="classIMU" kind="class"><name>IMU</name>
+    <member refid="classIMU_1aeb363437539137b5c1eabd3641d242d1" kind="enum"><name>GyroRange</name></member>
+    <member refid="classIMU_1aeb363437539137b5c1eabd3641d242d1a1726a676d603df0b5c73ff7f1fff00d3" kind="enumvalue"><name>GYRO_RANGE_250DPS</name></member>
+    <member refid="classIMU_1aeb363437539137b5c1eabd3641d242d1a8a24172a6bd08e9402c83af2f12bed57" kind="enumvalue"><name>GYRO_RANGE_500DPS</name></member>
+    <member refid="classIMU_1aeb363437539137b5c1eabd3641d242d1ac11c26d662eb1906caf70fb73d96e8bb" kind="enumvalue"><name>GYRO_RANGE_1000DPS</name></member>
+    <member refid="classIMU_1aeb363437539137b5c1eabd3641d242d1aa9e87e7d062d3bb23e1c9b5a1e85af11" kind="enumvalue"><name>GYRO_RANGE_2000DPS</name></member>
+    <member refid="classIMU_1acdbd8690acc2a34f12d568cb39486cc6" kind="enum"><name>AccelRange</name></member>
+    <member refid="classIMU_1acdbd8690acc2a34f12d568cb39486cc6a808bf1fd48b91e042cfde2d0fd570823" kind="enumvalue"><name>ACCEL_RANGE_2G</name></member>
+    <member refid="classIMU_1acdbd8690acc2a34f12d568cb39486cc6a4afca3881c874d1d4e0d28a21bfe926a" kind="enumvalue"><name>ACCEL_RANGE_4G</name></member>
+    <member refid="classIMU_1acdbd8690acc2a34f12d568cb39486cc6a19c2caa0c23242f9dfd88326f2922719" kind="enumvalue"><name>ACCEL_RANGE_8G</name></member>
+    <member refid="classIMU_1acdbd8690acc2a34f12d568cb39486cc6a5398002690dded81a155ebdf7baea27f" kind="enumvalue"><name>ACCEL_RANGE_16G</name></member>
+    <member refid="classIMU_1a90c4f91f60185430b763f152ecb39521" kind="enum"><name>DlpfBandwidth</name></member>
+    <member refid="classIMU_1a90c4f91f60185430b763f152ecb39521a461c657b4bc9c4f82936a9cb3b5ef54e" kind="enumvalue"><name>DLPF_BANDWIDTH_184HZ</name></member>
+    <member refid="classIMU_1a90c4f91f60185430b763f152ecb39521ac652b0fb4733da213152970ebc6ab53d" kind="enumvalue"><name>DLPF_BANDWIDTH_92HZ</name></member>
+    <member refid="classIMU_1a90c4f91f60185430b763f152ecb39521afcbbbba2e520cdd50dcb40da160137f0" kind="enumvalue"><name>DLPF_BANDWIDTH_41HZ</name></member>
+    <member refid="classIMU_1a90c4f91f60185430b763f152ecb39521a174ee7819d598dcbb0d29cf8d0f17e8f" kind="enumvalue"><name>DLPF_BANDWIDTH_20HZ</name></member>
+    <member refid="classIMU_1a90c4f91f60185430b763f152ecb39521a38fa7998dfeb640e0289bc7407c40285" kind="enumvalue"><name>DLPF_BANDWIDTH_10HZ</name></member>
+    <member refid="classIMU_1a90c4f91f60185430b763f152ecb39521a1d05af591f93fc300ae7ef2608c62f51" kind="enumvalue"><name>DLPF_BANDWIDTH_5HZ</name></member>
+    <member refid="classIMU_1a2c0603234e00be75c6c4249516ad2f3f" kind="enum"><name>LpAccelOdr</name></member>
+    <member refid="classIMU_1a2c0603234e00be75c6c4249516ad2f3fa075213b5e4f97307e699068a3a5a3477" kind="enumvalue"><name>LP_ACCEL_ODR_0_24HZ</name></member>
+    <member refid="classIMU_1a2c0603234e00be75c6c4249516ad2f3faf89517a8ecb4855f3234f4462b91c823" kind="enumvalue"><name>LP_ACCEL_ODR_0_49HZ</name></member>
+    <member refid="classIMU_1a2c0603234e00be75c6c4249516ad2f3fad02147081ed0eb82e65dd8752f44f888" kind="enumvalue"><name>LP_ACCEL_ODR_0_98HZ</name></member>
+    <member refid="classIMU_1a2c0603234e00be75c6c4249516ad2f3fa131f700c7f40e022a15fc0cfc0105402" kind="enumvalue"><name>LP_ACCEL_ODR_1_95HZ</name></member>
+    <member refid="classIMU_1a2c0603234e00be75c6c4249516ad2f3faf707c0714db95cadd2d4da425deb5711" kind="enumvalue"><name>LP_ACCEL_ODR_3_91HZ</name></member>
+    <member refid="classIMU_1a2c0603234e00be75c6c4249516ad2f3faf77d40ed8aeeb739022b877a82e34427" kind="enumvalue"><name>LP_ACCEL_ODR_7_81HZ</name></member>
+    <member refid="classIMU_1a2c0603234e00be75c6c4249516ad2f3fa96c09bd185599c742376c74188b15f06" kind="enumvalue"><name>LP_ACCEL_ODR_15_63HZ</name></member>
+    <member refid="classIMU_1a2c0603234e00be75c6c4249516ad2f3fabaa705a55660759564c56f323317aa0c" kind="enumvalue"><name>LP_ACCEL_ODR_31_25HZ</name></member>
+    <member refid="classIMU_1a2c0603234e00be75c6c4249516ad2f3fa6093b5c31fad290dc15497ba31181f8a" kind="enumvalue"><name>LP_ACCEL_ODR_62_50HZ</name></member>
+    <member refid="classIMU_1a2c0603234e00be75c6c4249516ad2f3faba9570866d4810bc609345c435edc2a8" kind="enumvalue"><name>LP_ACCEL_ODR_125HZ</name></member>
+    <member refid="classIMU_1a2c0603234e00be75c6c4249516ad2f3faf7e601fd99ca8179e3fec8aa3edb0dfa" kind="enumvalue"><name>LP_ACCEL_ODR_250HZ</name></member>
+    <member refid="classIMU_1a2c0603234e00be75c6c4249516ad2f3facad3564a280a8a7399dc664e68adefc3" kind="enumvalue"><name>LP_ACCEL_ODR_500HZ</name></member>
+    <member refid="classIMU_1a0efdfa77f452641689be4e9a4bae6a12" kind="variable"><name>_acel</name></member>
+    <member refid="classIMU_1a72d1d4fe1027a9b0d6eed394e18ea97b" kind="variable"><name>_gyro</name></member>
+    <member refid="classIMU_1a54e4834bdf8648b7ec11ca460b92facf" kind="variable"><name>_mag</name></member>
+    <member refid="classIMU_1ae628afbcc858c70ea5d36a13d59998f2" kind="variable"><name>magTemp</name></member>
+    <member refid="classIMU_1a23880868a20bc15879232b9ed3c1cbbd" kind="variable"><name>_t</name></member>
+    <member refid="classIMU_1a377a386f44cf1d85d31b4f2a6b1a43d1" kind="variable"><name>sFAccel</name></member>
+    <member refid="classIMU_1a9a145f45e2e08cae0f363747c5603bd1" kind="variable"><name>_biasAccel</name></member>
+    <member refid="classIMU_1a9d22cd7cb7bb93f2e04aa713aed73532" kind="variable"><name>_biasGyro</name></member>
+    <member refid="classIMU_1a3ba42ad7f598311689e5eccd75daa019" kind="variable"><name>_biasMag</name></member>
+    <member refid="classIMU_1af5d90aa5410529450fd31da2e1b1f296" kind="variable"><name>_sM</name></member>
+    <member refid="classIMU_1a18fe8e6be1b14c9e6c1b47d884dae375" kind="variable"><name>_i2c</name></member>
+    <member refid="classIMU_1a36ebf3acc2b8f819d6f08650ddd98ca3" kind="variable"><name>_buffer</name></member>
+    <member refid="classIMU_1a412a6ac9638ce35bc63f1eedc7e152de" kind="variable"><name>_axcounts</name></member>
+    <member refid="classIMU_1a43dd65a4322fcfe0b802c0440849d7d5" kind="variable"><name>_aycounts</name></member>
+    <member refid="classIMU_1abfa89c440ef5607207713d1781eded13" kind="variable"><name>_azcounts</name></member>
+    <member refid="classIMU_1ab27df333316fef090c6c66c850dcea6d" kind="variable"><name>_gxcounts</name></member>
+    <member refid="classIMU_1aa37b00f8fffb584f96166e6be835fc1c" kind="variable"><name>_gycounts</name></member>
+    <member refid="classIMU_1a16dd1d47613d444e8711704cb2225996" kind="variable"><name>_gzcounts</name></member>
+    <member refid="classIMU_1afdba3ec94b88b71f4f3608ec7d5d7fc4" kind="variable"><name>_hxcounts</name></member>
+    <member refid="classIMU_1a49e29687dad5486c588df50035c8b5e0" kind="variable"><name>_hycounts</name></member>
+    <member refid="classIMU_1adc2810ff775c9d2474aeb1cdc6737979" kind="variable"><name>_hzcounts</name></member>
+    <member refid="classIMU_1a4274d743239871f6cbc54de5c84eca3a" kind="variable"><name>_tcounts</name></member>
+    <member refid="classIMU_1ac538fc9a09f4d60b73fb477738b0d602" kind="variable"><name>_address</name></member>
+    <member refid="classIMU_1a6911d1a81b2cbbefde2357df0c77428d" kind="variable"><name>_numBytes</name></member>
+    <member refid="classIMU_1a6b598b99829fa0fcd5c3d9903eb7b293" kind="variable"><name>_i2cRate</name></member>
+    <member refid="classIMU_1a279015ea1ea0a32b45a9a1a26b2d4fda" kind="variable"><name>_status</name></member>
+    <member refid="classIMU_1ac33cd97144f35683cfda7776ea16243e" kind="variable"><name>gG</name></member>
+    <member refid="classIMU_1a28eb12db9c58ca68e4ddb5020dd9dd20" kind="variable"><name>_accelScale</name></member>
+    <member refid="classIMU_1a13aac4d32bd5e5bd5893a46adea43ba6" kind="variable"><name>_gyroScale</name></member>
+    <member refid="classIMU_1aca68ebe4db6de0261ad0c18ab93baa0c" kind="variable"><name>_magScaleX</name></member>
+    <member refid="classIMU_1a7ec96517f746cb52f51c7df54316c133" kind="variable"><name>_magScaleY</name></member>
+    <member refid="classIMU_1a47b29b6c4ab5bdb220547362363fa988" kind="variable"><name>_magScaleZ</name></member>
+    <member refid="classIMU_1a81407c3f7e8e63735dfc672b53fd99dd" kind="variable"><name>_accelRange</name></member>
+    <member refid="classIMU_1abc2f9849bd27b4d423b2140ebdc8701a" kind="variable"><name>_gyroRange</name></member>
+    <member refid="classIMU_1a1301777da9bc68eee7dc744a62b06ac3" kind="variable"><name>_bandwidth</name></member>
+    <member refid="classIMU_1a3eb0783394601a5a41fa7079e4c929b0" kind="variable"><name>_srd</name></member>
+    <member refid="classIMU_1a5e6bc8a1984acb82321f9b48db9e8a79" kind="variable"><name>ACCEL_OUT</name></member>
+    <member refid="classIMU_1a59053815a5a71f5bebc2e65f16659ded" kind="variable"><name>GYRO_OUT</name></member>
+    <member refid="classIMU_1aa9c1984c97e26df587281692f60e2949" kind="variable"><name>TEMP_OUT</name></member>
+    <member refid="classIMU_1af28bfb59bb04bc759038078a4db01993" kind="variable"><name>EXT_SENS_DATA_00</name></member>
+    <member refid="classIMU_1a71dae5b97d1b74436843e3e822ff4a32" kind="variable"><name>ACCEL_CONFIG</name></member>
+    <member refid="classIMU_1ac90c7b0bb203e2dff90306482614433e" kind="variable"><name>ACCEL_FS_SEL_2G</name></member>
+    <member refid="classIMU_1a6d4e8157bb4c0dc204b66c9bbf7c6cb0" kind="variable"><name>ACCEL_FS_SEL_4G</name></member>
+    <member refid="classIMU_1a62e76f7ca4450fbff9ba169a7bf5d183" kind="variable"><name>ACCEL_FS_SEL_8G</name></member>
+    <member refid="classIMU_1a920aa5f13b9c8e5bc927927330ac8af2" kind="variable"><name>ACCEL_FS_SEL_16G</name></member>
+    <member refid="classIMU_1a7d417d3c235bd4218a9cecb6c39b684d" kind="variable"><name>GYRO_CONFIG</name></member>
+    <member refid="classIMU_1abaece728935c77934691fc678c971de4" kind="variable"><name>GYRO_FS_SEL_250DPS</name></member>
+    <member refid="classIMU_1a57d0058b144d11d64aa644ed1d3b313e" kind="variable"><name>GYRO_FS_SEL_500DPS</name></member>
+    <member refid="classIMU_1ab8e2494d9e3021bf039323cf3440de1e" kind="variable"><name>GYRO_FS_SEL_1000DPS</name></member>
+    <member refid="classIMU_1a040f0183e93dc2c87f28f727c328a313" kind="variable"><name>GYRO_FS_SEL_2000DPS</name></member>
+    <member refid="classIMU_1a0b4c0cfc28087ec72de6155da46de0d9" kind="variable"><name>ACCEL_CONFIG2</name></member>
+    <member refid="classIMU_1a3f74d7d2c5a8c93151ae2bee4e0b4887" kind="variable"><name>ACCEL_DLPF_184</name></member>
+    <member refid="classIMU_1ac87ed9eeb0d6fd20e987410155fee53f" kind="variable"><name>ACCEL_DLPF_92</name></member>
+    <member refid="classIMU_1ae2df48f29311f232432a16284b9159ed" kind="variable"><name>ACCEL_DLPF_41</name></member>
+    <member refid="classIMU_1a524d9af6cbaa1df5f15db87b1157467c" kind="variable"><name>ACCEL_DLPF_20</name></member>
+    <member refid="classIMU_1af0554e2b6db872868f21b6953a1e8585" kind="variable"><name>ACCEL_DLPF_10</name></member>
+    <member refid="classIMU_1aa1d7a036cec01526451187434785b0ef" kind="variable"><name>ACCEL_DLPF_5</name></member>
+    <member refid="classIMU_1a8b8013c6ee050d9a1c0c9aeb25b80cce" kind="variable"><name>CONFIG</name></member>
+    <member refid="classIMU_1a2b7230a7c84242e46ffb1b801df342bd" kind="variable"><name>GYRO_DLPF_184</name></member>
+    <member refid="classIMU_1a51863a08fe8094125b63498b591d0a54" kind="variable"><name>GYRO_DLPF_92</name></member>
+    <member refid="classIMU_1a178f00ee16f64288cc8d15f3fa4400f7" kind="variable"><name>GYRO_DLPF_41</name></member>
+    <member refid="classIMU_1a1f673a77bab71d2ae30959e7b9ddf5be" kind="variable"><name>GYRO_DLPF_20</name></member>
+    <member refid="classIMU_1a2675b7bb5b5d4a9d1333472248ff7d18" kind="variable"><name>GYRO_DLPF_10</name></member>
+    <member refid="classIMU_1a34c9619f6639e3ddda87b018eb94214e" kind="variable"><name>GYRO_DLPF_5</name></member>
+    <member refid="classIMU_1a1baa422b103a5b9c2677c8e447b11ebe" kind="variable"><name>SMPDIV</name></member>
+    <member refid="classIMU_1ac9be008941488be4fb726c2021946ef0" kind="variable"><name>INT_PIN_CFG</name></member>
+    <member refid="classIMU_1aa465f1843da6c3a27b32234d1c76b746" kind="variable"><name>INT_ENABLE</name></member>
+    <member refid="classIMU_1a525a5ff38a1084f951bbb982b5eda84f" kind="variable"><name>INT_DISABLE</name></member>
+    <member refid="classIMU_1af46a4d410ba22aa7ce6e5f3df41c8e6e" kind="variable"><name>INT_PULSE_50US</name></member>
+    <member refid="classIMU_1a7d797231f1773fff9c0fe7924a0b3960" kind="variable"><name>INT_WOM_EN</name></member>
+    <member refid="classIMU_1adef065984587c7e17ee4641a1cf55ce0" kind="variable"><name>INT_RAW_RDY_EN</name></member>
+    <member refid="classIMU_1a66529d6102c44bc6be8d8ef167f27058" kind="variable"><name>PWR_MGMNT_1</name></member>
+    <member refid="classIMU_1aa1c569cb683d1f2b24074a561cbb1b44" kind="variable"><name>PWR_CYCLE</name></member>
+    <member refid="classIMU_1a045e1ec896d0e207d640d1fb7930328f" kind="variable"><name>PWR_RESET</name></member>
+    <member refid="classIMU_1aed128bfb60251b9016454f9b491b0d3e" kind="variable"><name>CLOCK_SEL_PLL</name></member>
+    <member refid="classIMU_1a8e2a7777d4356a5c4cf6cb52e9aeed4b" kind="variable"><name>PWR_MGMNT_2</name></member>
+    <member refid="classIMU_1ad52e1d65ca1b23161ff28ea6a0891a1b" kind="variable"><name>SEN_ENABLE</name></member>
+    <member refid="classIMU_1a5dbb6af50b6cb4f752b971d073049980" kind="variable"><name>DIS_GYRO</name></member>
+    <member refid="classIMU_1a82f56158c28ca51ed7fe9a667b668080" kind="variable"><name>USER_CTRL</name></member>
+    <member refid="classIMU_1aac5f67e0f33068d9ca184e8338cea69b" kind="variable"><name>I2C_MST_EN</name></member>
+    <member refid="classIMU_1a19704607249a2df9ae115cf5ec42b065" kind="variable"><name>I2C_MST_CLK</name></member>
+    <member refid="classIMU_1a40a6c474b6590faa545bcef6796e0b09" kind="variable"><name>I2C_MST_CTRL</name></member>
+    <member refid="classIMU_1a6ae19caaa47d77d07abf79af77e501e8" kind="variable"><name>I2C_SLV0_ADDR</name></member>
+    <member refid="classIMU_1a45b93a6a2bd367d73428482805ee65ce" kind="variable"><name>I2C_SLV0_REG</name></member>
+    <member refid="classIMU_1ab6fc887f35142051d1b1fe3cba25aff0" kind="variable"><name>I2C_SLV0_DO</name></member>
+    <member refid="classIMU_1a3b6c38493eed68a58509e8be8b451ccf" kind="variable"><name>I2C_SLV0_CTRL</name></member>
+    <member refid="classIMU_1a73733d4a18041bbc1f094a52be517118" kind="variable"><name>I2C_SLV0_EN</name></member>
+    <member refid="classIMU_1a1ff3bc7d6cd3c4035ae2619248b9dd86" kind="variable"><name>I2C_READ_FLAG</name></member>
+    <member refid="classIMU_1ad71aa14a790197de3eff414f6f9dfcec" kind="variable"><name>MOT_DETECT_CTRL</name></member>
+    <member refid="classIMU_1a5ffc27f0c3bca71b7df305a66348a23e" kind="variable"><name>ACCEL_INTEL_EN</name></member>
+    <member refid="classIMU_1aca3b94b1ea5f63ed99123135f9684d75" kind="variable"><name>ACCEL_INTEL_MODE</name></member>
+    <member refid="classIMU_1a981e7149fad7f85b241d9205df62e464" kind="variable"><name>LP_ACCEL_ODR</name></member>
+    <member refid="classIMU_1a9ca3d7b64ffa73ab222221294f9afe7b" kind="variable"><name>WOM_THR</name></member>
+    <member refid="classIMU_1ad608d0b182a0da8574b85194f5707d14" kind="variable"><name>WHO_AM_I</name></member>
+    <member refid="classIMU_1a4906bf7080228a00a2726fab0bc9deb1" kind="variable"><name>AK8963_I2C_ADDR</name></member>
+    <member refid="classIMU_1af5582b84ecf8829cfc7da6ad1ed3296a" kind="variable"><name>AK8963_HXL</name></member>
+    <member refid="classIMU_1aa8691a633c35d2f7d7951f68b187adb3" kind="variable"><name>AK8963_CNTL1</name></member>
+    <member refid="classIMU_1aa96e1f69db3a08f6ac0c0115d9e8e880" kind="variable"><name>AK8963_PWR_DOWN</name></member>
+    <member refid="classIMU_1a0e2fe28ad7e635876a061dcf0b338bcb" kind="variable"><name>AK8963_CNT_MEAS1</name></member>
+    <member refid="classIMU_1a81aa27b2da74539d88966ab71c28337d" kind="variable"><name>AK8963_CNT_MEAS2</name></member>
+    <member refid="classIMU_1aefe9d58c962b042b5e772342fe510170" kind="variable"><name>AK8963_FUSE_ROM</name></member>
+    <member refid="classIMU_1ab6945cc8ff2e84fa2f0927388d74fec1" kind="variable"><name>AK8963_CNTL2</name></member>
+    <member refid="classIMU_1ad170d8561fc4600092a29e1b3ff214a6" kind="variable"><name>AK8963_RESET</name></member>
+    <member refid="classIMU_1a5dc26b210ba9adcc176b9e837238d87d" kind="variable"><name>AK8963_ASA</name></member>
+    <member refid="classIMU_1afbf16a57d58c858beda5ccf36ee4b81f" kind="variable"><name>AK8963_WHO_AM_I</name></member>
+    <member refid="classIMU_1acad2acbbf58db76230da27dba2afe8de" kind="function"><name>IMU</name></member>
+    <member refid="classIMU_1ae0d964d2f8ec122be068c41b84bc18a8" kind="function"><name>begin</name></member>
+    <member refid="classIMU_1ac574728dbbc752155239a35c8bbd6e79" kind="function"><name>readSensor</name></member>
+    <member refid="classIMU_1a928fa5e2db05bd402a3fa93bd3584527" kind="function"><name>setDlpfBandwidth</name></member>
+    <member refid="classIMU_1a834f21762003f831e5e632cc7974ba75" kind="function"><name>setGyroRange</name></member>
+    <member refid="classIMU_1a5567bbe0d211f1e6d386eb69ffd960a7" kind="function"><name>setAccelRange</name></member>
+    <member refid="classIMU_1a5f096cb37d4b16851381bf09d6809403" kind="function"><name>calibraGyro</name></member>
+    <member refid="classIMU_1a3546779010d9128859f465195eff77f5" kind="function"><name>calibracaoMagnetometro</name></member>
+    <member refid="classIMU_1a37694424e4502ffc69bbb6c540c1a400" kind="function"><name>writeRegister</name></member>
+    <member refid="classIMU_1a87c200faa130ff4d2d3416b2d83f4f49" kind="function"><name>readRegisters</name></member>
+    <member refid="classIMU_1af3b90e0b20d4bd55091be99f7aa67737" kind="function"><name>writeAK8963Register</name></member>
+    <member refid="classIMU_1a0481a2f76feaf06534e9473118d55ee3" kind="function"><name>whoAmI</name></member>
+    <member refid="classIMU_1acd2af48f4eb0a0321080332016e3c1f7" kind="function"><name>whoAmIAK8963</name></member>
+    <member refid="classIMU_1a914f8b4262fba70e6d8fd0e584fa7996" kind="function"><name>readAK8963Registers</name></member>
+  </compound>
+  <compound refid="classMETODOSCALIBRACAO" kind="class"><name>METODOSCALIBRACAO</name>
+    <member refid="classMETODOSCALIBRACAO_1af0478ed112a1139bafefe7833568e641" kind="function"><name>calibracaoGeometrica</name></member>
+    <member refid="classMETODOSCALIBRACAO_1ad7b555b5f46cdad7ae551f5cd4886a9b" kind="function"><name>calibracaoAcelerometro</name></member>
+    <member refid="classMETODOSCALIBRACAO_1aeeb5884d970064b5e60fea7bbf515742" kind="function"><name>calibracaoAcelerometro</name></member>
+  </compound>
+  <compound refid="classMotores" kind="class"><name>Motores</name>
+    <member refid="classMotores_1a14c1a0bad96d6cefd375377a6afb03d6" kind="variable"><name>motor_pin</name></member>
+    <member refid="classMotores_1aa6ba08a3abc1f9f936cb1f4b97dd043a" kind="variable"><name>canal</name></member>
+    <member refid="classMotores_1a3f2679c95473f8ee07a7645c7ad64d5d" kind="variable"><name>tempo_calibracao</name></member>
+    <member refid="classMotores_1af2f825f86a3524c6b9097dedd4e9bdea" kind="variable"><name>resolucao</name></member>
+    <member refid="classMotores_1ac05467a9227b8ba9c86b2c9d6c08a2c0" kind="variable"><name>freq</name></member>
+    <member refid="classMotores_1a10e9590d22b84ea6d5316ebceff736d0" kind="variable"><name>min_vel</name></member>
+    <member refid="classMotores_1ae36afe438037117f406f7ddf4903fd76" kind="variable"><name>max_vel</name></member>
+    <member refid="classMotores_1a75dd42dfb853c1ad6bc88219d224ea49" kind="variable"><name>kf</name></member>
+    <member refid="classMotores_1a74c220aadcdad1c946587dd779e3a8d9" kind="variable"><name>km</name></member>
+    <member refid="classMotores_1a6ae9bc897a2155f3614b017e35d17726" kind="function"><name>Motores</name></member>
+    <member refid="classMotores_1a1895e0f2bc08b754d2c119a7d5fee68a" kind="function"><name>inicializa</name></member>
+    <member refid="classMotores_1abd97787aacf452410d0fb21bbe5c9287" kind="function"><name>set_portas</name></member>
+    <member refid="classMotores_1aa925c45cc263120106dacb8c5802d20b" kind="function"><name>calibra</name></member>
+    <member refid="classMotores_1ac6264dc2b71015a3c9641025151edd4a" kind="function"><name>set_vel_mot</name></member>
+  </compound>
+  <compound refid="structNAV__POSECEF__STRUCT" kind="struct"><name>NAV_POSECEF_STRUCT</name>
+    <member refid="structNAV__POSECEF__STRUCT_1aaec8c5597e47db77dbe3cc9ce1aefa8e" kind="variable"><name>cls</name></member>
+    <member refid="structNAV__POSECEF__STRUCT_1aadaff22d2b530c65f1a879a4838f223b" kind="variable"><name>id</name></member>
+    <member refid="structNAV__POSECEF__STRUCT_1a4f7633b71bc8cccd1d7ab744659f6d89" kind="variable"><name>len</name></member>
+    <member refid="structNAV__POSECEF__STRUCT_1a36711ead60d9cde7974cbeda7de4c35f" kind="variable"><name>iTOW</name></member>
+    <member refid="structNAV__POSECEF__STRUCT_1ad1b8e404ffdeeb1954292e43fe3507b2" kind="variable"><name>ecefX</name></member>
+    <member refid="structNAV__POSECEF__STRUCT_1a9e56104db13a84e53c2dec44e5ff63b2" kind="variable"><name>ecefY</name></member>
+    <member refid="structNAV__POSECEF__STRUCT_1acff937b434d1a245763b778f1f15ba66" kind="variable"><name>ecefZ</name></member>
+    <member refid="structNAV__POSECEF__STRUCT_1af6632b8d7323f356aac7f34e1656dbba" kind="variable"><name>pAcc</name></member>
+  </compound>
+  <compound refid="structNAV__PVT__STRUCT" kind="struct"><name>NAV_PVT_STRUCT</name>
+    <member refid="structNAV__PVT__STRUCT_1a42a6506722356f74e72a6c09b3d36981" kind="variable"><name>cls</name></member>
+    <member refid="structNAV__PVT__STRUCT_1ac7f737a77264a615d090846e8508b15c" kind="variable"><name>id</name></member>
+    <member refid="structNAV__PVT__STRUCT_1a45c1c383f15364531cefad7a9689e4cd" kind="variable"><name>len</name></member>
+    <member refid="structNAV__PVT__STRUCT_1a77b13534f916d34c72d828e63f2c685c" kind="variable"><name>iTOW</name></member>
+    <member refid="structNAV__PVT__STRUCT_1a6fcb9f165e78a4f81c8891841de5ac62" kind="variable"><name>year</name></member>
+    <member refid="structNAV__PVT__STRUCT_1a4ca689c97238b68b845f03117f79e789" kind="variable"><name>month</name></member>
+    <member refid="structNAV__PVT__STRUCT_1aba771368d0601aa15eec99ab7050a095" kind="variable"><name>day</name></member>
+    <member refid="structNAV__PVT__STRUCT_1a9558a232009d5fe838e22bc9c8eb0ba3" kind="variable"><name>hour</name></member>
+    <member refid="structNAV__PVT__STRUCT_1a863c8316485bbdf439073478fc25343a" kind="variable"><name>min</name></member>
+    <member refid="structNAV__PVT__STRUCT_1a951fd966a0fc28300db089792547d2d8" kind="variable"><name>sec</name></member>
+    <member refid="structNAV__PVT__STRUCT_1ab59fe8ccda8098515daa41f135c4f812" kind="variable"><name>valid</name></member>
+    <member refid="structNAV__PVT__STRUCT_1ac04cfb4bf12ae9c3df554629740f3286" kind="variable"><name>tAcc</name></member>
+    <member refid="structNAV__PVT__STRUCT_1a3b772ad4a5c93eef8db16e6f5bbfcd59" kind="variable"><name>nano</name></member>
+    <member refid="structNAV__PVT__STRUCT_1af38c07f23fd57d4cb4a88dd99492ce3b" kind="variable"><name>fixType</name></member>
+    <member refid="structNAV__PVT__STRUCT_1a3bd1bada160988b8a9c829685b9ec58c" kind="variable"><name>flags</name></member>
+    <member refid="structNAV__PVT__STRUCT_1a9fac1821733bc6d8829322edcbdb651c" kind="variable"><name>flags2</name></member>
+    <member refid="structNAV__PVT__STRUCT_1a4ec7b63e686800c231126a74722e47ca" kind="variable"><name>numSV</name></member>
+    <member refid="structNAV__PVT__STRUCT_1ac884e66d0b3ebd6530680ad23e13a81e" kind="variable"><name>lon</name></member>
+    <member refid="structNAV__PVT__STRUCT_1ab8a62324ff89a0c707884bfc34aba85d" kind="variable"><name>lat</name></member>
+    <member refid="structNAV__PVT__STRUCT_1aacdb7b954a1e04eac787d8aa60409eee" kind="variable"><name>height</name></member>
+    <member refid="structNAV__PVT__STRUCT_1a593d78a85e8db2a7511396023ac72bd6" kind="variable"><name>hMSL</name></member>
+    <member refid="structNAV__PVT__STRUCT_1a587393afa60a9c94edbf39f90f876cbb" kind="variable"><name>hAcc</name></member>
+    <member refid="structNAV__PVT__STRUCT_1a5a579a58fac4d536c0a92b0126a6bf1d" kind="variable"><name>vAcc</name></member>
+    <member refid="structNAV__PVT__STRUCT_1a9f0c42e0df789f5ed086349ad79d1f9c" kind="variable"><name>velN</name></member>
+    <member refid="structNAV__PVT__STRUCT_1a1abd8ac18139ec0e1148cbea6cd36b18" kind="variable"><name>velE</name></member>
+    <member refid="structNAV__PVT__STRUCT_1ae5860d883e58fa8d23dba2c4aa1c3e45" kind="variable"><name>velD</name></member>
+    <member refid="structNAV__PVT__STRUCT_1a0304e9a013eec6cf906793fcfad5fe59" kind="variable"><name>gSpeed</name></member>
+    <member refid="structNAV__PVT__STRUCT_1acd88d08d72da09efa3edfef59c24f5e3" kind="variable"><name>headMot</name></member>
+    <member refid="structNAV__PVT__STRUCT_1a8bc469b1c7053cc1358d411041266729" kind="variable"><name>sAcc</name></member>
+    <member refid="structNAV__PVT__STRUCT_1aaf41d738d049ebd1c80396b4b531273b" kind="variable"><name>headAcc</name></member>
+    <member refid="structNAV__PVT__STRUCT_1a8fbe98b98c20bffb60327748af7d4e6a" kind="variable"><name>pDOP</name></member>
+    <member refid="structNAV__PVT__STRUCT_1ac180d88179b0671dca08121915d55838" kind="variable"><name>reserved1</name></member>
+    <member refid="structNAV__PVT__STRUCT_1a03d604d979ea8d066edf62a4a1b2c46e" kind="variable"><name>headVeh</name></member>
+    <member refid="structNAV__PVT__STRUCT_1ad7be043d349fb056d0c47de5282750b4" kind="variable"><name>reserved2</name></member>
+  </compound>
+  <compound refid="structPacketData" kind="struct"><name>PacketData</name>
+    <member refid="structPacketData_1a0a6e39d74d6461dcac04e8a19dcd0b6d" kind="variable"><name>lon</name></member>
+    <member refid="structPacketData_1a398a83a5119663539a6e0aedebfcd60b" kind="variable"><name>lat</name></member>
+    <member refid="structPacketData_1ac04ae3b7a33e3d1a04650289429d78ec" kind="variable"><name>altitude</name></member>
+    <member refid="structPacketData_1a9cdf7ee028863b451b3ad3fc22e4827a" kind="variable"><name>velN</name></member>
+    <member refid="structPacketData_1ae937755078f86e2a4c4827b07d31f72c" kind="variable"><name>velE</name></member>
+    <member refid="structPacketData_1a22515ed8e898933c6b2bdb48e06cc8d7" kind="variable"><name>velD</name></member>
+  </compound>
+  <compound refid="classRiccati" kind="class"><name>Riccati</name>
+    <member refid="classRiccati_1a376f84745fd4a33cb6e058e0439f3dfb" kind="variable"><name>K</name></member>
+    <member refid="classRiccati_1a6003e94713ebc33639f013c56d2e06c6" kind="variable"><name>K_new</name></member>
+    <member refid="classRiccati_1a9e4a8b9bd057ebcc4f4b90fd0cd8a8b9" kind="variable"><name>phi</name></member>
+    <member refid="classRiccati_1ac421d68d5125e3ef11fba379329f2e67" kind="variable"><name>gamma</name></member>
+    <member refid="classRiccati_1ab245227419e64ebd2b9dd0e28e1c5243" kind="variable"><name>R</name></member>
+    <member refid="classRiccati_1ae1d081ecfa2a764d7fc8cc316c376f04" kind="variable"><name>Q</name></member>
+    <member refid="classRiccati_1a301a6f535f228e71c09320583bb49d4e" kind="variable"><name>I</name></member>
+    <member refid="classRiccati_1aef6ba29bba94e293a8ea4c279b565164" kind="variable"><name>Ls</name></member>
+    <member refid="classRiccati_1ab289ee3b6f819e200510a17344fc74e3" kind="variable"><name>num_iterations</name></member>
+    <member refid="classRiccati_1a8a40fb1e8c09aedad7a597bd957b242d" kind="function"><name>Riccati</name></member>
+    <member refid="classRiccati_1abc12d593a88ea42059950cc2e9f3a0a2" kind="function"><name>dareInteration</name></member>
+  </compound>
+  <compound refid="classRpm" kind="class"><name>Rpm</name>
+    <member refid="classRpm_1ad84394fa85418225c8a3b0f82110bc09" kind="variable"><name>rpm</name></member>
+    <member refid="classRpm_1ae7f22ed32ee4e3c1242fd7ff2895e883" kind="variable"><name>ciclos_por_volta</name></member>
+    <member refid="classRpm_1a5e8240e66073f461ae884a08c6be84c5" kind="variable"><name>MAX_H_LIM</name></member>
+    <member refid="classRpm_1a3e22a7563c57f2eb1f5df770e58351fb" kind="variable"><name>rpm_factor</name></member>
+    <member refid="classRpm_1a0683829851e4011132c048b20df3d73a" kind="variable"><name>pcnt_unit</name></member>
+    <member refid="classRpm_1aec0d7e9e181fc5eaa546bbf7378811dd" kind="variable"><name>pulses</name></member>
+    <member refid="classRpm_1a1fb0f83d82726133d5814adb6e06d0bf" kind="variable"><name>sensor</name></member>
+    <member refid="classRpm_1ac44e73f7678c35183e856295c2e7eceb" kind="variable"><name>time_array</name></member>
+    <member refid="classRpm_1a57664781b6348e2a781ff631a5a258d1" kind="variable"><name>index_time_array</name></member>
+    <member refid="classRpm_1a752569e792e4187bf57ab7d010157413" kind="variable"><name>dt</name></member>
+    <member refid="classRpm_1a121340fc34d14d36ec48bef0b38909f1" kind="function"><name>Rpm</name></member>
+    <member refid="classRpm_1acdcf8286b888e4ffd0aa41d1f37c5b15" kind="function"><name>update_rpm</name></member>
+    <member refid="classRpm_1a940dfab8b4369e418b8afc1627d74d2b" kind="function"><name>restart_conter</name></member>
+    <member refid="classRpm_1ae4aa3e158ba93af30da3e1353bb3959f" kind="function"><name>get_pulses</name></member>
+    <member refid="classRpm_1ac6a52231cd6967bd6c565615638cc50c" kind="function"><name>init</name></member>
+  </compound>
+  <compound refid="classSdre" kind="class"><name>Sdre</name>
+    <member refid="classSdre_1ae868a877b9ade90516f90ff46a673568" kind="variable"><name>phi</name></member>
+    <member refid="classSdre_1aa8e71f3403ee322804ac1e7a6d19b00e" kind="variable"><name>gamma</name></member>
+    <member refid="classSdre_1ac29f58dd81643087f49ccbed42b794df" kind="variable"><name>ricObj</name></member>
+    <member refid="classSdre_1a17464293d3a2f24ea0c55da3fcb0e864" kind="variable"><name>R</name></member>
+    <member refid="classSdre_1a6b63e08a6c981385373f45ee9ac1be73" kind="variable"><name>Q</name></member>
+    <member refid="classSdre_1aad912686f9a487dce4ea7e4875efd563" kind="variable"><name>L</name></member>
+    <member refid="classSdre_1a348491f949fa0faae3fb86b7dbabd33d" kind="variable"><name>E</name></member>
+    <member refid="classSdre_1ad244c5cc1e70a1b08e8e4d5655993d8b" kind="variable"><name>G</name></member>
+    <member refid="classSdre_1acfa822102ba368dde55594e9f041f9df" kind="function"><name>Sdre</name></member>
+    <member refid="classSdre_1a887dbd01f9f6846839114a4d5ff64102" kind="function"><name>~Sdre</name></member>
+    <member refid="classSdre_1af2f380ec3d018b60686e304ca7026846" kind="function"><name>updateControl</name></member>
+    <member refid="classSdre_1a4848cfbce14035e6b3733a628de9e24f" kind="function"><name>closeLoopEig</name></member>
+  </compound>
+  <compound refid="structIBusBM_1_1sensorinfo" kind="struct"><name>IBusBM::sensorinfo</name>
+    <member refid="structIBusBM_1_1sensorinfo_1abd881da866db85793dcdd020d8eecb5c" kind="variable"><name>sensorType</name></member>
+    <member refid="structIBusBM_1_1sensorinfo_1a0838975a9991ce94a7009f237cd7edc2" kind="variable"><name>sensorLength</name></member>
+    <member refid="structIBusBM_1_1sensorinfo_1a07cfd12b2c2a8982a88aeecf85bd322b" kind="variable"><name>sensorValue</name></member>
+  </compound>
+  <compound refid="classTELEMETRIA" kind="class"><name>TELEMETRIA</name>
+    <member refid="classTELEMETRIA_1aacd01aa79091d1ee7dc4725e30a73d23" kind="variable"><name>_broadcast</name></member>
+    <member refid="classTELEMETRIA_1a0bbc0dd42d67ab178c9a30a141f1b58b" kind="variable"><name>mensagem</name></member>
+    <member refid="classTELEMETRIA_1aa7dcf13d1ec896ed759e16d47a6d31fb" kind="variable"><name>controle</name></member>
+    <member refid="classTELEMETRIA_1ae8ffac9b63a68baa5a4ffa3f14a4954d" kind="variable"><name>_quantDados</name></member>
+    <member refid="classTELEMETRIA_1a1282e1b8ab4ecaa1fd4fb1837b4d12d6" kind="variable"><name>comAceito</name></member>
+    <member refid="classTELEMETRIA_1ae47c01609eec8284a663dd66e0d7c632" kind="function"><name>TELEMETRIA</name></member>
+    <member refid="classTELEMETRIA_1a780be82ef9be2da12601a0ea7d10e647" kind="function"><name>begin</name></member>
+    <member refid="classTELEMETRIA_1af7d02e72d86c217544d195c3b3c9d4ef" kind="function"><name>envia</name></member>
+    <member refid="classTELEMETRIA_1a6c13ae22d648afb2c7bd41f3e17ba4b6" kind="function"><name>enviaMensagem</name></member>
+    <member refid="classTELEMETRIA_1a4098a02f670b029836ab05a2b2bff229" kind="function"><name>pisca</name></member>
+    <member refid="classTELEMETRIA_1a3ed6613237ba555ebae298106a7369e8" kind="function"><name>__attribute__</name></member>
+    <member refid="classTELEMETRIA_1a02904fd20750c3eb7598dff99b20649b" kind="function"><name>__attribute__</name></member>
+    <member refid="classTELEMETRIA_1ace27ccd5888ebc3802a4eb22cc3fd9da" kind="function"><name>OnDataRecv</name></member>
+  </compound>
+  <compound refid="classTIME" kind="class"><name>TIME</name>
+    <member refid="classTIME_1ae75072a83bc87386089429531032c661" kind="variable"><name>timeVectorIndex</name></member>
+    <member refid="classTIME_1a377f2c220d0347f17484262f7a64602f" kind="variable"><name>timeVector</name></member>
+    <member refid="classTIME_1a4c5fe33dea0e598fd2e1b0dd8073dff3" kind="function"><name>TIME</name></member>
+    <member refid="classTIME_1a51b6020daf09773ef3948cf6b9ccd736" kind="function"><name>computeElapsedTime</name></member>
+    <member refid="classTIME_1a8cd98765b05a23aa7afe8fa5234b9695" kind="function"><name>begin</name></member>
+  </compound>
+  <compound refid="unionUBXMessage" kind="union"><name>UBXMessage</name>
+    <member refid="unionUBXMessage_1aa57d81c1fb373e82012ca3ddadefd79f" kind="variable"><name>navPosecef</name></member>
+    <member refid="unionUBXMessage_1ae5d0a8c24ea04c5b48614e3af5dadea4" kind="variable"><name>navPvt</name></member>
+  </compound>
+  <compound refid="namespacedrone" kind="namespace"><name>drone</name>
+    <member refid="namespacedrone_1a8f7a522ea8dc8ba5116e6d8a8e1595d7" kind="variable"><name>grav</name></member>
+    <member refid="namespacedrone_1a8fcbcb21c48edde073ec2a3013da3cd9" kind="variable"><name>Ix</name></member>
+    <member refid="namespacedrone_1a398b450771be74d8d15986196bab8f3d" kind="variable"><name>Iy</name></member>
+    <member refid="namespacedrone_1abbf75d4d89903bb357e8e2ddcbf72bbe" kind="variable"><name>Iz</name></member>
+    <member refid="namespacedrone_1ab194ab949cad78f85bdb8238f9731f37" kind="variable"><name>kf</name></member>
+    <member refid="namespacedrone_1a3e06d763422e3ea068add06fd5e3a98b" kind="variable"><name>km</name></member>
+    <member refid="namespacedrone_1ad00e49de24779292915067e7a3bb92e1" kind="variable"><name>b</name></member>
+    <member refid="namespacedrone_1a7475c0a87d5c8ae96bdc6cb6e9d54a29" kind="variable"><name>m</name></member>
+    <member refid="namespacedrone_1accb330ae92eee9c3a357abd54ed1864f" kind="variable"><name>Ir</name></member>
+    <member refid="namespacedrone_1a0bbb8a76162e5380bf929576efae9ef6" kind="variable"><name>ta</name></member>
+    <member refid="namespacedrone_1a59e2545248877aa345ae8aacc0c80a7b" kind="variable"><name>DA</name></member>
+  </compound>
+  <compound refid="namespaceEigen" kind="namespace"><name>Eigen</name>
+  </compound>
+  <compound refid="namespaceekf" kind="namespace"><name>ekf</name>
+    <member refid="namespaceekf_1a224c884f9fa345bfef8f140150919b3e" kind="variable"><name>aqua</name></member>
+    <member refid="namespaceekf_1a6cebd8d5c8351ad9e2ae4de5bc0065c2" kind="variable"><name>TOLERANCE</name></member>
+    <member refid="namespaceekf_1abd4511440a60041d2e32a0dcbd28e29b" kind="function"><name>Q_r</name></member>
+    <member refid="namespaceekf_1a34993a331b6837e5274d556e4f0a1bea" kind="function"><name>Q_l</name></member>
+    <member refid="namespaceekf_1af3f0a631343e55ec8b42f3fbea182461" kind="function"><name>skew</name></member>
+    <member refid="namespaceekf_1a97bc65b3f2d630a876b271fc21e9da9c" kind="function"><name>S_r</name></member>
+    <member refid="namespaceekf_1a8177897fe9b962d8e0927a913fc36242" kind="function"><name>S_l</name></member>
+    <member refid="namespaceekf_1ac031eda654b199bd45807eed2acdb3ec" kind="function"><name>computeMcdFromQuaternion</name></member>
+    <member refid="namespaceekf_1ae9e1aaaa7793db099f4ef88b44aab8d5" kind="function"><name>printEigen</name></member>
+    <member refid="namespaceekf_1a4e04862fd7bb992a28c1dada9a939716" kind="function"><name>computeVectorProjection</name></member>
+    <member refid="namespaceekf_1a0ae7d9ae45fba00d81bfe71ad73d7fee" kind="function"><name>multiplyQuaternions</name></member>
+    <member refid="namespaceekf_1aab2dcd522b40c160064cfae69cae6d98" kind="function"><name>quaternion2Euler</name></member>
+    <member refid="namespaceekf_1a0bb5c9402b49d6ba5be7c97ef269ceb1" kind="function"><name>integrationQuaternion</name></member>
+    <member refid="namespaceekf_1aaf74eae63658c0bd11df320327ecdb74" kind="function"><name>rotateVectorWithQuaternion</name></member>
+    <member refid="namespaceekf_1acb1dc12948420927eff91ed90c24b342" kind="function"><name>rotateVectorWithQuaternion_Conjugate</name></member>
+    <member refid="namespaceekf_1ab55e144edf7066b67232e15cca7b4646" kind="function"><name>invSqrt</name></member>
+    <member refid="namespaceekf_1afe4fb3935c9dc91fcc8b57793f03a170" kind="function"><name>computeQuaternionFromMCDMarkley</name></member>
+    <member refid="namespaceekf_1adf3091ade6b7c85db9dd5e6c238b57d0" kind="function"><name>RK</name></member>
+    <member refid="namespaceekf_1a9a53e61c76edeebffe35da19a63b983f" kind="function"><name>conjugate</name></member>
+    <member refid="namespaceekf_1a18db01f168af4cf4cabb02159b657be4" kind="function"><name>S_r</name></member>
+    <member refid="namespaceekf_1a075c55ac35c78422dcfa67fa5775940f" kind="function"><name>computeQuaternionFromMCDShepperd</name></member>
+    <member refid="namespaceekf_1a7947821441ad41493aab1f5ce819ef33" kind="function"><name>RK</name></member>
+  </compound>
+  <compound refid="namespacefuncoesQuaternion" kind="namespace"><name>funcoesQuaternion</name>
+    <member refid="namespacefuncoesQuaternion_1a7efd86bc50646d0d79ba1944a2622f08" kind="function"><name>screwMatrix</name></member>
+    <member refid="namespacefuncoesQuaternion_1ae6403803c70ef98b5fe361ed2ef6c0fb" kind="function"><name>matrixQ</name></member>
+    <member refid="namespacefuncoesQuaternion_1ac2a07ac7ff5a03fc94498dee3cbd56c0" kind="function"><name>matrixS</name></member>
+    <member refid="namespacefuncoesQuaternion_1a2567fcb1ea8884d17ffe68c39bcfc3b0" kind="function"><name>MultQuat</name></member>
+    <member refid="namespacefuncoesQuaternion_1ab8840c85b3a0a7c2861e04d6aed132e3" kind="function"><name>conj</name></member>
+    <member refid="namespacefuncoesQuaternion_1a12afb91adfd22c19dd46387658f9724e" kind="function"><name>quat2Euler</name></member>
+    <member refid="namespacefuncoesQuaternion_1ada70be41ba6ffe4e79d0748e7a7c5bb6" kind="function"><name>rotationMatrix</name></member>
+    <member refid="namespacefuncoesQuaternion_1ac5e7d2e2bdeb2446c1130323b55b5ef5" kind="function"><name>eulerQuaternion</name></member>
+  </compound>
+  <compound refid="namespacestd" kind="namespace"><name>std</name>
+  </compound>
+  <compound refid="AQUA_8cpp" kind="file"><name>AQUA.cpp</name>
+  </compound>
+  <compound refid="AQUA_8h" kind="file"><name>AQUA.h</name>
+  </compound>
+  <compound refid="Controle_8cpp" kind="file"><name>Controle.cpp</name>
+  </compound>
+  <compound refid="Controle_8h" kind="file"><name>Controle.h</name>
+    <member refid="Controle_8h_1ad72dbcf6d0153db1b8d8a58001feed83" kind="define"><name>DEBUG</name></member>
+    <member refid="Controle_8h_1a92102ea2f9ade1cc1a6dcce355db1677" kind="define"><name>PRINT_MAT</name></member>
+  </compound>
+  <compound refid="Drone_8cpp" kind="file"><name>Drone.cpp</name>
+  </compound>
+  <compound refid="Drone_8h" kind="file"><name>Drone.h</name>
+  </compound>
+  <compound refid="EKF_8cpp" kind="file"><name>EKF.cpp</name>
+  </compound>
+  <compound refid="EKF_8h" kind="file"><name>EKF.h</name>
+  </compound>
+  <compound refid="GPS_8h" kind="file"><name>GPS.h</name>
+    <member refid="GPS_8h_1a63332ee69ceebaa458f065465e43f202" kind="define"><name>NAV_PVT</name></member>
+    <member refid="GPS_8h_1a9241bba6283212e1bf773680a3f1a31f" kind="define"><name>NAV_POSECEF</name></member>
+    <member refid="GPS_8h_1ad7a8928b2d0331ab5eea166050a41c37" kind="define"><name>RATE_10</name></member>
+    <member refid="GPS_8h_1a4afb4aaa3fa37c26d148c32f7af5a944" kind="define"><name>NAV_MODE_1G</name></member>
+    <member refid="GPS_8h_1a9730e8d0bbbe3f1515ed1d0b2acda1e1" kind="enum"><name>_ubxMsgType</name></member>
+    <member refid="GPS_8h_1a9730e8d0bbbe3f1515ed1d0b2acda1e1ad2e3f1bdeae0fa235b7dfe6656c46f14" kind="enumvalue"><name>MT_NONE</name></member>
+    <member refid="GPS_8h_1a9730e8d0bbbe3f1515ed1d0b2acda1e1ae2379a504fb11d8e00e11bd567a3b819" kind="enumvalue"><name>MT_NAV_POSECEF</name></member>
+    <member refid="GPS_8h_1a9730e8d0bbbe3f1515ed1d0b2acda1e1a87ee2b7c21367a2caa62b0a01491ea23" kind="enumvalue"><name>MT_NAV_PVT</name></member>
+    <member refid="GPS_8h_1a23eb131661d623c855d4216331834845" kind="variable"><name>UBX_HEADER</name></member>
+    <member refid="GPS_8h_1a3e09624a99733cc8e95b04f78d7319da" kind="variable"><name>NAV_POSECEF_HEADER</name></member>
+    <member refid="GPS_8h_1a4c90ad3996e1901ce9aa8a364eab6c0d" kind="variable"><name>NAV_PVT_HEADER</name></member>
+    <member refid="GPS_8h_1a27c939ba1a4f4d927aaa500781293ba7" kind="variable"><name>data</name></member>
+    <member refid="GPS_8h_1a4ff3f4ce55f117a43c4e117d850ca5a8" kind="variable"><name>ubxMessage</name></member>
+    <member refid="GPS_8h_1a5d2ecd8f29f7e3e702c8b8bea333f6c6" kind="function"><name>GPSSERIAL</name></member>
+    <member refid="GPS_8h_1a35c55bcf9a6f5a52f34cb1ab02c91479" kind="function"><name>gpsSetup</name></member>
+    <member refid="GPS_8h_1aa2fac937d6e192633f020459321241e7" kind="function"><name>calcChecksum</name></member>
+    <member refid="GPS_8h_1aecde093c7427cc661daceaa118cf4455" kind="function"><name>compareMsgHeader</name></member>
+    <member refid="GPS_8h_1ad604e63cc857e5663dfba96c37c66bc7" kind="function"><name>processGPS</name></member>
+    <member refid="GPS_8h_1aaab66558a5f695df7a6fcc3baa340da3" kind="function"><name>gps_imprime</name></member>
+  </compound>
+  <compound refid="GRUPO__QUAT_8cpp" kind="file"><name>GRUPO_QUAT.cpp</name>
+  </compound>
+  <compound refid="GRUPO__QUAT_8h" kind="file"><name>GRUPO_QUAT.h</name>
+    <member refid="GRUPO__QUAT_8h_1a89e47af0449640d4f15191aba5ca24c6" kind="define"><name>RAD_TO_DEG</name></member>
+    <member refid="GRUPO__QUAT_8h_1a92102ea2f9ade1cc1a6dcce355db1677" kind="define"><name>PRINT_MAT</name></member>
+    <member refid="GRUPO__QUAT_8h_1a7563b707d50597768569491a1232a53f" kind="define"><name>INVERSE_SQUARE_2</name></member>
+  </compound>
+  <compound refid="IBusBM_8cpp" kind="file"><name>IBusBM.cpp</name>
+    <member refid="IBusBM_8cpp_1a1f0b921ce997d0d31139ca4a01afa2dc" kind="variable"><name>IBusBMfirst</name></member>
+    <member refid="IBusBM_8cpp_1a68b68e72a8323bb91995b38e98cf7d3e" kind="function"><name>onTimer</name></member>
+  </compound>
+  <compound refid="IBusBM_8h" kind="file"><name>IBusBM.h</name>
+    <member refid="IBusBM_8h_1ac1ca270757e32aff0abf70633c5df4f2" kind="define"><name>IBUSS_INTV</name></member>
+    <member refid="IBusBM_8h_1ace597623a5fc777c1e21b7d4b088fa1b" kind="define"><name>IBUSS_TEMP</name></member>
+    <member refid="IBusBM_8h_1a08a63b83bde9808e1f3ebb3ba466326a" kind="define"><name>IBUSS_RPM</name></member>
+    <member refid="IBusBM_8h_1a1d0bda3891691c890d1677802e73656e" kind="define"><name>IBUSS_EXTV</name></member>
+    <member refid="IBusBM_8h_1ab8b4210032699b763bf7b908c14566f7" kind="define"><name>IBUS_PRESS</name></member>
+    <member refid="IBusBM_8h_1a83d618c47cdff65562b5e4d3427f373c" kind="define"><name>IBUS_SERVO</name></member>
+    <member refid="IBusBM_8h_1a8b9fd84154bff010521710049dd8f090" kind="define"><name>IBUSBM_NOTIMER</name></member>
+  </compound>
+  <compound refid="IMU_8cpp" kind="file"><name>IMU.cpp</name>
+  </compound>
+  <compound refid="IMU_8h" kind="file"><name>IMU.h</name>
+  </compound>
+  <compound refid="METODOSCALIBRACAO_8h" kind="file"><name>METODOSCALIBRACAO.h</name>
+  </compound>
+  <compound refid="Motores_8cpp" kind="file"><name>Motores.cpp</name>
+  </compound>
+  <compound refid="Motores_8h" kind="file"><name>Motores.h</name>
+  </compound>
+  <compound refid="Riccati_8cpp" kind="file"><name>Riccati.cpp</name>
+  </compound>
+  <compound refid="Riccati_8h" kind="file"><name>Riccati.h</name>
+  </compound>
+  <compound refid="rpm_8cpp" kind="file"><name>rpm.cpp</name>
+    <member refid="rpm_8cpp_1a86daeaf64f729140c847f4e326c45f92" kind="variable"><name>pointer_Rpm</name></member>
+    <member refid="rpm_8cpp_1acf2356782b1ac2ca382a6b124ad84819" kind="function"><name>outside_interrupt_handler</name></member>
+  </compound>
+  <compound refid="rpm_8h" kind="file"><name>rpm.h</name>
+  </compound>
+  <compound refid="Sdre_8cpp" kind="file"><name>Sdre.cpp</name>
+  </compound>
+  <compound refid="Sdre_8h" kind="file"><name>Sdre.h</name>
+    <member refid="Sdre_8h_1a92102ea2f9ade1cc1a6dcce355db1677" kind="define"><name>PRINT_MAT</name></member>
+  </compound>
+  <compound refid="TELEMETRIA_8cpp" kind="file"><name>TELEMETRIA.cpp</name>
+  </compound>
+  <compound refid="TELEMETRIA_8h" kind="file"><name>TELEMETRIA.h</name>
+  </compound>
+  <compound refid="TIME_8cpp" kind="file"><name>TIME.cpp</name>
+  </compound>
+  <compound refid="TIME_8h" kind="file"><name>TIME.h</name>
+  </compound>
+  <compound refid="drone_8py" kind="file"><name>drone.py</name>
+  </compound>
+  <compound refid="funcoesQuaternion_8py" kind="file"><name>funcoesQuaternion.py</name>
+  </compound>
+  <compound refid="COMMON_8h" kind="file"><name>COMMON.h</name>
+    <member refid="COMMON_8h_1a6c89b6571752f2a19aff170b1d3d6e58" kind="function"><name>blindLED</name></member>
+  </compound>
+  <compound refid="main_8cpp" kind="file"><name>main.cpp</name>
+    <member refid="main_8cpp_1aad20b5e553c06abe201d2985050078b2" kind="variable"><name>ibus</name></member>
+    <member refid="main_8cpp_1ae81666800498192487a16bcd7308d5c4" kind="variable"><name>tel</name></member>
+    <member refid="main_8cpp_1ae1f1091647c66e9cc962b4feab0525cd" kind="variable"><name>filtro</name></member>
+    <member refid="main_8cpp_1a415ca717d7f13cfb8bcbaa07a3ddd062" kind="variable"><name>t</name></member>
+    <member refid="main_8cpp_1a4fc01d736fe50cf5b977f755b675f11d" kind="function"><name>setup</name></member>
+    <member refid="main_8cpp_1afe461d27b9c48d5921c00d521181f12f" kind="function"><name>loop</name></member>
+  </compound>
+  <compound refid="PARAMETROS_8h" kind="file"><name>PARAMETROS.h</name>
+    <member refid="PARAMETROS_8h_1af87b99a5e88c8bf5a811d30d7171cfd1" kind="variable"><name>motor_1</name></member>
+    <member refid="PARAMETROS_8h_1a3bf92781acfb45fe44b8a44a4be8570d" kind="variable"><name>motor_2</name></member>
+    <member refid="PARAMETROS_8h_1a949cd35b9bf5f7c5ca5f14559e608043" kind="variable"><name>motor_3</name></member>
+    <member refid="PARAMETROS_8h_1ac3ab8191681fb0429755a0d69c8ac3d7" kind="variable"><name>motor_4</name></member>
+    <member refid="PARAMETROS_8h_1add9a65252d4b2cddfaf05b497cedf588" kind="variable"><name>pin_rpm_motor_1</name></member>
+    <member refid="PARAMETROS_8h_1abe0f56177a68efeaf4f44d9c4643b148" kind="variable"><name>pin_rpm_motor_2</name></member>
+    <member refid="PARAMETROS_8h_1a497c11942ecff6427768fce0fc53fada" kind="variable"><name>pin_rpm_motor_3</name></member>
+    <member refid="PARAMETROS_8h_1a6a6a4b885f08c9169d2be71ab8cffb1c" kind="variable"><name>pin_rpm_motor_4</name></member>
+    <member refid="PARAMETROS_8h_1a9135a979a4e22c5a4095074dec5477f5" kind="variable"><name>onboard_led</name></member>
+    <member refid="PARAMETROS_8h_1a493aff86cb19bf7b232753af37dabde8" kind="variable"><name>pin_rx_controle</name></member>
+    <member refid="PARAMETROS_8h_1afdefd4079bd1bfbccf4e24bd9dd8fa26" kind="variable"><name>xdtEstimator</name></member>
+    <member refid="PARAMETROS_8h_1a9cbadcfbca426e6cec9d14f30750ef04" kind="variable"><name>dtTelemetry</name></member>
+    <member refid="PARAMETROS_8h_1ade6e1f4a0c110e26850765ae6acbcbcb" kind="variable"><name>xdtTelemetry</name></member>
+    <member refid="PARAMETROS_8h_1a8ec4aca2f6caa5c3a1290a2301dfb97b" kind="variable"><name>xLastdtTelemetry</name></member>
+  </compound>
+  <compound refid="hack" kind="page"><name>hack</name>
+  </compound>
+  <compound refid="todo" kind="page"><name>todo</name>
+  </compound>
+  <compound refid="dir_31d08e41878a863c8a5e98e00113eeba" kind="dir"><name>lib/AQUA</name>
+  </compound>
+  <compound refid="dir_23ba2848a540c18a9dfc572cf44e4a8e" kind="dir"><name>lib/CONTROLE</name>
+  </compound>
+  <compound refid="dir_e938b59efd27c0d7e7402c87a3faf3f8" kind="dir"><name>lib/DRONE</name>
+  </compound>
+  <compound refid="dir_f81b21074929c51f0f8ec4455f2eeb05" kind="dir"><name>lib/EKF</name>
+  </compound>
+  <compound refid="dir_12ce51c2f27d7b7c42f475577e8e188a" kind="dir"><name>lib/GRUPO_QUAT</name>
+  </compound>
+  <compound refid="dir_d0e0a026526f6bba31a4b7e0c38bb1de" kind="dir"><name>lib/IBUSBM</name>
+  </compound>
+  <compound refid="dir_3554028ee2797c78c7765098b85f4139" kind="dir"><name>lib/IMU</name>
+  </compound>
+  <compound refid="dir_97aefd0d527b934f1d99a682da8fe6a9" kind="dir"><name>lib</name>
+  </compound>
+  <compound refid="dir_39c7dc484126c690eab758240f2a6725" kind="dir"><name>lib/MOTORES</name>
+  </compound>
+  <compound refid="dir_7837fde3ab9c1fb2fc5be7b717af8d79" kind="dir"><name>python</name>
+  </compound>
+  <compound refid="dir_c512fa13478e4b8bbcd706bda4ab9220" kind="dir"><name>lib/RICCATI</name>
+  </compound>
+  <compound refid="dir_07959693ce74aed3e838ce3cb441c741" kind="dir"><name>lib/RPM</name>
+  </compound>
+  <compound refid="dir_59564d00a3aa1a8ebc9d93b92831849e" kind="dir"><name>lib/SDRE</name>
+  </compound>
+  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>src</name>
+  </compound>
+  <compound refid="dir_c71cd14614257cd5fbb26ecd4fda3227" kind="dir"><name>lib/TELEMETRIA</name>
+  </compound>
+  <compound refid="dir_6c721e2e855800aadb2bcd35baf8db9a" kind="dir"><name>lib/TIME</name>
+  </compound>
+</doxygenindex>

@@ -1,0 +1,5 @@
+<map id="UBXMessage" name="UBXMessage">
+<area shape="rect" id="node1" title=" " alt="" coords="126,531,209,600"/>
+<area shape="rect" id="node2" href="$structNAV__POSECEF__STRUCT.html" title=" " alt="" coords="5,161,148,315"/>
+<area shape="rect" id="node3" href="$structNAV__PVT__STRUCT.html" title=" " alt="" coords="172,5,344,471"/>
+</map>

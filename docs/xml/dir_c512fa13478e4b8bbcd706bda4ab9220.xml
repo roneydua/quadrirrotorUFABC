@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compounddef id="dir_c512fa13478e4b8bbcd706bda4ab9220" kind="dir">
+    <compoundname>lib/RICCATI</compoundname>
+    <innerfile refid="Riccati_8cpp">Riccati.cpp</innerfile>
+    <innerfile refid="Riccati_8h">Riccati.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="lib/RICCATI/"/>
+  </compounddef>
+</doxygen>

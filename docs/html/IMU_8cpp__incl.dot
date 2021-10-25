@@ -1,0 +1,21 @@
+digraph "lib/IMU/IMU.cpp"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  Node1 [label="lib/IMU/IMU.cpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node2 [label="IMU.h",height=0.2,width=0.4,color="black",URL="$IMU_8h.html",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node3 [label="METODOSCALIBRACAO.h",height=0.2,width=0.4,color="black",URL="$METODOSCALIBRACAO_8h.html",tooltip="biblioteca contendo algoritmos de calibracao para acelerometro e magnetometro. Para correto funcionam..."];
+  Node3 -> Node4 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node4 [label="eigen3/Eigen/Dense",height=0.2,width=0.4,color="grey75",tooltip=" "];
+  Node3 -> Node5 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node5 [label="Arduino.h",height=0.2,width=0.4,color="grey75",tooltip=" "];
+  Node2 -> Node5 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node2 -> Node6 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node6 [label="Wire.h",height=0.2,width=0.4,color="grey75",tooltip=" "];
+  Node2 -> Node4 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node1 -> Node5 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+}

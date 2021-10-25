@@ -1,0 +1,8 @@
+<map id="IMU::readAK8963Registers" name="IMU::readAK8963Registers">
+<area shape="rect" id="node1" title=" " alt="" coords="611,24,777,48"/>
+<area shape="rect" id="node2" href="$classIMU.html#ae0d964d2f8ec122be068c41b84bc18a8" title=" " alt="" coords="265,24,348,48"/>
+<area shape="rect" id="node5" href="$classIMU.html#acd2af48f4eb0a0321080332016e3c1f7" title=" " alt="" coords="417,24,541,48"/>
+<area shape="rect" id="node6" href="$classIMU.html#af3b90e0b20d4bd55091be99f7aa67737" title=" " alt="" coords="396,72,563,96"/>
+<area shape="rect" id="node3" href="$classekf_1_1EKF.html#a4a6998123529ab0d0844ad21419fc895" title="Inicializacao do filtro de Kalman." alt="" coords="105,24,217,48"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d" title=" " alt="" coords="5,24,57,48"/>
+</map>

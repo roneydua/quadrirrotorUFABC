@@ -1,0 +1,4 @@
+<map id="ekf::S_r" name="ekf::S_r">
+<area shape="rect" id="node1" title="Calcula a Matriz Right&#45;Quaternion a partir do quaternion q." alt="" coords="5,5,76,29"/>
+<area shape="rect" id="node2" href="$namespaceekf.html#af3f0a631343e55ec8b42f3fbea182461" title="Matrix antissimetrica." alt="" coords="124,5,200,29"/>
+</map>

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compounddef id="dir_c71cd14614257cd5fbb26ecd4fda3227" kind="dir">
+    <compoundname>lib/TELEMETRIA</compoundname>
+    <innerfile refid="TELEMETRIA_8cpp">TELEMETRIA.cpp</innerfile>
+    <innerfile refid="TELEMETRIA_8h">TELEMETRIA.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="lib/TELEMETRIA/"/>
+  </compounddef>
+</doxygen>

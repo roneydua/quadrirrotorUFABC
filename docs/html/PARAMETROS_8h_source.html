@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Quadrirrotor: Código-Fonte de src/PARAMETROS.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Quadrirrotor
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Busca','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">PARAMETROS.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="PARAMETROS_8h.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef PARAMETROS_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define PARAMETROS_H</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;Arduino.h&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// #define CONTADOR_RPM</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="PARAMETROS_8h.html#af87b99a5e88c8bf5a811d30d7171cfd1">   16</a></span>&#160;<span class="keyword">const</span> gpio_num_t <a class="code" href="PARAMETROS_8h.html#af87b99a5e88c8bf5a811d30d7171cfd1">motor_1</a> = GPIO_NUM_18;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="PARAMETROS_8h.html#a3bf92781acfb45fe44b8a44a4be8570d">   18</a></span>&#160;<span class="keyword">const</span> gpio_num_t <a class="code" href="PARAMETROS_8h.html#a3bf92781acfb45fe44b8a44a4be8570d">motor_2</a> = GPIO_NUM_32;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="PARAMETROS_8h.html#a949cd35b9bf5f7c5ca5f14559e608043">   20</a></span>&#160;<span class="keyword">const</span> gpio_num_t <a class="code" href="PARAMETROS_8h.html#a949cd35b9bf5f7c5ca5f14559e608043">motor_3</a> = GPIO_NUM_33;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="PARAMETROS_8h.html#ac3ab8191681fb0429755a0d69c8ac3d7">   22</a></span>&#160;<span class="keyword">const</span> gpio_num_t <a class="code" href="PARAMETROS_8h.html#ac3ab8191681fb0429755a0d69c8ac3d7">motor_4</a> = GPIO_NUM_14;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="PARAMETROS_8h.html#add9a65252d4b2cddfaf05b497cedf588">   25</a></span>&#160;<span class="keyword">const</span> gpio_num_t <a class="code" href="PARAMETROS_8h.html#add9a65252d4b2cddfaf05b497cedf588">pin_rpm_motor_1</a> = GPIO_NUM_18;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="PARAMETROS_8h.html#abe0f56177a68efeaf4f44d9c4643b148">   27</a></span>&#160;<span class="keyword">const</span> gpio_num_t <a class="code" href="PARAMETROS_8h.html#abe0f56177a68efeaf4f44d9c4643b148">pin_rpm_motor_2</a> = GPIO_NUM_34;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="PARAMETROS_8h.html#a497c11942ecff6427768fce0fc53fada">   29</a></span>&#160;<span class="keyword">const</span> gpio_num_t <a class="code" href="PARAMETROS_8h.html#a497c11942ecff6427768fce0fc53fada">pin_rpm_motor_3</a> = GPIO_NUM_25;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="PARAMETROS_8h.html#a6a6a4b885f08c9169d2be71ab8cffb1c">   31</a></span>&#160;<span class="keyword">const</span> gpio_num_t <a class="code" href="PARAMETROS_8h.html#a6a6a4b885f08c9169d2be71ab8cffb1c">pin_rpm_motor_4</a> = GPIO_NUM_12;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">extern</span> gpio_num_t <a class="code" href="PARAMETROS_8h.html#a9135a979a4e22c5a4095074dec5477f5">onboard_led</a> = GPIO_NUM_5;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="PARAMETROS_8h.html#a493aff86cb19bf7b232753af37dabde8">   35</a></span>&#160;<span class="keyword">const</span> int8_t <a class="code" href="PARAMETROS_8h.html#a493aff86cb19bf7b232753af37dabde8">pin_rx_controle</a> = 13;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="PARAMETROS_8h.html#afdefd4079bd1bfbccf4e24bd9dd8fa26">   37</a></span>&#160;<span class="keyword">const</span> TickType_t <a class="code" href="PARAMETROS_8h.html#afdefd4079bd1bfbccf4e24bd9dd8fa26">xdtEstimator</a> = pdMS_TO_TICKS(20);</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="PARAMETROS_8h.html#a9cbadcfbca426e6cec9d14f30750ef04">   39</a></span>&#160;<span class="keyword">const</span> uint16_t <a class="code" href="PARAMETROS_8h.html#a9cbadcfbca426e6cec9d14f30750ef04">dtTelemetry</a> = 20;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="PARAMETROS_8h.html#ade6e1f4a0c110e26850765ae6acbcbcb">   41</a></span>&#160;<span class="keyword">const</span> TickType_t <a class="code" href="PARAMETROS_8h.html#ade6e1f4a0c110e26850765ae6acbcbcb">xdtTelemetry</a> = pdMS_TO_TICKS(<a class="code" href="PARAMETROS_8h.html#a9cbadcfbca426e6cec9d14f30750ef04">dtTelemetry</a>);</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="PARAMETROS_8h.html#a8ec4aca2f6caa5c3a1290a2301dfb97b">   42</a></span>&#160;TickType_t <a class="code" href="PARAMETROS_8h.html#a8ec4aca2f6caa5c3a1290a2301dfb97b">xLastdtTelemetry</a> = 0;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* PARAMETROS_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aPARAMETROS_8h_html_a3bf92781acfb45fe44b8a44a4be8570d"><div class="ttname"><a href="PARAMETROS_8h.html#a3bf92781acfb45fe44b8a44a4be8570d">motor_2</a></div><div class="ttdeci">const gpio_num_t motor_2</div><div class="ttdef"><b>Definition:</b> <a href="PARAMETROS_8h_source.html#l00018">PARAMETROS.h:18</a></div></div>
+<div class="ttc" id="aPARAMETROS_8h_html_a493aff86cb19bf7b232753af37dabde8"><div class="ttname"><a href="PARAMETROS_8h.html#a493aff86cb19bf7b232753af37dabde8">pin_rx_controle</a></div><div class="ttdeci">const int8_t pin_rx_controle</div><div class="ttdef"><b>Definition:</b> <a href="PARAMETROS_8h_source.html#l00035">PARAMETROS.h:35</a></div></div>
+<div class="ttc" id="aPARAMETROS_8h_html_a497c11942ecff6427768fce0fc53fada"><div class="ttname"><a href="PARAMETROS_8h.html#a497c11942ecff6427768fce0fc53fada">pin_rpm_motor_3</a></div><div class="ttdeci">const gpio_num_t pin_rpm_motor_3</div><div class="ttdef"><b>Definition:</b> <a href="PARAMETROS_8h_source.html#l00029">PARAMETROS.h:29</a></div></div>
+<div class="ttc" id="aPARAMETROS_8h_html_a6a6a4b885f08c9169d2be71ab8cffb1c"><div class="ttname"><a href="PARAMETROS_8h.html#a6a6a4b885f08c9169d2be71ab8cffb1c">pin_rpm_motor_4</a></div><div class="ttdeci">const gpio_num_t pin_rpm_motor_4</div><div class="ttdef"><b>Definition:</b> <a href="PARAMETROS_8h_source.html#l00031">PARAMETROS.h:31</a></div></div>
+<div class="ttc" id="aPARAMETROS_8h_html_a8ec4aca2f6caa5c3a1290a2301dfb97b"><div class="ttname"><a href="PARAMETROS_8h.html#a8ec4aca2f6caa5c3a1290a2301dfb97b">xLastdtTelemetry</a></div><div class="ttdeci">TickType_t xLastdtTelemetry</div><div class="ttdef"><b>Definition:</b> <a href="PARAMETROS_8h_source.html#l00042">PARAMETROS.h:42</a></div></div>
+<div class="ttc" id="aPARAMETROS_8h_html_a9135a979a4e22c5a4095074dec5477f5"><div class="ttname"><a href="PARAMETROS_8h.html#a9135a979a4e22c5a4095074dec5477f5">onboard_led</a></div><div class="ttdeci">gpio_num_t onboard_led</div></div>
+<div class="ttc" id="aPARAMETROS_8h_html_a949cd35b9bf5f7c5ca5f14559e608043"><div class="ttname"><a href="PARAMETROS_8h.html#a949cd35b9bf5f7c5ca5f14559e608043">motor_3</a></div><div class="ttdeci">const gpio_num_t motor_3</div><div class="ttdef"><b>Definition:</b> <a href="PARAMETROS_8h_source.html#l00020">PARAMETROS.h:20</a></div></div>
+<div class="ttc" id="aPARAMETROS_8h_html_a9cbadcfbca426e6cec9d14f30750ef04"><div class="ttname"><a href="PARAMETROS_8h.html#a9cbadcfbca426e6cec9d14f30750ef04">dtTelemetry</a></div><div class="ttdeci">const uint16_t dtTelemetry</div><div class="ttdef"><b>Definition:</b> <a href="PARAMETROS_8h_source.html#l00039">PARAMETROS.h:39</a></div></div>
+<div class="ttc" id="aPARAMETROS_8h_html_abe0f56177a68efeaf4f44d9c4643b148"><div class="ttname"><a href="PARAMETROS_8h.html#abe0f56177a68efeaf4f44d9c4643b148">pin_rpm_motor_2</a></div><div class="ttdeci">const gpio_num_t pin_rpm_motor_2</div><div class="ttdef"><b>Definition:</b> <a href="PARAMETROS_8h_source.html#l00027">PARAMETROS.h:27</a></div></div>
+<div class="ttc" id="aPARAMETROS_8h_html_ac3ab8191681fb0429755a0d69c8ac3d7"><div class="ttname"><a href="PARAMETROS_8h.html#ac3ab8191681fb0429755a0d69c8ac3d7">motor_4</a></div><div class="ttdeci">const gpio_num_t motor_4</div><div class="ttdef"><b>Definition:</b> <a href="PARAMETROS_8h_source.html#l00022">PARAMETROS.h:22</a></div></div>
+<div class="ttc" id="aPARAMETROS_8h_html_add9a65252d4b2cddfaf05b497cedf588"><div class="ttname"><a href="PARAMETROS_8h.html#add9a65252d4b2cddfaf05b497cedf588">pin_rpm_motor_1</a></div><div class="ttdeci">const gpio_num_t pin_rpm_motor_1</div><div class="ttdef"><b>Definition:</b> <a href="PARAMETROS_8h_source.html#l00025">PARAMETROS.h:25</a></div></div>
+<div class="ttc" id="aPARAMETROS_8h_html_ade6e1f4a0c110e26850765ae6acbcbcb"><div class="ttname"><a href="PARAMETROS_8h.html#ade6e1f4a0c110e26850765ae6acbcbcb">xdtTelemetry</a></div><div class="ttdeci">const TickType_t xdtTelemetry</div><div class="ttdef"><b>Definition:</b> <a href="PARAMETROS_8h_source.html#l00041">PARAMETROS.h:41</a></div></div>
+<div class="ttc" id="aPARAMETROS_8h_html_af87b99a5e88c8bf5a811d30d7171cfd1"><div class="ttname"><a href="PARAMETROS_8h.html#af87b99a5e88c8bf5a811d30d7171cfd1">motor_1</a></div><div class="ttdeci">const gpio_num_t motor_1</div><div class="ttdef"><b>Definition:</b> <a href="PARAMETROS_8h_source.html#l00016">PARAMETROS.h:16</a></div></div>
+<div class="ttc" id="aPARAMETROS_8h_html_afdefd4079bd1bfbccf4e24bd9dd8fa26"><div class="ttname"><a href="PARAMETROS_8h.html#afdefd4079bd1bfbccf4e24bd9dd8fa26">xdtEstimator</a></div><div class="ttdeci">const TickType_t xdtEstimator</div><div class="ttdef"><b>Definition:</b> <a href="PARAMETROS_8h_source.html#l00037">PARAMETROS.h:37</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Quadrirrotor: Código-Fonte de lib/IMU/IMU.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Quadrirrotor
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Busca','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_3554028ee2797c78c7765098b85f4139.html">IMU</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">IMU.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="IMU_8h.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#ifndef IMU_h</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define IMU_h</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="METODOSCALIBRACAO_8h.html">METODOSCALIBRACAO.h</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;Arduino.h&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;Wire.h&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;eigen3/Eigen/Dense&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">using namespace </span>Eigen;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classIMU.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="classIMU.html">IMU</a> {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classIMU.html#aeb363437539137b5c1eabd3641d242d1">   21</a></span>&#160;  <span class="keyword">enum</span> <a class="code" href="classIMU.html#aeb363437539137b5c1eabd3641d242d1">GyroRange</a> {</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classIMU.html#aeb363437539137b5c1eabd3641d242d1a1726a676d603df0b5c73ff7f1fff00d3">   22</a></span>&#160;    <a class="code" href="classIMU.html#aeb363437539137b5c1eabd3641d242d1a1726a676d603df0b5c73ff7f1fff00d3">GYRO_RANGE_250DPS</a>,</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classIMU.html#aeb363437539137b5c1eabd3641d242d1a8a24172a6bd08e9402c83af2f12bed57">   23</a></span>&#160;    <a class="code" href="classIMU.html#aeb363437539137b5c1eabd3641d242d1a8a24172a6bd08e9402c83af2f12bed57">GYRO_RANGE_500DPS</a>,</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classIMU.html#aeb363437539137b5c1eabd3641d242d1ac11c26d662eb1906caf70fb73d96e8bb">   24</a></span>&#160;    <a class="code" href="classIMU.html#aeb363437539137b5c1eabd3641d242d1ac11c26d662eb1906caf70fb73d96e8bb">GYRO_RANGE_1000DPS</a>,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    GYRO_RANGE_2000DPS</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classIMU.html#aeb363437539137b5c1eabd3641d242d1aa9e87e7d062d3bb23e1c9b5a1e85af11">   26</a></span>&#160;  };</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classIMU.html#acdbd8690acc2a34f12d568cb39486cc6">   27</a></span>&#160;  <span class="keyword">enum</span> <a class="code" href="classIMU.html#acdbd8690acc2a34f12d568cb39486cc6">AccelRange</a> {</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classIMU.html#acdbd8690acc2a34f12d568cb39486cc6a808bf1fd48b91e042cfde2d0fd570823">   28</a></span>&#160;    <a class="code" href="classIMU.html#acdbd8690acc2a34f12d568cb39486cc6a808bf1fd48b91e042cfde2d0fd570823">ACCEL_RANGE_2G</a>,</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classIMU.html#acdbd8690acc2a34f12d568cb39486cc6a4afca3881c874d1d4e0d28a21bfe926a">   29</a></span>&#160;    <a class="code" href="classIMU.html#acdbd8690acc2a34f12d568cb39486cc6a4afca3881c874d1d4e0d28a21bfe926a">ACCEL_RANGE_4G</a>,</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classIMU.html#acdbd8690acc2a34f12d568cb39486cc6a19c2caa0c23242f9dfd88326f2922719">   30</a></span>&#160;    <a class="code" href="classIMU.html#acdbd8690acc2a34f12d568cb39486cc6a19c2caa0c23242f9dfd88326f2922719">ACCEL_RANGE_8G</a>,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    ACCEL_RANGE_16G</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classIMU.html#acdbd8690acc2a34f12d568cb39486cc6a5398002690dded81a155ebdf7baea27f">   32</a></span>&#160;  };</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classIMU.html#a90c4f91f60185430b763f152ecb39521">   33</a></span>&#160;  <span class="keyword">enum</span> <a class="code" href="classIMU.html#a90c4f91f60185430b763f152ecb39521">DlpfBandwidth</a> {</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classIMU.html#a90c4f91f60185430b763f152ecb39521a461c657b4bc9c4f82936a9cb3b5ef54e">   34</a></span>&#160;    <a class="code" href="classIMU.html#a90c4f91f60185430b763f152ecb39521a461c657b4bc9c4f82936a9cb3b5ef54e">DLPF_BANDWIDTH_184HZ</a>,</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classIMU.html#a90c4f91f60185430b763f152ecb39521ac652b0fb4733da213152970ebc6ab53d">   35</a></span>&#160;    <a class="code" href="classIMU.html#a90c4f91f60185430b763f152ecb39521ac652b0fb4733da213152970ebc6ab53d">DLPF_BANDWIDTH_92HZ</a>,</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classIMU.html#a90c4f91f60185430b763f152ecb39521afcbbbba2e520cdd50dcb40da160137f0">   36</a></span>&#160;    <a class="code" href="classIMU.html#a90c4f91f60185430b763f152ecb39521afcbbbba2e520cdd50dcb40da160137f0">DLPF_BANDWIDTH_41HZ</a>,</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classIMU.html#a90c4f91f60185430b763f152ecb39521a174ee7819d598dcbb0d29cf8d0f17e8f">   37</a></span>&#160;    <a class="code" href="classIMU.html#a90c4f91f60185430b763f152ecb39521a174ee7819d598dcbb0d29cf8d0f17e8f">DLPF_BANDWIDTH_20HZ</a>,</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classIMU.html#a90c4f91f60185430b763f152ecb39521a38fa7998dfeb640e0289bc7407c40285">   38</a></span>&#160;    <a class="code" href="classIMU.html#a90c4f91f60185430b763f152ecb39521a38fa7998dfeb640e0289bc7407c40285">DLPF_BANDWIDTH_10HZ</a>,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    DLPF_BANDWIDTH_5HZ</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classIMU.html#a90c4f91f60185430b763f152ecb39521a1d05af591f93fc300ae7ef2608c62f51">   40</a></span>&#160;  };</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classIMU.html#a2c0603234e00be75c6c4249516ad2f3f">   41</a></span>&#160;  <span class="keyword">enum</span> <a class="code" href="classIMU.html#a2c0603234e00be75c6c4249516ad2f3f">LpAccelOdr</a> {</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classIMU.html#a2c0603234e00be75c6c4249516ad2f3fa075213b5e4f97307e699068a3a5a3477">   42</a></span>&#160;    LP_ACCEL_ODR_0_24HZ = 0,</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classIMU.html#a2c0603234e00be75c6c4249516ad2f3faf89517a8ecb4855f3234f4462b91c823">   43</a></span>&#160;    LP_ACCEL_ODR_0_49HZ = 1,</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classIMU.html#a2c0603234e00be75c6c4249516ad2f3fad02147081ed0eb82e65dd8752f44f888">   44</a></span>&#160;    LP_ACCEL_ODR_0_98HZ = 2,</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classIMU.html#a2c0603234e00be75c6c4249516ad2f3fa131f700c7f40e022a15fc0cfc0105402">   45</a></span>&#160;    LP_ACCEL_ODR_1_95HZ = 3,</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classIMU.html#a2c0603234e00be75c6c4249516ad2f3faf707c0714db95cadd2d4da425deb5711">   46</a></span>&#160;    LP_ACCEL_ODR_3_91HZ = 4,</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classIMU.html#a2c0603234e00be75c6c4249516ad2f3faf77d40ed8aeeb739022b877a82e34427">   47</a></span>&#160;    LP_ACCEL_ODR_7_81HZ = 5,</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classIMU.html#a2c0603234e00be75c6c4249516ad2f3fa96c09bd185599c742376c74188b15f06">   48</a></span>&#160;    LP_ACCEL_ODR_15_63HZ = 6,</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classIMU.html#a2c0603234e00be75c6c4249516ad2f3fabaa705a55660759564c56f323317aa0c">   49</a></span>&#160;    LP_ACCEL_ODR_31_25HZ = 7,</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classIMU.html#a2c0603234e00be75c6c4249516ad2f3fa6093b5c31fad290dc15497ba31181f8a">   50</a></span>&#160;    LP_ACCEL_ODR_62_50HZ = 8,</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classIMU.html#a2c0603234e00be75c6c4249516ad2f3faba9570866d4810bc609345c435edc2a8">   51</a></span>&#160;    LP_ACCEL_ODR_125HZ = 9,</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classIMU.html#a2c0603234e00be75c6c4249516ad2f3faf7e601fd99ca8179e3fec8aa3edb0dfa">   52</a></span>&#160;    LP_ACCEL_ODR_250HZ = 10,</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    LP_ACCEL_ODR_500HZ = 11</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classIMU.html#a2c0603234e00be75c6c4249516ad2f3facad3564a280a8a7399dc664e68adefc3">   54</a></span>&#160;  };</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classIMU.html#a0efdfa77f452641689be4e9a4bae6a12">   56</a></span>&#160;  Vector3f *<a class="code" href="classIMU.html#a0efdfa77f452641689be4e9a4bae6a12">_acel</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classIMU.html#a72d1d4fe1027a9b0d6eed394e18ea97b">   58</a></span>&#160;  Vector3f *<a class="code" href="classIMU.html#a72d1d4fe1027a9b0d6eed394e18ea97b">_gyro</a>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classIMU.html#a54e4834bdf8648b7ec11ca460b92facf">   60</a></span>&#160;  Vector3f *<a class="code" href="classIMU.html#a54e4834bdf8648b7ec11ca460b92facf">_mag</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classIMU.html#ae628afbcc858c70ea5d36a13d59998f2">   61</a></span>&#160;  Vector3f <a class="code" href="classIMU.html#ae628afbcc858c70ea5d36a13d59998f2">magTemp</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classIMU.html#a23880868a20bc15879232b9ed3c1cbbd">   62</a></span>&#160;  <span class="keywordtype">float</span> <a class="code" href="classIMU.html#a23880868a20bc15879232b9ed3c1cbbd">_t</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classIMU.html#a377a386f44cf1d85d31b4f2a6b1a43d1">   65</a></span>&#160;  <span class="keyword">const</span> Matrix3f sFAccel =</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      (Matrix3f() &lt;&lt; 0.00477306f, -2.94365e-05, 3.90831e-05, 4.92044e-05,</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;       0.00477824f, 5.7648e-05, 1.55692e-05, -7.4314e-05, 0.00474654f)</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;          .finished();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="comment">//</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="classIMU.html#a9a145f45e2e08cae0f363747c5603bd1">   73</a></span>&#160;<span class="comment"></span>  Vector3f _biasAccel{-0.37238f, -0.109074f, 0.121389f};</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="comment">// const int16_t _biasAccel[3]{50, 17, -19};</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classIMU.html#a9d22cd7cb7bb93f2e04aa713aed73532">   76</a></span>&#160;<span class="comment"></span>  Vector3f _biasGyro = Vector3f::Zero();</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="classIMU.html#a3ba42ad7f598311689e5eccd75daa019">   78</a></span>&#160;  Vector3f _biasMag = Vector3f::Zero();</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classIMU.html#af5d90aa5410529450fd31da2e1b1f296">   80</a></span>&#160;  Matrix3f _sM = Matrix3f::Identity();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <a class="code" href="classIMU.html">IMU</a>(TwoWire &amp;bus, uint8_t address);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keywordtype">int</span> begin(Vector3f &amp;acel, Vector3f &amp;gyro, Vector3f &amp;mag);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keywordtype">int</span> readSensor();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keywordtype">int</span> setDlpfBandwidth(<a class="code" href="classIMU.html#a90c4f91f60185430b763f152ecb39521">DlpfBandwidth</a> bandwidth);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordtype">int</span> setGyroRange(<a class="code" href="classIMU.html#aeb363437539137b5c1eabd3641d242d1">GyroRange</a> range);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keywordtype">int</span> setAccelRange(<a class="code" href="classIMU.html#acdbd8690acc2a34f12d568cb39486cc6">AccelRange</a> range);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keywordtype">void</span> calibraGyro(<span class="keywordtype">int</span> N = 100);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keywordtype">int</span> calibracaoMagnetometro(<span class="keywordtype">float</span> moduloCampo);</div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="classIMU.html#a18fe8e6be1b14c9e6c1b47d884dae375">   90</a></span>&#160;  TwoWire *<a class="code" href="classIMU.html#a18fe8e6be1b14c9e6c1b47d884dae375">_i2c</a>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="classIMU.html#a36ebf3acc2b8f819d6f08650ddd98ca3">   94</a></span>&#160;  uint8_t _buffer[21];</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="classIMU.html#a412a6ac9638ce35bc63f1eedc7e152de">   97</a></span>&#160;  int16_t <a class="code" href="classIMU.html#a412a6ac9638ce35bc63f1eedc7e152de">_axcounts</a>, _aycounts, _azcounts;</div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="classIMU.html#ab27df333316fef090c6c66c850dcea6d">   98</a></span>&#160;  int16_t <a class="code" href="classIMU.html#ab27df333316fef090c6c66c850dcea6d">_gxcounts</a>, _gycounts, _gzcounts;</div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="classIMU.html#afdba3ec94b88b71f4f3608ec7d5d7fc4">   99</a></span>&#160;  int16_t <a class="code" href="classIMU.html#afdba3ec94b88b71f4f3608ec7d5d7fc4">_hxcounts</a>, _hycounts, _hzcounts;</div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="classIMU.html#a4274d743239871f6cbc54de5c84eca3a">  100</a></span>&#160;  int16_t <a class="code" href="classIMU.html#a4274d743239871f6cbc54de5c84eca3a">_tcounts</a>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="comment">// vetores de leitura</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="classIMU.html#ac538fc9a09f4d60b73fb477738b0d602">  103</a></span>&#160;  uint8_t <a class="code" href="classIMU.html#ac538fc9a09f4d60b73fb477738b0d602">_address</a>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="classIMU.html#a6911d1a81b2cbbefde2357df0c77428d">  105</a></span>&#160;  <span class="keywordtype">size_t</span> <a class="code" href="classIMU.html#a6911d1a81b2cbbefde2357df0c77428d">_numBytes</a>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <span class="comment">// frequencia do i2c;</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="classIMU.html#a6b598b99829fa0fcd5c3d9903eb7b293">  108</a></span>&#160;  <span class="keyword">const</span> uint32_t _i2cRate = 400000;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="comment">// verificacao de sucesso na comunicacao com sensor</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="classIMU.html#a279015ea1ea0a32b45a9a1a26b2d4fda">  110</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="classIMU.html#a279015ea1ea0a32b45a9a1a26b2d4fda">_status</a>;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="comment">// constantes</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="classIMU.html#ac33cd97144f35683cfda7776ea16243e">  112</a></span>&#160;  <span class="keyword">const</span> <span class="keywordtype">float</span> gG = 9.786171951281709f;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <span class="comment">// escalas e faixa de trabalho</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="classIMU.html#a28eb12db9c58ca68e4ddb5020dd9dd20">  114</a></span>&#160;  <span class="keywordtype">float</span> <a class="code" href="classIMU.html#a28eb12db9c58ca68e4ddb5020dd9dd20">_accelScale</a>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="classIMU.html#a13aac4d32bd5e5bd5893a46adea43ba6">  115</a></span>&#160;  <span class="keywordtype">float</span> <a class="code" href="classIMU.html#a13aac4d32bd5e5bd5893a46adea43ba6">_gyroScale</a>;</div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="classIMU.html#aca68ebe4db6de0261ad0c18ab93baa0c">  116</a></span>&#160;  <span class="keywordtype">float</span> <a class="code" href="classIMU.html#aca68ebe4db6de0261ad0c18ab93baa0c">_magScaleX</a>, _magScaleY, _magScaleZ;</div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="classIMU.html#a81407c3f7e8e63735dfc672b53fd99dd">  117</a></span>&#160;  <a class="code" href="classIMU.html#acdbd8690acc2a34f12d568cb39486cc6">AccelRange</a> <a class="code" href="classIMU.html#a81407c3f7e8e63735dfc672b53fd99dd">_accelRange</a>;</div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="classIMU.html#abc2f9849bd27b4d423b2140ebdc8701a">  118</a></span>&#160;  <a class="code" href="classIMU.html#aeb363437539137b5c1eabd3641d242d1">GyroRange</a> <a class="code" href="classIMU.html#abc2f9849bd27b4d423b2140ebdc8701a">_gyroRange</a>;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <span class="comment">// configuracoes das faixas de trabalho</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <span class="comment">// AccelRange  ACCEL_FS_SEL_16G</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <span class="comment">// GyroRange GYRO_FS_SEL_2000DPS;</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="classIMU.html#a1301777da9bc68eee7dc744a62b06ac3">  122</a></span>&#160;  <a class="code" href="classIMU.html#a90c4f91f60185430b763f152ecb39521">DlpfBandwidth</a> <a class="code" href="classIMU.html#a1301777da9bc68eee7dc744a62b06ac3">_bandwidth</a>;</div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="classIMU.html#a3eb0783394601a5a41fa7079e4c929b0">  123</a></span>&#160;  uint8_t <a class="code" href="classIMU.html#a3eb0783394601a5a41fa7079e4c929b0">_srd</a>;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <span class="comment">// char _buf[32];</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <span class="comment">// MPU9250 registers</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="classIMU.html#a5e6bc8a1984acb82321f9b48db9e8a79">  126</a></span>&#160;  <span class="keyword">const</span> uint8_t ACCEL_OUT = 0x3B;</div>
+<div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="classIMU.html#a59053815a5a71f5bebc2e65f16659ded">  127</a></span>&#160;  <span class="keyword">const</span> uint8_t GYRO_OUT = 0x43;</div>
+<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="classIMU.html#aa9c1984c97e26df587281692f60e2949">  128</a></span>&#160;  <span class="keyword">const</span> uint8_t TEMP_OUT = 0x41;</div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="classIMU.html#af28bfb59bb04bc759038078a4db01993">  129</a></span>&#160;  <span class="keyword">const</span> uint8_t EXT_SENS_DATA_00 = 0x49;</div>
+<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="classIMU.html#a71dae5b97d1b74436843e3e822ff4a32">  130</a></span>&#160;  <span class="keyword">const</span> uint8_t ACCEL_CONFIG = 0x1C;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  <span class="comment">/* Quanto menor a faixa que o acelerometro trabalho maior sua</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="comment">sensibilidade. Com o intuido de reduzir a quantidade de ruidos</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="comment">usaremos as maiores escalas */</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="classIMU.html#ac90c7b0bb203e2dff90306482614433e">  134</a></span>&#160;  <span class="keyword">const</span> uint8_t ACCEL_FS_SEL_2G = 0x00;</div>
+<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="classIMU.html#a6d4e8157bb4c0dc204b66c9bbf7c6cb0">  135</a></span>&#160;  <span class="keyword">const</span> uint8_t ACCEL_FS_SEL_4G = 0x08;</div>
+<div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="classIMU.html#a62e76f7ca4450fbff9ba169a7bf5d183">  136</a></span>&#160;  <span class="keyword">const</span> uint8_t ACCEL_FS_SEL_8G = 0x10;</div>
+<div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="classIMU.html#a920aa5f13b9c8e5bc927927330ac8af2">  137</a></span>&#160;  <span class="keyword">const</span> uint8_t ACCEL_FS_SEL_16G = 0x18;</div>
+<div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="classIMU.html#a7d417d3c235bd4218a9cecb6c39b684d">  138</a></span>&#160;  <span class="keyword">const</span> uint8_t GYRO_CONFIG = 0x1B;</div>
+<div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="classIMU.html#abaece728935c77934691fc678c971de4">  139</a></span>&#160;  <span class="keyword">const</span> uint8_t GYRO_FS_SEL_250DPS = 0x00;</div>
+<div class="line"><a name="l00140"></a><span class="lineno"><a class="line" href="classIMU.html#a57d0058b144d11d64aa644ed1d3b313e">  140</a></span>&#160;  <span class="keyword">const</span> uint8_t GYRO_FS_SEL_500DPS = 0x08;</div>
+<div class="line"><a name="l00141"></a><span class="lineno"><a class="line" href="classIMU.html#ab8e2494d9e3021bf039323cf3440de1e">  141</a></span>&#160;  <span class="keyword">const</span> uint8_t GYRO_FS_SEL_1000DPS = 0x10;</div>
+<div class="line"><a name="l00142"></a><span class="lineno"><a class="line" href="classIMU.html#a040f0183e93dc2c87f28f727c328a313">  142</a></span>&#160;  <span class="keyword">const</span> uint8_t GYRO_FS_SEL_2000DPS = 0x18;</div>
+<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="classIMU.html#a0b4c0cfc28087ec72de6155da46de0d9">  143</a></span>&#160;  <span class="keyword">const</span> uint8_t ACCEL_CONFIG2 = 0x1D;</div>
+<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="classIMU.html#a3f74d7d2c5a8c93151ae2bee4e0b4887">  144</a></span>&#160;  <span class="keyword">const</span> uint8_t ACCEL_DLPF_184 = 0x01;</div>
+<div class="line"><a name="l00145"></a><span class="lineno"><a class="line" href="classIMU.html#ac87ed9eeb0d6fd20e987410155fee53f">  145</a></span>&#160;  <span class="keyword">const</span> uint8_t ACCEL_DLPF_92 = 0x02;</div>
+<div class="line"><a name="l00146"></a><span class="lineno"><a class="line" href="classIMU.html#ae2df48f29311f232432a16284b9159ed">  146</a></span>&#160;  <span class="keyword">const</span> uint8_t ACCEL_DLPF_41 = 0x03;</div>
+<div class="line"><a name="l00147"></a><span class="lineno"><a class="line" href="classIMU.html#a524d9af6cbaa1df5f15db87b1157467c">  147</a></span>&#160;  <span class="keyword">const</span> uint8_t ACCEL_DLPF_20 = 0x04;</div>
+<div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="classIMU.html#af0554e2b6db872868f21b6953a1e8585">  148</a></span>&#160;  <span class="keyword">const</span> uint8_t ACCEL_DLPF_10 = 0x05;</div>
+<div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="classIMU.html#aa1d7a036cec01526451187434785b0ef">  149</a></span>&#160;  <span class="keyword">const</span> uint8_t ACCEL_DLPF_5 = 0x06;</div>
+<div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="classIMU.html#a8b8013c6ee050d9a1c0c9aeb25b80cce">  150</a></span>&#160;  <span class="keyword">const</span> uint8_t CONFIG = 0x1A;</div>
+<div class="line"><a name="l00151"></a><span class="lineno"><a class="line" href="classIMU.html#a2b7230a7c84242e46ffb1b801df342bd">  151</a></span>&#160;  <span class="keyword">const</span> uint8_t GYRO_DLPF_184 = 0x01;</div>
+<div class="line"><a name="l00152"></a><span class="lineno"><a class="line" href="classIMU.html#a51863a08fe8094125b63498b591d0a54">  152</a></span>&#160;  <span class="keyword">const</span> uint8_t GYRO_DLPF_92 = 0x02;</div>
+<div class="line"><a name="l00153"></a><span class="lineno"><a class="line" href="classIMU.html#a178f00ee16f64288cc8d15f3fa4400f7">  153</a></span>&#160;  <span class="keyword">const</span> uint8_t GYRO_DLPF_41 = 0x03;</div>
+<div class="line"><a name="l00154"></a><span class="lineno"><a class="line" href="classIMU.html#a1f673a77bab71d2ae30959e7b9ddf5be">  154</a></span>&#160;  <span class="keyword">const</span> uint8_t GYRO_DLPF_20 = 0x04;</div>
+<div class="line"><a name="l00155"></a><span class="lineno"><a class="line" href="classIMU.html#a2675b7bb5b5d4a9d1333472248ff7d18">  155</a></span>&#160;  <span class="keyword">const</span> uint8_t GYRO_DLPF_10 = 0x05;</div>
+<div class="line"><a name="l00156"></a><span class="lineno"><a class="line" href="classIMU.html#a34c9619f6639e3ddda87b018eb94214e">  156</a></span>&#160;  <span class="keyword">const</span> uint8_t GYRO_DLPF_5 = 0x06;</div>
+<div class="line"><a name="l00157"></a><span class="lineno"><a class="line" href="classIMU.html#a1baa422b103a5b9c2677c8e447b11ebe">  157</a></span>&#160;  <span class="keyword">const</span> uint8_t SMPDIV = 0x19;</div>
+<div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="classIMU.html#ac9be008941488be4fb726c2021946ef0">  158</a></span>&#160;  <span class="keyword">const</span> uint8_t INT_PIN_CFG = 0x37;</div>
+<div class="line"><a name="l00159"></a><span class="lineno"><a class="line" href="classIMU.html#aa465f1843da6c3a27b32234d1c76b746">  159</a></span>&#160;  <span class="keyword">const</span> uint8_t INT_ENABLE = 0x38;</div>
+<div class="line"><a name="l00160"></a><span class="lineno"><a class="line" href="classIMU.html#a525a5ff38a1084f951bbb982b5eda84f">  160</a></span>&#160;  <span class="keyword">const</span> uint8_t INT_DISABLE = 0x00;</div>
+<div class="line"><a name="l00161"></a><span class="lineno"><a class="line" href="classIMU.html#af46a4d410ba22aa7ce6e5f3df41c8e6e">  161</a></span>&#160;  <span class="keyword">const</span> uint8_t INT_PULSE_50US = 0x00;</div>
+<div class="line"><a name="l00162"></a><span class="lineno"><a class="line" href="classIMU.html#a7d797231f1773fff9c0fe7924a0b3960">  162</a></span>&#160;  <span class="keyword">const</span> uint8_t INT_WOM_EN = 0x40;</div>
+<div class="line"><a name="l00163"></a><span class="lineno"><a class="line" href="classIMU.html#adef065984587c7e17ee4641a1cf55ce0">  163</a></span>&#160;  <span class="keyword">const</span> uint8_t INT_RAW_RDY_EN = 0x01;</div>
+<div class="line"><a name="l00164"></a><span class="lineno"><a class="line" href="classIMU.html#a66529d6102c44bc6be8d8ef167f27058">  164</a></span>&#160;  <span class="keyword">const</span> uint8_t PWR_MGMNT_1 = 0x6B;</div>
+<div class="line"><a name="l00165"></a><span class="lineno"><a class="line" href="classIMU.html#aa1c569cb683d1f2b24074a561cbb1b44">  165</a></span>&#160;  <span class="keyword">const</span> uint8_t PWR_CYCLE = 0x20;</div>
+<div class="line"><a name="l00166"></a><span class="lineno"><a class="line" href="classIMU.html#a045e1ec896d0e207d640d1fb7930328f">  166</a></span>&#160;  <span class="keyword">const</span> uint8_t PWR_RESET = 0x80;</div>
+<div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="classIMU.html#aed128bfb60251b9016454f9b491b0d3e">  167</a></span>&#160;  <span class="keyword">const</span> uint8_t CLOCK_SEL_PLL = 0x01;</div>
+<div class="line"><a name="l00168"></a><span class="lineno"><a class="line" href="classIMU.html#a8e2a7777d4356a5c4cf6cb52e9aeed4b">  168</a></span>&#160;  <span class="keyword">const</span> uint8_t PWR_MGMNT_2 = 0x6C;</div>
+<div class="line"><a name="l00169"></a><span class="lineno"><a class="line" href="classIMU.html#ad52e1d65ca1b23161ff28ea6a0891a1b">  169</a></span>&#160;  <span class="keyword">const</span> uint8_t SEN_ENABLE = 0x00;</div>
+<div class="line"><a name="l00170"></a><span class="lineno"><a class="line" href="classIMU.html#a5dbb6af50b6cb4f752b971d073049980">  170</a></span>&#160;  <span class="keyword">const</span> uint8_t DIS_GYRO = 0x07;</div>
+<div class="line"><a name="l00171"></a><span class="lineno"><a class="line" href="classIMU.html#a82f56158c28ca51ed7fe9a667b668080">  171</a></span>&#160;  <span class="keyword">const</span> uint8_t USER_CTRL = 0x6A;</div>
+<div class="line"><a name="l00172"></a><span class="lineno"><a class="line" href="classIMU.html#aac5f67e0f33068d9ca184e8338cea69b">  172</a></span>&#160;  <span class="keyword">const</span> uint8_t I2C_MST_EN = 0x20;</div>
+<div class="line"><a name="l00173"></a><span class="lineno"><a class="line" href="classIMU.html#a19704607249a2df9ae115cf5ec42b065">  173</a></span>&#160;  <span class="keyword">const</span> uint8_t I2C_MST_CLK = 0x0D;</div>
+<div class="line"><a name="l00174"></a><span class="lineno"><a class="line" href="classIMU.html#a40a6c474b6590faa545bcef6796e0b09">  174</a></span>&#160;  <span class="keyword">const</span> uint8_t I2C_MST_CTRL = 0x24;</div>
+<div class="line"><a name="l00175"></a><span class="lineno"><a class="line" href="classIMU.html#a6ae19caaa47d77d07abf79af77e501e8">  175</a></span>&#160;  <span class="keyword">const</span> uint8_t I2C_SLV0_ADDR = 0x25;</div>
+<div class="line"><a name="l00176"></a><span class="lineno"><a class="line" href="classIMU.html#a45b93a6a2bd367d73428482805ee65ce">  176</a></span>&#160;  <span class="keyword">const</span> uint8_t I2C_SLV0_REG = 0x26;</div>
+<div class="line"><a name="l00177"></a><span class="lineno"><a class="line" href="classIMU.html#ab6fc887f35142051d1b1fe3cba25aff0">  177</a></span>&#160;  <span class="keyword">const</span> uint8_t I2C_SLV0_DO = 0x63;</div>
+<div class="line"><a name="l00178"></a><span class="lineno"><a class="line" href="classIMU.html#a3b6c38493eed68a58509e8be8b451ccf">  178</a></span>&#160;  <span class="keyword">const</span> uint8_t I2C_SLV0_CTRL = 0x27;</div>
+<div class="line"><a name="l00179"></a><span class="lineno"><a class="line" href="classIMU.html#a73733d4a18041bbc1f094a52be517118">  179</a></span>&#160;  <span class="keyword">const</span> uint8_t I2C_SLV0_EN = 0x80;</div>
+<div class="line"><a name="l00180"></a><span class="lineno"><a class="line" href="classIMU.html#a1ff3bc7d6cd3c4035ae2619248b9dd86">  180</a></span>&#160;  <span class="keyword">const</span> uint8_t I2C_READ_FLAG = 0x80;</div>
+<div class="line"><a name="l00181"></a><span class="lineno"><a class="line" href="classIMU.html#ad71aa14a790197de3eff414f6f9dfcec">  181</a></span>&#160;  <span class="keyword">const</span> uint8_t MOT_DETECT_CTRL = 0x69;</div>
+<div class="line"><a name="l00182"></a><span class="lineno"><a class="line" href="classIMU.html#a5ffc27f0c3bca71b7df305a66348a23e">  182</a></span>&#160;  <span class="keyword">const</span> uint8_t ACCEL_INTEL_EN = 0x80;</div>
+<div class="line"><a name="l00183"></a><span class="lineno"><a class="line" href="classIMU.html#aca3b94b1ea5f63ed99123135f9684d75">  183</a></span>&#160;  <span class="keyword">const</span> uint8_t ACCEL_INTEL_MODE = 0x40;</div>
+<div class="line"><a name="l00184"></a><span class="lineno"><a class="line" href="classIMU.html#a981e7149fad7f85b241d9205df62e464">  184</a></span>&#160;  <span class="keyword">const</span> uint8_t LP_ACCEL_ODR = 0x1E;</div>
+<div class="line"><a name="l00185"></a><span class="lineno"><a class="line" href="classIMU.html#a9ca3d7b64ffa73ab222221294f9afe7b">  185</a></span>&#160;  <span class="keyword">const</span> uint8_t WOM_THR = 0x1F;</div>
+<div class="line"><a name="l00186"></a><span class="lineno"><a class="line" href="classIMU.html#ad608d0b182a0da8574b85194f5707d14">  186</a></span>&#160;  <span class="keyword">const</span> uint8_t WHO_AM_I = 0x75;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  <span class="comment">// const uint8_t FIFO_EN = 0x23;</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  <span class="comment">// const uint8_t FIFO_TEMP = 0x80;</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  <span class="comment">// const uint8_t FIFO_GYRO = 0x70;</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  <span class="comment">// const uint8_t FIFO_ACCEL = 0x08;</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  <span class="comment">// const uint8_t FIFO_MAG = 0x01;</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  <span class="comment">// const uint8_t FIFO_COUNT = 0x72;</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  <span class="comment">// const uint8_t FIFO_READ = 0x74;</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  <span class="comment">// registro do magnetometro AK8963</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno"><a class="line" href="classIMU.html#a4906bf7080228a00a2726fab0bc9deb1">  195</a></span>&#160;  <span class="keyword">const</span> uint8_t AK8963_I2C_ADDR = 0x0C;</div>
+<div class="line"><a name="l00196"></a><span class="lineno"><a class="line" href="classIMU.html#af5582b84ecf8829cfc7da6ad1ed3296a">  196</a></span>&#160;  <span class="keyword">const</span> uint8_t AK8963_HXL = 0x03;</div>
+<div class="line"><a name="l00197"></a><span class="lineno"><a class="line" href="classIMU.html#aa8691a633c35d2f7d7951f68b187adb3">  197</a></span>&#160;  <span class="keyword">const</span> uint8_t AK8963_CNTL1 = 0x0A;</div>
+<div class="line"><a name="l00198"></a><span class="lineno"><a class="line" href="classIMU.html#aa96e1f69db3a08f6ac0c0115d9e8e880">  198</a></span>&#160;  <span class="keyword">const</span> uint8_t AK8963_PWR_DOWN = 0x00;</div>
+<div class="line"><a name="l00199"></a><span class="lineno"><a class="line" href="classIMU.html#a0e2fe28ad7e635876a061dcf0b338bcb">  199</a></span>&#160;  <span class="keyword">const</span> uint8_t AK8963_CNT_MEAS1 = 0x12;</div>
+<div class="line"><a name="l00200"></a><span class="lineno"><a class="line" href="classIMU.html#a81aa27b2da74539d88966ab71c28337d">  200</a></span>&#160;  <span class="keyword">const</span> uint8_t AK8963_CNT_MEAS2 = 0x16;</div>
+<div class="line"><a name="l00201"></a><span class="lineno"><a class="line" href="classIMU.html#aefe9d58c962b042b5e772342fe510170">  201</a></span>&#160;  <span class="keyword">const</span> uint8_t AK8963_FUSE_ROM = 0x0F;</div>
+<div class="line"><a name="l00202"></a><span class="lineno"><a class="line" href="classIMU.html#ab6945cc8ff2e84fa2f0927388d74fec1">  202</a></span>&#160;  <span class="keyword">const</span> uint8_t AK8963_CNTL2 = 0x0B;</div>
+<div class="line"><a name="l00203"></a><span class="lineno"><a class="line" href="classIMU.html#ad170d8561fc4600092a29e1b3ff214a6">  203</a></span>&#160;  <span class="keyword">const</span> uint8_t AK8963_RESET = 0x01;</div>
+<div class="line"><a name="l00204"></a><span class="lineno"><a class="line" href="classIMU.html#a5dc26b210ba9adcc176b9e837238d87d">  204</a></span>&#160;  <span class="keyword">const</span> uint8_t AK8963_ASA = 0x10;</div>
+<div class="line"><a name="l00205"></a><span class="lineno"><a class="line" href="classIMU.html#afbf16a57d58c858beda5ccf36ee4b81f">  205</a></span>&#160;  <span class="keyword">const</span> uint8_t AK8963_WHO_AM_I = 0x00;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;  <span class="comment">// funcoes privadas</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;  <span class="keywordtype">int</span> writeRegister(uint8_t subAddress, uint8_t <a class="code" href="GPS_8h.html#a27c939ba1a4f4d927aaa500781293ba7">data</a>);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;  <span class="keywordtype">int</span> readRegisters(uint8_t subAddress, uint8_t count, uint8_t *dest);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;  <span class="keywordtype">int</span> writeAK8963Register(uint8_t subAddress, uint8_t <a class="code" href="GPS_8h.html#a27c939ba1a4f4d927aaa500781293ba7">data</a>);</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;  <span class="keywordtype">int</span> whoAmI();</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;  <span class="keywordtype">int</span> whoAmIAK8963();</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;  <span class="keywordtype">int</span> readAK8963Registers(uint8_t subAddress, uint8_t count, uint8_t *dest);</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;};</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="comment">/* IMU_H_ */</span></div>
+<div class="ttc" id="aGPS_8h_html_a27c939ba1a4f4d927aaa500781293ba7"><div class="ttname"><a href="GPS_8h.html#a27c939ba1a4f4d927aaa500781293ba7">data</a></div><div class="ttdeci">PacketData data</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00146">GPS.h:146</a></div></div>
+<div class="ttc" id="aMETODOSCALIBRACAO_8h_html"><div class="ttname"><a href="METODOSCALIBRACAO_8h.html">METODOSCALIBRACAO.h</a></div><div class="ttdoc">biblioteca contendo algoritmos de calibracao para acelerometro e magnetometro. Para correto funcionam...</div></div>
+<div class="ttc" id="aclassIMU_html"><div class="ttname"><a href="classIMU.html">IMU</a></div><div class="ttdef"><b>Definition:</b> <a href="IMU_8h_source.html#l00019">IMU.h:19</a></div></div>
+<div class="ttc" id="aclassIMU_html_a0efdfa77f452641689be4e9a4bae6a12"><div class="ttname"><a href="classIMU.html#a0efdfa77f452641689be4e9a4bae6a12">IMU::_acel</a></div><div class="ttdeci">Vector3f * _acel</div><div class="ttdef"><b>Definition:</b> <a href="IMU_8h_source.html#l00056">IMU.h:56</a></div></div>
+<div class="ttc" id="aclassIMU_html_a1301777da9bc68eee7dc744a62b06ac3"><div class="ttname"><a href="classIMU.html#a1301777da9bc68eee7dc744a62b06ac3">IMU::_bandwidth</a></div><div class="ttdeci">DlpfBandwidth _bandwidth</div><div class="ttdef"><b>Definition:</b> <a href="IMU_8h_source.html#l00122">IMU.h:122</a></div></div>
+<div class="ttc" id="aclassIMU_html_a13aac4d32bd5e5bd5893a46adea43ba6"><div class="ttname"><a href="classIMU.html#a13aac4d32bd5e5bd5893a46adea43ba6">IMU::_gyroScale</a></div><div class="ttdeci">float _gyroScale</div><div class="ttdef"><b>Definition:</b> <a href="IMU_8h_source.html#l00115">IMU.h:115</a></div></div>
+<div class="ttc" id="aclassIMU_html_a18fe8e6be1b14c9e6c1b47d884dae375"><div class="ttname"><a href="classIMU.html#a18fe8e6be1b14c9e6c1b47d884dae375">IMU::_i2c</a></div><div class="ttdeci">TwoWire * _i2c</div><div class="ttdef"><b>Definition:</b> <a href="IMU_8h_source.html#l00090">IMU.h:90</a></div></div>
+<div class="ttc" id="aclassIMU_html_a23880868a20bc15879232b9ed3c1cbbd"><div class="ttname"><a href="classIMU.html#a23880868a20bc15879232b9ed3c1cbbd">IMU::_t</a></div><div class="ttdeci">float _t</div><div class="ttdef"><b>Definition:</b> <a href="IMU_8h_source.html#l00062">IMU.h:62</a></div></div>
+<div class="ttc" id="aclassIMU_html_a279015ea1ea0a32b45a9a1a26b2d4fda"><div class="ttname"><a href="classIMU.html#a279015ea1ea0a32b45a9a1a26b2d4fda">IMU::_status</a></div><div class="ttdeci">int _status</div><div class="ttdef"><b>Definition:</b> <a href="IMU_8h_source.html#l00110">IMU.h:110</a></div></div>
+<div class="ttc" id="aclassIMU_html_a28eb12db9c58ca68e4ddb5020dd9dd20"><div class="ttname"><a href="classIMU.html#a28eb12db9c58ca68e4ddb5020dd9dd20">IMU::_accelScale</a></div><div class="ttdeci">float _accelScale</div><div class="ttdef"><b>Definition:</b> <a href="IMU_8h_source.html#l00114">IMU.h:114</a></div></div>
+<div class="ttc" id="aclassIMU_html_a2c0603234e00be75c6c4249516ad2f3f"><div class="ttname"><a href="classIMU.html#a2c0603234e00be75c6c4249516ad2f3f">IMU::LpAccelOdr</a></div><div class="ttdeci">LpAccelOdr</div><div class="ttdef"><b>Definition:</b> <a href="IMU_8h_source.html#l00041">IMU.h:41</a></div></div>
+<div class="ttc" id="aclassIMU_html_a3eb0783394601a5a41fa7079e4c929b0"><div class="ttname"><a href="classIMU.html#a3eb0783394601a5a41fa7079e4c929b0">IMU::_srd</a></div><div class="ttdeci">uint8_t _srd</div><div class="ttdef"><b>Definition:</b> <a href="IMU_8h_source.html#l00123">IMU.h:123</a></div></div>
+<div class="ttc" id="aclassIMU_html_a412a6ac9638ce35bc63f1eedc7e152de"><div class="ttname"><a href="classIMU.html#a412a6ac9638ce35bc63f1eedc7e152de">IMU::_axcounts</a></div><div class="ttdeci">int16_t _axcounts</div><div class="ttdef"><b>Definition:</b> <a href="IMU_8h_source.html#l00097">IMU.h:97</a></div></div>
+<div class="ttc" id="aclassIMU_html_a4274d743239871f6cbc54de5c84eca3a"><div class="ttname"><a href="classIMU.html#a4274d743239871f6cbc54de5c84eca3a">IMU::_tcounts</a></div><div class="ttdeci">int16_t _tcounts</div><div class="ttdef"><b>Definition:</b> <a href="IMU_8h_source.html#l00100">IMU.h:100</a></div></div>
+<div class="ttc" id="aclassIMU_html_a54e4834bdf8648b7ec11ca460b92facf"><div class="ttname"><a href="classIMU.html#a54e4834bdf8648b7ec11ca460b92facf">IMU::_mag</a></div><div class="ttdeci">Vector3f * _mag</div><div class="ttdef"><b>Definition:</b> <a href="IMU_8h_source.html#l00060">IMU.h:60</a></div></div>
+<div class="ttc" id="aclassIMU_html_a6911d1a81b2cbbefde2357df0c77428d"><div class="ttname"><a href="classIMU.html#a6911d1a81b2cbbefde2357df0c77428d">IMU::_numBytes</a></div><div class="ttdeci">size_t _numBytes</div><div class="ttdoc">numero de bytes para leitura funcao readRegisters</div><div class="ttdef"><b>Definition:</b> <a href="IMU_8h_source.html#l00105">IMU.h:105</a></div></div>
+<div class="ttc" id="aclassIMU_html_a72d1d4fe1027a9b0d6eed394e18ea97b"><div class="ttname"><a href="classIMU.html#a72d1d4fe1027a9b0d6eed394e18ea97b">IMU::_gyro</a></div><div class="ttdeci">Vector3f * _gyro</div><div class="ttdef"><b>Definition:</b> <a href="IMU_8h_source.html#l00058">IMU.h:58</a></div></div>
+<div class="ttc" id="aclassIMU_html_a81407c3f7e8e63735dfc672b53fd99dd"><div class="ttname"><a href="classIMU.html#a81407c3f7e8e63735dfc672b53fd99dd">IMU::_accelRange</a></div><div class="ttdeci">AccelRange _accelRange</div><div class="ttdef"><b>Definition:</b> <a href="IMU_8h_source.html#l00117">IMU.h:117</a></div></div>
+<div class="ttc" id="aclassIMU_html_a90c4f91f60185430b763f152ecb39521"><div class="ttname"><a href="classIMU.html#a90c4f91f60185430b763f152ecb39521">IMU::DlpfBandwidth</a></div><div class="ttdeci">DlpfBandwidth</div><div class="ttdef"><b>Definition:</b> <a href="IMU_8h_source.html#l00033">IMU.h:33</a></div></div>
+<div class="ttc" id="aclassIMU_html_a90c4f91f60185430b763f152ecb39521a174ee7819d598dcbb0d29cf8d0f17e8f"><div class="ttname"><a href="classIMU.html#a90c4f91f60185430b763f152ecb39521a174ee7819d598dcbb0d29cf8d0f17e8f">IMU::DLPF_BANDWIDTH_20HZ</a></div><div class="ttdeci">@ DLPF_BANDWIDTH_20HZ</div><div class="ttdef"><b>Definition:</b> <a href="IMU_8h_source.html#l00037">IMU.h:37</a></div></div>
+<div class="ttc" id="aclassIMU_html_a90c4f91f60185430b763f152ecb39521a38fa7998dfeb640e0289bc7407c40285"><div class="ttname"><a href="classIMU.html#a90c4f91f60185430b763f152ecb39521a38fa7998dfeb640e0289bc7407c40285">IMU::DLPF_BANDWIDTH_10HZ</a></div><div class="ttdeci">@ DLPF_BANDWIDTH_10HZ</div><div class="ttdef"><b>Definition:</b> <a href="IMU_8h_source.html#l00038">IMU.h:38</a></div></div>
+<div class="ttc" id="aclassIMU_html_a90c4f91f60185430b763f152ecb39521a461c657b4bc9c4f82936a9cb3b5ef54e"><div class="ttname"><a href="classIMU.html#a90c4f91f60185430b763f152ecb39521a461c657b4bc9c4f82936a9cb3b5ef54e">IMU::DLPF_BANDWIDTH_184HZ</a></div><div class="ttdeci">@ DLPF_BANDWIDTH_184HZ</div><div class="ttdef"><b>Definition:</b> <a href="IMU_8h_source.html#l00034">IMU.h:34</a></div></div>
+<div class="ttc" id="aclassIMU_html_a90c4f91f60185430b763f152ecb39521ac652b0fb4733da213152970ebc6ab53d"><div class="ttname"><a href="classIMU.html#a90c4f91f60185430b763f152ecb39521ac652b0fb4733da213152970ebc6ab53d">IMU::DLPF_BANDWIDTH_92HZ</a></div><div class="ttdeci">@ DLPF_BANDWIDTH_92HZ</div><div class="ttdef"><b>Definition:</b> <a href="IMU_8h_source.html#l00035">IMU.h:35</a></div></div>
+<div class="ttc" id="aclassIMU_html_a90c4f91f60185430b763f152ecb39521afcbbbba2e520cdd50dcb40da160137f0"><div class="ttname"><a href="classIMU.html#a90c4f91f60185430b763f152ecb39521afcbbbba2e520cdd50dcb40da160137f0">IMU::DLPF_BANDWIDTH_41HZ</a></div><div class="ttdeci">@ DLPF_BANDWIDTH_41HZ</div><div class="ttdef"><b>Definition:</b> <a href="IMU_8h_source.html#l00036">IMU.h:36</a></div></div>
+<div class="ttc" id="aclassIMU_html_ab27df333316fef090c6c66c850dcea6d"><div class="ttname"><a href="classIMU.html#ab27df333316fef090c6c66c850dcea6d">IMU::_gxcounts</a></div><div class="ttdeci">int16_t _gxcounts</div><div class="ttdef"><b>Definition:</b> <a href="IMU_8h_source.html#l00098">IMU.h:98</a></div></div>
+<div class="ttc" id="aclassIMU_html_abc2f9849bd27b4d423b2140ebdc8701a"><div class="ttname"><a href="classIMU.html#abc2f9849bd27b4d423b2140ebdc8701a">IMU::_gyroRange</a></div><div class="ttdeci">GyroRange _gyroRange</div><div class="ttdef"><b>Definition:</b> <a href="IMU_8h_source.html#l00118">IMU.h:118</a></div></div>
+<div class="ttc" id="aclassIMU_html_ac538fc9a09f4d60b73fb477738b0d602"><div class="ttname"><a href="classIMU.html#ac538fc9a09f4d60b73fb477738b0d602">IMU::_address</a></div><div class="ttdeci">uint8_t _address</div><div class="ttdef"><b>Definition:</b> <a href="IMU_8h_source.html#l00103">IMU.h:103</a></div></div>
+<div class="ttc" id="aclassIMU_html_aca68ebe4db6de0261ad0c18ab93baa0c"><div class="ttname"><a href="classIMU.html#aca68ebe4db6de0261ad0c18ab93baa0c">IMU::_magScaleX</a></div><div class="ttdeci">float _magScaleX</div><div class="ttdef"><b>Definition:</b> <a href="IMU_8h_source.html#l00116">IMU.h:116</a></div></div>
+<div class="ttc" id="aclassIMU_html_acdbd8690acc2a34f12d568cb39486cc6"><div class="ttname"><a href="classIMU.html#acdbd8690acc2a34f12d568cb39486cc6">IMU::AccelRange</a></div><div class="ttdeci">AccelRange</div><div class="ttdef"><b>Definition:</b> <a href="IMU_8h_source.html#l00027">IMU.h:27</a></div></div>
+<div class="ttc" id="aclassIMU_html_acdbd8690acc2a34f12d568cb39486cc6a19c2caa0c23242f9dfd88326f2922719"><div class="ttname"><a href="classIMU.html#acdbd8690acc2a34f12d568cb39486cc6a19c2caa0c23242f9dfd88326f2922719">IMU::ACCEL_RANGE_8G</a></div><div class="ttdeci">@ ACCEL_RANGE_8G</div><div class="ttdef"><b>Definition:</b> <a href="IMU_8h_source.html#l00030">IMU.h:30</a></div></div>
+<div class="ttc" id="aclassIMU_html_acdbd8690acc2a34f12d568cb39486cc6a4afca3881c874d1d4e0d28a21bfe926a"><div class="ttname"><a href="classIMU.html#acdbd8690acc2a34f12d568cb39486cc6a4afca3881c874d1d4e0d28a21bfe926a">IMU::ACCEL_RANGE_4G</a></div><div class="ttdeci">@ ACCEL_RANGE_4G</div><div class="ttdef"><b>Definition:</b> <a href="IMU_8h_source.html#l00029">IMU.h:29</a></div></div>
+<div class="ttc" id="aclassIMU_html_acdbd8690acc2a34f12d568cb39486cc6a808bf1fd48b91e042cfde2d0fd570823"><div class="ttname"><a href="classIMU.html#acdbd8690acc2a34f12d568cb39486cc6a808bf1fd48b91e042cfde2d0fd570823">IMU::ACCEL_RANGE_2G</a></div><div class="ttdeci">@ ACCEL_RANGE_2G</div><div class="ttdef"><b>Definition:</b> <a href="IMU_8h_source.html#l00028">IMU.h:28</a></div></div>
+<div class="ttc" id="aclassIMU_html_ae628afbcc858c70ea5d36a13d59998f2"><div class="ttname"><a href="classIMU.html#ae628afbcc858c70ea5d36a13d59998f2">IMU::magTemp</a></div><div class="ttdeci">Vector3f magTemp</div><div class="ttdef"><b>Definition:</b> <a href="IMU_8h_source.html#l00061">IMU.h:61</a></div></div>
+<div class="ttc" id="aclassIMU_html_aeb363437539137b5c1eabd3641d242d1"><div class="ttname"><a href="classIMU.html#aeb363437539137b5c1eabd3641d242d1">IMU::GyroRange</a></div><div class="ttdeci">GyroRange</div><div class="ttdef"><b>Definition:</b> <a href="IMU_8h_source.html#l00021">IMU.h:21</a></div></div>
+<div class="ttc" id="aclassIMU_html_aeb363437539137b5c1eabd3641d242d1a1726a676d603df0b5c73ff7f1fff00d3"><div class="ttname"><a href="classIMU.html#aeb363437539137b5c1eabd3641d242d1a1726a676d603df0b5c73ff7f1fff00d3">IMU::GYRO_RANGE_250DPS</a></div><div class="ttdeci">@ GYRO_RANGE_250DPS</div><div class="ttdef"><b>Definition:</b> <a href="IMU_8h_source.html#l00022">IMU.h:22</a></div></div>
+<div class="ttc" id="aclassIMU_html_aeb363437539137b5c1eabd3641d242d1a8a24172a6bd08e9402c83af2f12bed57"><div class="ttname"><a href="classIMU.html#aeb363437539137b5c1eabd3641d242d1a8a24172a6bd08e9402c83af2f12bed57">IMU::GYRO_RANGE_500DPS</a></div><div class="ttdeci">@ GYRO_RANGE_500DPS</div><div class="ttdef"><b>Definition:</b> <a href="IMU_8h_source.html#l00023">IMU.h:23</a></div></div>
+<div class="ttc" id="aclassIMU_html_aeb363437539137b5c1eabd3641d242d1ac11c26d662eb1906caf70fb73d96e8bb"><div class="ttname"><a href="classIMU.html#aeb363437539137b5c1eabd3641d242d1ac11c26d662eb1906caf70fb73d96e8bb">IMU::GYRO_RANGE_1000DPS</a></div><div class="ttdeci">@ GYRO_RANGE_1000DPS</div><div class="ttdef"><b>Definition:</b> <a href="IMU_8h_source.html#l00024">IMU.h:24</a></div></div>
+<div class="ttc" id="aclassIMU_html_afdba3ec94b88b71f4f3608ec7d5d7fc4"><div class="ttname"><a href="classIMU.html#afdba3ec94b88b71f4f3608ec7d5d7fc4">IMU::_hxcounts</a></div><div class="ttdeci">int16_t _hxcounts</div><div class="ttdef"><b>Definition:</b> <a href="IMU_8h_source.html#l00099">IMU.h:99</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

@@ -1,0 +1,14 @@
+digraph "lib/GRUPO_QUAT/GRUPO_QUAT.cpp"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  Node1 [label="lib/GRUPO_QUAT/GRUPO\l_QUAT.cpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Cabecalho com funcoes de quaternion."];
+  Node1 -> Node2 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node2 [label="GRUPO_QUAT.h",height=0.2,width=0.4,color="black",URL="$GRUPO__QUAT_8h.html",tooltip="Cabecalho com funcoes de quaternion."];
+  Node2 -> Node3 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node3 [label="eigen3/Eigen/Dense",height=0.2,width=0.4,color="grey75",tooltip=" "];
+  Node2 -> Node4 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node4 [label="iostream",height=0.2,width=0.4,color="grey75",tooltip=" "];
+}

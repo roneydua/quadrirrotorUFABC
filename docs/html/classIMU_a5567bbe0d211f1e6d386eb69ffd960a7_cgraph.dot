@@ -1,0 +1,13 @@
+digraph "IMU::setAccelRange"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  rankdir="LR";
+  Node1 [label="IMU::setAccelRange",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node2 [label="IMU::writeRegister",height=0.2,width=0.4,color="black",URL="$classIMU.html#a37694424e4502ffc69bbb6c540c1a400",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node3 [label="IMU::readRegisters",height=0.2,width=0.4,color="black",URL="$classIMU.html#a87c200faa130ff4d2d3416b2d83f4f49",tooltip=" "];
+}

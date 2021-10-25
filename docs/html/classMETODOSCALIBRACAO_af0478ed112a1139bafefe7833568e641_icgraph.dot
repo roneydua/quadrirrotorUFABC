@@ -1,0 +1,11 @@
+digraph "METODOSCALIBRACAO::calibracaoGeometrica"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  rankdir="RL";
+  Node1 [label="METODOSCALIBRACAO::\lcalibracaoGeometrica",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node2 [label="IMU::calibracaoMagnetometro",height=0.2,width=0.4,color="black",URL="$classIMU.html#a3546779010d9128859f465195eff77f5",tooltip=" "];
+}

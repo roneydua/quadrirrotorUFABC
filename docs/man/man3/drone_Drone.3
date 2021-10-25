@@ -1,0 +1,187 @@
+.TH "drone.Drone" 3 "Sexta, 17 de Setembro de 2021" "Quadrirrotor" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+drone.Drone
+.SH SYNOPSIS
+.br
+.PP
+.SS "Membros Públicos"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP (self, *args, **kwargs)"
+.br
+.ti -1c
+.RI "def \fBupdateStates\fP (self)"
+.br
+.in -1c
+.SS "Campos de Dados"
+
+.in +1c
+.ti -1c
+.RI "\fBIx\fP"
+.br
+.RI "Momento de inercia Ix\&. "
+.ti -1c
+.RI "\fBIy\fP"
+.br
+.RI "Momento de inercia Iy\&. "
+.ti -1c
+.RI "\fBIz\fP"
+.br
+.RI "Momento de inercia Iz\&. "
+.ti -1c
+.RI "\fBkf\fP"
+.br
+.RI "Constante de força\&. "
+.ti -1c
+.RI "\fBkm\fP"
+.br
+.ti -1c
+.RI "\fBb\fP"
+.br
+.ti -1c
+.RI "\fBgrav\fP"
+.br
+.ti -1c
+.RI "\fBm\fP"
+.br
+.ti -1c
+.RI "\fBomegaSquareMin\fP"
+.br
+.ti -1c
+.RI "\fBomegaSquareMax\fP"
+.br
+.ti -1c
+.RI "\fBq\fP"
+.br
+.in -1c
+.SH "Descrição detalhada"
+.PP 
+
+.PP
+.nf
+construtor
+@param self The object pointer.
+
+.fi
+.PP
+ 
+.PP
+Definição na linha 33 do arquivo drone\&.py\&.
+.SH "Construtores e Destrutores"
+.PP 
+.SS "def drone\&.Drone\&.__init__ ( self, * args, ** kwargs)"
+
+.PP
+.nf
+The constructor
+.fi
+.PP
+ 
+.PP
+Definição na linha 39 do arquivo drone\&.py\&.
+.PP
+.nf
+39     def __init__(self, *args, **kwargs):
+40         """The constructor"""
+41 
+42         
+43         self\&.Ix = Ix
+44         
+45         self\&.Iy = Iy
+46         
+47         self\&.Iz = Iz
+48         
+49         self\&.kf = kf
+50         self\&.km = km
+51         self\&.b = b
+52         self\&.grav = grav
+53         self\&.m = m
+54         # limites dos motores rad/s
+55         self\&.omegaSquareMin = 296\&.0 ** 2\&.0
+56         self\&.omegaSquareMax = 657\&.0 ** 2\&.0
+57         self\&.q = np\&.array([1\&.0, 0\&.0, 0\&.0, 0\&.0])
+58 
+.fi
+.SH "Funções membros"
+.PP 
+.SS "def drone\&.Drone\&.updateStates ( self)"
+
+.PP
+.nf
+Returna o conjugado
+.fi
+.PP
+ 
+.PP
+Definição na linha 59 do arquivo drone\&.py\&.
+.PP
+.nf
+59     def updateStates(self):
+60         """Returna o conjugado"""
+61         return fq\&.conj(self\&.q)
+.fi
+.PP
+Referencias Drone\&.q, ekf::EKF\&.q e drone\&.Drone\&.q\&.
+.SH "Campos"
+.PP 
+.SS "drone\&.Drone\&.b"
+
+.PP
+Definição na linha 51 do arquivo drone\&.py\&.
+.SS "drone\&.Drone\&.grav"
+
+.PP
+Definição na linha 52 do arquivo drone\&.py\&.
+.SS "drone\&.Drone\&.Ix"
+
+.PP
+Momento de inercia Ix\&. 
+.PP
+Definição na linha 43 do arquivo drone\&.py\&.
+.SS "drone\&.Drone\&.Iy"
+
+.PP
+Momento de inercia Iy\&. 
+.PP
+Definição na linha 45 do arquivo drone\&.py\&.
+.SS "drone\&.Drone\&.Iz"
+
+.PP
+Momento de inercia Iz\&. 
+.PP
+Definição na linha 47 do arquivo drone\&.py\&.
+.SS "drone\&.Drone\&.kf"
+
+.PP
+Constante de força\&. 
+.PP
+Definição na linha 49 do arquivo drone\&.py\&.
+.SS "drone\&.Drone\&.km"
+
+.PP
+Definição na linha 50 do arquivo drone\&.py\&.
+.SS "drone\&.Drone\&.m"
+
+.PP
+Definição na linha 53 do arquivo drone\&.py\&.
+.SS "drone\&.Drone\&.omegaSquareMax"
+
+.PP
+Definição na linha 56 do arquivo drone\&.py\&.
+.SS "drone\&.Drone\&.omegaSquareMin"
+
+.PP
+Definição na linha 55 do arquivo drone\&.py\&.
+.SS "drone\&.Drone\&.q"
+
+.PP
+Definição na linha 57 do arquivo drone\&.py\&.
+.PP
+Referenciado(a) por drone\&.Drone\&.updateStates()\&.
+
+.SH "Autor"
+.PP 
+Gerado automaticamente por Doxygen para Quadrirrotor a partir do código-fonte\&.

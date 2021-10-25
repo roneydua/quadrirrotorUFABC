@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compounddef id="classTIME" kind="class" language="C++" prot="public">
+    <compoundname>TIME</compoundname>
+    <includes refid="TIME_8h" local="no">TIME.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classTIME_1ae75072a83bc87386089429531032c661" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TIME::timeVectorIndex</definition>
+        <argsstring></argsstring>
+        <name>timeVectorIndex</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Indice do vetor. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TIME/TIME.h" line="23" column="11" bodyfile="lib/TIME/TIME.h" bodystart="23" bodyend="-1"/>
+        <referencedby refid="classTIME_1a8cd98765b05a23aa7afe8fa5234b9695" compoundref="TIME_8cpp" startline="21" endline="24">begin</referencedby>
+        <referencedby refid="classTIME_1a51b6020daf09773ef3948cf6b9ccd736" compoundref="TIME_8cpp" startline="32" endline="37">computeElapsedTime</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTIME_1a377f2c220d0347f17484262f7a64602f" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t TIME::timeVector[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>timeVector</name>
+        <initializer>= {}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Vetor com as ultimas duas medidas. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TIME/TIME.h" line="25" column="12" bodyfile="lib/TIME/TIME.h" bodystart="25" bodyend="-1"/>
+        <referencedby refid="classTIME_1a8cd98765b05a23aa7afe8fa5234b9695" compoundref="TIME_8cpp" startline="21" endline="24">begin</referencedby>
+        <referencedby refid="classTIME_1a51b6020daf09773ef3948cf6b9ccd736" compoundref="TIME_8cpp" startline="32" endline="37">computeElapsedTime</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classTIME_1a4c5fe33dea0e598fd2e1b0dd8073dff3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TIME::TIME</definition>
+        <argsstring>()</argsstring>
+        <name>TIME</name>
+        <briefdescription>
+<para>Instância da classe Time. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Utilizando o temporizador de alta resolução. <ulink url="https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/system/esp_timer.html#_CPPv418esp_timer_get_timev">timer esp_timer_get_time()</ulink> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TIME/TIME.h" line="17" column="3" bodyfile="lib/TIME/TIME.cpp" bodystart="17" bodyend="17"/>
+        <references refid="classTIME_1a8cd98765b05a23aa7afe8fa5234b9695" compoundref="TIME_8cpp" startline="21" endline="24">begin</references>
+      </memberdef>
+      <memberdef kind="function" id="classTIME_1a51b6020daf09773ef3948cf6b9ccd736" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float TIME::computeElapsedTime</definition>
+        <argsstring>()</argsstring>
+        <name>computeElapsedTime</name>
+        <briefdescription>
+<para>Retorna o valor do tempo decorrido desde a última requisição. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>float de tempo decorrido em segundos. </para>
+</simplesect>
+<simplesect kind="note"><para><ulink url="https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/system/esp_timer.html#_CPPv418esp_timer_get_timev">esp_timer_get_time()</ulink> Computa o tempo decorrido em ms desde a Inicialização. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TIME/TIME.h" line="18" column="9" bodyfile="lib/TIME/TIME.cpp" bodystart="32" bodyend="37"/>
+        <references refid="classTIME_1a377f2c220d0347f17484262f7a64602f" compoundref="TIME_8h" startline="25">timeVector</references>
+        <references refid="classTIME_1ae75072a83bc87386089429531032c661" compoundref="TIME_8h" startline="23">timeVectorIndex</references>
+      </memberdef>
+      <memberdef kind="function" id="classTIME_1a8cd98765b05a23aa7afe8fa5234b9695" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TIME::begin</definition>
+        <argsstring>()</argsstring>
+        <name>begin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Inicialização da classe Time. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TIME/TIME.h" line="19" column="8" bodyfile="lib/TIME/TIME.cpp" bodystart="21" bodyend="24"/>
+        <references refid="classTIME_1a377f2c220d0347f17484262f7a64602f" compoundref="TIME_8h" startline="25">timeVector</references>
+        <references refid="classTIME_1ae75072a83bc87386089429531032c661" compoundref="TIME_8h" startline="23">timeVectorIndex</references>
+        <referencedby refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" compoundref="EKF_8cpp" startline="39" endline="89">ekf::EKF::begin</referencedby>
+        <referencedby refid="classTIME_1a4c5fe33dea0e598fd2e1b0dd8073dff3" compoundref="TIME_8cpp" startline="17" endline="17">TIME</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>TIME</label>
+        <link refid="classTIME"/>
+      </node>
+    </collaborationgraph>
+    <location file="lib/TIME/TIME.h" line="14" column="1" bodyfile="lib/TIME/TIME.h" bodystart="14" bodyend="26"/>
+    <listofallmembers>
+      <member refid="classTIME_1a8cd98765b05a23aa7afe8fa5234b9695" prot="public" virt="non-virtual"><scope>TIME</scope><name>begin</name></member>
+      <member refid="classTIME_1a51b6020daf09773ef3948cf6b9ccd736" prot="public" virt="non-virtual"><scope>TIME</scope><name>computeElapsedTime</name></member>
+      <member refid="classTIME_1a4c5fe33dea0e598fd2e1b0dd8073dff3" prot="public" virt="non-virtual"><scope>TIME</scope><name>TIME</name></member>
+      <member refid="classTIME_1a377f2c220d0347f17484262f7a64602f" prot="private" virt="non-virtual"><scope>TIME</scope><name>timeVector</name></member>
+      <member refid="classTIME_1ae75072a83bc87386089429531032c661" prot="private" virt="non-virtual"><scope>TIME</scope><name>timeVectorIndex</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

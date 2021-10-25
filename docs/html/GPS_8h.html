@@ -1,0 +1,881 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Quadrirrotor: Referência do Arquivo lib/EKF/GPS.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Quadrirrotor
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Busca','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_f81b21074929c51f0f8ec4455f2eeb05.html">EKF</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Estruturas de Dados</a> &#124;
+<a href="#define-members">Definições e Macros</a> &#124;
+<a href="#enum-members">Enumerações</a> &#124;
+<a href="#func-members">Funções</a> &#124;
+<a href="#var-members">Variáveis</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência do Arquivo GPS.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Simples Cabecalho de funcoes para leituras do GPS Last modified by: roney Last modified time: 31-Aug-2021.  
+<a href="#details">Mais...</a></p>
+<div class="textblock"><code>#include &lt;Arduino.h&gt;</code><br />
+<code>#include &lt;HardwareSerial.h&gt;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Gráfico de dependência de inclusões para GPS.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="GPS_8h__incl.png" border="0" usemap="#alib_2EKF_2GPS_8h" alt=""/></div>
+<map name="alib_2EKF_2GPS_8h" id="alib_2EKF_2GPS_8h">
+<area shape="rect" title="Simples Cabecalho de funcoes para leituras do GPS Last modified by: roney Last modified time: 31&#45;Aug&#45;..." alt="" coords="53,5,153,29"/>
+<area shape="rect" title=" " alt="" coords="5,77,81,101"/>
+<area shape="rect" title=" " alt="" coords="105,77,224,101"/>
+</map>
+</div>
+</div>
+<p><a href="GPS_8h_source.html">Vá para o código-fonte desse arquivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Estruturas de Dados</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNAV__POSECEF__STRUCT.html">NAV_POSECEF_STRUCT</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNAV__PVT__STRUCT.html">NAV_PVT_STRUCT</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPacketData.html">PacketData</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">union &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unionUBXMessage.html">UBXMessage</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Definições e Macros</h2></td></tr>
+<tr class="memitem:a63332ee69ceebaa458f065465e43f202"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GPS_8h.html#a63332ee69ceebaa458f065465e43f202">NAV_PVT</a></td></tr>
+<tr class="separator:a63332ee69ceebaa458f065465e43f202"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9241bba6283212e1bf773680a3f1a31f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GPS_8h.html#a9241bba6283212e1bf773680a3f1a31f">NAV_POSECEF</a></td></tr>
+<tr class="separator:a9241bba6283212e1bf773680a3f1a31f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7a8928b2d0331ab5eea166050a41c37"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GPS_8h.html#ad7a8928b2d0331ab5eea166050a41c37">RATE_10</a></td></tr>
+<tr class="separator:ad7a8928b2d0331ab5eea166050a41c37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4afb4aaa3fa37c26d148c32f7af5a944"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GPS_8h.html#a4afb4aaa3fa37c26d148c32f7af5a944">NAV_MODE_1G</a></td></tr>
+<tr class="separator:a4afb4aaa3fa37c26d148c32f7af5a944"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerações</h2></td></tr>
+<tr class="memitem:a9730e8d0bbbe3f1515ed1d0b2acda1e1"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GPS_8h.html#a9730e8d0bbbe3f1515ed1d0b2acda1e1">_ubxMsgType</a> { <a class="el" href="GPS_8h.html#a9730e8d0bbbe3f1515ed1d0b2acda1e1ad2e3f1bdeae0fa235b7dfe6656c46f14">MT_NONE</a>
+, <a class="el" href="GPS_8h.html#a9730e8d0bbbe3f1515ed1d0b2acda1e1ae2379a504fb11d8e00e11bd567a3b819">MT_NAV_POSECEF</a>
+, <a class="el" href="GPS_8h.html#a9730e8d0bbbe3f1515ed1d0b2acda1e1a87ee2b7c21367a2caa62b0a01491ea23">MT_NAV_PVT</a>
+ }</td></tr>
+<tr class="separator:a9730e8d0bbbe3f1515ed1d0b2acda1e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:a5d2ecd8f29f7e3e702c8b8bea333f6c6"><td class="memItemLeft" align="right" valign="top">HardwareSerial&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GPS_8h.html#a5d2ecd8f29f7e3e702c8b8bea333f6c6">GPSSERIAL</a> (1)</td></tr>
+<tr class="separator:a5d2ecd8f29f7e3e702c8b8bea333f6c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35c55bcf9a6f5a52f34cb1ab02c91479"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GPS_8h.html#a35c55bcf9a6f5a52f34cb1ab02c91479">gpsSetup</a> ()</td></tr>
+<tr class="separator:a35c55bcf9a6f5a52f34cb1ab02c91479"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2fac937d6e192633f020459321241e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GPS_8h.html#aa2fac937d6e192633f020459321241e7">calcChecksum</a> (unsigned char *CK, int msgSize)</td></tr>
+<tr class="separator:aa2fac937d6e192633f020459321241e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecde093c7427cc661daceaa118cf4455"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GPS_8h.html#aecde093c7427cc661daceaa118cf4455">compareMsgHeader</a> (const unsigned char *msgHeader)</td></tr>
+<tr class="separator:aecde093c7427cc661daceaa118cf4455"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad604e63cc857e5663dfba96c37c66bc7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GPS_8h.html#ad604e63cc857e5663dfba96c37c66bc7">processGPS</a> ()</td></tr>
+<tr class="separator:ad604e63cc857e5663dfba96c37c66bc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaab66558a5f695df7a6fcc3baa340da3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GPS_8h.html#aaab66558a5f695df7a6fcc3baa340da3">gps_imprime</a> ()</td></tr>
+<tr class="separator:aaab66558a5f695df7a6fcc3baa340da3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variáveis</h2></td></tr>
+<tr class="memitem:a23eb131661d623c855d4216331834845"><td class="memItemLeft" align="right" valign="top">const unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GPS_8h.html#a23eb131661d623c855d4216331834845">UBX_HEADER</a> [] = {0xB5, 0x62}</td></tr>
+<tr class="separator:a23eb131661d623c855d4216331834845"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e09624a99733cc8e95b04f78d7319da"><td class="memItemLeft" align="right" valign="top">const unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GPS_8h.html#a3e09624a99733cc8e95b04f78d7319da">NAV_POSECEF_HEADER</a> [] = {0x01, 0x01}</td></tr>
+<tr class="separator:a3e09624a99733cc8e95b04f78d7319da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c90ad3996e1901ce9aa8a364eab6c0d"><td class="memItemLeft" align="right" valign="top">const unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GPS_8h.html#a4c90ad3996e1901ce9aa8a364eab6c0d">NAV_PVT_HEADER</a> [] = {0x01, 0x07}</td></tr>
+<tr class="separator:a4c90ad3996e1901ce9aa8a364eab6c0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27c939ba1a4f4d927aaa500781293ba7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structPacketData.html">PacketData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GPS_8h.html#a27c939ba1a4f4d927aaa500781293ba7">data</a></td></tr>
+<tr class="separator:a27c939ba1a4f4d927aaa500781293ba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ff3f4ce55f117a43c4e117d850ca5a8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="unionUBXMessage.html">UBXMessage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a></td></tr>
+<tr class="separator:a4ff3f4ce55f117a43c4e117d850ca5a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Simples Cabecalho de funcoes para leituras do GPS Last modified by: roney Last modified time: 31-Aug-2021. </p>
+<dl class="section author"><dt>Autor</dt><dd>: Roney Silva (roney) </dd></dl>
+<dl class="section date"><dt>Data</dt><dd>: 16-Aug-2021 Email: <a href="#" onclick="location.href='mai'+'lto:'+'ron'+'ey'+'dda'+'si'+'lva'+'@g'+'mai'+'l.'+'com'; return false;">roney<span style="display: none;">.nosp@m.</span>ddas<span style="display: none;">.nosp@m.</span>ilva@<span style="display: none;">.nosp@m.</span>gmai<span style="display: none;">.nosp@m.</span>l.com</a> Project: quadrirrotorUFABC </dd></dl>
+
+<p class="definition">Definição no arquivo <a class="el" href="GPS_8h_source.html">GPS.h</a>.</p>
+</div><h2 class="groupheader">Definições e macros</h2>
+<a id="a4afb4aaa3fa37c26d148c32f7af5a944"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4afb4aaa3fa37c26d148c32f7af5a944">&#9670;&nbsp;</a></span>NAV_MODE_1G</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NAV_MODE_1G</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="GPS_8h_source.html#l00035">35</a> do arquivo <a class="el" href="GPS_8h_source.html">GPS.h</a>.</p>
+
+</div>
+</div>
+<a id="a9241bba6283212e1bf773680a3f1a31f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9241bba6283212e1bf773680a3f1a31f">&#9670;&nbsp;</a></span>NAV_POSECEF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NAV_POSECEF</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="GPS_8h_source.html#l00030">30</a> do arquivo <a class="el" href="GPS_8h_source.html">GPS.h</a>.</p>
+
+</div>
+</div>
+<a id="a63332ee69ceebaa458f065465e43f202"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63332ee69ceebaa458f065465e43f202">&#9670;&nbsp;</a></span>NAV_PVT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NAV_PVT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="GPS_8h_source.html#l00027">27</a> do arquivo <a class="el" href="GPS_8h_source.html">GPS.h</a>.</p>
+
+</div>
+</div>
+<a id="ad7a8928b2d0331ab5eea166050a41c37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7a8928b2d0331ab5eea166050a41c37">&#9670;&nbsp;</a></span>RATE_10</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RATE_10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="GPS_8h_source.html#l00032">32</a> do arquivo <a class="el" href="GPS_8h_source.html">GPS.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Enumerações</h2>
+<a id="a9730e8d0bbbe3f1515ed1d0b2acda1e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9730e8d0bbbe3f1515ed1d0b2acda1e1">&#9670;&nbsp;</a></span>_ubxMsgType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="GPS_8h.html#a9730e8d0bbbe3f1515ed1d0b2acda1e1">_ubxMsgType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumeradores</th></tr><tr><td class="fieldname"><a id="a9730e8d0bbbe3f1515ed1d0b2acda1e1ad2e3f1bdeae0fa235b7dfe6656c46f14"></a>MT_NONE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9730e8d0bbbe3f1515ed1d0b2acda1e1ae2379a504fb11d8e00e11bd567a3b819"></a>MT_NAV_POSECEF&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9730e8d0bbbe3f1515ed1d0b2acda1e1a87ee2b7c21367a2caa62b0a01491ea23"></a>MT_NAV_PVT&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definição na linha <a class="el" href="GPS_8h_source.html#l00163">163</a> do arquivo <a class="el" href="GPS_8h_source.html">GPS.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                 {</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  <a class="code" href="GPS_8h.html#a9730e8d0bbbe3f1515ed1d0b2acda1e1ad2e3f1bdeae0fa235b7dfe6656c46f14">MT_NONE</a>,</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="preprocessor">#ifdef NAV_POSLLH</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  MT_NAV_POSLLH,</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="preprocessor">#ifdef NAV_VELNED</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  MT_NAV_VELNED,</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="preprocessor">#ifdef NAV_POSECEF</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  <a class="code" href="GPS_8h.html#a9730e8d0bbbe3f1515ed1d0b2acda1e1ae2379a504fb11d8e00e11bd567a3b819">MT_NAV_POSECEF</a>,</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="preprocessor">#ifdef NAV_PVT</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  <a class="code" href="GPS_8h.html#a9730e8d0bbbe3f1515ed1d0b2acda1e1a87ee2b7c21367a2caa62b0a01491ea23">MT_NAV_PVT</a>,</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;};</div>
+<div class="ttc" id="aGPS_8h_html_a9730e8d0bbbe3f1515ed1d0b2acda1e1a87ee2b7c21367a2caa62b0a01491ea23"><div class="ttname"><a href="GPS_8h.html#a9730e8d0bbbe3f1515ed1d0b2acda1e1a87ee2b7c21367a2caa62b0a01491ea23">MT_NAV_PVT</a></div><div class="ttdeci">@ MT_NAV_PVT</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00175">GPS.h:175</a></div></div>
+<div class="ttc" id="aGPS_8h_html_a9730e8d0bbbe3f1515ed1d0b2acda1e1ad2e3f1bdeae0fa235b7dfe6656c46f14"><div class="ttname"><a href="GPS_8h.html#a9730e8d0bbbe3f1515ed1d0b2acda1e1ad2e3f1bdeae0fa235b7dfe6656c46f14">MT_NONE</a></div><div class="ttdeci">@ MT_NONE</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00164">GPS.h:164</a></div></div>
+<div class="ttc" id="aGPS_8h_html_a9730e8d0bbbe3f1515ed1d0b2acda1e1ae2379a504fb11d8e00e11bd567a3b819"><div class="ttname"><a href="GPS_8h.html#a9730e8d0bbbe3f1515ed1d0b2acda1e1ae2379a504fb11d8e00e11bd567a3b819">MT_NAV_POSECEF</a></div><div class="ttdeci">@ MT_NAV_POSECEF</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00172">GPS.h:172</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Funções</h2>
+<a id="aa2fac937d6e192633f020459321241e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2fac937d6e192633f020459321241e7">&#9670;&nbsp;</a></span>calcChecksum()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void calcChecksum </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char *&#160;</td>
+          <td class="paramname"><em>CK</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>msgSize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="GPS_8h_source.html#l00286">286</a> do arquivo <a class="el" href="GPS_8h_source.html">GPS.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                                                  {</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;  memset(CK, 0, 2);</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; msgSize; i++) {</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    CK[0] += ((<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *)(&amp;<a class="code" href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a>))[i];</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    CK[1] += CK[0];</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;  }</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;}</div>
+<div class="ttc" id="aGPS_8h_html_a4ff3f4ce55f117a43c4e117d850ca5a8"><div class="ttname"><a href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a></div><div class="ttdeci">UBXMessage ubxMessage</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00179">GPS.h:179</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Referencias <a class="el" href="GPS_8h_source.html#l00179">ubxMessage</a>.</p>
+
+<p class="reference">Referenciado(a) por <a class="el" href="GPS_8h_source.html#l00301">processGPS()</a>.</p>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Esse é o diagrama das funções que utilizam essa função:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="GPS_8h_aa2fac937d6e192633f020459321241e7_icgraph.png" border="0" usemap="#aGPS_8h_aa2fac937d6e192633f020459321241e7_icgraph" alt=""/></div>
+<map name="aGPS_8h_aa2fac937d6e192633f020459321241e7_icgraph" id="aGPS_8h_aa2fac937d6e192633f020459321241e7_icgraph">
+<area shape="rect" title=" " alt="" coords="272,5,367,29"/>
+<area shape="rect" href="GPS_8h.html#ad604e63cc857e5663dfba96c37c66bc7" title=" " alt="" coords="141,5,224,29"/>
+<area shape="rect" href="GPS_8h.html#aaab66558a5f695df7a6fcc3baa340da3" title=" " alt="" coords="5,5,93,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aecde093c7427cc661daceaa118cf4455"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecde093c7427cc661daceaa118cf4455">&#9670;&nbsp;</a></span>compareMsgHeader()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean compareMsgHeader </td>
+          <td>(</td>
+          <td class="paramtype">const unsigned char *&#160;</td>
+          <td class="paramname"><em>msgHeader</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="GPS_8h_source.html#l00296">296</a> do arquivo <a class="el" href="GPS_8h_source.html">GPS.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                                                         {</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *ptr = (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *)(&amp;<a class="code" href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a>);</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;  <span class="keywordflow">return</span> ptr[0] == msgHeader[0] &amp;&amp; ptr[1] == msgHeader[1];</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">Referencias <a class="el" href="GPS_8h_source.html#l00179">ubxMessage</a>.</p>
+
+<p class="reference">Referenciado(a) por <a class="el" href="GPS_8h_source.html#l00301">processGPS()</a>.</p>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Esse é o diagrama das funções que utilizam essa função:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="GPS_8h_aecde093c7427cc661daceaa118cf4455_icgraph.png" border="0" usemap="#aGPS_8h_aecde093c7427cc661daceaa118cf4455_icgraph" alt=""/></div>
+<map name="aGPS_8h_aecde093c7427cc661daceaa118cf4455_icgraph" id="aGPS_8h_aecde093c7427cc661daceaa118cf4455_icgraph">
+<area shape="rect" title=" " alt="" coords="272,5,391,29"/>
+<area shape="rect" href="GPS_8h.html#ad604e63cc857e5663dfba96c37c66bc7" title=" " alt="" coords="141,5,224,29"/>
+<area shape="rect" href="GPS_8h.html#aaab66558a5f695df7a6fcc3baa340da3" title=" " alt="" coords="5,5,93,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aaab66558a5f695df7a6fcc3baa340da3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaab66558a5f695df7a6fcc3baa340da3">&#9670;&nbsp;</a></span>gps_imprime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gps_imprime </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="GPS_8h_source.html#l00392">392</a> do arquivo <a class="el" href="GPS_8h_source.html">GPS.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;                   {</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160; </div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;  <span class="keywordflow">while</span> (<a class="code" href="GPS_8h.html#a5d2ecd8f29f7e3e702c8b8bea333f6c6">GPSSERIAL</a>.available()) {</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    <span class="comment">// Serial.write(GPSSERIAL.read());</span></div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    <span class="keywordtype">int</span> msgType = <a class="code" href="GPS_8h.html#ad604e63cc857e5663dfba96c37c66bc7">processGPS</a>();</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;<span class="preprocessor">#ifdef NAV_VELNED</span></div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    <span class="keywordflow">if</span> (msgType == MT_NAV_VELNED) {</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;      printf(<span class="stringliteral">&quot;MT_NAV_VELNED: %lu\t %f\t %f\t %f\t \n&quot;</span>,</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;             <a class="code" href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a>.navVelned.iTOW,</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;             <span class="keywordtype">float</span>(<a class="code" href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a>.navVelned.velD) * 0.01f,</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;             <span class="keywordtype">float</span>(<a class="code" href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a>.navVelned.velD) * 0.01f,</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;             <span class="keywordtype">float</span>(<a class="code" href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a>.navVelned.velD) * 0.01f);</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    } <span class="comment">// else</span></div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;<span class="preprocessor">#ifdef NAV_POSLLH</span></div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    <span class="keywordflow">if</span> (msgType == MT_NAV_POSLLH) {</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;      printf(<span class="stringliteral">&quot;MT_NAV_POSLLH: %lu\t %ld\t \t%ld \t\n&quot;</span>, <a class="code" href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a>.navPosllh.iTOW,</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;             <a class="code" href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a>.navPosllh.lat, <a class="code" href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a>.navPosllh.lon);</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    } <span class="comment">// else</span></div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;<span class="preprocessor">#ifdef NAV_POSECEF</span></div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    <span class="keywordflow">if</span> (msgType == <a class="code" href="GPS_8h.html#a9730e8d0bbbe3f1515ed1d0b2acda1e1ae2379a504fb11d8e00e11bd567a3b819">MT_NAV_POSECEF</a>) {</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;      printf(<span class="stringliteral">&quot;NAV_POSECEF : %lu \t %ld\t \t%ld \t%ld \t\n&quot;</span>,</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;             <a class="code" href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a>.<a class="code" href="unionUBXMessage.html#aa57d81c1fb373e82012ca3ddadefd79f">navPosecef</a>.<a class="code" href="structNAV__POSECEF__STRUCT.html#a36711ead60d9cde7974cbeda7de4c35f">iTOW</a>, <a class="code" href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a>.<a class="code" href="unionUBXMessage.html#aa57d81c1fb373e82012ca3ddadefd79f">navPosecef</a>.<a class="code" href="structNAV__POSECEF__STRUCT.html#ad1b8e404ffdeeb1954292e43fe3507b2">ecefX</a>,</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;             <a class="code" href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a>.<a class="code" href="unionUBXMessage.html#aa57d81c1fb373e82012ca3ddadefd79f">navPosecef</a>.<a class="code" href="structNAV__POSECEF__STRUCT.html#a9e56104db13a84e53c2dec44e5ff63b2">ecefY</a>, <a class="code" href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a>.<a class="code" href="unionUBXMessage.html#aa57d81c1fb373e82012ca3ddadefd79f">navPosecef</a>.<a class="code" href="structNAV__POSECEF__STRUCT.html#acff937b434d1a245763b778f1f15ba66">ecefZ</a>);</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    } <span class="comment">// else</span></div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160; </div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;<span class="preprocessor">#ifdef NAV_PVT</span></div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    <span class="keywordflow">if</span> (msgType == <a class="code" href="GPS_8h.html#a9730e8d0bbbe3f1515ed1d0b2acda1e1a87ee2b7c21367a2caa62b0a01491ea23">MT_NAV_PVT</a>) {</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;      printf(<span class="stringliteral">&quot;MT_NAV_PVT:\t %lu\t %ul\t  %f\t %f\t %f\t %f\t %f\t %f \n&quot;</span>,</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;             <a class="code" href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a>.<a class="code" href="unionUBXMessage.html#ae5d0a8c24ea04c5b48614e3af5dadea4">navPvt</a>.<a class="code" href="structNAV__PVT__STRUCT.html#a77b13534f916d34c72d828e63f2c685c">iTOW</a>, <a class="code" href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a>.<a class="code" href="unionUBXMessage.html#ae5d0a8c24ea04c5b48614e3af5dadea4">navPvt</a>.<a class="code" href="structNAV__PVT__STRUCT.html#af38c07f23fd57d4cb4a88dd99492ce3b">fixType</a>,</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;             0.001 * (<span class="keywordtype">float</span>)<a class="code" href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a>.<a class="code" href="unionUBXMessage.html#ae5d0a8c24ea04c5b48614e3af5dadea4">navPvt</a>.<a class="code" href="structNAV__PVT__STRUCT.html#a9f0c42e0df789f5ed086349ad79d1f9c">velN</a>,</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;             0.001 * (<span class="keywordtype">float</span>)<a class="code" href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a>.<a class="code" href="unionUBXMessage.html#ae5d0a8c24ea04c5b48614e3af5dadea4">navPvt</a>.<a class="code" href="structNAV__PVT__STRUCT.html#a1abd8ac18139ec0e1148cbea6cd36b18">velE</a>,</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;             0.001 * (<span class="keywordtype">float</span>)<a class="code" href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a>.<a class="code" href="unionUBXMessage.html#ae5d0a8c24ea04c5b48614e3af5dadea4">navPvt</a>.<a class="code" href="structNAV__PVT__STRUCT.html#ae5860d883e58fa8d23dba2c4aa1c3e45">velD</a>,</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;             1e-7 * DEG_TO_RAD * (<span class="keywordtype">float</span>)<a class="code" href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a>.<a class="code" href="unionUBXMessage.html#ae5d0a8c24ea04c5b48614e3af5dadea4">navPvt</a>.<a class="code" href="structNAV__PVT__STRUCT.html#ab8a62324ff89a0c707884bfc34aba85d">lat</a>,</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;             1e-7 * DEG_TO_RAD * (<span class="keywordtype">float</span>)<a class="code" href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a>.<a class="code" href="unionUBXMessage.html#ae5d0a8c24ea04c5b48614e3af5dadea4">navPvt</a>.<a class="code" href="structNAV__PVT__STRUCT.html#ac884e66d0b3ebd6530680ad23e13a81e">lon</a>,</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;             0.001f * (<span class="keywordtype">float</span>)<a class="code" href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a>.<a class="code" href="unionUBXMessage.html#ae5d0a8c24ea04c5b48614e3af5dadea4">navPvt</a>.<a class="code" href="structNAV__PVT__STRUCT.html#a593d78a85e8db2a7511396023ac72bd6">hMSL</a>);</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;    }</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;  }</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;}</div>
+<div class="ttc" id="aGPS_8h_html_a5d2ecd8f29f7e3e702c8b8bea333f6c6"><div class="ttname"><a href="GPS_8h.html#a5d2ecd8f29f7e3e702c8b8bea333f6c6">GPSSERIAL</a></div><div class="ttdeci">HardwareSerial GPSSERIAL(1)</div></div>
+<div class="ttc" id="aGPS_8h_html_ad604e63cc857e5663dfba96c37c66bc7"><div class="ttname"><a href="GPS_8h.html#ad604e63cc857e5663dfba96c37c66bc7">processGPS</a></div><div class="ttdeci">int processGPS()</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00301">GPS.h:301</a></div></div>
+<div class="ttc" id="astructNAV__POSECEF__STRUCT_html_a36711ead60d9cde7974cbeda7de4c35f"><div class="ttname"><a href="structNAV__POSECEF__STRUCT.html#a36711ead60d9cde7974cbeda7de4c35f">NAV_POSECEF_STRUCT::iTOW</a></div><div class="ttdeci">unsigned long iTOW</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00063">GPS.h:63</a></div></div>
+<div class="ttc" id="astructNAV__POSECEF__STRUCT_html_a9e56104db13a84e53c2dec44e5ff63b2"><div class="ttname"><a href="structNAV__POSECEF__STRUCT.html#a9e56104db13a84e53c2dec44e5ff63b2">NAV_POSECEF_STRUCT::ecefY</a></div><div class="ttdeci">long ecefY</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00067">GPS.h:67</a></div></div>
+<div class="ttc" id="astructNAV__POSECEF__STRUCT_html_acff937b434d1a245763b778f1f15ba66"><div class="ttname"><a href="structNAV__POSECEF__STRUCT.html#acff937b434d1a245763b778f1f15ba66">NAV_POSECEF_STRUCT::ecefZ</a></div><div class="ttdeci">long ecefZ</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00069">GPS.h:69</a></div></div>
+<div class="ttc" id="astructNAV__POSECEF__STRUCT_html_ad1b8e404ffdeeb1954292e43fe3507b2"><div class="ttname"><a href="structNAV__POSECEF__STRUCT.html#ad1b8e404ffdeeb1954292e43fe3507b2">NAV_POSECEF_STRUCT::ecefX</a></div><div class="ttdeci">long ecefX</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00065">GPS.h:65</a></div></div>
+<div class="ttc" id="astructNAV__PVT__STRUCT_html_a1abd8ac18139ec0e1148cbea6cd36b18"><div class="ttname"><a href="structNAV__PVT__STRUCT.html#a1abd8ac18139ec0e1148cbea6cd36b18">NAV_PVT_STRUCT::velE</a></div><div class="ttdeci">long velE</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00123">GPS.h:123</a></div></div>
+<div class="ttc" id="astructNAV__PVT__STRUCT_html_a593d78a85e8db2a7511396023ac72bd6"><div class="ttname"><a href="structNAV__PVT__STRUCT.html#a593d78a85e8db2a7511396023ac72bd6">NAV_PVT_STRUCT::hMSL</a></div><div class="ttdeci">long hMSL</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00117">GPS.h:117</a></div></div>
+<div class="ttc" id="astructNAV__PVT__STRUCT_html_a77b13534f916d34c72d828e63f2c685c"><div class="ttname"><a href="structNAV__PVT__STRUCT.html#a77b13534f916d34c72d828e63f2c685c">NAV_PVT_STRUCT::iTOW</a></div><div class="ttdeci">unsigned long iTOW</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00100">GPS.h:100</a></div></div>
+<div class="ttc" id="astructNAV__PVT__STRUCT_html_a9f0c42e0df789f5ed086349ad79d1f9c"><div class="ttname"><a href="structNAV__PVT__STRUCT.html#a9f0c42e0df789f5ed086349ad79d1f9c">NAV_PVT_STRUCT::velN</a></div><div class="ttdeci">long velN</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00121">GPS.h:121</a></div></div>
+<div class="ttc" id="astructNAV__PVT__STRUCT_html_ab8a62324ff89a0c707884bfc34aba85d"><div class="ttname"><a href="structNAV__PVT__STRUCT.html#ab8a62324ff89a0c707884bfc34aba85d">NAV_PVT_STRUCT::lat</a></div><div class="ttdeci">long lat</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00115">GPS.h:115</a></div></div>
+<div class="ttc" id="astructNAV__PVT__STRUCT_html_ac884e66d0b3ebd6530680ad23e13a81e"><div class="ttname"><a href="structNAV__PVT__STRUCT.html#ac884e66d0b3ebd6530680ad23e13a81e">NAV_PVT_STRUCT::lon</a></div><div class="ttdeci">long lon</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00114">GPS.h:114</a></div></div>
+<div class="ttc" id="astructNAV__PVT__STRUCT_html_ae5860d883e58fa8d23dba2c4aa1c3e45"><div class="ttname"><a href="structNAV__PVT__STRUCT.html#ae5860d883e58fa8d23dba2c4aa1c3e45">NAV_PVT_STRUCT::velD</a></div><div class="ttdeci">long velD</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00125">GPS.h:125</a></div></div>
+<div class="ttc" id="astructNAV__PVT__STRUCT_html_af38c07f23fd57d4cb4a88dd99492ce3b"><div class="ttname"><a href="structNAV__PVT__STRUCT.html#af38c07f23fd57d4cb4a88dd99492ce3b">NAV_PVT_STRUCT::fixType</a></div><div class="ttdeci">unsigned char fixType</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00110">GPS.h:110</a></div></div>
+<div class="ttc" id="aunionUBXMessage_html_aa57d81c1fb373e82012ca3ddadefd79f"><div class="ttname"><a href="unionUBXMessage.html#aa57d81c1fb373e82012ca3ddadefd79f">UBXMessage::navPosecef</a></div><div class="ttdeci">NAV_POSECEF_STRUCT navPosecef</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00156">GPS.h:156</a></div></div>
+<div class="ttc" id="aunionUBXMessage_html_ae5d0a8c24ea04c5b48614e3af5dadea4"><div class="ttname"><a href="unionUBXMessage.html#ae5d0a8c24ea04c5b48614e3af5dadea4">UBXMessage::navPvt</a></div><div class="ttdeci">NAV_PVT_STRUCT navPvt</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00159">GPS.h:159</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Referencias <a class="el" href="GPS_8h_source.html#l00065">NAV_POSECEF_STRUCT::ecefX</a>, <a class="el" href="GPS_8h_source.html#l00067">NAV_POSECEF_STRUCT::ecefY</a>, <a class="el" href="GPS_8h_source.html#l00069">NAV_POSECEF_STRUCT::ecefZ</a>, <a class="el" href="GPS_8h_source.html#l00110">NAV_PVT_STRUCT::fixType</a>, <a class="el" href="GPS_8h.html#a5d2ecd8f29f7e3e702c8b8bea333f6c6">GPSSERIAL()</a>, <a class="el" href="GPS_8h_source.html#l00117">NAV_PVT_STRUCT::hMSL</a>, <a class="el" href="GPS_8h_source.html#l00063">NAV_POSECEF_STRUCT::iTOW</a>, <a class="el" href="GPS_8h_source.html#l00100">NAV_PVT_STRUCT::iTOW</a>, <a class="el" href="GPS_8h_source.html#l00115">NAV_PVT_STRUCT::lat</a>, <a class="el" href="GPS_8h_source.html#l00114">NAV_PVT_STRUCT::lon</a>, <a class="el" href="GPS_8h_source.html#l00172">MT_NAV_POSECEF</a>, <a class="el" href="GPS_8h_source.html#l00175">MT_NAV_PVT</a>, <a class="el" href="GPS_8h_source.html#l00156">UBXMessage::navPosecef</a>, <a class="el" href="GPS_8h_source.html#l00159">UBXMessage::navPvt</a>, <a class="el" href="GPS_8h_source.html#l00301">processGPS()</a>, <a class="el" href="GPS_8h_source.html#l00179">ubxMessage</a>, <a class="el" href="GPS_8h_source.html#l00125">NAV_PVT_STRUCT::velD</a>, <a class="el" href="GPS_8h_source.html#l00123">NAV_PVT_STRUCT::velE</a> e <a class="el" href="GPS_8h_source.html#l00121">NAV_PVT_STRUCT::velN</a>.</p>
+<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Este é o diagrama das funções utilizadas por essa função:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="GPS_8h_aaab66558a5f695df7a6fcc3baa340da3_cgraph.png" border="0" usemap="#aGPS_8h_aaab66558a5f695df7a6fcc3baa340da3_cgraph" alt=""/></div>
+<map name="aGPS_8h_aaab66558a5f695df7a6fcc3baa340da3_cgraph" id="aGPS_8h_aaab66558a5f695df7a6fcc3baa340da3_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,93,55"/>
+<area shape="rect" href="GPS_8h.html#a5d2ecd8f29f7e3e702c8b8bea333f6c6" title=" " alt="" coords="293,5,369,29"/>
+<area shape="rect" href="GPS_8h.html#ad604e63cc857e5663dfba96c37c66bc7" title=" " alt="" coords="141,55,224,79"/>
+<area shape="rect" href="GPS_8h.html#aa2fac937d6e192633f020459321241e7" title=" " alt="" coords="284,53,379,77"/>
+<area shape="rect" href="GPS_8h.html#aecde093c7427cc661daceaa118cf4455" title=" " alt="" coords="272,101,391,125"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5d2ecd8f29f7e3e702c8b8bea333f6c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d2ecd8f29f7e3e702c8b8bea333f6c6">&#9670;&nbsp;</a></span>GPSSERIAL()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HardwareSerial GPSSERIAL </td>
+          <td>(</td>
+          <td class="paramtype">1&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenciado(a) por <a class="el" href="GPS_8h_source.html#l00392">gps_imprime()</a>, <a class="el" href="GPS_8h_source.html#l00181">gpsSetup()</a> e <a class="el" href="GPS_8h_source.html#l00301">processGPS()</a>.</p>
+<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Esse é o diagrama das funções que utilizam essa função:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="GPS_8h_a5d2ecd8f29f7e3e702c8b8bea333f6c6_icgraph.png" border="0" usemap="#aGPS_8h_a5d2ecd8f29f7e3e702c8b8bea333f6c6_icgraph" alt=""/></div>
+<map name="aGPS_8h_a5d2ecd8f29f7e3e702c8b8bea333f6c6_icgraph" id="aGPS_8h_a5d2ecd8f29f7e3e702c8b8bea333f6c6_icgraph">
+<area shape="rect" title=" " alt="" coords="396,29,472,53"/>
+<area shape="rect" href="GPS_8h.html#aaab66558a5f695df7a6fcc3baa340da3" title=" " alt="" coords="117,5,205,29"/>
+<area shape="rect" href="GPS_8h.html#a35c55bcf9a6f5a52f34cb1ab02c91479" title=" " alt="" coords="271,77,342,101"/>
+<area shape="rect" href="GPS_8h.html#ad604e63cc857e5663dfba96c37c66bc7" title=" " alt="" coords="265,29,348,53"/>
+<area shape="rect" href="classekf_1_1EKF.html#a4a6998123529ab0d0844ad21419fc895" title="Inicializacao do filtro de Kalman." alt="" coords="105,77,217,101"/>
+<area shape="rect" href="main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d" title=" " alt="" coords="5,77,57,101"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a35c55bcf9a6f5a52f34cb1ab02c91479"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35c55bcf9a6f5a52f34cb1ab02c91479">&#9670;&nbsp;</a></span>gpsSetup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gpsSetup </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="GPS_8h_source.html#l00181">181</a> do arquivo <a class="el" href="GPS_8h_source.html">GPS.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                {</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;  <span class="comment">// GPSSERIAL.begin(baud, config = SERIAL_8N1, rxPin,txPin)</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  <a class="code" href="GPS_8h.html#a5d2ecd8f29f7e3e702c8b8bea333f6c6">GPSSERIAL</a>.begin(9600, SERIAL_8N1, 16, 17);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> VALORES_PADROES[] PROGMEM = {</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;      <span class="comment">// valores padroes</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;      0xB5, 0x62, 0x06, 0x09, 0x0D, 0x00, 0xFF, 0xFF, 0x00, 0x00, 0x00,</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;      0x00, 0x00, 0x00, 0xFF, 0xFF, 0x00, 0x00, 0x03, 0x1B, 0x9A,</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  };</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  <span class="comment">// Desabilitar NMEA</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> UBLOX_CONFIGURACAO[] PROGMEM = {</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  <span class="comment">// Desabilitar NMEA</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="preprocessor">#ifndef GxGGA</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;      0xB5, 0x62, 0x06, 0x01, 0x08, 0x00, 0xF0, 0x00, 0x00, 0x00, 0x00, 0x00,</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;      0x00, 0x00, 0xFF, 0x23,</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="preprocessor">#ifndef GxGLL</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;      0xB5, 0x62, 0x06, 0x01, 0x08, 0x00, 0xF0, 0x01, 0x00, 0x00, 0x00, 0x00,</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;      0x00, 0x00, 0x00, 0x2A,</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="preprocessor">#ifndef GxGSA</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;      0xB5, 0x62, 0x06, 0x01, 0x08, 0x00, 0xF0, 0x02, 0x00, 0x00, 0x00, 0x00,</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;      0x00, 0x00, 0x01, 0x31,</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="preprocessor">#ifndef GxGSV</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;      0xB5, 0x62, 0x06, 0x01, 0x08, 0x00, 0xF0, 0x03, 0x00, 0x00, 0x00, 0x00,</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;      0x00, 0x00, 0x02, 0x38,</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="preprocessor">#ifndef GxRMC</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;      0xB5, 0x62, 0x06, 0x01, 0x08, 0x00, 0xF0, 0x04, 0x00, 0x00, 0x00, 0x00,</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;      0x00, 0x00, 0x03, 0x3F,</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="preprocessor">#ifndef GxVTG</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;      0xB5, 0x62, 0x06, 0x01, 0x08, 0x00, 0xF0, 0x05, 0x00, 0x00, 0x00, 0x00,</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;      0x00, 0x00, 0x04, 0x46,</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="comment">// Configuracao de Navegacao</span></div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="preprocessor">#ifdef NAV_VELNED</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;      0xB5, 0x62, 0x06, 0x01, 0x08, 0x00, 0x01, 0x12, 0x00, 0x01, 0x00, 0x00,</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;      0x00, 0x00, 0x23, 0x2E,</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="preprocessor">#ifdef NAV_POSLLH</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;      0xB5, 0x62, 0x06, 0x01, 0x08, 0x00, 0x01, 0x02, 0x00, 0x01, 0x00, 0x00,</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;      0x00, 0x00, 0x13, 0xBE, <span class="comment">//</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="preprocessor">#ifdef NAV_POSECEF</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;      <span class="comment">// 0xB5, 0x62, 0x06, 0x01, 0x08, 0x00, 0x29, 0x01, 0x00, 0x01, 0x00, 0x00,</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;      <span class="comment">// 0x00, 0x00, 0x3A, 0xF7, //</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;      0xB5, 0x62, 0x06, 0x01, 0x08, 0x00, 0x01, 0x01, 0x00, 0x01, 0x00, 0x00,</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;      0x00, 0x00, 0x12, 0xB7, <span class="comment">//</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160; </div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160; </div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;<span class="preprocessor">#ifdef NAV_PVT</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;      0xB5, 0x62, 0x06, 0x01, 0x08, 0x00, 0x01, 0x07, 0x00, 0x01, 0x00, 0x00,</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;      0x00, 0x00, 0x18, 0xE1, <span class="comment">//</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160; </div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;<span class="comment">// frequencia de amostragem</span></div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;<span class="preprocessor">#ifdef RATE_10</span></div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;      0xB5, 0x62, 0x06, 0x08, 0x06, 0x00, 0x64, 0x00, 0x01, 0x00, 0x01, 0x00,</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;      0x7A, 0x12, <span class="comment">//</span></div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;<span class="preprocessor">#ifdef RATE_5</span></div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;      0xB5, 0x62, 0x06, 0x08, 0x06, 0x00, 0xC8, 0x00, 0x01, 0x00, 0x01, 0x00,</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;      0xDE, 0x6A, <span class="comment">//</span></div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="preprocessor">#ifdef RATE_1</span></div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;      0xB5, 0x62, 0x06, 0x08, 0x06, 0x00, 0xE8, 0x03, 0x01, 0x00, 0x01, 0x00,</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;      0x01, 0x39,</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;<span class="preprocessor">#ifdef NAV_MODE_2G</span></div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;      <span class="comment">// Configuracao do NAV MODE  opcao 7- Airbone &lt; 2g</span></div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;      0xB5, 0x62, 0x06, 0x24, 0x24, 0x00, 0xFF, 0xFF, 0x07, 0x03, 0x00, 0x00,</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;      0x00, 0x00, 0x10, 0x27, 0x00, 0x00, 0x05, 0x00, 0xFA, 0x00, 0xFA, 0x00,</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;      0x64, 0x00, 0x5E, 0x01, 0x00, 0x3C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;      0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x85, 0x2A,</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<span class="preprocessor">#ifdef NAV_MODE_1G</span></div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;      <span class="comment">// NAV MODE  opcao 7- Airbone &lt; 1g</span></div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;      0xB5, 0x62, 0x06, 0x24, 0x24, 0x00, 0xFF, 0xFF, 0x06, 0x03, 0x00, 0x00,</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;      0x00, 0x00, 0x10, 0x27, 0x00, 0x00, 0x05, 0x00, 0xFA, 0x00, 0xFA, 0x00,</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;      0x64, 0x00, 0x5E, 0x01, 0x00, 0x3C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;      0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x85,</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;      0x2A, <span class="comment">//</span></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;  };</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160; </div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; (int)<span class="keyword">sizeof</span>(VALORES_PADROES); i++) {</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <a class="code" href="GPS_8h.html#a5d2ecd8f29f7e3e702c8b8bea333f6c6">GPSSERIAL</a>.write(pgm_read_byte(VALORES_PADROES + i));</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    delay(5); <span class="comment">// Simula 38400 baudrate.</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;  }</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;  delay(1000);</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  <span class="comment">// Envia os dados</span></div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; (int)<span class="keyword">sizeof</span>(UBLOX_CONFIGURACAO); i++) {</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <a class="code" href="GPS_8h.html#a5d2ecd8f29f7e3e702c8b8bea333f6c6">GPSSERIAL</a>.write(pgm_read_byte(UBLOX_CONFIGURACAO + i));</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    delay(5); <span class="comment">// Simula 38400 baudrate.</span></div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;  }</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">Referencias <a class="el" href="GPS_8h.html#a5d2ecd8f29f7e3e702c8b8bea333f6c6">GPSSERIAL()</a>.</p>
+
+<p class="reference">Referenciado(a) por <a class="el" href="EKF_8cpp_source.html#l00039">ekf::EKF::begin()</a>.</p>
+<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Este é o diagrama das funções utilizadas por essa função:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="GPS_8h_a35c55bcf9a6f5a52f34cb1ab02c91479_cgraph.png" border="0" usemap="#aGPS_8h_a35c55bcf9a6f5a52f34cb1ab02c91479_cgraph" alt=""/></div>
+<map name="aGPS_8h_a35c55bcf9a6f5a52f34cb1ab02c91479_cgraph" id="aGPS_8h_a35c55bcf9a6f5a52f34cb1ab02c91479_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,76,29"/>
+<area shape="rect" href="GPS_8h.html#a5d2ecd8f29f7e3e702c8b8bea333f6c6" title=" " alt="" coords="124,5,200,29"/>
+</map>
+</div>
+<div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Esse é o diagrama das funções que utilizam essa função:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="GPS_8h_a35c55bcf9a6f5a52f34cb1ab02c91479_icgraph.png" border="0" usemap="#aGPS_8h_a35c55bcf9a6f5a52f34cb1ab02c91479_icgraph" alt=""/></div>
+<map name="aGPS_8h_a35c55bcf9a6f5a52f34cb1ab02c91479_icgraph" id="aGPS_8h_a35c55bcf9a6f5a52f34cb1ab02c91479_icgraph">
+<area shape="rect" title=" " alt="" coords="265,5,336,29"/>
+<area shape="rect" href="classekf_1_1EKF.html#a4a6998123529ab0d0844ad21419fc895" title="Inicializacao do filtro de Kalman." alt="" coords="105,5,217,29"/>
+<area shape="rect" href="main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d" title=" " alt="" coords="5,5,57,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad604e63cc857e5663dfba96c37c66bc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad604e63cc857e5663dfba96c37c66bc7">&#9670;&nbsp;</a></span>processGPS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int processGPS </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="GPS_8h_source.html#l00301">301</a> do arquivo <a class="el" href="GPS_8h_source.html">GPS.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                 {</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">int</span> fpos = 0;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> checksum[2];</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160; </div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">byte</span> currentMsgType = <a class="code" href="GPS_8h.html#a9730e8d0bbbe3f1515ed1d0b2acda1e1ad2e3f1bdeae0fa235b7dfe6656c46f14">MT_NONE</a>;</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">int</span> payloadSize = <span class="keyword">sizeof</span>(<a class="code" href="unionUBXMessage.html">UBXMessage</a>);</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;  <span class="comment">// trocado while por if para naum travar o processo.</span></div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;  <span class="keywordflow">while</span> (<a class="code" href="GPS_8h.html#a5d2ecd8f29f7e3e702c8b8bea333f6c6">GPSSERIAL</a>.available()) {</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <span class="keywordtype">byte</span> c = <a class="code" href="GPS_8h.html#a5d2ecd8f29f7e3e702c8b8bea333f6c6">GPSSERIAL</a>.read();</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="keywordflow">if</span> (fpos &lt; 2) {</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;      <span class="comment">/* Procura se os primeiro dois bytes sao os cabecalhos(0xB5,0x62)*/</span></div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;      <span class="keywordflow">if</span> (c == <a class="code" href="GPS_8h.html#a23eb131661d623c855d4216331834845">UBX_HEADER</a>[fpos]) {</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        fpos++;</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        fpos = 0;</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;      }</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;      <span class="comment">/* Este trecho é acessado apenas se a mensagem coincide com UBX_HEADER.*/</span></div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;      <span class="comment">// Place the incoming byte into the ubxMessage struct. The position is</span></div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;      <span class="comment">// fpos-2 because the struct does not include the initial two-byte header</span></div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;      <span class="comment">// (UBX_HEADER).</span></div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;      <span class="keywordflow">if</span> ((fpos - 2) &lt; payloadSize)</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        ((<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *)(&amp;<a class="code" href="GPS_8h.html#a4ff3f4ce55f117a43c4e117d850ca5a8">ubxMessage</a>))[fpos - 2] = c;</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160; </div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;      fpos++;</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160; </div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;      <span class="keywordflow">if</span> (fpos == 4) {</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        <span class="comment">// We have just received the second byte of the message type header,</span></div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <span class="comment">// so now we can check to see what kind of message it is.</span></div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;<span class="preprocessor">#ifdef NAV_POSLLH</span></div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="GPS_8h.html#aecde093c7427cc661daceaa118cf4455">compareMsgHeader</a>(NAV_POSLLH_HEADER)) {</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;          currentMsgType = MT_NAV_POSLLH;</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;          payloadSize = <span class="keyword">sizeof</span>(NAV_POSLLH_STRUCT);</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        } <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;<span class="preprocessor">#ifdef NAV_VELNED</span></div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="GPS_8h.html#aecde093c7427cc661daceaa118cf4455">compareMsgHeader</a>(NAV_VELNED_HEADER)) {</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;          currentMsgType = MT_NAV_VELNED;</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;          payloadSize = <span class="keyword">sizeof</span>(NAV_VELNED_STRUCT);</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        } <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;<span class="preprocessor">#ifdef NAV_POSECEF</span></div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="GPS_8h.html#aecde093c7427cc661daceaa118cf4455">compareMsgHeader</a>(<a class="code" href="GPS_8h.html#a3e09624a99733cc8e95b04f78d7319da">NAV_POSECEF_HEADER</a>)) {</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;          currentMsgType = <a class="code" href="GPS_8h.html#a9730e8d0bbbe3f1515ed1d0b2acda1e1ae2379a504fb11d8e00e11bd567a3b819">MT_NAV_POSECEF</a>;</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;          payloadSize = <span class="keyword">sizeof</span>(<a class="code" href="structNAV__POSECEF__STRUCT.html">NAV_POSECEF_STRUCT</a>);</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        } <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;<span class="preprocessor">#ifdef NAV_PVT</span></div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="GPS_8h.html#aecde093c7427cc661daceaa118cf4455">compareMsgHeader</a>(<a class="code" href="GPS_8h.html#a4c90ad3996e1901ce9aa8a364eab6c0d">NAV_PVT_HEADER</a>)) {</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;          currentMsgType = <a class="code" href="GPS_8h.html#a9730e8d0bbbe3f1515ed1d0b2acda1e1a87ee2b7c21367a2caa62b0a01491ea23">MT_NAV_PVT</a>;</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;          payloadSize = <span class="keyword">sizeof</span>(<a class="code" href="structNAV__PVT__STRUCT.html">NAV_PVT_STRUCT</a>);</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160; </div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        } <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        {</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;          <span class="comment">// unknown message type, bail</span></div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;          fpos = 0;</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;          <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        }</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;      }</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160; </div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;      <span class="keywordflow">if</span> (fpos == (payloadSize + 2)) {</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        <span class="comment">// All payload bytes have now been received, so we can calculate the</span></div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        <span class="comment">// expected checksum value to compare with the next two incoming bytes.</span></div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        <a class="code" href="GPS_8h.html#aa2fac937d6e192633f020459321241e7">calcChecksum</a>(checksum, payloadSize);</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (fpos == (payloadSize + 3)) {</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        <span class="comment">// First byte after the payload, ie. first byte of the checksum.</span></div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        <span class="comment">// Does it match the first byte of the checksum we calculated?</span></div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        <span class="keywordflow">if</span> (c != checksum[0]) {</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;          <span class="comment">// Checksum doesn&#39;t match, reset to beginning state and try again.</span></div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;          fpos = 0;</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        }</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (fpos == (payloadSize + 4)) {</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        <span class="comment">// Second byte after the payload, ie. second byte of the checksum.</span></div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        <span class="comment">// Does it match the second byte of the checksum we calculated?</span></div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;        fpos = 0; <span class="comment">// We will reset the state regardless of whether the checksum</span></div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;                  <span class="comment">// matches.</span></div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        <span class="keywordflow">if</span> (c == checksum[1]) {</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;          <span class="comment">// Checksum matches, we have a valid message.</span></div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;          <span class="keywordflow">return</span> currentMsgType;</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;        }</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (fpos &gt; (payloadSize + 4)) {</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        <span class="comment">// We have now read more bytes than both the expected payload and</span></div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        <span class="comment">// checksum together, so something went wrong. Reset to beginning state</span></div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        <span class="comment">// and try again.</span></div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        fpos = 0;</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;      }</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    }</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;  }</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="GPS_8h.html#a9730e8d0bbbe3f1515ed1d0b2acda1e1ad2e3f1bdeae0fa235b7dfe6656c46f14">MT_NONE</a>;</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;}</div>
+<div class="ttc" id="aGPS_8h_html_a23eb131661d623c855d4216331834845"><div class="ttname"><a href="GPS_8h.html#a23eb131661d623c855d4216331834845">UBX_HEADER</a></div><div class="ttdeci">const unsigned char UBX_HEADER[]</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00037">GPS.h:37</a></div></div>
+<div class="ttc" id="aGPS_8h_html_a3e09624a99733cc8e95b04f78d7319da"><div class="ttname"><a href="GPS_8h.html#a3e09624a99733cc8e95b04f78d7319da">NAV_POSECEF_HEADER</a></div><div class="ttdeci">const unsigned char NAV_POSECEF_HEADER[]</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00058">GPS.h:58</a></div></div>
+<div class="ttc" id="aGPS_8h_html_a4c90ad3996e1901ce9aa8a364eab6c0d"><div class="ttname"><a href="GPS_8h.html#a4c90ad3996e1901ce9aa8a364eab6c0d">NAV_PVT_HEADER</a></div><div class="ttdeci">const unsigned char NAV_PVT_HEADER[]</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00095">GPS.h:95</a></div></div>
+<div class="ttc" id="aGPS_8h_html_aa2fac937d6e192633f020459321241e7"><div class="ttname"><a href="GPS_8h.html#aa2fac937d6e192633f020459321241e7">calcChecksum</a></div><div class="ttdeci">void calcChecksum(unsigned char *CK, int msgSize)</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00286">GPS.h:286</a></div></div>
+<div class="ttc" id="aGPS_8h_html_aecde093c7427cc661daceaa118cf4455"><div class="ttname"><a href="GPS_8h.html#aecde093c7427cc661daceaa118cf4455">compareMsgHeader</a></div><div class="ttdeci">boolean compareMsgHeader(const unsigned char *msgHeader)</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00296">GPS.h:296</a></div></div>
+<div class="ttc" id="astructNAV__POSECEF__STRUCT_html"><div class="ttname"><a href="structNAV__POSECEF__STRUCT.html">NAV_POSECEF_STRUCT</a></div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00059">GPS.h:59</a></div></div>
+<div class="ttc" id="astructNAV__PVT__STRUCT_html"><div class="ttname"><a href="structNAV__PVT__STRUCT.html">NAV_PVT_STRUCT</a></div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00096">GPS.h:96</a></div></div>
+<div class="ttc" id="aunionUBXMessage_html"><div class="ttname"><a href="unionUBXMessage.html">UBXMessage</a></div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00148">GPS.h:148</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Referencias <a class="el" href="GPS_8h_source.html#l00286">calcChecksum()</a>, <a class="el" href="GPS_8h_source.html#l00296">compareMsgHeader()</a>, <a class="el" href="GPS_8h.html#a5d2ecd8f29f7e3e702c8b8bea333f6c6">GPSSERIAL()</a>, <a class="el" href="GPS_8h_source.html#l00172">MT_NAV_POSECEF</a>, <a class="el" href="GPS_8h_source.html#l00175">MT_NAV_PVT</a>, <a class="el" href="GPS_8h_source.html#l00164">MT_NONE</a>, <a class="el" href="GPS_8h_source.html#l00058">NAV_POSECEF_HEADER</a>, <a class="el" href="GPS_8h_source.html#l00095">NAV_PVT_HEADER</a>, <a class="el" href="GPS_8h_source.html#l00037">UBX_HEADER</a> e <a class="el" href="GPS_8h_source.html#l00179">ubxMessage</a>.</p>
+
+<p class="reference">Referenciado(a) por <a class="el" href="GPS_8h_source.html#l00392">gps_imprime()</a>.</p>
+<div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Este é o diagrama das funções utilizadas por essa função:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="GPS_8h_ad604e63cc857e5663dfba96c37c66bc7_cgraph.png" border="0" usemap="#aGPS_8h_ad604e63cc857e5663dfba96c37c66bc7_cgraph" alt=""/></div>
+<map name="aGPS_8h_ad604e63cc857e5663dfba96c37c66bc7_cgraph" id="aGPS_8h_ad604e63cc857e5663dfba96c37c66bc7_cgraph">
+<area shape="rect" title=" " alt="" coords="5,53,88,77"/>
+<area shape="rect" href="GPS_8h.html#aa2fac937d6e192633f020459321241e7" title=" " alt="" coords="148,5,243,29"/>
+<area shape="rect" href="GPS_8h.html#aecde093c7427cc661daceaa118cf4455" title=" " alt="" coords="136,53,255,77"/>
+<area shape="rect" href="GPS_8h.html#a5d2ecd8f29f7e3e702c8b8bea333f6c6" title=" " alt="" coords="157,101,233,125"/>
+</map>
+</div>
+<div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Esse é o diagrama das funções que utilizam essa função:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="GPS_8h_ad604e63cc857e5663dfba96c37c66bc7_icgraph.png" border="0" usemap="#aGPS_8h_ad604e63cc857e5663dfba96c37c66bc7_icgraph" alt=""/></div>
+<map name="aGPS_8h_ad604e63cc857e5663dfba96c37c66bc7_icgraph" id="aGPS_8h_ad604e63cc857e5663dfba96c37c66bc7_icgraph">
+<area shape="rect" title=" " alt="" coords="141,5,224,29"/>
+<area shape="rect" href="GPS_8h.html#aaab66558a5f695df7a6fcc3baa340da3" title=" " alt="" coords="5,5,93,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Variáveis</h2>
+<a id="a27c939ba1a4f4d927aaa500781293ba7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27c939ba1a4f4d927aaa500781293ba7">&#9670;&nbsp;</a></span>data</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structPacketData.html">PacketData</a> data</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="GPS_8h_source.html#l00146">146</a> do arquivo <a class="el" href="GPS_8h_source.html">GPS.h</a>.</p>
+
+<p class="reference">Referenciado(a) por <a class="el" href="METODOSCALIBRACAO_8h_source.html#l00103">METODOSCALIBRACAO::calibracaoAcelerometro()</a>, <a class="el" href="METODOSCALIBRACAO_8h_source.html#l00043">METODOSCALIBRACAO::calibracaoGeometrica()</a>, <a class="el" href="TELEMETRIA_8cpp_source.html#l00069">TELEMETRIA::OnDataRecv()</a>, <a class="el" href="IMU_8cpp_source.html#l00368">IMU::writeAK8963Register()</a> e <a class="el" href="IMU_8cpp_source.html#l00402">IMU::writeRegister()</a>.</p>
+
+</div>
+</div>
+<a id="a3e09624a99733cc8e95b04f78d7319da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e09624a99733cc8e95b04f78d7319da">&#9670;&nbsp;</a></span>NAV_POSECEF_HEADER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const unsigned char NAV_POSECEF_HEADER[] = {0x01, 0x01}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="GPS_8h_source.html#l00058">58</a> do arquivo <a class="el" href="GPS_8h_source.html">GPS.h</a>.</p>
+
+<p class="reference">Referenciado(a) por <a class="el" href="GPS_8h_source.html#l00301">processGPS()</a>.</p>
+
+</div>
+</div>
+<a id="a4c90ad3996e1901ce9aa8a364eab6c0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c90ad3996e1901ce9aa8a364eab6c0d">&#9670;&nbsp;</a></span>NAV_PVT_HEADER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const unsigned char NAV_PVT_HEADER[] = {0x01, 0x07}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="GPS_8h_source.html#l00095">95</a> do arquivo <a class="el" href="GPS_8h_source.html">GPS.h</a>.</p>
+
+<p class="reference">Referenciado(a) por <a class="el" href="GPS_8h_source.html#l00301">processGPS()</a>.</p>
+
+</div>
+</div>
+<a id="a23eb131661d623c855d4216331834845"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23eb131661d623c855d4216331834845">&#9670;&nbsp;</a></span>UBX_HEADER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const unsigned char UBX_HEADER[] = {0xB5, 0x62}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="GPS_8h_source.html#l00037">37</a> do arquivo <a class="el" href="GPS_8h_source.html">GPS.h</a>.</p>
+
+<p class="reference">Referenciado(a) por <a class="el" href="GPS_8h_source.html#l00301">processGPS()</a>.</p>
+
+</div>
+</div>
+<a id="a4ff3f4ce55f117a43c4e117d850ca5a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ff3f4ce55f117a43c4e117d850ca5a8">&#9670;&nbsp;</a></span>ubxMessage</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="unionUBXMessage.html">UBXMessage</a> ubxMessage</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="GPS_8h_source.html#l00179">179</a> do arquivo <a class="el" href="GPS_8h_source.html">GPS.h</a>.</p>
+
+<p class="reference">Referenciado(a) por <a class="el" href="GPS_8h_source.html#l00286">calcChecksum()</a>, <a class="el" href="GPS_8h_source.html#l00296">compareMsgHeader()</a>, <a class="el" href="GPS_8h_source.html#l00392">gps_imprime()</a> e <a class="el" href="GPS_8h_source.html#l00301">processGPS()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

@@ -1,0 +1,15 @@
+digraph "IMU::setAccelRange"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  rankdir="RL";
+  Node1 [label="IMU::setAccelRange",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node2 [label="IMU::begin",height=0.2,width=0.4,color="black",URL="$classIMU.html#ae0d964d2f8ec122be068c41b84bc18a8",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node3 [label="ekf::EKF::begin",height=0.2,width=0.4,color="black",URL="$classekf_1_1EKF.html#a4a6998123529ab0d0844ad21419fc895",tooltip="Inicializacao do filtro de Kalman."];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node4 [label="setup",height=0.2,width=0.4,color="black",URL="$main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d",tooltip=" "];
+}

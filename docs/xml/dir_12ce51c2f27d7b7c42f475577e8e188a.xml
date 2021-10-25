@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compounddef id="dir_12ce51c2f27d7b7c42f475577e8e188a" kind="dir">
+    <compoundname>lib/GRUPO_QUAT</compoundname>
+    <innerfile refid="GRUPO__QUAT_8cpp">GRUPO_QUAT.cpp</innerfile>
+    <innerfile refid="GRUPO__QUAT_8h">GRUPO_QUAT.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="lib/GRUPO_QUAT/"/>
+  </compounddef>
+</doxygen>

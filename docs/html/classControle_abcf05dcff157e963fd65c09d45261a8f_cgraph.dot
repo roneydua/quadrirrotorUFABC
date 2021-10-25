@@ -1,0 +1,15 @@
+digraph "Controle::computeRotationalControl"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  rankdir="LR";
+  Node1 [label="Controle::computeRotational\lControl",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node2 [label="ekf::S_l",height=0.2,width=0.4,color="black",URL="$namespaceekf.html#a8177897fe9b962d8e0927a913fc36242",tooltip="Calcula a Matriz Lefth-Quaternion a partir do quaternion q."];
+  Node2 -> Node3 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node3 [label="ekf::skew",height=0.2,width=0.4,color="black",URL="$namespaceekf.html#af3f0a631343e55ec8b42f3fbea182461",tooltip="Matrix antissimetrica."];
+  Node1 -> Node4 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node4 [label="Sdre::updateControl",height=0.2,width=0.4,color="black",URL="$classSdre.html#af2f380ec3d018b60686e304ca7026846",tooltip=" "];
+}

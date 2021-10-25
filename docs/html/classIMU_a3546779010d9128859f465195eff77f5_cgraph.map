@@ -1,0 +1,6 @@
+<map id="IMU::calibracaoMagnetometro" name="IMU::calibracaoMagnetometro">
+<area shape="rect" id="node1" title=" " alt="" coords="5,39,189,63"/>
+<area shape="rect" id="node2" href="$classMETODOSCALIBRACAO.html#af0478ed112a1139bafefe7833568e641" title=" " alt="" coords="237,5,380,41"/>
+<area shape="rect" id="node3" href="$classIMU.html#ac574728dbbc752155239a35c8bbd6e79" title=" " alt="" coords="253,66,365,90"/>
+<area shape="rect" id="node4" href="$classIMU.html#a87c200faa130ff4d2d3416b2d83f4f49" title=" " alt="" coords="428,66,559,90"/>
+</map>

@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Quadrirrotor: Referência do Arquivo lib/EKF/EKF.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Quadrirrotor
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Busca','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_f81b21074929c51f0f8ec4455f2eeb05.html">EKF</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#namespaces"><em>Namespaces</em></a> &#124;
+<a href="#var-members">Variáveis</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência do Arquivo EKF.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Classe que implementa o filtro de Kalman estendido.  
+<a href="#details">Mais...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="EKF_8h_source.html">EKF.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="AQUA_8h_source.html">../AQUA/AQUA.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GRUPO__QUAT_8h_source.html">../GRUPO_QUAT/GRUPO_QUAT.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Gráfico de dependência de inclusões para EKF.cpp:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="EKF_8cpp__incl.png" border="0" usemap="#alib_2EKF_2EKF_8cpp" alt=""/></div>
+<map name="alib_2EKF_2EKF_8cpp" id="alib_2EKF_2EKF_8cpp">
+<area shape="rect" title="Classe que implementa o filtro de Kalman estendido." alt="" coords="145,5,257,29"/>
+<area shape="rect" href="EKF_8h.html" title="Classe que implementa o filtro de Kalman estendido." alt="" coords="66,77,118,101"/>
+<area shape="rect" href="AQUA_8h.html" title=" " alt="" coords="148,77,254,101"/>
+<area shape="rect" href="GRUPO__QUAT_8h.html" title="Cabecalho com funcoes de quaternion." alt="" coords="234,149,370,185"/>
+<area shape="rect" title=" " alt="" coords="121,233,252,257"/>
+<area shape="rect" title=" " alt="" coords="24,149,160,185"/>
+<area shape="rect" title=" " alt="" coords="276,233,347,257"/>
+</map>
+</div>
+</div>
+<p><a href="EKF_8cpp_source.html">Vá para o código-fonte desse arquivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+&lt;em&gt;Namespaces&lt;/em&gt;</h2></td></tr>
+<tr class="memitem:namespaceekf"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceekf.html">ekf</a></td></tr>
+<tr class="memdesc:namespaceekf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funções genéricas com álgebra de quatérnions e demais. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variáveis</h2></td></tr>
+<tr class="memitem:a224c884f9fa345bfef8f140150919b3e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classAQUA.html">AQUA</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceekf.html#a224c884f9fa345bfef8f140150919b3e">ekf::aqua</a></td></tr>
+<tr class="separator:a224c884f9fa345bfef8f140150919b3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Classe que implementa o filtro de Kalman estendido. </p>
+<dl class="section author"><dt>Autor</dt><dd>: Roney Silva (roney) </dd></dl>
+<dl class="section date"><dt>Data</dt><dd>: 16-Aug-2021 Email: <a href="#" onclick="location.href='mai'+'lto:'+'ron'+'ey'+'dda'+'si'+'lva'+'@g'+'mai'+'l.'+'com'; return false;">roney<span style="display: none;">.nosp@m.</span>ddas<span style="display: none;">.nosp@m.</span>ilva@<span style="display: none;">.nosp@m.</span>gmai<span style="display: none;">.nosp@m.</span>l.com</a> Project: quadrirrotorUFABC</dd></dl>
+<p>Last modified by: roney Last modified time: 01-Sep-2021 </p>
+
+<p class="definition">Definição no arquivo <a class="el" href="EKF_8cpp_source.html">EKF.cpp</a>.</p>
+</div></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

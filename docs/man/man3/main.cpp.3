@@ -1,0 +1,144 @@
+.TH "src/main.cpp" 3 "Sexta, 17 de Setembro de 2021" "Quadrirrotor" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/main.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'Controle\&.h'\fP
+.br
+\fC#include 'EKF\&.h'\fP
+.br
+\fC#include 'GRUPO_QUAT\&.h'\fP
+.br
+\fC#include 'PARAMETROS\&.h'\fP
+.br
+\fC#include 'TELEMETRIA\&.h'\fP
+.br
+\fC#include <Arduino\&.h>\fP
+.br
+\fC#include <eigen3/Eigen/Dense>\fP
+.br
+\fC#include <esp_now\&.h>\fP
+.br
+\fC#include 'IBusBM\&.h'\fP
+.br
+
+.SS "Funções"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetup\fP ()"
+.br
+.ti -1c
+.RI "void \fBloop\fP ()"
+.br
+.in -1c
+.SS "Variáveis"
+
+.in +1c
+.ti -1c
+.RI "\fBIBusBM\fP \fBibus\fP"
+.br
+.ti -1c
+.RI "\fBTELEMETRIA\fP \fBtel\fP"
+.br
+.ti -1c
+.RI "\fBekf::EKF\fP \fBfiltro\fP"
+.br
+.ti -1c
+.RI "Eigen::Vector< float, 17 > \fBt\fP = Eigen::Vector<float, 17>::Zero()"
+.br
+.in -1c
+.SH "Descrição detalhada"
+.PP 
+
+.PP
+\fBAutor\fP
+.RS 4
+: Roney Silva (roney) 
+.RE
+.PP
+\fBData\fP
+.RS 4
+: 16-Aug-2021 Email: roneyddasilva@gmail.com Project: quadrirrotorUFABC
+.RE
+.PP
+Last modified by: roney Last modified time: 31-Aug-2021 
+.PP
+Definição no arquivo \fBmain\&.cpp\fP\&.
+.SH "Funções"
+.PP 
+.SS "void loop ()"
+
+.PP
+Definição na linha 50 do arquivo main\&.cpp\&.
+.PP
+.nf
+50             {
+51   // filtro\&.updateOfMeasurements();
+52   filtro\&.loopEKF();
+53   t << filtro\&.messageGPS, filtro\&.accel, filtro\&.mag, filtro\&.gyro, filtro\&.dt,
+54       filtro\&.drNEDgps, filtro\&.rNEDgps;
+55   // ekf::printEigen(t\&.transpose());
+56 
+57   tel\&.envia(t);
+58   vTaskDelayUntil(&xLastdtTelemetry, xdtTelemetry);
+59 }
+.fi
+.PP
+Referencias ekf::EKF::accel, ekf::EKF::drNEDgps, ekf::EKF::dt, TELEMETRIA::envia(), filtro, ekf::EKF::gyro, ekf::EKF::loopEKF(), ekf::EKF::mag, ekf::EKF::messageGPS, ekf::EKF::rNEDgps, t, tel, xdtTelemetry e xLastdtTelemetry\&.
+.SS "void setup ()"
+
+.PP
+Definição na linha 33 do arquivo main\&.cpp\&.
+.PP
+.nf
+33              {
+34   pinMode(onboard_led, OUTPUT);
+35   tel\&.begin();
+36   filtro\&.begin(float(dtTelemetry) * 1e-3);
+37   // Serial\&.begin(115200);
+38   vTaskDelay(2000);
+39   tel\&.enviaMensagem((char *)"Ent\&. no método de Calibracao");
+40   filtro\&.calibrationMethods();
+41   tel\&.enviaMensagem((char *)"Calibracao OK");
+42   ibus\&.begin(Serial2, IBUSBM_NOTIMER, 13);
+43   // xTaskCreatePinnedToCore(core_1, "funcao_core_1", 4000, NULL, 10, NULL, 1);
+44   // xTaskCreatePinnedToCore(telemetria, "telemetria", 2000, NULL, 1, NULL, 0);
+45   vTaskDelay(2000);
+46   tel\&.enviaMensagem((char *)"Setup OK");
+47 }
+.fi
+.PP
+Referencias TELEMETRIA::begin(), ekf::EKF::begin(), IBusBM::begin(), dtTelemetry, TELEMETRIA::enviaMensagem(), filtro, ibus, IBUSBM_NOTIMER, onboard_led e tel\&.
+.SH "Variáveis"
+.PP 
+.SS "\fBekf::EKF\fP filtro"
+
+.PP
+Definição na linha 25 do arquivo main\&.cpp\&.
+.PP
+Referenciado(a) por loop() e setup()\&.
+.SS "\fBIBusBM\fP ibus"
+
+.PP
+Definição na linha 22 do arquivo main\&.cpp\&.
+.PP
+Referenciado(a) por setup()\&.
+.SS "Eigen::Vector<float, 17> t = Eigen::Vector<float, 17>::Zero()"
+
+.PP
+Definição na linha 49 do arquivo main\&.cpp\&.
+.PP
+Referenciado(a) por loop() e IBusBM::loop()\&.
+.SS "\fBTELEMETRIA\fP tel"
+
+.PP
+Definição na linha 23 do arquivo main\&.cpp\&.
+.PP
+Referenciado(a) por loop() e setup()\&.
+.SH "Autor"
+.PP 
+Gerado automaticamente por Doxygen para Quadrirrotor a partir do código-fonte\&.

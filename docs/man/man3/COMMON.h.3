@@ -1,0 +1,41 @@
+.TH "src/COMMON.h" 3 "Sexta, 17 de Setembro de 2021" "Quadrirrotor" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/COMMON.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <Arduino\&.h>\fP
+.br
+
+.SS "Funções"
+
+.in +1c
+.ti -1c
+.RI "void \fBblindLED\fP (size_t times)"
+.br
+.in -1c
+.SH "Funções"
+.PP 
+.SS "void blindLED (size_t times)\fC [inline]\fP"
+
+.PP
+Definição na linha 4 do arquivo COMMON\&.h\&.
+.PP
+.nf
+4                                    {
+5   extern gpio_num_t onboard_led;
+6   int count = 0;
+7   for (size_t i = 0; i < 2 * times; i++) {
+8     digitalWrite(onboard_led, count);
+9     vTaskDelay(500);
+10     count = 1 - count;
+11   }
+12 }
+.fi
+.PP
+Referencias onboard_led\&.
+.SH "Autor"
+.PP 
+Gerado automaticamente por Doxygen para Quadrirrotor a partir do código-fonte\&.

@@ -1,0 +1,236 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compounddef id="IBusBM_8h" kind="file" language="C++">
+    <compoundname>IBusBM.h</compoundname>
+    <includes local="no">inttypes.h</includes>
+    <includedby refid="IBusBM_8cpp" local="yes">lib/IBUSBM/IBusBM.cpp</includedby>
+    <includedby refid="main_8cpp" local="yes">src/main.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>lib/IBUSBM/IBusBM.h</label>
+        <link refid="IBusBM_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>inttypes.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="2">
+        <label>lib/IBUSBM/IBusBM.cpp</label>
+        <link refid="IBusBM_8cpp"/>
+      </node>
+      <node id="1">
+        <label>lib/IBUSBM/IBusBM.h</label>
+        <link refid="IBusBM_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classIBusBM" prot="public">IBusBM</innerclass>
+    <innerclass refid="structIBusBM_1_1sensorinfo" prot="private">IBusBM::sensorinfo</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="IBusBM_8h_1ac1ca270757e32aff0abf70633c5df4f2" prot="public" static="no">
+        <name>IBUSS_INTV</name>
+        <initializer>0x00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IBUSBM/IBusBM.h" line="25" column="9" bodyfile="lib/IBUSBM/IBusBM.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="IBusBM_8h_1ace597623a5fc777c1e21b7d4b088fa1b" prot="public" static="no">
+        <name>IBUSS_TEMP</name>
+        <initializer>0x01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IBUSBM/IBusBM.h" line="26" column="9" bodyfile="lib/IBUSBM/IBusBM.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="IBusBM_8h_1a08a63b83bde9808e1f3ebb3ba466326a" prot="public" static="no">
+        <name>IBUSS_RPM</name>
+        <initializer>0x02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IBUSBM/IBusBM.h" line="27" column="9" bodyfile="lib/IBUSBM/IBusBM.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="IBusBM_8h_1a1d0bda3891691c890d1677802e73656e" prot="public" static="no">
+        <name>IBUSS_EXTV</name>
+        <initializer>0x03</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IBUSBM/IBusBM.h" line="28" column="9" bodyfile="lib/IBUSBM/IBusBM.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="IBusBM_8h_1ab8b4210032699b763bf7b908c14566f7" prot="public" static="no">
+        <name>IBUS_PRESS</name>
+        <initializer>0x41</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IBUSBM/IBusBM.h" line="29" column="9" bodyfile="lib/IBUSBM/IBusBM.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="IBusBM_8h_1a83d618c47cdff65562b5e4d3427f373c" prot="public" static="no">
+        <name>IBUS_SERVO</name>
+        <initializer>0xfd</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IBUSBM/IBusBM.h" line="30" column="9" bodyfile="lib/IBUSBM/IBusBM.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="IBusBM_8h_1a8b9fd84154bff010521710049dd8f090" prot="public" static="no">
+        <name>IBUSBM_NOTIMER</name>
+        <initializer>-1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IBUSBM/IBusBM.h" line="53" column="12" bodyfile="lib/IBUSBM/IBusBM.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Interface<sp/>to<sp/>the<sp/>RC<sp/>IBus<sp/>protocol</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>This<sp/>library<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>modify<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>License<sp/>as<sp/>published<sp/>by<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>version<sp/>2.1<sp/>of<sp/>the<sp/>License,<sp/>or<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>Created<sp/>12<sp/>March<sp/>2019<sp/>Bart<sp/>Mellink</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>IBusBM_h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IBusBM_h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;inttypes.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(ARDUINO_ARCH_MBED)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#include<sp/>&quot;mbed.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#include<sp/>&quot;HardwareSerial.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>if<sp/>you<sp/>have<sp/>an<sp/>opentx<sp/>transciever<sp/>you<sp/>can<sp/>add<sp/>additional<sp/>sensor<sp/>types<sp/>here.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">//<sp/>see</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">//<sp/>https://github.com/cleanflight/cleanflight/blob/7cd417959b3cb605aa574fc8c0f16759943527ef/src/main/telemetry/ibus_shared.h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">//<sp/>below<sp/>the<sp/>values<sp/>supported<sp/>by<sp/>the<sp/>Turnigy<sp/>FS-MT6<sp/>transceiver</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="IBusBM_8h_1ac1ca270757e32aff0abf70633c5df4f2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IBUSS_INTV<sp/>0x00<sp/></highlight><highlight class="comment">//<sp/>Internal<sp/>voltage<sp/>(in<sp/>0.01)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="IBusBM_8h_1ace597623a5fc777c1e21b7d4b088fa1b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IBUSS_TEMP<sp/>0x01<sp/></highlight><highlight class="comment">//<sp/>Temperature<sp/>(in<sp/>0.1<sp/>degrees,<sp/>where<sp/>0=-40&apos;C)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="IBusBM_8h_1a08a63b83bde9808e1f3ebb3ba466326a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IBUSS_RPM<sp/>0x02<sp/><sp/></highlight><highlight class="comment">//<sp/>RPM</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="IBusBM_8h_1a1d0bda3891691c890d1677802e73656e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IBUSS_EXTV<sp/>0x03<sp/></highlight><highlight class="comment">//<sp/>External<sp/>voltage<sp/>(in<sp/>0.01)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="IBusBM_8h_1ab8b4210032699b763bf7b908c14566f7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IBUS_PRESS<sp/>0x41<sp/></highlight><highlight class="comment">//<sp/>Pressure<sp/>(in<sp/>Pa)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="IBusBM_8h_1a83d618c47cdff65562b5e4d3427f373c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IBUS_SERVO<sp/>0xfd<sp/></highlight><highlight class="comment">//<sp/>Servo<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(ARDUINO_ARCH_MBED)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#define<sp/>HardwareSerial<sp/>arduino::HardwareSerial</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#if<sp/>!defined(ARDUINO_ARCH_MEGAAVR)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">HardwareSerial;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Stream;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="classIBusBM" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classIBusBM" kindref="compound">IBusBM</ref><sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(_VARIANT_ARDUINO_STM32_)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#if<sp/>!defined(STM32_CORE_VERSION)<sp/>||<sp/>(STM32_CORE_VERSION<sp/>&lt;<sp/>0x01090000)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="47"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;Due<sp/>to<sp/>API<sp/>change,<sp/>this<sp/>sketch<sp/>is<sp/>compatible<sp/>with<sp/>STM32_CORE_VERSION<sp/><sp/>&gt;=<sp/>0x01090000&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#define<sp/>IBUSBM_NOTIMER<sp/>NULL<sp/></highlight><highlight class="comment">//<sp/>no<sp/>timer<sp/>interrupt<sp/>used</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classIBusBM_1afb01e4a762c8f575d8466fc8dadaa5cd" kindref="member">begin</ref>(HardwareSerial<sp/>&amp;serial,<sp/>TIM_TypeDef<sp/>*timerid<sp/>=<sp/>TIM1,</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int8_t<sp/>rxPin<sp/>=<sp/>-1,<sp/>int8_t<sp/>txPin<sp/>=<sp/>-1);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="IBusBM_8h_1a8b9fd84154bff010521710049dd8f090" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#define<sp/>IBUSBM_NOTIMER<sp/>-1<sp/></highlight><highlight class="comment">//<sp/>no<sp/>timer<sp/>interrupt<sp/>used</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classIBusBM_1afb01e4a762c8f575d8466fc8dadaa5cd" kindref="member">begin</ref>(HardwareSerial<sp/>&amp;serial,<sp/>int8_t<sp/>timerid<sp/>=<sp/>0,<sp/>int8_t<sp/>rxPin<sp/>=<sp/>-1,</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int8_t<sp/>txPin<sp/>=<sp/>-1);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/>uint16_t<sp/><ref refid="classIBusBM_1af21822cffd62a1f2f8da19c407c00b94" kindref="member">readChannel</ref>(uint8_t<sp/>channelNr);<sp/></highlight><highlight class="comment">//<sp/>read<sp/>servo<sp/>channel<sp/>0..9</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/>uint8_t</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><ref refid="classIBusBM_1a126cc857adec1367f7264f27ae68a347" kindref="member">addSensor</ref>(uint8_t<sp/>type,</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="classIBusBM_1af10cf8a59adab541e055aaac1fa21cb8" kindref="member">len</ref><sp/>=</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2);<sp/></highlight><highlight class="comment">//<sp/>add<sp/>sensor<sp/>type<sp/>and<sp/>data<sp/>length<sp/>(2<sp/>or<sp/>4),<sp/>returns<sp/>address</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classIBusBM_1acbd0bcad0529b872c72d4e7a49233460" kindref="member">setSensorMeasurement</ref>(uint8_t<sp/>adr,<sp/>int32_t<sp/>value);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" kindref="member">loop</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);<sp/></highlight><highlight class="comment">//<sp/>used<sp/>internally<sp/>for<sp/>interrupt<sp/>handline,<sp/>but<sp/>needs<sp/>to<sp/>be</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>defined<sp/>as<sp/>public</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="classIBusBM_1ae980c3b427d1c12d93c2fc13322f7665" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="classIBusBM_1ae980c3b427d1c12d93c2fc13322f7665" kindref="member">cnt_poll</ref>;<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>count<sp/>received<sp/>number<sp/>of<sp/>sensor<sp/>poll<sp/>messages</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="classIBusBM_1a4bf0677885cb0944adfc7725fffe0ccc" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="classIBusBM_1a4bf0677885cb0944adfc7725fffe0ccc" kindref="member">cnt_sensor</ref>;<sp/></highlight><highlight class="comment">//<sp/>count<sp/>times<sp/>a<sp/>sensor<sp/>value<sp/>has<sp/>been<sp/>sent<sp/>back</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="classIBusBM_1a15332b57310d1cbca77180befc27cd99" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="classIBusBM_1a15332b57310d1cbca77180befc27cd99" kindref="member">cnt_rec</ref>;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>count<sp/>received<sp/>number<sp/>of<sp/>servo<sp/>messages</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="72" refid="classIBusBM_1aed184764706c5dcb4b82ae4a53b917eca9c69e26c2830eb900cd5603714acd289" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="classIBusBM_1aed184764706c5dcb4b82ae4a53b917ec" kindref="member">State</ref><sp/>{<sp/><ref refid="classIBusBM_1aed184764706c5dcb4b82ae4a53b917eca0c01e1a9f134347f73969aeba38df424" kindref="member">GET_LENGTH</ref>,<sp/><ref refid="classIBusBM_1aed184764706c5dcb4b82ae4a53b917eca4ed4c7f6e05b116601121d0bac402f42" kindref="member">GET_DATA</ref>,<sp/><ref refid="classIBusBM_1aed184764706c5dcb4b82ae4a53b917ecaa7f315ef3b8eab0e0f6abc1b3f25bcc0" kindref="member">GET_CHKSUML</ref>,<sp/><ref refid="classIBusBM_1aed184764706c5dcb4b82ae4a53b917ecaf7c395fada4d5074ad979c56cfde8ed0" kindref="member">GET_CHKSUMH</ref>,<sp/><ref refid="classIBusBM_1aed184764706c5dcb4b82ae4a53b917eca9c69e26c2830eb900cd5603714acd289" kindref="member">DISCARD</ref><sp/>};</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="classIBusBM_1a93d315b20e2ef3696db2123eedb1a5df" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="classIBusBM_1a93d315b20e2ef3696db2123eedb1a5df" kindref="member">PROTOCOL_LENGTH</ref><sp/>=<sp/>0x20;</highlight></codeline>
+<codeline lineno="75" refid="classIBusBM_1ad79ec4b372325fcfb0fa542093250583" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="classIBusBM_1ad79ec4b372325fcfb0fa542093250583" kindref="member">PROTOCOL_OVERHEAD</ref><sp/>=</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>3;<sp/></highlight><highlight class="comment">//<sp/>packet<sp/>is<sp/>&lt;len&gt;&lt;cmd&gt;&lt;data....&gt;&lt;chkl&gt;&lt;chkh&gt;,<sp/>overhead=cmd+chk<sp/>bytes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="classIBusBM_1a7432721ad94f78fc5df8fd3004e7b84b" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="classIBusBM_1a7432721ad94f78fc5df8fd3004e7b84b" kindref="member">PROTOCOL_TIMEGAP</ref><sp/>=</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>3;<sp/></highlight><highlight class="comment">//<sp/>Packets<sp/>are<sp/>received<sp/>very<sp/>~7ms<sp/>so<sp/>use<sp/>~half<sp/>that<sp/>for<sp/>the<sp/>gap</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="classIBusBM_1ac1d183fc712d8136da488fcc823715a1" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="classIBusBM_1ac1d183fc712d8136da488fcc823715a1" kindref="member">PROTOCOL_CHANNELS</ref><sp/>=<sp/>14;</highlight></codeline>
+<codeline lineno="80" refid="classIBusBM_1a04af78a0dfdab275bdb2fa82253c8b49" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="classIBusBM_1a04af78a0dfdab275bdb2fa82253c8b49" kindref="member">PROTOCOL_COMMAND40</ref><sp/>=</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0x40;<sp/></highlight><highlight class="comment">//<sp/>Command<sp/>to<sp/>set<sp/>servo<sp/>or<sp/>motor<sp/>speed<sp/>is<sp/>always<sp/>0x40</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="classIBusBM_1a5a474b243c8a027b395314b052d283e7" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="classIBusBM_1a5a474b243c8a027b395314b052d283e7" kindref="member">PROTOCOL_COMMAND_DISCOVER</ref><sp/>=</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0x80;<sp/></highlight><highlight class="comment">//<sp/>Command<sp/>discover<sp/>sensor<sp/>(lowest<sp/>4<sp/>bits<sp/>are<sp/>sensor)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="classIBusBM_1a270b74b38e646b87402d4a2340187e20" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="classIBusBM_1a270b74b38e646b87402d4a2340187e20" kindref="member">PROTOCOL_COMMAND_TYPE</ref><sp/>=</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0x90;<sp/></highlight><highlight class="comment">//<sp/>Command<sp/>discover<sp/>sensor<sp/>(lowest<sp/>4<sp/>bits<sp/>are<sp/>sensor)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="classIBusBM_1af7d9b5d197f47071a8d6d8723cb14a72" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="classIBusBM_1af7d9b5d197f47071a8d6d8723cb14a72" kindref="member">PROTOCOL_COMMAND_VALUE</ref><sp/>=</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0xA0;<sp/></highlight><highlight class="comment">//<sp/>Command<sp/>send<sp/>sensor<sp/>data<sp/>(lowest<sp/>4<sp/>bits<sp/>are<sp/>sensor)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="classIBusBM_1abf1b1c4c0bac139f0d5f9cfb78d5f88f" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="classIBusBM_1abf1b1c4c0bac139f0d5f9cfb78d5f88f" kindref="member">SENSORMAX</ref><sp/>=<sp/>10;<sp/></highlight><highlight class="comment">//<sp/>Max<sp/>number<sp/>of<sp/>sensors</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="classIBusBM_1a2a316d2088ea51aeea5ce8c025687eef" refkind="member"><highlight class="normal"><sp/><sp/>uint8_t<sp/><ref refid="classIBusBM_1a2a316d2088ea51aeea5ce8c025687eef" kindref="member">state</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>state<sp/>machine<sp/>state<sp/>for<sp/>iBUS<sp/>protocol</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="classIBusBM_1a00c0e49a0d4fcb8ac567b2e92bc74d3d" refkind="member"><highlight class="normal"><sp/><sp/>HardwareSerial<sp/>*<ref refid="classIBusBM_1a00c0e49a0d4fcb8ac567b2e92bc74d3d" kindref="member">stream</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>serial<sp/>port</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="classIBusBM_1a20f49c47b7c40cb6f5bee2f3d4649fe3" refkind="member"><highlight class="normal"><sp/><sp/>uint32_t<sp/><ref refid="classIBusBM_1a20f49c47b7c40cb6f5bee2f3d4649fe3" kindref="member">last</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>milis()<sp/>of<sp/>prior<sp/>message</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="classIBusBM_1a5e950d8524d32e3adfad0a654a9e69d1" refkind="member"><highlight class="normal"><sp/><sp/>uint8_t<sp/><ref refid="classIBusBM_1a5e950d8524d32e3adfad0a654a9e69d1" kindref="member">buffer</ref>[<ref refid="classIBusBM_1a93d315b20e2ef3696db2123eedb1a5df" kindref="member">PROTOCOL_LENGTH</ref>];<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>message<sp/>buffer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="classIBusBM_1a4a9932e9c78e976e9adb4ff09d9ed69a" refkind="member"><highlight class="normal"><sp/><sp/>uint8_t<sp/><ref refid="classIBusBM_1a4a9932e9c78e976e9adb4ff09d9ed69a" kindref="member">ptr</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>pointer<sp/>in<sp/>buffer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="classIBusBM_1af10cf8a59adab541e055aaac1fa21cb8" refkind="member"><highlight class="normal"><sp/><sp/>uint8_t<sp/><ref refid="classIBusBM_1af10cf8a59adab541e055aaac1fa21cb8" kindref="member">len</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>message<sp/>length</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="classIBusBM_1ac1f54297358da1bd0dcfe3af9eed31ea" refkind="member"><highlight class="normal"><sp/><sp/>uint16_t<sp/><ref refid="classIBusBM_1ac1f54297358da1bd0dcfe3af9eed31ea" kindref="member">channel</ref>[<ref refid="classIBusBM_1ac1d183fc712d8136da488fcc823715a1" kindref="member">PROTOCOL_CHANNELS</ref>];<sp/></highlight><highlight class="comment">//<sp/>servo<sp/>data<sp/>received</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="classIBusBM_1a60daa234d83a024b0e626a85d80b7c6c" refkind="member"><highlight class="normal"><sp/><sp/>uint16_t<sp/><ref refid="classIBusBM_1a60daa234d83a024b0e626a85d80b7c6c" kindref="member">chksum</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>checksum<sp/>calculation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="classIBusBM_1a025b034376f9e774e70b74207d9ea9f0" refkind="member"><highlight class="normal"><sp/><sp/>uint8_t<sp/><ref refid="classIBusBM_1a025b034376f9e774e70b74207d9ea9f0" kindref="member">lchksum</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>checksum<sp/>lower<sp/>byte<sp/>received</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99" refid="structIBusBM_1_1sensorinfo" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="100" refid="structIBusBM_1_1sensorinfo_1abd881da866db85793dcdd020d8eecb5c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structIBusBM_1_1sensorinfo_1abd881da866db85793dcdd020d8eecb5c" kindref="member">sensorType</ref>;<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>sensor<sp/>type<sp/>(0,1,2,3,<sp/>etc)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101" refid="structIBusBM_1_1sensorinfo_1a0838975a9991ce94a7009f237cd7edc2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structIBusBM_1_1sensorinfo_1a0838975a9991ce94a7009f237cd7edc2" kindref="member">sensorLength</ref>;<sp/></highlight><highlight class="comment">//<sp/>data<sp/>length<sp/>for<sp/>defined<sp/>sensor<sp/>(can<sp/>be<sp/>2<sp/>or<sp/>4)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102" refid="structIBusBM_1_1sensorinfo_1a07cfd12b2c2a8982a88aeecf85bd322b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/><ref refid="structIBusBM_1_1sensorinfo_1a07cfd12b2c2a8982a88aeecf85bd322b" kindref="member">sensorValue</ref>;<sp/><sp/></highlight><highlight class="comment">//<sp/>sensor<sp/>data<sp/>for<sp/>defined<sp/>sensors<sp/>(16<sp/>or<sp/>32<sp/>bits)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/>}<sp/><ref refid="structIBusBM_1_1sensorinfo" kindref="compound">sensorinfo</ref>;</highlight></codeline>
+<codeline lineno="104" refid="classIBusBM_1a2f6eb7d18ab2dccf0a87c0bbf4c15dfc" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structIBusBM_1_1sensorinfo" kindref="compound">sensorinfo</ref><sp/><ref refid="classIBusBM_1a2f6eb7d18ab2dccf0a87c0bbf4c15dfc" kindref="member">sensors</ref>[<ref refid="classIBusBM_1abf1b1c4c0bac139f0d5f9cfb78d5f88f" kindref="member">SENSORMAX</ref>];</highlight></codeline>
+<codeline lineno="105" refid="classIBusBM_1afd1a0be2e13c31156d32e242383915b5" refkind="member"><highlight class="normal"><sp/><sp/>uint8_t<sp/><ref refid="classIBusBM_1afd1a0be2e13c31156d32e242383915b5" kindref="member">NumberSensors</ref><sp/>=<sp/>0;<sp/></highlight><highlight class="comment">//<sp/>number<sp/>of<sp/>sensors</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106" refid="classIBusBM_1a2308638e357b6a34e0752e9f7d6e2ae6" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classIBusBM" kindref="compound">IBusBM</ref><sp/>*<ref refid="classIBusBM_1a2308638e357b6a34e0752e9f7d6e2ae6" kindref="member">IBusBMnext</ref><sp/>=<sp/>NULL;<sp/></highlight><highlight class="comment">//<sp/>pointer<sp/>to<sp/>the<sp/>next<sp/>class<sp/>instance<sp/>to<sp/>be<sp/>used<sp/>to</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>call<sp/>the<sp/>loop()<sp/>method<sp/>from<sp/>timer<sp/>interrupt</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="lib/IBUSBM/IBusBM.h"/>
+  </compounddef>
+</doxygen>

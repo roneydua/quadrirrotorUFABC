@@ -1,0 +1,10 @@
+digraph "ekf::EKF"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  Node1 [label="{ekf::EKF\n|+ const int nAtitude\l+ const int pAtitude\l+ float dt\l+ Eigen::Vector3f accel\l+ const Eigen::Vector3f\l navegationGravity\l+ Eigen::Vector3f gyro\l+ Eigen::Vector3f mag\l+ Eigen::Vector4f qObs\l+ Eigen::Vector4f q\l+ Eigen::Vector3f euler\l+ Eigen::Vector3f rNED\l+ Eigen::Vector3f rNEDgps\l+ Eigen::Vector3f drNED\l+ Eigen::Vector3f drNEDgps\l+ Eigen::Vector3f ddr\l+ Eigen::Matrix3f mcd\l+ uint8_t messageGPS\l+ int p\l+ int n\l+ const float sigma_giro\l_squared\l+ const float sigma_bias\l_giro_squared\l+ const float sigma_acel\l_squared\l+ const float sigma_bias\l_acel_squared\l+ const float sigma_aqua\l_squared\l+ const float sigma_vel\l_squared\l+ const float sigma_pos\l_squared\l+ Eigen::Matrix\< float,\l nFull, nFull \> Q_k\l+ Eigen::Matrix\< float,\l pFull, pFull \> R\l+ Eigen::Matrix\< float,\l nFull, nFull \> mF\l+ Eigen::Matrix\< float,\l nFull, nFull \> fi\l+ Eigen::Matrix\< float,\l nFull, 12 \> G\l+ Eigen::Matrix\< float,\l nFull, nFull \> P\l+ Eigen::Matrix\< float,\l pFull, nFull \> H\l+ Eigen::Matrix\< float,\l nFull, pFull \> K\l+ Eigen::Vector\< float,\l nFull+1 \> deltaChi\l+ Eigen::Vector\< float,\l pFull \> deltaYObs\l+ Eigen::Vector3f * biasGyro\l+ Eigen::Vector3f * biasAccel\l+ static const int nFull\l+ static const int pFull\l- const float DEG_TO\l_RAD_BY_10000000\l|+  EKF()\l+ void begin(float dt)\l+ void loopEKF()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [color="grey25",fontsize="8",style="solid",label=" +base" ,arrowhead="odiamond",fontname="DejaVuSansMono"];
+  Node2 [label="{BASE\n|+ float lat\l+ float lon\l+ float hMSL\l+ Eigen::Matrix3f Recef2ned\l+ long rECEF\l|}",height=0.2,width=0.4,color="black",URL="$structBASE.html",tooltip=" "];
+}

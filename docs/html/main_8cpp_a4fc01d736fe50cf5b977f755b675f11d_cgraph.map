@@ -1,0 +1,31 @@
+<map id="setup" name="setup">
+<area shape="rect" id="node1" title=" " alt="" coords="5,357,57,381"/>
+<area shape="rect" id="node2" href="$classTELEMETRIA.html#a780be82ef9be2da12601a0ea7d10e647" title=" " alt="" coords="129,55,253,79"/>
+<area shape="rect" id="node5" href="$classekf_1_1EKF.html#a4a6998123529ab0d0844ad21419fc895" title="Inicializacao do filtro de Kalman." alt="" coords="135,333,247,357"/>
+<area shape="rect" id="node26" href="$classIBusBM.html#afb01e4a762c8f575d8466fc8dadaa5cd" title=" " alt="" coords="141,381,241,405"/>
+<area shape="rect" id="node29" href="$classTELEMETRIA.html#a6c13ae22d648afb2c7bd41f3e17ba4b6" title=" " alt="" coords="105,429,277,453"/>
+<area shape="rect" id="node3" href="$classTELEMETRIA.html#ace27ccd5888ebc3802a4eb22cc3fd9da" title=" " alt="" coords="340,5,495,29"/>
+<area shape="rect" id="node4" href="$classTELEMETRIA.html#ae47c01609eec8284a663dd66e0d7c632" title=" " alt="" coords="584,5,739,29"/>
+<area shape="rect" id="node6" href="$classTIME.html#a8cd98765b05a23aa7afe8fa5234b9695" title=" " alt="" coords="373,357,461,381"/>
+<area shape="rect" id="node7" href="$classAQUA.html#a8809dddd7e4f74f3eb7bd1fc4a604ae4" title=" " alt="" coords="373,405,461,429"/>
+<area shape="rect" id="node8" href="$classIMU.html#ae0d964d2f8ec122be068c41b84bc18a8" title=" " alt="" coords="376,480,459,504"/>
+<area shape="rect" id="node17" href="$classAQUA.html#ae3ddff89a969a0d2a3d3c675ed5b8065" title=" " alt="" coords="325,156,509,180"/>
+<area shape="rect" id="node23" href="$GPS_8h.html#a35c55bcf9a6f5a52f34cb1ab02c91479" title=" " alt="" coords="382,259,453,283"/>
+<area shape="rect" id="node25" href="$classIMU.html#ac574728dbbc752155239a35c8bbd6e79" title=" " alt="" coords="1037,333,1149,357"/>
+<area shape="rect" id="node9" href="$classIMU.html#a914f8b4262fba70e6d8fd0e584fa7996" title=" " alt="" coords="813,407,980,431"/>
+<area shape="rect" id="node11" href="$classIMU.html#a37694424e4502ffc69bbb6c540c1a400" title=" " alt="" coords="1028,507,1159,531"/>
+<area shape="rect" id="node12" href="$classIMU.html#a5567bbe0d211f1e6d386eb69ffd960a7" title=" " alt="" coords="831,556,962,580"/>
+<area shape="rect" id="node13" href="$classIMU.html#a928fa5e2db05bd402a3fa93bd3584527" title=" " alt="" coords="823,656,971,680"/>
+<area shape="rect" id="node14" href="$classIMU.html#a834f21762003f831e5e632cc7974ba75" title=" " alt="" coords="835,605,959,629"/>
+<area shape="rect" id="node15" href="$classIMU.html#acd2af48f4eb0a0321080332016e3c1f7" title=" " alt="" coords="599,357,723,381"/>
+<area shape="rect" id="node16" href="$classIMU.html#af3b90e0b20d4bd55091be99f7aa67737" title=" " alt="" coords="578,456,745,480"/>
+<area shape="rect" id="node10" href="$classIMU.html#a87c200faa130ff4d2d3416b2d83f4f49" title=" " alt="" coords="1207,407,1337,431"/>
+<area shape="rect" id="node18" href="$classAQUA.html#abdff34437c9c066d046a342525a01b52" title="Calcula o quaternion de inclinacao." alt="" coords="566,211,757,235"/>
+<area shape="rect" id="node19" href="$classAQUA.html#a6adb2b857affb225b29fb91e6f6a7194" title=" " alt="" coords="572,53,751,77"/>
+<area shape="rect" id="node21" href="$namespaceekf.html#a0ae7d9ae45fba00d81bfe71ad73d7fee" title="Produto de quaternions aplicado." alt="" coords="578,101,745,125"/>
+<area shape="rect" id="node22" href="$namespaceekf.html#acb1dc12948420927eff91ed90c24b342" title="Rotaciona um vetor tridimensional com um quaternion conjugado." alt="" coords="557,150,765,186"/>
+<area shape="rect" id="node20" href="$namespaceekf.html#ab55e144edf7066b67232e15cca7b4646" title="Calcula o inverso do raiz de um float." alt="" coords="849,53,944,77"/>
+<area shape="rect" id="node24" href="$GPS_8h.html#a5d2ecd8f29f7e3e702c8b8bea333f6c6" title=" " alt="" coords="623,259,699,283"/>
+<area shape="rect" id="node27" href="$IBusBM_8cpp.html#a68b68e72a8323bb91995b38e98cf7d3e" title=" " alt="" coords="385,641,449,665"/>
+<area shape="rect" id="node28" href="$classIBusBM.html#a3219abe525dde59156d00538d93faa11" title=" " alt="" coords="614,731,709,755"/>
+</map>

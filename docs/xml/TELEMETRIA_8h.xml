@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compounddef id="TELEMETRIA_8h" kind="file" language="C++">
+    <compoundname>TELEMETRIA.h</compoundname>
+    <includes local="no">eigen3/Eigen/Dense</includes>
+    <includes local="yes">Arduino.h</includes>
+    <includes local="yes">WiFi.h</includes>
+    <includes local="yes">esp_now.h</includes>
+    <includedby refid="TELEMETRIA_8cpp" local="yes">lib/TELEMETRIA/TELEMETRIA.cpp</includedby>
+    <includedby refid="main_8cpp" local="yes">src/main.cpp</includedby>
+    <incdepgraph>
+      <node id="5">
+        <label>esp_now.h</label>
+      </node>
+      <node id="2">
+        <label>eigen3/Eigen/Dense</label>
+      </node>
+      <node id="1">
+        <label>lib/TELEMETRIA/TELEMETRIA.h</label>
+        <link refid="TELEMETRIA_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Arduino.h</label>
+      </node>
+      <node id="4">
+        <label>WiFi.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>lib/TELEMETRIA/TELEMETRIA.h</label>
+        <link refid="TELEMETRIA_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>lib/TELEMETRIA/TELEMETRIA.cpp</label>
+        <link refid="TELEMETRIA_8cpp"/>
+      </node>
+      <node id="3">
+        <label>src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classTELEMETRIA" prot="public">TELEMETRIA</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TELEMETRIA_h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TELEMETRIA_h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;eigen3/Eigen/Dense&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Arduino.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;WiFi.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;esp_now.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">Eigen;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="classTELEMETRIA" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classTELEMETRIA" kindref="compound">TELEMETRIA</ref><sp/>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><ref refid="classTELEMETRIA" kindref="compound">TELEMETRIA</ref>();</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>begin();</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>envia(VectorXf<sp/>a);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>enviaMensagem(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*aviso);</highlight></codeline>
+<codeline lineno="29" refid="classTELEMETRIA_1aacd01aa79091d1ee7dc4725e30a73d23" refkind="member"><highlight class="normal"><sp/><sp/>uint8_t<sp/>_broadcast[6]<sp/>=<sp/>{0xFF,<sp/>0xFF,<sp/>0xFF,<sp/>0xFF,<sp/>0xFF,<sp/>0xFF};</highlight></codeline>
+<codeline lineno="30" refid="classTELEMETRIA_1a3ed6613237ba555ebae298106a7369e8" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>pisca(uint8_t<sp/>porta);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">__attribute__((packed))<sp/>mensagem<sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>dados[17];</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>info[35];<sp/></highlight><highlight class="comment">//<sp/>dados<sp/>para<sp/>informacao;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="classTELEMETRIA_1a02904fd20750c3eb7598dff99b20649b" refkind="member"><highlight class="normal"><sp/><sp/>}<sp/>mensagem;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">__attribute__((packed))<sp/>controle<sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>dados;</highlight></codeline>
+<codeline lineno="38" refid="classTELEMETRIA_1aa7dcf13d1ec896ed759e16d47a6d31fb" refkind="member"><highlight class="normal"><sp/><sp/>}<sp/>controle;</highlight></codeline>
+<codeline lineno="39" refid="classTELEMETRIA_1a1282e1b8ab4ecaa1fd4fb1837b4d12d6" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="classTELEMETRIA_1a1282e1b8ab4ecaa1fd4fb1837b4d12d6" kindref="member">comAceito</ref>;</highlight></codeline>
+<codeline lineno="40" refid="classTELEMETRIA_1ae8ffac9b63a68baa5a4ffa3f14a4954d" refkind="member"><highlight class="normal"><sp/><sp/>uint8_t<sp/><ref refid="classTELEMETRIA_1ae8ffac9b63a68baa5a4ffa3f14a4954d" kindref="member">_quantDados</ref>;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>OnDataRecv(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*_broadcast,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*<ref refid="GPS_8h_1a27c939ba1a4f4d927aaa500781293ba7" kindref="member">data</ref>,</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>data_len);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="lib/TELEMETRIA/TELEMETRIA.h"/>
+  </compounddef>
+</doxygen>

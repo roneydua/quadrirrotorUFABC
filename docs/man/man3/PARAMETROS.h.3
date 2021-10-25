@@ -1,0 +1,144 @@
+.TH "src/PARAMETROS.h" 3 "Sexta, 17 de Setembro de 2021" "Quadrirrotor" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/PARAMETROS.h \- \fCSobre os conversores digiais analógicos\fP  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <Arduino\&.h>\fP
+.br
+
+.SS "Variáveis"
+
+.in +1c
+.ti -1c
+.RI "const gpio_num_t \fBmotor_1\fP = GPIO_NUM_18"
+.br
+.ti -1c
+.RI "const gpio_num_t \fBmotor_2\fP = GPIO_NUM_32"
+.br
+.ti -1c
+.RI "const gpio_num_t \fBmotor_3\fP = GPIO_NUM_33"
+.br
+.ti -1c
+.RI "const gpio_num_t \fBmotor_4\fP = GPIO_NUM_14"
+.br
+.ti -1c
+.RI "const gpio_num_t \fBpin_rpm_motor_1\fP = GPIO_NUM_18"
+.br
+.ti -1c
+.RI "const gpio_num_t \fBpin_rpm_motor_2\fP = GPIO_NUM_34"
+.br
+.ti -1c
+.RI "const gpio_num_t \fBpin_rpm_motor_3\fP = GPIO_NUM_25"
+.br
+.ti -1c
+.RI "const gpio_num_t \fBpin_rpm_motor_4\fP = GPIO_NUM_12"
+.br
+.ti -1c
+.RI "gpio_num_t \fBonboard_led\fP = GPIO_NUM_5"
+.br
+.ti -1c
+.RI "const int8_t \fBpin_rx_controle\fP = 13"
+.br
+.ti -1c
+.RI "const TickType_t \fBxdtEstimator\fP = pdMS_TO_TICKS(20)"
+.br
+.ti -1c
+.RI "const uint16_t \fBdtTelemetry\fP = 20"
+.br
+.ti -1c
+.RI "const TickType_t \fBxdtTelemetry\fP = pdMS_TO_TICKS(\fBdtTelemetry\fP)"
+.br
+.ti -1c
+.RI "TickType_t \fBxLastdtTelemetry\fP = 0"
+.br
+.in -1c
+.SH "Descrição detalhada"
+.PP 
+\fCSobre os conversores digiais analógicos\fP 
+
+
+.PP
+\fBAutor\fP
+.RS 4
+: roney 
+.RE
+.PP
+\fBData\fP
+.RS 4
+: 2021-05-12T13:52:07-03:00 email: roneyddasilva@gmail.com 
+.RE
+.PP
+
+.PP
+Definição no arquivo \fBPARAMETROS\&.h\fP\&.
+.SH "Variáveis"
+.PP 
+.SS "const uint16_t dtTelemetry = 20"
+Período de temetria em milissegundos 
+.PP
+Definição na linha 39 do arquivo PARAMETROS\&.h\&.
+.PP
+Referenciado(a) por setup()\&.
+.SS "const gpio_num_t motor_1 = GPIO_NUM_18"
+Pino do motor 1 
+.PP
+Definição na linha 16 do arquivo PARAMETROS\&.h\&.
+.SS "const gpio_num_t motor_2 = GPIO_NUM_32"
+Pino do motor 2 
+.PP
+Definição na linha 18 do arquivo PARAMETROS\&.h\&.
+.SS "const gpio_num_t motor_3 = GPIO_NUM_33"
+Pino do motor 3 
+.PP
+Definição na linha 20 do arquivo PARAMETROS\&.h\&.
+.SS "const gpio_num_t motor_4 = GPIO_NUM_14"
+Pino do motor 4 
+.PP
+Definição na linha 22 do arquivo PARAMETROS\&.h\&.
+.SS "gpio_num_t onboard_led = GPIO_NUM_5\fC [extern]\fP"
+Led onboard para sinalização\&. 
+.PP
+Referenciado(a) por blindLED() e setup()\&.
+.SS "const gpio_num_t pin_rpm_motor_1 = GPIO_NUM_18"
+Pino de leitura do RPM do motor 1 
+.PP
+Definição na linha 25 do arquivo PARAMETROS\&.h\&.
+.SS "const gpio_num_t pin_rpm_motor_2 = GPIO_NUM_34"
+Pino de leitura do RPM do motor 2 
+.PP
+Definição na linha 27 do arquivo PARAMETROS\&.h\&.
+.SS "const gpio_num_t pin_rpm_motor_3 = GPIO_NUM_25"
+Pino de leitura do RPM do motor 3 
+.PP
+Definição na linha 29 do arquivo PARAMETROS\&.h\&.
+.SS "const gpio_num_t pin_rpm_motor_4 = GPIO_NUM_12"
+Pino de leitura do RPM do 4 
+.PP
+Definição na linha 31 do arquivo PARAMETROS\&.h\&.
+.SS "const int8_t pin_rx_controle = 13"
+Porta Rx do controle 
+.PP
+Definição na linha 35 do arquivo PARAMETROS\&.h\&.
+.SS "const TickType_t xdtEstimator = pdMS_TO_TICKS(20)"
+Periodo de amostragem 
+.PP
+Definição na linha 37 do arquivo PARAMETROS\&.h\&.
+.SS "const TickType_t xdtTelemetry = pdMS_TO_TICKS(\fBdtTelemetry\fP)"
+Periodo de telemetria em Ticks 
+.PP
+Definição na linha 41 do arquivo PARAMETROS\&.h\&.
+.PP
+Referenciado(a) por loop()\&.
+.SS "TickType_t xLastdtTelemetry = 0"
+
+.PP
+Definição na linha 42 do arquivo PARAMETROS\&.h\&.
+.PP
+Referenciado(a) por loop()\&.
+.SH "Autor"
+.PP 
+Gerado automaticamente por Doxygen para Quadrirrotor a partir do código-fonte\&.

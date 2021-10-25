@@ -1,0 +1,8 @@
+digraph "Rpm"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  Node1 [label="{Rpm\n|+ int16_t rpm\l+ int8_t ciclos_por_volta\l+ const int16_t MAX_H_LIM\l+ uint32_t rpm_factor\l+ pcnt_unit_t pcnt_unit\l+ int16_t pulses\l- gpio_num_t sensor\l- uint64_t time_array\l- uint8_t index_time\l_array\l- uint32_t dt\l|+  Rpm(gpio_num_t sensor,\l pcnt_unit_t pcnt_unit\l=PCNT_UNIT_0, uint8_t ciclos\l_por_volta=1)\l+ void update_rpm()\l+ void restart_conter()\l+ void get_pulses()\l- void init()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

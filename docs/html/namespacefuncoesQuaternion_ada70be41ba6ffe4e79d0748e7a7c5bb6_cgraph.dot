@@ -1,0 +1,11 @@
+digraph "funcoesQuaternion.rotationMatrix"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  rankdir="LR";
+  Node1 [label="funcoesQuaternion.rotation\lMatrix",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node2 [label="funcoesQuaternion.screwMatrix",height=0.2,width=0.4,color="black",URL="$namespacefuncoesQuaternion.html#a7efd86bc50646d0d79ba1944a2622f08",tooltip=" "];
+}

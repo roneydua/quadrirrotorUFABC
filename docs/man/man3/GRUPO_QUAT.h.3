@@ -1,0 +1,141 @@
+.TH "lib/GRUPO_QUAT/GRUPO_QUAT.h" 3 "Sexta, 17 de Setembro de 2021" "Quadrirrotor" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/GRUPO_QUAT/GRUPO_QUAT.h \- Cabecalho com funcoes de quaternion\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <eigen3/Eigen/Dense>\fP
+.br
+\fC#include <iostream>\fP
+.br
+
+.SS "<em>Namespaces</em>"
+
+.in +1c
+.ti -1c
+.RI " \fBekf\fP"
+.br
+.RI "Funções genéricas com álgebra de quatérnions e demais\&. "
+.in -1c
+.SS "Definições e Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBRAD_TO_DEG\fP   57\&.295779513082320876798154814105"
+.br
+.ti -1c
+.RI "#define \fBPRINT_MAT\fP(X)   cout << #X << ':\\n' << X << '\\n'"
+.br
+.ti -1c
+.RI "#define \fBINVERSE_SQUARE_2\fP   0\&.707106781f"
+.br
+.in -1c
+.SS "Funções"
+
+.in +1c
+.ti -1c
+.RI "Eigen::Matrix3f \fBekf::skew\fP (const Eigen::Vector3f &v)"
+.br
+.RI "Matrix antissimetrica\&. "
+.ti -1c
+.RI "Eigen::Matrix4f \fBekf::S_r\fP (const Eigen::Ref< Eigen::Vector4f > &q)"
+.br
+.ti -1c
+.RI "Eigen::Matrix4f \fBekf::S_l\fP (const Eigen::Ref< Eigen::Vector4f > &q)"
+.br
+.RI "Calcula a Matriz \fILefth-Quaternion\fP a partir do quaternion q\&. "
+.ti -1c
+.RI "void \fBekf::printEigen\fP (const Eigen::MatrixXf &m)"
+.br
+.ti -1c
+.RI "void \fBekf::quaternion2Euler\fP (Eigen::Ref< Eigen::Vector3f > _euler, const Eigen::Ref< const Eigen::Vector4f > &_q)"
+.br
+.ti -1c
+.RI "void \fBekf::computeMcdFromQuaternion\fP (const Eigen::Vector4f &q, Eigen::Matrix3f &mcd)"
+.br
+.ti -1c
+.RI "Eigen::Vector3f \fBekf::computeVectorProjection\fP (const Eigen::Ref< Eigen::Vector3f > &v, const Eigen::Ref< Eigen::Vector3f > &u)"
+.br
+.ti -1c
+.RI "void \fBekf::integrationQuaternion\fP (Eigen::Vector4f &_quat, const Eigen::Ref< const Eigen::VectorXf > &_gyroscopio, float &_dt)"
+.br
+.ti -1c
+.RI "float \fBekf::invSqrt\fP (float _x)"
+.br
+.RI "Calcula o inverso do raiz de um float\&. "
+.ti -1c
+.RI "Eigen::Vector3f \fBekf::rotateVectorWithQuaternion\fP (Eigen::Vector4f &q, Eigen::Vector3f &v_old)"
+.br
+.RI "Rotaciona um vetor tridimensional com um quaternion\&. "
+.ti -1c
+.RI "Eigen::Vector3f \fBekf::rotateVectorWithQuaternion_Conjugate\fP (Eigen::Vector4f &q, Eigen::Vector3f &v_old)"
+.br
+.RI "Rotaciona um vetor tridimensional com um quaternion conjugado\&. "
+.ti -1c
+.RI "Eigen::Vector4f \fBekf::multiplyQuaternions\fP (const Eigen::Ref< Eigen::VectorXf > &p, const Eigen::Ref< Eigen::VectorXf > &q)"
+.br
+.RI "Produto de quaternions aplicado\&. "
+.ti -1c
+.RI "void \fBekf::computeQuaternionFromMCDShepperd\fP (Eigen::Matrix3f &m, Eigen::Vector4f &q)"
+.br
+.ti -1c
+.RI "void \fBekf::computeQuaternionFromMCDMarkley\fP (Eigen::Matrix3f &m, Eigen::Ref< Eigen::Vector4f > q)"
+.br
+.ti -1c
+.RI "Eigen::VectorXf \fBekf::RK\fP (float h, const Eigen ::Ref< Eigen::VectorXf > &xk, const Eigen ::Ref< Eigen::VectorXf > &u, Eigen::VectorXf fn(Eigen::VectorXf x, Eigen::VectorXf u))"
+.br
+.ti -1c
+.RI "Eigen::MatrixXf \fBekf::Q_l\fP (const Eigen::Ref< Eigen::Vector4f > &q)"
+.br
+.ti -1c
+.RI "Eigen::MatrixXf \fBekf::Q_r\fP (const Eigen::Ref< Eigen::Vector4f > &q)"
+.br
+.ti -1c
+.RI "void \fBekf::conjugate\fP (Eigen::Ref< Eigen::Vector4f > _q)"
+.br
+.RI "Conjuga o quaternion _q\&. "
+.in -1c
+.SH "Descrição detalhada"
+.PP 
+Cabecalho com funcoes de quaternion\&. 
+
+@Author: roney @Date: 2021-08-16T10:17:42-03:00 @Last modified by: roney @Last modified time: 2021-08-18T14:32:31-03:00
+.PP
+\fBAutor\fP
+.RS 4
+Roney D da Silva 
+.RE
+.PP
+\fBData\fP
+.RS 4
+7 Apr 2021 
+.RE
+.PP
+\fBCopyright\fP
+.RS 4
+2021 Roney D da Silva Email: roneyddasilva@gmail.com 
+.RE
+.PP
+
+.PP
+Definição no arquivo \fBGRUPO_QUAT\&.h\fP\&.
+.SH "Definições e macros"
+.PP 
+.SS "#define INVERSE_SQUARE_2   0\&.707106781f"
+Inverso da raiz quadrada de dois 1/sqrtf{2} 
+.PP
+Definição na linha 31 do arquivo GRUPO_QUAT\&.h\&.
+.SS "#define PRINT_MAT(X)   cout << #X << ':\\n' << X << '\\n'"
+
+.PP
+Definição na linha 28 do arquivo GRUPO_QUAT\&.h\&.
+.SS "#define RAD_TO_DEG   57\&.295779513082320876798154814105"
+
+.PP
+Definição na linha 24 do arquivo GRUPO_QUAT\&.h\&.
+.SH "Autor"
+.PP 
+Gerado automaticamente por Doxygen para Quadrirrotor a partir do código-fonte\&.

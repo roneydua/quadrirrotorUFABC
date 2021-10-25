@@ -1,0 +1,8 @@
+digraph "NAV_PVT_STRUCT"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  Node1 [label="{NAV_PVT_STRUCT\n|+ unsigned char cls\l+ unsigned char id\l+ unsigned short len\l+ unsigned long iTOW\l+ unsigned short year\l+ unsigned char month\l+ unsigned char day\l+ unsigned char hour\l+ unsigned char min\l+ unsigned char sec\l+ unsigned char valid\l+ unsigned long tAcc\l+ long nano\l+ unsigned char fixType\l+ unsigned char flags\l+ unsigned char flags2\l+ unsigned char numSV\l+ long lon\l+ long lat\l+ long height\l+ long hMSL\l+ unsigned long hAcc\l+ unsigned long vAcc\l+ long velN\l+ long velE\l+ long velD\l+ long gSpeed\l+ long headMot\l+ unsigned long sAcc\l+ unsigned long headAcc\l+ unsigned short pDOP\l+ unsigned char reserved1\l+ long headVeh\l+ unsigned long reserved2\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

@@ -1,0 +1,170 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compounddef id="namespacedrone" kind="namespace" language="Python">
+    <compoundname>drone</compoundname>
+    <innerclass refid="classdrone_1_1Drone" prot="public">drone::Drone</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacedrone_1a8f7a522ea8dc8ba5116e6d8a8e1595d7" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>drone.grav</definition>
+        <argsstring></argsstring>
+        <name>grav</name>
+        <initializer>=  np.array([0.0, 0.0, 9.81])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/drone.py" line="11" column="1" bodyfile="python/drone.py" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacedrone_1a8fcbcb21c48edde073ec2a3013da3cd9" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float drone.Ix</definition>
+        <argsstring></argsstring>
+        <name>Ix</name>
+        <initializer>=  16.83e-3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/drone.py" line="13" column="1" bodyfile="python/drone.py" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacedrone_1a398b450771be74d8d15986196bab8f3d" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float drone.Iy</definition>
+        <argsstring></argsstring>
+        <name>Iy</name>
+        <initializer>=  16.83e-3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/drone.py" line="14" column="1" bodyfile="python/drone.py" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacedrone_1abbf75d4d89903bb357e8e2ddcbf72bbe" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float drone.Iz</definition>
+        <argsstring></argsstring>
+        <name>Iz</name>
+        <initializer>=  28.34e-3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/drone.py" line="15" column="1" bodyfile="python/drone.py" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacedrone_1ab194ab949cad78f85bdb8238f9731f37" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float drone.kf</definition>
+        <argsstring></argsstring>
+        <name>kf</name>
+        <initializer>=  1.4351e-5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/drone.py" line="17" column="1" bodyfile="python/drone.py" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacedrone_1a3e06d763422e3ea068add06fd5e3a98b" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float drone.km</definition>
+        <argsstring></argsstring>
+        <name>km</name>
+        <initializer>=  2.4086e-7</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/drone.py" line="18" column="1" bodyfile="python/drone.py" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacedrone_1ad00e49de24779292915067e7a3bb92e1" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float drone.b</definition>
+        <argsstring></argsstring>
+        <name>b</name>
+        <initializer>=  0.26</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/drone.py" line="20" column="1" bodyfile="python/drone.py" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacedrone_1a7475c0a87d5c8ae96bdc6cb6e9d54a29" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float drone.m</definition>
+        <argsstring></argsstring>
+        <name>m</name>
+        <initializer>=  1.03</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/drone.py" line="21" column="1" bodyfile="python/drone.py" bodystart="21" bodyend="-1"/>
+        <referencedby refid="namespaceekf_1afe4fb3935c9dc91fcc8b57793f03a170" compoundref="GRUPO__QUAT_8cpp" startline="293" endline="327">ekf::computeQuaternionFromMCDMarkley</referencedby>
+        <referencedby refid="namespaceekf_1ae9e1aaaa7793db099f4ef88b44aab8d5" compoundref="GRUPO__QUAT_8cpp" startline="111" endline="121">ekf::printEigen</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="namespacedrone_1accb330ae92eee9c3a357abd54ed1864f" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float drone.Ir</definition>
+        <argsstring></argsstring>
+        <name>Ir</name>
+        <initializer>=  5.0e-5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/drone.py" line="22" column="1" bodyfile="python/drone.py" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacedrone_1a0bbb8a76162e5380bf929576efae9ef6" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float drone.ta</definition>
+        <argsstring></argsstring>
+        <name>ta</name>
+        <initializer>=  0.03</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/drone.py" line="24" column="1" bodyfile="python/drone.py" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacedrone_1a59e2545248877aa345ae8aacc0c80a7b" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float drone.DA</definition>
+        <argsstring></argsstring>
+        <name>DA</name>
+        <initializer>=  0.5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/drone.py" line="25" column="1" bodyfile="python/drone.py" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="python/drone.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

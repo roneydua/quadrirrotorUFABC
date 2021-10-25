@@ -1,0 +1,15 @@
+digraph "IMU::calibracaoMagnetometro"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  rankdir="LR";
+  Node1 [label="IMU::calibracaoMagnetometro",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node2 [label="METODOSCALIBRACAO::\lcalibracaoGeometrica",height=0.2,width=0.4,color="black",URL="$classMETODOSCALIBRACAO.html#af0478ed112a1139bafefe7833568e641",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node3 [label="IMU::readSensor",height=0.2,width=0.4,color="black",URL="$classIMU.html#ac574728dbbc752155239a35c8bbd6e79",tooltip=" "];
+  Node3 -> Node4 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node4 [label="IMU::readRegisters",height=0.2,width=0.4,color="black",URL="$classIMU.html#a87c200faa130ff4d2d3416b2d83f4f49",tooltip=" "];
+}

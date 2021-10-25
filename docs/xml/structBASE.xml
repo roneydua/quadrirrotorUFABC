@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compounddef id="structBASE" kind="struct" language="C++" prot="public">
+    <compoundname>BASE</compoundname>
+    <includes refid="EKF_8h" local="no">EKF.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structBASE_1a76e12d3fb168dc1ce3f163c985382129" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float BASE::lat</definition>
+        <argsstring></argsstring>
+        <name>lat</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Latitude em Radianos </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="24" column="9" bodyfile="lib/EKF/EKF.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structBASE_1ac118821d55d84bee606a64e60098c7d4" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float BASE::lon</definition>
+        <argsstring></argsstring>
+        <name>lon</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Longitude em Radianos </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="26" column="9" bodyfile="lib/EKF/EKF.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structBASE_1a24573bad2d025ea1b7023eb23b59a46e" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float BASE::hMSL</definition>
+        <argsstring></argsstring>
+        <name>hMSL</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Altitude ao nível do mar </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="28" column="9" bodyfile="lib/EKF/EKF.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structBASE_1ab4bcf2a27b373820efe4f530a101704d" prot="public" static="no" mutable="no">
+        <type>Eigen::Matrix3f</type>
+        <definition>Eigen::Matrix3f BASE::Recef2ned</definition>
+        <argsstring></argsstring>
+        <name>Recef2ned</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Matriz de transformação </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="30" column="19" bodyfile="lib/EKF/EKF.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structBASE_1ae9e7517ae5f24d671f404d18c1d0b90b" prot="public" static="no" mutable="no">
+        <type>long</type>
+        <definition>long BASE::rECEF[3]</definition>
+        <argsstring>[3]</argsstring>
+        <name>rECEF</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Coordenadas da base no sistema ECEF </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="32" column="8" bodyfile="lib/EKF/EKF.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>BASE</label>
+        <link refid="structBASE"/>
+      </node>
+    </collaborationgraph>
+    <location file="lib/EKF/EKF.h" line="22" column="1" bodyfile="lib/EKF/EKF.h" bodystart="22" bodyend="33"/>
+    <listofallmembers>
+      <member refid="structBASE_1a24573bad2d025ea1b7023eb23b59a46e" prot="public" virt="non-virtual"><scope>BASE</scope><name>hMSL</name></member>
+      <member refid="structBASE_1a76e12d3fb168dc1ce3f163c985382129" prot="public" virt="non-virtual"><scope>BASE</scope><name>lat</name></member>
+      <member refid="structBASE_1ac118821d55d84bee606a64e60098c7d4" prot="public" virt="non-virtual"><scope>BASE</scope><name>lon</name></member>
+      <member refid="structBASE_1ae9e7517ae5f24d671f404d18c1d0b90b" prot="public" virt="non-virtual"><scope>BASE</scope><name>rECEF</name></member>
+      <member refid="structBASE_1ab4bcf2a27b373820efe4f530a101704d" prot="public" virt="non-virtual"><scope>BASE</scope><name>Recef2ned</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

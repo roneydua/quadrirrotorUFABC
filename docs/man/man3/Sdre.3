@@ -1,0 +1,213 @@
+.TH "Sdre" 3 "Sexta, 17 de Setembro de 2021" "Quadrirrotor" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Sdre
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Sdre\&.h>\fP
+.SS "Membros Públicos"
+
+.in +1c
+.ti -1c
+.RI "\fBSdre\fP (Eigen::MatrixXf &A, Eigen::MatrixXf &B, Eigen::MatrixXf &\fBQ\fP, Eigen::MatrixXf &\fBR\fP)"
+.br
+.ti -1c
+.RI "\fB~Sdre\fP ()"
+.br
+.ti -1c
+.RI "bool \fBupdateControl\fP ()"
+.br
+.ti -1c
+.RI "Eigen::MatrixXcf \fBcloseLoopEig\fP ()"
+.br
+.in -1c
+.SS "Campos de Dados"
+
+.in +1c
+.ti -1c
+.RI "Eigen::MatrixXf * \fBphi\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXf * \fBgamma\fP"
+.br
+.ti -1c
+.RI "\fBRiccati\fP * \fBricObj\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXf * \fBR\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXf * \fBQ\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXf \fBL\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXf \fBE\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXf \fBG\fP"
+.br
+.in -1c
+.SH "Descrição detalhada"
+.PP 
+Definição na linha 20 do arquivo Sdre\&.h\&.
+.SH "Construtores e Destrutores"
+.PP 
+.SS "Sdre::Sdre (Eigen::MatrixXf & A, Eigen::MatrixXf & B, Eigen::MatrixXf & _Q, Eigen::MatrixXf & _R)"
+
+.PP
+\fBAutor\fP
+.RS 4
+: roney 
+.RE
+.PP
+\fBData\fP
+.RS 4
+: 2021-08-03T17:16:37-03:00 email: roneyddasilva@gmail.com @File: \fBSdre\&.cpp\fP Last modified by: roney Last modified time: 2021-08-03T17:16:37-03:00 
+.RE
+.PP
+
+.PP
+Definição na linha 10 do arquivo Sdre\&.cpp\&.
+.PP
+.nf
+11                               {
+12   int n = A\&.cols();
+13   int r = B\&.cols();
+14   L = Eigen::MatrixXf::Identity(r, n);
+15   Q = &_Q;
+16   R = &_R;
+17   /* instancia o Solver de Riccati */
+18   ricObj = new Riccati(A, B, *Q, *R);
+19   /* Salvas os enderços das matrizes de estado e controle*/
+20   phi = &A;
+21   gamma = &B;
+22   E = B * _R\&.inverse() * B\&.transpose();
+23   G = Eigen::MatrixXf::Identity(n, n);
+24 }
+.fi
+.PP
+Referencias E, G, gamma, L, phi, Q, R e ricObj\&.
+.SS "Sdre::~Sdre ()"
+
+.PP
+Definição na linha 25 do arquivo Sdre\&.cpp\&.
+.PP
+.nf
+25 {}
+.fi
+.PP
+Referenciado(a) por Controle::Controle()\&.
+.SH "Funções membros"
+.PP 
+.SS "Eigen::MatrixXcf Sdre::closeLoopEig ()"
+[\fBSdre::closeLoopEig\fP description] 
+.PP
+Definição na linha 51 do arquivo Sdre\&.cpp\&.
+.PP
+.nf
+51                                   {
+52   // Eigen::MatrixXf closeLoop =
+53   //     *phi - *gamma * (*R)\&.inverse() * (*gamma)\&.transpose() * (*ricObj)\&.K;
+54   Eigen::MatrixXf closeLoop = *phi - *gamma * L;
+55   Eigen::EigenSolver<Eigen::MatrixXf> Eigs(closeLoop);
+56   return Eigs\&.eigenvalues();
+57 };
+.fi
+.PP
+Referencias gamma, L e phi\&.
+.PP
+Referenciado(a) por Controle::Controle()\&.
+.SS "bool Sdre::updateControl ()"
+Atualiza a solução de \fBRiccati\fP e o controle ótimo L\&. 
+.PP
+\fBRetorna\fP
+.RS 4
+true para sucesso ou false para fracasso\&. 
+.RE
+.PP
+
+.PP
+Definição na linha 30 do arquivo Sdre\&.cpp\&.
+.PP
+.nf
+30                          {
+31   // Verifica o se o algoritmo converge com o numero de iterações e tolerância
+32   // desejado\&.
+33   if ((*ricObj)\&.dareInteration()) { // Obtem a matriz de Riccati\&.
+34     // atualiza a matriz de ganho de Kalman
+35     L = (*ricObj)\&.Ls * (*ricObj)\&.K * (*phi);
+36     G = ((*ricObj)\&.I -
+37          (*phi)\&.transpose() *
+38              ((*ricObj)\&.I -
+39               (*ricObj)\&.K * ((*ricObj)\&.I + E * (*ricObj)\&.K)\&.inverse() * E))
+40             \&.inverse();
+41     return true;
+42   } else {
+43     // Retorna falso mantendo o ultimo ganho de Riccati\&.
+44     return false;
+45   }
+46 }
+.fi
+.PP
+Referencias E, G e L\&.
+.PP
+Referenciado(a) por Controle::computeRotationalControl() e Controle::Controle()\&.
+.SH "Campos"
+.PP 
+.SS "Eigen::MatrixXf Sdre::E"
+Matrix E = B R^-1 B' 
+.PP
+Definição na linha 37 do arquivo Sdre\&.h\&.
+.PP
+Referenciado(a) por Sdre() e updateControl()\&.
+.SS "Eigen::MatrixXf Sdre::G"
+Vetor de realimentacao; 
+.PP
+Definição na linha 39 do arquivo Sdre\&.h\&.
+.PP
+Referenciado(a) por Controle::Controle(), Sdre() e updateControl()\&.
+.SS "Eigen::MatrixXf* Sdre::gamma"
+Ponteiro da matriz de controle\&. 
+.PP
+Definição na linha 27 do arquivo Sdre\&.h\&.
+.PP
+Referenciado(a) por closeLoopEig() e Sdre()\&.
+.SS "Eigen::MatrixXf Sdre::L"
+Matrix do ganho de Kalman\&. 
+.PP
+Definição na linha 35 do arquivo Sdre\&.h\&.
+.PP
+Referenciado(a) por closeLoopEig(), Controle::computeRotationalControl(), Controle::Controle(), Sdre() e updateControl()\&.
+.SS "Eigen::MatrixXf* Sdre::phi"
+Ponteiro da matriz de estado\&. 
+.PP
+Definição na linha 25 do arquivo Sdre\&.h\&.
+.PP
+Referenciado(a) por closeLoopEig() e Sdre()\&.
+.SS "Eigen::MatrixXf* Sdre::Q"
+Matrix ponderação dos estados\&. 
+.PP
+Definição na linha 33 do arquivo Sdre\&.h\&.
+.PP
+Referenciado(a) por Sdre()\&.
+.SS "Eigen::MatrixXf* Sdre::R"
+Matrix ponderação dos controle\&. 
+.PP
+Definição na linha 31 do arquivo Sdre\&.h\&.
+.PP
+Referenciado(a) por Sdre()\&.
+.SS "\fBRiccati\fP* Sdre::ricObj"
+Ponteiro para o solver da equação de \fBRiccati\fP 
+.PP
+Definição na linha 29 do arquivo Sdre\&.h\&.
+.PP
+Referenciado(a) por Controle::Controle() e Sdre()\&.
+
+.SH "Autor"
+.PP 
+Gerado automaticamente por Doxygen para Quadrirrotor a partir do código-fonte\&.

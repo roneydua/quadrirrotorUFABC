@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Quadrirrotor: Código-Fonte de lib/MOTORES/Motores.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Quadrirrotor
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Busca','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_39c7dc484126c690eab758240f2a6725.html">MOTORES</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Motores.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="Motores_8cpp.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Motores_8h.html">Motores.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;Arduino.h&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classMotores.html#a6ae9bc897a2155f3614b017e35d17726">   13</a></span>&#160;<a class="code" href="classMotores.html#a6ae9bc897a2155f3614b017e35d17726">Motores::Motores</a>(gpio_num_t motor_pin, uint8_t canal) {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  this-&gt;motor_pin = <a class="code" href="classMotores.html#a14c1a0bad96d6cefd375377a6afb03d6">motor_pin</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  this-&gt;canal = <a class="code" href="classMotores.html#aa6ba08a3abc1f9f936cb1f4b97dd043a">canal</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <a class="code" href="classMotores.html#a10e9590d22b84ea6d5316ebceff736d0">min_vel</a> = int((pow(2, <a class="code" href="classMotores.html#af2f825f86a3524c6b9097dedd4e9bdea">resolucao</a>) - 1) * 0.001 * <a class="code" href="classMotores.html#ac05467a9227b8ba9c86b2c9d6c08a2c0">freq</a>);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <a class="code" href="classMotores.html#ae36afe438037117f406f7ddf4903fd76">max_vel</a> = int((pow(2, <a class="code" href="classMotores.html#af2f825f86a3524c6b9097dedd4e9bdea">resolucao</a>) - 1) * 0.002 * <a class="code" href="classMotores.html#ac05467a9227b8ba9c86b2c9d6c08a2c0">freq</a>);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <a class="code" href="classMotores.html#a1895e0f2bc08b754d2c119a7d5fee68a">inicializa</a>();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classMotores.html#a1895e0f2bc08b754d2c119a7d5fee68a">   25</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classMotores.html#a1895e0f2bc08b754d2c119a7d5fee68a">Motores::inicializa</a>() {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  Serial.println(<span class="stringliteral">&quot;Configurando os ESc&#39;&quot;</span>);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  ledcSetup(this-&gt;<a class="code" href="classMotores.html#aa6ba08a3abc1f9f936cb1f4b97dd043a">canal</a>, this-&gt;<a class="code" href="classMotores.html#ac05467a9227b8ba9c86b2c9d6c08a2c0">freq</a>, <a class="code" href="classMotores.html#af2f825f86a3524c6b9097dedd4e9bdea">resolucao</a>);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <a class="code" href="classMotores.html#abd97787aacf452410d0fb21bbe5c9287">set_portas</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  delay(100);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <a class="code" href="classMotores.html#ac6264dc2b71015a3c9641025151edd4a">set_vel_mot</a>(<a class="code" href="classMotores.html#a10e9590d22b84ea6d5316ebceff736d0">min_vel</a>);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classMotores.html#ac6264dc2b71015a3c9641025151edd4a">   36</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classMotores.html#ac6264dc2b71015a3c9641025151edd4a">Motores::set_vel_mot</a>(uint16_t vel) {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  ledcWrite(this-&gt;<a class="code" href="classMotores.html#aa6ba08a3abc1f9f936cb1f4b97dd043a">canal</a>, vel);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classMotores.html#abd97787aacf452410d0fb21bbe5c9287">   44</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classMotores.html#abd97787aacf452410d0fb21bbe5c9287">Motores::set_portas</a>() {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="comment">// define como saida cada pino ligado aos motores</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  delay(1000);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  Serial.println(<span class="stringliteral">&quot;Inicializando&quot;</span>);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  pinMode(this-&gt;<a class="code" href="classMotores.html#a14c1a0bad96d6cefd375377a6afb03d6">motor_pin</a>, OUTPUT);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  ledcAttachPin(this-&gt;<a class="code" href="classMotores.html#a14c1a0bad96d6cefd375377a6afb03d6">motor_pin</a>, this-&gt;<a class="code" href="classMotores.html#aa6ba08a3abc1f9f936cb1f4b97dd043a">canal</a>);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classMotores.html#aa925c45cc263120106dacb8c5802d20b">   51</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classMotores.html#aa925c45cc263120106dacb8c5802d20b">Motores::calibra</a>() {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="comment">// escrevendo o valor inicial</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  Serial.println(<span class="stringliteral">&quot;Ligue Os esc&#39;s na bateria&quot;</span>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  Serial.println(<span class="stringliteral">&quot;Atribuindo maximo&quot;</span>);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  ledcWrite(this-&gt;<a class="code" href="classMotores.html#aa6ba08a3abc1f9f936cb1f4b97dd043a">canal</a>, <a class="code" href="classMotores.html#ae36afe438037117f406f7ddf4903fd76">max_vel</a>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordflow">while</span> (Serial.parseInt() != 1) {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    Serial.println(<span class="stringliteral">&quot;Conecte a bateria no ESC e digite 1 para proseguir&quot;</span>);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    delay(1000);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  delay(<a class="code" href="classMotores.html#a3f2679c95473f8ee07a7645c7ad64d5d">tempo_calibracao</a>);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  Serial.println(<span class="stringliteral">&quot;Atribuindo minimo&quot;</span>);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  ledcWrite(this-&gt;<a class="code" href="classMotores.html#aa6ba08a3abc1f9f936cb1f4b97dd043a">canal</a>, <a class="code" href="classMotores.html#a10e9590d22b84ea6d5316ebceff736d0">min_vel</a>);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  delay(<a class="code" href="classMotores.html#a3f2679c95473f8ee07a7645c7ad64d5d">tempo_calibracao</a>);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  Serial.println(<span class="stringliteral">&quot;Calibrado.&quot;</span>);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  Serial.println(<span class="stringliteral">&quot;Desligue seu ESC da bateira e tambem da placa de comando&quot;</span>);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  delay(10000);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;};</div>
+<div class="ttc" id="aMotores_8h_html"><div class="ttname"><a href="Motores_8h.html">Motores.h</a></div></div>
+<div class="ttc" id="aclassMotores_html_a10e9590d22b84ea6d5316ebceff736d0"><div class="ttname"><a href="classMotores.html#a10e9590d22b84ea6d5316ebceff736d0">Motores::min_vel</a></div><div class="ttdeci">uint16_t min_vel</div><div class="ttdef"><b>Definition:</b> <a href="Motores_8h_source.html#l00032">Motores.h:32</a></div></div>
+<div class="ttc" id="aclassMotores_html_a14c1a0bad96d6cefd375377a6afb03d6"><div class="ttname"><a href="classMotores.html#a14c1a0bad96d6cefd375377a6afb03d6">Motores::motor_pin</a></div><div class="ttdeci">gpio_num_t motor_pin</div><div class="ttdef"><b>Definition:</b> <a href="Motores_8h_source.html#l00019">Motores.h:19</a></div></div>
+<div class="ttc" id="aclassMotores_html_a1895e0f2bc08b754d2c119a7d5fee68a"><div class="ttname"><a href="classMotores.html#a1895e0f2bc08b754d2c119a7d5fee68a">Motores::inicializa</a></div><div class="ttdeci">void inicializa()</div><div class="ttdef"><b>Definition:</b> <a href="Motores_8cpp_source.html#l00025">Motores.cpp:25</a></div></div>
+<div class="ttc" id="aclassMotores_html_a3f2679c95473f8ee07a7645c7ad64d5d"><div class="ttname"><a href="classMotores.html#a3f2679c95473f8ee07a7645c7ad64d5d">Motores::tempo_calibracao</a></div><div class="ttdeci">const uint16_t tempo_calibracao</div><div class="ttdoc">Tempo para calibracao entre atribuicao de minimo e maximo. [millisegundos].</div><div class="ttdef"><b>Definition:</b> <a href="Motores_8h_source.html#l00023">Motores.h:23</a></div></div>
+<div class="ttc" id="aclassMotores_html_a6ae9bc897a2155f3614b017e35d17726"><div class="ttname"><a href="classMotores.html#a6ae9bc897a2155f3614b017e35d17726">Motores::Motores</a></div><div class="ttdeci">Motores(gpio_num_t motor_pin, uint8_t canal=0)</div><div class="ttdef"><b>Definition:</b> <a href="Motores_8cpp_source.html#l00013">Motores.cpp:13</a></div></div>
+<div class="ttc" id="aclassMotores_html_aa6ba08a3abc1f9f936cb1f4b97dd043a"><div class="ttname"><a href="classMotores.html#aa6ba08a3abc1f9f936cb1f4b97dd043a">Motores::canal</a></div><div class="ttdeci">uint8_t canal</div><div class="ttdef"><b>Definition:</b> <a href="Motores_8h_source.html#l00021">Motores.h:21</a></div></div>
+<div class="ttc" id="aclassMotores_html_aa925c45cc263120106dacb8c5802d20b"><div class="ttname"><a href="classMotores.html#aa925c45cc263120106dacb8c5802d20b">Motores::calibra</a></div><div class="ttdeci">void calibra()</div><div class="ttdef"><b>Definition:</b> <a href="Motores_8cpp_source.html#l00051">Motores.cpp:51</a></div></div>
+<div class="ttc" id="aclassMotores_html_abd97787aacf452410d0fb21bbe5c9287"><div class="ttname"><a href="classMotores.html#abd97787aacf452410d0fb21bbe5c9287">Motores::set_portas</a></div><div class="ttdeci">void set_portas()</div><div class="ttdef"><b>Definition:</b> <a href="Motores_8cpp_source.html#l00044">Motores.cpp:44</a></div></div>
+<div class="ttc" id="aclassMotores_html_ac05467a9227b8ba9c86b2c9d6c08a2c0"><div class="ttname"><a href="classMotores.html#ac05467a9227b8ba9c86b2c9d6c08a2c0">Motores::freq</a></div><div class="ttdeci">const double freq</div><div class="ttdoc">Frequencia do PWM de controle.</div><div class="ttdef"><b>Definition:</b> <a href="Motores_8h_source.html#l00027">Motores.h:27</a></div></div>
+<div class="ttc" id="aclassMotores_html_ac6264dc2b71015a3c9641025151edd4a"><div class="ttname"><a href="classMotores.html#ac6264dc2b71015a3c9641025151edd4a">Motores::set_vel_mot</a></div><div class="ttdeci">void set_vel_mot(uint16_t vel)</div><div class="ttdef"><b>Definition:</b> <a href="Motores_8cpp_source.html#l00036">Motores.cpp:36</a></div></div>
+<div class="ttc" id="aclassMotores_html_ae36afe438037117f406f7ddf4903fd76"><div class="ttname"><a href="classMotores.html#ae36afe438037117f406f7ddf4903fd76">Motores::max_vel</a></div><div class="ttdeci">uint16_t max_vel</div><div class="ttdef"><b>Definition:</b> <a href="Motores_8h_source.html#l00034">Motores.h:34</a></div></div>
+<div class="ttc" id="aclassMotores_html_af2f825f86a3524c6b9097dedd4e9bdea"><div class="ttname"><a href="classMotores.html#af2f825f86a3524c6b9097dedd4e9bdea">Motores::resolucao</a></div><div class="ttdeci">const uint16_t resolucao</div><div class="ttdoc">Resolucao do controle PWM.</div><div class="ttdef"><b>Definition:</b> <a href="Motores_8h_source.html#l00025">Motores.h:25</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

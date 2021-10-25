@@ -1,0 +1,650 @@
+.TH "ekf" 3 "Sexta, 17 de Setembro de 2021" "Quadrirrotor" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ekf \- Funções genéricas com álgebra de quatérnions e demais\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Estruturas de Dados"
+
+.in +1c
+.ti -1c
+.RI "class \fBEKF\fP"
+.br
+.in -1c
+.SS "Funções"
+
+.in +1c
+.ti -1c
+.RI "Eigen::MatrixXf \fBQ_r\fP (const Eigen::Ref< Eigen::Vector4f > &q)"
+.br
+.ti -1c
+.RI "Eigen::MatrixXf \fBQ_l\fP (const Eigen::Ref< Eigen::Vector4f > &q)"
+.br
+.ti -1c
+.RI "Eigen::Matrix3f \fBskew\fP (const Eigen::Vector3f &v)"
+.br
+.RI "Matrix antissimetrica\&. "
+.ti -1c
+.RI "Eigen::Matrix4f \fBS_r\fP (const Eigen::Ref< Eigen::Vector4f > q)"
+.br
+.RI "Calcula a Matriz \fIRight-Quaternion\fP a partir do quaternion q\&. "
+.ti -1c
+.RI "Eigen::Matrix4f \fBS_l\fP (const Eigen::Ref< Eigen::Vector4f > &q)"
+.br
+.RI "Calcula a Matriz \fILefth-Quaternion\fP a partir do quaternion q\&. "
+.ti -1c
+.RI "void \fBcomputeMcdFromQuaternion\fP (const Eigen::Vector4f &q, Eigen::Matrix3f &mcd)"
+.br
+.ti -1c
+.RI "void \fBprintEigen\fP (const Eigen::MatrixXf &m)"
+.br
+.ti -1c
+.RI "Eigen::Vector3f \fBcomputeVectorProjection\fP (const Eigen::Ref< Eigen::Vector3f > &v, const Eigen::Ref< Eigen::Vector3f > &u)"
+.br
+.ti -1c
+.RI "Eigen::Vector4f \fBmultiplyQuaternions\fP (const Eigen::Ref< Eigen::VectorXf > &p, const Eigen::Ref< Eigen::VectorXf > &q)"
+.br
+.RI "Produto de quaternions aplicado\&. "
+.ti -1c
+.RI "void \fBquaternion2Euler\fP (Eigen::Ref< Eigen::Vector3f > _euler, const Eigen::Ref< const Eigen::Vector4f > &_q)"
+.br
+.ti -1c
+.RI "void \fBintegrationQuaternion\fP (Eigen::Vector4f &_quat, const Eigen::Ref< const Eigen::VectorXf > &_gyroscopio, float &_dt)"
+.br
+.ti -1c
+.RI "Eigen::Vector3f \fBrotateVectorWithQuaternion\fP (Eigen::Vector4f &q, Eigen::Vector3f &v_old)"
+.br
+.RI "Rotaciona um vetor tridimensional com um quaternion\&. "
+.ti -1c
+.RI "Eigen::Vector3f \fBrotateVectorWithQuaternion_Conjugate\fP (Eigen::Vector4f &q, Eigen::Vector3f &v_old)"
+.br
+.RI "Rotaciona um vetor tridimensional com um quaternion conjugado\&. "
+.ti -1c
+.RI "float \fBinvSqrt\fP (float _x)"
+.br
+.RI "Calcula o inverso do raiz de um float\&. "
+.ti -1c
+.RI "void \fBcomputeQuaternionFromMCDMarkley\fP (Eigen::Matrix3f &m, Eigen::Ref< Eigen::Vector4f > q)"
+.br
+.ti -1c
+.RI "Eigen::VectorXf \fBRK\fP (float h, const Eigen ::Ref< Eigen::VectorXf > &xk, const Eigen ::Ref< Eigen::VectorXf > &u, Eigen::VectorXf(fn)(Eigen::VectorXf x, Eigen::VectorXf u))"
+.br
+.ti -1c
+.RI "void \fBconjugate\fP (Eigen::Ref< Eigen::Vector4f > _q)"
+.br
+.RI "Conjuga o quaternion _q\&. "
+.ti -1c
+.RI "Eigen::Matrix4f \fBS_r\fP (const Eigen::Ref< Eigen::Vector4f > &q)"
+.br
+.ti -1c
+.RI "void \fBcomputeQuaternionFromMCDShepperd\fP (Eigen::Matrix3f &m, Eigen::Vector4f &q)"
+.br
+.ti -1c
+.RI "Eigen::VectorXf \fBRK\fP (float h, const Eigen ::Ref< Eigen::VectorXf > &xk, const Eigen ::Ref< Eigen::VectorXf > &u, Eigen::VectorXf fn(Eigen::VectorXf x, Eigen::VectorXf u))"
+.br
+.in -1c
+.SS "Variáveis"
+
+.in +1c
+.ti -1c
+.RI "\fBAQUA\fP \fBaqua\fP"
+.br
+.ti -1c
+.RI "const float \fBTOLERANCE\fP = 1e\-6"
+.br
+.in -1c
+.SH "Descrição detalhada"
+.PP 
+Funções genéricas com álgebra de quatérnions e demais\&. 
+.SH "Funções"
+.PP 
+.SS "void ekf::computeMcdFromQuaternion (const Eigen::Vector4f & q, Eigen::Matrix3f & mcd)"
+Calcula a matriz de cossenos ditores a parir do quaternion de atitude 
+.PP
+\fBParâmetros\fP
+.RS 4
+\fIq\fP quaternion de atitude 
+.br
+\fImcd\fP Matriz de cossenos diretores a ser atualizada (Referencia) 
+.RE
+.PP
+
+.PP
+Definição na linha 102 do arquivo GRUPO_QUAT\&.cpp\&.
+.PP
+.nf
+102                                                                           {
+103   mcd = Eigen::Matrix3f::Identity() * (2\&.0f * q(0) * q(0) - 1\&.0f) +
+104         2\&.0f * (q\&.tail(3) * q\&.tail(3)\&.transpose()) +
+105         2\&.0f * q(0) * skew(q\&.tail(3));
+106 }
+.fi
+.PP
+Referencias skew()\&.
+.SS "void ekf::computeQuaternionFromMCDMarkley (Eigen::Matrix3f & m, Eigen::Ref< Eigen::Vector4f > q)"
+Extrai o quatérnio a partir da matrix de cossenos diretores\&. 
+.PP
+\fBParâmetros\fP
+.RS 4
+\fIm\fP Matrix de cossenos diretores\&. 
+.br
+\fIq\fP Quaternion de atitude\&. 
+.RE
+.PP
+\fBObservação\fP
+.RS 4
+Utiza o algoritmo BUG 
+.RE
+.PP
+
+.PP
+Definição na linha 293 do arquivo GRUPO_QUAT\&.cpp\&.
+.PP
+.nf
+294                                                                 {
+295   Eigen::Vector4f indexVector;
+296   float _trace = m\&.trace();
+297   indexVector << _trace, m\&.diagonal();
+298   Eigen::Vector4f::Index max_index;
+299   indexVector\&.maxCoeff(&max_index);
+300   switch (max_index) {
+301   case 0:
+302     q(0) = 1\&.0f + _trace;
+303     q(1) = m(2, 1) - m(1, 2);
+304     q(2) = m(0, 2) - m(2, 0);
+305     q(3) = m(1, 0) - m(0, 1);
+306     break;
+307   case 1:
+308     q(0) = m(2, 1) - m(1, 2);
+309     q(1) = 1\&.0f + m(0, 0) - m(1, 1) - m(2, 2);
+310     q(2) = m(0, 1) + m(1, 0);
+311     q(3) = m(2, 0) + m(0, 2);
+312     break;
+313   case 2:
+314     q(0) = m(2, 0) - m(0, 2);
+315     q(1) = m(0, 1) + m(1, 0);
+316     q(2) = 1\&.0f - m(0, 0) + m(1, 1) - m(2, 2);
+317     q(3) = m(1, 2) + m(2, 1);
+318     break;
+319   default:
+320     q(0) = m(1, 0) - m(0, 1);
+321     q(1) = m(2, 0) + m(0, 2);
+322     q(2) = m(2, 1) + m(1, 2);
+323     q(3) = 1\&.0f - m(0, 0) - m(1, 1) + m(2, 2);
+324     break;
+325   }
+326   q\&.normalize();
+327 }
+.fi
+.PP
+Referencias drone::m\&.
+.SS "void ekf::computeQuaternionFromMCDShepperd (Eigen::Matrix3f & m, Eigen::Vector4f & q)"
+
+.SS "Eigen::Vector3f ekf::computeVectorProjection (const Eigen::Ref< Eigen::Vector3f > & v, const Eigen::Ref< Eigen::Vector3f > & u)"
+Rejeita a projecao do vetor v sobre u \&. 
+.PP
+\fBParâmetros\fP
+.RS 4
+\fIu\fP Vetor tridimensional 
+.br
+\fIv\fP Vetor tridimensional 
+.RE
+.PP
+\fBRetorna\fP
+.RS 4
+v sem a projeção de v sobre u\&. * \fCVector Rejection\fP [Vector Rejection ] 
+.RE
+.PP
+
+.PP
+Definição na linha 130 do arquivo GRUPO_QUAT\&.cpp\&.
+.PP
+.nf
+131                                                                           {
+132 
+133   return (v - v\&.dot(u) * u);
+134 }
+.fi
+.SS "void ekf::conjugate (Eigen::Ref< Eigen::Vector4f > _q)"
+
+.PP
+Conjuga o quaternion _q\&. 
+.PP
+\fBParâmetros\fP
+.RS 4
+\fI_q\fP 
+.RE
+.PP
+
+.PP
+Definição na linha 343 do arquivo GRUPO_QUAT\&.cpp\&.
+.PP
+.nf
+343 { _q\&.tail(3) *= -1\&.0f; }
+.fi
+.SS "void ekf::integrationQuaternion (Eigen::Vector4f & _quat, const Eigen::Ref< const Eigen::VectorXf > & _gyroscopio, float & _dt)"
+Integracao de quaternion com mapa exponecial\&. 
+.PP
+\fBParâmetros\fP
+.RS 4
+\fI_quat\fP Quaternion q_k 
+.br
+\fI_gyroscopio\fP mediads do giroscópio [Radianos] 
+.br
+\fI_dt\fP Passo de integração\&.
+.RE
+.PP
+\fBObservação\fP
+.RS 4
+computa norma para evitar instabilidade
+.RE
+.PP
+
+.PP
+Definição na linha 168 do arquivo GRUPO_QUAT\&.cpp\&.
+.PP
+.nf
+170                                        {
+178   float _gyroscopio_norm = _gyroscopio\&.norm();
+179 
+180   if (_gyroscopio_norm > TOLERANCE) {
+181     Eigen::Vector4f expMap;
+182     float _dt_gyroscopio_norm_half = 0\&.5f * _dt * _gyroscopio_norm;
+183     expMap(0) = cosf(_dt_gyroscopio_norm_half);
+184     expMap\&.tail(3) =
+185         _gyroscopio / _gyroscopio_norm * sinf(_dt_gyroscopio_norm_half);
+186     _quat = multiplyQuaternions(_quat, expMap);
+187   }
+188 }
+.fi
+.PP
+Referencias multiplyQuaternions() e TOLERANCE\&.
+.SS "float ekf::invSqrt (float _x)"
+
+.PP
+Calcula o inverso do raiz de um float\&. 
+.PP
+\fBObservação\fP
+.RS 4
+Para mais detalhes consulte \fCFast inverse square-root\fP 
+.RE
+.PP
+\fBParâmetros\fP
+.RS 4
+\fI_x\fP 
+.RE
+.PP
+\fBRetorna\fP
+.RS 4
+1/sqrt(_x) 
+.RE
+.PP
+
+.PP
+Definição na linha 227 do arquivo GRUPO_QUAT\&.cpp\&.
+.PP
+.nf
+227                         {
+228   float halfx = 0\&.5f * _x;
+229   union {
+230     float _y;
+231     uint32_t _i;
+232   } conv = {\&._y = _x};
+233   // float _y = _x;
+234   // long i = *(long *)&_y;
+235   conv\&._i = 0x5f3759df - (conv\&._i >> 1);
+236   // _y = *(float *)&i;
+237   conv\&._y *= (1\&.5f - (halfx * conv\&._y * conv\&._y));
+238   // segunda iteracao\&.
+239   // _y = _y * (1\&.5f - (halfx * _y * _y));
+240   return conv\&._y;
+241 }
+.fi
+.PP
+Referenciado(a) por AQUA::computeQuaternionMag()\&.
+.SS "Eigen::Vector4f ekf::multiplyQuaternions (const Eigen::Ref< Eigen::VectorXf > & p, const Eigen::Ref< Eigen::VectorXf > & q)"
+
+.PP
+Produto de quaternions aplicado\&. 
+.PP
+\fBParâmetros\fP
+.RS 4
+\fIp\fP Quaternion 
+.br
+\fIq\fP Vetor tridimensional 
+.RE
+.PP
+\fBRetorna\fP
+.RS 4
+Quaternion product pq 
+.RE
+.PP
+
+.PP
+Definição na linha 142 do arquivo GRUPO_QUAT\&.cpp\&.
+.PP
+.nf
+143                                                                       {
+144   Eigen::Vector4f pq;
+145   pq(0) = p(0) * q(0) - p(1) * q(1) - p(2) * q(2) - p(3) * q(3);
+146   pq(1) = p(0) * q(1) + p(1) * q(0) + p(2) * q(3) - p(3) * q(2);
+147   pq(2) = p(0) * q(2) - p(1) * q(3) + p(2) * q(0) + p(3) * q(1);
+148   pq(3) = p(0) * q(3) + p(1) * q(2) - p(2) * q(1) + p(3) * q(0);
+149   return pq;
+150 }
+.fi
+.PP
+Referenciado(a) por AQUA::computeAQUAQuaternion() e integrationQuaternion()\&.
+.SS "void ekf::printEigen (const Eigen::MatrixXf & m)"
+Imprime um dado Eigen\&. Matriz ou vetor\&. 
+.PP
+\fBParâmetros\fP
+.RS 4
+\fIm\fP dado a ser impresso\&. 
+.RE
+.PP
+
+.PP
+Definição na linha 111 do arquivo GRUPO_QUAT\&.cpp\&.
+.PP
+.nf
+111                                         {
+112   int c = m\&.cols();
+113   int l = m\&.rows();
+114   for (int i = 0; i < l; i++) {
+115     for (int j = 0; j < c; j++) {
+116       // printf("%f\t", m(i, j));
+117       printf(",%f", m(i, j));
+118     }
+119     printf("%s\n", ",");
+120   }
+121 }
+.fi
+.PP
+Referencias drone::m\&.
+.SS "Eigen::MatrixXf ekf::Q_l (const Eigen::Ref< Eigen::Vector4f > & q)"
+Matrix Left-Quaternion Q 
+.PP
+\fBParâmetros\fP
+.RS 4
+\fIq\fP quaternion de atitude 
+.RE
+.PP
+\fBRetorna\fP
+.RS 4
+Matrix Left Quarternio Q 
+.RE
+.PP
+
+.PP
+Definição na linha 45 do arquivo GRUPO_QUAT\&.cpp\&.
+.PP
+.nf
+45                                                     {
+46 
+47   Eigen::MatrixXf M = Eigen::MatrixXf::Zero(4, 3);
+48   M\&.row(0) = -q\&.tail(3);
+49   M\&.bottomLeftCorner(3, 3) =
+50       q(0) * Eigen::Matrix3f::Identity() + skew(q\&.tail(3));
+51   return M;
+52 }
+.fi
+.PP
+Referencias skew()\&.
+.PP
+Referenciado(a) por Controle::computeRotationalTarget()\&.
+.SS "Eigen::MatrixXf ekf::Q_r (const Eigen::Ref< Eigen::Vector4f > & q)"
+Matrix Right-Quaternion Q 
+.PP
+\fBParâmetros\fP
+.RS 4
+\fIq\fP quaternion de atitude 
+.RE
+.PP
+\fBRetorna\fP
+.RS 4
+Matrix Right Quarternio Q 
+.RE
+.PP
+
+.PP
+Definição na linha 31 do arquivo GRUPO_QUAT\&.cpp\&.
+.PP
+.nf
+31                                                     {
+32 
+33   Eigen::MatrixXf M = Eigen::MatrixXf::Zero(4, 3);
+34   M\&.row(0) = -q\&.tail(3);
+35   M\&.bottomLeftCorner(3, 3) =
+36       q(0) * Eigen::Matrix3f::Identity() - skew(q\&.tail(3));
+37   return M;
+38 }
+.fi
+.PP
+Referencias skew()\&.
+.SS "void ekf::quaternion2Euler (Eigen::Ref< Eigen::Vector3f > _euler, const Eigen::Ref< const Eigen::Vector4f > & _q)"
+Extrai os ângulos de Euler do quatérnion\&. 
+.PP
+\fBParâmetros\fP
+.RS 4
+\fI_euler\fP Vetor de ângulos de Euler\&. 
+.br
+\fI_q\fP Quatérnion de atitude\&.
+.RE
+.PP
+
+.PP
+Definição na linha 152 do arquivo GRUPO_QUAT\&.cpp\&.
+.PP
+.nf
+153                                                                {
+159   // calculo de fi
+160   _euler(0) = RAD_TO_DEG * atan2f(_q(2) * _q(3) + _q(0) * _q(1),
+161                                   _q(0) * _q(0) + _q(3) * _q(3) - 0\&.5f);
+162   // calculo de theta
+163   _euler(1) = RAD_TO_DEG * asinf(2\&.0f * (_q(0) * _q(2) - _q(1) * _q(3)));
+164   // calculo de psi
+165   _euler(2) = RAD_TO_DEG * atan2f(_q(1) * _q(2) + _q(0) * _q(3),
+166                                   _q(0) * _q(0) + _q(1) * _q(1) - 0\&.5f);
+167 }
+.fi
+.PP
+Referencias RAD_TO_DEG\&.
+.SS "Eigen::VectorXf ekf::RK (float h, const Eigen ::Ref< Eigen::VectorXf > & xk, const Eigen ::Ref< Eigen::VectorXf > & u, Eigen::VectorXf  fnEigen::VectorXf x, Eigen::VectorXf u)"
+
+.SS "Eigen::VectorXf ekf::RK (float h, const Eigen ::Ref< Eigen::VectorXf > & xk, const Eigen ::Ref< Eigen::VectorXf > & u, Eigen::VectorXf(fn)(Eigen::VectorXf x, Eigen::VectorXf u)   )"
+
+.PP
+Definição na linha 328 do arquivo GRUPO_QUAT\&.cpp\&.
+.PP
+.nf
+330                                                                         {
+331   Eigen::VectorXf k1(xk\&.rows()), k2(xk\&.rows()), k3(xk\&.rows()), k4(xk\&.rows());
+332   k1 = h * (*fn)(xk, u);
+333   k2 = h * (*fn)(xk + 0\&.5 * k1, u);
+334   k3 = h * (*fn)(xk + 0\&.5 * k2, u);
+335   k4 = h * (*fn)(xk + k3, u);
+336   return xk + (k1 + 2\&.0f * (k2 + k3) + k4) / 6\&.0;
+337 }
+.fi
+.SS "Eigen::Vector3f ekf::rotateVectorWithQuaternion (Eigen::Vector4f & q, Eigen::Vector3f & v_old)"
+
+.PP
+Rotaciona um vetor tridimensional com um quaternion\&. 
+.PP
+\fBParâmetros\fP
+.RS 4
+\fIq\fP quaternion de atitude 
+.br
+\fIv_old\fP vetor a ser rotacionado 
+.RE
+.PP
+\fBRetorna\fP
+.RS 4
+v_new vetor rotacionado\&. 
+.RE
+.PP
+\fBObservação\fP
+.RS 4
+A trasnfromação desta forma possui 30 operações (15 produtos e 15 multiplicações\&.)(Rotacao de vetor tridimensional com formalismo de eixo/angulo)[https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation#Performance_comparisons] 
+.RE
+.PP
+
+.PP
+Definição na linha 198 do arquivo GRUPO_QUAT\&.cpp\&.
+.PP
+.nf
+199                                                                  {
+200   return v_old +
+201          2\&.0f * q\&.tail<3>()\&.cross(q\&.tail<3>()\&.cross(v_old) + q(0) * v_old);
+202 }
+.fi
+.SS "Eigen::Vector3f ekf::rotateVectorWithQuaternion_Conjugate (Eigen::Vector4f & q, Eigen::Vector3f & v_old)"
+
+.PP
+Rotaciona um vetor tridimensional com um quaternion conjugado\&. 
+.PP
+\fBParâmetros\fP
+.RS 4
+\fIq\fP quaternion de atitude 
+.br
+\fIv_old\fP vetor a ser rotacionado 
+.RE
+.PP
+\fBRetorna\fP
+.RS 4
+v_new vetor rotacionado\&. 
+.RE
+.PP
+\fBObservação\fP
+.RS 4
+A trasnfromação desta forma possui 30 operações (15 produtos e 15 multiplicações\&.)(Rotacao de vetor tridimensional com formalismo de eixo/angulo)[https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation#Performance_comparisons] 
+.RE
+.PP
+
+.PP
+Definição na linha 213 do arquivo GRUPO_QUAT\&.cpp\&.
+.PP
+.nf
+214                                                                            {
+215   return v_old +
+216          2\&.0f *
+217              (-q\&.tail<3>())\&.cross((-q\&.tail<3>())\&.cross(v_old) + q(0) * v_old);
+218 }
+.fi
+.PP
+Referenciado(a) por AQUA::computeAQUAQuaternion()\&.
+.SS "Eigen::Matrix4f ekf::S_l (const Eigen::Ref< Eigen::Vector4f > & q)"
+
+.PP
+Calcula a Matriz \fILefth-Quaternion\fP a partir do quaternion q\&. 
+.PP
+\fBParâmetros\fP
+.RS 4
+\fIq\fP quaternion de atitude 
+.RE
+.PP
+\fBRetorna\fP
+.RS 4
+mS_l Matrix \fIRight-Quaternion\fP
+.RE
+.PP
+A matrix \fILefth-Quaternion\fP torna possível realizar o produto de quaternions como um produto matricial comum\&. 
+.PP
+Definição na linha 90 do arquivo GRUPO_QUAT\&.cpp\&.
+.PP
+.nf
+90                                                     {
+91   Eigen::Matrix4f mS_r = Eigen::Matrix4f::Identity() * q(0);
+92   mS_r\&.block<1, 3>(0, 1) = -q\&.segment<3>(1);
+93   mS_r\&.block<3, 1>(1, 0) = q\&.segment<3>(1);
+94   mS_r\&.block<3, 3>(1, 1) += skew(q\&.segment<3>(1));
+95   return mS_r;
+96 }
+.fi
+.PP
+Referencias skew()\&.
+.PP
+Referenciado(a) por Controle::computeRotationalControl()\&.
+.SS "Eigen::Matrix4f ekf::S_r (const Eigen::Ref< Eigen::Vector4f > & q)"
+
+.SS "Eigen::Matrix4f ekf::S_r (const Eigen::Ref< Eigen::Vector4f > q)"
+
+.PP
+Calcula a Matriz \fIRight-Quaternion\fP a partir do quaternion q\&. 
+.PP
+\fBParâmetros\fP
+.RS 4
+\fIq\fP quaternion de atitude 
+.RE
+.PP
+\fBRetorna\fP
+.RS 4
+mS_r Matrix \fIRight-Quaternion\fP
+.RE
+.PP
+A matrix \fIRight-Quaternion\fP torna possível realizar o produto de quaternions como um produto matricial comum\&. 
+.PP
+Definição na linha 75 do arquivo GRUPO_QUAT\&.cpp\&.
+.PP
+.nf
+75                                                    {
+76 
+77   Eigen::Matrix4f mS_r = Eigen::Matrix4f::Identity() * q(0);
+78   mS_r\&.block<1, 3>(0, 1) = -q\&.segment<3>(1);
+79   mS_r\&.block<3, 1>(1, 0) = q\&.segment<3>(1);
+80   mS_r\&.block<3, 3>(1, 1) -= skew(q\&.segment<3>(1));
+81   return mS_r;
+82 }
+.fi
+.PP
+Referencias skew()\&.
+.SS "Eigen::Matrix3f ekf::skew (const Eigen::Vector3f & v)"
+
+.PP
+Matrix antissimetrica\&. 
+.PP
+\fBParâmetros\fP
+.RS 4
+\fI[v]\fP Vetor tridimensional 
+.RE
+.PP
+\fBRetorna\fP
+.RS 4
+[M] Matrix antissimetrica
+.RE
+.PP
+\fCA matrix antissimetrica\fP torna possivel converter um produtod vetorial em produto de matrizes\&. 
+.PP
+Definição na linha 62 do arquivo GRUPO_QUAT\&.cpp\&.
+.PP
+.nf
+62                                            {
+63 
+64   Eigen::Matrix3f M = Eigen::Matrix3f::Zero();
+65   M << 0, -v(2), v(1), v(2), 0, -v(0), -v(1), v(0), 0;
+66   return M;
+67 }
+.fi
+.PP
+Referenciado(a) por computeMcdFromQuaternion(), Q_l(), Q_r(), S_l(), S_r() e Drone::updateStateMatrices()\&.
+.SH "Variáveis"
+.PP 
+.SS "\fBAQUA\fP ekf::aqua"
+Classe do filtro de Kalman\&. 
+.PP
+Definição na linha 31 do arquivo EKF\&.cpp\&.
+.PP
+Referenciado(a) por ekf::EKF::begin()\&.
+.SS "const float ekf::TOLERANCE = 1e\-6"
+
+.PP
+Definição na linha 24 do arquivo GRUPO_QUAT\&.cpp\&.
+.PP
+Referenciado(a) por integrationQuaternion()\&.
+.SH "Autor"
+.PP 
+Gerado automaticamente por Doxygen para Quadrirrotor a partir do código-fonte\&.

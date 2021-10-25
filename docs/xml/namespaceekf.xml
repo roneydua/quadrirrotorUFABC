@@ -1,0 +1,743 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compounddef id="namespaceekf" kind="namespace" language="C++">
+    <compoundname>ekf</compoundname>
+    <innerclass refid="classekf_1_1EKF" prot="public">ekf::EKF</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespaceekf_1a224c884f9fa345bfef8f140150919b3e" prot="public" static="no" mutable="no">
+        <type><ref refid="classAQUA" kindref="compound">AQUA</ref></type>
+        <definition>AQUA ekf::aqua</definition>
+        <argsstring></argsstring>
+        <name>aqua</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Classe do filtro de Kalman. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.cpp" line="31" column="6" bodyfile="lib/EKF/EKF.cpp" bodystart="31" bodyend="-1"/>
+        <referencedby refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" compoundref="EKF_8cpp" startline="39" endline="89">ekf::EKF::begin</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceekf_1a6cebd8d5c8351ad9e2ae4de5bc0065c2" prot="public" static="no" mutable="no">
+        <type>const float</type>
+        <definition>const float ekf::TOLERANCE</definition>
+        <argsstring></argsstring>
+        <name>TOLERANCE</name>
+        <initializer>= 1e-6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" line="24" column="13" bodyfile="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" bodystart="24" bodyend="-1"/>
+        <referencedby refid="namespaceekf_1a0bb5c9402b49d6ba5be7c97ef269ceb1" compoundref="GRUPO__QUAT_8cpp" startline="168" endline="188">integrationQuaternion</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceekf_1abd4511440a60041d2e32a0dcbd28e29b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::MatrixXf</type>
+        <definition>Eigen::MatrixXf ekf::Q_r</definition>
+        <argsstring>(const Eigen::Ref&lt; Eigen::Vector4f &gt; &amp;q)</argsstring>
+        <name>Q_r</name>
+        <param>
+          <type>const Eigen::Ref&lt; Eigen::Vector4f &gt; &amp;</type>
+          <declname>q</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Matrix Right-Quaternion Q <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>q</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>quaternion de atitude </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Matrix Right Quarternio Q </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" line="31" column="17" bodyfile="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" bodystart="31" bodyend="38" declfile="lib/GRUPO_QUAT/GRUPO_QUAT.h" declline="70" declcolumn="17"/>
+        <references refid="namespaceekf_1af3f0a631343e55ec8b42f3fbea182461" compoundref="GRUPO__QUAT_8cpp" startline="62" endline="67">skew</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceekf_1a34993a331b6837e5274d556e4f0a1bea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::MatrixXf</type>
+        <definition>Eigen::MatrixXf ekf::Q_l</definition>
+        <argsstring>(const Eigen::Ref&lt; Eigen::Vector4f &gt; &amp;q)</argsstring>
+        <name>Q_l</name>
+        <param>
+          <type>const Eigen::Ref&lt; Eigen::Vector4f &gt; &amp;</type>
+          <declname>q</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Matrix Left-Quaternion Q <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>q</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>quaternion de atitude </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Matrix Left Quarternio Q </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" line="45" column="17" bodyfile="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" bodystart="45" bodyend="52" declfile="lib/GRUPO_QUAT/GRUPO_QUAT.h" declline="69" declcolumn="17"/>
+        <references refid="namespaceekf_1af3f0a631343e55ec8b42f3fbea182461" compoundref="GRUPO__QUAT_8cpp" startline="62" endline="67">skew</references>
+        <referencedby refid="classControle_1a8ac9e933ce30f9c88ed421d4c0afcf99" compoundref="Controle_8cpp" startline="51" endline="80">Controle::computeRotationalTarget</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespaceekf_1af3f0a631343e55ec8b42f3fbea182461" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::Matrix3f</type>
+        <definition>Eigen::Matrix3f ekf::skew</definition>
+        <argsstring>(const Eigen::Vector3f &amp;v)</argsstring>
+        <name>skew</name>
+        <param>
+          <type>const Eigen::Vector3f &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+<para>Matrix antissimetrica. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>[v]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vetor tridimensional </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>[M] Matrix antissimetrica</para>
+</simplesect>
+<ulink url="https://mathworld.wolfram.com/AntisymmetricMatrix.html">A matrix antissimetrica</ulink> torna possivel converter um produtod vetorial em produto de matrizes. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" line="62" column="17" bodyfile="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" bodystart="62" bodyend="67" declfile="lib/GRUPO_QUAT/GRUPO_QUAT.h" declline="38" declcolumn="17"/>
+        <referencedby refid="namespaceekf_1ac031eda654b199bd45807eed2acdb3ec" compoundref="GRUPO__QUAT_8cpp" startline="102" endline="106">computeMcdFromQuaternion</referencedby>
+        <referencedby refid="namespaceekf_1a34993a331b6837e5274d556e4f0a1bea" compoundref="GRUPO__QUAT_8cpp" startline="45" endline="52">Q_l</referencedby>
+        <referencedby refid="namespaceekf_1abd4511440a60041d2e32a0dcbd28e29b" compoundref="GRUPO__QUAT_8cpp" startline="31" endline="38">Q_r</referencedby>
+        <referencedby refid="namespaceekf_1a8177897fe9b962d8e0927a913fc36242" compoundref="GRUPO__QUAT_8cpp" startline="90" endline="96">S_l</referencedby>
+        <referencedby refid="namespaceekf_1a97bc65b3f2d630a876b271fc21e9da9c" compoundref="GRUPO__QUAT_8cpp" startline="75" endline="82">S_r</referencedby>
+        <referencedby refid="classDrone_1a1531c9d38e26bb12a8b650ba40d915ca" compoundref="Drone_8cpp" startline="30" endline="66">Drone::updateStateMatrices</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespaceekf_1a97bc65b3f2d630a876b271fc21e9da9c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::Matrix4f</type>
+        <definition>Eigen::Matrix4f ekf::S_r</definition>
+        <argsstring>(const Eigen::Ref&lt; Eigen::Vector4f &gt; q)</argsstring>
+        <name>S_r</name>
+        <param>
+          <type>const Eigen::Ref&lt; Eigen::Vector4f &gt;</type>
+          <declname>q</declname>
+        </param>
+        <briefdescription>
+<para>Calcula a Matriz <emphasis>Right-Quaternion</emphasis> a partir do quaternion q. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>q</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>quaternion de atitude </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>mS_r Matrix <emphasis>Right-Quaternion</emphasis></para>
+</simplesect>
+A matrix <emphasis>Right-Quaternion</emphasis> torna possível realizar o produto de quaternions como um produto matricial comum. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" line="75" column="17" bodyfile="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" bodystart="75" bodyend="82"/>
+        <references refid="namespaceekf_1af3f0a631343e55ec8b42f3fbea182461" compoundref="GRUPO__QUAT_8cpp" startline="62" endline="67">skew</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceekf_1a8177897fe9b962d8e0927a913fc36242" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::Matrix4f</type>
+        <definition>Eigen::Matrix4f ekf::S_l</definition>
+        <argsstring>(const Eigen::Ref&lt; Eigen::Vector4f &gt; &amp;q)</argsstring>
+        <name>S_l</name>
+        <param>
+          <type>const Eigen::Ref&lt; Eigen::Vector4f &gt; &amp;</type>
+          <declname>q</declname>
+        </param>
+        <briefdescription>
+<para>Calcula a Matriz <emphasis>Lefth-Quaternion</emphasis> a partir do quaternion q. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>q</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>quaternion de atitude </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>mS_l Matrix <emphasis>Right-Quaternion</emphasis></para>
+</simplesect>
+A matrix <emphasis>Lefth-Quaternion</emphasis> torna possível realizar o produto de quaternions como um produto matricial comum. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" line="90" column="17" bodyfile="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" bodystart="90" bodyend="96" declfile="lib/GRUPO_QUAT/GRUPO_QUAT.h" declline="40" declcolumn="17"/>
+        <references refid="namespaceekf_1af3f0a631343e55ec8b42f3fbea182461" compoundref="GRUPO__QUAT_8cpp" startline="62" endline="67">skew</references>
+        <referencedby refid="classControle_1abcf05dcff157e963fd65c09d45261a8f" compoundref="Controle_8cpp" startline="84" endline="96">Controle::computeRotationalControl</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespaceekf_1ac031eda654b199bd45807eed2acdb3ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ekf::computeMcdFromQuaternion</definition>
+        <argsstring>(const Eigen::Vector4f &amp;q, Eigen::Matrix3f &amp;mcd)</argsstring>
+        <name>computeMcdFromQuaternion</name>
+        <param>
+          <type>const Eigen::Vector4f &amp;</type>
+          <declname>q</declname>
+        </param>
+        <param>
+          <type>Eigen::Matrix3f &amp;</type>
+          <declname>mcd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Calcula a matriz de cossenos ditores a parir do quaternion de atitude <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>q</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>quaternion de atitude </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mcd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matriz de cossenos diretores a ser atualizada (Referencia) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" line="102" column="6" bodyfile="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" bodystart="102" bodyend="106" declfile="lib/GRUPO_QUAT/GRUPO_QUAT.h" declline="44" declcolumn="6"/>
+        <references refid="namespaceekf_1af3f0a631343e55ec8b42f3fbea182461" compoundref="GRUPO__QUAT_8cpp" startline="62" endline="67">skew</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceekf_1ae9e1aaaa7793db099f4ef88b44aab8d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ekf::printEigen</definition>
+        <argsstring>(const Eigen::MatrixXf &amp;m)</argsstring>
+        <name>printEigen</name>
+        <param>
+          <type>const Eigen::MatrixXf &amp;</type>
+          <declname>m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Imprime um dado Eigen. Matriz ou vetor. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>m</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>dado a ser impresso. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" line="111" column="6" bodyfile="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" bodystart="111" bodyend="121" declfile="lib/GRUPO_QUAT/GRUPO_QUAT.h" declline="41" declcolumn="6"/>
+        <references refid="namespacedrone_1a7475c0a87d5c8ae96bdc6cb6e9d54a29" compoundref="drone_8py" startline="21">drone.m</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceekf_1a4e04862fd7bb992a28c1dada9a939716" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::Vector3f</type>
+        <definition>Eigen::Vector3f ekf::computeVectorProjection</definition>
+        <argsstring>(const Eigen::Ref&lt; Eigen::Vector3f &gt; &amp;v, const Eigen::Ref&lt; Eigen::Vector3f &gt; &amp;u)</argsstring>
+        <name>computeVectorProjection</name>
+        <param>
+          <type>const Eigen::Ref&lt; Eigen::Vector3f &gt; &amp;</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type>const Eigen::Ref&lt; Eigen::Vector3f &gt; &amp;</type>
+          <declname>u</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Rejeita a projecao do vetor v sobre u . <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>u</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vetor tridimensional </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vetor tridimensional </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>v sem a projeção de v sobre u. * <ulink url="https://en.wikipedia.org/wiki/Vector_projection#Vector_rejection_2">Vector Rejection</ulink> [Vector Rejection ] </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" line="130" column="17" bodyfile="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" bodystart="130" bodyend="134" declfile="lib/GRUPO_QUAT/GRUPO_QUAT.h" declline="45" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceekf_1a0ae7d9ae45fba00d81bfe71ad73d7fee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::Vector4f</type>
+        <definition>Eigen::Vector4f ekf::multiplyQuaternions</definition>
+        <argsstring>(const Eigen::Ref&lt; Eigen::VectorXf &gt; &amp;p, const Eigen::Ref&lt; Eigen::VectorXf &gt; &amp;q)</argsstring>
+        <name>multiplyQuaternions</name>
+        <param>
+          <type>const Eigen::Ref&lt; Eigen::VectorXf &gt; &amp;</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>const Eigen::Ref&lt; Eigen::VectorXf &gt; &amp;</type>
+          <declname>q</declname>
+        </param>
+        <briefdescription>
+<para>Produto de quaternions aplicado. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Quaternion </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>q</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vetor tridimensional </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Quaternion product p<otimes/>q </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" line="142" column="17" bodyfile="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" bodystart="142" bodyend="150" declfile="lib/GRUPO_QUAT/GRUPO_QUAT.h" declline="61" declcolumn="17"/>
+        <referencedby refid="classAQUA_1ae3ddff89a969a0d2a3d3c675ed5b8065" compoundref="AQUA_8cpp" startline="66" endline="83">AQUA::computeAQUAQuaternion</referencedby>
+        <referencedby refid="namespaceekf_1a0bb5c9402b49d6ba5be7c97ef269ceb1" compoundref="GRUPO__QUAT_8cpp" startline="168" endline="188">integrationQuaternion</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespaceekf_1aab2dcd522b40c160064cfae69cae6d98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ekf::quaternion2Euler</definition>
+        <argsstring>(Eigen::Ref&lt; Eigen::Vector3f &gt; _euler, const Eigen::Ref&lt; const Eigen::Vector4f &gt; &amp;_q)</argsstring>
+        <name>quaternion2Euler</name>
+        <param>
+          <type>Eigen::Ref&lt; Eigen::Vector3f &gt;</type>
+          <declname>_euler</declname>
+        </param>
+        <param>
+          <type>const Eigen::Ref&lt; const Eigen::Vector4f &gt; &amp;</type>
+          <declname>_q</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Extrai os ângulos de Euler do quatérnion. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>_euler</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vetor de ângulos de Euler. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>_q</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Quatérnion de atitude.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </inbodydescription>
+        <location file="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" line="152" column="6" bodyfile="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" bodystart="152" bodyend="167" declfile="lib/GRUPO_QUAT/GRUPO_QUAT.h" declline="42" declcolumn="6"/>
+        <references refid="GRUPO__QUAT_8h_1a89e47af0449640d4f15191aba5ca24c6" compoundref="GRUPO__QUAT_8h" startline="24">RAD_TO_DEG</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceekf_1a0bb5c9402b49d6ba5be7c97ef269ceb1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ekf::integrationQuaternion</definition>
+        <argsstring>(Eigen::Vector4f &amp;_quat, const Eigen::Ref&lt; const Eigen::VectorXf &gt; &amp;_gyroscopio, float &amp;_dt)</argsstring>
+        <name>integrationQuaternion</name>
+        <param>
+          <type>Eigen::Vector4f &amp;</type>
+          <declname>_quat</declname>
+        </param>
+        <param>
+          <type>const Eigen::Ref&lt; const Eigen::VectorXf &gt; &amp;</type>
+          <declname>_gyroscopio</declname>
+        </param>
+        <param>
+          <type>float &amp;</type>
+          <declname>_dt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Integracao de quaternion com mapa exponecial. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>_quat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Quaternion q_k </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>_gyroscopio</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>mediads do giroscópio [Radianos] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>_dt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Passo de integração.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>computa norma para evitar instabilidade</para>
+</simplesect>
+</para>
+        </inbodydescription>
+        <location file="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" line="168" column="6" bodyfile="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" bodystart="168" bodyend="188" declfile="lib/GRUPO_QUAT/GRUPO_QUAT.h" declline="53" declcolumn="6"/>
+        <references refid="namespaceekf_1a0ae7d9ae45fba00d81bfe71ad73d7fee" compoundref="GRUPO__QUAT_8cpp" startline="142" endline="150">multiplyQuaternions</references>
+        <references refid="namespaceekf_1a6cebd8d5c8351ad9e2ae4de5bc0065c2" compoundref="GRUPO__QUAT_8cpp" startline="24">TOLERANCE</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceekf_1aaf74eae63658c0bd11df320327ecdb74" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::Vector3f</type>
+        <definition>Eigen::Vector3f ekf::rotateVectorWithQuaternion</definition>
+        <argsstring>(Eigen::Vector4f &amp;q, Eigen::Vector3f &amp;v_old)</argsstring>
+        <name>rotateVectorWithQuaternion</name>
+        <param>
+          <type>Eigen::Vector4f &amp;</type>
+          <declname>q</declname>
+        </param>
+        <param>
+          <type>Eigen::Vector3f &amp;</type>
+          <declname>v_old</declname>
+        </param>
+        <briefdescription>
+<para>Rotaciona um vetor tridimensional com um quaternion. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>q</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>quaternion de atitude </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>v_old</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vetor a ser rotacionado </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>v_new vetor rotacionado. </para>
+</simplesect>
+<simplesect kind="note"><para>A trasnfromação desta forma possui 30 operações (15 produtos e 15 multiplicações.)(Rotacao de vetor tridimensional com formalismo de eixo/angulo)[<ulink url="https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation#Performance_comparisons">https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation#Performance_comparisons</ulink>] </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" line="198" column="17" bodyfile="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" bodystart="198" bodyend="202" declfile="lib/GRUPO_QUAT/GRUPO_QUAT.h" declline="57" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceekf_1acb1dc12948420927eff91ed90c24b342" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::Vector3f</type>
+        <definition>Eigen::Vector3f ekf::rotateVectorWithQuaternion_Conjugate</definition>
+        <argsstring>(Eigen::Vector4f &amp;q, Eigen::Vector3f &amp;v_old)</argsstring>
+        <name>rotateVectorWithQuaternion_Conjugate</name>
+        <param>
+          <type>Eigen::Vector4f &amp;</type>
+          <declname>q</declname>
+        </param>
+        <param>
+          <type>Eigen::Vector3f &amp;</type>
+          <declname>v_old</declname>
+        </param>
+        <briefdescription>
+<para>Rotaciona um vetor tridimensional com um quaternion conjugado. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>q</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>quaternion de atitude </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>v_old</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vetor a ser rotacionado </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>v_new vetor rotacionado. </para>
+</simplesect>
+<simplesect kind="note"><para>A trasnfromação desta forma possui 30 operações (15 produtos e 15 multiplicações.)(Rotacao de vetor tridimensional com formalismo de eixo/angulo)[<ulink url="https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation#Performance_comparisons">https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation#Performance_comparisons</ulink>] </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" line="213" column="17" bodyfile="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" bodystart="213" bodyend="218" declfile="lib/GRUPO_QUAT/GRUPO_QUAT.h" declline="59" declcolumn="17"/>
+        <referencedby refid="classAQUA_1ae3ddff89a969a0d2a3d3c675ed5b8065" compoundref="AQUA_8cpp" startline="66" endline="83">AQUA::computeAQUAQuaternion</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespaceekf_1ab55e144edf7066b67232e15cca7b4646" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float ekf::invSqrt</definition>
+        <argsstring>(float _x)</argsstring>
+        <name>invSqrt</name>
+        <param>
+          <type>float</type>
+          <declname>_x</declname>
+        </param>
+        <briefdescription>
+<para>Calcula o inverso do raiz de um float. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>Para mais detalhes consulte <ulink url="http://en.wikipedia.org/wiki/Fast_inverse_square_root">Fast inverse square-root</ulink> </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>_x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>1/sqrt(_x) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" line="227" column="7" bodyfile="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" bodystart="227" bodyend="241" declfile="lib/GRUPO_QUAT/GRUPO_QUAT.h" declline="56" declcolumn="7"/>
+        <referencedby refid="classAQUA_1a6adb2b857affb225b29fb91e6f6a7194" compoundref="AQUA_8cpp" startline="47" endline="58">AQUA::computeQuaternionMag</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespaceekf_1afe4fb3935c9dc91fcc8b57793f03a170" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ekf::computeQuaternionFromMCDMarkley</definition>
+        <argsstring>(Eigen::Matrix3f &amp;m, Eigen::Ref&lt; Eigen::Vector4f &gt; q)</argsstring>
+        <name>computeQuaternionFromMCDMarkley</name>
+        <param>
+          <type>Eigen::Matrix3f &amp;</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type>Eigen::Ref&lt; Eigen::Vector4f &gt;</type>
+          <declname>q</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Extrai o quatérnio a partir da matrix de cossenos diretores. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>m</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix de cossenos diretores. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>q</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Quaternion de atitude. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Utiza o algoritmo BUG </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" line="293" column="6" bodyfile="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" bodystart="293" bodyend="327" declfile="lib/GRUPO_QUAT/GRUPO_QUAT.h" declline="64" declcolumn="6"/>
+        <references refid="namespacedrone_1a7475c0a87d5c8ae96bdc6cb6e9d54a29" compoundref="drone_8py" startline="21">drone.m</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceekf_1adf3091ade6b7c85db9dd5e6c238b57d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::VectorXf</type>
+        <definition>Eigen::VectorXf ekf::RK</definition>
+        <argsstring>(float h, const Eigen ::Ref&lt; Eigen::VectorXf &gt; &amp;xk, const Eigen ::Ref&lt; Eigen::VectorXf &gt; &amp;u, Eigen::VectorXf(fn)(Eigen::VectorXf x, Eigen::VectorXf u))</argsstring>
+        <name>RK</name>
+        <param>
+          <type>float</type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type>const Eigen ::Ref&lt; Eigen::VectorXf &gt; &amp;</type>
+          <declname>xk</declname>
+        </param>
+        <param>
+          <type>const Eigen ::Ref&lt; Eigen::VectorXf &gt; &amp;</type>
+          <declname>u</declname>
+        </param>
+        <param>
+          <type>Eigen::VectorXf(fn)(Eigen::VectorXf x, Eigen::VectorXf u)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" line="328" column="17" bodyfile="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" bodystart="328" bodyend="337"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceekf_1a9a53e61c76edeebffe35da19a63b983f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ekf::conjugate</definition>
+        <argsstring>(Eigen::Ref&lt; Eigen::Vector4f &gt; _q)</argsstring>
+        <name>conjugate</name>
+        <param>
+          <type>Eigen::Ref&lt; Eigen::Vector4f &gt;</type>
+          <declname>_q</declname>
+        </param>
+        <briefdescription>
+<para>Conjuga o quaternion _q. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>_q</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" line="343" column="6" bodyfile="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" bodystart="343" bodyend="343" declfile="lib/GRUPO_QUAT/GRUPO_QUAT.h" declline="71" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceekf_1a18db01f168af4cf4cabb02159b657be4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::Matrix4f</type>
+        <definition>Eigen::Matrix4f ekf::S_r</definition>
+        <argsstring>(const Eigen::Ref&lt; Eigen::Vector4f &gt; &amp;q)</argsstring>
+        <name>S_r</name>
+        <param>
+          <type>const Eigen::Ref&lt; Eigen::Vector4f &gt; &amp;</type>
+          <declname>q</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/GRUPO_QUAT/GRUPO_QUAT.h" line="39" column="17" declfile="lib/GRUPO_QUAT/GRUPO_QUAT.h" declline="39" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceekf_1a075c55ac35c78422dcfa67fa5775940f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ekf::computeQuaternionFromMCDShepperd</definition>
+        <argsstring>(Eigen::Matrix3f &amp;m, Eigen::Vector4f &amp;q)</argsstring>
+        <name>computeQuaternionFromMCDShepperd</name>
+        <param>
+          <type>Eigen::Matrix3f &amp;</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type>Eigen::Vector4f &amp;</type>
+          <declname>q</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/GRUPO_QUAT/GRUPO_QUAT.h" line="63" column="6" declfile="lib/GRUPO_QUAT/GRUPO_QUAT.h" declline="63" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceekf_1a7947821441ad41493aab1f5ce819ef33" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::VectorXf</type>
+        <definition>Eigen::VectorXf ekf::RK</definition>
+        <argsstring>(float h, const Eigen ::Ref&lt; Eigen::VectorXf &gt; &amp;xk, const Eigen ::Ref&lt; Eigen::VectorXf &gt; &amp;u, Eigen::VectorXf fn(Eigen::VectorXf x, Eigen::VectorXf u))</argsstring>
+        <name>RK</name>
+        <param>
+          <type>float</type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type>const Eigen ::Ref&lt; Eigen::VectorXf &gt; &amp;</type>
+          <declname>xk</declname>
+        </param>
+        <param>
+          <type>const Eigen ::Ref&lt; Eigen::VectorXf &gt; &amp;</type>
+          <declname>u</declname>
+        </param>
+        <param>
+          <type>Eigen::VectorXf </type>
+          <declname>fn</declname>
+          <array>Eigen::VectorXf x, Eigen::VectorXf u</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/GRUPO_QUAT/GRUPO_QUAT.h" line="66" column="17" declfile="lib/GRUPO_QUAT/GRUPO_QUAT.h" declline="66" declcolumn="17"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Funções genéricas com álgebra de quatérnions e demais. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="lib/EKF/EKF.cpp" line="23" column="1"/>
+  </compounddef>
+</doxygen>

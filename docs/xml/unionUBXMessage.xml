@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compounddef id="unionUBXMessage" kind="union" language="C++" prot="public">
+    <compoundname>UBXMessage</compoundname>
+    <includes refid="GPS_8h" local="no">GPS.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="unionUBXMessage_1aa57d81c1fb373e82012ca3ddadefd79f" prot="public" static="no" mutable="no">
+        <type><ref refid="structNAV__POSECEF__STRUCT" kindref="compound">NAV_POSECEF_STRUCT</ref></type>
+        <definition>NAV_POSECEF_STRUCT UBXMessage::navPosecef</definition>
+        <argsstring></argsstring>
+        <name>navPosecef</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="156" column="22" bodyfile="lib/EKF/GPS.h" bodystart="156" bodyend="-1"/>
+        <referencedby refid="GPS_8h_1aaab66558a5f695df7a6fcc3baa340da3" compoundref="GPS_8h" startline="392" endline="433">gps_imprime</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="unionUBXMessage_1ae5d0a8c24ea04c5b48614e3af5dadea4" prot="public" static="no" mutable="no">
+        <type><ref refid="structNAV__PVT__STRUCT" kindref="compound">NAV_PVT_STRUCT</ref></type>
+        <definition>NAV_PVT_STRUCT UBXMessage::navPvt</definition>
+        <argsstring></argsstring>
+        <name>navPvt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="159" column="18" bodyfile="lib/EKF/GPS.h" bodystart="159" bodyend="-1"/>
+        <referencedby refid="GPS_8h_1aaab66558a5f695df7a6fcc3baa340da3" compoundref="GPS_8h" startline="392" endline="433">gps_imprime</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>NAV_POSECEF_STRUCT</label>
+        <link refid="structNAV__POSECEF__STRUCT"/>
+      </node>
+      <node id="3">
+        <label>NAV_PVT_STRUCT</label>
+        <link refid="structNAV__PVT__STRUCT"/>
+      </node>
+      <node id="1">
+        <label>UBXMessage</label>
+        <link refid="unionUBXMessage"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+navPosecef</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>+navPvt</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="lib/EKF/GPS.h" line="148" column="1" bodyfile="lib/EKF/GPS.h" bodystart="148" bodyend="161"/>
+    <listofallmembers>
+      <member refid="unionUBXMessage_1aa57d81c1fb373e82012ca3ddadefd79f" prot="public" virt="non-virtual"><scope>UBXMessage</scope><name>navPosecef</name></member>
+      <member refid="unionUBXMessage_1ae5d0a8c24ea04c5b48614e3af5dadea4" prot="public" virt="non-virtual"><scope>UBXMessage</scope><name>navPvt</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

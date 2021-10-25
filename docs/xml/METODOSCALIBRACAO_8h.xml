@@ -1,0 +1,203 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compounddef id="METODOSCALIBRACAO_8h" kind="file" language="C++">
+    <compoundname>METODOSCALIBRACAO.h</compoundname>
+    <includes local="no">eigen3/Eigen/Dense</includes>
+    <includes local="no">Arduino.h</includes>
+    <includedby refid="IMU_8h" local="yes">lib/IMU/IMU.h</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>eigen3/Eigen/Dense</label>
+      </node>
+      <node id="1">
+        <label>lib/IMU/METODOSCALIBRACAO.h</label>
+        <link refid="METODOSCALIBRACAO_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Arduino.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>lib/IMU/METODOSCALIBRACAO.h</label>
+        <link refid="METODOSCALIBRACAO_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>lib/IMU/IMU.cpp</label>
+        <link refid="IMU_8cpp"/>
+      </node>
+      <node id="2">
+        <label>lib/IMU/IMU.h</label>
+        <link refid="IMU_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classMETODOSCALIBRACAO" prot="public">METODOSCALIBRACAO</innerclass>
+    <briefdescription>
+<para>biblioteca contendo algoritmos de calibracao para acelerometro e magnetometro. Para correto funcionamento a bibioteca EIGEN deve estar indicada no include abaixo </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>: Roney Silva (roney) </para>
+</simplesect>
+<simplesect kind="date"><para>: 16-Aug-2021 Email: <ulink url="mailto:roneyddasilva@gmail.com">roneyddasilva@gmail.com</ulink> Project: quadrirrotorUFABC</para>
+</simplesect>
+Last modified by: roney Last modified time: 01-Sep-2021 </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>METODOSCALIBRACAO_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>METODOSCALIBRACAO_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//<sp/>local<sp/>da<sp/>pasta<sp/>com<sp/>a<sp/>biblioteca<sp/>EIGEN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//<sp/>#include<sp/>&lt;/usr/include/eigen3/Eigen/Dense&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;eigen3/Eigen/Dense&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__GNUC__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Arduino.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">//<sp/>#include<sp/>&lt;Eigen/Dense&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">Eigen;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">//<sp/>comente<sp/>ou<sp/>descomente<sp/>a<sp/>linha<sp/>abaixo<sp/>dependendo<sp/>da<sp/>plataforma<sp/>utilizada</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="classMETODOSCALIBRACAO" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classMETODOSCALIBRACAO" kindref="compound">METODOSCALIBRACAO</ref><sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="43" refid="classMETODOSCALIBRACAO_1af0478ed112a1139bafefe7833568e641" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classMETODOSCALIBRACAO_1af0478ed112a1139bafefe7833568e641" kindref="member">calibracaoGeometrica</ref>(MatrixXf<sp/>&amp;<ref refid="GPS_8h_1a27c939ba1a4f4d927aaa500781293ba7" kindref="member">data</ref>,<sp/>Matrix3f<sp/>&amp;sF,<sp/>Vector3f<sp/>&amp;bias,</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>moduloCampo)<sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>data<sp/>eh<sp/>uma<sp/>matrix<sp/>com<sp/>N<sp/>x<sp/>3,<sp/>sendo<sp/>N<sp/>o<sp/>numero<sp/>de<sp/>medidas<sp/>coletadas</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="GPS_8h_1a27c939ba1a4f4d927aaa500781293ba7" kindref="member">data</ref>.rows()<sp/>==<sp/>3)<sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="GPS_8h_1a27c939ba1a4f4d927aaa500781293ba7" kindref="member">data</ref>.transposeInPlace();</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>sF<sp/>=<sp/>Matrix3f::Identity();</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>bias<sp/>=<sp/>Vector3f::Zero();</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N<sp/>=<sp/><ref refid="GPS_8h_1a27c939ba1a4f4d927aaa500781293ba7" kindref="member">data</ref>.rows();</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>MatrixXf<sp/>H<sp/>=<sp/>MatrixXf::Ones(N,<sp/>6);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>VectorXf<sp/>w(N),<sp/>X(6),<sp/>tmp(3);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>H.col(0)<sp/>=<sp/><ref refid="GPS_8h_1a27c939ba1a4f4d927aaa500781293ba7" kindref="member">data</ref>.col(0);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>H.col(1)<sp/>=<sp/><ref refid="GPS_8h_1a27c939ba1a4f4d927aaa500781293ba7" kindref="member">data</ref>.col(1);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>H.col(2)<sp/>=<sp/><ref refid="GPS_8h_1a27c939ba1a4f4d927aaa500781293ba7" kindref="member">data</ref>.col(2);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>H.col(3)<sp/>=<sp/>-<ref refid="GPS_8h_1a27c939ba1a4f4d927aaa500781293ba7" kindref="member">data</ref>.col(1).array().pow(2).matrix();</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>H.col(4)<sp/>=<sp/>-<ref refid="GPS_8h_1a27c939ba1a4f4d927aaa500781293ba7" kindref="member">data</ref>.col(2).array().pow(2).matrix();</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>w<sp/>=<sp/><ref refid="GPS_8h_1a27c939ba1a4f4d927aaa500781293ba7" kindref="member">data</ref>.col(0).array().pow(2).matrix();</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="GPS_8h_1a27c939ba1a4f4d927aaa500781293ba7" kindref="member">data</ref>.resize(0,<sp/>0);<sp/></highlight><highlight class="comment">//<sp/>libera<sp/>memoria</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>X<sp/>=<sp/>(H.transpose()<sp/>*<sp/>H).inverse()<sp/>*<sp/>H.transpose()<sp/>*<sp/>w;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>X<sp/>=<sp/>H.fullPivHouseholderQr().solve(w);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>H.resize(0,<sp/>0);<sp/></highlight><highlight class="comment">//<sp/>libera<sp/>memoria</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>bias(0)<sp/>=<sp/>X(0)<sp/>/<sp/>2.0;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>bias(1)<sp/>=<sp/>X(1)<sp/>/<sp/>(2.0<sp/>*<sp/>X(3));</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>bias(2)<sp/>=<sp/>X(2)<sp/>/<sp/>(2.0<sp/>*<sp/>X(4));</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>tmp(0)<sp/>=<sp/>(X(5)<sp/>+<sp/>bias(0)<sp/>*<sp/>bias(0)<sp/>+<sp/>X(3)<sp/>*<sp/>bias(1)<sp/>*<sp/>bias(1)<sp/>+</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>X(4)<sp/>*<sp/>bias(2)<sp/>*<sp/>bias(2))<sp/>/</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(moduloCampo<sp/>*<sp/>moduloCampo);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>tmp(1)<sp/>=<sp/>tmp(0)<sp/>/<sp/>X(3);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>tmp(2)<sp/>=<sp/>tmp(0)<sp/>/<sp/>X(4);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>sF(0,<sp/>0)<sp/>=<sp/>1.0<sp/>/<sp/>sqrt(tmp(0));</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>sF(1,<sp/>1)<sp/>=<sp/>1.0<sp/>/<sp/>sqrt(tmp(1));</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>sF(2,<sp/>2)<sp/>=<sp/>1.0<sp/>/<sp/>sqrt(tmp(2));</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="comment">//<sp/>checa<sp/>se<sp/>ha<sp/>numero<sp/>INFINITOS<sp/>ou<sp/>INVALIDOS<sp/>retornoando<sp/>-2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="comment">//<sp/>quando<sp/>encontra<sp/>numeros<sp/>NaN<sp/>e<sp/>-1<sp/>para<sp/>numeros<sp/>insfinitos</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__GNUC__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>3;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>0;<sp/>j<sp/>&lt;<sp/>3;<sp/>j++)<sp/>{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isnan(sF(i,<sp/>j))<sp/>||<sp/>isinf(sF(i,<sp/>j)))<sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-2;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isnan(bias(i))<sp/>||<sp/>isinf(bias(i)))<sp/>{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="103" refid="classMETODOSCALIBRACAO_1ad7b555b5f46cdad7ae551f5cd4886a9b" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classMETODOSCALIBRACAO_1ad7b555b5f46cdad7ae551f5cd4886a9b" kindref="member">calibracaoAcelerometro</ref>(Matrix3f<sp/>&amp;sF,<sp/>int16_t<sp/>(&amp;bias)[3],<sp/>MatrixXf<sp/><ref refid="GPS_8h_1a27c939ba1a4f4d927aaa500781293ba7" kindref="member">data</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>data<sp/>eh<sp/>uma<sp/>matrix<sp/>com<sp/>N<sp/>x<sp/>3,<sp/>sendo<sp/>N<sp/>o<sp/>numero<sp/>de<sp/>medidas<sp/>coletadas</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="GPS_8h_1a27c939ba1a4f4d927aaa500781293ba7" kindref="member">data</ref>.rows()<sp/>==<sp/>3)<sp/>{</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="GPS_8h_1a27c939ba1a4f4d927aaa500781293ba7" kindref="member">data</ref>.transposeInPlace();</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>indice;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N<sp/>=<sp/><ref refid="GPS_8h_1a27c939ba1a4f4d927aaa500781293ba7" kindref="member">data</ref>.rows();</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>MatrixXf<sp/>Y<sp/>=<sp/>MatrixXf::Zero(N,<sp/>3);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>MatrixXf<sp/>w<sp/>=<sp/>MatrixXf::Ones(N,<sp/>4);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>MatrixXf<sp/>X<sp/>=<sp/>MatrixXf::Zero(4,<sp/>3);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector3f<sp/>_bias;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>var<sp/>=<sp/>0;<sp/>var<sp/>&lt;<sp/>N;<sp/>var++)<sp/>{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="GPS_8h_1a27c939ba1a4f4d927aaa500781293ba7" kindref="member">data</ref>.row(var).maxCoeff(&amp;indice);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="GPS_8h_1a27c939ba1a4f4d927aaa500781293ba7" kindref="member">data</ref>(var,<sp/>indice)<sp/>&gt;<sp/>1000.0f)<sp/>{</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Y(var,<sp/>indice)<sp/>=<sp/>9.786171951281709f;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>w.row(var)<sp/>&lt;&lt;<sp/><ref refid="GPS_8h_1a27c939ba1a4f4d927aaa500781293ba7" kindref="member">data</ref>.row(var),<sp/>1.0;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="GPS_8h_1a27c939ba1a4f4d927aaa500781293ba7" kindref="member">data</ref>.row(var).minCoeff(&amp;indice);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Y(var,<sp/>indice)<sp/>=<sp/>-9.786171951281709f;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>w.row(var)<sp/>&lt;&lt;<sp/><ref refid="GPS_8h_1a27c939ba1a4f4d927aaa500781293ba7" kindref="member">data</ref>.row(var),<sp/>1.0;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>X<sp/>=<sp/>w.colPivHouseholderQr().solve(Y);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>X.transposeInPlace();</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__GNUC__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>X.rows();<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>0;<sp/>j<sp/>&lt;<sp/>X.cols();<sp/>++j)<sp/>{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isnan(X(i,<sp/>j))<sp/>||<sp/>isinf(X(i,<sp/>j)))<sp/>{</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>sF<sp/>=<sp/>X.block(0,<sp/>0,<sp/>3,<sp/>3);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>_bias<sp/>=<sp/>-sF.inverse()<sp/>*<sp/>X.col(3);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>bias</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>bias<sp/>=<sp/>-X.col(3);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>bias[0]<sp/>=<sp/>(int16_t)_bias[0];</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>bias[1]<sp/>=<sp/>(int16_t)_bias[1];</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>bias[2]<sp/>=<sp/>(int16_t)_bias[2];</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="156" refid="classMETODOSCALIBRACAO_1aeeb5884d970064b5e60fea7bbf515742" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classMETODOSCALIBRACAO_1aeeb5884d970064b5e60fea7bbf515742" kindref="member">calibracaoAcelerometro</ref>(Matrix3f<sp/>&amp;sF,<sp/>Vector3f<sp/>&amp;bias,<sp/>MatrixXf<sp/><ref refid="GPS_8h_1a27c939ba1a4f4d927aaa500781293ba7" kindref="member">data</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>data<sp/>eh<sp/>uma<sp/>matrix<sp/>com<sp/>N<sp/>x<sp/>3,<sp/>sendo<sp/>N<sp/>o<sp/>numero<sp/>de<sp/>medidas<sp/>coletadas</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="GPS_8h_1a27c939ba1a4f4d927aaa500781293ba7" kindref="member">data</ref>.rows()<sp/>==<sp/>3)<sp/>{</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="GPS_8h_1a27c939ba1a4f4d927aaa500781293ba7" kindref="member">data</ref>.transposeInPlace();</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>indice;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N<sp/>=<sp/><ref refid="GPS_8h_1a27c939ba1a4f4d927aaa500781293ba7" kindref="member">data</ref>.rows();</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>MatrixXf<sp/>Y<sp/>=<sp/>MatrixXf::Zero(N,<sp/>3);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>MatrixXf<sp/>w<sp/>=<sp/>MatrixXf::Ones(N,<sp/>4);</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>MatrixXf<sp/>X<sp/>=<sp/>MatrixXf::Zero(4,<sp/>3);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector3f<sp/>_bias;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>var<sp/>=<sp/>0;<sp/>var<sp/>&lt;<sp/>N;<sp/>var++)<sp/>{</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="GPS_8h_1a27c939ba1a4f4d927aaa500781293ba7" kindref="member">data</ref>.row(var).maxCoeff(&amp;indice);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="GPS_8h_1a27c939ba1a4f4d927aaa500781293ba7" kindref="member">data</ref>(var,<sp/>indice)<sp/>&gt;<sp/>1000.0f)<sp/>{</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Y(var,<sp/>indice)<sp/>=<sp/>9.786171951281709f;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>w.row(var)<sp/>&lt;&lt;<sp/><ref refid="GPS_8h_1a27c939ba1a4f4d927aaa500781293ba7" kindref="member">data</ref>.row(var),<sp/>1.0;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="GPS_8h_1a27c939ba1a4f4d927aaa500781293ba7" kindref="member">data</ref>.row(var).minCoeff(&amp;indice);</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Y(var,<sp/>indice)<sp/>=<sp/>-9.786171951281709f;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>w.row(var)<sp/>&lt;&lt;<sp/><ref refid="GPS_8h_1a27c939ba1a4f4d927aaa500781293ba7" kindref="member">data</ref>.row(var),<sp/>1.0;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>X<sp/>=<sp/>w.colPivHouseholderQr().solve(Y);</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/>X.transposeInPlace();</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__GNUC__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>X.rows();<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>0;<sp/>j<sp/>&lt;<sp/>X.cols();<sp/>++j)<sp/>{</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isnan(X(i,<sp/>j))<sp/>||<sp/>isinf(X(i,<sp/>j)))<sp/>{</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/>sF<sp/>=<sp/>X.block(0,<sp/>0,<sp/>3,<sp/>3);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/>bias<sp/>=<sp/>X.col(3);</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="193"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>METODOSCALIBRACAO_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="lib/IMU/METODOSCALIBRACAO.h"/>
+  </compounddef>
+</doxygen>

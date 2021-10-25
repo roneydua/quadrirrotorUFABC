@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compounddef id="Motores_8h" kind="file" language="C++">
+    <compoundname>Motores.h</compoundname>
+    <includes local="yes">Arduino.h</includes>
+    <includedby refid="Motores_8cpp" local="yes">lib/MOTORES/Motores.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>lib/MOTORES/Motores.h</label>
+        <link refid="Motores_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Arduino.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>lib/MOTORES/Motores.h</label>
+        <link refid="Motores_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>lib/MOTORES/Motores.cpp</label>
+        <link refid="Motores_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classMotores" prot="public">Motores</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>: Roney Silva (roneydua) </para>
+</simplesect>
+<simplesect kind="date"><para>: 16-Aug-2021 Email: <ulink url="mailto:roneyddasilva@gmail.com">roneyddasilva@gmail.com</ulink> Project: quadrirrotorUFABC</para>
+</simplesect>
+Last modified by: roneydua Last modified time: 25-Aug-2021 </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>Motores_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>Motores_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Arduino.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="classMotores" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classMotores" kindref="compound">Motores</ref><sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="19" refid="classMotores_1a14c1a0bad96d6cefd375377a6afb03d6" refkind="member"><highlight class="normal"><sp/><sp/>gpio_num_t<sp/><ref refid="classMotores_1a14c1a0bad96d6cefd375377a6afb03d6" kindref="member">motor_pin</ref>;</highlight></codeline>
+<codeline lineno="21" refid="classMotores_1aa6ba08a3abc1f9f936cb1f4b97dd043a" refkind="member"><highlight class="normal"><sp/><sp/>uint8_t<sp/><ref refid="classMotores_1aa6ba08a3abc1f9f936cb1f4b97dd043a" kindref="member">canal</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="23" refid="classMotores_1a3f2679c95473f8ee07a7645c7ad64d5d" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint16_t<sp/><ref refid="classMotores_1a3f2679c95473f8ee07a7645c7ad64d5d" kindref="member">tempo_calibracao</ref><sp/>=<sp/>8000;</highlight></codeline>
+<codeline lineno="25" refid="classMotores_1af2f825f86a3524c6b9097dedd4e9bdea" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint16_t<sp/><ref refid="classMotores_1af2f825f86a3524c6b9097dedd4e9bdea" kindref="member">resolucao</ref><sp/>=<sp/>14;</highlight></codeline>
+<codeline lineno="27" refid="classMotores_1ac05467a9227b8ba9c86b2c9d6c08a2c0" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classMotores_1ac05467a9227b8ba9c86b2c9d6c08a2c0" kindref="member">freq</ref><sp/>=<sp/>470.0;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><ref refid="classMotores_1a6ae9bc897a2155f3614b017e35d17726" kindref="member">Motores</ref>(gpio_num_t<sp/><ref refid="classMotores_1a14c1a0bad96d6cefd375377a6afb03d6" kindref="member">motor_pin</ref>,<sp/>uint8_t<sp/><ref refid="classMotores_1aa6ba08a3abc1f9f936cb1f4b97dd043a" kindref="member">canal</ref><sp/>=<sp/>0);</highlight></codeline>
+<codeline lineno="32" refid="classMotores_1a10e9590d22b84ea6d5316ebceff736d0" refkind="member"><highlight class="normal"><sp/><sp/>uint16_t<sp/><ref refid="classMotores_1a10e9590d22b84ea6d5316ebceff736d0" kindref="member">min_vel</ref>;</highlight></codeline>
+<codeline lineno="34" refid="classMotores_1ae36afe438037117f406f7ddf4903fd76" refkind="member"><highlight class="normal"><sp/><sp/>uint16_t<sp/><ref refid="classMotores_1ae36afe438037117f406f7ddf4903fd76" kindref="member">max_vel</ref>;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>constantes<sp/>de<sp/>forcao<sp/>dos<sp/>motores</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="classMotores_1a75dd42dfb853c1ad6bc88219d224ea49" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classMotores_1a75dd42dfb853c1ad6bc88219d224ea49" kindref="member">kf</ref><sp/>=<sp/>1.4351e-5,<sp/><ref refid="classMotores_1a74c220aadcdad1c946587dd779e3a8d9" kindref="member">km</ref><sp/>=<sp/>2.4086e-7;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>static<sp/>void<sp/>static_update_rpm(void<sp/>*pvParameter);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMotores_1a1895e0f2bc08b754d2c119a7d5fee68a" kindref="member">inicializa</ref>();</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMotores_1abd97787aacf452410d0fb21bbe5c9287" kindref="member">set_portas</ref>();</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMotores_1aa925c45cc263120106dacb8c5802d20b" kindref="member">calibra</ref>();</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classMotores_1ac6264dc2b71015a3c9641025151edd4a" kindref="member">set_vel_mot</ref>(uint16_t<sp/>vel);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="lib/MOTORES/Motores.h"/>
+  </compounddef>
+</doxygen>

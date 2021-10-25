@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compounddef id="dir_3554028ee2797c78c7765098b85f4139" kind="dir">
+    <compoundname>lib/IMU</compoundname>
+    <innerfile refid="IMU_8cpp">IMU.cpp</innerfile>
+    <innerfile refid="IMU_8h">IMU.h</innerfile>
+    <innerfile refid="METODOSCALIBRACAO_8h">METODOSCALIBRACAO.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="lib/IMU/"/>
+  </compounddef>
+</doxygen>

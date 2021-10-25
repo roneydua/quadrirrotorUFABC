@@ -1,0 +1,823 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compounddef id="classekf_1_1EKF" kind="class" language="C++" prot="public">
+    <compoundname>ekf::EKF</compoundname>
+    <includes refid="EKF_8h" local="no">EKF.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classekf_1_1EKF_1a1aecb83d5af684f4f8637981089002b9" prot="private" static="no" mutable="no">
+        <type>const float</type>
+        <definition>const float ekf::EKF::DEG_TO_RAD_BY_10000000</definition>
+        <argsstring></argsstring>
+        <name>DEG_TO_RAD_BY_10000000</name>
+        <initializer>=
+      1e-7 / 57.295779513082320876798154814105f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="39" column="15" bodyfile="lib/EKF/EKF.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classekf_1_1EKF_1abd8ccdb99191c1f3a7a5c03421f93d87" prot="public" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>const int ekf::EKF::nFull</definition>
+        <argsstring></argsstring>
+        <name>nFull</name>
+        <initializer>= 15</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Número de estados do sistema completo. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="44" column="20" bodyfile="lib/EKF/EKF.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classekf_1_1EKF_1ac02e28e5bd4b3e90d3ccb3dd1127e7b2" prot="public" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>const int ekf::EKF::pFull</definition>
+        <argsstring></argsstring>
+        <name>pFull</name>
+        <initializer>= 7</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Número total de observações </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="46" column="20" bodyfile="lib/EKF/EKF.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classekf_1_1EKF_1a88f92d86fabe318656e5ba458bc2e042" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int ekf::EKF::nAtitude</definition>
+        <argsstring></argsstring>
+        <name>nAtitude</name>
+        <initializer>= 6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Número de estados de atitude. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="48" column="13" bodyfile="lib/EKF/EKF.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classekf_1_1EKF_1ad3a628fffe1f640b4968b8f6f8ef3b14" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int ekf::EKF::pAtitude</definition>
+        <argsstring></argsstring>
+        <name>pAtitude</name>
+        <initializer>= 4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Número de observações da atitude </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="50" column="13" bodyfile="lib/EKF/EKF.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classekf_1_1EKF_1acd0f4714eb8ba12355d529580e928439" prot="public" static="no" mutable="no">
+        <type><ref refid="structBASE" kindref="compound">BASE</ref></type>
+        <definition>BASE ekf::EKF::base</definition>
+        <argsstring></argsstring>
+        <name>base</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="52" column="8" bodyfile="lib/EKF/EKF.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classekf_1_1EKF_1aee84ca91742c11dd89683930a58d59e3" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float ekf::EKF::dt</definition>
+        <argsstring></argsstring>
+        <name>dt</name>
+        <initializer>= 0.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Intervalo de tempo para integração da atitude </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="56" column="9" bodyfile="lib/EKF/EKF.h" bodystart="56" bodyend="-1"/>
+        <referencedby refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" compoundref="EKF_8cpp" startline="39" endline="89">begin</referencedby>
+        <referencedby refid="main_8cpp_1afe461d27b9c48d5921c00d521181f12f" compoundref="main_8cpp" startline="50" endline="59">loop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classekf_1_1EKF_1a30d3adf68cc6ee599fec8fa45a697bbb" prot="public" static="no" mutable="no">
+        <type>Eigen::Vector3f</type>
+        <definition>Eigen::Vector3f ekf::EKF::accel</definition>
+        <argsstring></argsstring>
+        <name>accel</name>
+        <initializer>= Eigen::Vector3f::Zero()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Vetor com as medidas do aceleromeotro </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="58" column="19" bodyfile="lib/EKF/EKF.h" bodystart="58" bodyend="-1"/>
+        <referencedby refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" compoundref="EKF_8cpp" startline="39" endline="89">begin</referencedby>
+        <referencedby refid="main_8cpp_1afe461d27b9c48d5921c00d521181f12f" compoundref="main_8cpp" startline="50" endline="59">loop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classekf_1_1EKF_1a440b83cfd38de4133d8071a158028c86" prot="public" static="no" mutable="no">
+        <type>const Eigen::Vector3f</type>
+        <definition>const Eigen::Vector3f ekf::EKF::navegationGravity</definition>
+        <argsstring></argsstring>
+        <name>navegationGravity</name>
+        <initializer>{0.0f, 0.0f, 9.786171951281709f}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gravidade no sistema de navegação </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="60" column="25" bodyfile="lib/EKF/EKF.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classekf_1_1EKF_1af990ea0dbcd3f286f04584ab663d08e6" prot="public" static="no" mutable="no">
+        <type>Eigen::Vector3f</type>
+        <definition>Eigen::Vector3f ekf::EKF::gyro</definition>
+        <argsstring></argsstring>
+        <name>gyro</name>
+        <initializer>= Eigen::Vector3f::Zero()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Vetor com as medidas do giroscopios </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="62" column="19" bodyfile="lib/EKF/EKF.h" bodystart="62" bodyend="-1"/>
+        <referencedby refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" compoundref="EKF_8cpp" startline="39" endline="89">begin</referencedby>
+        <referencedby refid="main_8cpp_1afe461d27b9c48d5921c00d521181f12f" compoundref="main_8cpp" startline="50" endline="59">loop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classekf_1_1EKF_1a3f84435c646a27ad0f922e5205c13eb3" prot="public" static="no" mutable="no">
+        <type>Eigen::Vector3f</type>
+        <definition>Eigen::Vector3f ekf::EKF::mag</definition>
+        <argsstring></argsstring>
+        <name>mag</name>
+        <initializer>= Eigen::Vector3f::Zero()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Vetor com as medidas do magnetometros </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="64" column="19" bodyfile="lib/EKF/EKF.h" bodystart="64" bodyend="-1"/>
+        <referencedby refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" compoundref="EKF_8cpp" startline="39" endline="89">begin</referencedby>
+        <referencedby refid="main_8cpp_1afe461d27b9c48d5921c00d521181f12f" compoundref="main_8cpp" startline="50" endline="59">loop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classekf_1_1EKF_1a803ccbdd54bfbd96cccf57afa60578a9" prot="public" static="no" mutable="no">
+        <type>Eigen::Vector4f</type>
+        <definition>Eigen::Vector4f ekf::EKF::qObs</definition>
+        <argsstring></argsstring>
+        <name>qObs</name>
+        <initializer>{1.0f, 0.0f, 0.0f, 0.0f}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Vetor com as medias do magnetometro sem as projeções na direção do vetor gravitacional</para>
+<para>Quaternion de observação </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="68" column="19" bodyfile="lib/EKF/EKF.h" bodystart="68" bodyend="-1"/>
+        <referencedby refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" compoundref="EKF_8cpp" startline="39" endline="89">begin</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classekf_1_1EKF_1aa38bc83dfb656519cfcda0c0a589ef16" prot="public" static="no" mutable="no">
+        <type>Eigen::Vector4f</type>
+        <definition>Eigen::Vector4f ekf::EKF::q</definition>
+        <argsstring></argsstring>
+        <name>q</name>
+        <initializer>{1.0f, 0.0f, 0.0f, 0.0f}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Quaternion de atitude </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="70" column="19" bodyfile="lib/EKF/EKF.h" bodystart="70" bodyend="-1"/>
+        <referencedby refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" compoundref="EKF_8cpp" startline="39" endline="89">begin</referencedby>
+        <referencedby refid="classdrone_1_1Drone_1a76f6bdaa9ba1a10abd1b727c1681a2f1" compoundref="drone_8py" startline="59" endline="62">drone.Drone.updateStates</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classekf_1_1EKF_1adc3de40884689bb897ebe90979d6f28f" prot="public" static="no" mutable="no">
+        <type>Eigen::Vector3f</type>
+        <definition>Eigen::Vector3f ekf::EKF::euler</definition>
+        <argsstring></argsstring>
+        <name>euler</name>
+        <initializer>{0.0f, 0.0f, 0.0f}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Ângulos de Euler na convenção 3-2-1 Tait-Bryan </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="72" column="19" bodyfile="lib/EKF/EKF.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classekf_1_1EKF_1a833f15f8790f86633d8b02eb2fe3616e" prot="public" static="no" mutable="no">
+        <type>Eigen::Vector3f</type>
+        <definition>Eigen::Vector3f ekf::EKF::rNED</definition>
+        <argsstring></argsstring>
+        <name>rNED</name>
+        <initializer>= Eigen::Vector3f::Zero()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Vetor de estados estimados do <ref refid="classekf_1_1EKF" kindref="compound">EKF</ref>. O erros são: as três componetes da parte vetorial do quaternion, os três bias do giroscópio e as compoenentes da velocidade no sistema NED. [ <delta/><bold>q</bold> <delta/><bold>b</bold> <delta/><bold>r</bold>]</para>
+<para>Posicoes no sistema NED </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="78" column="19" bodyfile="lib/EKF/EKF.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classekf_1_1EKF_1a649f7d975dc55413be50d8f1e6bc2559" prot="public" static="no" mutable="no">
+        <type>Eigen::Vector3f</type>
+        <definition>Eigen::Vector3f ekf::EKF::rNEDgps</definition>
+        <argsstring></argsstring>
+        <name>rNEDgps</name>
+        <initializer>= Eigen::Vector3f::Zero()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Posicao no sistema NED de observação. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="80" column="19" bodyfile="lib/EKF/EKF.h" bodystart="80" bodyend="-1"/>
+        <referencedby refid="main_8cpp_1afe461d27b9c48d5921c00d521181f12f" compoundref="main_8cpp" startline="50" endline="59">loop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classekf_1_1EKF_1a93f50b0576c3243487442a9f0934e038" prot="public" static="no" mutable="no">
+        <type>Eigen::Vector3f</type>
+        <definition>Eigen::Vector3f ekf::EKF::drNED</definition>
+        <argsstring></argsstring>
+        <name>drNED</name>
+        <initializer>= Eigen::Vector3f::Zero()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Velocidade linear m/s </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="82" column="19" bodyfile="lib/EKF/EKF.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classekf_1_1EKF_1ad27f8aac391293234c9e21c02b944cc4" prot="public" static="no" mutable="no">
+        <type>Eigen::Vector3f</type>
+        <definition>Eigen::Vector3f ekf::EKF::drNEDgps</definition>
+        <argsstring></argsstring>
+        <name>drNEDgps</name>
+        <initializer>= Eigen::Vector3f::Zero()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Velocidade linear sistema NED de observação. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="84" column="19" bodyfile="lib/EKF/EKF.h" bodystart="84" bodyend="-1"/>
+        <referencedby refid="main_8cpp_1afe461d27b9c48d5921c00d521181f12f" compoundref="main_8cpp" startline="50" endline="59">loop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classekf_1_1EKF_1a7dbea0d7c0f7376e7391b6a6a99521b5" prot="public" static="no" mutable="no">
+        <type>Eigen::Vector3f</type>
+        <definition>Eigen::Vector3f ekf::EKF::ddr</definition>
+        <argsstring></argsstring>
+        <name>ddr</name>
+        <initializer>= Eigen::Vector3f::Zero()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Aceleração linear m/s^2 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="86" column="19" bodyfile="lib/EKF/EKF.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classekf_1_1EKF_1a2f7f579eb38461f7396cca2a9a846bbb" prot="public" static="no" mutable="no">
+        <type>Eigen::Matrix3f</type>
+        <definition>Eigen::Matrix3f ekf::EKF::mcd</definition>
+        <argsstring></argsstring>
+        <name>mcd</name>
+        <initializer>= Eigen::Matrix3f::Identity()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Matrix de cossenos diretores </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="88" column="19" bodyfile="lib/EKF/EKF.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classekf_1_1EKF_1a8d016a5adf9aa5f33a8c9e1f7dd73592" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t ekf::EKF::messageGPS</definition>
+        <argsstring></argsstring>
+        <name>messageGPS</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="89" column="11" bodyfile="lib/EKF/EKF.h" bodystart="89" bodyend="-1"/>
+        <referencedby refid="main_8cpp_1afe461d27b9c48d5921c00d521181f12f" compoundref="main_8cpp" startline="50" endline="59">loop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classekf_1_1EKF_1af019016496e0328e5d9ea3cb6462e52c" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ekf::EKF::p</definition>
+        <argsstring></argsstring>
+        <name>p</name>
+        <initializer>= <ref refid="classekf_1_1EKF_1ac02e28e5bd4b3e90d3ccb3dd1127e7b2" kindref="member">pFull</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Número de linhas da matriz H. Assume 3 quando apenas a MARG está disponível e 6 quando MARG/GPS estão disponíveis. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="92" column="7" bodyfile="lib/EKF/EKF.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classekf_1_1EKF_1ae4417522e93314005316a236b324f2a5" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ekf::EKF::n</definition>
+        <argsstring></argsstring>
+        <name>n</name>
+        <initializer>= 15</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Números de estados. q, b_giro, vel, b_acel, posicao </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="94" column="7" bodyfile="lib/EKF/EKF.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classekf_1_1EKF_1a5d610d6e3174f24f9be38e7da3d44bc0" prot="public" static="no" mutable="no">
+        <type>const float</type>
+        <definition>const float ekf::EKF::sigma_giro_squared</definition>
+        <argsstring></argsstring>
+        <name>sigma_giro_squared</name>
+        <initializer>= 1e-3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Quadrado do desvio padrão do giroscópio. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="96" column="15" bodyfile="lib/EKF/EKF.h" bodystart="96" bodyend="-1"/>
+        <referencedby refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" compoundref="EKF_8cpp" startline="39" endline="89">begin</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classekf_1_1EKF_1a883bdaa556cb199f75216286386523c1" prot="public" static="no" mutable="no">
+        <type>const float</type>
+        <definition>const float ekf::EKF::sigma_bias_giro_squared</definition>
+        <argsstring></argsstring>
+        <name>sigma_bias_giro_squared</name>
+        <initializer>= 1e-6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Quadrado do desvio padrão do bias do giroscópio. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="98" column="15" bodyfile="lib/EKF/EKF.h" bodystart="98" bodyend="-1"/>
+        <referencedby refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" compoundref="EKF_8cpp" startline="39" endline="89">begin</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classekf_1_1EKF_1a32f1a9dbf7d18465284fb3517a1d9423" prot="public" static="no" mutable="no">
+        <type>const float</type>
+        <definition>const float ekf::EKF::sigma_acel_squared</definition>
+        <argsstring></argsstring>
+        <name>sigma_acel_squared</name>
+        <initializer>= 1e-3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Quadrado do desvio padrão do acelerômetro. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="100" column="15" bodyfile="lib/EKF/EKF.h" bodystart="100" bodyend="-1"/>
+        <referencedby refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" compoundref="EKF_8cpp" startline="39" endline="89">begin</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classekf_1_1EKF_1a74da314972c8273b5ffe17078c6642e3" prot="public" static="no" mutable="no">
+        <type>const float</type>
+        <definition>const float ekf::EKF::sigma_bias_acel_squared</definition>
+        <argsstring></argsstring>
+        <name>sigma_bias_acel_squared</name>
+        <initializer>= 1e-6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Quadrado do desvio padrão do bias do acelerômetro. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="102" column="15" bodyfile="lib/EKF/EKF.h" bodystart="102" bodyend="-1"/>
+        <referencedby refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" compoundref="EKF_8cpp" startline="39" endline="89">begin</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classekf_1_1EKF_1a2ea4005a93d82e6b448fdb4fd4e36dd1" prot="public" static="no" mutable="no">
+        <type>const float</type>
+        <definition>const float ekf::EKF::sigma_aqua_squared</definition>
+        <argsstring></argsstring>
+        <name>sigma_aqua_squared</name>
+        <initializer>= 1e-3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Quadrado do desvio padrão da observação do quatérnion. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="104" column="15" bodyfile="lib/EKF/EKF.h" bodystart="104" bodyend="-1"/>
+        <referencedby refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" compoundref="EKF_8cpp" startline="39" endline="89">begin</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classekf_1_1EKF_1af1d82a9698078624dd2e65c808126510" prot="public" static="no" mutable="no">
+        <type>const float</type>
+        <definition>const float ekf::EKF::sigma_vel_squared</definition>
+        <argsstring></argsstring>
+        <name>sigma_vel_squared</name>
+        <initializer>= 0.02f * 0.02f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Quadrado do desvio padrão da velocidade no gps. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="106" column="15" bodyfile="lib/EKF/EKF.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classekf_1_1EKF_1a02c9e5ede2b47a773c2f59fb9cf9169c" prot="public" static="no" mutable="no">
+        <type>const float</type>
+        <definition>const float ekf::EKF::sigma_pos_squared</definition>
+        <argsstring></argsstring>
+        <name>sigma_pos_squared</name>
+        <initializer>= 5.0f * 5.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Quadrado do desvio padrão da posição no gps. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="108" column="15" bodyfile="lib/EKF/EKF.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classekf_1_1EKF_1a0e5efc2e95419aaea976414f246a378a" prot="public" static="no" mutable="no">
+        <type>Eigen::Matrix&lt; float, <ref refid="classekf_1_1EKF_1abd8ccdb99191c1f3a7a5c03421f93d87" kindref="member">nFull</ref>, <ref refid="classekf_1_1EKF_1abd8ccdb99191c1f3a7a5c03421f93d87" kindref="member">nFull</ref> &gt;</type>
+        <definition>Eigen::Matrix&lt;float, nFull, nFull&gt; ekf::EKF::Q_k</definition>
+        <argsstring></argsstring>
+        <name>Q_k</name>
+        <initializer>=
+      Eigen::MatrixXf::Identity(<ref refid="classekf_1_1EKF_1abd8ccdb99191c1f3a7a5c03421f93d87" kindref="member">nFull</ref>, <ref refid="classekf_1_1EKF_1abd8ccdb99191c1f3a7a5c03421f93d87" kindref="member">nFull</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Matriz de covariancia de processo discretizada. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="110" column="17" bodyfile="lib/EKF/EKF.h" bodystart="110" bodyend="-1"/>
+        <referencedby refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" compoundref="EKF_8cpp" startline="39" endline="89">begin</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classekf_1_1EKF_1ad55e1ba3736ea08721dec76f03dd9715" prot="public" static="no" mutable="no">
+        <type>Eigen::Matrix&lt; float, <ref refid="classekf_1_1EKF_1ac02e28e5bd4b3e90d3ccb3dd1127e7b2" kindref="member">pFull</ref>, <ref refid="classekf_1_1EKF_1ac02e28e5bd4b3e90d3ccb3dd1127e7b2" kindref="member">pFull</ref> &gt;</type>
+        <definition>Eigen::Matrix&lt;float, pFull, pFull&gt; ekf::EKF::R</definition>
+        <argsstring></argsstring>
+        <name>R</name>
+        <initializer>=
+      Eigen::MatrixXf::Identity(<ref refid="classekf_1_1EKF_1ac02e28e5bd4b3e90d3ccb3dd1127e7b2" kindref="member">pFull</ref>, <ref refid="classekf_1_1EKF_1ac02e28e5bd4b3e90d3ccb3dd1127e7b2" kindref="member">pFull</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Matriz de covariancia de medidas. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="113" column="17" bodyfile="lib/EKF/EKF.h" bodystart="113" bodyend="-1"/>
+        <referencedby refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" compoundref="EKF_8cpp" startline="39" endline="89">begin</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classekf_1_1EKF_1aae2ea65c4362a5f798db195112fb094a" prot="public" static="no" mutable="no">
+        <type>Eigen::Matrix&lt; float, <ref refid="classekf_1_1EKF_1abd8ccdb99191c1f3a7a5c03421f93d87" kindref="member">nFull</ref>, <ref refid="classekf_1_1EKF_1abd8ccdb99191c1f3a7a5c03421f93d87" kindref="member">nFull</ref> &gt;</type>
+        <definition>Eigen::Matrix&lt;float, nFull, nFull&gt; ekf::EKF::mF</definition>
+        <argsstring></argsstring>
+        <name>mF</name>
+        <initializer>= Eigen::MatrixXf::Zero(<ref refid="classekf_1_1EKF_1abd8ccdb99191c1f3a7a5c03421f93d87" kindref="member">nFull</ref>, <ref refid="classekf_1_1EKF_1abd8ccdb99191c1f3a7a5c03421f93d87" kindref="member">nFull</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Matrix de estados linearizada. <simplesect kind="note"><para>mF é utilizado como simbolo de F pq F é um simbolo reservado. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="117" column="17" bodyfile="lib/EKF/EKF.h" bodystart="117" bodyend="-1"/>
+        <referencedby refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" compoundref="EKF_8cpp" startline="39" endline="89">begin</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classekf_1_1EKF_1a78dd6de9d37bc221394db5e9cca2086f" prot="public" static="no" mutable="no">
+        <type>Eigen::Matrix&lt; float, <ref refid="classekf_1_1EKF_1abd8ccdb99191c1f3a7a5c03421f93d87" kindref="member">nFull</ref>, <ref refid="classekf_1_1EKF_1abd8ccdb99191c1f3a7a5c03421f93d87" kindref="member">nFull</ref> &gt;</type>
+        <definition>Eigen::Matrix&lt;float, nFull, nFull&gt; ekf::EKF::fi</definition>
+        <argsstring></argsstring>
+        <name>fi</name>
+        <initializer>= Eigen::MatrixXf::Zero(<ref refid="classekf_1_1EKF_1abd8ccdb99191c1f3a7a5c03421f93d87" kindref="member">nFull</ref>, <ref refid="classekf_1_1EKF_1abd8ccdb99191c1f3a7a5c03421f93d87" kindref="member">nFull</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Matriz Jacobiana dos estados. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="119" column="17" bodyfile="lib/EKF/EKF.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classekf_1_1EKF_1a110201c01d9ce3c63a1de068e87be75d" prot="public" static="no" mutable="no">
+        <type>Eigen::Matrix&lt; float, <ref refid="classekf_1_1EKF_1abd8ccdb99191c1f3a7a5c03421f93d87" kindref="member">nFull</ref>, 12 &gt;</type>
+        <definition>Eigen::Matrix&lt;float, nFull, 12&gt; ekf::EKF::G</definition>
+        <argsstring></argsstring>
+        <name>G</name>
+        <initializer>= Eigen::MatrixXf::Zero(<ref refid="classekf_1_1EKF_1abd8ccdb99191c1f3a7a5c03421f93d87" kindref="member">nFull</ref>, 12)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Matriz G de ruido do processo. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="121" column="17" bodyfile="lib/EKF/EKF.h" bodystart="121" bodyend="-1"/>
+        <referencedby refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" compoundref="EKF_8cpp" startline="39" endline="89">begin</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classekf_1_1EKF_1aec9a3a7de4a079cd1dd1baae26a7a6fc" prot="public" static="no" mutable="no">
+        <type>Eigen::Matrix&lt; float, <ref refid="classekf_1_1EKF_1abd8ccdb99191c1f3a7a5c03421f93d87" kindref="member">nFull</ref>, <ref refid="classekf_1_1EKF_1abd8ccdb99191c1f3a7a5c03421f93d87" kindref="member">nFull</ref> &gt;</type>
+        <definition>Eigen::Matrix&lt;float, nFull, nFull&gt; ekf::EKF::P</definition>
+        <argsstring></argsstring>
+        <name>P</name>
+        <initializer>=
+      ((Eigen::VectorXf(<ref refid="classekf_1_1EKF_1ae4417522e93314005316a236b324f2a5" kindref="member">n</ref>) &lt;&lt; .5, .5, .5, .1, .10, .10, 1, 1, 1, .1, .10, .10,
+        1e8, 1e8, 1e8)
+           .finished())
+          .asDiagonal()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Matriz Covariancia </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="123" column="17" bodyfile="lib/EKF/EKF.h" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classekf_1_1EKF_1abd11bc2722fab1c582cc91a39372f2ac" prot="public" static="no" mutable="no">
+        <type>Eigen::Matrix&lt; float, <ref refid="classekf_1_1EKF_1ac02e28e5bd4b3e90d3ccb3dd1127e7b2" kindref="member">pFull</ref>, <ref refid="classekf_1_1EKF_1abd8ccdb99191c1f3a7a5c03421f93d87" kindref="member">nFull</ref> &gt;</type>
+        <definition>Eigen::Matrix&lt;float, pFull, nFull&gt; ekf::EKF::H</definition>
+        <argsstring></argsstring>
+        <name>H</name>
+        <initializer>= Eigen::MatrixXf::Zero(<ref refid="classekf_1_1EKF_1ac02e28e5bd4b3e90d3ccb3dd1127e7b2" kindref="member">pFull</ref>, <ref refid="classekf_1_1EKF_1abd8ccdb99191c1f3a7a5c03421f93d87" kindref="member">nFull</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Matriz sensibilidade </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="129" column="17" bodyfile="lib/EKF/EKF.h" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classekf_1_1EKF_1a87a29899f611c68db72263cc0be496c7" prot="public" static="no" mutable="no">
+        <type>Eigen::Matrix&lt; float, <ref refid="classekf_1_1EKF_1abd8ccdb99191c1f3a7a5c03421f93d87" kindref="member">nFull</ref>, <ref refid="classekf_1_1EKF_1ac02e28e5bd4b3e90d3ccb3dd1127e7b2" kindref="member">pFull</ref> &gt;</type>
+        <definition>Eigen::Matrix&lt;float, nFull, pFull&gt; ekf::EKF::K</definition>
+        <argsstring></argsstring>
+        <name>K</name>
+        <initializer>=
+      Eigen::MatrixXf::Identity(<ref refid="classekf_1_1EKF_1abd8ccdb99191c1f3a7a5c03421f93d87" kindref="member">nFull</ref>, <ref refid="classekf_1_1EKF_1ac02e28e5bd4b3e90d3ccb3dd1127e7b2" kindref="member">pFull</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Ganho de Kalman </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="131" column="17" bodyfile="lib/EKF/EKF.h" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classekf_1_1EKF_1ad1c353f958f3c41141c88339793745aa" prot="public" static="no" mutable="no">
+        <type>Eigen::Vector&lt; float, <ref refid="classekf_1_1EKF_1abd8ccdb99191c1f3a7a5c03421f93d87" kindref="member">nFull</ref>+1 &gt;</type>
+        <definition>Eigen::Vector&lt;float, nFull + 1&gt; ekf::EKF::deltaChi</definition>
+        <argsstring></argsstring>
+        <name>deltaChi</name>
+        <initializer>= Eigen::VectorXf::Zero(<ref refid="classekf_1_1EKF_1abd8ccdb99191c1f3a7a5c03421f93d87" kindref="member">nFull</ref> + 1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Vetor de estados perturbados do estados estimados do <ref refid="classekf_1_1EKF" kindref="compound">EKF</ref>. <simplesect kind="warning"><para>deltaChi possui dimensão 15+1, o primeiro elemento não é calculado pelo filtro mas computado na #updateStates(). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="138" column="17" bodyfile="lib/EKF/EKF.h" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classekf_1_1EKF_1ae4be03b8440c0f1185141ecc359534df" prot="public" static="no" mutable="no">
+        <type>Eigen::Vector&lt; float, <ref refid="classekf_1_1EKF_1ac02e28e5bd4b3e90d3ccb3dd1127e7b2" kindref="member">pFull</ref> &gt;</type>
+        <definition>Eigen::Vector&lt;float, pFull&gt; ekf::EKF::deltaYObs</definition>
+        <argsstring></argsstring>
+        <name>deltaYObs</name>
+        <initializer>= Eigen::VectorXf::Zero(<ref refid="classekf_1_1EKF_1ac02e28e5bd4b3e90d3ccb3dd1127e7b2" kindref="member">pFull</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Erro das observações </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="140" column="17" bodyfile="lib/EKF/EKF.h" bodystart="140" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classekf_1_1EKF_1a50b05a6fb2c055d9c37e44138a05b08e" prot="public" static="no" mutable="no">
+        <type>Eigen::Vector3f *</type>
+        <definition>Eigen::Vector3f* ekf::EKF::biasGyro</definition>
+        <argsstring></argsstring>
+        <name>biasGyro</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Observações preditas *<zwj/>/ Eigen::VectorXf yPreditas = Eigen::VectorXf::Zero(15); void integrationOfStates(); void updateStates(); void predictionStage(); void updateStage(); void updateF(); void updatefi(); void updateHq(); void updateHv(); void updateHp();</para>
+<para>void updateOfMeasurements(); void positionIntegration(); void updateBaseRef(); void updateNedPos(); void updateNedVel();</para>
+<para>/*! Vetor ponteiro do bias do giroscópio </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="163" column="19" bodyfile="lib/EKF/EKF.h" bodystart="163" bodyend="-1"/>
+        <referencedby refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" compoundref="EKF_8cpp" startline="39" endline="89">begin</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classekf_1_1EKF_1a1ac62c76df373623c4cfa0b2b37564db" prot="public" static="no" mutable="no">
+        <type>Eigen::Vector3f *</type>
+        <definition>Eigen::Vector3f* ekf::EKF::biasAccel</definition>
+        <argsstring></argsstring>
+        <name>biasAccel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Vetor ponteiro do bias do acelerômetro </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="165" column="19" bodyfile="lib/EKF/EKF.h" bodystart="165" bodyend="-1"/>
+        <referencedby refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" compoundref="EKF_8cpp" startline="39" endline="89">begin</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classekf_1_1EKF_1aea7bda69ce19f724930eb8c691272508" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ekf::EKF::EKF</definition>
+        <argsstring>()</argsstring>
+        <name>EKF</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="51" column="3" bodyfile="lib/EKF/EKF.cpp" bodystart="32" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ekf::EKF::begin</definition>
+        <argsstring>(float dt)</argsstring>
+        <name>begin</name>
+        <param>
+          <type>float</type>
+          <declname>dt</declname>
+          <defname>_dt</defname>
+        </param>
+        <briefdescription>
+<para>Inicializacao do filtro de Kalman. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Inicializa e configura:o GPS, a classe timeClass, instancia os sensores <ref refid="classekf_1_1EKF_1a30d3adf68cc6ee599fec8fa45a697bbb" kindref="member">accel</ref>, <ref refid="classekf_1_1EKF_1af990ea0dbcd3f286f04584ab663d08e6" kindref="member">gyro</ref> e <ref refid="classekf_1_1EKF_1a3f84435c646a27ad0f922e5205c13eb3" kindref="member">mag</ref>; e Configura os valores padrões da matrizes #F, <ref refid="classekf_1_1EKF_1a110201c01d9ce3c63a1de068e87be75d" kindref="member">G</ref> e <ref refid="classekf_1_1EKF_1abd11bc2722fab1c582cc91a39372f2ac" kindref="member">H</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+<para>HACK: <xrefsect id="hack_1_hack000001"><xreftitle>( ͡❛ ͜ʖ ͡❛) </xreftitle><xrefdescription><para><linebreak/>
+ <ref refid="classekf_1_1EKF_1a30d3adf68cc6ee599fec8fa45a697bbb" kindref="member">accel</ref>, <ref refid="classekf_1_1EKF_1af990ea0dbcd3f286f04584ab663d08e6" kindref="member">gyro</ref> e <ref refid="classekf_1_1EKF_1a3f84435c646a27ad0f922e5205c13eb3" kindref="member">mag</ref> são ponteiros. Quando as medidas são atualizadas na biblioteca <ref refid="classIMU" kindref="compound">IMU</ref>, o vetor é modificado na <ref refid="classekf_1_1EKF" kindref="compound">EKF</ref>. </para>
+</xrefdescription></xrefsect></para>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="53" column="8" bodyfile="lib/EKF/EKF.cpp" bodystart="39" bodyend="89"/>
+        <references refid="classIMU_1a9a145f45e2e08cae0f363747c5603bd1" compoundref="IMU_8h" startline="73">IMU::_biasAccel</references>
+        <references refid="classIMU_1a9d22cd7cb7bb93f2e04aa713aed73532" compoundref="IMU_8h" startline="76">IMU::_biasGyro</references>
+        <references refid="classekf_1_1EKF_1a30d3adf68cc6ee599fec8fa45a697bbb" compoundref="EKF_8h" startline="58">accel</references>
+        <references refid="namespaceekf_1a224c884f9fa345bfef8f140150919b3e" compoundref="EKF_8cpp" startline="31">ekf::aqua</references>
+        <references refid="classTIME_1a8cd98765b05a23aa7afe8fa5234b9695" compoundref="TIME_8cpp" startline="21" endline="24">TIME::begin</references>
+        <references refid="classAQUA_1a8809dddd7e4f74f3eb7bd1fc4a604ae4" compoundref="AQUA_8cpp" startline="18" endline="23">AQUA::begin</references>
+        <references refid="classIMU_1ae0d964d2f8ec122be068c41b84bc18a8" compoundref="IMU_8cpp" startline="29" endline="115">IMU::begin</references>
+        <references refid="classekf_1_1EKF_1a1ac62c76df373623c4cfa0b2b37564db" compoundref="EKF_8h" startline="165">biasAccel</references>
+        <references refid="classekf_1_1EKF_1a50b05a6fb2c055d9c37e44138a05b08e" compoundref="EKF_8h" startline="163">biasGyro</references>
+        <references refid="classAQUA_1ae3ddff89a969a0d2a3d3c675ed5b8065" compoundref="AQUA_8cpp" startline="66" endline="83">AQUA::computeAQUAQuaternion</references>
+        <references refid="classekf_1_1EKF_1aee84ca91742c11dd89683930a58d59e3" compoundref="EKF_8h" startline="56">dt</references>
+        <references refid="classekf_1_1EKF_1a110201c01d9ce3c63a1de068e87be75d" compoundref="EKF_8h" startline="121">G</references>
+        <references refid="GPS_8h_1a35c55bcf9a6f5a52f34cb1ab02c91479" compoundref="GPS_8h" startline="181" endline="282">gpsSetup</references>
+        <references refid="classekf_1_1EKF_1af990ea0dbcd3f286f04584ab663d08e6" compoundref="EKF_8h" startline="62">gyro</references>
+        <references refid="classekf_1_1EKF_1a3f84435c646a27ad0f922e5205c13eb3" compoundref="EKF_8h" startline="64">mag</references>
+        <references refid="classekf_1_1EKF_1aae2ea65c4362a5f798db195112fb094a" compoundref="EKF_8h" startline="117">mF</references>
+        <references refid="classekf_1_1EKF_1aa38bc83dfb656519cfcda0c0a589ef16" compoundref="EKF_8h" startline="70">q</references>
+        <references refid="classekf_1_1EKF_1a0e5efc2e95419aaea976414f246a378a" compoundref="EKF_8h" startline="110">Q_k</references>
+        <references refid="classekf_1_1EKF_1a803ccbdd54bfbd96cccf57afa60578a9" compoundref="EKF_8h" startline="68">qObs</references>
+        <references refid="classekf_1_1EKF_1ad55e1ba3736ea08721dec76f03dd9715" compoundref="EKF_8h" startline="113">R</references>
+        <references refid="classIMU_1ac574728dbbc752155239a35c8bbd6e79" compoundref="IMU_8cpp" startline="290" endline="335">IMU::readSensor</references>
+        <references refid="classekf_1_1EKF_1a32f1a9dbf7d18465284fb3517a1d9423" compoundref="EKF_8h" startline="100">sigma_acel_squared</references>
+        <references refid="classekf_1_1EKF_1a2ea4005a93d82e6b448fdb4fd4e36dd1" compoundref="EKF_8h" startline="104">sigma_aqua_squared</references>
+        <references refid="classekf_1_1EKF_1a74da314972c8273b5ffe17078c6642e3" compoundref="EKF_8h" startline="102">sigma_bias_acel_squared</references>
+        <references refid="classekf_1_1EKF_1a883bdaa556cb199f75216286386523c1" compoundref="EKF_8h" startline="98">sigma_bias_giro_squared</references>
+        <references refid="classekf_1_1EKF_1a5d610d6e3174f24f9be38e7da3d44bc0" compoundref="EKF_8h" startline="96">sigma_giro_squared</references>
+        <referencedby refid="main_8cpp_1a4fc01d736fe50cf5b977f755b675f11d" compoundref="main_8cpp" startline="33" endline="47">setup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classekf_1_1EKF_1a651814ff64d234394572e2e7c5703a43" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ekf::EKF::loopEKF</definition>
+        <argsstring>()</argsstring>
+        <name>loopEKF</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Loop do Filtro de Kalaman </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="54" column="8" bodyfile="lib/EKF/EKF.cpp" bodystart="93" bodyend="99"/>
+        <referencedby refid="main_8cpp_1afe461d27b9c48d5921c00d521181f12f" compoundref="main_8cpp" startline="50" endline="59">loop</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>ekf::EKF</label>
+        <link refid="classekf_1_1EKF"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+base</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>BASE</label>
+        <link refid="structBASE"/>
+      </node>
+    </collaborationgraph>
+    <location file="lib/EKF/EKF.h" line="37" column="1" bodyfile="lib/EKF/EKF.h" bodystart="37" bodyend="166"/>
+    <listofallmembers>
+      <member refid="classekf_1_1EKF_1a30d3adf68cc6ee599fec8fa45a697bbb" prot="public" virt="non-virtual"><scope>ekf::EKF</scope><name>accel</name></member>
+      <member refid="classekf_1_1EKF_1acd0f4714eb8ba12355d529580e928439" prot="public" virt="non-virtual"><scope>ekf::EKF</scope><name>base</name></member>
+      <member refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" prot="public" virt="non-virtual"><scope>ekf::EKF</scope><name>begin</name></member>
+      <member refid="classekf_1_1EKF_1a1ac62c76df373623c4cfa0b2b37564db" prot="public" virt="non-virtual"><scope>ekf::EKF</scope><name>biasAccel</name></member>
+      <member refid="classekf_1_1EKF_1a50b05a6fb2c055d9c37e44138a05b08e" prot="public" virt="non-virtual"><scope>ekf::EKF</scope><name>biasGyro</name></member>
+      <member refid="classekf_1_1EKF_1a7dbea0d7c0f7376e7391b6a6a99521b5" prot="public" virt="non-virtual"><scope>ekf::EKF</scope><name>ddr</name></member>
+      <member refid="classekf_1_1EKF_1a1aecb83d5af684f4f8637981089002b9" prot="private" virt="non-virtual"><scope>ekf::EKF</scope><name>DEG_TO_RAD_BY_10000000</name></member>
+      <member refid="classekf_1_1EKF_1ad1c353f958f3c41141c88339793745aa" prot="public" virt="non-virtual"><scope>ekf::EKF</scope><name>deltaChi</name></member>
+      <member refid="classekf_1_1EKF_1ae4be03b8440c0f1185141ecc359534df" prot="public" virt="non-virtual"><scope>ekf::EKF</scope><name>deltaYObs</name></member>
+      <member refid="classekf_1_1EKF_1a93f50b0576c3243487442a9f0934e038" prot="public" virt="non-virtual"><scope>ekf::EKF</scope><name>drNED</name></member>
+      <member refid="classekf_1_1EKF_1ad27f8aac391293234c9e21c02b944cc4" prot="public" virt="non-virtual"><scope>ekf::EKF</scope><name>drNEDgps</name></member>
+      <member refid="classekf_1_1EKF_1aee84ca91742c11dd89683930a58d59e3" prot="public" virt="non-virtual"><scope>ekf::EKF</scope><name>dt</name></member>
+      <member refid="classekf_1_1EKF_1aea7bda69ce19f724930eb8c691272508" prot="public" virt="non-virtual"><scope>ekf::EKF</scope><name>EKF</name></member>
+      <member refid="classekf_1_1EKF_1adc3de40884689bb897ebe90979d6f28f" prot="public" virt="non-virtual"><scope>ekf::EKF</scope><name>euler</name></member>
+      <member refid="classekf_1_1EKF_1a78dd6de9d37bc221394db5e9cca2086f" prot="public" virt="non-virtual"><scope>ekf::EKF</scope><name>fi</name></member>
+      <member refid="classekf_1_1EKF_1a110201c01d9ce3c63a1de068e87be75d" prot="public" virt="non-virtual"><scope>ekf::EKF</scope><name>G</name></member>
+      <member refid="classekf_1_1EKF_1af990ea0dbcd3f286f04584ab663d08e6" prot="public" virt="non-virtual"><scope>ekf::EKF</scope><name>gyro</name></member>
+      <member refid="classekf_1_1EKF_1abd11bc2722fab1c582cc91a39372f2ac" prot="public" virt="non-virtual"><scope>ekf::EKF</scope><name>H</name></member>
+      <member refid="classekf_1_1EKF_1a87a29899f611c68db72263cc0be496c7" prot="public" virt="non-virtual"><scope>ekf::EKF</scope><name>K</name></member>
+      <member refid="classekf_1_1EKF_1a651814ff64d234394572e2e7c5703a43" prot="public" virt="non-virtual"><scope>ekf::EKF</scope><name>loopEKF</name></member>
+      <member refid="classekf_1_1EKF_1a3f84435c646a27ad0f922e5205c13eb3" prot="public" virt="non-virtual"><scope>ekf::EKF</scope><name>mag</name></member>
+      <member refid="classekf_1_1EKF_1a2f7f579eb38461f7396cca2a9a846bbb" prot="public" virt="non-virtual"><scope>ekf::EKF</scope><name>mcd</name></member>
+      <member refid="classekf_1_1EKF_1a8d016a5adf9aa5f33a8c9e1f7dd73592" prot="public" virt="non-virtual"><scope>ekf::EKF</scope><name>messageGPS</name></member>
+      <member refid="classekf_1_1EKF_1aae2ea65c4362a5f798db195112fb094a" prot="public" virt="non-virtual"><scope>ekf::EKF</scope><name>mF</name></member>
+      <member refid="classekf_1_1EKF_1ae4417522e93314005316a236b324f2a5" prot="public" virt="non-virtual"><scope>ekf::EKF</scope><name>n</name></member>
+      <member refid="classekf_1_1EKF_1a88f92d86fabe318656e5ba458bc2e042" prot="public" virt="non-virtual"><scope>ekf::EKF</scope><name>nAtitude</name></member>
+      <member refid="classekf_1_1EKF_1a440b83cfd38de4133d8071a158028c86" prot="public" virt="non-virtual"><scope>ekf::EKF</scope><name>navegationGravity</name></member>
+      <member refid="classekf_1_1EKF_1abd8ccdb99191c1f3a7a5c03421f93d87" prot="public" virt="non-virtual"><scope>ekf::EKF</scope><name>nFull</name></member>
+      <member refid="classekf_1_1EKF_1aec9a3a7de4a079cd1dd1baae26a7a6fc" prot="public" virt="non-virtual"><scope>ekf::EKF</scope><name>P</name></member>
+      <member refid="classekf_1_1EKF_1af019016496e0328e5d9ea3cb6462e52c" prot="public" virt="non-virtual"><scope>ekf::EKF</scope><name>p</name></member>
+      <member refid="classekf_1_1EKF_1ad3a628fffe1f640b4968b8f6f8ef3b14" prot="public" virt="non-virtual"><scope>ekf::EKF</scope><name>pAtitude</name></member>
+      <member refid="classekf_1_1EKF_1ac02e28e5bd4b3e90d3ccb3dd1127e7b2" prot="public" virt="non-virtual"><scope>ekf::EKF</scope><name>pFull</name></member>
+      <member refid="classekf_1_1EKF_1aa38bc83dfb656519cfcda0c0a589ef16" prot="public" virt="non-virtual"><scope>ekf::EKF</scope><name>q</name></member>
+      <member refid="classekf_1_1EKF_1a0e5efc2e95419aaea976414f246a378a" prot="public" virt="non-virtual"><scope>ekf::EKF</scope><name>Q_k</name></member>
+      <member refid="classekf_1_1EKF_1a803ccbdd54bfbd96cccf57afa60578a9" prot="public" virt="non-virtual"><scope>ekf::EKF</scope><name>qObs</name></member>
+      <member refid="classekf_1_1EKF_1ad55e1ba3736ea08721dec76f03dd9715" prot="public" virt="non-virtual"><scope>ekf::EKF</scope><name>R</name></member>
+      <member refid="classekf_1_1EKF_1a833f15f8790f86633d8b02eb2fe3616e" prot="public" virt="non-virtual"><scope>ekf::EKF</scope><name>rNED</name></member>
+      <member refid="classekf_1_1EKF_1a649f7d975dc55413be50d8f1e6bc2559" prot="public" virt="non-virtual"><scope>ekf::EKF</scope><name>rNEDgps</name></member>
+      <member refid="classekf_1_1EKF_1a32f1a9dbf7d18465284fb3517a1d9423" prot="public" virt="non-virtual"><scope>ekf::EKF</scope><name>sigma_acel_squared</name></member>
+      <member refid="classekf_1_1EKF_1a2ea4005a93d82e6b448fdb4fd4e36dd1" prot="public" virt="non-virtual"><scope>ekf::EKF</scope><name>sigma_aqua_squared</name></member>
+      <member refid="classekf_1_1EKF_1a74da314972c8273b5ffe17078c6642e3" prot="public" virt="non-virtual"><scope>ekf::EKF</scope><name>sigma_bias_acel_squared</name></member>
+      <member refid="classekf_1_1EKF_1a883bdaa556cb199f75216286386523c1" prot="public" virt="non-virtual"><scope>ekf::EKF</scope><name>sigma_bias_giro_squared</name></member>
+      <member refid="classekf_1_1EKF_1a5d610d6e3174f24f9be38e7da3d44bc0" prot="public" virt="non-virtual"><scope>ekf::EKF</scope><name>sigma_giro_squared</name></member>
+      <member refid="classekf_1_1EKF_1a02c9e5ede2b47a773c2f59fb9cf9169c" prot="public" virt="non-virtual"><scope>ekf::EKF</scope><name>sigma_pos_squared</name></member>
+      <member refid="classekf_1_1EKF_1af1d82a9698078624dd2e65c808126510" prot="public" virt="non-virtual"><scope>ekf::EKF</scope><name>sigma_vel_squared</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

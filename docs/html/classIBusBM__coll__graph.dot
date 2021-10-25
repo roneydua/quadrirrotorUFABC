@@ -1,0 +1,11 @@
+digraph "IBusBM"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  Node1 [label="{IBusBM\n|+ volatile uint8_t cnt_poll\l+ volatile uint8_t cnt\l_sensor\l+ volatile uint8_t cnt_rec\l- uint8_t state\l- HardwareSerial * stream\l- uint32_t last\l- uint8_t buffer\l- uint8_t ptr\l- uint8_t len\l- uint16_t channel\l- uint16_t chksum\l- uint8_t lchksum\l- uint8_t NumberSensors\l- static const uint8\l_t PROTOCOL_LENGTH\l- static const uint8\l_t PROTOCOL_OVERHEAD\l- static const uint8\l_t PROTOCOL_TIMEGAP\l- static const uint8\l_t PROTOCOL_CHANNELS\l- static const uint8\l_t PROTOCOL_COMMAND40\l- static const uint8\l_t PROTOCOL_COMMAND\l_DISCOVER\l- static const uint8\l_t PROTOCOL_COMMAND_TYPE\l- static const uint8\l_t PROTOCOL_COMMAND_VALUE\l- static const uint8\l_t SENSORMAX\l|+ void begin(HardwareSerial\l &serial, int8_t timerid\l=0, int8_t rxPin=-1, int8\l_t txPin=-1)\l+ uint16_t readChannel\l(uint8_t channelNr)\l+ uint8_t addSensor(uint8\l_t type, uint8_t len=2)\l+ void setSensorMeasurement\l(uint8_t adr, int32_t value)\l+ void loop(void)\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node1 [color="grey25",fontsize="8",style="solid",label=" -IBusBMnext" ,arrowhead="odiamond",fontname="DejaVuSansMono"];
+  Node2 -> Node1 [color="grey25",fontsize="8",style="solid",label=" -sensors" ,arrowhead="odiamond",fontname="DejaVuSansMono"];
+  Node2 [label="{IBusBM::sensorinfo\n|+ uint8_t sensorType\l+ uint8_t sensorLength\l+ int32_t sensorValue\l|}",height=0.2,width=0.4,color="black",URL="$structIBusBM_1_1sensorinfo.html",tooltip=" "];
+}

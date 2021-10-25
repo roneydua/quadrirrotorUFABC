@@ -1,0 +1,356 @@
+.TH "Drone" 3 "Sexta, 17 de Setembro de 2021" "Quadrirrotor" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Drone
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Drone\&.h>\fP
+.SS "Membros Públicos"
+
+.in +1c
+.ti -1c
+.RI "\fBDrone\fP (float _dt)"
+.br
+.ti -1c
+.RI "void \fBupdateStateMatrices\fP (bool &negativeq0)"
+.br
+.ti -1c
+.RI "void \fBconstructJ\fP ()"
+.br
+.in -1c
+.SS "Campos de Dados"
+
+.in +1c
+.ti -1c
+.RI "Eigen::Matrix4f \fBJ\fP"
+.br
+.ti -1c
+.RI "Eigen::Matrix4f \fBJinv\fP"
+.br
+.ti -1c
+.RI "float \fBdt\fP"
+.br
+.ti -1c
+.RI "float \fBdx\fP = 0\&.1f"
+.br
+.ti -1c
+.RI "float \fBmassa\fP = 1\&.135f"
+.br
+.ti -1c
+.RI "const Eigen::DiagonalMatrix< float, 3 > \fBmatrizInercia\fP {10e\-3f, 11e\-3f, 18e\-3f}"
+.br
+.ti -1c
+.RI "const Eigen::DiagonalMatrix< float, 3 > \fBinverseMatrizInercia\fP"
+.br
+.ti -1c
+.RI "Eigen::Vector3f \fBp\fP {0, 0, 0}"
+.br
+.ti -1c
+.RI "Eigen::Vector3f \fBv\fP {0, 0, 0}"
+.br
+.ti -1c
+.RI "Eigen::Vector4f \fBq\fP {1\&.0f, 0\&.0f, 0\&.0f, 0\&.0f}"
+.br
+.ti -1c
+.RI "Eigen::Vector3f \fBw\fP {0\&.0f, 0\&.0f, 0\&.0f}"
+.br
+.ti -1c
+.RI "Eigen::MatrixXf \fBmatAT\fP = Eigen::MatrixXf::Identity(6, 6)"
+.br
+.ti -1c
+.RI "Eigen::MatrixXf \fBmatBT\fP = Eigen::MatrixXf::Zero(6, 3)"
+.br
+.ti -1c
+.RI "Eigen::MatrixXf \fBmatAR\fP = Eigen::MatrixXf::Identity(6, 6)"
+.br
+.ti -1c
+.RI "Eigen::MatrixXf \fBmatBR\fP = Eigen::MatrixXf::Zero(6, 3)"
+.br
+.ti -1c
+.RI "const Eigen::DiagonalMatrix< float, 4 > \fBH\fP"
+.br
+.ti -1c
+.RI "const Eigen::DiagonalMatrix< float, 4 > \fBHinv\fP"
+.br
+.ti -1c
+.RI "const Eigen::Vector4f \fBh\fP {\-3911\&.13f, \-4180\&.05f, \-3620\&.13f, \-4279\&.45f}"
+.br
+.ti -1c
+.RI "int \fBflagSDC\fP = 0"
+.br
+.in -1c
+.SS "Atributos Privados"
+
+.in +1c
+.ti -1c
+.RI "const float \fBL\fP = 0\&.225f"
+.br
+.ti -1c
+.RI "float \fBhalf_dt\fP"
+.br
+.in -1c
+.SH "Descrição detalhada"
+.PP 
+Definição na linha 22 do arquivo Drone\&.h\&.
+.SH "Construtores e Destrutores"
+.PP 
+.SS "Drone::Drone (float _dt)"
+
+.PP
+Definição na linha 13 do arquivo Drone\&.cpp\&.
+.PP
+.nf
+13                       {
+14 
+15   constructJ();
+16   dt = _dt;
+17   half_dt = 0\&.5f * dt;
+18   // matAT = (1\&.0f - dt * dx / massa) * Eigen::Matrix3f::Identity();
+19   matAT\&.bottomRightCorner(3, 3) =
+20       (1\&.0f - dt * dx / massa) * Eigen::Matrix3f::Identity();
+21   // bloco integral
+22   matAT\&.topRightCorner(3, 3) = dt * Eigen::Matrix3f::Identity();
+23 
+24   matBT\&.bottomRightCorner(3, 3) = dt * Eigen::Matrix3f::Identity();
+25   matBR\&.bottomRightCorner(3, 3) = dt * inverseMatrizInercia;
+26 }
+.fi
+.PP
+Referencias constructJ(), dt, dx, half_dt, inverseMatrizInercia, massa, matAT, matBR e matBT\&.
+.SH "Funções membros"
+.PP 
+.SS "void Drone::constructJ ()"
+
+.PP
+Definição na linha 67 do arquivo Drone\&.cpp\&.
+.PP
+.nf
+67                        {
+68 
+69   /* Constantes de força*/
+70   float kf1 = 1\&.2457e-7;
+71   float kf2 = 1\&.4793e-7;
+72   float kf3 = 1\&.4969e-7;
+73   float kf4 = 1\&.3940e-7;
+74   /* Constantes de momento*/
+75   float km1 = 2\&.4656e-9;
+76   float km2 = 3\&.1518e-9;
+77   float km3 = 2\&.7691e-9;
+78   float km4 = 3\&.1051e-9;
+79 
+80   J << -kf1, -kf2, -kf3, -kf4, -L * kf1, 0, L * kf3, 0, 0, L * kf2, 0, -L * kf4,
+81       -km1, km2, -km3, km4;
+82   Jinv = J\&.inverse();
+83 }
+.fi
+.PP
+Referencias J, Jinv e L\&.
+.PP
+Referenciado(a) por Drone()\&.
+.SS "void Drone::updateStateMatrices (bool & negativeq0)"
+Atualiza as matrizes dependentes do estado\&. 
+.PP
+Definição na linha 30 do arquivo Drone\&.cpp\&.
+.PP
+.nf
+30                                                 {
+31 
+32   float _q0 = 0\&.0f;
+33   // HACK
+34   // #if 1
+35   if (negativeq0) {
+36     _q0 = -abs(q(0));
+37   } else {
+38     _q0 = abs(q(0));
+39     // _q0 = q(0);
+40   }
+41   // #endif
+42   // _q0 = q(0);
+43   if (abs(q(0)) > 0\&.0001) {
+44     flagSDC = 1;
+45     matAR(0, 0) = 1\&.0f;
+46     matAR(1, 1) = 1\&.0f;
+47     matAR(2, 2) = 1\&.0f;
+48     matAR\&.topRightCorner(3, 3) =
+49         half_dt * (_q0 * Eigen::Matrix3f::Identity() + ekf::skew(q\&.tail(3)));
+50   } else {
+51     flagSDC = 2;
+52     matAR(0, 0) = -half_dt * w(0) * q(1) + 1\&.0f;
+53     matAR(1, 1) = -half_dt * w(1) * q(2) + 1\&.0f;
+54     matAR(2, 2) = -half_dt * w(2) * q(3) + 1\&.0f;
+55     // _q0 = q(0);
+56     matAR\&.topRightCorner(3, 3) = half_dt * ekf::skew(q\&.tail(3));
+57     matAR(0, 3) = half_dt * (q(1) * q(1));
+58     matAR(1, 4) = half_dt * (q(2) * q(2));
+59     matAR(2, 5) = half_dt * (q(3) * q(3));
+60   }
+61   matAR\&.bottomRightCorner(3, 3) =
+62       -dt * inverseMatrizInercia * ekf::skew(w) * matrizInercia;
+63   matAR(3, 3) = 1\&.0f;
+64   matAR(4, 4) = 1\&.0f;
+65   matAR(5, 5) = 1\&.0f;
+66 }
+.fi
+.PP
+Referencias dt, flagSDC, half_dt, inverseMatrizInercia, matAR, matrizInercia, q, ekf::skew() e w\&.
+.SH "Campos"
+.PP 
+.SS "float Drone::dt"
+
+.PP
+Definição na linha 35 do arquivo Drone\&.h\&.
+.PP
+Referenciado(a) por Drone() e updateStateMatrices()\&.
+.SS "float Drone::dx = 0\&.1f"
+Coeficiente de Arrasto 
+.PP
+Definição na linha 37 do arquivo Drone\&.h\&.
+.PP
+Referenciado(a) por Drone()\&.
+.SS "int Drone::flagSDC = 0"
+
+.PP
+Definição na linha 88 do arquivo Drone\&.h\&.
+.PP
+Referenciado(a) por updateStateMatrices()\&.
+.SS "const Eigen::DiagonalMatrix<float, 4> Drone::H"
+\fBValor inicial:\fP
+.PP
+.nf
+=
+      (Eigen::Vector4f(4) << 0\&.724048f, 0\&.73493f, 0\&.707656f, 0\&.727027f)
+          \&.finished()
+          \&.asDiagonal()
+.fi
+Matrix H conversão u to rotations 
+.PP
+Definição na linha 74 do arquivo Drone\&.h\&.
+.SS "const Eigen::Vector4f Drone::h {\-3911\&.13f, \-4180\&.05f, \-3620\&.13f, \-4279\&.45f}"
+Vector h da conversão u to rotations 
+.PP
+Definição na linha 84 do arquivo Drone\&.h\&.
+.SS "float Drone::half_dt\fC [private]\fP"
+
+.PP
+Definição na linha 27 do arquivo Drone\&.h\&.
+.PP
+Referenciado(a) por Drone() e updateStateMatrices()\&.
+.SS "const Eigen::DiagonalMatrix<float, 4> Drone::Hinv"
+\fBValor inicial:\fP
+.PP
+.nf
+=
+      (Eigen::Vector4f(4) << 1\&.0f / 0\&.724048f, 1\&.0f / 0\&.73493f,
+       1\&.0f / 0\&.707656f, 1\&.0f / 0\&.727027f)
+          \&.finished()
+          \&.asDiagonal()
+.fi
+.PP
+Definição na linha 78 do arquivo Drone\&.h\&.
+.SS "const Eigen::DiagonalMatrix<float, 3> Drone::inverseMatrizInercia"
+\fBValor inicial:\fP
+.PP
+.nf
+=
+      matrizInercia\&.inverse()
+.fi
+Inversa da matriz de momentos de inércia\&. 
+.PP
+\fBObservação\fP
+.RS 4
+São utilizadas as classes DiagonalMatrix para economia de memoria (n vezes menos)\&. Todavia deve-se ter cuidado com a limitação de operações desta classe\&. 
+.RE
+.PP
+
+.PP
+Definição na linha 53 do arquivo Drone\&.h\&.
+.PP
+Referenciado(a) por Drone() e updateStateMatrices()\&.
+.SS "Eigen::Matrix4f Drone::J"
+Mapa quadrado das rotações para u=[T, mx, my, mz] 
+.PP
+Definição na linha 31 do arquivo Drone\&.h\&.
+.PP
+Referenciado(a) por constructJ()\&.
+.SS "Eigen::Matrix4f Drone::Jinv"
+Mapa u=[T, mx, my, mz] para quadrado das rotações 
+.PP
+Definição na linha 33 do arquivo Drone\&.h\&.
+.PP
+Referenciado(a) por constructJ()\&.
+.SS "const float Drone::L = 0\&.225f\fC [private]\fP"
+Braço do quadro\&. 
+.PP
+Definição na linha 26 do arquivo Drone\&.h\&.
+.PP
+Referenciado(a) por constructJ()\&.
+.SS "float Drone::massa = 1\&.135f"
+'Massa do quadrirrotor em kg' 
+.PP
+Definição na linha 39 do arquivo Drone\&.h\&.
+.PP
+Referenciado(a) por Drone()\&.
+.SS "Eigen::MatrixXf Drone::matAR = Eigen::MatrixXf::Identity(6, 6)"
+Matriz de estados rotacional discreta\&. 
+.PP
+Definição na linha 70 do arquivo Drone\&.h\&.
+.PP
+Referenciado(a) por updateStateMatrices()\&.
+.SS "Eigen::MatrixXf Drone::matAT = Eigen::MatrixXf::Identity(6, 6)"
+Matrix de estados translacional discreta\&. 
+.PP
+Definição na linha 65 do arquivo Drone\&.h\&.
+.PP
+Referenciado(a) por Drone()\&.
+.SS "Eigen::MatrixXf Drone::matBR = Eigen::MatrixXf::Zero(6, 3)"
+Matriz de controle rotacional discreta\&. 
+.PP
+Definição na linha 72 do arquivo Drone\&.h\&.
+.PP
+Referenciado(a) por Drone()\&.
+.SS "Eigen::MatrixXf Drone::matBT = Eigen::MatrixXf::Zero(6, 3)"
+Matriz de controle translacional discreta\&. 
+.PP
+Definição na linha 68 do arquivo Drone\&.h\&.
+.PP
+Referenciado(a) por Drone()\&.
+.SS "const Eigen::DiagonalMatrix<float, 3> Drone::matrizInercia {10e\-3f, 11e\-3f, 18e\-3f}"
+Matriz de momentos de inércia 
+.PP
+\fBObservação\fP
+.RS 4
+É utilizada a classe DiagonalMatrix para economia de memoria (n vezes menos)\&. Todavia deve-se ter cuidado com a limitação de operações desta classe\&. 
+.RE
+.PP
+
+.PP
+Definição na linha 47 do arquivo Drone\&.h\&.
+.PP
+Referenciado(a) por updateStateMatrices()\&.
+.SS "Eigen::Vector3f Drone::p {0, 0, 0}"
+Posicao translacional 
+.PP
+Definição na linha 56 do arquivo Drone\&.h\&.
+.SS "Eigen::Vector4f Drone::q {1\&.0f, 0\&.0f, 0\&.0f, 0\&.0f}"
+Quaternion de atitude\&. 
+.PP
+Definição na linha 60 do arquivo Drone\&.h\&.
+.PP
+Referenciado(a) por updateStateMatrices() e drone\&.Drone::updateStates()\&.
+.SS "Eigen::Vector3f Drone::v {0, 0, 0}"
+Velocidade translacional 
+.PP
+Definição na linha 58 do arquivo Drone\&.h\&.
+.SS "Eigen::Vector3f Drone::w {0\&.0f, 0\&.0f, 0\&.0f}"
+Vetor de velocidade angular\&. 
+.PP
+Definição na linha 62 do arquivo Drone\&.h\&.
+.PP
+Referenciado(a) por updateStateMatrices()\&.
+
+.SH "Autor"
+.PP 
+Gerado automaticamente por Doxygen para Quadrirrotor a partir do código-fonte\&.

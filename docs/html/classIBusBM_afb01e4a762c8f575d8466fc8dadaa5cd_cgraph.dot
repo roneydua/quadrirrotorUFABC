@@ -1,0 +1,14 @@
+digraph "IBusBM::begin"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  rankdir="LR";
+  Node1 [label="IBusBM::begin",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node2 [label="onTimer",height=0.2,width=0.4,color="black",URL="$IBusBM_8cpp.html#a68b68e72a8323bb91995b38e98cf7d3e",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node3 [label="IBusBM::loop",height=0.2,width=0.4,color="black",URL="$classIBusBM.html#a3219abe525dde59156d00538d93faa11",tooltip=" "];
+  Node3 -> Node3 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+}

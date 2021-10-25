@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Quadrirrotor: Código-Fonte de lib/RICCATI/Riccati.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Quadrirrotor
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Busca','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_c512fa13478e4b8bbcd706bda4ab9220.html">RICCATI</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Riccati.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="Riccati_8h.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#ifndef RICCATI_H</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">  #define RICCATI_H</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">  #ifdef __GNUC__</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="comment">// #include &quot;../../../quadricopterFinal/lib/GRUPO_QUAT/GRUPO_QUAT.h&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #define DEBUG</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">    #include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #define PRINT_MAT(X) cout &lt;&lt; #X &lt;&lt; &quot;:\n&quot;</span> &lt;&lt; X &lt;&lt; &quot;\n&quot;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">  #else</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">    #include &quot;Arduino.h&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="GRUPO__QUAT_8h.html">GRUPO_QUAT.h</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">  #endif</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">  #include &lt;eigen3/Eigen/Dense&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classRiccati.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="classRiccati.html">Riccati</a> {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classRiccati.html#a376f84745fd4a33cb6e058e0439f3dfb">   29</a></span>&#160;  Eigen::MatrixXf <a class="code" href="classRiccati.html#a376f84745fd4a33cb6e058e0439f3dfb">K</a>, K_new;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classRiccati.html#a9e4a8b9bd057ebcc4f4b90fd0cd8a8b9">   31</a></span>&#160;  Eigen::MatrixXf *<a class="code" href="classRiccati.html#a9e4a8b9bd057ebcc4f4b90fd0cd8a8b9">phi</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classRiccati.html#ac421d68d5125e3ef11fba379329f2e67">   33</a></span>&#160;  Eigen::MatrixXf *<a class="code" href="classRiccati.html#ac421d68d5125e3ef11fba379329f2e67">gamma</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classRiccati.html#ab245227419e64ebd2b9dd0e28e1c5243">   35</a></span>&#160;  Eigen::MatrixXf *<a class="code" href="classRiccati.html#ab245227419e64ebd2b9dd0e28e1c5243">R</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classRiccati.html#ae1d081ecfa2a764d7fc8cc316c376f04">   37</a></span>&#160;  Eigen::MatrixXf *<a class="code" href="classRiccati.html#ae1d081ecfa2a764d7fc8cc316c376f04">Q</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classRiccati.html#a301a6f535f228e71c09320583bb49d4e">   38</a></span>&#160;  Eigen::MatrixXf <a class="code" href="classRiccati.html#a301a6f535f228e71c09320583bb49d4e">I</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classRiccati.html#aef6ba29bba94e293a8ea4c279b565164">   40</a></span>&#160;  Eigen::MatrixXf <a class="code" href="classRiccati.html#aef6ba29bba94e293a8ea4c279b565164">Ls</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classRiccati.html#ab289ee3b6f819e200510a17344fc74e3">   41</a></span>&#160;  <span class="keywordtype">int</span> num_iterations = 0;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <a class="code" href="classRiccati.html">Riccati</a>(Eigen::MatrixXf &amp;_A, Eigen::MatrixXf &amp;_B, Eigen::MatrixXf &amp;_Q,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;          Eigen::MatrixXf &amp;_R);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordtype">bool</span> dareInteration(<span class="keyword">const</span> <span class="keywordtype">float</span> &amp;tolerance = 1.0E-5,</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                      <span class="keyword">const</span> uint16_t iter_max = 100);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;};</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">/* RICCATI_H */</span></div>
+<div class="ttc" id="aGRUPO__QUAT_8h_html"><div class="ttname"><a href="GRUPO__QUAT_8h.html">GRUPO_QUAT.h</a></div><div class="ttdoc">Cabecalho com funcoes de quaternion.</div></div>
+<div class="ttc" id="aclassRiccati_html"><div class="ttname"><a href="classRiccati.html">Riccati</a></div><div class="ttdef"><b>Definition:</b> <a href="Riccati_8h_source.html#l00024">Riccati.h:24</a></div></div>
+<div class="ttc" id="aclassRiccati_html_a301a6f535f228e71c09320583bb49d4e"><div class="ttname"><a href="classRiccati.html#a301a6f535f228e71c09320583bb49d4e">Riccati::I</a></div><div class="ttdeci">Eigen::MatrixXf I</div><div class="ttdef"><b>Definition:</b> <a href="Riccati_8h_source.html#l00038">Riccati.h:38</a></div></div>
+<div class="ttc" id="aclassRiccati_html_a376f84745fd4a33cb6e058e0439f3dfb"><div class="ttname"><a href="classRiccati.html#a376f84745fd4a33cb6e058e0439f3dfb">Riccati::K</a></div><div class="ttdeci">Eigen::MatrixXf K</div><div class="ttdef"><b>Definition:</b> <a href="Riccati_8h_source.html#l00029">Riccati.h:29</a></div></div>
+<div class="ttc" id="aclassRiccati_html_a9e4a8b9bd057ebcc4f4b90fd0cd8a8b9"><div class="ttname"><a href="classRiccati.html#a9e4a8b9bd057ebcc4f4b90fd0cd8a8b9">Riccati::phi</a></div><div class="ttdeci">Eigen::MatrixXf * phi</div><div class="ttdef"><b>Definition:</b> <a href="Riccati_8h_source.html#l00031">Riccati.h:31</a></div></div>
+<div class="ttc" id="aclassRiccati_html_ab245227419e64ebd2b9dd0e28e1c5243"><div class="ttname"><a href="classRiccati.html#ab245227419e64ebd2b9dd0e28e1c5243">Riccati::R</a></div><div class="ttdeci">Eigen::MatrixXf * R</div><div class="ttdef"><b>Definition:</b> <a href="Riccati_8h_source.html#l00035">Riccati.h:35</a></div></div>
+<div class="ttc" id="aclassRiccati_html_ac421d68d5125e3ef11fba379329f2e67"><div class="ttname"><a href="classRiccati.html#ac421d68d5125e3ef11fba379329f2e67">Riccati::gamma</a></div><div class="ttdeci">Eigen::MatrixXf * gamma</div><div class="ttdef"><b>Definition:</b> <a href="Riccati_8h_source.html#l00033">Riccati.h:33</a></div></div>
+<div class="ttc" id="aclassRiccati_html_ae1d081ecfa2a764d7fc8cc316c376f04"><div class="ttname"><a href="classRiccati.html#ae1d081ecfa2a764d7fc8cc316c376f04">Riccati::Q</a></div><div class="ttdeci">Eigen::MatrixXf * Q</div><div class="ttdef"><b>Definition:</b> <a href="Riccati_8h_source.html#l00037">Riccati.h:37</a></div></div>
+<div class="ttc" id="aclassRiccati_html_aef6ba29bba94e293a8ea4c279b565164"><div class="ttname"><a href="classRiccati.html#aef6ba29bba94e293a8ea4c279b565164">Riccati::Ls</a></div><div class="ttdeci">Eigen::MatrixXf Ls</div><div class="ttdef"><b>Definition:</b> <a href="Riccati_8h_source.html#l00040">Riccati.h:40</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

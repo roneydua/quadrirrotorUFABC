@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Quadrirrotor: Código-Fonte de python/drone.py</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Quadrirrotor
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Busca','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_7837fde3ab9c1fb2fc5be7b717af8d79.html">python</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">drone.py</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="drone_8py.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespacedrone.html">    1</a></span>&#160;<span class="comment">#!/usr/bin/env python3</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"># -*- coding: utf-8 -*-</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="stringliteral">Created on Thu May  6 08:06:32 2021</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="stringliteral">@author: roney</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">import</span> sympy <span class="keyword">as</span> sp</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">import</span> numpy <span class="keyword">as</span> np</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">import</span> funcoesQuaternion <span class="keyword">as</span> fq</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="namespacedrone.html#a8f7a522ea8dc8ba5116e6d8a8e1595d7">   11</a></span>&#160;grav = np.array([0.0, 0.0, 9.81])</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"># momentos de inercia</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="namespacedrone.html#a8fcbcb21c48edde073ec2a3013da3cd9">   13</a></span>&#160;Ix = 16.83e-3</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="namespacedrone.html#a398b450771be74d8d15986196bab8f3d">   14</a></span>&#160;Iy = 16.83e-3</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="namespacedrone.html#abbf75d4d89903bb357e8e2ddcbf72bbe">   15</a></span>&#160;Iz = 28.34e-3</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"># constantes dos motores</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="namespacedrone.html#ab194ab949cad78f85bdb8238f9731f37">   17</a></span>&#160;kf = 1.4351e-5</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="namespacedrone.html#a3e06d763422e3ea068add06fd5e3a98b">   18</a></span>&#160;km = 2.4086e-7</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"># paramentros geometricos do quadrirrotor</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="namespacedrone.html#ad00e49de24779292915067e7a3bb92e1">   20</a></span>&#160;b = 0.26</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="namespacedrone.html#a7475c0a87d5c8ae96bdc6cb6e9d54a29">   21</a></span>&#160;m = 1.03</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="namespacedrone.html#accb330ae92eee9c3a357abd54ed1864f">   22</a></span>&#160;Ir = 5.0e-5</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"># tempo de assentamento do da dinamica do motor</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="namespacedrone.html#a0bbb8a76162e5380bf929576efae9ef6">   24</a></span>&#160;ta = 0.03</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="namespacedrone.html#a59e2545248877aa345ae8aacc0c80a7b">   25</a></span>&#160;DA = 0.5</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"># %%Classe drone SDRE discreto</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"># Classe drone discreto</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"># definiçẽos básicas</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classdrone_1_1Drone.html">   33</a></span>&#160;<span class="keyword">class </span><a class="code" href="classdrone_1_1Drone.html">Drone</a>:</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="stringliteral">    construtor</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="stringliteral">    @param self The object pointer.</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="stringliteral">    &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classdrone_1_1Drone.html#a53ec705858db58590204fd0078526c4c">   39</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classdrone_1_1Drone.html#a53ec705858db58590204fd0078526c4c">__init__</a>(self, *args, **kwargs):</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;The constructor&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classdrone_1_1Drone.html#aabc825782675cacf5cb90697307ffcda">   43</a></span>&#160;        self.<a class="code" href="classdrone_1_1Drone.html#aabc825782675cacf5cb90697307ffcda">Ix</a>Ix = Ix</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        </div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classdrone_1_1Drone.html#a8b798f66003e45a5d247cc82fcc72e56">   45</a></span>&#160;        self.<a class="code" href="classdrone_1_1Drone.html#a8b798f66003e45a5d247cc82fcc72e56">Iy</a>Iy = Iy</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        </div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classdrone_1_1Drone.html#a9db59ee7bf789b5a95093b62f174c1bb">   47</a></span>&#160;        self.<a class="code" href="classdrone_1_1Drone.html#a9db59ee7bf789b5a95093b62f174c1bb">Iz</a>Iz = Iz</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classdrone_1_1Drone.html#a943c21f6157d09063f82a66096b44c41">   49</a></span>&#160;        self.<a class="code" href="classdrone_1_1Drone.html#a943c21f6157d09063f82a66096b44c41">kf</a>kf = kf</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classdrone_1_1Drone.html#af9c6bf08da282fc597d8254f1baaf712">   50</a></span>&#160;        self.<a class="code" href="classdrone_1_1Drone.html#af9c6bf08da282fc597d8254f1baaf712">km</a>km = km</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classdrone_1_1Drone.html#a78f0f79a324e30e11d256be5606460dd">   51</a></span>&#160;        self.<a class="code" href="classdrone_1_1Drone.html#a78f0f79a324e30e11d256be5606460dd">b</a>b = b</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classdrone_1_1Drone.html#ae0e8a53e20ef086117887ff8620f4c27">   52</a></span>&#160;        self.<a class="code" href="classdrone_1_1Drone.html#ae0e8a53e20ef086117887ff8620f4c27">grav</a>grav = grav</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classdrone_1_1Drone.html#a3f9b2ff1babea99866d2e6c3247f99c5">   53</a></span>&#160;        self.<a class="code" href="classdrone_1_1Drone.html#a3f9b2ff1babea99866d2e6c3247f99c5">m</a>m = m</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="comment"># limites dos motores rad/s</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classdrone_1_1Drone.html#a87dd118ef29eda628d846147cb2acc03">   55</a></span>&#160;        self.<a class="code" href="classdrone_1_1Drone.html#a87dd118ef29eda628d846147cb2acc03">omegaSquareMin</a>omegaSquareMin = 296.0 ** 2.0</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classdrone_1_1Drone.html#afa9cda5efc38f9e83462d9ce4a7a0b48">   56</a></span>&#160;        self.<a class="code" href="classdrone_1_1Drone.html#afa9cda5efc38f9e83462d9ce4a7a0b48">omegaSquareMax</a>omegaSquareMax = 657.0 ** 2.0</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classdrone_1_1Drone.html#aac6da8f1354e10c00e27b024d71ffbeb">   57</a></span>&#160;        self.<a class="code" href="classdrone_1_1Drone.html#aac6da8f1354e10c00e27b024d71ffbeb">q</a>q = np.array([1.0, 0.0, 0.0, 0.0])</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classdrone_1_1Drone.html#a76f6bdaa9ba1a10abd1b727c1681a2f1">   59</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classdrone_1_1Drone.html#a76f6bdaa9ba1a10abd1b727c1681a2f1">updateStates</a>(self):</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Returna o conjugado&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">return</span> fq.conj(self.<a class="code" href="classdrone_1_1Drone.html#aac6da8f1354e10c00e27b024d71ffbeb">q</a>q)</div>
+<div class="ttc" id="aclassdrone_1_1Drone_html"><div class="ttname"><a href="classdrone_1_1Drone.html">drone.Drone</a></div><div class="ttdef"><b>Definition:</b> <a href="drone_8py_source.html#l00033">drone.py:33</a></div></div>
+<div class="ttc" id="aclassdrone_1_1Drone_html_a3f9b2ff1babea99866d2e6c3247f99c5"><div class="ttname"><a href="classdrone_1_1Drone.html#a3f9b2ff1babea99866d2e6c3247f99c5">drone.Drone.m</a></div><div class="ttdeci">m</div><div class="ttdef"><b>Definition:</b> <a href="drone_8py_source.html#l00053">drone.py:53</a></div></div>
+<div class="ttc" id="aclassdrone_1_1Drone_html_a53ec705858db58590204fd0078526c4c"><div class="ttname"><a href="classdrone_1_1Drone.html#a53ec705858db58590204fd0078526c4c">drone.Drone.__init__</a></div><div class="ttdeci">def __init__(self, *args, **kwargs)</div><div class="ttdef"><b>Definition:</b> <a href="drone_8py_source.html#l00039">drone.py:39</a></div></div>
+<div class="ttc" id="aclassdrone_1_1Drone_html_a76f6bdaa9ba1a10abd1b727c1681a2f1"><div class="ttname"><a href="classdrone_1_1Drone.html#a76f6bdaa9ba1a10abd1b727c1681a2f1">drone.Drone.updateStates</a></div><div class="ttdeci">def updateStates(self)</div><div class="ttdef"><b>Definition:</b> <a href="drone_8py_source.html#l00059">drone.py:59</a></div></div>
+<div class="ttc" id="aclassdrone_1_1Drone_html_a78f0f79a324e30e11d256be5606460dd"><div class="ttname"><a href="classdrone_1_1Drone.html#a78f0f79a324e30e11d256be5606460dd">drone.Drone.b</a></div><div class="ttdeci">b</div><div class="ttdef"><b>Definition:</b> <a href="drone_8py_source.html#l00051">drone.py:51</a></div></div>
+<div class="ttc" id="aclassdrone_1_1Drone_html_a87dd118ef29eda628d846147cb2acc03"><div class="ttname"><a href="classdrone_1_1Drone.html#a87dd118ef29eda628d846147cb2acc03">drone.Drone.omegaSquareMin</a></div><div class="ttdeci">omegaSquareMin</div><div class="ttdef"><b>Definition:</b> <a href="drone_8py_source.html#l00055">drone.py:55</a></div></div>
+<div class="ttc" id="aclassdrone_1_1Drone_html_a8b798f66003e45a5d247cc82fcc72e56"><div class="ttname"><a href="classdrone_1_1Drone.html#a8b798f66003e45a5d247cc82fcc72e56">drone.Drone.Iy</a></div><div class="ttdeci">Iy</div><div class="ttdoc">Momento de inercia Iy.</div><div class="ttdef"><b>Definition:</b> <a href="drone_8py_source.html#l00045">drone.py:45</a></div></div>
+<div class="ttc" id="aclassdrone_1_1Drone_html_a943c21f6157d09063f82a66096b44c41"><div class="ttname"><a href="classdrone_1_1Drone.html#a943c21f6157d09063f82a66096b44c41">drone.Drone.kf</a></div><div class="ttdeci">kf</div><div class="ttdoc">Constante de força.</div><div class="ttdef"><b>Definition:</b> <a href="drone_8py_source.html#l00049">drone.py:49</a></div></div>
+<div class="ttc" id="aclassdrone_1_1Drone_html_a9db59ee7bf789b5a95093b62f174c1bb"><div class="ttname"><a href="classdrone_1_1Drone.html#a9db59ee7bf789b5a95093b62f174c1bb">drone.Drone.Iz</a></div><div class="ttdeci">Iz</div><div class="ttdoc">Momento de inercia Iz.</div><div class="ttdef"><b>Definition:</b> <a href="drone_8py_source.html#l00047">drone.py:47</a></div></div>
+<div class="ttc" id="aclassdrone_1_1Drone_html_aabc825782675cacf5cb90697307ffcda"><div class="ttname"><a href="classdrone_1_1Drone.html#aabc825782675cacf5cb90697307ffcda">drone.Drone.Ix</a></div><div class="ttdeci">Ix</div><div class="ttdoc">Momento de inercia Ix.</div><div class="ttdef"><b>Definition:</b> <a href="drone_8py_source.html#l00043">drone.py:43</a></div></div>
+<div class="ttc" id="aclassdrone_1_1Drone_html_aac6da8f1354e10c00e27b024d71ffbeb"><div class="ttname"><a href="classdrone_1_1Drone.html#aac6da8f1354e10c00e27b024d71ffbeb">drone.Drone.q</a></div><div class="ttdeci">q</div><div class="ttdef"><b>Definition:</b> <a href="drone_8py_source.html#l00057">drone.py:57</a></div></div>
+<div class="ttc" id="aclassdrone_1_1Drone_html_ae0e8a53e20ef086117887ff8620f4c27"><div class="ttname"><a href="classdrone_1_1Drone.html#ae0e8a53e20ef086117887ff8620f4c27">drone.Drone.grav</a></div><div class="ttdeci">grav</div><div class="ttdef"><b>Definition:</b> <a href="drone_8py_source.html#l00052">drone.py:52</a></div></div>
+<div class="ttc" id="aclassdrone_1_1Drone_html_af9c6bf08da282fc597d8254f1baaf712"><div class="ttname"><a href="classdrone_1_1Drone.html#af9c6bf08da282fc597d8254f1baaf712">drone.Drone.km</a></div><div class="ttdeci">km</div><div class="ttdef"><b>Definition:</b> <a href="drone_8py_source.html#l00050">drone.py:50</a></div></div>
+<div class="ttc" id="aclassdrone_1_1Drone_html_afa9cda5efc38f9e83462d9ce4a7a0b48"><div class="ttname"><a href="classdrone_1_1Drone.html#afa9cda5efc38f9e83462d9ce4a7a0b48">drone.Drone.omegaSquareMax</a></div><div class="ttdeci">omegaSquareMax</div><div class="ttdef"><b>Definition:</b> <a href="drone_8py_source.html#l00056">drone.py:56</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

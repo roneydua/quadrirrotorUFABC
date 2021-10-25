@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compounddef id="dir_97aefd0d527b934f1d99a682da8fe6a9" kind="dir">
+    <compoundname>lib</compoundname>
+    <innerdir refid="dir_31d08e41878a863c8a5e98e00113eeba">lib/AQUA</innerdir>
+    <innerdir refid="dir_23ba2848a540c18a9dfc572cf44e4a8e">lib/CONTROLE</innerdir>
+    <innerdir refid="dir_e938b59efd27c0d7e7402c87a3faf3f8">lib/DRONE</innerdir>
+    <innerdir refid="dir_f81b21074929c51f0f8ec4455f2eeb05">lib/EKF</innerdir>
+    <innerdir refid="dir_12ce51c2f27d7b7c42f475577e8e188a">lib/GRUPO_QUAT</innerdir>
+    <innerdir refid="dir_d0e0a026526f6bba31a4b7e0c38bb1de">lib/IBUSBM</innerdir>
+    <innerdir refid="dir_3554028ee2797c78c7765098b85f4139">lib/IMU</innerdir>
+    <innerdir refid="dir_39c7dc484126c690eab758240f2a6725">lib/MOTORES</innerdir>
+    <innerdir refid="dir_c512fa13478e4b8bbcd706bda4ab9220">lib/RICCATI</innerdir>
+    <innerdir refid="dir_07959693ce74aed3e838ce3cb441c741">lib/RPM</innerdir>
+    <innerdir refid="dir_59564d00a3aa1a8ebc9d93b92831849e">lib/SDRE</innerdir>
+    <innerdir refid="dir_c71cd14614257cd5fbb26ecd4fda3227">lib/TELEMETRIA</innerdir>
+    <innerdir refid="dir_6c721e2e855800aadb2bcd35baf8db9a">lib/TIME</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="lib/"/>
+  </compounddef>
+</doxygen>

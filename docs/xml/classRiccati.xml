@@ -1,0 +1,276 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compounddef id="classRiccati" kind="class" language="C++" prot="public">
+    <compoundname>Riccati</compoundname>
+    <includes refid="Riccati_8h" local="no">Riccati.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classRiccati_1a376f84745fd4a33cb6e058e0439f3dfb" prot="public" static="no" mutable="no">
+        <type>Eigen::MatrixXf</type>
+        <definition>Eigen::MatrixXf Riccati::K</definition>
+        <argsstring></argsstring>
+        <name>K</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Matriz de <ref refid="classRiccati" kindref="compound">Riccati</ref> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/RICCATI/Riccati.h" line="29" column="19" bodyfile="lib/RICCATI/Riccati.h" bodystart="29" bodyend="-1"/>
+        <referencedby refid="classRiccati_1abc12d593a88ea42059950cc2e9f3a0a2" compoundref="Riccati_8cpp" startline="32" endline="62">dareInteration</referencedby>
+        <referencedby refid="classRiccati_1a8a40fb1e8c09aedad7a597bd957b242d" compoundref="Riccati_8cpp" startline="11" endline="23">Riccati</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classRiccati_1a6003e94713ebc33639f013c56d2e06c6" prot="public" static="no" mutable="no">
+        <type>Eigen::MatrixXf</type>
+        <definition>Eigen::MatrixXf Riccati::K_new</definition>
+        <argsstring></argsstring>
+        <name>K_new</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/RICCATI/Riccati.h" line="29" column="21" bodyfile="lib/RICCATI/Riccati.h" bodystart="29" bodyend="-1"/>
+        <referencedby refid="classRiccati_1abc12d593a88ea42059950cc2e9f3a0a2" compoundref="Riccati_8cpp" startline="32" endline="62">dareInteration</referencedby>
+        <referencedby refid="classRiccati_1a8a40fb1e8c09aedad7a597bd957b242d" compoundref="Riccati_8cpp" startline="11" endline="23">Riccati</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classRiccati_1a9e4a8b9bd057ebcc4f4b90fd0cd8a8b9" prot="public" static="no" mutable="no">
+        <type>Eigen::MatrixXf *</type>
+        <definition>Eigen::MatrixXf* Riccati::phi</definition>
+        <argsstring></argsstring>
+        <name>phi</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Ponteiro da matriz de estado. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/RICCATI/Riccati.h" line="31" column="19" bodyfile="lib/RICCATI/Riccati.h" bodystart="31" bodyend="-1"/>
+        <referencedby refid="classRiccati_1abc12d593a88ea42059950cc2e9f3a0a2" compoundref="Riccati_8cpp" startline="32" endline="62">dareInteration</referencedby>
+        <referencedby refid="classRiccati_1a8a40fb1e8c09aedad7a597bd957b242d" compoundref="Riccati_8cpp" startline="11" endline="23">Riccati</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classRiccati_1ac421d68d5125e3ef11fba379329f2e67" prot="public" static="no" mutable="no">
+        <type>Eigen::MatrixXf *</type>
+        <definition>Eigen::MatrixXf* Riccati::gamma</definition>
+        <argsstring></argsstring>
+        <name>gamma</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Ponteiro da matriz de controle. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/RICCATI/Riccati.h" line="33" column="19" bodyfile="lib/RICCATI/Riccati.h" bodystart="33" bodyend="-1"/>
+        <referencedby refid="classRiccati_1a8a40fb1e8c09aedad7a597bd957b242d" compoundref="Riccati_8cpp" startline="11" endline="23">Riccati</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classRiccati_1ab245227419e64ebd2b9dd0e28e1c5243" prot="public" static="no" mutable="no">
+        <type>Eigen::MatrixXf *</type>
+        <definition>Eigen::MatrixXf* Riccati::R</definition>
+        <argsstring></argsstring>
+        <name>R</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Ponteiro da matriz de ponderação do controle </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/RICCATI/Riccati.h" line="35" column="19" bodyfile="lib/RICCATI/Riccati.h" bodystart="35" bodyend="-1"/>
+        <referencedby refid="classRiccati_1abc12d593a88ea42059950cc2e9f3a0a2" compoundref="Riccati_8cpp" startline="32" endline="62">dareInteration</referencedby>
+        <referencedby refid="classRiccati_1a8a40fb1e8c09aedad7a597bd957b242d" compoundref="Riccati_8cpp" startline="11" endline="23">Riccati</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classRiccati_1ae1d081ecfa2a764d7fc8cc316c376f04" prot="public" static="no" mutable="no">
+        <type>Eigen::MatrixXf *</type>
+        <definition>Eigen::MatrixXf* Riccati::Q</definition>
+        <argsstring></argsstring>
+        <name>Q</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Ponteiro da matriz de ponderação dos estados. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/RICCATI/Riccati.h" line="37" column="19" bodyfile="lib/RICCATI/Riccati.h" bodystart="37" bodyend="-1"/>
+        <referencedby refid="classRiccati_1abc12d593a88ea42059950cc2e9f3a0a2" compoundref="Riccati_8cpp" startline="32" endline="62">dareInteration</referencedby>
+        <referencedby refid="classRiccati_1a8a40fb1e8c09aedad7a597bd957b242d" compoundref="Riccati_8cpp" startline="11" endline="23">Riccati</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classRiccati_1a301a6f535f228e71c09320583bb49d4e" prot="public" static="no" mutable="no">
+        <type>Eigen::MatrixXf</type>
+        <definition>Eigen::MatrixXf Riccati::I</definition>
+        <argsstring></argsstring>
+        <name>I</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/RICCATI/Riccati.h" line="38" column="19" bodyfile="lib/RICCATI/Riccati.h" bodystart="38" bodyend="-1"/>
+        <referencedby refid="classRiccati_1abc12d593a88ea42059950cc2e9f3a0a2" compoundref="Riccati_8cpp" startline="32" endline="62">dareInteration</referencedby>
+        <referencedby refid="classRiccati_1a8a40fb1e8c09aedad7a597bd957b242d" compoundref="Riccati_8cpp" startline="11" endline="23">Riccati</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classRiccati_1aef6ba29bba94e293a8ea4c279b565164" prot="public" static="no" mutable="no">
+        <type>Eigen::MatrixXf</type>
+        <definition>Eigen::MatrixXf Riccati::Ls</definition>
+        <argsstring></argsstring>
+        <name>Ls</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Matriz La = (B&apos;PB+R)^-1 * B&apos; </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/RICCATI/Riccati.h" line="40" column="19" bodyfile="lib/RICCATI/Riccati.h" bodystart="40" bodyend="-1"/>
+        <referencedby refid="classControle_1abbe044aad705ef7d663c45275948fd12" compoundref="Controle_8cpp" startline="14" endline="36">Controle::Controle</referencedby>
+        <referencedby refid="classRiccati_1abc12d593a88ea42059950cc2e9f3a0a2" compoundref="Riccati_8cpp" startline="32" endline="62">dareInteration</referencedby>
+        <referencedby refid="classRiccati_1a8a40fb1e8c09aedad7a597bd957b242d" compoundref="Riccati_8cpp" startline="11" endline="23">Riccati</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classRiccati_1ab289ee3b6f819e200510a17344fc74e3" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Riccati::num_iterations</definition>
+        <argsstring></argsstring>
+        <name>num_iterations</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/RICCATI/Riccati.h" line="41" column="7" bodyfile="lib/RICCATI/Riccati.h" bodystart="41" bodyend="-1"/>
+        <referencedby refid="classRiccati_1abc12d593a88ea42059950cc2e9f3a0a2" compoundref="Riccati_8cpp" startline="32" endline="62">dareInteration</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classRiccati_1a8a40fb1e8c09aedad7a597bd957b242d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Riccati::Riccati</definition>
+        <argsstring>(Eigen::MatrixXf &amp;_A, Eigen::MatrixXf &amp;_B, Eigen::MatrixXf &amp;_Q, Eigen::MatrixXf &amp;_R)</argsstring>
+        <name>Riccati</name>
+        <param>
+          <type>Eigen::MatrixXf &amp;</type>
+          <declname>_A</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXf &amp;</type>
+          <declname>_B</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXf &amp;</type>
+          <declname>_Q</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXf &amp;</type>
+          <declname>_R</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>: roney </para>
+</simplesect>
+<simplesect kind="date"><para>: 2021-08-02T14:13:06-03:00 email: <ulink url="mailto:roneyddasilva@gmail.com">roneyddasilva@gmail.com</ulink> @File: <ref refid="Riccati_8cpp" kindref="compound">Riccati.cpp</ref> Last modified by: roney Last modified time: 2021-08-02T14:13:06-03:00 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/RICCATI/Riccati.h" line="43" column="3" bodyfile="lib/RICCATI/Riccati.cpp" bodystart="11" bodyend="23"/>
+        <references refid="classRiccati_1ac421d68d5125e3ef11fba379329f2e67" compoundref="Riccati_8h" startline="33">gamma</references>
+        <references refid="classRiccati_1a301a6f535f228e71c09320583bb49d4e" compoundref="Riccati_8h" startline="38">I</references>
+        <references refid="classRiccati_1a376f84745fd4a33cb6e058e0439f3dfb" compoundref="Riccati_8h" startline="29">K</references>
+        <references refid="classRiccati_1a6003e94713ebc33639f013c56d2e06c6" compoundref="Riccati_8h" startline="29">K_new</references>
+        <references refid="classRiccati_1aef6ba29bba94e293a8ea4c279b565164" compoundref="Riccati_8h" startline="40">Ls</references>
+        <references refid="classRiccati_1a9e4a8b9bd057ebcc4f4b90fd0cd8a8b9" compoundref="Riccati_8h" startline="31">phi</references>
+        <references refid="classRiccati_1ae1d081ecfa2a764d7fc8cc316c376f04" compoundref="Riccati_8h" startline="37">Q</references>
+        <references refid="classRiccati_1ab245227419e64ebd2b9dd0e28e1c5243" compoundref="Riccati_8h" startline="35">R</references>
+      </memberdef>
+      <memberdef kind="function" id="classRiccati_1abc12d593a88ea42059950cc2e9f3a0a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Riccati::dareInteration</definition>
+        <argsstring>(const float &amp;tolerance=1.0E-5, const uint16_t iter_max=100)</argsstring>
+        <name>dareInteration</name>
+        <param>
+          <type>const float &amp;</type>
+          <declname>tolerance</declname>
+          <defval>1.0E-5</defval>
+        </param>
+        <param>
+          <type>const uint16_t</type>
+          <declname>iter_max</declname>
+          <defval>100</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Função de cálculo da solução de Ricccati discreta. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tolerance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>máxima erro permitido. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>iter_max</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Número máximo de iterações </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true se ok, false se numéro máximo de iterações for atingido. </para>
+</simplesect>
+<xrefsect id="todo_1_todo000003"><xreftitle>Atividades futuras</xreftitle><xrefdescription><para>Testar a influencia em armazenar a matrix A.transpose(). </para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+<para>Diferença entre <ref refid="classRiccati_1a6003e94713ebc33639f013c56d2e06c6" kindref="member">K_new</ref> e <ref refid="classRiccati_1a376f84745fd4a33cb6e058e0439f3dfb" kindref="member">K</ref></para>
+        </inbodydescription>
+        <location file="lib/RICCATI/Riccati.h" line="46" column="8" bodyfile="lib/RICCATI/Riccati.cpp" bodystart="32" bodyend="62"/>
+        <references refid="classRiccati_1a301a6f535f228e71c09320583bb49d4e" compoundref="Riccati_8h" startline="38">I</references>
+        <references refid="classRiccati_1a376f84745fd4a33cb6e058e0439f3dfb" compoundref="Riccati_8h" startline="29">K</references>
+        <references refid="classRiccati_1a6003e94713ebc33639f013c56d2e06c6" compoundref="Riccati_8h" startline="29">K_new</references>
+        <references refid="classRiccati_1aef6ba29bba94e293a8ea4c279b565164" compoundref="Riccati_8h" startline="40">Ls</references>
+        <references refid="classRiccati_1ab289ee3b6f819e200510a17344fc74e3" compoundref="Riccati_8h" startline="41">num_iterations</references>
+        <references refid="classRiccati_1a9e4a8b9bd057ebcc4f4b90fd0cd8a8b9" compoundref="Riccati_8h" startline="31">phi</references>
+        <references refid="classRiccati_1ae1d081ecfa2a764d7fc8cc316c376f04" compoundref="Riccati_8h" startline="37">Q</references>
+        <references refid="classRiccati_1ab245227419e64ebd2b9dd0e28e1c5243" compoundref="Riccati_8h" startline="35">R</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>: roney </para>
+</simplesect>
+<simplesect kind="date"><para>: 2021-08-02T14:12:53-03:00 email: <ulink url="mailto:roneyddasilva@gmail.com">roneyddasilva@gmail.com</ulink> @File: <ref refid="Riccati_8h" kindref="compound">Riccati.h</ref> Last modified by: roney Last modified time: 2021-08-02T14:12:53-03:00 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>Riccati</label>
+        <link refid="classRiccati"/>
+      </node>
+    </collaborationgraph>
+    <location file="lib/RICCATI/Riccati.h" line="24" column="1" bodyfile="lib/RICCATI/Riccati.h" bodystart="24" bodyend="48"/>
+    <listofallmembers>
+      <member refid="classRiccati_1abc12d593a88ea42059950cc2e9f3a0a2" prot="public" virt="non-virtual"><scope>Riccati</scope><name>dareInteration</name></member>
+      <member refid="classRiccati_1ac421d68d5125e3ef11fba379329f2e67" prot="public" virt="non-virtual"><scope>Riccati</scope><name>gamma</name></member>
+      <member refid="classRiccati_1a301a6f535f228e71c09320583bb49d4e" prot="public" virt="non-virtual"><scope>Riccati</scope><name>I</name></member>
+      <member refid="classRiccati_1a376f84745fd4a33cb6e058e0439f3dfb" prot="public" virt="non-virtual"><scope>Riccati</scope><name>K</name></member>
+      <member refid="classRiccati_1a6003e94713ebc33639f013c56d2e06c6" prot="public" virt="non-virtual"><scope>Riccati</scope><name>K_new</name></member>
+      <member refid="classRiccati_1aef6ba29bba94e293a8ea4c279b565164" prot="public" virt="non-virtual"><scope>Riccati</scope><name>Ls</name></member>
+      <member refid="classRiccati_1ab289ee3b6f819e200510a17344fc74e3" prot="public" virt="non-virtual"><scope>Riccati</scope><name>num_iterations</name></member>
+      <member refid="classRiccati_1a9e4a8b9bd057ebcc4f4b90fd0cd8a8b9" prot="public" virt="non-virtual"><scope>Riccati</scope><name>phi</name></member>
+      <member refid="classRiccati_1ae1d081ecfa2a764d7fc8cc316c376f04" prot="public" virt="non-virtual"><scope>Riccati</scope><name>Q</name></member>
+      <member refid="classRiccati_1ab245227419e64ebd2b9dd0e28e1c5243" prot="public" virt="non-virtual"><scope>Riccati</scope><name>R</name></member>
+      <member refid="classRiccati_1a8a40fb1e8c09aedad7a597bd957b242d" prot="public" virt="non-virtual"><scope>Riccati</scope><name>Riccati</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

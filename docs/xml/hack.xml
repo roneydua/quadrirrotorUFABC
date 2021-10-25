@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compounddef id="hack" kind="page">
+    <compoundname>hack</compoundname>
+    <title>Listas de Hack</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><variablelist>
+<varlistentry><term>Global <ref refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" kindref="member">ekf::EKF::begin</ref>  (float dt)</term></varlistentry>
+<listitem><para><anchor id="hack_1_hack000001"/><linebreak/>
+ <ref refid="classekf_1_1EKF_1a30d3adf68cc6ee599fec8fa45a697bbb" kindref="member">accel</ref>, <ref refid="classekf_1_1EKF_1af990ea0dbcd3f286f04584ab663d08e6" kindref="member">gyro</ref> e <ref refid="classekf_1_1EKF_1a3f84435c646a27ad0f922e5205c13eb3" kindref="member">mag</ref> são ponteiros. Quando as medidas são atualizadas na biblioteca <ref refid="classIMU" kindref="compound">IMU</ref>, o vetor é modificado na <ref refid="classekf_1_1EKF" kindref="compound">EKF</ref>. </para>
+</listitem>
+</variablelist>
+</para>
+    </detaileddescription>
+    <location file="hack"/>
+  </compounddef>
+</doxygen>

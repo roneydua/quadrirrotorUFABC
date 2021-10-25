@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Quadrirrotor: Código-Fonte de lib/SDRE/Sdre.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Quadrirrotor
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Busca','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_59564d00a3aa1a8ebc9d93b92831849e.html">SDRE</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Sdre.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="Sdre_8h.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef SDRE_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">  #define SDRE_H</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">  #include &quot;../RICCATI/Riccati.h&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">  #ifndef __XTENSA__</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="Sdre_8h.html#a92102ea2f9ade1cc1a6dcce355db1677">   16</a></span>&#160;<span class="preprocessor">    #define PRINT_MAT(X) cout &lt;&lt; #X &lt;&lt; &quot;:\n&quot;</span> &lt;&lt; X &lt;&lt; &quot;\n&quot;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">  #endif</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">  #include &lt;eigen3/Eigen/Dense&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classSdre.html">   20</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSdre.html">Sdre</a> {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classSdre.html#ae868a877b9ade90516f90ff46a673568">   25</a></span>&#160;  Eigen::MatrixXf *<a class="code" href="classSdre.html#ae868a877b9ade90516f90ff46a673568">phi</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classSdre.html#aa8e71f3403ee322804ac1e7a6d19b00e">   27</a></span>&#160;  Eigen::MatrixXf *<a class="code" href="classSdre.html#aa8e71f3403ee322804ac1e7a6d19b00e">gamma</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classSdre.html#ac29f58dd81643087f49ccbed42b794df">   29</a></span>&#160;  <a class="code" href="classRiccati.html">Riccati</a> *<a class="code" href="classSdre.html#ac29f58dd81643087f49ccbed42b794df">ricObj</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classSdre.html#a17464293d3a2f24ea0c55da3fcb0e864">   31</a></span>&#160;  Eigen::MatrixXf *<a class="code" href="classSdre.html#a17464293d3a2f24ea0c55da3fcb0e864">R</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classSdre.html#a6b63e08a6c981385373f45ee9ac1be73">   33</a></span>&#160;  Eigen::MatrixXf *<a class="code" href="classSdre.html#a6b63e08a6c981385373f45ee9ac1be73">Q</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classSdre.html#aad912686f9a487dce4ea7e4875efd563">   35</a></span>&#160;  Eigen::MatrixXf <a class="code" href="classSdre.html#aad912686f9a487dce4ea7e4875efd563">L</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classSdre.html#a348491f949fa0faae3fb86b7dbabd33d">   37</a></span>&#160;  Eigen::MatrixXf <a class="code" href="classSdre.html#a348491f949fa0faae3fb86b7dbabd33d">E</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classSdre.html#ad244c5cc1e70a1b08e8e4d5655993d8b">   39</a></span>&#160;  Eigen::MatrixXf <a class="code" href="classSdre.html#ad244c5cc1e70a1b08e8e4d5655993d8b">G</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="classSdre.html">Sdre</a>(Eigen::MatrixXf &amp;A, Eigen::MatrixXf &amp;B, Eigen::MatrixXf &amp;Q,</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;       Eigen::MatrixXf &amp;R);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  ~<a class="code" href="classSdre.html">Sdre</a>();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordtype">bool</span> updateControl();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  Eigen::MatrixXcf closeLoopEig();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;};</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">/* SDRE_H */</span></div>
+<div class="ttc" id="aclassRiccati_html"><div class="ttname"><a href="classRiccati.html">Riccati</a></div><div class="ttdef"><b>Definition:</b> <a href="Riccati_8h_source.html#l00024">Riccati.h:24</a></div></div>
+<div class="ttc" id="aclassSdre_html"><div class="ttname"><a href="classSdre.html">Sdre</a></div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8h_source.html#l00020">Sdre.h:20</a></div></div>
+<div class="ttc" id="aclassSdre_html_a17464293d3a2f24ea0c55da3fcb0e864"><div class="ttname"><a href="classSdre.html#a17464293d3a2f24ea0c55da3fcb0e864">Sdre::R</a></div><div class="ttdeci">Eigen::MatrixXf * R</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8h_source.html#l00031">Sdre.h:31</a></div></div>
+<div class="ttc" id="aclassSdre_html_a348491f949fa0faae3fb86b7dbabd33d"><div class="ttname"><a href="classSdre.html#a348491f949fa0faae3fb86b7dbabd33d">Sdre::E</a></div><div class="ttdeci">Eigen::MatrixXf E</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8h_source.html#l00037">Sdre.h:37</a></div></div>
+<div class="ttc" id="aclassSdre_html_a6b63e08a6c981385373f45ee9ac1be73"><div class="ttname"><a href="classSdre.html#a6b63e08a6c981385373f45ee9ac1be73">Sdre::Q</a></div><div class="ttdeci">Eigen::MatrixXf * Q</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8h_source.html#l00033">Sdre.h:33</a></div></div>
+<div class="ttc" id="aclassSdre_html_aa8e71f3403ee322804ac1e7a6d19b00e"><div class="ttname"><a href="classSdre.html#aa8e71f3403ee322804ac1e7a6d19b00e">Sdre::gamma</a></div><div class="ttdeci">Eigen::MatrixXf * gamma</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8h_source.html#l00027">Sdre.h:27</a></div></div>
+<div class="ttc" id="aclassSdre_html_aad912686f9a487dce4ea7e4875efd563"><div class="ttname"><a href="classSdre.html#aad912686f9a487dce4ea7e4875efd563">Sdre::L</a></div><div class="ttdeci">Eigen::MatrixXf L</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8h_source.html#l00035">Sdre.h:35</a></div></div>
+<div class="ttc" id="aclassSdre_html_ac29f58dd81643087f49ccbed42b794df"><div class="ttname"><a href="classSdre.html#ac29f58dd81643087f49ccbed42b794df">Sdre::ricObj</a></div><div class="ttdeci">Riccati * ricObj</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8h_source.html#l00029">Sdre.h:29</a></div></div>
+<div class="ttc" id="aclassSdre_html_ad244c5cc1e70a1b08e8e4d5655993d8b"><div class="ttname"><a href="classSdre.html#ad244c5cc1e70a1b08e8e4d5655993d8b">Sdre::G</a></div><div class="ttdeci">Eigen::MatrixXf G</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8h_source.html#l00039">Sdre.h:39</a></div></div>
+<div class="ttc" id="aclassSdre_html_ae868a877b9ade90516f90ff46a673568"><div class="ttname"><a href="classSdre.html#ae868a877b9ade90516f90ff46a673568">Sdre::phi</a></div><div class="ttdeci">Eigen::MatrixXf * phi</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8h_source.html#l00025">Sdre.h:25</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

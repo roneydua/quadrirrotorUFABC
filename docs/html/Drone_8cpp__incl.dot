@@ -1,0 +1,19 @@
+digraph "lib/DRONE/Drone.cpp"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  Node1 [label="lib/DRONE/Drone.cpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node2 [label="Drone.h",height=0.2,width=0.4,color="black",URL="$Drone_8h.html",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node3 [label="Arduino.h",height=0.2,width=0.4,color="grey75",tooltip=" "];
+  Node2 -> Node4 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node4 [label="GRUPO_QUAT.h",height=0.2,width=0.4,color="black",URL="$GRUPO__QUAT_8h.html",tooltip="Cabecalho com funcoes de quaternion."];
+  Node4 -> Node5 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node5 [label="eigen3/Eigen/Dense",height=0.2,width=0.4,color="grey75",tooltip=" "];
+  Node4 -> Node6 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node6 [label="iostream",height=0.2,width=0.4,color="grey75",tooltip=" "];
+  Node2 -> Node5 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+}

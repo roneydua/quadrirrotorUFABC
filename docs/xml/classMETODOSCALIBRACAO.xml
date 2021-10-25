@@ -1,0 +1,212 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compounddef id="classMETODOSCALIBRACAO" kind="class" language="C++" prot="public">
+    <compoundname>METODOSCALIBRACAO</compoundname>
+    <includes refid="METODOSCALIBRACAO_8h" local="no">METODOSCALIBRACAO.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classMETODOSCALIBRACAO_1af0478ed112a1139bafefe7833568e641" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int METODOSCALIBRACAO::calibracaoGeometrica</definition>
+        <argsstring>(MatrixXf &amp;data, Matrix3f &amp;sF, Vector3f &amp;bias, float moduloCampo)</argsstring>
+        <name>calibracaoGeometrica</name>
+        <param>
+          <type>MatrixXf &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>Matrix3f &amp;</type>
+          <declname>sF</declname>
+        </param>
+        <param>
+          <type>Vector3f &amp;</type>
+          <declname>bias</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>moduloCampo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Metodo geometrico para calibracao de magnetometros <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype></parametertype>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>&lt;Matrix com N linha e 3 colunas contendo os dados de amostra para a calibracao&gt; [Matrix de scala] sF Matrix 3x3 com diagonal contendo os fatores de escalas </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bias</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector 3x1 with the bias - ellipsoid center </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>moduloCampo</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>values in uT of earth field </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sF</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matriz com fatores de escala na diagonal </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bias</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vetor com o centro da elipsoide </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>1 para sucesso e -1 para falha </para>
+</simplesect>
+<simplesect kind="note"><para>The method fitting an ellipsoid with least squares method. The compensated measures M_c are obtained with the mensures M proceeding as follows: M_c = sF (M - bias) The method needs a full rotations for a good performance </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/METODOSCALIBRACAO.h" line="43" column="7" bodyfile="lib/IMU/METODOSCALIBRACAO.h" bodystart="43" bodyend="91"/>
+        <references refid="GPS_8h_1a27c939ba1a4f4d927aaa500781293ba7" compoundref="GPS_8h" startline="146">data</references>
+        <referencedby refid="classIMU_1a3546779010d9128859f465195eff77f5" compoundref="IMU_8cpp" startline="458" endline="472">IMU::calibracaoMagnetometro</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classMETODOSCALIBRACAO_1ad7b555b5f46cdad7ae551f5cd4886a9b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int METODOSCALIBRACAO::calibracaoAcelerometro</definition>
+        <argsstring>(Matrix3f &amp;sF, int16_t(&amp;bias)[3], MatrixXf data)</argsstring>
+        <name>calibracaoAcelerometro</name>
+        <param>
+          <type>Matrix3f &amp;</type>
+          <declname>sF</declname>
+        </param>
+        <param>
+          <type>int16_t(&amp;)</type>
+          <declname>bias</declname>
+          <array>[3]</array>
+        </param>
+        <param>
+          <type>MatrixXf</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Calibração do acelerômetro. Os valores compensador sao obtidos: <bold>Yc = sF * (Ym - bias)</bold> Ym: medidas diretas do sensor Yc: meddias compensadas <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sF</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(MatriX3f) Referência da matrix que contem corrige os fatores de escala e dos desalinhamentos. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bias</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(int16_t array) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Medidas para calibração de dimensão n<times/>3 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>1 para positivo e 0 para a falha. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/METODOSCALIBRACAO.h" line="103" column="7" bodyfile="lib/IMU/METODOSCALIBRACAO.h" bodystart="103" bodyend="144"/>
+        <references refid="GPS_8h_1a27c939ba1a4f4d927aaa500781293ba7" compoundref="GPS_8h" startline="146">data</references>
+      </memberdef>
+      <memberdef kind="function" id="classMETODOSCALIBRACAO_1aeeb5884d970064b5e60fea7bbf515742" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int METODOSCALIBRACAO::calibracaoAcelerometro</definition>
+        <argsstring>(Matrix3f &amp;sF, Vector3f &amp;bias, MatrixXf data)</argsstring>
+        <name>calibracaoAcelerometro</name>
+        <param>
+          <type>Matrix3f &amp;</type>
+          <declname>sF</declname>
+        </param>
+        <param>
+          <type>Vector3f &amp;</type>
+          <declname>bias</declname>
+        </param>
+        <param>
+          <type>MatrixXf</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Calibração do acelerômetro. Os valores compensador sao obtidos: <bold>Yc = sF * (Ym - bias)</bold> Ym: medidas diretas do sensor Yc: meddias compensadas <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sF</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(MatriX3f) Referência da matrix que contem corrige os fatores de escala e dos desalinhamentos. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bias</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(Vector3f) Referência do bias. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Medidas para calibração de dimensão n<times/>3 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>1 para positivo e 0 para a falha. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IMU/METODOSCALIBRACAO.h" line="156" column="7" bodyfile="lib/IMU/METODOSCALIBRACAO.h" bodystart="156" bodyend="192"/>
+        <references refid="GPS_8h_1a27c939ba1a4f4d927aaa500781293ba7" compoundref="GPS_8h" startline="146">data</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>METODOSCALIBRACAO</label>
+        <link refid="classMETODOSCALIBRACAO"/>
+      </node>
+    </collaborationgraph>
+    <location file="lib/IMU/METODOSCALIBRACAO.h" line="25" column="1" bodyfile="lib/IMU/METODOSCALIBRACAO.h" bodystart="25" bodyend="193"/>
+    <listofallmembers>
+      <member refid="classMETODOSCALIBRACAO_1ad7b555b5f46cdad7ae551f5cd4886a9b" prot="public" virt="non-virtual"><scope>METODOSCALIBRACAO</scope><name>calibracaoAcelerometro</name></member>
+      <member refid="classMETODOSCALIBRACAO_1aeeb5884d970064b5e60fea7bbf515742" prot="public" virt="non-virtual"><scope>METODOSCALIBRACAO</scope><name>calibracaoAcelerometro</name></member>
+      <member refid="classMETODOSCALIBRACAO_1af0478ed112a1139bafefe7833568e641" prot="public" virt="non-virtual"><scope>METODOSCALIBRACAO</scope><name>calibracaoGeometrica</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compounddef id="rpm_8h" kind="file" language="C++">
+    <compoundname>rpm.h</compoundname>
+    <includes local="yes">driver/pcnt.h</includes>
+    <includes local="no">Arduino.h</includes>
+    <includedby refid="rpm_8cpp" local="yes">lib/RPM/rpm.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>lib/RPM/rpm.h</label>
+        <link refid="rpm_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>driver/pcnt.h</label>
+      </node>
+      <node id="3">
+        <label>Arduino.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>lib/RPM/rpm.h</label>
+        <link refid="rpm_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>lib/RPM/rpm.cpp</label>
+        <link refid="rpm_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classRpm" prot="public">Rpm</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>: Roney Silva (roneydua) </para>
+</simplesect>
+<simplesect kind="date"><para>: 16-Aug-2021 Email: <ulink url="mailto:roneyddasilva@gmail.com">roneyddasilva@gmail.com</ulink> Project: quadrirrotorUFABC</para>
+</simplesect>
+Last modified by: roneydua Last modified time: 25-Aug-2021 </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;driver/pcnt.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Arduino.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="classRpm" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classRpm" kindref="compound">Rpm</ref><sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Rpm(gpio_num_t<sp/>sensor,<sp/>pcnt_unit_t<sp/>pcnt_unit<sp/>=<sp/>PCNT_UNIT_0,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>sample_period_millisecond<sp/>=<sp/>1000,<sp/>uint8_t<sp/>ciclos_por_volta<sp/>=</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>1);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><ref refid="classRpm_1a121340fc34d14d36ec48bef0b38909f1" kindref="member">Rpm</ref>(gpio_num_t<sp/><ref refid="classRpm_1a1fb0f83d82726133d5814adb6e06d0bf" kindref="member">sensor</ref>,<sp/>pcnt_unit_t<sp/><ref refid="classRpm_1a0683829851e4011132c048b20df3d73a" kindref="member">pcnt_unit</ref><sp/>=<sp/>PCNT_UNIT_0,</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="classRpm_1ae7f22ed32ee4e3c1242fd7ff2895e883" kindref="member">ciclos_por_volta</ref><sp/>=<sp/>1);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="classRpm_1ad84394fa85418225c8a3b0f82110bc09" refkind="member"><highlight class="normal"><sp/><sp/>int16_t<sp/><ref refid="classRpm_1ad84394fa85418225c8a3b0f82110bc09" kindref="member">rpm</ref><sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classRpm_1acdcf8286b888e4ffd0aa41d1f37c5b15" kindref="member">update_rpm</ref>();</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>uint64_t<sp/>get_pulses();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="classRpm_1ae7f22ed32ee4e3c1242fd7ff2895e883" refkind="member"><highlight class="normal"><sp/><sp/>int8_t<sp/><ref refid="classRpm_1ae7f22ed32ee4e3c1242fd7ff2895e883" kindref="member">ciclos_por_volta</ref>;</highlight></codeline>
+<codeline lineno="26" refid="classRpm_1a5e8240e66073f461ae884a08c6be84c5" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>int16_t<sp/><ref refid="classRpm_1a5e8240e66073f461ae884a08c6be84c5" kindref="member">MAX_H_LIM</ref><sp/>=</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>28<sp/>+<sp/>1;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Numero<sp/>maximo<sp/>de<sp/>pulsos<sp/>para<sp/>chamar<sp/>a<sp/>interrupcao</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="classRpm_1a3e22a7563c57f2eb1f5df770e58351fb" refkind="member"><highlight class="normal"><sp/><sp/>uint32_t<sp/><ref refid="classRpm_1a3e22a7563c57f2eb1f5df770e58351fb" kindref="member">rpm_factor</ref>;<sp/></highlight><highlight class="comment">//<sp/>1000000<sp/>*<sp/>(MAX_H_LIM<sp/>/<sp/>ciclos_por_volta)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classRpm_1a940dfab8b4369e418b8afc1627d74d2b" kindref="member">restart_conter</ref>();</highlight></codeline>
+<codeline lineno="30" refid="classRpm_1a0683829851e4011132c048b20df3d73a" refkind="member"><highlight class="normal"><sp/><sp/>pcnt_unit_t<sp/><ref refid="classRpm_1a0683829851e4011132c048b20df3d73a" kindref="member">pcnt_unit</ref>;<sp/></highlight><highlight class="comment">//<sp/>numero<sp/>da<sp/>contadora<sp/>de<sp/>pulso</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="classRpm_1aec0d7e9e181fc5eaa546bbf7378811dd" refkind="member"><highlight class="normal"><sp/><sp/>int16_t<sp/><ref refid="classRpm_1aec0d7e9e181fc5eaa546bbf7378811dd" kindref="member">pulses</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classRpm_1ae4aa3e158ba93af30da3e1353bb3959f" kindref="member">get_pulses</ref>();</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="36" refid="classRpm_1a1fb0f83d82726133d5814adb6e06d0bf" refkind="member"><highlight class="normal"><sp/><sp/>gpio_num_t<sp/><ref refid="classRpm_1a1fb0f83d82726133d5814adb6e06d0bf" kindref="member">sensor</ref>;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classRpm_1ac6a52231cd6967bd6c565615638cc50c" kindref="member">init</ref>();</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>float<sp/>sample_periode_second_normalized_per_cicle;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>this<sp/>array<sp/>stores<sp/>the<sp/>last<sp/>two<sp/>get_time</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="classRpm_1ac44e73f7678c35183e856295c2e7eceb" refkind="member"><highlight class="normal"><sp/><sp/>uint64_t<sp/><ref refid="classRpm_1ac44e73f7678c35183e856295c2e7eceb" kindref="member">time_array</ref>[2]<sp/>=<sp/>{};</highlight></codeline>
+<codeline lineno="41" refid="classRpm_1a57664781b6348e2a781ff631a5a258d1" refkind="member"><highlight class="normal"><sp/><sp/>uint8_t<sp/><ref refid="classRpm_1a57664781b6348e2a781ff631a5a258d1" kindref="member">index_time_array</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="42" refid="classRpm_1a752569e792e4187bf57ab7d010157413" refkind="member"><highlight class="normal"><sp/><sp/>uint32_t<sp/><ref refid="classRpm_1a752569e792e4187bf57ab7d010157413" kindref="member">dt</ref><sp/>=<sp/>1000000;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="lib/RPM/rpm.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compounddef id="AQUA_8h" kind="file" language="C++">
+    <compoundname>AQUA.h</compoundname>
+    <includes local="no">eigen3/Eigen/Dense</includes>
+    <includes refid="GRUPO__QUAT_8h" local="yes">../GRUPO_QUAT/GRUPO_QUAT.h</includes>
+    <includedby refid="AQUA_8cpp" local="yes">lib/AQUA/AQUA.cpp</includedby>
+    <includedby refid="EKF_8cpp" local="yes">lib/EKF/EKF.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>eigen3/Eigen/Dense</label>
+      </node>
+      <node id="1">
+        <label>lib/AQUA/AQUA.h</label>
+        <link refid="AQUA_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>iostream</label>
+      </node>
+      <node id="3">
+        <label>../GRUPO_QUAT/GRUPO_QUAT.h</label>
+        <link refid="GRUPO__QUAT_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>lib/AQUA/AQUA.h</label>
+        <link refid="AQUA_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>lib/EKF/EKF.cpp</label>
+        <link refid="EKF_8cpp"/>
+      </node>
+      <node id="2">
+        <label>lib/AQUA/AQUA.cpp</label>
+        <link refid="AQUA_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classAQUA" prot="public">AQUA</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>: Roney Silva &lt;roney&gt; </para>
+</simplesect>
+<simplesect kind="date"><para>: 16-Aug-2021 Email: <ulink url="mailto:roneyddasilva@gmail.com">roneyddasilva@gmail.com</ulink> Project: quadrirrotorUFABC</para>
+</simplesect>
+Last modified by: roney Last modified time: 25-Aug-2021 </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>AQUA_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AQUA_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;eigen3/Eigen/Dense&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__XTENSA__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Arduino.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../GRUPO_QUAT/GRUPO_QUAT.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceekf" kindref="compound">ekf</ref>;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="classAQUA" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classAQUA" kindref="compound">AQUA</ref><sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><ref refid="classAQUA" kindref="compound">AQUA</ref>();</highlight></codeline>
+<codeline lineno="26" refid="classAQUA_1a288e646d31498e19d5ec68bcf6a12272" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Vector4f<sp/>qAcc<sp/>=<sp/>Eigen::Vector4f::Zero();</highlight></codeline>
+<codeline lineno="28" refid="classAQUA_1ac3283e2209f2a22409bf701c6a381e85" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Vector4f<sp/>qMag<sp/>=<sp/>Eigen::Vector4f::Zero();</highlight></codeline>
+<codeline lineno="30" refid="classAQUA_1a9da4c7495ececdfd099949b8ab7bd34d" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Vector3f<sp/>gravNormalized<sp/>=<sp/>Eigen::Vector3f::Zero();</highlight></codeline>
+<codeline lineno="32" refid="classAQUA_1ad374de1bdc463f6fe179e1c7b16e64dc" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Vector3f<sp/>magNormalized<sp/>=<sp/>Eigen::Vector3f::Zero();</highlight></codeline>
+<codeline lineno="34" refid="classAQUA_1a396021bd861ef78e46c78e5d72fe7cdd" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Vector3f<sp/>l<sp/>=<sp/>Eigen::Vector3f::Zero();</highlight></codeline>
+<codeline lineno="36" refid="classAQUA_1a1c408cae6b02beae92ba10513fdb61e3" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Vector4f<sp/>*<ref refid="classAQUA_1a1c408cae6b02beae92ba10513fdb61e3" kindref="member">qAQUA</ref>;</highlight></codeline>
+<codeline lineno="38" refid="classAQUA_1a372bd06e8afc3bd745c5bf97b56e1354" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Vector3f<sp/>*<ref refid="classAQUA_1a372bd06e8afc3bd745c5bf97b56e1354" kindref="member">accel</ref>,<sp/>*mag;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>begin(Eigen::Vector4f<sp/>&amp;_qObs,<sp/>Eigen::Vector3f<sp/>&amp;accel,</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Eigen::Vector3f<sp/>&amp;mag);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>computeAQUAQuaternion();</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>computeQuaternionAccel();</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>computeQuaternionMag();</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>AQUA_H<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="lib/AQUA/AQUA.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,270 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compounddef id="classSdre" kind="class" language="C++" prot="public">
+    <compoundname>Sdre</compoundname>
+    <includes refid="Sdre_8h" local="no">Sdre.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classSdre_1ae868a877b9ade90516f90ff46a673568" prot="public" static="no" mutable="no">
+        <type>Eigen::MatrixXf *</type>
+        <definition>Eigen::MatrixXf* Sdre::phi</definition>
+        <argsstring></argsstring>
+        <name>phi</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Ponteiro da matriz de estado. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/SDRE/Sdre.h" line="25" column="19" bodyfile="lib/SDRE/Sdre.h" bodystart="25" bodyend="-1"/>
+        <referencedby refid="classSdre_1a4848cfbce14035e6b3733a628de9e24f" compoundref="Sdre_8cpp" startline="51" endline="57">closeLoopEig</referencedby>
+        <referencedby refid="classSdre_1acfa822102ba368dde55594e9f041f9df" compoundref="Sdre_8cpp" startline="10" endline="24">Sdre</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSdre_1aa8e71f3403ee322804ac1e7a6d19b00e" prot="public" static="no" mutable="no">
+        <type>Eigen::MatrixXf *</type>
+        <definition>Eigen::MatrixXf* Sdre::gamma</definition>
+        <argsstring></argsstring>
+        <name>gamma</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Ponteiro da matriz de controle. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/SDRE/Sdre.h" line="27" column="19" bodyfile="lib/SDRE/Sdre.h" bodystart="27" bodyend="-1"/>
+        <referencedby refid="classSdre_1a4848cfbce14035e6b3733a628de9e24f" compoundref="Sdre_8cpp" startline="51" endline="57">closeLoopEig</referencedby>
+        <referencedby refid="classSdre_1acfa822102ba368dde55594e9f041f9df" compoundref="Sdre_8cpp" startline="10" endline="24">Sdre</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSdre_1ac29f58dd81643087f49ccbed42b794df" prot="public" static="no" mutable="no">
+        <type><ref refid="classRiccati" kindref="compound">Riccati</ref> *</type>
+        <definition>Riccati* Sdre::ricObj</definition>
+        <argsstring></argsstring>
+        <name>ricObj</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Ponteiro para o solver da equação de <ref refid="classRiccati" kindref="compound">Riccati</ref> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/SDRE/Sdre.h" line="29" column="11" bodyfile="lib/SDRE/Sdre.h" bodystart="29" bodyend="-1"/>
+        <referencedby refid="classControle_1abbe044aad705ef7d663c45275948fd12" compoundref="Controle_8cpp" startline="14" endline="36">Controle::Controle</referencedby>
+        <referencedby refid="classSdre_1acfa822102ba368dde55594e9f041f9df" compoundref="Sdre_8cpp" startline="10" endline="24">Sdre</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSdre_1a17464293d3a2f24ea0c55da3fcb0e864" prot="public" static="no" mutable="no">
+        <type>Eigen::MatrixXf *</type>
+        <definition>Eigen::MatrixXf* Sdre::R</definition>
+        <argsstring></argsstring>
+        <name>R</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Matrix ponderação dos controle. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/SDRE/Sdre.h" line="31" column="19" bodyfile="lib/SDRE/Sdre.h" bodystart="31" bodyend="-1"/>
+        <referencedby refid="classSdre_1acfa822102ba368dde55594e9f041f9df" compoundref="Sdre_8cpp" startline="10" endline="24">Sdre</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSdre_1a6b63e08a6c981385373f45ee9ac1be73" prot="public" static="no" mutable="no">
+        <type>Eigen::MatrixXf *</type>
+        <definition>Eigen::MatrixXf* Sdre::Q</definition>
+        <argsstring></argsstring>
+        <name>Q</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Matrix ponderação dos estados. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/SDRE/Sdre.h" line="33" column="19" bodyfile="lib/SDRE/Sdre.h" bodystart="33" bodyend="-1"/>
+        <referencedby refid="classSdre_1acfa822102ba368dde55594e9f041f9df" compoundref="Sdre_8cpp" startline="10" endline="24">Sdre</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSdre_1aad912686f9a487dce4ea7e4875efd563" prot="public" static="no" mutable="no">
+        <type>Eigen::MatrixXf</type>
+        <definition>Eigen::MatrixXf Sdre::L</definition>
+        <argsstring></argsstring>
+        <name>L</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Matrix do ganho de Kalman. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/SDRE/Sdre.h" line="35" column="19" bodyfile="lib/SDRE/Sdre.h" bodystart="35" bodyend="-1"/>
+        <referencedby refid="classSdre_1a4848cfbce14035e6b3733a628de9e24f" compoundref="Sdre_8cpp" startline="51" endline="57">closeLoopEig</referencedby>
+        <referencedby refid="classControle_1abcf05dcff157e963fd65c09d45261a8f" compoundref="Controle_8cpp" startline="84" endline="96">Controle::computeRotationalControl</referencedby>
+        <referencedby refid="classControle_1abbe044aad705ef7d663c45275948fd12" compoundref="Controle_8cpp" startline="14" endline="36">Controle::Controle</referencedby>
+        <referencedby refid="classSdre_1acfa822102ba368dde55594e9f041f9df" compoundref="Sdre_8cpp" startline="10" endline="24">Sdre</referencedby>
+        <referencedby refid="classSdre_1af2f380ec3d018b60686e304ca7026846" compoundref="Sdre_8cpp" startline="30" endline="46">updateControl</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSdre_1a348491f949fa0faae3fb86b7dbabd33d" prot="public" static="no" mutable="no">
+        <type>Eigen::MatrixXf</type>
+        <definition>Eigen::MatrixXf Sdre::E</definition>
+        <argsstring></argsstring>
+        <name>E</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Matrix E = B R^-1 B&apos; </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/SDRE/Sdre.h" line="37" column="19" bodyfile="lib/SDRE/Sdre.h" bodystart="37" bodyend="-1"/>
+        <referencedby refid="classSdre_1acfa822102ba368dde55594e9f041f9df" compoundref="Sdre_8cpp" startline="10" endline="24">Sdre</referencedby>
+        <referencedby refid="classSdre_1af2f380ec3d018b60686e304ca7026846" compoundref="Sdre_8cpp" startline="30" endline="46">updateControl</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classSdre_1ad244c5cc1e70a1b08e8e4d5655993d8b" prot="public" static="no" mutable="no">
+        <type>Eigen::MatrixXf</type>
+        <definition>Eigen::MatrixXf Sdre::G</definition>
+        <argsstring></argsstring>
+        <name>G</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Vetor de realimentacao; </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/SDRE/Sdre.h" line="39" column="19" bodyfile="lib/SDRE/Sdre.h" bodystart="39" bodyend="-1"/>
+        <referencedby refid="classControle_1abbe044aad705ef7d663c45275948fd12" compoundref="Controle_8cpp" startline="14" endline="36">Controle::Controle</referencedby>
+        <referencedby refid="classSdre_1acfa822102ba368dde55594e9f041f9df" compoundref="Sdre_8cpp" startline="10" endline="24">Sdre</referencedby>
+        <referencedby refid="classSdre_1af2f380ec3d018b60686e304ca7026846" compoundref="Sdre_8cpp" startline="30" endline="46">updateControl</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classSdre_1acfa822102ba368dde55594e9f041f9df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Sdre::Sdre</definition>
+        <argsstring>(Eigen::MatrixXf &amp;A, Eigen::MatrixXf &amp;B, Eigen::MatrixXf &amp;Q, Eigen::MatrixXf &amp;R)</argsstring>
+        <name>Sdre</name>
+        <param>
+          <type>Eigen::MatrixXf &amp;</type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXf &amp;</type>
+          <declname>B</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXf &amp;</type>
+          <declname>Q</declname>
+          <defname>_Q</defname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXf &amp;</type>
+          <declname>R</declname>
+          <defname>_R</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>: roney </para>
+</simplesect>
+<simplesect kind="date"><para>: 2021-08-03T17:16:37-03:00 email: <ulink url="mailto:roneyddasilva@gmail.com">roneyddasilva@gmail.com</ulink> @File: <ref refid="Sdre_8cpp" kindref="compound">Sdre.cpp</ref> Last modified by: roney Last modified time: 2021-08-03T17:16:37-03:00 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/SDRE/Sdre.h" line="41" column="3" bodyfile="lib/SDRE/Sdre.cpp" bodystart="10" bodyend="24"/>
+        <references refid="classSdre_1a348491f949fa0faae3fb86b7dbabd33d" compoundref="Sdre_8h" startline="37">E</references>
+        <references refid="classSdre_1ad244c5cc1e70a1b08e8e4d5655993d8b" compoundref="Sdre_8h" startline="39">G</references>
+        <references refid="classSdre_1aa8e71f3403ee322804ac1e7a6d19b00e" compoundref="Sdre_8h" startline="27">gamma</references>
+        <references refid="classSdre_1aad912686f9a487dce4ea7e4875efd563" compoundref="Sdre_8h" startline="35">L</references>
+        <references refid="classSdre_1ae868a877b9ade90516f90ff46a673568" compoundref="Sdre_8h" startline="25">phi</references>
+        <references refid="classSdre_1a6b63e08a6c981385373f45ee9ac1be73" compoundref="Sdre_8h" startline="33">Q</references>
+        <references refid="classSdre_1a17464293d3a2f24ea0c55da3fcb0e864" compoundref="Sdre_8h" startline="31">R</references>
+        <references refid="classSdre_1ac29f58dd81643087f49ccbed42b794df" compoundref="Sdre_8h" startline="29">ricObj</references>
+      </memberdef>
+      <memberdef kind="function" id="classSdre_1a887dbd01f9f6846839114a4d5ff64102" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Sdre::~Sdre</definition>
+        <argsstring>()</argsstring>
+        <name>~Sdre</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/SDRE/Sdre.h" line="43" column="3" bodyfile="lib/SDRE/Sdre.cpp" bodystart="25" bodyend="25"/>
+        <referencedby refid="classControle_1abbe044aad705ef7d663c45275948fd12" compoundref="Controle_8cpp" startline="14" endline="36">Controle::Controle</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classSdre_1af2f380ec3d018b60686e304ca7026846" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Sdre::updateControl</definition>
+        <argsstring>()</argsstring>
+        <name>updateControl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Atualiza a solução de <ref refid="classRiccati" kindref="compound">Riccati</ref> e o controle ótimo L. <simplesect kind="return"><para>true para sucesso ou false para fracasso. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/SDRE/Sdre.h" line="44" column="8" bodyfile="lib/SDRE/Sdre.cpp" bodystart="30" bodyend="46"/>
+        <references refid="classSdre_1a348491f949fa0faae3fb86b7dbabd33d" compoundref="Sdre_8h" startline="37">E</references>
+        <references refid="classSdre_1ad244c5cc1e70a1b08e8e4d5655993d8b" compoundref="Sdre_8h" startline="39">G</references>
+        <references refid="classSdre_1aad912686f9a487dce4ea7e4875efd563" compoundref="Sdre_8h" startline="35">L</references>
+        <referencedby refid="classControle_1abcf05dcff157e963fd65c09d45261a8f" compoundref="Controle_8cpp" startline="84" endline="96">Controle::computeRotationalControl</referencedby>
+        <referencedby refid="classControle_1abbe044aad705ef7d663c45275948fd12" compoundref="Controle_8cpp" startline="14" endline="36">Controle::Controle</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classSdre_1a4848cfbce14035e6b3733a628de9e24f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::MatrixXcf</type>
+        <definition>Eigen::MatrixXcf Sdre::closeLoopEig</definition>
+        <argsstring>()</argsstring>
+        <name>closeLoopEig</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>[<ref refid="classSdre_1a4848cfbce14035e6b3733a628de9e24f" kindref="member">Sdre::closeLoopEig</ref> description] </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/SDRE/Sdre.h" line="45" column="20" bodyfile="lib/SDRE/Sdre.cpp" bodystart="51" bodyend="57"/>
+        <references refid="classSdre_1aa8e71f3403ee322804ac1e7a6d19b00e" compoundref="Sdre_8h" startline="27">gamma</references>
+        <references refid="classSdre_1aad912686f9a487dce4ea7e4875efd563" compoundref="Sdre_8h" startline="35">L</references>
+        <references refid="classSdre_1ae868a877b9ade90516f90ff46a673568" compoundref="Sdre_8h" startline="25">phi</references>
+        <referencedby refid="classControle_1abbe044aad705ef7d663c45275948fd12" compoundref="Controle_8cpp" startline="14" endline="36">Controle::Controle</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>Sdre</label>
+        <link refid="classSdre"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+ricObj</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Riccati</label>
+        <link refid="classRiccati"/>
+      </node>
+    </collaborationgraph>
+    <location file="lib/SDRE/Sdre.h" line="20" column="1" bodyfile="lib/SDRE/Sdre.h" bodystart="20" bodyend="46"/>
+    <listofallmembers>
+      <member refid="classSdre_1a4848cfbce14035e6b3733a628de9e24f" prot="public" virt="non-virtual"><scope>Sdre</scope><name>closeLoopEig</name></member>
+      <member refid="classSdre_1a348491f949fa0faae3fb86b7dbabd33d" prot="public" virt="non-virtual"><scope>Sdre</scope><name>E</name></member>
+      <member refid="classSdre_1ad244c5cc1e70a1b08e8e4d5655993d8b" prot="public" virt="non-virtual"><scope>Sdre</scope><name>G</name></member>
+      <member refid="classSdre_1aa8e71f3403ee322804ac1e7a6d19b00e" prot="public" virt="non-virtual"><scope>Sdre</scope><name>gamma</name></member>
+      <member refid="classSdre_1aad912686f9a487dce4ea7e4875efd563" prot="public" virt="non-virtual"><scope>Sdre</scope><name>L</name></member>
+      <member refid="classSdre_1ae868a877b9ade90516f90ff46a673568" prot="public" virt="non-virtual"><scope>Sdre</scope><name>phi</name></member>
+      <member refid="classSdre_1a6b63e08a6c981385373f45ee9ac1be73" prot="public" virt="non-virtual"><scope>Sdre</scope><name>Q</name></member>
+      <member refid="classSdre_1a17464293d3a2f24ea0c55da3fcb0e864" prot="public" virt="non-virtual"><scope>Sdre</scope><name>R</name></member>
+      <member refid="classSdre_1ac29f58dd81643087f49ccbed42b794df" prot="public" virt="non-virtual"><scope>Sdre</scope><name>ricObj</name></member>
+      <member refid="classSdre_1acfa822102ba368dde55594e9f041f9df" prot="public" virt="non-virtual"><scope>Sdre</scope><name>Sdre</name></member>
+      <member refid="classSdre_1af2f380ec3d018b60686e304ca7026846" prot="public" virt="non-virtual"><scope>Sdre</scope><name>updateControl</name></member>
+      <member refid="classSdre_1a887dbd01f9f6846839114a4d5ff64102" prot="public" virt="non-virtual"><scope>Sdre</scope><name>~Sdre</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

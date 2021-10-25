@@ -1,0 +1,234 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compounddef id="classdrone_1_1Drone" kind="class" language="Python" prot="public">
+    <compoundname>drone::Drone</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classdrone_1_1Drone_1aabc825782675cacf5cb90697307ffcda" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>drone.Drone::Ix</definition>
+        <argsstring></argsstring>
+        <name>Ix</name>
+        <briefdescription>
+<para>Momento de inercia Ix. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/drone.py" line="43" column="1" bodyfile="python/drone.py" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdrone_1_1Drone_1a8b798f66003e45a5d247cc82fcc72e56" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>drone.Drone::Iy</definition>
+        <argsstring></argsstring>
+        <name>Iy</name>
+        <briefdescription>
+<para>Momento de inercia Iy. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/drone.py" line="45" column="1" bodyfile="python/drone.py" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdrone_1_1Drone_1a9db59ee7bf789b5a95093b62f174c1bb" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>drone.Drone::Iz</definition>
+        <argsstring></argsstring>
+        <name>Iz</name>
+        <briefdescription>
+<para>Momento de inercia Iz. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/drone.py" line="47" column="1" bodyfile="python/drone.py" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdrone_1_1Drone_1a943c21f6157d09063f82a66096b44c41" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>drone.Drone::kf</definition>
+        <argsstring></argsstring>
+        <name>kf</name>
+        <briefdescription>
+<para>Constante de força. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/drone.py" line="49" column="1" bodyfile="python/drone.py" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdrone_1_1Drone_1af9c6bf08da282fc597d8254f1baaf712" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>drone.Drone::km</definition>
+        <argsstring></argsstring>
+        <name>km</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/drone.py" line="50" column="1" bodyfile="python/drone.py" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdrone_1_1Drone_1a78f0f79a324e30e11d256be5606460dd" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>drone.Drone::b</definition>
+        <argsstring></argsstring>
+        <name>b</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/drone.py" line="51" column="1" bodyfile="python/drone.py" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdrone_1_1Drone_1ae0e8a53e20ef086117887ff8620f4c27" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>drone.Drone::grav</definition>
+        <argsstring></argsstring>
+        <name>grav</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/drone.py" line="52" column="1" bodyfile="python/drone.py" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdrone_1_1Drone_1a3f9b2ff1babea99866d2e6c3247f99c5" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>drone.Drone::m</definition>
+        <argsstring></argsstring>
+        <name>m</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/drone.py" line="53" column="1" bodyfile="python/drone.py" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdrone_1_1Drone_1a87dd118ef29eda628d846147cb2acc03" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>drone.Drone::omegaSquareMin</definition>
+        <argsstring></argsstring>
+        <name>omegaSquareMin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/drone.py" line="55" column="1" bodyfile="python/drone.py" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdrone_1_1Drone_1afa9cda5efc38f9e83462d9ce4a7a0b48" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>drone.Drone::omegaSquareMax</definition>
+        <argsstring></argsstring>
+        <name>omegaSquareMax</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/drone.py" line="56" column="1" bodyfile="python/drone.py" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdrone_1_1Drone_1aac6da8f1354e10c00e27b024d71ffbeb" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>drone.Drone::q</definition>
+        <argsstring></argsstring>
+        <name>q</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/drone.py" line="57" column="1" bodyfile="python/drone.py" bodystart="57" bodyend="-1"/>
+        <referencedby refid="classdrone_1_1Drone_1a76f6bdaa9ba1a10abd1b727c1681a2f1" compoundref="drone_8py" startline="59" endline="62">drone.Drone.updateStates</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classdrone_1_1Drone_1a53ec705858db58590204fd0078526c4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def drone.Drone.__init__</definition>
+        <argsstring>(self, *args, **kwargs)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>*</type>
+          <declname>args</declname>
+        </param>
+        <param>
+          <type>**</type>
+          <declname>kwargs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>The constructor</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/drone.py" line="39" column="1" bodyfile="python/drone.py" bodystart="39" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classdrone_1_1Drone_1a76f6bdaa9ba1a10abd1b727c1681a2f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def drone.Drone.updateStates</definition>
+        <argsstring>(self)</argsstring>
+        <name>updateStates</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Returna o conjugado</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/drone.py" line="59" column="1" bodyfile="python/drone.py" bodystart="59" bodyend="62"/>
+        <references refid="classDrone_1a3d47c909c26ca68f771eb7ec0026e752" compoundref="Drone_8h" startline="60">Drone::q</references>
+        <references refid="classekf_1_1EKF_1aa38bc83dfb656519cfcda0c0a589ef16" compoundref="EKF_8h" startline="70">ekf::EKF::q</references>
+        <references refid="classdrone_1_1Drone_1aac6da8f1354e10c00e27b024d71ffbeb" compoundref="drone_8py" startline="57">drone.Drone.q</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>construtor
+@param self The object pointer.
+</verbatim> </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>drone.Drone</label>
+        <link refid="classdrone_1_1Drone"/>
+      </node>
+    </collaborationgraph>
+    <location file="python/drone.py" line="33" column="1" bodyfile="python/drone.py" bodystart="33" bodyend="62"/>
+    <listofallmembers>
+      <member refid="classdrone_1_1Drone_1a53ec705858db58590204fd0078526c4c" prot="public" virt="non-virtual"><scope>drone::Drone</scope><name>__init__</name></member>
+      <member refid="classdrone_1_1Drone_1a78f0f79a324e30e11d256be5606460dd" prot="public" virt="non-virtual"><scope>drone::Drone</scope><name>b</name></member>
+      <member refid="classdrone_1_1Drone_1ae0e8a53e20ef086117887ff8620f4c27" prot="public" virt="non-virtual"><scope>drone::Drone</scope><name>grav</name></member>
+      <member refid="classdrone_1_1Drone_1aabc825782675cacf5cb90697307ffcda" prot="public" virt="non-virtual"><scope>drone::Drone</scope><name>Ix</name></member>
+      <member refid="classdrone_1_1Drone_1a8b798f66003e45a5d247cc82fcc72e56" prot="public" virt="non-virtual"><scope>drone::Drone</scope><name>Iy</name></member>
+      <member refid="classdrone_1_1Drone_1a9db59ee7bf789b5a95093b62f174c1bb" prot="public" virt="non-virtual"><scope>drone::Drone</scope><name>Iz</name></member>
+      <member refid="classdrone_1_1Drone_1a943c21f6157d09063f82a66096b44c41" prot="public" virt="non-virtual"><scope>drone::Drone</scope><name>kf</name></member>
+      <member refid="classdrone_1_1Drone_1af9c6bf08da282fc597d8254f1baaf712" prot="public" virt="non-virtual"><scope>drone::Drone</scope><name>km</name></member>
+      <member refid="classdrone_1_1Drone_1a3f9b2ff1babea99866d2e6c3247f99c5" prot="public" virt="non-virtual"><scope>drone::Drone</scope><name>m</name></member>
+      <member refid="classdrone_1_1Drone_1afa9cda5efc38f9e83462d9ce4a7a0b48" prot="public" virt="non-virtual"><scope>drone::Drone</scope><name>omegaSquareMax</name></member>
+      <member refid="classdrone_1_1Drone_1a87dd118ef29eda628d846147cb2acc03" prot="public" virt="non-virtual"><scope>drone::Drone</scope><name>omegaSquareMin</name></member>
+      <member refid="classdrone_1_1Drone_1aac6da8f1354e10c00e27b024d71ffbeb" prot="public" virt="non-virtual"><scope>drone::Drone</scope><name>q</name></member>
+      <member refid="classdrone_1_1Drone_1a76f6bdaa9ba1a10abd1b727c1681a2f1" prot="public" virt="non-virtual"><scope>drone::Drone</scope><name>updateStates</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

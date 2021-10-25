@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compounddef id="drone_8py" kind="file" language="Python">
+    <compoundname>drone.py</compoundname>
+    <innerclass refid="classdrone_1_1Drone" prot="public">drone::Drone</innerclass>
+    <innernamespace refid="namespacedrone">drone</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1" refid="namespacedrone" refkind="compound"><highlight class="comment">#!/usr/bin/env<sp/>python3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">#<sp/>-*-<sp/>coding:<sp/>utf-8<sp/>-*-</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="4"><highlight class="stringliteral">Created<sp/>on<sp/>Thu<sp/>May<sp/><sp/>6<sp/>08:06:32<sp/>2021</highlight></codeline>
+<codeline lineno="5"><highlight class="stringliteral">@author:<sp/>roney</highlight></codeline>
+<codeline lineno="6"><highlight class="stringliteral">&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>sympy<sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>sp</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>numpy<sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>np</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>funcoesQuaternion<sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>fq</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="namespacedrone_1a8f7a522ea8dc8ba5116e6d8a8e1595d7" refkind="member"><highlight class="normal">grav<sp/>=<sp/>np.array([0.0,<sp/>0.0,<sp/>9.81])</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">#<sp/>momentos<sp/>de<sp/>inercia</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="namespacedrone_1a8fcbcb21c48edde073ec2a3013da3cd9" refkind="member"><highlight class="normal">Ix<sp/>=<sp/>16.83e-3</highlight></codeline>
+<codeline lineno="14" refid="namespacedrone_1a398b450771be74d8d15986196bab8f3d" refkind="member"><highlight class="normal">Iy<sp/>=<sp/>16.83e-3</highlight></codeline>
+<codeline lineno="15" refid="namespacedrone_1abbf75d4d89903bb357e8e2ddcbf72bbe" refkind="member"><highlight class="normal">Iz<sp/>=<sp/>28.34e-3</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">#<sp/>constantes<sp/>dos<sp/>motores</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="namespacedrone_1ab194ab949cad78f85bdb8238f9731f37" refkind="member"><highlight class="normal">kf<sp/>=<sp/>1.4351e-5</highlight></codeline>
+<codeline lineno="18" refid="namespacedrone_1a3e06d763422e3ea068add06fd5e3a98b" refkind="member"><highlight class="normal">km<sp/>=<sp/>2.4086e-7</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">#<sp/>paramentros<sp/>geometricos<sp/>do<sp/>quadrirrotor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="namespacedrone_1ad00e49de24779292915067e7a3bb92e1" refkind="member"><highlight class="normal">b<sp/>=<sp/>0.26</highlight></codeline>
+<codeline lineno="21" refid="namespacedrone_1a7475c0a87d5c8ae96bdc6cb6e9d54a29" refkind="member"><highlight class="normal">m<sp/>=<sp/>1.03</highlight></codeline>
+<codeline lineno="22" refid="namespacedrone_1accb330ae92eee9c3a357abd54ed1864f" refkind="member"><highlight class="normal">Ir<sp/>=<sp/>5.0e-5</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">#<sp/>tempo<sp/>de<sp/>assentamento<sp/>do<sp/>da<sp/>dinamica<sp/>do<sp/>motor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="namespacedrone_1a0bbb8a76162e5380bf929576efae9ef6" refkind="member"><highlight class="normal">ta<sp/>=<sp/>0.03</highlight></codeline>
+<codeline lineno="25" refid="namespacedrone_1a59e2545248877aa345ae8aacc0c80a7b" refkind="member"><highlight class="normal">DA<sp/>=<sp/>0.5</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment">#<sp/>%%Classe<sp/>drone<sp/>SDRE<sp/>discreto</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Classe<sp/>drone<sp/>discreto</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">#<sp/>definiçẽos<sp/>básicas</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="classdrone_1_1Drone" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classdrone_1_1Drone" kindref="compound">Drone</ref>:</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="35"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>construtor</highlight></codeline>
+<codeline lineno="36"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>@param<sp/>self<sp/>The<sp/>object<sp/>pointer.</highlight></codeline>
+<codeline lineno="37"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="classdrone_1_1Drone_1a53ec705858db58590204fd0078526c4c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classdrone_1_1Drone_1a53ec705858db58590204fd0078526c4c" kindref="member">__init__</ref>(self,<sp/>*args,<sp/>**kwargs):</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;The<sp/>constructor&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="43" refid="classdrone_1_1Drone_1aabc825782675cacf5cb90697307ffcda" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classdrone_1_1Drone_1aabc825782675cacf5cb90697307ffcda" kindref="member">Ix</ref>Ix<sp/>=<sp/>Ix</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="45" refid="classdrone_1_1Drone_1a8b798f66003e45a5d247cc82fcc72e56" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classdrone_1_1Drone_1a8b798f66003e45a5d247cc82fcc72e56" kindref="member">Iy</ref>Iy<sp/>=<sp/>Iy</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="47" refid="classdrone_1_1Drone_1a9db59ee7bf789b5a95093b62f174c1bb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classdrone_1_1Drone_1a9db59ee7bf789b5a95093b62f174c1bb" kindref="member">Iz</ref>Iz<sp/>=<sp/>Iz</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="49" refid="classdrone_1_1Drone_1a943c21f6157d09063f82a66096b44c41" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classdrone_1_1Drone_1a943c21f6157d09063f82a66096b44c41" kindref="member">kf</ref>kf<sp/>=<sp/>kf</highlight></codeline>
+<codeline lineno="50" refid="classdrone_1_1Drone_1af9c6bf08da282fc597d8254f1baaf712" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classdrone_1_1Drone_1af9c6bf08da282fc597d8254f1baaf712" kindref="member">km</ref>km<sp/>=<sp/>km</highlight></codeline>
+<codeline lineno="51" refid="classdrone_1_1Drone_1a78f0f79a324e30e11d256be5606460dd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classdrone_1_1Drone_1a78f0f79a324e30e11d256be5606460dd" kindref="member">b</ref>b<sp/>=<sp/>b</highlight></codeline>
+<codeline lineno="52" refid="classdrone_1_1Drone_1ae0e8a53e20ef086117887ff8620f4c27" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classdrone_1_1Drone_1ae0e8a53e20ef086117887ff8620f4c27" kindref="member">grav</ref>grav<sp/>=<sp/>grav</highlight></codeline>
+<codeline lineno="53" refid="classdrone_1_1Drone_1a3f9b2ff1babea99866d2e6c3247f99c5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classdrone_1_1Drone_1a3f9b2ff1babea99866d2e6c3247f99c5" kindref="member">m</ref>m<sp/>=<sp/>m</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>limites<sp/>dos<sp/>motores<sp/>rad/s</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="classdrone_1_1Drone_1a87dd118ef29eda628d846147cb2acc03" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classdrone_1_1Drone_1a87dd118ef29eda628d846147cb2acc03" kindref="member">omegaSquareMin</ref>omegaSquareMin<sp/>=<sp/>296.0<sp/>**<sp/>2.0</highlight></codeline>
+<codeline lineno="56" refid="classdrone_1_1Drone_1afa9cda5efc38f9e83462d9ce4a7a0b48" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classdrone_1_1Drone_1afa9cda5efc38f9e83462d9ce4a7a0b48" kindref="member">omegaSquareMax</ref>omegaSquareMax<sp/>=<sp/>657.0<sp/>**<sp/>2.0</highlight></codeline>
+<codeline lineno="57" refid="classdrone_1_1Drone_1aac6da8f1354e10c00e27b024d71ffbeb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classdrone_1_1Drone_1aac6da8f1354e10c00e27b024d71ffbeb" kindref="member">q</ref>q<sp/>=<sp/>np.array([1.0,<sp/>0.0,<sp/>0.0,<sp/>0.0])</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="classdrone_1_1Drone_1a76f6bdaa9ba1a10abd1b727c1681a2f1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classdrone_1_1Drone_1a76f6bdaa9ba1a10abd1b727c1681a2f1" kindref="member">updateStates</ref>(self):</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;Returna<sp/>o<sp/>conjugado&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>fq.conj(self.<ref refid="classdrone_1_1Drone_1aac6da8f1354e10c00e27b024d71ffbeb" kindref="member">q</ref>q)</highlight></codeline>
+    </programlisting>
+    <location file="python/drone.py"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,388 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compounddef id="IBusBM_8cpp" kind="file" language="C++">
+    <compoundname>IBusBM.cpp</compoundname>
+    <includes local="no">Arduino.h</includes>
+    <includes refid="IBusBM_8h" local="yes">IBusBM.h</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>Arduino.h</label>
+      </node>
+      <node id="1">
+        <label>lib/IBUSBM/IBusBM.cpp</label>
+        <link refid="IBusBM_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>IBusBM.h</label>
+        <link refid="IBusBM_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>inttypes.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="IBusBM_8cpp_1a1f0b921ce997d0d31139ca4a01afa2dc" prot="public" static="no" mutable="no">
+        <type><ref refid="classIBusBM" kindref="compound">IBusBM</ref> *</type>
+        <definition>IBusBM* IBusBMfirst</definition>
+        <argsstring></argsstring>
+        <name>IBusBMfirst</name>
+        <initializer>= NULL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IBUSBM/IBusBM.cpp" line="32" column="8" bodyfile="lib/IBUSBM/IBusBM.cpp" bodystart="32" bodyend="-1"/>
+        <referencedby refid="classIBusBM_1afb01e4a762c8f575d8466fc8dadaa5cd" compoundref="IBusBM_8cpp" startline="89" endline="167">IBusBM::begin</referencedby>
+        <referencedby refid="IBusBM_8cpp_1a68b68e72a8323bb91995b38e98cf7d3e" compoundref="IBusBM_8cpp" startline="44" endline="48">onTimer</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="IBusBM_8cpp_1a68b68e72a8323bb91995b38e98cf7d3e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void onTimer</definition>
+        <argsstring>()</argsstring>
+        <name>onTimer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/IBUSBM/IBusBM.cpp" line="44" column="6" bodyfile="lib/IBUSBM/IBusBM.cpp" bodystart="44" bodyend="48"/>
+        <references refid="IBusBM_8cpp_1a1f0b921ce997d0d31139ca4a01afa2dc" compoundref="IBusBM_8cpp" startline="32">IBusBMfirst</references>
+        <references refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="171" endline="288">IBusBM::loop</references>
+        <referencedby refid="classIBusBM_1afb01e4a762c8f575d8466fc8dadaa5cd" compoundref="IBusBM_8cpp" startline="89" endline="167">IBusBM::begin</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Interface<sp/>to<sp/>the<sp/>RC<sp/>IBus<sp/>protocol</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Based<sp/>on<sp/>original<sp/>work<sp/>from:<sp/>https://gitlab.com/timwilkinson/FlySkyIBus</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Extended<sp/>to<sp/>also<sp/>handle<sp/>sensors/telemetry<sp/>data<sp/>to<sp/>be<sp/>sent<sp/>back<sp/>to<sp/>the</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>transmitter,<sp/>interrupts<sp/>driven<sp/>and<sp/>other<sp/>features.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>This<sp/>lib<sp/>requires<sp/>a<sp/>hardware<sp/>UART<sp/>for<sp/>communication</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>Another<sp/>version<sp/>using<sp/>software<sp/>serial<sp/>is<sp/>here</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>https://github.com/Hrastovc/iBUStelemetry</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>Explaination<sp/>of<sp/>sensor/<sp/>telemetry<sp/>prtocol<sp/>here:</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>https://github.com/betaflight/betaflight/wiki/Single-wire-FlySky-(IBus)-telemetry</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>This<sp/>library<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>modify<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>License<sp/>as<sp/>published<sp/>by<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>version<sp/>2.1<sp/>of<sp/>the<sp/>License,<sp/>or<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>Created<sp/>12<sp/>March<sp/>2019<sp/>Bart<sp/>Mellink</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>Updated<sp/>4<sp/>April<sp/>2019<sp/>to<sp/>support<sp/>ESP32</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>updated<sp/>13<sp/>jun<sp/>2019<sp/>to<sp/>support<sp/>STM32<sp/>(pauluzs)</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>Updated<sp/>21<sp/>Jul<sp/>2020<sp/>to<sp/>support<sp/>MBED<sp/>(David<sp/>Peverley)</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Arduino.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="IBusBM_8h" kindref="compound">IBusBM.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment">//<sp/>pointer<sp/>to<sp/>the<sp/>first<sp/>class<sp/>instance<sp/>to<sp/>be<sp/>used<sp/>to<sp/>call<sp/>the<sp/>loop()<sp/>method<sp/>from</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">//<sp/>timer<sp/>interrupt<sp/>will<sp/>be<sp/>initiated<sp/>by<sp/>class<sp/>constructor,<sp/>then<sp/>daisy<sp/>channed<sp/>to</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">//<sp/>other<sp/>class<sp/>instances<sp/>if<sp/>we<sp/>have<sp/>more<sp/>than<sp/>one</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="IBusBM_8cpp_1a1f0b921ce997d0d31139ca4a01afa2dc" refkind="member"><highlight class="normal"><ref refid="classIBusBM" kindref="compound">IBusBM</ref><sp/>*<ref refid="IBusBM_8cpp_1a1f0b921ce997d0d31139ca4a01afa2dc" kindref="member">IBusBMfirst</ref><sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Interrupt<sp/>on<sp/>timer0<sp/>-<sp/>called<sp/>every<sp/>1<sp/>ms</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="comment">//<sp/>we<sp/>call<sp/>the<sp/>IBusSensor.loop()<sp/>here,<sp/>so<sp/>we<sp/>are<sp/>certain<sp/>we<sp/>respond<sp/>to<sp/>sensor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="comment">//<sp/>requests<sp/>in<sp/>a<sp/>timely<sp/>matter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>ARDUINO_ARCH_AVR</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal">SIGNAL(TIMER0_COMPA_vect)<sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="IBusBM_8cpp_1a1f0b921ce997d0d31139ca4a01afa2dc" kindref="member">IBusBMfirst</ref>)</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="IBusBM_8cpp_1a1f0b921ce997d0d31139ca4a01afa2dc" kindref="member">IBusBMfirst</ref>-&gt;<ref refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" kindref="member">loop</ref>();<sp/></highlight><highlight class="comment">//<sp/>gets<sp/>new<sp/>servo<sp/>values<sp/>if<sp/>available<sp/>and<sp/>process<sp/>any</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>sensor<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="IBusBM_8cpp_1a68b68e72a8323bb91995b38e98cf7d3e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="IBusBM_8cpp_1a68b68e72a8323bb91995b38e98cf7d3e" kindref="member">onTimer</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="IBusBM_8cpp_1a1f0b921ce997d0d31139ca4a01afa2dc" kindref="member">IBusBMfirst</ref>)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="IBusBM_8cpp_1a1f0b921ce997d0d31139ca4a01afa2dc" kindref="member">IBusBMfirst</ref>-&gt;<ref refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" kindref="member">loop</ref>();<sp/></highlight><highlight class="comment">//<sp/>gets<sp/>new<sp/>servo<sp/>values<sp/>if<sp/>available<sp/>and<sp/>process<sp/>any</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>sensor<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(ARDUINO_ARCH_MBED)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>TIMER4_IRQHandler_v()<sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(NRF_TIMER4-&gt;EVENTS_COMPARE[0]<sp/>==<sp/>1)<sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="IBusBM_8cpp_1a68b68e72a8323bb91995b38e98cf7d3e" kindref="member">onTimer</ref>();</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>NRF_TIMER4-&gt;EVENTS_COMPARE[0]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/>*<sp/><sp/>supports<sp/>max<sp/>14<sp/>channels<sp/>in<sp/>this<sp/>lib<sp/>(with<sp/>messagelength<sp/>of<sp/>0x20<sp/>there<sp/>is</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/>room<sp/>for<sp/>14<sp/>channels)</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"></highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/><sp/>Example<sp/>set<sp/>of<sp/>bytes<sp/>coming<sp/>over<sp/>the<sp/>iBUS<sp/>line<sp/>for<sp/>setting<sp/>servos:</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/><sp/><sp/><sp/>20<sp/>40<sp/>DB<sp/>5<sp/>DC<sp/>5<sp/>54<sp/>5<sp/>DC<sp/>5<sp/>E8<sp/>3<sp/>D0<sp/>7<sp/>D2<sp/>5<sp/>E8<sp/>3<sp/>DC<sp/>5<sp/>DC<sp/>5<sp/>DC<sp/>5<sp/>DC<sp/>5<sp/>DC<sp/>5<sp/>DC<sp/>5</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/>DA<sp/>F3<sp/>Explanation<sp/>Protocol<sp/>length:<sp/>20<sp/>Command<sp/>code:<sp/>40<sp/>Channel<sp/>0:<sp/>DB<sp/>5<sp/><sp/>-&gt;</highlight></codeline>
+<codeline lineno="69"><highlight class="comment"><sp/>value<sp/>0x5DB<sp/>Channel<sp/>1:<sp/>DC<sp/>5<sp/><sp/>-&gt;<sp/>value<sp/>0x5Dc<sp/>Channel<sp/>2:<sp/>54<sp/>5<sp/><sp/>-&gt;<sp/>value<sp/>0x554</highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/><sp/><sp/><sp/>Channel<sp/>3:<sp/>DC<sp/>5<sp/><sp/>-&gt;<sp/>value<sp/>0x5DC</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/><sp/><sp/><sp/>Channel<sp/>4:<sp/>E8<sp/>3<sp/><sp/>-&gt;<sp/>value<sp/>0x3E8</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/><sp/><sp/><sp/>Channel<sp/>5:<sp/>D0<sp/>7<sp/><sp/>-&gt;<sp/>value<sp/>0x7D0</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/><sp/><sp/><sp/>Channel<sp/>6:<sp/>D2<sp/>5<sp/><sp/>-&gt;<sp/>value<sp/>0x5D2</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/><sp/><sp/><sp/>Channel<sp/>7:<sp/>E8<sp/>3<sp/><sp/>-&gt;<sp/>value<sp/>0x3E8</highlight></codeline>
+<codeline lineno="75"><highlight class="comment"><sp/><sp/><sp/><sp/>Channel<sp/>8:<sp/>DC<sp/>5<sp/><sp/>-&gt;<sp/>value<sp/>0x5DC</highlight></codeline>
+<codeline lineno="76"><highlight class="comment"><sp/><sp/><sp/><sp/>Channel<sp/>9:<sp/>DC<sp/>5<sp/><sp/>-&gt;<sp/>value<sp/>0x5DC</highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/><sp/><sp/><sp/>Channel<sp/>10:<sp/>DC<sp/>5<sp/>-&gt;<sp/>value<sp/>0x5DC</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/><sp/><sp/><sp/>Channel<sp/>11:<sp/>DC<sp/>5<sp/>-&gt;<sp/>value<sp/>0x5DC</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/><sp/><sp/><sp/>Channel<sp/>12:<sp/>DC<sp/>5<sp/>-&gt;<sp/>value<sp/>0x5DC</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/><sp/><sp/><sp/>Channel<sp/>13:<sp/>DC<sp/>5<sp/>-&gt;<sp/>value<sp/>0x5DC</highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/><sp/><sp/><sp/>Checksum:<sp/>DA<sp/>F3<sp/>-&gt;<sp/>calculated<sp/>by<sp/>adding<sp/>up<sp/>all<sp/>previous<sp/>bytes,<sp/>total<sp/>must<sp/>be</highlight></codeline>
+<codeline lineno="82"><highlight class="comment"><sp/>FFFF</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(_VARIANT_ARDUINO_STM32_)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classIBusBM_1afb01e4a762c8f575d8466fc8dadaa5cd" kindref="member">IBusBM::begin</ref>(HardwareSerial<sp/>&amp;serial,<sp/>TIM_TypeDef<sp/>*timerid,<sp/>int8_t<sp/>rxPin,</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int8_t<sp/>txPin)<sp/>{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="classIBusBM_1afb01e4a762c8f575d8466fc8dadaa5cd" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classIBusBM_1afb01e4a762c8f575d8466fc8dadaa5cd" kindref="member">IBusBM::begin</ref>(HardwareSerial<sp/>&amp;serial,<sp/>int8_t<sp/>timerid,<sp/>int8_t<sp/>rxPin,</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int8_t<sp/>txPin)<sp/>{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>ARDUINO_ARCH_ESP32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/>serial.begin(115200,<sp/>SERIAL_8N1,<sp/>rxPin,<sp/>txPin);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/>serial.begin(115200,<sp/>SERIAL_8N1);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/>this-&gt;<ref refid="classIBusBM_1a00c0e49a0d4fcb8ac567b2e92bc74d3d" kindref="member">stream</ref><sp/>=<sp/>&amp;serial;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/>this-&gt;<ref refid="classIBusBM_1a2a316d2088ea51aeea5ce8c025687eef" kindref="member">state</ref><sp/>=<sp/><ref refid="classIBusBM_1aed184764706c5dcb4b82ae4a53b917eca9c69e26c2830eb900cd5603714acd289" kindref="member">DISCARD</ref>;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/>this-&gt;<ref refid="classIBusBM_1a20f49c47b7c40cb6f5bee2f3d4649fe3" kindref="member">last</ref><sp/>=<sp/>millis();</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/>this-&gt;<ref refid="classIBusBM_1a4a9932e9c78e976e9adb4ff09d9ed69a" kindref="member">ptr</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/>this-&gt;<ref refid="classIBusBM_1af10cf8a59adab541e055aaac1fa21cb8" kindref="member">len</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/>this-&gt;<ref refid="classIBusBM_1a60daa234d83a024b0e626a85d80b7c6c" kindref="member">chksum</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/>this-&gt;<ref refid="classIBusBM_1a025b034376f9e774e70b74207d9ea9f0" kindref="member">lchksum</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>we<sp/>need<sp/>to<sp/>process<sp/>the<sp/>iBUS<sp/>sensor<sp/>protocol<sp/>handler<sp/>frequently<sp/>enough<sp/>(at</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>least<sp/>once<sp/>each<sp/>ms)<sp/>to<sp/>ensure<sp/>the<sp/>response<sp/>data<sp/>from<sp/>the<sp/>sensor<sp/>is<sp/>sent<sp/>on</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>time<sp/>to<sp/>the<sp/>receiver<sp/>if<sp/>timerid==IBUSBM_NOTIMER<sp/>the<sp/>user<sp/>is<sp/>responsible<sp/>for</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>calling<sp/>the<sp/>loop<sp/>function</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/>this-&gt;<ref refid="classIBusBM_1a2308638e357b6a34e0752e9f7d6e2ae6" kindref="member">IBusBMnext</ref><sp/>=<sp/><ref refid="IBusBM_8cpp_1a1f0b921ce997d0d31139ca4a01afa2dc" kindref="member">IBusBMfirst</ref>;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!IBusBMfirst<sp/>&amp;&amp;<sp/>timerid<sp/>!=<sp/><ref refid="IBusBM_8h_1a8b9fd84154bff010521710049dd8f090" kindref="member">IBUSBM_NOTIMER</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>ARDUINO_ARCH_AVR</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>on<sp/>AVR<sp/>architectures<sp/>Timer0<sp/>is<sp/>already<sp/>used<sp/>for<sp/>millis()<sp/>-<sp/>we&apos;ll<sp/>just</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>interrupt<sp/>somewhere<sp/>in<sp/>the<sp/>middle<sp/>and<sp/>call<sp/>the<sp/>TIMER0_COMPA_vect</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>interrupt</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>OCR0A<sp/>=<sp/>0xAF;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>TIMSK0<sp/>|=<sp/>_BV(OCIE0A);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>on<sp/>other<sp/>architectures<sp/>we<sp/>need<sp/>to<sp/>use<sp/>a<sp/>time</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#if<sp/>defined(ARDUINO_ARCH_ESP32)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>hw_timer_t<sp/>*timer<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>timer<sp/>=<sp/>timerBegin(</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>timerid,<sp/>F_CPU<sp/>/<sp/>1000000L,</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);<sp/></highlight><highlight class="comment">//<sp/>defaults<sp/>to<sp/>timer_id<sp/>=<sp/>0;<sp/>divider=80<sp/>(1<sp/>ms);<sp/>countUp<sp/>=<sp/>true;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>timerAttachInterrupt(timer,<sp/>&amp;<ref refid="IBusBM_8cpp_1a68b68e72a8323bb91995b38e98cf7d3e" kindref="member">onTimer</ref>,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);<sp/></highlight><highlight class="comment">//<sp/>edge<sp/>=<sp/>true</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>timerAlarmWrite(timer,<sp/>1000,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>1<sp/>ms</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>timerAlarmEnable(timer);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#elif<sp/>defined(_VARIANT_ARDUINO_STM32_)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>see<sp/>https://github.com/stm32duino/wiki/wiki/HardwareTimer-library</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>HardwareTimer<sp/>*stimer_t<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>HardwareTimer(timerid);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>stimer_t-&gt;setOverflow(1000,<sp/>HERTZ_FORMAT);<sp/></highlight><highlight class="comment">//<sp/>1000<sp/>Hz</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>stimer_t-&gt;attachInterrupt(<ref refid="IBusBM_8cpp_1a68b68e72a8323bb91995b38e98cf7d3e" kindref="member">onTimer</ref>);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>stimer_t-&gt;resume();</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#elif<sp/>defined(ARDUINO_ARCH_MBED)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>NRF_TIMER4-&gt;TASKS_STOP<sp/>=<sp/>1;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Stop<sp/>timer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>NRF_TIMER4-&gt;MODE<sp/>=<sp/>TIMER_MODE_MODE_Timer;<sp/></highlight><highlight class="comment">//<sp/>Set<sp/>the<sp/>timer<sp/>in<sp/>Counter<sp/>Mode</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>NRF_TIMER4-&gt;BITMODE<sp/>=<sp/>TIMER_BITMODE_BITMODE_16Bit</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>TIMER_BITMODE_BITMODE_Pos;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>NRF_TIMER2-&gt;TASKS_CLEAR<sp/>=<sp/>1;<sp/></highlight><highlight class="comment">//<sp/>clear<sp/>the<sp/>task<sp/>first<sp/>to<sp/>be<sp/>usable<sp/>for<sp/>later</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>prescaler<sp/>&amp;<sp/>compare<sp/>register.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Prescaler<sp/>=<sp/>0<sp/>gives<sp/>16MHz<sp/>timer.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Prescaler<sp/>=<sp/>4<sp/>(2^4)<sp/>gives<sp/>1MHz<sp/>timer.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>NRF_TIMER4-&gt;PRESCALER<sp/>=<sp/>4<sp/>&lt;&lt;<sp/>TIMER_PRESCALER_PRESCALER_Pos;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>NRF_TIMER4-&gt;CC[0]<sp/>=<sp/>1000;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Enable<sp/>interrupt<sp/>on<sp/>Timer<sp/>4<sp/>for<sp/>CC[0]<sp/>compare<sp/>match<sp/>events</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>NRF_TIMER4-&gt;INTENSET<sp/>=<sp/>TIMER_INTENSET_COMPARE0_Enabled</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>TIMER_INTENSET_COMPARE0_Pos;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>NRF_TIMER4-&gt;SHORTS<sp/>=<sp/>TIMER_SHORTS_COMPARE0_CLEAR_Enabled</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>TIMER_SHORTS_COMPARE0_CLEAR_Pos;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>NVIC_EnableIRQ(TIMER4_IRQn);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>NRF_TIMER4-&gt;TASKS_START<sp/>=<sp/>1;<sp/></highlight><highlight class="comment">//<sp/>Start<sp/>TIMER2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>It<sp/>should<sp/>not<sp/>be<sp/>too<sp/>difficult<sp/>to<sp/>support<sp/>additional<sp/>architectures<sp/>as</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>most<sp/>have<sp/>timer<sp/>functions,<sp/>but<sp/>I<sp/>only<sp/>tested<sp/>AVR<sp/>and<sp/>ESP32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#warning<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="162"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;Timing<sp/>only<sp/>supportted<sp/>for<sp/>AVR,<sp/>ESP32<sp/>and<sp/>STM32<sp/>architectures.<sp/>Use<sp/>timerid<sp/>IBUSBM_NOTIMER&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><ref refid="IBusBM_8cpp_1a1f0b921ce997d0d31139ca4a01afa2dc" kindref="member">IBusBMfirst</ref><sp/>=<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight><highlight class="comment">//<sp/>called<sp/>from<sp/>timer<sp/>interrupt<sp/>or<sp/>mannually<sp/>by<sp/>user<sp/>(if<sp/>IBUSBM_NOTIMER<sp/>set<sp/>in</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight><highlight class="comment">//<sp/>begin())</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171" refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" kindref="member">IBusBM::loop</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>we<sp/>have<sp/>multiple<sp/>instances<sp/>of<sp/>IBusBM,<sp/>we<sp/>(recursively)<sp/>call<sp/>the<sp/>other</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>instances<sp/>loop()<sp/>function</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classIBusBM_1a2308638e357b6a34e0752e9f7d6e2ae6" kindref="member">IBusBMnext</ref>)</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classIBusBM_1a2308638e357b6a34e0752e9f7d6e2ae6" kindref="member">IBusBMnext</ref>-&gt;<ref refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" kindref="member">loop</ref>();</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>only<sp/>process<sp/>data<sp/>already<sp/>in<sp/>our<sp/>UART<sp/>receive<sp/>buffer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(<ref refid="classIBusBM_1a00c0e49a0d4fcb8ac567b2e92bc74d3d" kindref="member">stream</ref>-&gt;available()<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>only<sp/>consider<sp/>a<sp/>new<sp/>data<sp/>package<sp/>if<sp/>we<sp/>have<sp/>not<sp/>heard<sp/>anything<sp/>for<sp/>&gt;3ms</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>now<sp/>=<sp/>millis();</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(now<sp/>-<sp/><ref refid="classIBusBM_1a20f49c47b7c40cb6f5bee2f3d4649fe3" kindref="member">last</ref><sp/>&gt;=<sp/><ref refid="classIBusBM_1a7432721ad94f78fc5df8fd3004e7b84b" kindref="member">PROTOCOL_TIMEGAP</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classIBusBM_1a2a316d2088ea51aeea5ce8c025687eef" kindref="member">state</ref><sp/>=<sp/><ref refid="classIBusBM_1aed184764706c5dcb4b82ae4a53b917eca0c01e1a9f134347f73969aeba38df424" kindref="member">GET_LENGTH</ref>;</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classIBusBM_1a20f49c47b7c40cb6f5bee2f3d4649fe3" kindref="member">last</ref><sp/>=<sp/>now;</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>v<sp/>=<sp/><ref refid="classIBusBM_1a00c0e49a0d4fcb8ac567b2e92bc74d3d" kindref="member">stream</ref>-&gt;read();</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(<ref refid="classIBusBM_1a2a316d2088ea51aeea5ce8c025687eef" kindref="member">state</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="classIBusBM_1aed184764706c5dcb4b82ae4a53b917eca0c01e1a9f134347f73969aeba38df424" kindref="member">GET_LENGTH</ref>:</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(v<sp/>&lt;=<sp/>PROTOCOL_LENGTH<sp/>&amp;&amp;<sp/>v<sp/>&gt;<sp/><ref refid="classIBusBM_1ad79ec4b372325fcfb0fa542093250583" kindref="member">PROTOCOL_OVERHEAD</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classIBusBM_1a4a9932e9c78e976e9adb4ff09d9ed69a" kindref="member">ptr</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classIBusBM_1af10cf8a59adab541e055aaac1fa21cb8" kindref="member">len</ref><sp/>=<sp/>v<sp/>-<sp/><ref refid="classIBusBM_1ad79ec4b372325fcfb0fa542093250583" kindref="member">PROTOCOL_OVERHEAD</ref>;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classIBusBM_1a60daa234d83a024b0e626a85d80b7c6c" kindref="member">chksum</ref><sp/>=<sp/>0xFFFF<sp/>-<sp/>v;</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classIBusBM_1a2a316d2088ea51aeea5ce8c025687eef" kindref="member">state</ref><sp/>=<sp/><ref refid="classIBusBM_1aed184764706c5dcb4b82ae4a53b917eca4ed4c7f6e05b116601121d0bac402f42" kindref="member">GET_DATA</ref>;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classIBusBM_1a2a316d2088ea51aeea5ce8c025687eef" kindref="member">state</ref><sp/>=<sp/><ref refid="classIBusBM_1aed184764706c5dcb4b82ae4a53b917eca9c69e26c2830eb900cd5603714acd289" kindref="member">DISCARD</ref>;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="classIBusBM_1aed184764706c5dcb4b82ae4a53b917eca4ed4c7f6e05b116601121d0bac402f42" kindref="member">GET_DATA</ref>:</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classIBusBM_1a5e950d8524d32e3adfad0a654a9e69d1" kindref="member">buffer</ref>[<ref refid="classIBusBM_1a4a9932e9c78e976e9adb4ff09d9ed69a" kindref="member">ptr</ref>++]<sp/>=<sp/>v;</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classIBusBM_1a60daa234d83a024b0e626a85d80b7c6c" kindref="member">chksum</ref><sp/>-=<sp/>v;</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classIBusBM_1a4a9932e9c78e976e9adb4ff09d9ed69a" kindref="member">ptr</ref><sp/>==<sp/><ref refid="classIBusBM_1af10cf8a59adab541e055aaac1fa21cb8" kindref="member">len</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classIBusBM_1a2a316d2088ea51aeea5ce8c025687eef" kindref="member">state</ref><sp/>=<sp/><ref refid="classIBusBM_1aed184764706c5dcb4b82ae4a53b917ecaa7f315ef3b8eab0e0f6abc1b3f25bcc0" kindref="member">GET_CHKSUML</ref>;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="classIBusBM_1aed184764706c5dcb4b82ae4a53b917ecaa7f315ef3b8eab0e0f6abc1b3f25bcc0" kindref="member">GET_CHKSUML</ref>:</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classIBusBM_1a025b034376f9e774e70b74207d9ea9f0" kindref="member">lchksum</ref><sp/>=<sp/>v;</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classIBusBM_1a2a316d2088ea51aeea5ce8c025687eef" kindref="member">state</ref><sp/>=<sp/><ref refid="classIBusBM_1aed184764706c5dcb4b82ae4a53b917ecaf7c395fada4d5074ad979c56cfde8ed0" kindref="member">GET_CHKSUMH</ref>;</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="classIBusBM_1aed184764706c5dcb4b82ae4a53b917ecaf7c395fada4d5074ad979c56cfde8ed0" kindref="member">GET_CHKSUMH</ref>:</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Validate<sp/>checksum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classIBusBM_1a60daa234d83a024b0e626a85d80b7c6c" kindref="member">chksum</ref><sp/>==<sp/>(v<sp/>&lt;&lt;<sp/>8)<sp/>+<sp/><ref refid="classIBusBM_1a025b034376f9e774e70b74207d9ea9f0" kindref="member">lchksum</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Checksum<sp/>is<sp/>all<sp/>fine<sp/>Execute<sp/>command<sp/>-</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>adr<sp/>=<sp/><ref refid="classIBusBM_1a5e950d8524d32e3adfad0a654a9e69d1" kindref="member">buffer</ref>[0]<sp/>&amp;<sp/>0x0f;</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classIBusBM_1a5e950d8524d32e3adfad0a654a9e69d1" kindref="member">buffer</ref>[0]<sp/>==<sp/><ref refid="classIBusBM_1a04af78a0dfdab275bdb2fa82253c8b49" kindref="member">PROTOCOL_COMMAND40</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Valid<sp/>servo<sp/>command<sp/>received<sp/>-<sp/>extract<sp/>channel<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(uint8_t<sp/>i<sp/>=<sp/>1;<sp/>i<sp/>&lt;<sp/><ref refid="classIBusBM_1ac1d183fc712d8136da488fcc823715a1" kindref="member">PROTOCOL_CHANNELS</ref><sp/>*<sp/>2<sp/>+<sp/>1;<sp/>i<sp/>+=<sp/>2)<sp/>{</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classIBusBM_1ac1f54297358da1bd0dcfe3af9eed31ea" kindref="member">channel</ref>[i<sp/>/<sp/>2]<sp/>=<sp/><ref refid="classIBusBM_1a5e950d8524d32e3adfad0a654a9e69d1" kindref="member">buffer</ref>[i]<sp/>|<sp/>(<ref refid="classIBusBM_1a5e950d8524d32e3adfad0a654a9e69d1" kindref="member">buffer</ref>[i<sp/>+<sp/>1]<sp/>&lt;&lt;<sp/>8);</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classIBusBM_1a15332b57310d1cbca77180befc27cd99" kindref="member">cnt_rec</ref>++;</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(adr<sp/>&lt;=<sp/>NumberSensors<sp/>&amp;&amp;<sp/>adr<sp/>&gt;<sp/>0<sp/>&amp;&amp;<sp/><ref refid="classIBusBM_1af10cf8a59adab541e055aaac1fa21cb8" kindref="member">len</ref><sp/>==<sp/>1)<sp/>{</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>all<sp/>sensor<sp/>data<sp/>commands<sp/>go<sp/>here</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>we<sp/>only<sp/>process<sp/>the<sp/>len==1<sp/>commands<sp/>(=message<sp/>length<sp/>is<sp/>4<sp/>bytes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>incl<sp/>overhead)<sp/>to<sp/>prevent<sp/>the<sp/>case<sp/>the<sp/>return<sp/>messages<sp/>from<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>UART<sp/>TX<sp/>port<sp/>loop<sp/>back<sp/>to<sp/>the<sp/>RX<sp/>port<sp/>and<sp/>are<sp/>processed<sp/>again.<sp/>This</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>is<sp/>extra<sp/>precaution<sp/>as<sp/>it<sp/>will<sp/>also<sp/>be<sp/>prevented<sp/>by<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>PROTOCOL_TIMEGAP<sp/>required</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structIBusBM_1_1sensorinfo" kindref="compound">sensorinfo</ref><sp/>*s<sp/>=<sp/>&amp;<ref refid="classIBusBM_1a2f6eb7d18ab2dccf0a87c0bbf4c15dfc" kindref="member">sensors</ref>[adr<sp/>-<sp/>1];</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>delayMicroseconds(100);</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(<ref refid="classIBusBM_1a5e950d8524d32e3adfad0a654a9e69d1" kindref="member">buffer</ref>[0]<sp/>&amp;<sp/>0x0f0)<sp/>{</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="classIBusBM_1a5a474b243c8a027b395314b052d283e7" kindref="member">PROTOCOL_COMMAND_DISCOVER</ref>:<sp/></highlight><highlight class="comment">//<sp/>0x80,<sp/>discover<sp/>sensor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classIBusBM_1ae980c3b427d1c12d93c2fc13322f7665" kindref="member">cnt_poll</ref>++;</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>echo<sp/>discover<sp/>command:<sp/>0x04,<sp/>0x81,<sp/>0x7A,<sp/>0xFF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classIBusBM_1a00c0e49a0d4fcb8ac567b2e92bc74d3d" kindref="member">stream</ref>-&gt;write(0x04);</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classIBusBM_1a00c0e49a0d4fcb8ac567b2e92bc74d3d" kindref="member">stream</ref>-&gt;write(<ref refid="classIBusBM_1a5a474b243c8a027b395314b052d283e7" kindref="member">PROTOCOL_COMMAND_DISCOVER</ref><sp/>+<sp/>adr);</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classIBusBM_1a60daa234d83a024b0e626a85d80b7c6c" kindref="member">chksum</ref><sp/>=<sp/>0xFFFF<sp/>-<sp/>(0x04<sp/>+<sp/><ref refid="classIBusBM_1a5a474b243c8a027b395314b052d283e7" kindref="member">PROTOCOL_COMMAND_DISCOVER</ref><sp/>+<sp/>adr);</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="classIBusBM_1a270b74b38e646b87402d4a2340187e20" kindref="member">PROTOCOL_COMMAND_TYPE</ref>:<sp/></highlight><highlight class="comment">//<sp/>0x90,<sp/>send<sp/>sensor<sp/>type</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>echo<sp/>sensortype<sp/>command:<sp/>0x06<sp/>0x91<sp/>0x00<sp/>0x02<sp/>0x66<sp/>0xFF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classIBusBM_1a00c0e49a0d4fcb8ac567b2e92bc74d3d" kindref="member">stream</ref>-&gt;write(0x06);</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classIBusBM_1a00c0e49a0d4fcb8ac567b2e92bc74d3d" kindref="member">stream</ref>-&gt;write(<ref refid="classIBusBM_1a270b74b38e646b87402d4a2340187e20" kindref="member">PROTOCOL_COMMAND_TYPE</ref><sp/>+<sp/>adr);</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classIBusBM_1a00c0e49a0d4fcb8ac567b2e92bc74d3d" kindref="member">stream</ref>-&gt;write(s-&gt;<ref refid="structIBusBM_1_1sensorinfo_1abd881da866db85793dcdd020d8eecb5c" kindref="member">sensorType</ref>);</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classIBusBM_1a00c0e49a0d4fcb8ac567b2e92bc74d3d" kindref="member">stream</ref>-&gt;write(s-&gt;<ref refid="structIBusBM_1_1sensorinfo_1a0838975a9991ce94a7009f237cd7edc2" kindref="member">sensorLength</ref>);</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classIBusBM_1a60daa234d83a024b0e626a85d80b7c6c" kindref="member">chksum</ref><sp/>=<sp/>0xFFFF<sp/>-<sp/>(0x06<sp/>+<sp/><ref refid="classIBusBM_1a270b74b38e646b87402d4a2340187e20" kindref="member">PROTOCOL_COMMAND_TYPE</ref><sp/>+<sp/>adr<sp/>+</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s-&gt;<ref refid="structIBusBM_1_1sensorinfo_1abd881da866db85793dcdd020d8eecb5c" kindref="member">sensorType</ref><sp/>+<sp/>s-&gt;<ref refid="structIBusBM_1_1sensorinfo_1a0838975a9991ce94a7009f237cd7edc2" kindref="member">sensorLength</ref>);</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="classIBusBM_1af7d9b5d197f47071a8d6d8723cb14a72" kindref="member">PROTOCOL_COMMAND_VALUE</ref>:<sp/></highlight><highlight class="comment">//<sp/>0xA0,<sp/>send<sp/>sensor<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classIBusBM_1a4bf0677885cb0944adfc7725fffe0ccc" kindref="member">cnt_sensor</ref>++;</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="main_8cpp_1a415ca717d7f13cfb8bcbaa07a3ddd062" kindref="member">t</ref>;</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>echo<sp/>sensor<sp/>value<sp/>command:<sp/>0x06<sp/>0x91<sp/>0x00<sp/>0x02<sp/>0x66<sp/>0xFF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classIBusBM_1a00c0e49a0d4fcb8ac567b2e92bc74d3d" kindref="member">stream</ref>-&gt;write(<ref refid="main_8cpp_1a415ca717d7f13cfb8bcbaa07a3ddd062" kindref="member">t</ref><sp/>=<sp/>0x04<sp/>+<sp/>s-&gt;<ref refid="structIBusBM_1_1sensorinfo_1a0838975a9991ce94a7009f237cd7edc2" kindref="member">sensorLength</ref>);</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classIBusBM_1a60daa234d83a024b0e626a85d80b7c6c" kindref="member">chksum</ref><sp/>=<sp/>0xFFFF<sp/>-<sp/><ref refid="main_8cpp_1a415ca717d7f13cfb8bcbaa07a3ddd062" kindref="member">t</ref>;</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classIBusBM_1a00c0e49a0d4fcb8ac567b2e92bc74d3d" kindref="member">stream</ref>-&gt;write(<ref refid="main_8cpp_1a415ca717d7f13cfb8bcbaa07a3ddd062" kindref="member">t</ref><sp/>=<sp/><ref refid="classIBusBM_1af7d9b5d197f47071a8d6d8723cb14a72" kindref="member">PROTOCOL_COMMAND_VALUE</ref><sp/>+<sp/>adr);</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classIBusBM_1a60daa234d83a024b0e626a85d80b7c6c" kindref="member">chksum</ref><sp/>-=<sp/><ref refid="main_8cpp_1a415ca717d7f13cfb8bcbaa07a3ddd062" kindref="member">t</ref>;</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classIBusBM_1a00c0e49a0d4fcb8ac567b2e92bc74d3d" kindref="member">stream</ref>-&gt;write(<ref refid="main_8cpp_1a415ca717d7f13cfb8bcbaa07a3ddd062" kindref="member">t</ref><sp/>=<sp/>s-&gt;<ref refid="structIBusBM_1_1sensorinfo_1a07cfd12b2c2a8982a88aeecf85bd322b" kindref="member">sensorValue</ref><sp/>&amp;<sp/>0x0ff);</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classIBusBM_1a60daa234d83a024b0e626a85d80b7c6c" kindref="member">chksum</ref><sp/>-=<sp/><ref refid="main_8cpp_1a415ca717d7f13cfb8bcbaa07a3ddd062" kindref="member">t</ref>;</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classIBusBM_1a00c0e49a0d4fcb8ac567b2e92bc74d3d" kindref="member">stream</ref>-&gt;write(<ref refid="main_8cpp_1a415ca717d7f13cfb8bcbaa07a3ddd062" kindref="member">t</ref><sp/>=<sp/>(s-&gt;<ref refid="structIBusBM_1_1sensorinfo_1a07cfd12b2c2a8982a88aeecf85bd322b" kindref="member">sensorValue</ref><sp/>&gt;&gt;<sp/>8)<sp/>&amp;<sp/>0x0ff);</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classIBusBM_1a60daa234d83a024b0e626a85d80b7c6c" kindref="member">chksum</ref><sp/>-=<sp/><ref refid="main_8cpp_1a415ca717d7f13cfb8bcbaa07a3ddd062" kindref="member">t</ref>;</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(s-&gt;<ref refid="structIBusBM_1_1sensorinfo_1a0838975a9991ce94a7009f237cd7edc2" kindref="member">sensorLength</ref><sp/>==<sp/>4)<sp/>{</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classIBusBM_1a00c0e49a0d4fcb8ac567b2e92bc74d3d" kindref="member">stream</ref>-&gt;write(<ref refid="main_8cpp_1a415ca717d7f13cfb8bcbaa07a3ddd062" kindref="member">t</ref><sp/>=<sp/>(s-&gt;<ref refid="structIBusBM_1_1sensorinfo_1a07cfd12b2c2a8982a88aeecf85bd322b" kindref="member">sensorValue</ref><sp/>&gt;&gt;<sp/>16)<sp/>&amp;<sp/>0x0ff);</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classIBusBM_1a60daa234d83a024b0e626a85d80b7c6c" kindref="member">chksum</ref><sp/>-=<sp/><ref refid="main_8cpp_1a415ca717d7f13cfb8bcbaa07a3ddd062" kindref="member">t</ref>;</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classIBusBM_1a00c0e49a0d4fcb8ac567b2e92bc74d3d" kindref="member">stream</ref>-&gt;write(<ref refid="main_8cpp_1a415ca717d7f13cfb8bcbaa07a3ddd062" kindref="member">t</ref><sp/>=<sp/>(s-&gt;<ref refid="structIBusBM_1_1sensorinfo_1a07cfd12b2c2a8982a88aeecf85bd322b" kindref="member">sensorValue</ref><sp/>&gt;&gt;<sp/>24)<sp/>&amp;<sp/>0x0ff);</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classIBusBM_1a60daa234d83a024b0e626a85d80b7c6c" kindref="member">chksum</ref><sp/>-=<sp/><ref refid="main_8cpp_1a415ca717d7f13cfb8bcbaa07a3ddd062" kindref="member">t</ref>;</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>adr<sp/>=<sp/>0;<sp/></highlight><highlight class="comment">//<sp/>unknown<sp/>command,<sp/>prevent<sp/>sending<sp/>chksum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(adr<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classIBusBM_1a00c0e49a0d4fcb8ac567b2e92bc74d3d" kindref="member">stream</ref>-&gt;write(<ref refid="classIBusBM_1a60daa234d83a024b0e626a85d80b7c6c" kindref="member">chksum</ref><sp/>&amp;<sp/>0x0ff);</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classIBusBM_1a00c0e49a0d4fcb8ac567b2e92bc74d3d" kindref="member">stream</ref>-&gt;write(<ref refid="classIBusBM_1a60daa234d83a024b0e626a85d80b7c6c" kindref="member">chksum</ref><sp/>&gt;&gt;<sp/>8);</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classIBusBM_1a2a316d2088ea51aeea5ce8c025687eef" kindref="member">state</ref><sp/>=<sp/><ref refid="classIBusBM_1aed184764706c5dcb4b82ae4a53b917eca9c69e26c2830eb900cd5603714acd289" kindref="member">DISCARD</ref>;</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="classIBusBM_1aed184764706c5dcb4b82ae4a53b917eca9c69e26c2830eb900cd5603714acd289" kindref="member">DISCARD</ref>:</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="288"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"></highlight></codeline>
+<codeline lineno="290" refid="classIBusBM_1af21822cffd62a1f2f8da19c407c00b94" refkind="member"><highlight class="normal">uint16_t<sp/><ref refid="classIBusBM_1af21822cffd62a1f2f8da19c407c00b94" kindref="member">IBusBM::readChannel</ref>(uint8_t<sp/>channelNr)<sp/>{</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(channelNr<sp/>&lt;<sp/><ref refid="classIBusBM_1ac1d183fc712d8136da488fcc823715a1" kindref="member">PROTOCOL_CHANNELS</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classIBusBM_1ac1f54297358da1bd0dcfe3af9eed31ea" kindref="member">channel</ref>[channelNr];</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="296"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"></highlight></codeline>
+<codeline lineno="298" refid="classIBusBM_1a126cc857adec1367f7264f27ae68a347" refkind="member"><highlight class="normal">uint8_t<sp/><ref refid="classIBusBM_1a126cc857adec1367f7264f27ae68a347" kindref="member">IBusBM::addSensor</ref>(uint8_t<sp/>type,<sp/>uint8_t<sp/><ref refid="classIBusBM_1af10cf8a59adab541e055aaac1fa21cb8" kindref="member">len</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>add<sp/>a<sp/>sensor,<sp/>return<sp/>sensor<sp/>number</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classIBusBM_1af10cf8a59adab541e055aaac1fa21cb8" kindref="member">len</ref><sp/>!=<sp/>2<sp/>&amp;&amp;<sp/><ref refid="classIBusBM_1af10cf8a59adab541e055aaac1fa21cb8" kindref="member">len</ref><sp/>!=<sp/>4)</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classIBusBM_1af10cf8a59adab541e055aaac1fa21cb8" kindref="member">len</ref><sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classIBusBM_1afd1a0be2e13c31156d32e242383915b5" kindref="member">NumberSensors</ref><sp/>&lt;<sp/><ref refid="classIBusBM_1abf1b1c4c0bac139f0d5f9cfb78d5f88f" kindref="member">SENSORMAX</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structIBusBM_1_1sensorinfo" kindref="compound">sensorinfo</ref><sp/>*s<sp/>=<sp/>&amp;<ref refid="classIBusBM_1a2f6eb7d18ab2dccf0a87c0bbf4c15dfc" kindref="member">sensors</ref>[<ref refid="classIBusBM_1afd1a0be2e13c31156d32e242383915b5" kindref="member">NumberSensors</ref>];</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/>s-&gt;<ref refid="structIBusBM_1_1sensorinfo_1abd881da866db85793dcdd020d8eecb5c" kindref="member">sensorType</ref><sp/>=<sp/>type;</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/>s-&gt;<ref refid="structIBusBM_1_1sensorinfo_1a0838975a9991ce94a7009f237cd7edc2" kindref="member">sensorLength</ref><sp/>=<sp/><ref refid="classIBusBM_1af10cf8a59adab541e055aaac1fa21cb8" kindref="member">len</ref>;</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/>s-&gt;<ref refid="structIBusBM_1_1sensorinfo_1a07cfd12b2c2a8982a88aeecf85bd322b" kindref="member">sensorValue</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classIBusBM_1afd1a0be2e13c31156d32e242383915b5" kindref="member">NumberSensors</ref>++;</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classIBusBM_1afd1a0be2e13c31156d32e242383915b5" kindref="member">NumberSensors</ref>;</highlight></codeline>
+<codeline lineno="310"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"></highlight></codeline>
+<codeline lineno="312" refid="classIBusBM_1acbd0bcad0529b872c72d4e7a49233460" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classIBusBM_1acbd0bcad0529b872c72d4e7a49233460" kindref="member">IBusBM::setSensorMeasurement</ref>(uint8_t<sp/>adr,<sp/>int32_t<sp/>value)<sp/>{</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(adr<sp/>&lt;=<sp/>NumberSensors<sp/>&amp;&amp;<sp/>adr<sp/>&gt;<sp/>0)</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classIBusBM_1a2f6eb7d18ab2dccf0a87c0bbf4c15dfc" kindref="member">sensors</ref>[adr<sp/>-<sp/>1].<ref refid="structIBusBM_1_1sensorinfo_1a07cfd12b2c2a8982a88aeecf85bd322b" kindref="member">sensorValue</ref><sp/>=<sp/>value;</highlight></codeline>
+<codeline lineno="315"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="lib/IBUSBM/IBusBM.cpp"/>
+  </compounddef>
+</doxygen>

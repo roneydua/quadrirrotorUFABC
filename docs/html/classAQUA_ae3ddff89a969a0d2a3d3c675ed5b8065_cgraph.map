@@ -1,0 +1,8 @@
+<map id="AQUA::computeAQUAQuaternion" name="AQUA::computeAQUAQuaternion">
+<area shape="rect" id="node1" title=" " alt="" coords="5,77,189,101"/>
+<area shape="rect" id="node2" href="$classAQUA.html#abdff34437c9c066d046a342525a01b52" title="Calcula o quaternion de inclinacao." alt="" coords="246,5,437,29"/>
+<area shape="rect" id="node3" href="$classAQUA.html#a6adb2b857affb225b29fb91e6f6a7194" title=" " alt="" coords="252,53,431,77"/>
+<area shape="rect" id="node5" href="$namespaceekf.html#a0ae7d9ae45fba00d81bfe71ad73d7fee" title="Produto de quaternions aplicado." alt="" coords="258,101,425,125"/>
+<area shape="rect" id="node6" href="$namespaceekf.html#acb1dc12948420927eff91ed90c24b342" title="Rotaciona um vetor tridimensional com um quaternion conjugado." alt="" coords="237,150,445,186"/>
+<area shape="rect" id="node4" href="$namespaceekf.html#ab55e144edf7066b67232e15cca7b4646" title="Calcula o inverso do raiz de um float." alt="" coords="493,53,588,77"/>
+</map>

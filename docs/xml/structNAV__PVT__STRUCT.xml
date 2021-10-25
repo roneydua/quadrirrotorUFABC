@@ -1,0 +1,509 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compounddef id="structNAV__PVT__STRUCT" kind="struct" language="C++" prot="public">
+    <compoundname>NAV_PVT_STRUCT</compoundname>
+    <includes refid="GPS_8h" local="no">GPS.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structNAV__PVT__STRUCT_1a42a6506722356f74e72a6c09b3d36981" prot="public" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char NAV_PVT_STRUCT::cls</definition>
+        <argsstring></argsstring>
+        <name>cls</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="97" column="17" bodyfile="lib/EKF/GPS.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__PVT__STRUCT_1ac7f737a77264a615d090846e8508b15c" prot="public" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char NAV_PVT_STRUCT::id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="98" column="17" bodyfile="lib/EKF/GPS.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__PVT__STRUCT_1a45c1c383f15364531cefad7a9689e4cd" prot="public" static="no" mutable="no">
+        <type>unsigned short</type>
+        <definition>unsigned short NAV_PVT_STRUCT::len</definition>
+        <argsstring></argsstring>
+        <name>len</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="99" column="18" bodyfile="lib/EKF/GPS.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__PVT__STRUCT_1a77b13534f916d34c72d828e63f2c685c" prot="public" static="no" mutable="no">
+        <type>unsigned long</type>
+        <definition>unsigned long NAV_PVT_STRUCT::iTOW</definition>
+        <argsstring></argsstring>
+        <name>iTOW</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="100" column="18" bodyfile="lib/EKF/GPS.h" bodystart="100" bodyend="-1"/>
+        <referencedby refid="GPS_8h_1aaab66558a5f695df7a6fcc3baa340da3" compoundref="GPS_8h" startline="392" endline="433">gps_imprime</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__PVT__STRUCT_1a6fcb9f165e78a4f81c8891841de5ac62" prot="public" static="no" mutable="no">
+        <type>unsigned short</type>
+        <definition>unsigned short NAV_PVT_STRUCT::year</definition>
+        <argsstring></argsstring>
+        <name>year</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="101" column="19" bodyfile="lib/EKF/GPS.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__PVT__STRUCT_1a4ca689c97238b68b845f03117f79e789" prot="public" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char NAV_PVT_STRUCT::month</definition>
+        <argsstring></argsstring>
+        <name>month</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="102" column="18" bodyfile="lib/EKF/GPS.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__PVT__STRUCT_1aba771368d0601aa15eec99ab7050a095" prot="public" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char NAV_PVT_STRUCT::day</definition>
+        <argsstring></argsstring>
+        <name>day</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="103" column="18" bodyfile="lib/EKF/GPS.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__PVT__STRUCT_1a9558a232009d5fe838e22bc9c8eb0ba3" prot="public" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char NAV_PVT_STRUCT::hour</definition>
+        <argsstring></argsstring>
+        <name>hour</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="104" column="18" bodyfile="lib/EKF/GPS.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__PVT__STRUCT_1a863c8316485bbdf439073478fc25343a" prot="public" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char NAV_PVT_STRUCT::min</definition>
+        <argsstring></argsstring>
+        <name>min</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="105" column="18" bodyfile="lib/EKF/GPS.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__PVT__STRUCT_1a951fd966a0fc28300db089792547d2d8" prot="public" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char NAV_PVT_STRUCT::sec</definition>
+        <argsstring></argsstring>
+        <name>sec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="106" column="18" bodyfile="lib/EKF/GPS.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__PVT__STRUCT_1ab59fe8ccda8098515daa41f135c4f812" prot="public" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char NAV_PVT_STRUCT::valid</definition>
+        <argsstring></argsstring>
+        <name>valid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="107" column="18" bodyfile="lib/EKF/GPS.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__PVT__STRUCT_1ac04cfb4bf12ae9c3df554629740f3286" prot="public" static="no" mutable="no">
+        <type>unsigned long</type>
+        <definition>unsigned long NAV_PVT_STRUCT::tAcc</definition>
+        <argsstring></argsstring>
+        <name>tAcc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="108" column="18" bodyfile="lib/EKF/GPS.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__PVT__STRUCT_1a3b772ad4a5c93eef8db16e6f5bbfcd59" prot="public" static="no" mutable="no">
+        <type>long</type>
+        <definition>long NAV_PVT_STRUCT::nano</definition>
+        <argsstring></argsstring>
+        <name>nano</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="109" column="9" bodyfile="lib/EKF/GPS.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__PVT__STRUCT_1af38c07f23fd57d4cb4a88dd99492ce3b" prot="public" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char NAV_PVT_STRUCT::fixType</definition>
+        <argsstring></argsstring>
+        <name>fixType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="110" column="18" bodyfile="lib/EKF/GPS.h" bodystart="110" bodyend="-1"/>
+        <referencedby refid="GPS_8h_1aaab66558a5f695df7a6fcc3baa340da3" compoundref="GPS_8h" startline="392" endline="433">gps_imprime</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__PVT__STRUCT_1a3bd1bada160988b8a9c829685b9ec58c" prot="public" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char NAV_PVT_STRUCT::flags</definition>
+        <argsstring></argsstring>
+        <name>flags</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="111" column="18" bodyfile="lib/EKF/GPS.h" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__PVT__STRUCT_1a9fac1821733bc6d8829322edcbdb651c" prot="public" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char NAV_PVT_STRUCT::flags2</definition>
+        <argsstring></argsstring>
+        <name>flags2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="112" column="18" bodyfile="lib/EKF/GPS.h" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__PVT__STRUCT_1a4ec7b63e686800c231126a74722e47ca" prot="public" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char NAV_PVT_STRUCT::numSV</definition>
+        <argsstring></argsstring>
+        <name>numSV</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="113" column="18" bodyfile="lib/EKF/GPS.h" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__PVT__STRUCT_1ac884e66d0b3ebd6530680ad23e13a81e" prot="public" static="no" mutable="no">
+        <type>long</type>
+        <definition>long NAV_PVT_STRUCT::lon</definition>
+        <argsstring></argsstring>
+        <name>lon</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="114" column="9" bodyfile="lib/EKF/GPS.h" bodystart="114" bodyend="-1"/>
+        <referencedby refid="GPS_8h_1aaab66558a5f695df7a6fcc3baa340da3" compoundref="GPS_8h" startline="392" endline="433">gps_imprime</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__PVT__STRUCT_1ab8a62324ff89a0c707884bfc34aba85d" prot="public" static="no" mutable="no">
+        <type>long</type>
+        <definition>long NAV_PVT_STRUCT::lat</definition>
+        <argsstring></argsstring>
+        <name>lat</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="115" column="9" bodyfile="lib/EKF/GPS.h" bodystart="115" bodyend="-1"/>
+        <referencedby refid="GPS_8h_1aaab66558a5f695df7a6fcc3baa340da3" compoundref="GPS_8h" startline="392" endline="433">gps_imprime</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__PVT__STRUCT_1aacdb7b954a1e04eac787d8aa60409eee" prot="public" static="no" mutable="no">
+        <type>long</type>
+        <definition>long NAV_PVT_STRUCT::height</definition>
+        <argsstring></argsstring>
+        <name>height</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="116" column="9" bodyfile="lib/EKF/GPS.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__PVT__STRUCT_1a593d78a85e8db2a7511396023ac72bd6" prot="public" static="no" mutable="no">
+        <type>long</type>
+        <definition>long NAV_PVT_STRUCT::hMSL</definition>
+        <argsstring></argsstring>
+        <name>hMSL</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="117" column="9" bodyfile="lib/EKF/GPS.h" bodystart="117" bodyend="-1"/>
+        <referencedby refid="GPS_8h_1aaab66558a5f695df7a6fcc3baa340da3" compoundref="GPS_8h" startline="392" endline="433">gps_imprime</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__PVT__STRUCT_1a587393afa60a9c94edbf39f90f876cbb" prot="public" static="no" mutable="no">
+        <type>unsigned long</type>
+        <definition>unsigned long NAV_PVT_STRUCT::hAcc</definition>
+        <argsstring></argsstring>
+        <name>hAcc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="118" column="18" bodyfile="lib/EKF/GPS.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__PVT__STRUCT_1a5a579a58fac4d536c0a92b0126a6bf1d" prot="public" static="no" mutable="no">
+        <type>unsigned long</type>
+        <definition>unsigned long NAV_PVT_STRUCT::vAcc</definition>
+        <argsstring></argsstring>
+        <name>vAcc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="119" column="18" bodyfile="lib/EKF/GPS.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__PVT__STRUCT_1a9f0c42e0df789f5ed086349ad79d1f9c" prot="public" static="no" mutable="no">
+        <type>long</type>
+        <definition>long NAV_PVT_STRUCT::velN</definition>
+        <argsstring></argsstring>
+        <name>velN</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Velocidade na direção norte (cm/s) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="121" column="9" bodyfile="lib/EKF/GPS.h" bodystart="121" bodyend="-1"/>
+        <referencedby refid="GPS_8h_1aaab66558a5f695df7a6fcc3baa340da3" compoundref="GPS_8h" startline="392" endline="433">gps_imprime</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__PVT__STRUCT_1a1abd8ac18139ec0e1148cbea6cd36b18" prot="public" static="no" mutable="no">
+        <type>long</type>
+        <definition>long NAV_PVT_STRUCT::velE</definition>
+        <argsstring></argsstring>
+        <name>velE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Velocidade na direção leste (cm/s) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="123" column="9" bodyfile="lib/EKF/GPS.h" bodystart="123" bodyend="-1"/>
+        <referencedby refid="GPS_8h_1aaab66558a5f695df7a6fcc3baa340da3" compoundref="GPS_8h" startline="392" endline="433">gps_imprime</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__PVT__STRUCT_1ae5860d883e58fa8d23dba2c4aa1c3e45" prot="public" static="no" mutable="no">
+        <type>long</type>
+        <definition>long NAV_PVT_STRUCT::velD</definition>
+        <argsstring></argsstring>
+        <name>velD</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Velocidade na direção para baixo (cm/s) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="125" column="9" bodyfile="lib/EKF/GPS.h" bodystart="125" bodyend="-1"/>
+        <referencedby refid="GPS_8h_1aaab66558a5f695df7a6fcc3baa340da3" compoundref="GPS_8h" startline="392" endline="433">gps_imprime</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__PVT__STRUCT_1a0304e9a013eec6cf906793fcfad5fe59" prot="public" static="no" mutable="no">
+        <type>long</type>
+        <definition>long NAV_PVT_STRUCT::gSpeed</definition>
+        <argsstring></argsstring>
+        <name>gSpeed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="126" column="9" bodyfile="lib/EKF/GPS.h" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__PVT__STRUCT_1acd88d08d72da09efa3edfef59c24f5e3" prot="public" static="no" mutable="no">
+        <type>long</type>
+        <definition>long NAV_PVT_STRUCT::headMot</definition>
+        <argsstring></argsstring>
+        <name>headMot</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="127" column="9" bodyfile="lib/EKF/GPS.h" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__PVT__STRUCT_1a8bc469b1c7053cc1358d411041266729" prot="public" static="no" mutable="no">
+        <type>unsigned long</type>
+        <definition>unsigned long NAV_PVT_STRUCT::sAcc</definition>
+        <argsstring></argsstring>
+        <name>sAcc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="128" column="18" bodyfile="lib/EKF/GPS.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__PVT__STRUCT_1aaf41d738d049ebd1c80396b4b531273b" prot="public" static="no" mutable="no">
+        <type>unsigned long</type>
+        <definition>unsigned long NAV_PVT_STRUCT::headAcc</definition>
+        <argsstring></argsstring>
+        <name>headAcc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="129" column="18" bodyfile="lib/EKF/GPS.h" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__PVT__STRUCT_1a8fbe98b98c20bffb60327748af7d4e6a" prot="public" static="no" mutable="no">
+        <type>unsigned short</type>
+        <definition>unsigned short NAV_PVT_STRUCT::pDOP</definition>
+        <argsstring></argsstring>
+        <name>pDOP</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="130" column="19" bodyfile="lib/EKF/GPS.h" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__PVT__STRUCT_1ac180d88179b0671dca08121915d55838" prot="public" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char NAV_PVT_STRUCT::reserved1[6]</definition>
+        <argsstring>[6]</argsstring>
+        <name>reserved1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="131" column="18" bodyfile="lib/EKF/GPS.h" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__PVT__STRUCT_1a03d604d979ea8d066edf62a4a1b2c46e" prot="public" static="no" mutable="no">
+        <type>long</type>
+        <definition>long NAV_PVT_STRUCT::headVeh</definition>
+        <argsstring></argsstring>
+        <name>headVeh</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="132" column="9" bodyfile="lib/EKF/GPS.h" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__PVT__STRUCT_1ad7be043d349fb056d0c47de5282750b4" prot="public" static="no" mutable="no">
+        <type>unsigned long</type>
+        <definition>unsigned long NAV_PVT_STRUCT::reserved2</definition>
+        <argsstring></argsstring>
+        <name>reserved2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="133" column="18" bodyfile="lib/EKF/GPS.h" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>NAV_PVT_STRUCT</label>
+        <link refid="structNAV__PVT__STRUCT"/>
+      </node>
+    </collaborationgraph>
+    <location file="lib/EKF/GPS.h" line="96" column="1" bodyfile="lib/EKF/GPS.h" bodystart="96" bodyend="134"/>
+    <listofallmembers>
+      <member refid="structNAV__PVT__STRUCT_1a42a6506722356f74e72a6c09b3d36981" prot="public" virt="non-virtual"><scope>NAV_PVT_STRUCT</scope><name>cls</name></member>
+      <member refid="structNAV__PVT__STRUCT_1aba771368d0601aa15eec99ab7050a095" prot="public" virt="non-virtual"><scope>NAV_PVT_STRUCT</scope><name>day</name></member>
+      <member refid="structNAV__PVT__STRUCT_1af38c07f23fd57d4cb4a88dd99492ce3b" prot="public" virt="non-virtual"><scope>NAV_PVT_STRUCT</scope><name>fixType</name></member>
+      <member refid="structNAV__PVT__STRUCT_1a3bd1bada160988b8a9c829685b9ec58c" prot="public" virt="non-virtual"><scope>NAV_PVT_STRUCT</scope><name>flags</name></member>
+      <member refid="structNAV__PVT__STRUCT_1a9fac1821733bc6d8829322edcbdb651c" prot="public" virt="non-virtual"><scope>NAV_PVT_STRUCT</scope><name>flags2</name></member>
+      <member refid="structNAV__PVT__STRUCT_1a0304e9a013eec6cf906793fcfad5fe59" prot="public" virt="non-virtual"><scope>NAV_PVT_STRUCT</scope><name>gSpeed</name></member>
+      <member refid="structNAV__PVT__STRUCT_1a587393afa60a9c94edbf39f90f876cbb" prot="public" virt="non-virtual"><scope>NAV_PVT_STRUCT</scope><name>hAcc</name></member>
+      <member refid="structNAV__PVT__STRUCT_1aaf41d738d049ebd1c80396b4b531273b" prot="public" virt="non-virtual"><scope>NAV_PVT_STRUCT</scope><name>headAcc</name></member>
+      <member refid="structNAV__PVT__STRUCT_1acd88d08d72da09efa3edfef59c24f5e3" prot="public" virt="non-virtual"><scope>NAV_PVT_STRUCT</scope><name>headMot</name></member>
+      <member refid="structNAV__PVT__STRUCT_1a03d604d979ea8d066edf62a4a1b2c46e" prot="public" virt="non-virtual"><scope>NAV_PVT_STRUCT</scope><name>headVeh</name></member>
+      <member refid="structNAV__PVT__STRUCT_1aacdb7b954a1e04eac787d8aa60409eee" prot="public" virt="non-virtual"><scope>NAV_PVT_STRUCT</scope><name>height</name></member>
+      <member refid="structNAV__PVT__STRUCT_1a593d78a85e8db2a7511396023ac72bd6" prot="public" virt="non-virtual"><scope>NAV_PVT_STRUCT</scope><name>hMSL</name></member>
+      <member refid="structNAV__PVT__STRUCT_1a9558a232009d5fe838e22bc9c8eb0ba3" prot="public" virt="non-virtual"><scope>NAV_PVT_STRUCT</scope><name>hour</name></member>
+      <member refid="structNAV__PVT__STRUCT_1ac7f737a77264a615d090846e8508b15c" prot="public" virt="non-virtual"><scope>NAV_PVT_STRUCT</scope><name>id</name></member>
+      <member refid="structNAV__PVT__STRUCT_1a77b13534f916d34c72d828e63f2c685c" prot="public" virt="non-virtual"><scope>NAV_PVT_STRUCT</scope><name>iTOW</name></member>
+      <member refid="structNAV__PVT__STRUCT_1ab8a62324ff89a0c707884bfc34aba85d" prot="public" virt="non-virtual"><scope>NAV_PVT_STRUCT</scope><name>lat</name></member>
+      <member refid="structNAV__PVT__STRUCT_1a45c1c383f15364531cefad7a9689e4cd" prot="public" virt="non-virtual"><scope>NAV_PVT_STRUCT</scope><name>len</name></member>
+      <member refid="structNAV__PVT__STRUCT_1ac884e66d0b3ebd6530680ad23e13a81e" prot="public" virt="non-virtual"><scope>NAV_PVT_STRUCT</scope><name>lon</name></member>
+      <member refid="structNAV__PVT__STRUCT_1a863c8316485bbdf439073478fc25343a" prot="public" virt="non-virtual"><scope>NAV_PVT_STRUCT</scope><name>min</name></member>
+      <member refid="structNAV__PVT__STRUCT_1a4ca689c97238b68b845f03117f79e789" prot="public" virt="non-virtual"><scope>NAV_PVT_STRUCT</scope><name>month</name></member>
+      <member refid="structNAV__PVT__STRUCT_1a3b772ad4a5c93eef8db16e6f5bbfcd59" prot="public" virt="non-virtual"><scope>NAV_PVT_STRUCT</scope><name>nano</name></member>
+      <member refid="structNAV__PVT__STRUCT_1a4ec7b63e686800c231126a74722e47ca" prot="public" virt="non-virtual"><scope>NAV_PVT_STRUCT</scope><name>numSV</name></member>
+      <member refid="structNAV__PVT__STRUCT_1a8fbe98b98c20bffb60327748af7d4e6a" prot="public" virt="non-virtual"><scope>NAV_PVT_STRUCT</scope><name>pDOP</name></member>
+      <member refid="structNAV__PVT__STRUCT_1ac180d88179b0671dca08121915d55838" prot="public" virt="non-virtual"><scope>NAV_PVT_STRUCT</scope><name>reserved1</name></member>
+      <member refid="structNAV__PVT__STRUCT_1ad7be043d349fb056d0c47de5282750b4" prot="public" virt="non-virtual"><scope>NAV_PVT_STRUCT</scope><name>reserved2</name></member>
+      <member refid="structNAV__PVT__STRUCT_1a8bc469b1c7053cc1358d411041266729" prot="public" virt="non-virtual"><scope>NAV_PVT_STRUCT</scope><name>sAcc</name></member>
+      <member refid="structNAV__PVT__STRUCT_1a951fd966a0fc28300db089792547d2d8" prot="public" virt="non-virtual"><scope>NAV_PVT_STRUCT</scope><name>sec</name></member>
+      <member refid="structNAV__PVT__STRUCT_1ac04cfb4bf12ae9c3df554629740f3286" prot="public" virt="non-virtual"><scope>NAV_PVT_STRUCT</scope><name>tAcc</name></member>
+      <member refid="structNAV__PVT__STRUCT_1a5a579a58fac4d536c0a92b0126a6bf1d" prot="public" virt="non-virtual"><scope>NAV_PVT_STRUCT</scope><name>vAcc</name></member>
+      <member refid="structNAV__PVT__STRUCT_1ab59fe8ccda8098515daa41f135c4f812" prot="public" virt="non-virtual"><scope>NAV_PVT_STRUCT</scope><name>valid</name></member>
+      <member refid="structNAV__PVT__STRUCT_1ae5860d883e58fa8d23dba2c4aa1c3e45" prot="public" virt="non-virtual"><scope>NAV_PVT_STRUCT</scope><name>velD</name></member>
+      <member refid="structNAV__PVT__STRUCT_1a1abd8ac18139ec0e1148cbea6cd36b18" prot="public" virt="non-virtual"><scope>NAV_PVT_STRUCT</scope><name>velE</name></member>
+      <member refid="structNAV__PVT__STRUCT_1a9f0c42e0df789f5ed086349ad79d1f9c" prot="public" virt="non-virtual"><scope>NAV_PVT_STRUCT</scope><name>velN</name></member>
+      <member refid="structNAV__PVT__STRUCT_1a6fcb9f165e78a4f81c8891841de5ac62" prot="public" virt="non-virtual"><scope>NAV_PVT_STRUCT</scope><name>year</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

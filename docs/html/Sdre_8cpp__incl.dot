@@ -1,0 +1,23 @@
+digraph "lib/SDRE/Sdre.cpp"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  Node1 [label="lib/SDRE/Sdre.cpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node2 [label="Sdre.h",height=0.2,width=0.4,color="black",URL="$Sdre_8h.html",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node3 [label="../RICCATI/Riccati.h",height=0.2,width=0.4,color="black",URL="$Riccati_8h.html",tooltip=" "];
+  Node3 -> Node4 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node4 [label="Arduino.h",height=0.2,width=0.4,color="grey75",tooltip=" "];
+  Node3 -> Node5 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node5 [label="GRUPO_QUAT.h",height=0.2,width=0.4,color="black",URL="$GRUPO__QUAT_8h.html",tooltip="Cabecalho com funcoes de quaternion."];
+  Node5 -> Node6 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node6 [label="eigen3/Eigen/Dense",height=0.2,width=0.4,color="grey75",tooltip=" "];
+  Node5 -> Node7 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node7 [label="iostream",height=0.2,width=0.4,color="grey75",tooltip=" "];
+  Node3 -> Node6 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node2 -> Node7 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node2 -> Node6 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+}

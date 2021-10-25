@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compounddef id="TIME_8cpp" kind="file" language="C++">
+    <compoundname>TIME.cpp</compoundname>
+    <includes refid="TIME_8h" local="yes">TIME.h</includes>
+    <includes local="no">Arduino.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>lib/TIME/TIME.cpp</label>
+        <link refid="TIME_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>TIME.h</label>
+        <link refid="TIME_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Arduino.h</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+<para>Classe para medir Intervalo de tempo entre duas chamadas. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Roney D da Silva </para>
+</simplesect>
+<simplesect kind="date"><para>5 May 2021 </para>
+</simplesect>
+<simplesect kind="copyright"><para>2021 Roney D da Silva Email: <ulink url="mailto:roneyddasilva@gmail.com">roneyddasilva@gmail.com</ulink> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="TIME_8h" kindref="compound">TIME.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Arduino.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="classTIME_1a4c5fe33dea0e598fd2e1b0dd8073dff3" refkind="member"><highlight class="normal"><ref refid="classTIME_1a4c5fe33dea0e598fd2e1b0dd8073dff3" kindref="member">TIME::TIME</ref>()<sp/>{<sp/><ref refid="classTIME_1a8cd98765b05a23aa7afe8fa5234b9695" kindref="member">begin</ref>();<sp/>}</highlight></codeline>
+<codeline lineno="21" refid="classTIME_1a8cd98765b05a23aa7afe8fa5234b9695" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classTIME_1a8cd98765b05a23aa7afe8fa5234b9695" kindref="member">TIME::begin</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><ref refid="classTIME_1a377f2c220d0347f17484262f7a64602f" kindref="member">timeVector</ref>[0]<sp/>=<sp/>esp_timer_get_time();</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><ref refid="classTIME_1ae75072a83bc87386089429531032c661" kindref="member">timeVectorIndex</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="32" refid="classTIME_1a51b6020daf09773ef3948cf6b9ccd736" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classTIME_1a51b6020daf09773ef3948cf6b9ccd736" kindref="member">TIME::computeElapsedTime</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><ref refid="classTIME_1ae75072a83bc87386089429531032c661" kindref="member">timeVectorIndex</ref><sp/>=<sp/>1<sp/>-<sp/><ref refid="classTIME_1ae75072a83bc87386089429531032c661" kindref="member">timeVectorIndex</ref>;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><ref refid="classTIME_1a377f2c220d0347f17484262f7a64602f" kindref="member">timeVector</ref>[<ref refid="classTIME_1ae75072a83bc87386089429531032c661" kindref="member">timeVectorIndex</ref>]<sp/>=<sp/>esp_timer_get_time();</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1e-6<sp/>*</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float((<ref refid="classTIME_1a377f2c220d0347f17484262f7a64602f" kindref="member">timeVector</ref>[<ref refid="classTIME_1ae75072a83bc87386089429531032c661" kindref="member">timeVectorIndex</ref>]<sp/>-<sp/><ref refid="classTIME_1a377f2c220d0347f17484262f7a64602f" kindref="member">timeVector</ref>[1<sp/>-<sp/><ref refid="classTIME_1ae75072a83bc87386089429531032c661" kindref="member">timeVectorIndex</ref>]));</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="lib/TIME/TIME.cpp"/>
+  </compounddef>
+</doxygen>

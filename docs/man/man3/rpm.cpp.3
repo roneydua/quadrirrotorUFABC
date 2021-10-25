@@ -1,0 +1,69 @@
+.TH "lib/RPM/rpm.cpp" 3 "Sexta, 17 de Setembro de 2021" "Quadrirrotor" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/RPM/rpm.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'rpm\&.h'\fP
+.br
+\fC#include <Arduino\&.h>\fP
+.br
+
+.SS "Funções"
+
+.in +1c
+.ti -1c
+.RI "static void \fBoutside_interrupt_handler\fP (void *arg)"
+.br
+.in -1c
+.SS "Variáveis"
+
+.in +1c
+.ti -1c
+.RI "\fBRpm\fP * \fBpointer_Rpm\fP"
+.br
+.in -1c
+.SH "Descrição detalhada"
+.PP 
+
+.PP
+\fBAutor\fP
+.RS 4
+: Roney Silva (roneydua) 
+.RE
+.PP
+\fBData\fP
+.RS 4
+: 16-Aug-2021 Email: roneyddasilva@gmail.com Project: quadrirrotorUFABC
+.RE
+.PP
+Last modified by: roneydua Last modified time: 25-Aug-2021 
+.PP
+Definição no arquivo \fBrpm\&.cpp\fP\&.
+.SH "Funções"
+.PP 
+.SS "static void outside_interrupt_handler (void * arg)\fC [static]\fP"
+
+.PP
+Definição na linha 17 do arquivo rpm\&.cpp\&.
+.PP
+.nf
+17                                      { // define o manipulador global
+18   pointer_Rpm->update_rpm();           // chama membro da classe
+19 }
+.fi
+.PP
+Referencias pointer_Rpm e Rpm::update_rpm()\&.
+.SH "Variáveis"
+.PP 
+.SS "\fBRpm\fP* pointer_Rpm"
+
+.PP
+Definição na linha 14 do arquivo rpm\&.cpp\&.
+.PP
+Referenciado(a) por outside_interrupt_handler() e Rpm::Rpm()\&.
+.SH "Autor"
+.PP 
+Gerado automaticamente por Doxygen para Quadrirrotor a partir do código-fonte\&.

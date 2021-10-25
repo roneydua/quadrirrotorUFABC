@@ -1,0 +1,15 @@
+digraph "Controle::Controle"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  rankdir="LR";
+  Node1 [label="Controle::Controle",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node2 [label="Sdre::closeLoopEig",height=0.2,width=0.4,color="black",URL="$classSdre.html#a4848cfbce14035e6b3733a628de9e24f",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node3 [label="Sdre::updateControl",height=0.2,width=0.4,color="black",URL="$classSdre.html#af2f380ec3d018b60686e304ca7026846",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node4 [label="Sdre::~Sdre",height=0.2,width=0.4,color="black",URL="$classSdre.html#a887dbd01f9f6846839114a4d5ff64102",tooltip=" "];
+}

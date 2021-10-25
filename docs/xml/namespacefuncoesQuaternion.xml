@@ -1,0 +1,270 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compounddef id="namespacefuncoesQuaternion" kind="namespace" language="Python">
+    <compoundname>funcoesQuaternion</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacefuncoesQuaternion_1a7efd86bc50646d0d79ba1944a2622f08" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def funcoesQuaternion.screwMatrix</definition>
+        <argsstring>(quat)</argsstring>
+        <name>screwMatrix</name>
+        <param>
+          <type>quat</type>
+          <defname>quat</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Computa a matriz anti-simetrica a partir do quaternion quat.
+
+Parameters
+----------
+quat : quanternio de atitude.
+
+Returns
+-------
+q_x : 3x3 matrix anti-simetrica
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/funcoesQuaternion.py" line="11" column="1" bodyfile="python/funcoesQuaternion.py" bodystart="11" bodyend="31"/>
+        <referencedby refid="namespacefuncoesQuaternion_1ae6403803c70ef98b5fe361ed2ef6c0fb" compoundref="funcoesQuaternion_8py" startline="32" endline="54">matrixQ</referencedby>
+        <referencedby refid="namespacefuncoesQuaternion_1ada70be41ba6ffe4e79d0748e7a7c5bb6" compoundref="funcoesQuaternion_8py" startline="128" endline="143">rotationMatrix</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacefuncoesQuaternion_1ae6403803c70ef98b5fe361ed2ef6c0fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def funcoesQuaternion.matrixQ</definition>
+        <argsstring>(quat, right=False)</argsstring>
+        <name>matrixQ</name>
+        <param>
+          <type>quat</type>
+          <defname>quat</defname>
+        </param>
+        <param>
+          <type>right</type>
+          <defname>right</defname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Compute Q matrix.
+
+Parameters
+----------
+quat : quaternion orientation 4x1
+right : boolean. The default is False.
+
+Returns
+-------
+Q : Q matrix.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/funcoesQuaternion.py" line="32" column="1" bodyfile="python/funcoesQuaternion.py" bodystart="32" bodyend="54"/>
+        <references refid="namespacefuncoesQuaternion_1a7efd86bc50646d0d79ba1944a2622f08" compoundref="funcoesQuaternion_8py" startline="11" endline="31">screwMatrix</references>
+        <referencedby refid="namespacefuncoesQuaternion_1ac2a07ac7ff5a03fc94498dee3cbd56c0" compoundref="funcoesQuaternion_8py" startline="55" endline="76">matrixS</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacefuncoesQuaternion_1ac2a07ac7ff5a03fc94498dee3cbd56c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def funcoesQuaternion.matrixS</definition>
+        <argsstring>(quat, right=False)</argsstring>
+        <name>matrixS</name>
+        <param>
+          <type>quat</type>
+          <defname>quat</defname>
+        </param>
+        <param>
+          <type>right</type>
+          <defname>right</defname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Compute S matrix.
+
+Parameters
+----------
+quat : quaternion 4x1.
+right : boolean, optional. The default is False.
+
+Returns
+-------
+S : Matrix S.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/funcoesQuaternion.py" line="55" column="1" bodyfile="python/funcoesQuaternion.py" bodystart="55" bodyend="76"/>
+        <references refid="namespacefuncoesQuaternion_1ae6403803c70ef98b5fe361ed2ef6c0fb" compoundref="funcoesQuaternion_8py" startline="32" endline="54">matrixQ</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacefuncoesQuaternion_1a2567fcb1ea8884d17ffe68c39bcfc3b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def funcoesQuaternion.MultQuat</definition>
+        <argsstring>(r, q, p)</argsstring>
+        <name>MultQuat</name>
+        <param>
+          <type>r</type>
+          <defname>r</defname>
+        </param>
+        <param>
+          <type>q</type>
+          <defname>q</defname>
+        </param>
+        <param>
+          <type>p</type>
+          <defname>p</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Parameters.
+
+r, q : quaternion attitude input.
+p : result of multiplication.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/funcoesQuaternion.py" line="77" column="1" bodyfile="python/funcoesQuaternion.py" bodystart="77" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefuncoesQuaternion_1ab8840c85b3a0a7c2861e04d6aed132e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def funcoesQuaternion.conj</definition>
+        <argsstring>(q)</argsstring>
+        <name>conj</name>
+        <param>
+          <type>q</type>
+          <defname>q</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Retorna o conjugado do quaternion q.
+
+Parameters
+----------
+q : quaternion de atitude.
+
+Returns
+-------
+p : conjugado do quaternion de atitude q.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/funcoesQuaternion.py" line="89" column="1" bodyfile="python/funcoesQuaternion.py" bodystart="89" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefuncoesQuaternion_1a12afb91adfd22c19dd46387658f9724e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def funcoesQuaternion.quat2Euler</definition>
+        <argsstring>(q, deg=0)</argsstring>
+        <name>quat2Euler</name>
+        <param>
+          <type>q</type>
+          <defname>q</defname>
+        </param>
+        <param>
+          <type>deg</type>
+          <defname>deg</defname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Parameters.
+
+q : quaternion attitude.
+deg : TYPE, optional
+    DESCRIPTION. 1 to return in degrees. The default is 0.
+
+Returns
+-------
+TYPE
+    DESCRIPTION.
+e : 3x1 euler angles
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/funcoesQuaternion.py" line="105" column="1" bodyfile="python/funcoesQuaternion.py" bodystart="105" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacefuncoesQuaternion_1ada70be41ba6ffe4e79d0748e7a7c5bb6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def funcoesQuaternion.rotationMatrix</definition>
+        <argsstring>(q)</argsstring>
+        <name>rotationMatrix</name>
+        <param>
+          <type>q</type>
+          <defname>q</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Computa a matriz de rotacao a partir do quaternio de attitude.
+
+Parameters
+----------
+q : quaternion de atitude.
+
+Returns
+-------
+Matrix de rotacao
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/funcoesQuaternion.py" line="128" column="1" bodyfile="python/funcoesQuaternion.py" bodystart="128" bodyend="143"/>
+        <references refid="namespacefuncoesQuaternion_1a7efd86bc50646d0d79ba1944a2622f08" compoundref="funcoesQuaternion_8py" startline="11" endline="31">screwMatrix</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacefuncoesQuaternion_1ac5e7d2e2bdeb2446c1130323b55b5ef5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def funcoesQuaternion.eulerQuaternion</definition>
+        <argsstring>(yaw, pitch, roll, deg=True)</argsstring>
+        <name>eulerQuaternion</name>
+        <param>
+          <type>yaw</type>
+          <defname>yaw</defname>
+        </param>
+        <param>
+          <type>pitch</type>
+          <defname>pitch</defname>
+        </param>
+        <param>
+          <type>roll</type>
+          <defname>roll</defname>
+        </param>
+        <param>
+          <type>deg</type>
+          <defname>deg</defname>
+          <defval>True</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Calcula o quaternio a partir dos Angulos de Euler.
+
+Parameters
+----------
+yaw : angulo de guinad [rad]
+pitch : angulo de guinad [rad]
+roll : angulo de guinad [rad]
+deg : se 1 informa que os angulos estao em graus
+q : quaternio atitude
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/funcoesQuaternion.py" line="144" column="1" bodyfile="python/funcoesQuaternion.py" bodystart="144" bodyend="171"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="python/funcoesQuaternion.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

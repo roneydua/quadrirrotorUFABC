@@ -1,0 +1,277 @@
+.TH "NAV_PVT_STRUCT" 3 "Sexta, 17 de Setembro de 2021" "Quadrirrotor" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+NAV_PVT_STRUCT
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <GPS\&.h>\fP
+.SS "Campos de Dados"
+
+.in +1c
+.ti -1c
+.RI "unsigned char \fBcls\fP"
+.br
+.ti -1c
+.RI "unsigned char \fBid\fP"
+.br
+.ti -1c
+.RI "unsigned short \fBlen\fP"
+.br
+.ti -1c
+.RI "unsigned long \fBiTOW\fP"
+.br
+.ti -1c
+.RI "unsigned short \fByear\fP"
+.br
+.ti -1c
+.RI "unsigned char \fBmonth\fP"
+.br
+.ti -1c
+.RI "unsigned char \fBday\fP"
+.br
+.ti -1c
+.RI "unsigned char \fBhour\fP"
+.br
+.ti -1c
+.RI "unsigned char \fBmin\fP"
+.br
+.ti -1c
+.RI "unsigned char \fBsec\fP"
+.br
+.ti -1c
+.RI "unsigned char \fBvalid\fP"
+.br
+.ti -1c
+.RI "unsigned long \fBtAcc\fP"
+.br
+.ti -1c
+.RI "long \fBnano\fP"
+.br
+.ti -1c
+.RI "unsigned char \fBfixType\fP"
+.br
+.ti -1c
+.RI "unsigned char \fBflags\fP"
+.br
+.ti -1c
+.RI "unsigned char \fBflags2\fP"
+.br
+.ti -1c
+.RI "unsigned char \fBnumSV\fP"
+.br
+.ti -1c
+.RI "long \fBlon\fP"
+.br
+.ti -1c
+.RI "long \fBlat\fP"
+.br
+.ti -1c
+.RI "long \fBheight\fP"
+.br
+.ti -1c
+.RI "long \fBhMSL\fP"
+.br
+.ti -1c
+.RI "unsigned long \fBhAcc\fP"
+.br
+.ti -1c
+.RI "unsigned long \fBvAcc\fP"
+.br
+.ti -1c
+.RI "long \fBvelN\fP"
+.br
+.ti -1c
+.RI "long \fBvelE\fP"
+.br
+.ti -1c
+.RI "long \fBvelD\fP"
+.br
+.ti -1c
+.RI "long \fBgSpeed\fP"
+.br
+.ti -1c
+.RI "long \fBheadMot\fP"
+.br
+.ti -1c
+.RI "unsigned long \fBsAcc\fP"
+.br
+.ti -1c
+.RI "unsigned long \fBheadAcc\fP"
+.br
+.ti -1c
+.RI "unsigned short \fBpDOP\fP"
+.br
+.ti -1c
+.RI "unsigned char \fBreserved1\fP [6]"
+.br
+.ti -1c
+.RI "long \fBheadVeh\fP"
+.br
+.ti -1c
+.RI "unsigned long \fBreserved2\fP"
+.br
+.in -1c
+.SH "Descrição detalhada"
+.PP 
+Definição na linha 96 do arquivo GPS\&.h\&.
+.SH "Campos"
+.PP 
+.SS "unsigned char NAV_PVT_STRUCT::cls"
+
+.PP
+Definição na linha 97 do arquivo GPS\&.h\&.
+.SS "unsigned char NAV_PVT_STRUCT::day"
+
+.PP
+Definição na linha 103 do arquivo GPS\&.h\&.
+.SS "unsigned char NAV_PVT_STRUCT::fixType"
+
+.PP
+Definição na linha 110 do arquivo GPS\&.h\&.
+.PP
+Referenciado(a) por gps_imprime()\&.
+.SS "unsigned char NAV_PVT_STRUCT::flags"
+
+.PP
+Definição na linha 111 do arquivo GPS\&.h\&.
+.SS "unsigned char NAV_PVT_STRUCT::flags2"
+
+.PP
+Definição na linha 112 do arquivo GPS\&.h\&.
+.SS "long NAV_PVT_STRUCT::gSpeed"
+
+.PP
+Definição na linha 126 do arquivo GPS\&.h\&.
+.SS "unsigned long NAV_PVT_STRUCT::hAcc"
+
+.PP
+Definição na linha 118 do arquivo GPS\&.h\&.
+.SS "unsigned long NAV_PVT_STRUCT::headAcc"
+
+.PP
+Definição na linha 129 do arquivo GPS\&.h\&.
+.SS "long NAV_PVT_STRUCT::headMot"
+
+.PP
+Definição na linha 127 do arquivo GPS\&.h\&.
+.SS "long NAV_PVT_STRUCT::headVeh"
+
+.PP
+Definição na linha 132 do arquivo GPS\&.h\&.
+.SS "long NAV_PVT_STRUCT::height"
+
+.PP
+Definição na linha 116 do arquivo GPS\&.h\&.
+.SS "long NAV_PVT_STRUCT::hMSL"
+
+.PP
+Definição na linha 117 do arquivo GPS\&.h\&.
+.PP
+Referenciado(a) por gps_imprime()\&.
+.SS "unsigned char NAV_PVT_STRUCT::hour"
+
+.PP
+Definição na linha 104 do arquivo GPS\&.h\&.
+.SS "unsigned char NAV_PVT_STRUCT::id"
+
+.PP
+Definição na linha 98 do arquivo GPS\&.h\&.
+.SS "unsigned long NAV_PVT_STRUCT::iTOW"
+
+.PP
+Definição na linha 100 do arquivo GPS\&.h\&.
+.PP
+Referenciado(a) por gps_imprime()\&.
+.SS "long NAV_PVT_STRUCT::lat"
+
+.PP
+Definição na linha 115 do arquivo GPS\&.h\&.
+.PP
+Referenciado(a) por gps_imprime()\&.
+.SS "unsigned short NAV_PVT_STRUCT::len"
+
+.PP
+Definição na linha 99 do arquivo GPS\&.h\&.
+.SS "long NAV_PVT_STRUCT::lon"
+
+.PP
+Definição na linha 114 do arquivo GPS\&.h\&.
+.PP
+Referenciado(a) por gps_imprime()\&.
+.SS "unsigned char NAV_PVT_STRUCT::min"
+
+.PP
+Definição na linha 105 do arquivo GPS\&.h\&.
+.SS "unsigned char NAV_PVT_STRUCT::month"
+
+.PP
+Definição na linha 102 do arquivo GPS\&.h\&.
+.SS "long NAV_PVT_STRUCT::nano"
+
+.PP
+Definição na linha 109 do arquivo GPS\&.h\&.
+.SS "unsigned char NAV_PVT_STRUCT::numSV"
+
+.PP
+Definição na linha 113 do arquivo GPS\&.h\&.
+.SS "unsigned short NAV_PVT_STRUCT::pDOP"
+
+.PP
+Definição na linha 130 do arquivo GPS\&.h\&.
+.SS "unsigned char NAV_PVT_STRUCT::reserved1[6]"
+
+.PP
+Definição na linha 131 do arquivo GPS\&.h\&.
+.SS "unsigned long NAV_PVT_STRUCT::reserved2"
+
+.PP
+Definição na linha 133 do arquivo GPS\&.h\&.
+.SS "unsigned long NAV_PVT_STRUCT::sAcc"
+
+.PP
+Definição na linha 128 do arquivo GPS\&.h\&.
+.SS "unsigned char NAV_PVT_STRUCT::sec"
+
+.PP
+Definição na linha 106 do arquivo GPS\&.h\&.
+.SS "unsigned long NAV_PVT_STRUCT::tAcc"
+
+.PP
+Definição na linha 108 do arquivo GPS\&.h\&.
+.SS "unsigned long NAV_PVT_STRUCT::vAcc"
+
+.PP
+Definição na linha 119 do arquivo GPS\&.h\&.
+.SS "unsigned char NAV_PVT_STRUCT::valid"
+
+.PP
+Definição na linha 107 do arquivo GPS\&.h\&.
+.SS "long NAV_PVT_STRUCT::velD"
+Velocidade na direção para baixo (cm/s) 
+.PP
+Definição na linha 125 do arquivo GPS\&.h\&.
+.PP
+Referenciado(a) por gps_imprime()\&.
+.SS "long NAV_PVT_STRUCT::velE"
+Velocidade na direção leste (cm/s) 
+.PP
+Definição na linha 123 do arquivo GPS\&.h\&.
+.PP
+Referenciado(a) por gps_imprime()\&.
+.SS "long NAV_PVT_STRUCT::velN"
+Velocidade na direção norte (cm/s) 
+.PP
+Definição na linha 121 do arquivo GPS\&.h\&.
+.PP
+Referenciado(a) por gps_imprime()\&.
+.SS "unsigned short NAV_PVT_STRUCT::year"
+
+.PP
+Definição na linha 101 do arquivo GPS\&.h\&.
+
+.SH "Autor"
+.PP 
+Gerado automaticamente por Doxygen para Quadrirrotor a partir do código-fonte\&.

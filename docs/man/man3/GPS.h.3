@@ -1,0 +1,504 @@
+.TH "lib/EKF/GPS.h" 3 "Sexta, 17 de Setembro de 2021" "Quadrirrotor" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/EKF/GPS.h \- Simples Cabecalho de funcoes para leituras do GPS Last modified by: roney Last modified time: 31-Aug-2021\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <Arduino\&.h>\fP
+.br
+\fC#include <HardwareSerial\&.h>\fP
+.br
+
+.SS "Estruturas de Dados"
+
+.in +1c
+.ti -1c
+.RI "struct \fBNAV_POSECEF_STRUCT\fP"
+.br
+.ti -1c
+.RI "struct \fBNAV_PVT_STRUCT\fP"
+.br
+.ti -1c
+.RI "struct \fBPacketData\fP"
+.br
+.ti -1c
+.RI "union \fBUBXMessage\fP"
+.br
+.in -1c
+.SS "Definições e Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBNAV_PVT\fP"
+.br
+.ti -1c
+.RI "#define \fBNAV_POSECEF\fP"
+.br
+.ti -1c
+.RI "#define \fBRATE_10\fP"
+.br
+.ti -1c
+.RI "#define \fBNAV_MODE_1G\fP"
+.br
+.in -1c
+.SS "Enumerações"
+
+.in +1c
+.ti -1c
+.RI "enum \fB_ubxMsgType\fP { \fBMT_NONE\fP, \fBMT_NAV_POSECEF\fP, \fBMT_NAV_PVT\fP }"
+.br
+.in -1c
+.SS "Funções"
+
+.in +1c
+.ti -1c
+.RI "HardwareSerial \fBGPSSERIAL\fP (1)"
+.br
+.ti -1c
+.RI "void \fBgpsSetup\fP ()"
+.br
+.ti -1c
+.RI "void \fBcalcChecksum\fP (unsigned char *CK, int msgSize)"
+.br
+.ti -1c
+.RI "boolean \fBcompareMsgHeader\fP (const unsigned char *msgHeader)"
+.br
+.ti -1c
+.RI "int \fBprocessGPS\fP ()"
+.br
+.ti -1c
+.RI "void \fBgps_imprime\fP ()"
+.br
+.in -1c
+.SS "Variáveis"
+
+.in +1c
+.ti -1c
+.RI "const unsigned char \fBUBX_HEADER\fP [] = {0xB5, 0x62}"
+.br
+.ti -1c
+.RI "const unsigned char \fBNAV_POSECEF_HEADER\fP [] = {0x01, 0x01}"
+.br
+.ti -1c
+.RI "const unsigned char \fBNAV_PVT_HEADER\fP [] = {0x01, 0x07}"
+.br
+.ti -1c
+.RI "\fBPacketData\fP \fBdata\fP"
+.br
+.ti -1c
+.RI "\fBUBXMessage\fP \fBubxMessage\fP"
+.br
+.in -1c
+.SH "Descrição detalhada"
+.PP 
+Simples Cabecalho de funcoes para leituras do GPS Last modified by: roney Last modified time: 31-Aug-2021\&. 
+
+
+.PP
+\fBAutor\fP
+.RS 4
+: Roney Silva (roney) 
+.RE
+.PP
+\fBData\fP
+.RS 4
+: 16-Aug-2021 Email: roneyddasilva@gmail.com Project: quadrirrotorUFABC 
+.RE
+.PP
+
+.PP
+Definição no arquivo \fBGPS\&.h\fP\&.
+.SH "Definições e macros"
+.PP 
+.SS "#define NAV_MODE_1G"
+
+.PP
+Definição na linha 35 do arquivo GPS\&.h\&.
+.SS "#define NAV_POSECEF"
+
+.PP
+Definição na linha 30 do arquivo GPS\&.h\&.
+.SS "#define NAV_PVT"
+
+.PP
+Definição na linha 27 do arquivo GPS\&.h\&.
+.SS "#define RATE_10"
+
+.PP
+Definição na linha 32 do arquivo GPS\&.h\&.
+.SH "Enumerações"
+.PP 
+.SS "enum \fB_ubxMsgType\fP"
+
+.PP
+\fBEnumeradores\fP
+.in +1c
+.TP
+\fB\fIMT_NONE \fP\fP
+.TP
+\fB\fIMT_NAV_POSECEF \fP\fP
+.TP
+\fB\fIMT_NAV_PVT \fP\fP
+.PP
+Definição na linha 163 do arquivo GPS\&.h\&.
+.PP
+.nf
+163                  {
+164   MT_NONE,
+165 #ifdef NAV_POSLLH
+166   MT_NAV_POSLLH,
+167 #endif
+168 #ifdef NAV_VELNED
+169   MT_NAV_VELNED,
+170 #endif
+171 #ifdef NAV_POSECEF
+172   MT_NAV_POSECEF,
+173 #endif
+174 #ifdef NAV_PVT
+175   MT_NAV_PVT,
+176 #endif
+177 };
+.fi
+.SH "Funções"
+.PP 
+.SS "void calcChecksum (unsigned char * CK, int msgSize)"
+
+.PP
+Definição na linha 286 do arquivo GPS\&.h\&.
+.PP
+.nf
+286                                                   {
+287   memset(CK, 0, 2);
+288   for (int i = 0; i < msgSize; i++) {
+289     CK[0] += ((unsigned char *)(&ubxMessage))[i];
+290     CK[1] += CK[0];
+291   }
+292 }
+.fi
+.PP
+Referencias ubxMessage\&.
+.PP
+Referenciado(a) por processGPS()\&.
+.SS "boolean compareMsgHeader (const unsigned char * msgHeader)"
+
+.PP
+Definição na linha 296 do arquivo GPS\&.h\&.
+.PP
+.nf
+296                                                          {
+297   unsigned char *ptr = (unsigned char *)(&ubxMessage);
+298   return ptr[0] == msgHeader[0] && ptr[1] == msgHeader[1];
+299 }
+.fi
+.PP
+Referencias ubxMessage\&.
+.PP
+Referenciado(a) por processGPS()\&.
+.SS "void gps_imprime ()"
+
+.PP
+Definição na linha 392 do arquivo GPS\&.h\&.
+.PP
+.nf
+392                    {
+393 
+394   while (GPSSERIAL\&.available()) {
+395     // Serial\&.write(GPSSERIAL\&.read());
+396     int msgType = processGPS();
+397 #ifdef NAV_VELNED
+398     if (msgType == MT_NAV_VELNED) {
+399       printf("MT_NAV_VELNED: %lu\t %f\t %f\t %f\t \n",
+400              ubxMessage\&.navVelned\&.iTOW,
+401              float(ubxMessage\&.navVelned\&.velD) * 0\&.01f,
+402              float(ubxMessage\&.navVelned\&.velD) * 0\&.01f,
+403              float(ubxMessage\&.navVelned\&.velD) * 0\&.01f);
+404     } // else
+405 #endif
+406 #ifdef NAV_POSLLH
+407     if (msgType == MT_NAV_POSLLH) {
+408       printf("MT_NAV_POSLLH: %lu\t %ld\t \t%ld \t\n", ubxMessage\&.navPosllh\&.iTOW,
+409              ubxMessage\&.navPosllh\&.lat, ubxMessage\&.navPosllh\&.lon);
+410     } // else
+411 #endif
+412 #ifdef NAV_POSECEF
+413     if (msgType == MT_NAV_POSECEF) {
+414       printf("NAV_POSECEF : %lu \t %ld\t \t%ld \t%ld \t\n",
+415              ubxMessage\&.navPosecef\&.iTOW, ubxMessage\&.navPosecef\&.ecefX,
+416              ubxMessage\&.navPosecef\&.ecefY, ubxMessage\&.navPosecef\&.ecefZ);
+417     } // else
+418 #endif
+419 
+420 #ifdef NAV_PVT
+421     if (msgType == MT_NAV_PVT) {
+422       printf("MT_NAV_PVT:\t %lu\t %ul\t  %f\t %f\t %f\t %f\t %f\t %f \n",
+423              ubxMessage\&.navPvt\&.iTOW, ubxMessage\&.navPvt\&.fixType,
+424              0\&.001 * (float)ubxMessage\&.navPvt\&.velN,
+425              0\&.001 * (float)ubxMessage\&.navPvt\&.velE,
+426              0\&.001 * (float)ubxMessage\&.navPvt\&.velD,
+427              1e-7 * DEG_TO_RAD * (float)ubxMessage\&.navPvt\&.lat,
+428              1e-7 * DEG_TO_RAD * (float)ubxMessage\&.navPvt\&.lon,
+429              0\&.001f * (float)ubxMessage\&.navPvt\&.hMSL);
+430     }
+431 #endif
+432   }
+433 }
+.fi
+.PP
+Referencias NAV_POSECEF_STRUCT::ecefX, NAV_POSECEF_STRUCT::ecefY, NAV_POSECEF_STRUCT::ecefZ, NAV_PVT_STRUCT::fixType, GPSSERIAL(), NAV_PVT_STRUCT::hMSL, NAV_POSECEF_STRUCT::iTOW, NAV_PVT_STRUCT::iTOW, NAV_PVT_STRUCT::lat, NAV_PVT_STRUCT::lon, MT_NAV_POSECEF, MT_NAV_PVT, UBXMessage::navPosecef, UBXMessage::navPvt, processGPS(), ubxMessage, NAV_PVT_STRUCT::velD, NAV_PVT_STRUCT::velE e NAV_PVT_STRUCT::velN\&.
+.SS "HardwareSerial GPSSERIAL (1)"
+
+.PP
+Referenciado(a) por gps_imprime(), gpsSetup() e processGPS()\&.
+.SS "void gpsSetup ()"
+
+.PP
+Definição na linha 181 do arquivo GPS\&.h\&.
+.PP
+.nf
+181                 {
+182   // GPSSERIAL\&.begin(baud, config = SERIAL_8N1, rxPin,txPin)
+183   GPSSERIAL\&.begin(9600, SERIAL_8N1, 16, 17);
+184 
+185   unsigned char VALORES_PADROES[] PROGMEM = {
+186       // valores padroes
+187       0xB5, 0x62, 0x06, 0x09, 0x0D, 0x00, 0xFF, 0xFF, 0x00, 0x00, 0x00,
+188       0x00, 0x00, 0x00, 0xFF, 0xFF, 0x00, 0x00, 0x03, 0x1B, 0x9A,
+189   };
+190   // Desabilitar NMEA
+191   unsigned char UBLOX_CONFIGURACAO[] PROGMEM = {
+192   // Desabilitar NMEA
+193 
+194 #ifndef GxGGA
+195       0xB5, 0x62, 0x06, 0x01, 0x08, 0x00, 0xF0, 0x00, 0x00, 0x00, 0x00, 0x00,
+196       0x00, 0x00, 0xFF, 0x23,
+197 #endif
+198 #ifndef GxGLL
+199       0xB5, 0x62, 0x06, 0x01, 0x08, 0x00, 0xF0, 0x01, 0x00, 0x00, 0x00, 0x00,
+200       0x00, 0x00, 0x00, 0x2A,
+201 #endif
+202 #ifndef GxGSA
+203       0xB5, 0x62, 0x06, 0x01, 0x08, 0x00, 0xF0, 0x02, 0x00, 0x00, 0x00, 0x00,
+204       0x00, 0x00, 0x01, 0x31,
+205 #endif
+206 #ifndef GxGSV
+207       0xB5, 0x62, 0x06, 0x01, 0x08, 0x00, 0xF0, 0x03, 0x00, 0x00, 0x00, 0x00,
+208       0x00, 0x00, 0x02, 0x38,
+209 #endif
+210 #ifndef GxRMC
+211       0xB5, 0x62, 0x06, 0x01, 0x08, 0x00, 0xF0, 0x04, 0x00, 0x00, 0x00, 0x00,
+212       0x00, 0x00, 0x03, 0x3F,
+213 #endif
+214 #ifndef GxVTG
+215       0xB5, 0x62, 0x06, 0x01, 0x08, 0x00, 0xF0, 0x05, 0x00, 0x00, 0x00, 0x00,
+216       0x00, 0x00, 0x04, 0x46,
+217 #endif
+218 // Configuracao de Navegacao
+219 #ifdef NAV_VELNED
+220       0xB5, 0x62, 0x06, 0x01, 0x08, 0x00, 0x01, 0x12, 0x00, 0x01, 0x00, 0x00,
+221       0x00, 0x00, 0x23, 0x2E,
+222 #endif
+223 
+224 #ifdef NAV_POSLLH
+225       0xB5, 0x62, 0x06, 0x01, 0x08, 0x00, 0x01, 0x02, 0x00, 0x01, 0x00, 0x00,
+226       0x00, 0x00, 0x13, 0xBE, //
+227 #endif
+228 
+229 #ifdef NAV_POSECEF
+230       // 0xB5, 0x62, 0x06, 0x01, 0x08, 0x00, 0x29, 0x01, 0x00, 0x01, 0x00, 0x00,
+231       // 0x00, 0x00, 0x3A, 0xF7, //
+232       0xB5, 0x62, 0x06, 0x01, 0x08, 0x00, 0x01, 0x01, 0x00, 0x01, 0x00, 0x00,
+233       0x00, 0x00, 0x12, 0xB7, //
+234 
+235 #endif
+236 
+237 #ifdef NAV_PVT
+238       0xB5, 0x62, 0x06, 0x01, 0x08, 0x00, 0x01, 0x07, 0x00, 0x01, 0x00, 0x00,
+239       0x00, 0x00, 0x18, 0xE1, //
+240 
+241 #endif
+242 // frequencia de amostragem
+243 #ifdef RATE_10
+244       0xB5, 0x62, 0x06, 0x08, 0x06, 0x00, 0x64, 0x00, 0x01, 0x00, 0x01, 0x00,
+245       0x7A, 0x12, //
+246 #endif
+247 #ifdef RATE_5
+248       0xB5, 0x62, 0x06, 0x08, 0x06, 0x00, 0xC8, 0x00, 0x01, 0x00, 0x01, 0x00,
+249       0xDE, 0x6A, //
+250 #endif
+251 #ifdef RATE_1
+252       0xB5, 0x62, 0x06, 0x08, 0x06, 0x00, 0xE8, 0x03, 0x01, 0x00, 0x01, 0x00,
+253       0x01, 0x39,
+254 #endif
+255 #ifdef NAV_MODE_2G
+256       // Configuracao do NAV MODE  opcao 7- Airbone < 2g
+257       0xB5, 0x62, 0x06, 0x24, 0x24, 0x00, 0xFF, 0xFF, 0x07, 0x03, 0x00, 0x00,
+258       0x00, 0x00, 0x10, 0x27, 0x00, 0x00, 0x05, 0x00, 0xFA, 0x00, 0xFA, 0x00,
+259       0x64, 0x00, 0x5E, 0x01, 0x00, 0x3C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+260       0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x85, 0x2A,
+261 #endif
+262 #ifdef NAV_MODE_1G
+263       // NAV MODE  opcao 7- Airbone < 1g
+264       0xB5, 0x62, 0x06, 0x24, 0x24, 0x00, 0xFF, 0xFF, 0x06, 0x03, 0x00, 0x00,
+265       0x00, 0x00, 0x10, 0x27, 0x00, 0x00, 0x05, 0x00, 0xFA, 0x00, 0xFA, 0x00,
+266       0x64, 0x00, 0x5E, 0x01, 0x00, 0x3C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+267       0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x85,
+268       0x2A, //
+269 #endif
+270   };
+271 
+272   for (int i = 0; i < (int)sizeof(VALORES_PADROES); i++) {
+273     GPSSERIAL\&.write(pgm_read_byte(VALORES_PADROES + i));
+274     delay(5); // Simula 38400 baudrate\&.
+275   }
+276   delay(1000);
+277   // Envia os dados
+278   for (int i = 0; i < (int)sizeof(UBLOX_CONFIGURACAO); i++) {
+279     GPSSERIAL\&.write(pgm_read_byte(UBLOX_CONFIGURACAO + i));
+280     delay(5); // Simula 38400 baudrate\&.
+281   }
+282 }
+.fi
+.PP
+Referencias GPSSERIAL()\&.
+.PP
+Referenciado(a) por ekf::EKF::begin()\&.
+.SS "int processGPS ()"
+
+.PP
+Definição na linha 301 do arquivo GPS\&.h\&.
+.PP
+.nf
+301                  {
+302   static int fpos = 0;
+303   static unsigned char checksum[2];
+304 
+305   static byte currentMsgType = MT_NONE;
+306   static int payloadSize = sizeof(UBXMessage);
+307   // trocado while por if para naum travar o processo\&.
+308   while (GPSSERIAL\&.available()) {
+309     byte c = GPSSERIAL\&.read();
+310     if (fpos < 2) {
+311       /* Procura se os primeiro dois bytes sao os cabecalhos(0xB5,0x62)*/
+312       if (c == UBX_HEADER[fpos]) {
+313         fpos++;
+314       } else {
+315         fpos = 0;
+316       }
+317     } else {
+318       /* Este trecho é acessado apenas se a mensagem coincide com UBX_HEADER\&.*/
+319       // Place the incoming byte into the ubxMessage struct\&. The position is
+320       // fpos-2 because the struct does not include the initial two-byte header
+321       // (UBX_HEADER)\&.
+322       if ((fpos - 2) < payloadSize)
+323         ((unsigned char *)(&ubxMessage))[fpos - 2] = c;
+324 
+325       fpos++;
+326 
+327       if (fpos == 4) {
+328         // We have just received the second byte of the message type header,
+329         // so now we can check to see what kind of message it is\&.
+330 #ifdef NAV_POSLLH
+331         if (compareMsgHeader(NAV_POSLLH_HEADER)) {
+332           currentMsgType = MT_NAV_POSLLH;
+333           payloadSize = sizeof(NAV_POSLLH_STRUCT);
+334         } else
+335 #endif
+336 #ifdef NAV_VELNED
+337             if (compareMsgHeader(NAV_VELNED_HEADER)) {
+338           currentMsgType = MT_NAV_VELNED;
+339           payloadSize = sizeof(NAV_VELNED_STRUCT);
+340         } else
+341 #endif
+342 #ifdef NAV_POSECEF
+343             if (compareMsgHeader(NAV_POSECEF_HEADER)) {
+344           currentMsgType = MT_NAV_POSECEF;
+345           payloadSize = sizeof(NAV_POSECEF_STRUCT);
+346         } else
+347 #endif
+348 #ifdef NAV_PVT
+349             if (compareMsgHeader(NAV_PVT_HEADER)) {
+350           currentMsgType = MT_NAV_PVT;
+351           payloadSize = sizeof(NAV_PVT_STRUCT);
+352 
+353         } else
+354 #endif
+355         {
+356           // unknown message type, bail
+357           fpos = 0;
+358           continue;
+359         }
+360       }
+361 
+362       if (fpos == (payloadSize + 2)) {
+363         // All payload bytes have now been received, so we can calculate the
+364         // expected checksum value to compare with the next two incoming bytes\&.
+365         calcChecksum(checksum, payloadSize);
+366       } else if (fpos == (payloadSize + 3)) {
+367         // First byte after the payload, ie\&. first byte of the checksum\&.
+368         // Does it match the first byte of the checksum we calculated?
+369         if (c != checksum[0]) {
+370           // Checksum doesn't match, reset to beginning state and try again\&.
+371           fpos = 0;
+372         }
+373       } else if (fpos == (payloadSize + 4)) {
+374         // Second byte after the payload, ie\&. second byte of the checksum\&.
+375         // Does it match the second byte of the checksum we calculated?
+376         fpos = 0; // We will reset the state regardless of whether the checksum
+377                   // matches\&.
+378         if (c == checksum[1]) {
+379           // Checksum matches, we have a valid message\&.
+380           return currentMsgType;
+381         }
+382       } else if (fpos > (payloadSize + 4)) {
+383         // We have now read more bytes than both the expected payload and
+384         // checksum together, so something went wrong\&. Reset to beginning state
+385         // and try again\&.
+386         fpos = 0;
+387       }
+388     }
+389   }
+390   return MT_NONE;
+391 }
+.fi
+.PP
+Referencias calcChecksum(), compareMsgHeader(), GPSSERIAL(), MT_NAV_POSECEF, MT_NAV_PVT, MT_NONE, NAV_POSECEF_HEADER, NAV_PVT_HEADER, UBX_HEADER e ubxMessage\&.
+.PP
+Referenciado(a) por gps_imprime()\&.
+.SH "Variáveis"
+.PP 
+.SS "\fBPacketData\fP data"
+
+.PP
+Definição na linha 146 do arquivo GPS\&.h\&.
+.PP
+Referenciado(a) por METODOSCALIBRACAO::calibracaoAcelerometro(), METODOSCALIBRACAO::calibracaoGeometrica(), TELEMETRIA::OnDataRecv(), IMU::writeAK8963Register() e IMU::writeRegister()\&.
+.SS "const unsigned char NAV_POSECEF_HEADER[] = {0x01, 0x01}"
+
+.PP
+Definição na linha 58 do arquivo GPS\&.h\&.
+.PP
+Referenciado(a) por processGPS()\&.
+.SS "const unsigned char NAV_PVT_HEADER[] = {0x01, 0x07}"
+
+.PP
+Definição na linha 95 do arquivo GPS\&.h\&.
+.PP
+Referenciado(a) por processGPS()\&.
+.SS "const unsigned char UBX_HEADER[] = {0xB5, 0x62}"
+
+.PP
+Definição na linha 37 do arquivo GPS\&.h\&.
+.PP
+Referenciado(a) por processGPS()\&.
+.SS "\fBUBXMessage\fP ubxMessage"
+
+.PP
+Definição na linha 179 do arquivo GPS\&.h\&.
+.PP
+Referenciado(a) por calcChecksum(), compareMsgHeader(), gps_imprime() e processGPS()\&.
+.SH "Autor"
+.PP 
+Gerado automaticamente por Doxygen para Quadrirrotor a partir do código-fonte\&.

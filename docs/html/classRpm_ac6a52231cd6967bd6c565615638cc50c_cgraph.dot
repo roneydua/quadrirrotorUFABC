@@ -1,0 +1,13 @@
+digraph "Rpm::init"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  rankdir="LR";
+  Node1 [label="Rpm::init",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node2 [label="Rpm::restart_conter",height=0.2,width=0.4,color="black",URL="$classRpm.html#a940dfab8b4369e418b8afc1627d74d2b",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node3 [label="Rpm::update_rpm",height=0.2,width=0.4,color="black",URL="$classRpm.html#acdcf8286b888e4ffd0aa41d1f37c5b15",tooltip=" "];
+}

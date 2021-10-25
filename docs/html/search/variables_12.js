@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['r_961',['R',['../classekf_1_1EKF.html#ad55e1ba3736ea08721dec76f03dd9715',1,'ekf::EKF::R()'],['../classRiccati.html#ab245227419e64ebd2b9dd0e28e1c5243',1,'Riccati::R()'],['../classSdre.html#a17464293d3a2f24ea0c55da3fcb0e864',1,'Sdre::R()']]],
+  ['r_962',['r',['../classControle.html#a7b4f1db8c2182de9f1999819aace78e3',1,'Controle']]],
+  ['recef_963',['rECEF',['../structBASE.html#ae9e7517ae5f24d671f404d18c1d0b90b',1,'BASE']]],
+  ['recef2ned_964',['Recef2ned',['../structBASE.html#ab4bcf2a27b373820efe4f530a101704d',1,'BASE']]],
+  ['reserved1_965',['reserved1',['../structNAV__PVT__STRUCT.html#ac180d88179b0671dca08121915d55838',1,'NAV_PVT_STRUCT']]],
+  ['reserved2_966',['reserved2',['../structNAV__PVT__STRUCT.html#ad7be043d349fb056d0c47de5282750b4',1,'NAV_PVT_STRUCT']]],
+  ['resolucao_967',['resolucao',['../classMotores.html#af2f825f86a3524c6b9097dedd4e9bdea',1,'Motores']]],
+  ['ri_968',['rI',['../classControle.html#abea037d2953202894021efd9e5c4fcaf',1,'Controle']]],
+  ['ricobj_969',['ricObj',['../classSdre.html#ac29f58dd81643087f49ccbed42b794df',1,'Sdre']]],
+  ['rned_970',['rNED',['../classekf_1_1EKF.html#a833f15f8790f86633d8b02eb2fe3616e',1,'ekf::EKF']]],
+  ['rnedgps_971',['rNEDgps',['../classekf_1_1EKF.html#a649f7d975dc55413be50d8f1e6bc2559',1,'ekf::EKF']]],
+  ['rotationsofmotors_972',['rotationsOfMotors',['../classControle.html#a8439a8b9ac6c7d0ec7f052b742f8a24b',1,'Controle']]],
+  ['rpm_973',['rpm',['../classRpm.html#ad84394fa85418225c8a3b0f82110bc09',1,'Rpm']]],
+  ['rpm_5ffactor_974',['rpm_factor',['../classRpm.html#a3e22a7563c57f2eb1f5df770e58351fb',1,'Rpm']]],
+  ['rr_975',['Rr',['../classControle.html#a5322dd0d474b5f5f92dceda8266c8cfd',1,'Controle']]],
+  ['rt_976',['Rt',['../classControle.html#a442eb8225f58938b2a9a5308895e1d18',1,'Controle']]]
+];

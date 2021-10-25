@@ -1,0 +1,13 @@
+digraph "ekf::S_l"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  rankdir="RL";
+  Node1 [label="ekf::S_l",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Calcula a Matriz Lefth-Quaternion a partir do quaternion q."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node2 [label="Controle::computeRotational\lControl",height=0.2,width=0.4,color="black",URL="$classControle.html#abcf05dcff157e963fd65c09d45261a8f",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node3 [label="Controle::controlLoop",height=0.2,width=0.4,color="black",URL="$classControle.html#a78e5f662130811f409342a706d5c0d2f",tooltip=" "];
+}

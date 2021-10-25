@@ -1,0 +1,8 @@
+digraph "Drone"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  Node1 [label="{Drone\n|+ Eigen::Matrix4f J\l+ Eigen::Matrix4f Jinv\l+ float dt\l+ float dx\l+ float massa\l+ const Eigen::DiagonalMatrix\l\< float, 3 \> matrizInercia\l+ const Eigen::DiagonalMatrix\l\< float, 3 \> inverseMatrizInercia\l+ Eigen::Vector3f p\l+ Eigen::Vector3f v\l+ Eigen::Vector4f q\l+ Eigen::Vector3f w\l+ Eigen::MatrixXf matAT\l+ Eigen::MatrixXf matBT\l+ Eigen::MatrixXf matAR\l+ Eigen::MatrixXf matBR\l+ const Eigen::DiagonalMatrix\l\< float, 4 \> H\l+ const Eigen::DiagonalMatrix\l\< float, 4 \> Hinv\l+ const Eigen::Vector4f h\l+ int flagSDC\l- const float L\l- float half_dt\l|+  Drone(float _dt)\l+ void updateStateMatrices\l(bool &negativeq0)\l+ void constructJ()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

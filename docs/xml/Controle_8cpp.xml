@@ -1,0 +1,228 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compounddef id="Controle_8cpp" kind="file" language="C++">
+    <compoundname>Controle.cpp</compoundname>
+    <includes refid="Controle_8h" local="yes">Controle.h</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>Controle.h</label>
+        <link refid="Controle_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>../SDRE/Sdre.h</label>
+        <link refid="Sdre_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>eigen3/Eigen/Dense</label>
+      </node>
+      <node id="3">
+        <label>../DRONE/Drone.h</label>
+        <link refid="Drone_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>lib/CONTROLE/Controle.cpp</label>
+        <link refid="Controle_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>../RICCATI/Riccati.h</label>
+        <link refid="Riccati_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>../READWRITEEIGEN/readWriteEigen.h</label>
+      </node>
+      <node id="4">
+        <label>Arduino.h</label>
+      </node>
+      <node id="7">
+        <label>iostream</label>
+      </node>
+      <node id="5">
+        <label>GRUPO_QUAT.h</label>
+        <link refid="GRUPO__QUAT_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>: Roney Silva (roneydua) </para>
+</simplesect>
+<simplesect kind="date"><para>: 16-Aug-2021 Email: <ulink url="mailto:roneyddasilva@gmail.com">roneyddasilva@gmail.com</ulink> Project: quadrirrotorUFABC</para>
+</simplesect>
+Last modified by: roneydua Last modified time: 25-Aug-2021 </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Controle_8h" kindref="compound">Controle.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="classControle_1abbe044aad705ef7d663c45275948fd12" refkind="member"><highlight class="normal"><ref refid="classControle_1abbe044aad705ef7d663c45275948fd12" kindref="member">Controle::Controle</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__GNUC__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>_folderPlace<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;include/CONTROLE/&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><ref refid="classControle_1a217f8f02b01c63725bc14f7679412fc0" kindref="member">Qt</ref><sp/>=<sp/>csvLeia&lt;Eigen::MatrixXf&gt;(_folderPlace<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;Qt_66&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><ref refid="classControle_1a442eb8225f58938b2a9a5308895e1d18" kindref="member">Rt</ref><sp/>=<sp/>csvLeia&lt;Eigen::MatrixXf&gt;(_folderPlace<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;Rt_66&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><ref refid="classControle_1a299b06de76fde5b6eb7e47a4a45938bb" kindref="member">Qr</ref><sp/>=<sp/>csvLeia&lt;Eigen::MatrixXf&gt;(_folderPlace<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;Qr&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><ref refid="classControle_1a5322dd0d474b5f5f92dceda8266c8cfd" kindref="member">Rr</ref><sp/>=<sp/>csvLeia&lt;Eigen::MatrixXf&gt;(_folderPlace<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;Rr&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><ref refid="namespacedrone" kindref="compound">drone</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classDrone" kindref="compound">Drone</ref>(0.04);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><ref refid="classControle_1a05ff4316f906c1e57a27ef81d983fba8" kindref="member">u</ref>(0)<sp/>=<sp/><ref refid="namespacedrone" kindref="compound">drone</ref>-&gt;massa<sp/>*<sp/><ref refid="classControle_1ae08c605ba3028486392d9f5aa2b2142b" kindref="member">gravidade</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><ref refid="classControle_1ad418683f52bf07661b72e9fbf463ecd1" kindref="member">ut</ref>(2)<sp/>=<sp/><ref refid="namespacedrone" kindref="compound">drone</ref>-&gt;massa<sp/>*<sp/><ref refid="classControle_1ae08c605ba3028486392d9f5aa2b2142b" kindref="member">gravidade</ref>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><ref refid="classControle_1a065d96653d6891c3e9aeffd5d202200d" kindref="member">qa</ref>(0,<sp/>1)<sp/>=<sp/>1.0f;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*Calcula<sp/>o<sp/>ganho<sp/>para<sp/>controle<sp/>da<sp/>dinâmica<sp/>translacional*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><ref refid="classControle_1ad67e192b12bfba4d5a68ee59870863b2" kindref="member">sdre</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classSdre" kindref="compound">Sdre</ref>(<ref refid="namespacedrone" kindref="compound">drone</ref>-&gt;matAT,<sp/><ref refid="namespacedrone" kindref="compound">drone</ref>-&gt;matBT,<sp/><ref refid="classControle_1a217f8f02b01c63725bc14f7679412fc0" kindref="member">Qt</ref>,<sp/><ref refid="classControle_1a442eb8225f58938b2a9a5308895e1d18" kindref="member">Rt</ref>);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><ref refid="classControle_1ad67e192b12bfba4d5a68ee59870863b2" kindref="member">sdre</ref>-&gt;<ref refid="classSdre_1af2f380ec3d018b60686e304ca7026846" kindref="member">updateControl</ref>();</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><ref refid="classControle_1a822f7e0d38f422c6097e2126ed9a9ec9" kindref="member">Lt</ref><sp/>=<sp/><ref refid="classControle_1ad67e192b12bfba4d5a68ee59870863b2" kindref="member">sdre</ref>-&gt;<ref refid="classSdre_1aad912686f9a487dce4ea7e4875efd563" kindref="member">L</ref>;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><ref refid="classControle_1a9fa6356305a7fa27ea7b9dd5ebf620c9" kindref="member">Ls_G</ref><sp/>=<sp/><ref refid="classControle_1ad67e192b12bfba4d5a68ee59870863b2" kindref="member">sdre</ref>-&gt;<ref refid="classSdre_1ac29f58dd81643087f49ccbed42b794df" kindref="member">ricObj</ref>-&gt;<ref refid="classRiccati_1aef6ba29bba94e293a8ea4c279b565164" kindref="member">Ls</ref><sp/>*<sp/><ref refid="classControle_1ad67e192b12bfba4d5a68ee59870863b2" kindref="member">sdre</ref>-&gt;<ref refid="classSdre_1ad244c5cc1e70a1b08e8e4d5655993d8b" kindref="member">G</ref>;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><ref refid="Controle_8h_1a92102ea2f9ade1cc1a6dcce355db1677" kindref="member">PRINT_MAT</ref>(<ref refid="classControle_1ad67e192b12bfba4d5a68ee59870863b2" kindref="member">sdre</ref>-&gt;<ref refid="classSdre_1a4848cfbce14035e6b3733a628de9e24f" kindref="member">closeLoopEig</ref>());</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><ref refid="classControle_1ad67e192b12bfba4d5a68ee59870863b2" kindref="member">sdre</ref>-&gt;<ref refid="classSdre_1a887dbd01f9f6846839114a4d5ff64102" kindref="member">~Sdre</ref>();</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Instância<sp/>a<sp/>classe<sp/>SDRE<sp/>para<sp/>computo<sp/>da<sp/>dinâmica<sp/>rotacional.*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><ref refid="classControle_1ad67e192b12bfba4d5a68ee59870863b2" kindref="member">sdre</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classSdre" kindref="compound">Sdre</ref>(<ref refid="namespacedrone" kindref="compound">drone</ref>-&gt;matAR,<sp/><ref refid="namespacedrone" kindref="compound">drone</ref>-&gt;matBR,<sp/><ref refid="classControle_1a299b06de76fde5b6eb7e47a4a45938bb" kindref="member">Qr</ref>,<sp/><ref refid="classControle_1a5322dd0d474b5f5f92dceda8266c8cfd" kindref="member">Rr</ref>);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="classControle_1add7378d03597a45ff09b2432d7739dfe" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classControle_1add7378d03597a45ff09b2432d7739dfe" kindref="member">Controle::computeTranslationalControl</ref>()<sp/>{<sp/></highlight><highlight class="comment">/*<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><ref refid="classControle_1a4fc1f7f2b69a021f4bb433daada38430" kindref="member">index_alt</ref><sp/>=<sp/>1<sp/>-<sp/><ref refid="classControle_1a4fc1f7f2b69a021f4bb433daada38430" kindref="member">index_alt</ref>;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/>Eigen::VectorXf<sp/>_x(6);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/>_x<sp/>&lt;&lt;<sp/><ref refid="namespacedrone" kindref="compound">drone</ref>-&gt;p<sp/>-<sp/><ref refid="classControle_1abea037d2953202894021efd9e5c4fcaf" kindref="member">rI</ref>,<sp/><ref refid="namespacedrone" kindref="compound">drone</ref>-&gt;v<sp/>-<sp/><ref refid="classControle_1a7b4f1db8c2182de9f1999819aace78e3" kindref="member">r</ref>;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><ref refid="classControle_1ad418683f52bf07661b72e9fbf463ecd1" kindref="member">ut</ref><sp/>=<sp/>-<ref refid="classControle_1a822f7e0d38f422c6097e2126ed9a9ec9" kindref="member">Lt</ref><sp/>*<sp/>_x;<sp/></highlight><highlight class="comment">//<sp/>+<sp/>Ls_G<sp/>*<sp/>r;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>ut<sp/>=<sp/>-Lt<sp/>*<sp/>(drone-&gt;v<sp/>-<sp/>r);<sp/>//<sp/>+<sp/>Ls_G<sp/>*<sp/>r;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><ref refid="classControle_1ad418683f52bf07661b72e9fbf463ecd1" kindref="member">ut</ref>(2)<sp/>-=<sp/><ref refid="classControle_1ae08c605ba3028486392d9f5aa2b2142b" kindref="member">gravidade</ref>;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>u(0)<sp/>=<sp/>-ut.norm()<sp/>*<sp/>drone-&gt;massa;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><ref refid="classControle_1a05ff4316f906c1e57a27ef81d983fba8" kindref="member">u</ref>(0)<sp/>=<sp/>-<ref refid="classControle_1ad418683f52bf07661b72e9fbf463ecd1" kindref="member">ut</ref>.norm();<sp/></highlight><highlight class="comment">//<sp/>*<sp/>drone-&gt;massa;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="51" refid="classControle_1a8ac9e933ce30f9c88ed421d4c0afcf99" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classControle_1a8ac9e933ce30f9c88ed421d4c0afcf99" kindref="member">Controle::computeRotationalTarget</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>qc0<sp/>=<sp/>sqrtf(0.5<sp/>*<sp/>(<ref refid="classControle_1ad418683f52bf07661b72e9fbf463ecd1" kindref="member">ut</ref>(2)<sp/>/<sp/><ref refid="classControle_1a05ff4316f906c1e57a27ef81d983fba8" kindref="member">u</ref>(0)<sp/>+<sp/>1.0f));</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>cosPhi_2<sp/>=<sp/>cosf(0.5f<sp/>*<sp/><ref refid="classControle_1aa873dca8a6cf31541df846aa5cbe7a61" kindref="member">psi</ref>);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>sinPhi_2<sp/>=<sp/>sinf(0.5f<sp/>*<sp/><ref refid="classControle_1aa873dca8a6cf31541df846aa5cbe7a61" kindref="member">psi</ref>);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Calculo<sp/>do<sp/>quaternion<sp/>de<sp/>atitude<sp/>alvo.*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><ref refid="classControle_1a065d96653d6891c3e9aeffd5d202200d" kindref="member">qa</ref>(0,<sp/><ref refid="classControle_1a4fc1f7f2b69a021f4bb433daada38430" kindref="member">index_alt</ref>)<sp/>=<sp/>qc0<sp/>*<sp/>cosPhi_2;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><ref refid="classControle_1a065d96653d6891c3e9aeffd5d202200d" kindref="member">qa</ref>(1,<sp/><ref refid="classControle_1a4fc1f7f2b69a021f4bb433daada38430" kindref="member">index_alt</ref>)<sp/>=</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="classControle_1ad418683f52bf07661b72e9fbf463ecd1" kindref="member">ut</ref>(1)<sp/>*<sp/>cosPhi_2<sp/>-<sp/><ref refid="classControle_1ad418683f52bf07661b72e9fbf463ecd1" kindref="member">ut</ref>(0)<sp/>*<sp/>sinPhi_2)<sp/>*<sp/>.5f<sp/>/<sp/>(-<ref refid="classControle_1a05ff4316f906c1e57a27ef81d983fba8" kindref="member">u</ref>(0))<sp/>/<sp/>qc0;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><ref refid="classControle_1a065d96653d6891c3e9aeffd5d202200d" kindref="member">qa</ref>(2,<sp/><ref refid="classControle_1a4fc1f7f2b69a021f4bb433daada38430" kindref="member">index_alt</ref>)<sp/>=<sp/>(<ref refid="classControle_1ad418683f52bf07661b72e9fbf463ecd1" kindref="member">ut</ref>(0)<sp/>*<sp/>cosPhi_2<sp/>+<sp/><ref refid="classControle_1ad418683f52bf07661b72e9fbf463ecd1" kindref="member">ut</ref>(1)<sp/>*<sp/>sinPhi_2)<sp/>*<sp/>.5f<sp/>/<sp/><ref refid="classControle_1a05ff4316f906c1e57a27ef81d983fba8" kindref="member">u</ref>(0)<sp/>/<sp/>qc0;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><ref refid="classControle_1a065d96653d6891c3e9aeffd5d202200d" kindref="member">qa</ref>(3,<sp/><ref refid="classControle_1a4fc1f7f2b69a021f4bb433daada38430" kindref="member">index_alt</ref>)<sp/>=<sp/>qc0<sp/>*<sp/>sinPhi_2;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Continuidade<sp/>do<sp/>quaternion<sp/>de<sp/>atitude.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>(isless(qa.col(index_alt).dot(qa.col(1<sp/>-<sp/>index_alt)),<sp/>0.0f))<sp/>{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/>qa.col(index_alt)<sp/>*=<sp/>-1.0f;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>(isless(qa.col(index_alt).dot(drone-&gt;q),<sp/>0.0f))<sp/>{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/>qa.col(index_alt)<sp/>*=<sp/>-1.0f;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Atualiza<sp/>a<sp/>flag<sp/>da<sp/>parte<sp/>escalar<sp/>do<sp/>quatenrion<sp/>alvo.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/>(<ref refid="classControle_1a065d96653d6891c3e9aeffd5d202200d" kindref="member">qa</ref>(0,<sp/><ref refid="classControle_1a4fc1f7f2b69a021f4bb433daada38430" kindref="member">index_alt</ref>))<sp/>&lt;<sp/>0.0f<sp/>?<sp/><ref refid="classControle_1aa30ed7f98e0eb42b27525a060ce3968c" kindref="member">negativeq0</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal"><sp/>:<sp/><ref refid="classControle_1aa30ed7f98e0eb42b27525a060ce3968c" kindref="member">negativeq0</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Calcula<sp/>a<sp/>velocidade<sp/>ângular.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><ref refid="classControle_1a51cecade068048c7a97a9dd4cb6a75b8" kindref="member">wa</ref><sp/>=<sp/>2.0f<sp/>/<sp/><ref refid="namespacedrone" kindref="compound">drone</ref>-&gt;dt<sp/>*<sp/>(<ref refid="namespaceekf_1a34993a331b6837e5274d556e4f0a1bea" kindref="member">ekf::Q_l</ref>(<ref refid="classControle_1a065d96653d6891c3e9aeffd5d202200d" kindref="member">qa</ref>.col(1<sp/>-<sp/><ref refid="classControle_1a4fc1f7f2b69a021f4bb433daada38430" kindref="member">index_alt</ref>))).transpose()<sp/>*</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classControle_1a065d96653d6891c3e9aeffd5d202200d" kindref="member">qa</ref>.col(<ref refid="classControle_1a4fc1f7f2b69a021f4bb433daada38430" kindref="member">index_alt</ref>);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Eigen::Vector3f<sp/>_wg<sp/>=<sp/>2.0f<sp/>/<sp/>drone-&gt;dt<sp/>*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(ekf::Q_r(qa.col(1<sp/>-<sp/>index_alt))).transpose()<sp/>*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>qa.col(index_alt);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>wa<sp/>=<sp/>ekf::rotateVectorWithQuaternion_Conjugate(drone-&gt;q,<sp/>_wg);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><ref refid="classControle_1a05ff4316f906c1e57a27ef81d983fba8" kindref="member">u</ref>(0)<sp/>*=<sp/><ref refid="namespacedrone" kindref="compound">drone</ref>-&gt;massa;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="84" refid="classControle_1abcf05dcff157e963fd65c09d45261a8f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classControle_1abcf05dcff157e963fd65c09d45261a8f" kindref="member">Controle::computeRotationalControl</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><ref refid="classControle_1ad67e192b12bfba4d5a68ee59870863b2" kindref="member">sdre</ref>-&gt;<ref refid="classSdre_1af2f380ec3d018b60686e304ca7026846" kindref="member">updateControl</ref>();</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/>Eigen::VectorXf<sp/>_r(6),<sp/>_x(6);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>#ifdef<sp/>__GNUC__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><ref refid="classControle_1a3e4c231b2af8c3c96550cd022d410c83" kindref="member">qe</ref><sp/>=<sp/>(<ref refid="namespaceekf_1a8177897fe9b962d8e0927a913fc36242" kindref="member">ekf::S_l</ref>(<ref refid="namespacedrone" kindref="compound">drone</ref>-&gt;q)).transpose()<sp/>*<sp/><ref refid="classControle_1a065d96653d6891c3e9aeffd5d202200d" kindref="member">qa</ref>.col(<ref refid="classControle_1a4fc1f7f2b69a021f4bb433daada38430" kindref="member">index_alt</ref>);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/>_x<sp/>&lt;&lt;<sp/><ref refid="classControle_1a3e4c231b2af8c3c96550cd022d410c83" kindref="member">qe</ref>.tail(3),<sp/><ref refid="namespacedrone" kindref="compound">drone</ref>-&gt;w<sp/>-<sp/><ref refid="classControle_1a51cecade068048c7a97a9dd4cb6a75b8" kindref="member">wa</ref>;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>_x<sp/>&lt;&lt;<sp/>drone-&gt;q.tail(3),<sp/>drone-&gt;w;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>_r<sp/>&lt;&lt;<sp/>qa.block(1,<sp/>index_alt,<sp/>3,<sp/>1),<sp/>wa;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>u.tail(3)<sp/>=<sp/>-sdre-&gt;L<sp/>*<sp/>_x<sp/>+<sp/>sdre-&gt;ricObj-&gt;Ls<sp/>*<sp/>sdre-&gt;G<sp/>*<sp/>Qr<sp/>*<sp/>_r;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><ref refid="classControle_1a05ff4316f906c1e57a27ef81d983fba8" kindref="member">u</ref>.tail(3)<sp/>=<sp/>-<ref refid="classControle_1ad67e192b12bfba4d5a68ee59870863b2" kindref="member">sdre</ref>-&gt;<ref refid="classSdre_1aad912686f9a487dce4ea7e4875efd563" kindref="member">L</ref><sp/>*<sp/>_x;<sp/></highlight><highlight class="comment">//<sp/>+<sp/>sdre-&gt;ricObj-&gt;Ls<sp/>*<sp/>sdre-&gt;G<sp/>*<sp/>Qr<sp/>*<sp/>_r;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="102" refid="classControle_1a42aee0a4592b84bd793c8be0fde0095b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classControle_1a42aee0a4592b84bd793c8be0fde0095b" kindref="member">Controle::virtualCommandToMotorCommand</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><ref refid="classControle_1aacd18c8929cb59d7390a58d8dd68de6d" kindref="member">motorCommands</ref><sp/>=</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="namespacedrone" kindref="compound">drone</ref>-&gt;Hinv<sp/>*<sp/>((<ref refid="namespacedrone" kindref="compound">drone</ref>-&gt;Jinv<sp/>*<sp/><ref refid="classControle_1a05ff4316f906c1e57a27ef81d983fba8" kindref="member">u</ref>).cwiseSqrt()<sp/>-<sp/><ref refid="namespacedrone" kindref="compound">drone</ref>-&gt;h)).cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&gt;();</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><ref refid="classControle_1aacd18c8929cb59d7390a58d8dd68de6d" kindref="member">motorCommands</ref><sp/>=<sp/><ref refid="classControle_1aacd18c8929cb59d7390a58d8dd68de6d" kindref="member">motorCommands</ref>.array()</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.min(<ref refid="classControle_1a913b2b49e44d1b633b55d2d95413b259" kindref="member">maximalDigitalCommand</ref>)</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.max(<ref refid="classControle_1adf6b85a6ab34600ac480a5cf9c4c1f8e" kindref="member">minimalDigitalCommand</ref>)</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.matrix();</highlight></codeline>
+<codeline lineno="109"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="110" refid="classControle_1a9b3718425d8602487eb9b14d6ee1c781" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classControle_1a9b3718425d8602487eb9b14d6ee1c781" kindref="member">Controle::virtualCommandToMotorRpm</ref>()<sp/>{<sp/></highlight><highlight class="comment">/*<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>rotationsOfMotors<sp/>&lt;&lt;<sp/>(drone-&gt;Jinv<sp/>*<sp/>u).array().sqrt().matrix();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><ref refid="classControle_1a8439a8b9ac6c7d0ec7f052b742f8a24b" kindref="member">rotationsOfMotors</ref><sp/>&lt;&lt;<sp/><ref refid="namespacedrone" kindref="compound">drone</ref>-&gt;H<sp/>*<sp/>(<ref refid="classControle_1aacd18c8929cb59d7390a58d8dd68de6d" kindref="member">motorCommands</ref>.cast&lt;</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">&gt;())<sp/>+<sp/><ref refid="namespacedrone" kindref="compound">drone</ref>-&gt;h;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><ref refid="classControle_1a05ff4316f906c1e57a27ef81d983fba8" kindref="member">u</ref><sp/>=<sp/><ref refid="namespacedrone" kindref="compound">drone</ref>-&gt;J<sp/>*<sp/><ref refid="classControle_1a8439a8b9ac6c7d0ec7f052b742f8a24b" kindref="member">rotationsOfMotors</ref>.array().square().matrix();</highlight></codeline>
+<codeline lineno="114"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="118" refid="classControle_1a78e5f662130811f409342a706d5c0d2f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classControle_1a78e5f662130811f409342a706d5c0d2f" kindref="member">Controle::controlLoop</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>atualiza<sp/>as<sp/>matriz<sp/>com<sp/>os<sp/>valores<sp/>de<sp/>q<sp/>e<sp/>wb</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><ref refid="namespacedrone" kindref="compound">drone</ref>-&gt;updateStateMatrices(<ref refid="classControle_1aa30ed7f98e0eb42b27525a060ce3968c" kindref="member">negativeq0</ref>);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><ref refid="classControle_1add7378d03597a45ff09b2432d7739dfe" kindref="member">computeTranslationalControl</ref>();</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><ref refid="classControle_1a8ac9e933ce30f9c88ed421d4c0afcf99" kindref="member">computeRotationalTarget</ref>();</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><ref refid="classControle_1abcf05dcff157e963fd65c09d45261a8f" kindref="member">computeRotationalControl</ref>();</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><ref refid="classControle_1a42aee0a4592b84bd793c8be0fde0095b" kindref="member">virtualCommandToMotorCommand</ref>();</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__GNUC__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>Na<sp/>aplicação<sp/>embarcda<sp/>esta<sp/>etapana<sp/>não<sp/>eh<sp/>necessária.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><ref refid="classControle_1a9b3718425d8602487eb9b14d6ee1c781" kindref="member">virtualCommandToMotorRpm</ref>();</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="comment">//<sp/>void<sp/>Controle::computeRotationalTarget()<sp/>{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>//<sp/>integra<sp/>a<sp/>velocidade<sp/>$psi</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>//<sp/>psi<sp/>=<sp/>oldPsi<sp/>+<sp/>drone-&gt;dt<sp/>*<sp/>dpsi;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>/*<sp/>Compute<sp/>quaternion<sp/>alvos*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>Eigen::Matrix3f<sp/>_m;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>_m.col(2)<sp/>=<sp/>-ut.col(index_alt).normalized();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>Eigen::Vector3f<sp/>x_c{cosf(psi),<sp/>sinf(psi),<sp/>0.0f};</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>//<sp/>Eigen::Vector3f<sp/>y_c{-sinf(psi),<sp/>cosf(psi),<sp/>0.0f};</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>_m.col(1)<sp/>=<sp/>(_m.col(2).cross(x_c)).normalized();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>_m.col(0)<sp/>=<sp/>(_m.col(1).cross(_m.col(2)));</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>ekf::computeQuaternionFromMCDMarkley(_m,<sp/>qa.col(index_alt));</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>if<sp/>(isless(qa.col(index_alt).dot(qa.col(1<sp/>-<sp/>index_alt)),<sp/>0.0f))<sp/>{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>qa.col(index_alt)<sp/>*=<sp/>-1.0f;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>qa(0,<sp/>index_alt)<sp/>&lt;<sp/>0.0f<sp/>?<sp/>negativeq0<sp/>=<sp/>true<sp/>:<sp/>negativeq0<sp/>=<sp/>false;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>wa<sp/>=<sp/>2.0f<sp/>/<sp/>drone-&gt;dt<sp/>*<sp/>(ekf::Q_l(qa.col(1<sp/>-<sp/>index_alt))).transpose()<sp/>*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>qa.col(index_alt);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>//<sp/>qa.block&lt;3,<sp/>1&gt;(1,<sp/>index_alt).dot(wa)<sp/>&gt;<sp/>0.0f<sp/>?<sp/>negativeq0<sp/>=<sp/>true</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>negativeq0<sp/>=<sp/>false;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>//<sp/>printf(&quot;%f\n&quot;,<sp/>qa.block&lt;3,<sp/>1&gt;(1,<sp/>index_alt).dot(wa));</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>/*<sp/>Compute<sp/>velociades<sp/>angulares<sp/>alvos*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>dpsi<sp/>=<sp/>(psi<sp/>-<sp/>oldPsi)<sp/>/<sp/>drone-&gt;dt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>omega_dif_flat(2)<sp/>=<sp/>dpsi<sp/>*<sp/>_m(2,<sp/>2);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>oldPsi<sp/>=<sp/>psi;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>Eigen::Vector3f<sp/>_wz<sp/>=</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/>1.0f<sp/>/<sp/>u(0)<sp/>*<sp/>ekf::computeVectorProjection(j,<sp/>_m.col(2));</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>omega_dif_flat(0)<sp/>=<sp/>-_wz.dot(_m.col(1));</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>omega_dif_flat(1)<sp/>=<sp/>_wz.dot(_m.col(0));</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight><highlight class="comment">//<sp/>}</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="lib/CONTROLE/Controle.cpp"/>
+  </compounddef>
+</doxygen>

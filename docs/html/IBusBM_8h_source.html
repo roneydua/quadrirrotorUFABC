@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Quadrirrotor: Código-Fonte de lib/IBUSBM/IBusBM.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Quadrirrotor
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Busca','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_d0e0a026526f6bba31a4b7e0c38bb1de.html">IBUSBM</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">IBusBM.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="IBusBM_8h.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Interface to the RC IBus protocol</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * This library is free software; you can redistribute it and/or</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * modify it under the terms of the GNU Lesser General Public</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * License as published by the Free Software Foundation; either</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * version 2.1 of the License, or (at your option) any later version.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * Created 12 March 2019 Bart Mellink</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#ifndef IBusBM_h</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#define IBusBM_h</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;inttypes.h&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#if defined(ARDUINO_ARCH_MBED)</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">  #include &quot;mbed.h&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">  #include &quot;HardwareSerial.h&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// if you have an opentx transciever you can add additional sensor types here.</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// see</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// https://github.com/cleanflight/cleanflight/blob/7cd417959b3cb605aa574fc8c0f16759943527ef/src/main/telemetry/ibus_shared.h</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// below the values supported by the Turnigy FS-MT6 transceiver</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="IBusBM_8h.html#ac1ca270757e32aff0abf70633c5df4f2">   25</a></span>&#160;<span class="preprocessor">#define IBUSS_INTV 0x00 </span><span class="comment">// Internal voltage (in 0.01)</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="IBusBM_8h.html#ace597623a5fc777c1e21b7d4b088fa1b">   26</a></span>&#160;<span class="preprocessor">#define IBUSS_TEMP 0x01 </span><span class="comment">// Temperature (in 0.1 degrees, where 0=-40&#39;C)</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="IBusBM_8h.html#a08a63b83bde9808e1f3ebb3ba466326a">   27</a></span>&#160;<span class="preprocessor">#define IBUSS_RPM 0x02  </span><span class="comment">// RPM</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="IBusBM_8h.html#a1d0bda3891691c890d1677802e73656e">   28</a></span>&#160;<span class="preprocessor">#define IBUSS_EXTV 0x03 </span><span class="comment">// External voltage (in 0.01)</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="IBusBM_8h.html#ab8b4210032699b763bf7b908c14566f7">   29</a></span>&#160;<span class="preprocessor">#define IBUS_PRESS 0x41 </span><span class="comment">// Pressure (in Pa)</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="IBusBM_8h.html#a83d618c47cdff65562b5e4d3427f373c">   30</a></span>&#160;<span class="preprocessor">#define IBUS_SERVO 0xfd </span><span class="comment">// Servo value</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#if defined(ARDUINO_ARCH_MBED)</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">  #define HardwareSerial arduino::HardwareSerial</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">  #if !defined(ARDUINO_ARCH_MEGAAVR)</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">class </span>HardwareSerial;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">  #endif</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">class </span>Stream;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classIBusBM.html">   41</a></span>&#160;<span class="keyword">class </span><a class="code" href="classIBusBM.html">IBusBM</a> {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#if defined(_VARIANT_ARDUINO_STM32_)</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">  #if !defined(STM32_CORE_VERSION) || (STM32_CORE_VERSION &lt; 0x01090000)</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">    #error                                                                     \</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">        &quot;Due to API change, this sketch is compatible with STM32_CORE_VERSION  &gt;= 0x01090000&quot;</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">  #endif</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">  #define IBUSBM_NOTIMER NULL </span><span class="comment">// no timer interrupt used</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classIBusBM.html#afb01e4a762c8f575d8466fc8dadaa5cd">begin</a>(HardwareSerial &amp;serial, TIM_TypeDef *timerid = TIM1,</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;             int8_t rxPin = -1, int8_t txPin = -1);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="IBusBM_8h.html#a8b9fd84154bff010521710049dd8f090">   53</a></span>&#160;<span class="preprocessor">  #define IBUSBM_NOTIMER -1 </span><span class="comment">// no timer interrupt used</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classIBusBM.html#afb01e4a762c8f575d8466fc8dadaa5cd">begin</a>(HardwareSerial &amp;serial, int8_t timerid = 0, int8_t rxPin = -1,</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;             int8_t txPin = -1);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  uint16_t <a class="code" href="classIBusBM.html#af21822cffd62a1f2f8da19c407c00b94">readChannel</a>(uint8_t channelNr); <span class="comment">// read servo channel 0..9</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  uint8_t</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <a class="code" href="classIBusBM.html#a126cc857adec1367f7264f27ae68a347">addSensor</a>(uint8_t type,</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            uint8_t <a class="code" href="classIBusBM.html#af10cf8a59adab541e055aaac1fa21cb8">len</a> =</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                2); <span class="comment">// add sensor type and data length (2 or 4), returns address</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classIBusBM.html#acbd0bcad0529b872c72d4e7a49233460">setSensorMeasurement</a>(uint8_t adr, int32_t value);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classIBusBM.html#a3219abe525dde59156d00538d93faa11">loop</a>(<span class="keywordtype">void</span>); <span class="comment">// used internally for interrupt handline, but needs to be</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                   <span class="comment">// defined as public</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="classIBusBM.html#ae980c3b427d1c12d93c2fc13322f7665">   67</a></span>&#160;  <span class="keyword">volatile</span> uint8_t <a class="code" href="classIBusBM.html#ae980c3b427d1c12d93c2fc13322f7665">cnt_poll</a>;   <span class="comment">// count received number of sensor poll messages</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classIBusBM.html#a4bf0677885cb0944adfc7725fffe0ccc">   68</a></span>&#160;  <span class="keyword">volatile</span> uint8_t <a class="code" href="classIBusBM.html#a4bf0677885cb0944adfc7725fffe0ccc">cnt_sensor</a>; <span class="comment">// count times a sensor value has been sent back</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classIBusBM.html#a15332b57310d1cbca77180befc27cd99">   69</a></span>&#160;  <span class="keyword">volatile</span> uint8_t <a class="code" href="classIBusBM.html#a15332b57310d1cbca77180befc27cd99">cnt_rec</a>;    <span class="comment">// count received number of servo messages</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classIBusBM.html#aed184764706c5dcb4b82ae4a53b917eca9c69e26c2830eb900cd5603714acd289">   72</a></span>&#160;  <span class="keyword">enum</span> <a class="code" href="classIBusBM.html#aed184764706c5dcb4b82ae4a53b917ec">State</a> { <a class="code" href="classIBusBM.html#aed184764706c5dcb4b82ae4a53b917eca0c01e1a9f134347f73969aeba38df424">GET_LENGTH</a>, <a class="code" href="classIBusBM.html#aed184764706c5dcb4b82ae4a53b917eca4ed4c7f6e05b116601121d0bac402f42">GET_DATA</a>, <a class="code" href="classIBusBM.html#aed184764706c5dcb4b82ae4a53b917ecaa7f315ef3b8eab0e0f6abc1b3f25bcc0">GET_CHKSUML</a>, <a class="code" href="classIBusBM.html#aed184764706c5dcb4b82ae4a53b917ecaf7c395fada4d5074ad979c56cfde8ed0">GET_CHKSUMH</a>, <a class="code" href="classIBusBM.html#aed184764706c5dcb4b82ae4a53b917eca9c69e26c2830eb900cd5603714acd289">DISCARD</a> };</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classIBusBM.html#a93d315b20e2ef3696db2123eedb1a5df">   74</a></span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> uint8_t <a class="code" href="classIBusBM.html#a93d315b20e2ef3696db2123eedb1a5df">PROTOCOL_LENGTH</a> = 0x20;</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classIBusBM.html#ad79ec4b372325fcfb0fa542093250583">   75</a></span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> uint8_t <a class="code" href="classIBusBM.html#ad79ec4b372325fcfb0fa542093250583">PROTOCOL_OVERHEAD</a> =</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;      3; <span class="comment">// packet is &lt;len&gt;&lt;cmd&gt;&lt;data....&gt;&lt;chkl&gt;&lt;chkh&gt;, overhead=cmd+chk bytes</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classIBusBM.html#a7432721ad94f78fc5df8fd3004e7b84b">   77</a></span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> uint8_t <a class="code" href="classIBusBM.html#a7432721ad94f78fc5df8fd3004e7b84b">PROTOCOL_TIMEGAP</a> =</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      3; <span class="comment">// Packets are received very ~7ms so use ~half that for the gap</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="classIBusBM.html#ac1d183fc712d8136da488fcc823715a1">   79</a></span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> uint8_t <a class="code" href="classIBusBM.html#ac1d183fc712d8136da488fcc823715a1">PROTOCOL_CHANNELS</a> = 14;</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classIBusBM.html#a04af78a0dfdab275bdb2fa82253c8b49">   80</a></span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> uint8_t <a class="code" href="classIBusBM.html#a04af78a0dfdab275bdb2fa82253c8b49">PROTOCOL_COMMAND40</a> =</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;      0x40; <span class="comment">// Command to set servo or motor speed is always 0x40</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="classIBusBM.html#a5a474b243c8a027b395314b052d283e7">   82</a></span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> uint8_t <a class="code" href="classIBusBM.html#a5a474b243c8a027b395314b052d283e7">PROTOCOL_COMMAND_DISCOVER</a> =</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      0x80; <span class="comment">// Command discover sensor (lowest 4 bits are sensor)</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classIBusBM.html#a270b74b38e646b87402d4a2340187e20">   84</a></span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> uint8_t <a class="code" href="classIBusBM.html#a270b74b38e646b87402d4a2340187e20">PROTOCOL_COMMAND_TYPE</a> =</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;      0x90; <span class="comment">// Command discover sensor (lowest 4 bits are sensor)</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="classIBusBM.html#af7d9b5d197f47071a8d6d8723cb14a72">   86</a></span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> uint8_t <a class="code" href="classIBusBM.html#af7d9b5d197f47071a8d6d8723cb14a72">PROTOCOL_COMMAND_VALUE</a> =</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;      0xA0; <span class="comment">// Command send sensor data (lowest 4 bits are sensor)</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="classIBusBM.html#abf1b1c4c0bac139f0d5f9cfb78d5f88f">   88</a></span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> uint8_t <a class="code" href="classIBusBM.html#abf1b1c4c0bac139f0d5f9cfb78d5f88f">SENSORMAX</a> = 10; <span class="comment">// Max number of sensors</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="classIBusBM.html#a2a316d2088ea51aeea5ce8c025687eef">   90</a></span>&#160;  uint8_t <a class="code" href="classIBusBM.html#a2a316d2088ea51aeea5ce8c025687eef">state</a>;                       <span class="comment">// state machine state for iBUS protocol</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="classIBusBM.html#a00c0e49a0d4fcb8ac567b2e92bc74d3d">   91</a></span>&#160;  HardwareSerial *<a class="code" href="classIBusBM.html#a00c0e49a0d4fcb8ac567b2e92bc74d3d">stream</a>;              <span class="comment">// serial port</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="classIBusBM.html#a20f49c47b7c40cb6f5bee2f3d4649fe3">   92</a></span>&#160;  uint32_t <a class="code" href="classIBusBM.html#a20f49c47b7c40cb6f5bee2f3d4649fe3">last</a>;                       <span class="comment">// milis() of prior message</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="classIBusBM.html#a5e950d8524d32e3adfad0a654a9e69d1">   93</a></span>&#160;  uint8_t <a class="code" href="classIBusBM.html#a5e950d8524d32e3adfad0a654a9e69d1">buffer</a>[<a class="code" href="classIBusBM.html#a93d315b20e2ef3696db2123eedb1a5df">PROTOCOL_LENGTH</a>];     <span class="comment">// message buffer</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="classIBusBM.html#a4a9932e9c78e976e9adb4ff09d9ed69a">   94</a></span>&#160;  uint8_t <a class="code" href="classIBusBM.html#a4a9932e9c78e976e9adb4ff09d9ed69a">ptr</a>;                         <span class="comment">// pointer in buffer</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="classIBusBM.html#af10cf8a59adab541e055aaac1fa21cb8">   95</a></span>&#160;  uint8_t <a class="code" href="classIBusBM.html#af10cf8a59adab541e055aaac1fa21cb8">len</a>;                         <span class="comment">// message length</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="classIBusBM.html#ac1f54297358da1bd0dcfe3af9eed31ea">   96</a></span>&#160;  uint16_t <a class="code" href="classIBusBM.html#ac1f54297358da1bd0dcfe3af9eed31ea">channel</a>[<a class="code" href="classIBusBM.html#ac1d183fc712d8136da488fcc823715a1">PROTOCOL_CHANNELS</a>]; <span class="comment">// servo data received</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="classIBusBM.html#a60daa234d83a024b0e626a85d80b7c6c">   97</a></span>&#160;  uint16_t <a class="code" href="classIBusBM.html#a60daa234d83a024b0e626a85d80b7c6c">chksum</a>;                     <span class="comment">// checksum calculation</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="classIBusBM.html#a025b034376f9e774e70b74207d9ea9f0">   98</a></span>&#160;  uint8_t <a class="code" href="classIBusBM.html#a025b034376f9e774e70b74207d9ea9f0">lchksum</a>;                     <span class="comment">// checksum lower byte received</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="structIBusBM_1_1sensorinfo.html">   99</a></span>&#160;  <span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="structIBusBM_1_1sensorinfo.html#abd881da866db85793dcdd020d8eecb5c">  100</a></span>&#160;    uint8_t <a class="code" href="structIBusBM_1_1sensorinfo.html#abd881da866db85793dcdd020d8eecb5c">sensorType</a>;   <span class="comment">// sensor type (0,1,2,3, etc)</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="structIBusBM_1_1sensorinfo.html#a0838975a9991ce94a7009f237cd7edc2">  101</a></span>&#160;    uint8_t <a class="code" href="structIBusBM_1_1sensorinfo.html#a0838975a9991ce94a7009f237cd7edc2">sensorLength</a>; <span class="comment">// data length for defined sensor (can be 2 or 4)</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="structIBusBM_1_1sensorinfo.html#a07cfd12b2c2a8982a88aeecf85bd322b">  102</a></span>&#160;    int32_t <a class="code" href="structIBusBM_1_1sensorinfo.html#a07cfd12b2c2a8982a88aeecf85bd322b">sensorValue</a>;  <span class="comment">// sensor data for defined sensors (16 or 32 bits)</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  } <a class="code" href="structIBusBM_1_1sensorinfo.html">sensorinfo</a>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="classIBusBM.html#a2f6eb7d18ab2dccf0a87c0bbf4c15dfc">  104</a></span>&#160;  <a class="code" href="structIBusBM_1_1sensorinfo.html">sensorinfo</a> <a class="code" href="classIBusBM.html#a2f6eb7d18ab2dccf0a87c0bbf4c15dfc">sensors</a>[<a class="code" href="classIBusBM.html#abf1b1c4c0bac139f0d5f9cfb78d5f88f">SENSORMAX</a>];</div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="classIBusBM.html#afd1a0be2e13c31156d32e242383915b5">  105</a></span>&#160;  uint8_t <a class="code" href="classIBusBM.html#afd1a0be2e13c31156d32e242383915b5">NumberSensors</a> = 0; <span class="comment">// number of sensors</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="classIBusBM.html#a2308638e357b6a34e0752e9f7d6e2ae6">  106</a></span>&#160;  <a class="code" href="classIBusBM.html">IBusBM</a> *<a class="code" href="classIBusBM.html#a2308638e357b6a34e0752e9f7d6e2ae6">IBusBMnext</a> = NULL; <span class="comment">// pointer to the next class instance to be used to</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                             <span class="comment">// call the loop() method from timer interrupt</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;};</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassIBusBM_html"><div class="ttname"><a href="classIBusBM.html">IBusBM</a></div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8h_source.html#l00041">IBusBM.h:41</a></div></div>
+<div class="ttc" id="aclassIBusBM_html_a00c0e49a0d4fcb8ac567b2e92bc74d3d"><div class="ttname"><a href="classIBusBM.html#a00c0e49a0d4fcb8ac567b2e92bc74d3d">IBusBM::stream</a></div><div class="ttdeci">HardwareSerial * stream</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8h_source.html#l00091">IBusBM.h:91</a></div></div>
+<div class="ttc" id="aclassIBusBM_html_a025b034376f9e774e70b74207d9ea9f0"><div class="ttname"><a href="classIBusBM.html#a025b034376f9e774e70b74207d9ea9f0">IBusBM::lchksum</a></div><div class="ttdeci">uint8_t lchksum</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8h_source.html#l00098">IBusBM.h:98</a></div></div>
+<div class="ttc" id="aclassIBusBM_html_a04af78a0dfdab275bdb2fa82253c8b49"><div class="ttname"><a href="classIBusBM.html#a04af78a0dfdab275bdb2fa82253c8b49">IBusBM::PROTOCOL_COMMAND40</a></div><div class="ttdeci">static const uint8_t PROTOCOL_COMMAND40</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8h_source.html#l00080">IBusBM.h:80</a></div></div>
+<div class="ttc" id="aclassIBusBM_html_a126cc857adec1367f7264f27ae68a347"><div class="ttname"><a href="classIBusBM.html#a126cc857adec1367f7264f27ae68a347">IBusBM::addSensor</a></div><div class="ttdeci">uint8_t addSensor(uint8_t type, uint8_t len=2)</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8cpp_source.html#l00298">IBusBM.cpp:298</a></div></div>
+<div class="ttc" id="aclassIBusBM_html_a15332b57310d1cbca77180befc27cd99"><div class="ttname"><a href="classIBusBM.html#a15332b57310d1cbca77180befc27cd99">IBusBM::cnt_rec</a></div><div class="ttdeci">volatile uint8_t cnt_rec</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8h_source.html#l00069">IBusBM.h:69</a></div></div>
+<div class="ttc" id="aclassIBusBM_html_a20f49c47b7c40cb6f5bee2f3d4649fe3"><div class="ttname"><a href="classIBusBM.html#a20f49c47b7c40cb6f5bee2f3d4649fe3">IBusBM::last</a></div><div class="ttdeci">uint32_t last</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8h_source.html#l00092">IBusBM.h:92</a></div></div>
+<div class="ttc" id="aclassIBusBM_html_a2308638e357b6a34e0752e9f7d6e2ae6"><div class="ttname"><a href="classIBusBM.html#a2308638e357b6a34e0752e9f7d6e2ae6">IBusBM::IBusBMnext</a></div><div class="ttdeci">IBusBM * IBusBMnext</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8h_source.html#l00106">IBusBM.h:106</a></div></div>
+<div class="ttc" id="aclassIBusBM_html_a270b74b38e646b87402d4a2340187e20"><div class="ttname"><a href="classIBusBM.html#a270b74b38e646b87402d4a2340187e20">IBusBM::PROTOCOL_COMMAND_TYPE</a></div><div class="ttdeci">static const uint8_t PROTOCOL_COMMAND_TYPE</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8h_source.html#l00084">IBusBM.h:84</a></div></div>
+<div class="ttc" id="aclassIBusBM_html_a2a316d2088ea51aeea5ce8c025687eef"><div class="ttname"><a href="classIBusBM.html#a2a316d2088ea51aeea5ce8c025687eef">IBusBM::state</a></div><div class="ttdeci">uint8_t state</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8h_source.html#l00090">IBusBM.h:90</a></div></div>
+<div class="ttc" id="aclassIBusBM_html_a2f6eb7d18ab2dccf0a87c0bbf4c15dfc"><div class="ttname"><a href="classIBusBM.html#a2f6eb7d18ab2dccf0a87c0bbf4c15dfc">IBusBM::sensors</a></div><div class="ttdeci">sensorinfo sensors[SENSORMAX]</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8h_source.html#l00104">IBusBM.h:104</a></div></div>
+<div class="ttc" id="aclassIBusBM_html_a3219abe525dde59156d00538d93faa11"><div class="ttname"><a href="classIBusBM.html#a3219abe525dde59156d00538d93faa11">IBusBM::loop</a></div><div class="ttdeci">void loop(void)</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8cpp_source.html#l00171">IBusBM.cpp:171</a></div></div>
+<div class="ttc" id="aclassIBusBM_html_a4a9932e9c78e976e9adb4ff09d9ed69a"><div class="ttname"><a href="classIBusBM.html#a4a9932e9c78e976e9adb4ff09d9ed69a">IBusBM::ptr</a></div><div class="ttdeci">uint8_t ptr</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8h_source.html#l00094">IBusBM.h:94</a></div></div>
+<div class="ttc" id="aclassIBusBM_html_a4bf0677885cb0944adfc7725fffe0ccc"><div class="ttname"><a href="classIBusBM.html#a4bf0677885cb0944adfc7725fffe0ccc">IBusBM::cnt_sensor</a></div><div class="ttdeci">volatile uint8_t cnt_sensor</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8h_source.html#l00068">IBusBM.h:68</a></div></div>
+<div class="ttc" id="aclassIBusBM_html_a5a474b243c8a027b395314b052d283e7"><div class="ttname"><a href="classIBusBM.html#a5a474b243c8a027b395314b052d283e7">IBusBM::PROTOCOL_COMMAND_DISCOVER</a></div><div class="ttdeci">static const uint8_t PROTOCOL_COMMAND_DISCOVER</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8h_source.html#l00082">IBusBM.h:82</a></div></div>
+<div class="ttc" id="aclassIBusBM_html_a5e950d8524d32e3adfad0a654a9e69d1"><div class="ttname"><a href="classIBusBM.html#a5e950d8524d32e3adfad0a654a9e69d1">IBusBM::buffer</a></div><div class="ttdeci">uint8_t buffer[PROTOCOL_LENGTH]</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8h_source.html#l00093">IBusBM.h:93</a></div></div>
+<div class="ttc" id="aclassIBusBM_html_a60daa234d83a024b0e626a85d80b7c6c"><div class="ttname"><a href="classIBusBM.html#a60daa234d83a024b0e626a85d80b7c6c">IBusBM::chksum</a></div><div class="ttdeci">uint16_t chksum</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8h_source.html#l00097">IBusBM.h:97</a></div></div>
+<div class="ttc" id="aclassIBusBM_html_a7432721ad94f78fc5df8fd3004e7b84b"><div class="ttname"><a href="classIBusBM.html#a7432721ad94f78fc5df8fd3004e7b84b">IBusBM::PROTOCOL_TIMEGAP</a></div><div class="ttdeci">static const uint8_t PROTOCOL_TIMEGAP</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8h_source.html#l00077">IBusBM.h:77</a></div></div>
+<div class="ttc" id="aclassIBusBM_html_a93d315b20e2ef3696db2123eedb1a5df"><div class="ttname"><a href="classIBusBM.html#a93d315b20e2ef3696db2123eedb1a5df">IBusBM::PROTOCOL_LENGTH</a></div><div class="ttdeci">static const uint8_t PROTOCOL_LENGTH</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8h_source.html#l00074">IBusBM.h:74</a></div></div>
+<div class="ttc" id="aclassIBusBM_html_abf1b1c4c0bac139f0d5f9cfb78d5f88f"><div class="ttname"><a href="classIBusBM.html#abf1b1c4c0bac139f0d5f9cfb78d5f88f">IBusBM::SENSORMAX</a></div><div class="ttdeci">static const uint8_t SENSORMAX</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8h_source.html#l00088">IBusBM.h:88</a></div></div>
+<div class="ttc" id="aclassIBusBM_html_ac1d183fc712d8136da488fcc823715a1"><div class="ttname"><a href="classIBusBM.html#ac1d183fc712d8136da488fcc823715a1">IBusBM::PROTOCOL_CHANNELS</a></div><div class="ttdeci">static const uint8_t PROTOCOL_CHANNELS</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8h_source.html#l00079">IBusBM.h:79</a></div></div>
+<div class="ttc" id="aclassIBusBM_html_ac1f54297358da1bd0dcfe3af9eed31ea"><div class="ttname"><a href="classIBusBM.html#ac1f54297358da1bd0dcfe3af9eed31ea">IBusBM::channel</a></div><div class="ttdeci">uint16_t channel[PROTOCOL_CHANNELS]</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8h_source.html#l00096">IBusBM.h:96</a></div></div>
+<div class="ttc" id="aclassIBusBM_html_acbd0bcad0529b872c72d4e7a49233460"><div class="ttname"><a href="classIBusBM.html#acbd0bcad0529b872c72d4e7a49233460">IBusBM::setSensorMeasurement</a></div><div class="ttdeci">void setSensorMeasurement(uint8_t adr, int32_t value)</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8cpp_source.html#l00312">IBusBM.cpp:312</a></div></div>
+<div class="ttc" id="aclassIBusBM_html_ad79ec4b372325fcfb0fa542093250583"><div class="ttname"><a href="classIBusBM.html#ad79ec4b372325fcfb0fa542093250583">IBusBM::PROTOCOL_OVERHEAD</a></div><div class="ttdeci">static const uint8_t PROTOCOL_OVERHEAD</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8h_source.html#l00075">IBusBM.h:75</a></div></div>
+<div class="ttc" id="aclassIBusBM_html_ae980c3b427d1c12d93c2fc13322f7665"><div class="ttname"><a href="classIBusBM.html#ae980c3b427d1c12d93c2fc13322f7665">IBusBM::cnt_poll</a></div><div class="ttdeci">volatile uint8_t cnt_poll</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8h_source.html#l00067">IBusBM.h:67</a></div></div>
+<div class="ttc" id="aclassIBusBM_html_aed184764706c5dcb4b82ae4a53b917ec"><div class="ttname"><a href="classIBusBM.html#aed184764706c5dcb4b82ae4a53b917ec">IBusBM::State</a></div><div class="ttdeci">State</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8h_source.html#l00072">IBusBM.h:72</a></div></div>
+<div class="ttc" id="aclassIBusBM_html_aed184764706c5dcb4b82ae4a53b917eca0c01e1a9f134347f73969aeba38df424"><div class="ttname"><a href="classIBusBM.html#aed184764706c5dcb4b82ae4a53b917eca0c01e1a9f134347f73969aeba38df424">IBusBM::GET_LENGTH</a></div><div class="ttdeci">@ GET_LENGTH</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8h_source.html#l00072">IBusBM.h:72</a></div></div>
+<div class="ttc" id="aclassIBusBM_html_aed184764706c5dcb4b82ae4a53b917eca4ed4c7f6e05b116601121d0bac402f42"><div class="ttname"><a href="classIBusBM.html#aed184764706c5dcb4b82ae4a53b917eca4ed4c7f6e05b116601121d0bac402f42">IBusBM::GET_DATA</a></div><div class="ttdeci">@ GET_DATA</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8h_source.html#l00072">IBusBM.h:72</a></div></div>
+<div class="ttc" id="aclassIBusBM_html_aed184764706c5dcb4b82ae4a53b917eca9c69e26c2830eb900cd5603714acd289"><div class="ttname"><a href="classIBusBM.html#aed184764706c5dcb4b82ae4a53b917eca9c69e26c2830eb900cd5603714acd289">IBusBM::DISCARD</a></div><div class="ttdeci">@ DISCARD</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8h_source.html#l00072">IBusBM.h:72</a></div></div>
+<div class="ttc" id="aclassIBusBM_html_aed184764706c5dcb4b82ae4a53b917ecaa7f315ef3b8eab0e0f6abc1b3f25bcc0"><div class="ttname"><a href="classIBusBM.html#aed184764706c5dcb4b82ae4a53b917ecaa7f315ef3b8eab0e0f6abc1b3f25bcc0">IBusBM::GET_CHKSUML</a></div><div class="ttdeci">@ GET_CHKSUML</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8h_source.html#l00072">IBusBM.h:72</a></div></div>
+<div class="ttc" id="aclassIBusBM_html_aed184764706c5dcb4b82ae4a53b917ecaf7c395fada4d5074ad979c56cfde8ed0"><div class="ttname"><a href="classIBusBM.html#aed184764706c5dcb4b82ae4a53b917ecaf7c395fada4d5074ad979c56cfde8ed0">IBusBM::GET_CHKSUMH</a></div><div class="ttdeci">@ GET_CHKSUMH</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8h_source.html#l00072">IBusBM.h:72</a></div></div>
+<div class="ttc" id="aclassIBusBM_html_af10cf8a59adab541e055aaac1fa21cb8"><div class="ttname"><a href="classIBusBM.html#af10cf8a59adab541e055aaac1fa21cb8">IBusBM::len</a></div><div class="ttdeci">uint8_t len</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8h_source.html#l00095">IBusBM.h:95</a></div></div>
+<div class="ttc" id="aclassIBusBM_html_af21822cffd62a1f2f8da19c407c00b94"><div class="ttname"><a href="classIBusBM.html#af21822cffd62a1f2f8da19c407c00b94">IBusBM::readChannel</a></div><div class="ttdeci">uint16_t readChannel(uint8_t channelNr)</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8cpp_source.html#l00290">IBusBM.cpp:290</a></div></div>
+<div class="ttc" id="aclassIBusBM_html_af7d9b5d197f47071a8d6d8723cb14a72"><div class="ttname"><a href="classIBusBM.html#af7d9b5d197f47071a8d6d8723cb14a72">IBusBM::PROTOCOL_COMMAND_VALUE</a></div><div class="ttdeci">static const uint8_t PROTOCOL_COMMAND_VALUE</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8h_source.html#l00086">IBusBM.h:86</a></div></div>
+<div class="ttc" id="aclassIBusBM_html_afb01e4a762c8f575d8466fc8dadaa5cd"><div class="ttname"><a href="classIBusBM.html#afb01e4a762c8f575d8466fc8dadaa5cd">IBusBM::begin</a></div><div class="ttdeci">void begin(HardwareSerial &amp;serial, int8_t timerid=0, int8_t rxPin=-1, int8_t txPin=-1)</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8cpp_source.html#l00089">IBusBM.cpp:89</a></div></div>
+<div class="ttc" id="aclassIBusBM_html_afd1a0be2e13c31156d32e242383915b5"><div class="ttname"><a href="classIBusBM.html#afd1a0be2e13c31156d32e242383915b5">IBusBM::NumberSensors</a></div><div class="ttdeci">uint8_t NumberSensors</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8h_source.html#l00105">IBusBM.h:105</a></div></div>
+<div class="ttc" id="astructIBusBM_1_1sensorinfo_html"><div class="ttname"><a href="structIBusBM_1_1sensorinfo.html">IBusBM::sensorinfo</a></div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8h_source.html#l00099">IBusBM.h:99</a></div></div>
+<div class="ttc" id="astructIBusBM_1_1sensorinfo_html_a07cfd12b2c2a8982a88aeecf85bd322b"><div class="ttname"><a href="structIBusBM_1_1sensorinfo.html#a07cfd12b2c2a8982a88aeecf85bd322b">IBusBM::sensorinfo::sensorValue</a></div><div class="ttdeci">int32_t sensorValue</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8h_source.html#l00102">IBusBM.h:102</a></div></div>
+<div class="ttc" id="astructIBusBM_1_1sensorinfo_html_a0838975a9991ce94a7009f237cd7edc2"><div class="ttname"><a href="structIBusBM_1_1sensorinfo.html#a0838975a9991ce94a7009f237cd7edc2">IBusBM::sensorinfo::sensorLength</a></div><div class="ttdeci">uint8_t sensorLength</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8h_source.html#l00101">IBusBM.h:101</a></div></div>
+<div class="ttc" id="astructIBusBM_1_1sensorinfo_html_abd881da866db85793dcdd020d8eecb5c"><div class="ttname"><a href="structIBusBM_1_1sensorinfo.html#abd881da866db85793dcdd020d8eecb5c">IBusBM::sensorinfo::sensorType</a></div><div class="ttdeci">uint8_t sensorType</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8h_source.html#l00100">IBusBM.h:100</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

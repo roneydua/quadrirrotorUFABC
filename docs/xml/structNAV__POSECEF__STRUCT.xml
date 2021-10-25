@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compounddef id="structNAV__POSECEF__STRUCT" kind="struct" language="C++" prot="public">
+    <compoundname>NAV_POSECEF_STRUCT</compoundname>
+    <includes refid="GPS_8h" local="no">GPS.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structNAV__POSECEF__STRUCT_1aaec8c5597e47db77dbe3cc9ce1aefa8e" prot="public" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char NAV_POSECEF_STRUCT::cls</definition>
+        <argsstring></argsstring>
+        <name>cls</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="60" column="17" bodyfile="lib/EKF/GPS.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__POSECEF__STRUCT_1aadaff22d2b530c65f1a879a4838f223b" prot="public" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char NAV_POSECEF_STRUCT::id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="61" column="17" bodyfile="lib/EKF/GPS.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__POSECEF__STRUCT_1a4f7633b71bc8cccd1d7ab744659f6d89" prot="public" static="no" mutable="no">
+        <type>unsigned short</type>
+        <definition>unsigned short NAV_POSECEF_STRUCT::len</definition>
+        <argsstring></argsstring>
+        <name>len</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="62" column="18" bodyfile="lib/EKF/GPS.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__POSECEF__STRUCT_1a36711ead60d9cde7974cbeda7de4c35f" prot="public" static="no" mutable="no">
+        <type>unsigned long</type>
+        <definition>unsigned long NAV_POSECEF_STRUCT::iTOW</definition>
+        <argsstring></argsstring>
+        <name>iTOW</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="63" column="17" bodyfile="lib/EKF/GPS.h" bodystart="63" bodyend="-1"/>
+        <referencedby refid="GPS_8h_1aaab66558a5f695df7a6fcc3baa340da3" compoundref="GPS_8h" startline="392" endline="433">gps_imprime</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__POSECEF__STRUCT_1ad1b8e404ffdeeb1954292e43fe3507b2" prot="public" static="no" mutable="no">
+        <type>long</type>
+        <definition>long NAV_POSECEF_STRUCT::ecefX</definition>
+        <argsstring></argsstring>
+        <name>ecefX</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>ECEF X coordinate (cm) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="65" column="8" bodyfile="lib/EKF/GPS.h" bodystart="65" bodyend="-1"/>
+        <referencedby refid="GPS_8h_1aaab66558a5f695df7a6fcc3baa340da3" compoundref="GPS_8h" startline="392" endline="433">gps_imprime</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__POSECEF__STRUCT_1a9e56104db13a84e53c2dec44e5ff63b2" prot="public" static="no" mutable="no">
+        <type>long</type>
+        <definition>long NAV_POSECEF_STRUCT::ecefY</definition>
+        <argsstring></argsstring>
+        <name>ecefY</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>ECEF Y coordinate (cm) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="67" column="8" bodyfile="lib/EKF/GPS.h" bodystart="67" bodyend="-1"/>
+        <referencedby refid="GPS_8h_1aaab66558a5f695df7a6fcc3baa340da3" compoundref="GPS_8h" startline="392" endline="433">gps_imprime</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__POSECEF__STRUCT_1acff937b434d1a245763b778f1f15ba66" prot="public" static="no" mutable="no">
+        <type>long</type>
+        <definition>long NAV_POSECEF_STRUCT::ecefZ</definition>
+        <argsstring></argsstring>
+        <name>ecefZ</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>ECEF Z coordinate (cm) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="69" column="8" bodyfile="lib/EKF/GPS.h" bodystart="69" bodyend="-1"/>
+        <referencedby refid="GPS_8h_1aaab66558a5f695df7a6fcc3baa340da3" compoundref="GPS_8h" startline="392" endline="433">gps_imprime</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__POSECEF__STRUCT_1af6632b8d7323f356aac7f34e1656dbba" prot="public" static="no" mutable="no">
+        <type>long</type>
+        <definition>long NAV_POSECEF_STRUCT::pAcc</definition>
+        <argsstring></argsstring>
+        <name>pAcc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="70" column="8" bodyfile="lib/EKF/GPS.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>NAV_POSECEF_STRUCT</label>
+        <link refid="structNAV__POSECEF__STRUCT"/>
+      </node>
+    </collaborationgraph>
+    <location file="lib/EKF/GPS.h" line="59" column="1" bodyfile="lib/EKF/GPS.h" bodystart="59" bodyend="71"/>
+    <listofallmembers>
+      <member refid="structNAV__POSECEF__STRUCT_1aaec8c5597e47db77dbe3cc9ce1aefa8e" prot="public" virt="non-virtual"><scope>NAV_POSECEF_STRUCT</scope><name>cls</name></member>
+      <member refid="structNAV__POSECEF__STRUCT_1ad1b8e404ffdeeb1954292e43fe3507b2" prot="public" virt="non-virtual"><scope>NAV_POSECEF_STRUCT</scope><name>ecefX</name></member>
+      <member refid="structNAV__POSECEF__STRUCT_1a9e56104db13a84e53c2dec44e5ff63b2" prot="public" virt="non-virtual"><scope>NAV_POSECEF_STRUCT</scope><name>ecefY</name></member>
+      <member refid="structNAV__POSECEF__STRUCT_1acff937b434d1a245763b778f1f15ba66" prot="public" virt="non-virtual"><scope>NAV_POSECEF_STRUCT</scope><name>ecefZ</name></member>
+      <member refid="structNAV__POSECEF__STRUCT_1aadaff22d2b530c65f1a879a4838f223b" prot="public" virt="non-virtual"><scope>NAV_POSECEF_STRUCT</scope><name>id</name></member>
+      <member refid="structNAV__POSECEF__STRUCT_1a36711ead60d9cde7974cbeda7de4c35f" prot="public" virt="non-virtual"><scope>NAV_POSECEF_STRUCT</scope><name>iTOW</name></member>
+      <member refid="structNAV__POSECEF__STRUCT_1a4f7633b71bc8cccd1d7ab744659f6d89" prot="public" virt="non-virtual"><scope>NAV_POSECEF_STRUCT</scope><name>len</name></member>
+      <member refid="structNAV__POSECEF__STRUCT_1af6632b8d7323f356aac7f34e1656dbba" prot="public" virt="non-virtual"><scope>NAV_POSECEF_STRUCT</scope><name>pAcc</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

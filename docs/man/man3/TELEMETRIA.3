@@ -1,0 +1,251 @@
+.TH "TELEMETRIA" 3 "Sexta, 17 de Setembro de 2021" "Quadrirrotor" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TELEMETRIA
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <TELEMETRIA\&.h>\fP
+.SS "Membros Públicos"
+
+.in +1c
+.ti -1c
+.RI "\fBTELEMETRIA\fP ()"
+.br
+.ti -1c
+.RI "void \fBbegin\fP ()"
+.br
+.ti -1c
+.RI "void \fBenvia\fP (VectorXf a)"
+.br
+.ti -1c
+.RI "void \fBenviaMensagem\fP (char *aviso)"
+.br
+.ti -1c
+.RI "void \fBpisca\fP (uint8_t porta)"
+.br
+.ti -1c
+.RI "struct \fB__attribute__\fP ((packed)) \fBmensagem\fP"
+.br
+.ti -1c
+.RI "struct \fB__attribute__\fP ((packed)) \fBcontrole\fP"
+.br
+.in -1c
+.SS "Campos de Dados"
+
+.in +1c
+.ti -1c
+.RI "uint8_t \fB_broadcast\fP [6] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF}"
+.br
+.ti -1c
+.RI "\fBmensagem\fP"
+.br
+.ti -1c
+.RI "\fBcontrole\fP"
+.br
+.ti -1c
+.RI "uint8_t \fB_quantDados\fP"
+.br
+.in -1c
+.SS "Atributos Estáticos Públicos"
+
+.in +1c
+.ti -1c
+.RI "static uint8_t \fBcomAceito\fP"
+.br
+.in -1c
+.SS "Membros Privados Estáticos"
+
+.in +1c
+.ti -1c
+.RI "static void \fBOnDataRecv\fP (const uint8_t *\fB_broadcast\fP, const uint8_t *\fBdata\fP, int data_len)"
+.br
+.in -1c
+.SH "Descrição detalhada"
+.PP 
+Definição na linha 22 do arquivo TELEMETRIA\&.h\&.
+.SH "Construtores e Destrutores"
+.PP 
+.SS "TELEMETRIA::TELEMETRIA ()"
+Construtor 
+.PP
+Definição na linha 16 do arquivo TELEMETRIA\&.cpp\&.
+.PP
+.nf
+16 { begin(); }
+.fi
+.PP
+Referencias begin()\&.
+.PP
+Referenciado(a) por OnDataRecv()\&.
+.SH "Funções membros"
+.PP 
+.SS "struct TELEMETRIA::__attribute__ ((packed))\fC [inline]\fP"
+
+.PP
+Definição na linha 34 do arquivo TELEMETRIA\&.h\&.
+.PP
+.nf
+36                                                   {
+37     uint8_t dados;
+38   } controle;
+.fi
+.SS "struct TELEMETRIA::__attribute__ ((packed))\fC [inline]\fP"
+
+.PP
+Definição na linha 30 do arquivo TELEMETRIA\&.h\&.
+.PP
+.nf
+31                                                   {
+32     float dados[17];
+33     char info[35]; // dados para informacao;
+34   } mensagem;
+.fi
+.SS "void TELEMETRIA::begin ()"
+Inicialização da telemetria 
+.PP
+Definição na linha 20 do arquivo TELEMETRIA\&.cpp\&.
+.PP
+.nf
+20                        {
+21   // disconeta WIfi para evitar instabilidades
+22   WiFi\&.disconnect();
+23   // inicializa wifi em modo station
+24   WiFi\&.mode(WIFI_STA);
+25   // tenta estabelecer coneccao
+26   while (esp_now_init() != ESP_OK) {
+27     ESP\&.restart();
+28   };
+29   Serial\&.println("ESP Inicializado");
+30   // Criamos uma variável que irá guardar as informações do slave
+31   esp_now_peer_info_t slave;
+32   slave\&.channel = 1; // Informamos o canal
+33   slave\&.encrypt = 0; // 0 para não usar criptografia ou 1 para usar
+34   // Copia o endereço do array para a estrutura
+35   memcpy(slave\&.peer_addr, _broadcast, sizeof(_broadcast));
+36 
+37   esp_now_add_peer(&slave); // Adiciona o slave
+38   esp_now_register_recv_cb(OnDataRecv);
+39 }
+.fi
+.PP
+Referencias _broadcast e OnDataRecv()\&.
+.PP
+Referenciado(a) por setup() e TELEMETRIA()\&.
+.SS "void TELEMETRIA::envia (VectorXf a)"
+
+.PP
+Definição na linha 41 do arquivo TELEMETRIA\&.cpp\&.
+.PP
+.nf
+41                                   {
+42   // Array que irá armazenar os valores lidos
+43   mensagem msg;
+44   // float temp[_a\&.size()];
+45   strcpy(msg\&.info, "");
+46   for (size_t i = 0; i < _a\&.size(); i++) {
+47     msg\&.dados[i] = (float)_a(i);
+48     // Serial\&.print(msg\&.dados[i]);
+49   }
+50   // Serial\&.println();
+51   uint8_t bs[sizeof(mensagem)];
+52 
+53   memcpy(&bs, &msg, sizeof(msg));
+54   esp_now_send(_broadcast, bs, sizeof(bs));
+55 }
+.fi
+.PP
+Referencias _broadcast e mensagem\&.
+.PP
+Referenciado(a) por loop()\&.
+.SS "void TELEMETRIA::enviaMensagem (char * aviso)"
+
+.PP
+Definição na linha 56 do arquivo TELEMETRIA\&.cpp\&.
+.PP
+.nf
+56                                           {
+57 
+58   mensagem msg;
+59   for (size_t i = 0; i < 10; i++) {
+60     msg\&.dados[i] = 0\&.0f;
+61   }
+62   strcpy(msg\&.info, aviso);
+63   // Serial\&.println(msg\&.info);
+64   uint8_t bs[sizeof(mensagem)];
+65   memcpy(&bs, &msg, sizeof(msg));
+66   esp_now_send(_broadcast, bs, sizeof(bs));
+67 }
+.fi
+.PP
+Referencias _broadcast e mensagem\&.
+.PP
+Referenciado(a) por setup()\&.
+.SS "void TELEMETRIA::OnDataRecv (const uint8_t * _broadcast, const uint8_t * data, int data_len)\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definição na linha 69 do arquivo TELEMETRIA\&.cpp\&.
+.PP
+.nf
+70                                           {
+71   TELEMETRIA TELEMETRIA;
+72   // Para cada pino
+73   controle ctrl;
+74   memcpy(&ctrl, data, sizeof(controle));
+75   // atualizacontrole(ctrl\&.dados);
+76   TELEMETRIA::comAceito = ctrl\&.dados;
+77 }
+.fi
+.PP
+Referencias comAceito, controle, data e TELEMETRIA()\&.
+.PP
+Referenciado(a) por begin()\&.
+.SS "void TELEMETRIA::pisca (uint8_t porta)"
+
+.PP
+Definição na linha 79 do arquivo TELEMETRIA\&.cpp\&.
+.PP
+.nf
+79                                     {
+80   digitalWrite(porta, HIGH);
+81   delay(1000);
+82   digitalWrite(porta, LOW);
+83   delay(1000);
+84 }
+.fi
+.SH "Campos"
+.PP 
+.SS "uint8_t TELEMETRIA::_broadcast[6] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF}"
+
+.PP
+Definição na linha 29 do arquivo TELEMETRIA\&.h\&.
+.PP
+Referenciado(a) por begin(), envia() e enviaMensagem()\&.
+.SS "uint8_t TELEMETRIA::_quantDados"
+
+.PP
+Definição na linha 40 do arquivo TELEMETRIA\&.h\&.
+.SS "uint8_t TELEMETRIA::comAceito\fC [static]\fP"
+
+.PP
+Definição na linha 39 do arquivo TELEMETRIA\&.h\&.
+.PP
+Referenciado(a) por OnDataRecv()\&.
+.SS "TELEMETRIA::controle"
+
+.PP
+Definição na linha 38 do arquivo TELEMETRIA\&.h\&.
+.PP
+Referenciado(a) por OnDataRecv()\&.
+.SS "TELEMETRIA::mensagem"
+
+.PP
+Definição na linha 34 do arquivo TELEMETRIA\&.h\&.
+.PP
+Referenciado(a) por envia() e enviaMensagem()\&.
+
+.SH "Autor"
+.PP 
+Gerado automaticamente por Doxygen para Quadrirrotor a partir do código-fonte\&.
