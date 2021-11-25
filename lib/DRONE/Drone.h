@@ -108,7 +108,7 @@ public:
   /*! Vector h da conversão u to rotations */
   const Eigen::Vector4f h{-3911.13f, -4180.05f, -3620.13f, -4279.45f};
   // const Eigen::Vector4f h{-3911.13f, -3911.13f, -3911.13f, -3911.13f};
-  void updateStateMatrices(bool &negativeq0);
+  void updateStateMatrices(bool &negative_q0);
   void constructJ();
   // Eigen::VectorXf continuosModel(Eigen::VectorXf x, Eigen::VectorXf u);
   int flagSDC = 0;

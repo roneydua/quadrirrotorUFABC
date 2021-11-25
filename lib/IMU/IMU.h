@@ -3,7 +3,7 @@
  * @date:   2021-05-03T16:29:30-03:00
  * email:  roneyddasilva@gmail.com
  * @file: IMU.h
- * @details biblioteca criada com base na biblioteca dinivel no GitHub :
+ * @details biblioteca criada com base na biblioteca disponível no GitHub :
  https://github.com/bolderflight/MPU9250
  */
 
@@ -53,7 +53,7 @@ public:
     LP_ACCEL_ODR_500HZ = 11
   };
   /*! Ponteiro das medidas do acelerômetro */
-  Vector3f *_acel;
+  Vector3f *_accel;
   /*! Ponteiro das medidas do giroscópio */
   Vector3f *_gyro;
   /*! Ponteiro das medidas do Magnetômetro*/
@@ -79,7 +79,7 @@ public:
   /*! Matriz fator de escala. */
   Matrix3f _sM = Matrix3f::Identity();
   IMU(TwoWire &bus, uint8_t address);
-  int begin(Vector3f &acel, Vector3f &gyro, Vector3f &mag);
+  int begin(Vector3f &accel, Vector3f &gyro, Vector3f &mag);
   int readSensor();
   int setDlpfBandwidth(DlpfBandwidth bandwidth);
   int setGyroRange(GyroRange range);
@@ -94,10 +94,10 @@ protected:
   uint8_t _buffer[21];
   //@{
   /*! Contadores para leitura das medidas. */
-  int16_t _axcounts, _aycounts, _azcounts;
-  int16_t _gxcounts, _gycounts, _gzcounts;
-  int16_t _hxcounts, _hycounts, _hzcounts;
-  int16_t _tcounts;
+  int16_t _ax_counts, _ay_counts, _az_counts;
+  int16_t _gx_counts, _gy_counts, _gz_counts;
+  int16_t _hx_counts, _hy_counts, _hz_counts;
+  int16_t _t_counts;
   //@}
   // vetores de leitura
   uint8_t _address;

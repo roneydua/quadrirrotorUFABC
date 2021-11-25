@@ -199,7 +199,7 @@ void integrationQuaternion(Eigen::Vector4f &_quat,
                            const Eigen::Ref<const Eigen::VectorXf> &_gyroscope,
                            float &_dt) {
   /**
-   * Integracao de quaternion com mapa exponecial.
+   * Integracao de quaternion com mapa exponencial.
    * @param _quat       Quaternion q_k
    * @param _giroscopio medidas do giroscópio [Radianos]
    * @param _dt         Passo de integração.
@@ -235,7 +235,7 @@ Eigen::Vector3f rotateVectorWithQuaternion(Eigen::Vector4f &q,
  * @param  q quaternion de atitude
  * @param  v_old vetor a ser rotacionado
  * @return  v_new vetor rotacionado.
- * @note A trasnfromação desta forma possui 30 operações (15 produtos e 15
+ * @note A transformação desta forma possui 30 operações (15 produtos e 15
  * multiplicações.)(Rotacao de vetor tridimensional com formalismo de
  * eixo/angulo)[https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation#Performance_comparisons]
  */
@@ -254,7 +254,7 @@ Eigen::Vector3f rotateVectorWithQuaternion_Conjugate(Eigen::Vector4f &q,
  * @return  1/sqrt(_x)
  */
 float invSqrt(float _x) {
-  float halfx = 0.5f * _x;
+  float half_x = 0.5f * _x;
   union {
     float _y;
     uint32_t _i;
@@ -263,9 +263,9 @@ float invSqrt(float _x) {
   // long i = *(long *)&_y;
   conv._i = 0x5f3759df - (conv._i >> 1);
   // _y = *(float *)&i;
-  conv._y *= (1.5f - (halfx * conv._y * conv._y));
+  conv._y *= (1.5f - (half_x * conv._y * conv._y));
   // segunda iteracao.
-  // _y = _y * (1.5f - (halfx * _y * _y));
+  // _y = _y * (1.5f - (half_x * _y * _y));
   return conv._y;
 }
 /**
@@ -300,7 +300,7 @@ Eigen::Vector4f q_psi(float &psi) {
  * Extrai o quatérnio a partir da matrix de cossenos diretores.
  * @param m Matrix de cossenos diretores.
  * @param q Quaternion de atitude.
- * @note Utiza o algoritmo BUG
+ * @note Utiliza o algoritmo BUG
  */
 /*
 void computeQuaternionFromMCDShepperd(Eigen::Matrix3f &m, Eigen::Vector4f &q) {

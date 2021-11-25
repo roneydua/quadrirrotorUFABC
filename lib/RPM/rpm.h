@@ -35,7 +35,7 @@ public:
 private:
   gpio_num_t sensor;
   void init();
-  // float sample_periode_second_normalized_per_cicle;
+  // float sample_periode_second_normalized_per_cycle;
   // this array stores the last two get_time
   uint64_t time_array[2] = {};
   uint8_t index_time_array = 0;

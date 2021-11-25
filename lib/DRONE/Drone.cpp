@@ -27,12 +27,12 @@ Drone::Drone(float _dt) {
 /**
  * Atualiza as matrizes dependentes do estado.
  */
-void Drone::updateStateMatrices(bool &negativeq0) {
+void Drone::updateStateMatrices(bool &negative_q0) {
 
   float _q0 = 0.0f;
 // HACK
 #if 0
-  if (negativeq0) {
+  if (negative_q0) {
     _q0 = -abs(q(0));
   } else {
     _q0 = abs(q(0));

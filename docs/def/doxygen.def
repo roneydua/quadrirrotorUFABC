@@ -9528,9 +9528,9 @@ _EnD_oF_dEf_TeXt_;
 
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-Metódo de calibração do giroscópio.
+Método de calibração do giroscópio.
 @param N número de dados coletados para computodo da média
-\ilinebr\ilinebr Compensa-se o erro sistemático eliminando calculando a médida de #N
+\ilinebr\ilinebr Compensa-se o erro sistemático eliminando calculando a medida de #N
 medidas. O valor compensando é dado por gyro_c = _gyroScale*(gyro_m -
 _biasGyro)
 _EnD_oF_dEf_TeXt_;

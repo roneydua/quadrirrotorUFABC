@@ -21,13 +21,13 @@ IMU::IMU(TwoWire &bus, uint8_t address) {
 }
 /**
  * Inicialização e configuração da unidade MARG.
- * @param  acel Vetor de medidas do acelerômetro.
+ * @param  accel Vetor de medidas do acelerômetro.
  * @param  gyro Vetor de medidas do giroscópio.
  * @param  mag  Vetor de medidas do Magnetômetro.
  * @return      inteiro positivo para ok ou negativo para erros.
  */
-int IMU::begin(Vector3f &acel, Vector3f &gyro, Vector3f &mag) {
-  _acel = &acel;
+int IMU::begin(Vector3f &accel, Vector3f &gyro, Vector3f &mag) {
+  _accel = &accel;
   _gyro = &gyro;
   _mag = &mag;
   // para analise da calibracao
@@ -54,7 +54,7 @@ int IMU::begin(Vector3f &acel, Vector3f &gyro, Vector3f &mag) {
   writeRegister(PWR_MGMNT_1, CLOCK_SEL_PLL);
   // habilita o acelerometro o giroscopio
   writeRegister(PWR_MGMNT_2, SEN_ENABLE);
-  // selecionas as escalas de 16G e 2000DPS para acel e Giro como padrao
+  // selecionas as escalas de 16G e 2000DPS para accel e Giro como padrao
   setAccelRange(ACCEL_RANGE_16G);
   setGyroRange(GYRO_RANGE_1000DPS);
   // atribui define a largura de banda como padrao
@@ -93,7 +93,7 @@ int IMU::begin(Vector3f &acel, Vector3f &gyro, Vector3f &mag) {
                32760.0; // micro Tesla
   _magScaleZ = ((((float)_buffer[2]) - 128.0) / (256.0) + 1.0) * 4912.0 /
                32760.0; // micro Tesla
-  // set AK8963 desligao magnetometro
+  // set AK8963 desliga o magnetometro
   if (writeAK8963Register(AK8963_CNTL1, AK8963_PWR_DOWN) < 0) {
     return -17;
   }
@@ -285,76 +285,62 @@ int IMU::setDlpfBandwidth(DlpfBandwidth bandwidth) {
 /**
  * Faz leitura da MARG.
  * @return Positivo se ok, negativo para ok contrário.
- * @details As variáveis #_acel, #_gyro e #_mag são modificadas.
+ * @details As variáveis #_accel, #_gyro e #_mag são modificadas.
  */
 int IMU::readSensor() {
-  //_useSPIHS = true; // use the high speed SPI for data readout
+  //_use SPIHS = true; // use the high speed SPI for data readout
   // grab the data from the MPU9250
   if (readRegisters(ACCEL_OUT, 21, _buffer) < 0) {
     return -1;
   }
   // combine into 16 bit values
-  _axcounts = (((int16_t)_buffer[0]) << 8) | _buffer[1];
-  _aycounts = (((int16_t)_buffer[2]) << 8) | _buffer[3];
-  _azcounts = (((int16_t)_buffer[4]) << 8) | _buffer[5];
+  _ax_counts = (((int16_t)_buffer[0]) << 8) | _buffer[1];
+  _ay_counts = (((int16_t)_buffer[2]) << 8) | _buffer[3];
+  _az_counts = (((int16_t)_buffer[4]) << 8) | _buffer[5];
 
-  // _tcounts = (((int16_t)_buffer[6]) << 8) | _buffer[7];
+  // _t_counts = (((int16_t)_buffer[6]) << 8) | _buffer[7];
 
-  _gxcounts = (((int16_t)_buffer[8]) << 8) | _buffer[9];
-  _gycounts = (((int16_t)_buffer[10]) << 8) | _buffer[11];
-  _gzcounts = (((int16_t)_buffer[12]) << 8) | _buffer[13];
+  _gx_counts = (((int16_t)_buffer[8]) << 8) | _buffer[9];
+  _gy_counts = (((int16_t)_buffer[10]) << 8) | _buffer[11];
+  _gz_counts = (((int16_t)_buffer[12]) << 8) | _buffer[13];
 
-  _hxcounts = (((int16_t)_buffer[15]) << 8) | _buffer[14];
-  _hycounts = (((int16_t)_buffer[17]) << 8) | _buffer[16];
-  _hzcounts = (((int16_t)_buffer[19]) << 8) | _buffer[18];
+  _hx_counts = (((int16_t)_buffer[15]) << 8) | _buffer[14];
+  _hy_counts = (((int16_t)_buffer[17]) << 8) | _buffer[16];
+  _hz_counts = (((int16_t)_buffer[19]) << 8) | _buffer[18];
   /* corrige a direcao do eixo z  para -z e comuta o x com o y
 esse procedimento eh fundamental para que os eixos do acelerometro e gyro seja
 compartilhados como o magnetometro */
-  // *_acel << (float)(_aycounts - _biasAccel[0]),
-  //     (float)(_axcounts - _biasAccel[1]), (float)(_azcounts - _biasAccel[2]);
-  *_acel << (float)(_aycounts), (float)(_axcounts), (float)(_azcounts);
-  // *_acel *= _accelScale;
-  // *_acel -= _biasAccel;
-  *_acel = sFAccel * (*_acel) - _biasAccel;
-  *_gyro << -(float)_gycounts, -(float)_gxcounts, -(float)_gzcounts;
+  *_accel << (float)(_ay_counts), (float)(_ax_counts), (float)(_az_counts);
+  *_accel = sFAccel * (*_accel) - _biasAccel;
+  *_gyro << -(float)_gy_counts, -(float)_gx_counts, -(float)_gz_counts;
   *_gyro *= _gyroScale;
   *_gyro -= _biasGyro;
-  // *_mag << -(float)_hxcounts*_magScaleX, -(float)_hycounts*_magScaleX,
-  // (float)_hzcounts*_magScaleX;
-  // *_mag = _sM * (*_mag - _biasMag);
   // para analise da calibracao
-  magTemp << -(float)_hxcounts * _magScaleX, -(float)_hycounts * _magScaleX,
-      -(float)_hzcounts * _magScaleX;
+  magTemp << -(float)_hx_counts * _magScaleX, -(float)_hy_counts * _magScaleX,
+      -(float)_hz_counts * _magScaleX;
   *_mag = _sM * (magTemp - _biasMag);
   // *_mag = (magTemp - _biasMag);
   /* @annotation retirado do manual de registros da mpu9250 pag.33*/
   // TEMP_degC = ((TEMP_OUT – RoomTemp_Offset)/Temp_Sensitivity)+ 21degC
   // RoomTemp_Offset = 21; Temp_Sensitivity = 333.87
-  // _t = (float)_tcounts / 333.87f - 20.937101267f;
+  // _t = (float)_t_counts / 333.87f - 20.937101267f;
   return 1;
 }
 /**
- * Metódo de calibração do giroscópio.
+ * Método de calibração do giroscópio.
  * @param N número de dados coletados para computodo da média
- * @details Compensa-se o erro sistemático eliminando calculando a médida de #N
+ * @details Compensa-se o erro sistemático eliminando calculando a medida de #N
  * medidas. O valor compensando é dado por gyro_c = _gyroScale*(gyro_m -
  * _biasGyro)
  */
 void IMU::calibraGyro(int N /*=100*/) {
   Eigen::Vector3f _biasGyroTemp = Eigen::Vector3f::Zero();
-  // Eigen::Vector3f _biasAcelTemp = Eigen::Vector3f::Zero();
   for (int i = 0; i < N; i++) {
     readSensor();
     _biasGyroTemp += *_gyro;
-    // _biasAcelTemp += *_acel;
     delay(20);
   }
-  // _biasGyro /= (float(N) * _gyroScale);
   _biasGyro = _biasGyroTemp / float(N);
-  // _biasAcelTemp /= float(N);
-  // _biasAccel(0) = _biasAcelTemp(0);
-  // _biasAccel(1) = _biasAcelTemp(1);
-  // _biasAccel(2) = _biasAcelTemp(2) - gG;
 }
 
 int IMU::readAK8963Registers(uint8_t subAddress, uint8_t count, uint8_t *dest) {
@@ -397,7 +383,7 @@ int IMU::writeAK8963Register(uint8_t subAddress, uint8_t data) {
  * @param  subAddress
  * @param  data
  * @return
- * @details Esada para ler os dados e configurar a MARG.
+ * @details Usada para ler os dados e configurar a MARG.
  */
 int IMU::writeRegister(uint8_t subAddress, uint8_t data) {
   _i2c->beginTransmission(_address); // open the device

@@ -1,4 +1,4 @@
-.TH "IMU" 3 "Segunda, 25 de Outubro de 2021" "Quadrirrotor" \" -*- nroff -*-
+.TH "IMU" 3 "Sábado, 20 de Novembro de 2021" "Quadrirrotor" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -695,14 +695,14 @@ Definição na linha 458 do arquivo IMU\&.cpp\&.
 .PP
 Referencias _biasMag, _sM, METODOSCALIBRACAO::calibracaoGeometrica(), magTemp e readSensor()\&.
 .SS "void IMU::calibraGyro (int N = \fC100\fP)"
-Metódo de calibração do giroscópio\&. 
+Método de calibração do giroscópio\&. 
 .PP
 \fBParâmetros\fP
 .RS 4
 \fIN\fP número de dados coletados para computodo da média
 .RE
 .PP
-Compensa-se o erro sistemático eliminando calculando a médida de #N medidas\&. O valor compensando é dado por gyro_c = _gyroScale*(gyro_m - _biasGyro) 
+Compensa-se o erro sistemático eliminando calculando a medida de #N medidas\&. O valor compensando é dado por gyro_c = _gyroScale*(gyro_m - _biasGyro) 
 .PP
 Definição na linha 343 do arquivo IMU\&.cpp\&.
 .PP

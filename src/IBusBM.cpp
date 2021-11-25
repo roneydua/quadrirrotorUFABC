@@ -9,7 +9,7 @@
  * Another version using software serial is here
  * https://github.com/Hrastovc/iBUStelemetry
  *
- * Explaination of sensor/ telemetry prtocol here:
+ * Explanation of sensor/ telemetry protocol here:
  * https://github.com/betaflight/betaflight/wiki/Single-wire-FlySky-(IBus)-telemetry
  *
  * This library is free software; you can redistribute it and/or
@@ -21,6 +21,7 @@
  * Updated 4 April 2019 to support ESP32
  * updated 13 jun 2019 to support STM32 (pauluzs)
  * Updated 21 Jul 2020 to support MBED (David Peverley)
+ * Updated 25 Nov 20021 to operate with Union ControlUnion (Roney Duarte)
  */
 
 #include "IBusBM.h"

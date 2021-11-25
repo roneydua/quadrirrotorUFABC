@@ -2145,7 +2145,7 @@ As variáveis <ref refid="classIMU_1a0efdfa77f452641689be4e9a4bae6a12" kindref="
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Metódo de calibração do giroscópio. <parameterlist kind="param"><parameteritem>
+<para>Método de calibração do giroscópio. <parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>N</parametername>
 </parameternamelist>
@@ -2154,7 +2154,7 @@ As variáveis <ref refid="classIMU_1a0efdfa77f452641689be4e9a4bae6a12" kindref="
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-Compensa-se o erro sistemático eliminando calculando a médida de #N medidas. O valor compensando é dado por gyro_c = _gyroScale*(gyro_m - _biasGyro) </para>
+Compensa-se o erro sistemático eliminando calculando a medida de #N medidas. O valor compensando é dado por gyro_c = _gyroScale*(gyro_m - _biasGyro) </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>

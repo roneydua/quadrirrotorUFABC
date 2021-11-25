@@ -12,7 +12,7 @@
 
 // Fora da classe eh declarado um ponteiro para a classe
 Rpm *pointer_Rpm;
-// defini-se um manipulador globlal
+// defini-se um manipulador global
 static void
 outside_interrupt_handler(void *arg) { // define o manipulador global
   pointer_Rpm->update_rpm();           // chama membro da classe
@@ -31,7 +31,7 @@ Rpm::Rpm(gpio_num_t sensor, pcnt_unit_t pcnt_unit, uint8_t ciclos_por_volta) {
 void Rpm::init() {
   gpio_set_pull_mode(this->sensor, GPIO_PULLUP_ONLY);
   pcnt_config_t pcnt_config = {
-      .pulse_gpio_num = this->sensor, // configura a gpiou de leitura
+      .pulse_gpio_num = this->sensor, // configura a gpio de leitura
       .ctrl_gpio_num = -1,            // define o controle
       .lctrl_mode = PCNT_MODE_KEEP,   // when control signal is low, keep the
                                       // primary counter mode
@@ -50,7 +50,7 @@ void Rpm::init() {
   update_rpm();
   /* set max value. Important! this interruption reset counter!*/
   pcnt_event_enable(this->pcnt_unit, PCNT_EVT_H_LIM);
-  /* set a value diferent of maximum or minumum.*/
+  /* set a value different of maximum or minumum.*/
   pcnt_isr_service_install(0);
   // pcnt_isr_handler_add(this->pcnt_unit, outside_interrupt_handler,
   //                      (void *)pcnt_unit);

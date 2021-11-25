@@ -51,7 +51,7 @@ Eigen::Vector3f computeVectorProjection(const Eigen::Ref<Eigen::Vector3f> &u,
 //                                     const Eigen::VectorXf &q);
 
 void integrationQuaternion(Eigen::Vector4f &_quat,
-                           const Eigen::Ref<const Eigen::VectorXf> &_gyroscopio,
+                           const Eigen::Ref<const Eigen::VectorXf> &_gyroscope,
                            float &_dt);
 float invSqrt(float _x);
 Eigen::Vector3f rotateVectorWithQuaternion(Eigen::Vector4f &q,
