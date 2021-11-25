@@ -1,4 +1,4 @@
-.TH "Riccati" 3 "Sexta, 17 de Setembro de 2021" "Quadrirrotor" \" -*- nroff -*-
+.TH "Riccati" 3 "Segunda, 25 de Outubro de 2021" "Quadrirrotor" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -12,10 +12,10 @@ Riccati
 
 .in +1c
 .ti -1c
-.RI "\fBRiccati\fP (Eigen::MatrixXf &_A, Eigen::MatrixXf &_B, Eigen::MatrixXf &_Q, Eigen::MatrixXf &_R)"
+.RI "\fBRiccati\fP (Eigen::MatrixXf &A, Eigen::MatrixXf &B, Eigen::MatrixXf &\fBQ\fP, Eigen::MatrixXf &\fBR\fP)"
 .br
 .ti -1c
-.RI "bool \fBdareInteration\fP (const float &tolerance=1\&.0E\-5, const uint16_t iter_max=100)"
+.RI "bool \fBdareInteration\fP (const float &tolerance=1\&.0E\-4, const uint16_t iter_max=50)"
 .br
 .in -1c
 .SS "Campos de Dados"
@@ -51,24 +51,10 @@ Riccati
 .in -1c
 .SH "Descrição detalhada"
 .PP 
-
-.PP
-\fBAutor\fP
-.RS 4
-: roney 
-.RE
-.PP
-\fBData\fP
-.RS 4
-: 2021-08-02T14:12:53-03:00 email: roneyddasilva@gmail.com @File: \fBRiccati\&.h\fP Last modified by: roney Last modified time: 2021-08-02T14:12:53-03:00 
-.RE
-.PP
-
-.PP
 Definição na linha 24 do arquivo Riccati\&.h\&.
 .SH "Construtores e Destrutores"
 .PP 
-.SS "Riccati::Riccati (Eigen::MatrixXf & _A, Eigen::MatrixXf & _B, Eigen::MatrixXf & _Q, Eigen::MatrixXf & _R)"
+.SS "Riccati::Riccati (Eigen::MatrixXf & A, Eigen::MatrixXf & B, Eigen::MatrixXf & _Q, Eigen::MatrixXf & _R)"
 
 .PP
 \fBAutor\fP
@@ -87,10 +73,10 @@ Definição na linha 11 do arquivo Riccati\&.cpp\&.
 .PP
 .nf
 12                                     {
-13   phi = &_A;
-14   int n = _A\&.cols();
-15   int r = _B\&.cols();
-16   gamma = &_B;
+13   phi = &A;
+14   int n = A\&.cols();
+15   int r = B\&.cols();
+16   gamma = &B;
 17   R = &_R;
 18   Q = &_Q;
 19   Ls = Eigen::MatrixXf::Identity(r, r);
@@ -103,8 +89,8 @@ Definição na linha 11 do arquivo Riccati\&.cpp\&.
 Referencias gamma, I, K, K_new, Ls, phi, Q e R\&.
 .SH "Funções membros"
 .PP 
-.SS "bool Riccati::dareInteration (const float & tolerance = \fC1\&.0E\-5\fP, const uint16_t iter_max = \fC100\fP)"
-Função de cálculo da solução de Ricccati discreta\&. 
+.SS "bool Riccati::dareInteration (const float & tolerance = \fC1\&.0E\-4\fP, const uint16_t iter_max = \fC50\fP)"
+Função de cálculo da solução de \fBRiccati\fP discreta\&. 
 .PP
 \fBParâmetros\fP
 .RS 4
@@ -115,7 +101,7 @@ Função de cálculo da solução de Ricccati discreta\&.
 .PP
 \fBRetorna\fP
 .RS 4
-true se ok, false se numéro máximo de iterações for atingido\&. 
+true se ok, false se número máximo de iterações for atingido\&. 
 .RE
 .PP
 \fBAtividades futuras\fP
@@ -135,31 +121,26 @@ Definição na linha 32 do arquivo Riccati\&.cpp\&.
 38     Ls = (*R + (*gamma)\&.transpose() * K * (*gamma))\&.inverse() *
 39          (*gamma)\&.transpose();
 40     K_new = (*phi)\&.transpose() * K * (I - (*gamma) * Ls * K) * (*phi);
-41     K_new\&.noalias() += *Q;
+41     K_new += *Q;
 42     // avalia o erro para parar as iterações\&.
 43     // diff = (K_new - K)\&.cwiseAbs()\&.maxCoeff();
 44     Eigen::MatrixXf erro = K_new - K;
 45     diff = (erro)\&.norm() / K\&.norm();
 46     K = K_new;
 47     if (diff < tolerance) {
-48 
-49 #if 0 // defined __GNUC__ && defined DEBUG
-50       printf("Sucess! Numero de iteracoes: %d\n", i);
-51       // #include "\&.\&./\&.\&./\&.\&./quadricopterFinal/lib/GRUPO_QUAT/GRUPO_QUAT\&.h"
-52 #endif
-53       return true;
-54     }
-55   }
-56 #if defined __GNUC__ && defined DEBUG
-57   printf("Falha\&. Erro %f\n", diff);
-58   // PRINT_MAT(K);
-59   // K = *Q;
-60 #endif
-61   return false;
-62 };
+48       return true;
+49     }
+50   }
+51 #ifndef __XTENSA__
+52   printf("Falha\&. Erro %f\n", diff);
+53 #endif
+54   return false;
+55 };
 .fi
 .PP
 Referencias I, K, K_new, Ls, num_iterations, phi, Q e R\&.
+.PP
+Referenciado(a) por Controle::Controle()\&.
 .SH "Campos"
 .PP 
 .SS "Eigen::MatrixXf* Riccati::gamma"
@@ -191,7 +172,7 @@ Matriz La = (B'PB+R)^-1 * B'
 .PP
 Definição na linha 40 do arquivo Riccati\&.h\&.
 .PP
-Referenciado(a) por Controle::Controle(), dareInteration() e Riccati()\&.
+Referenciado(a) por dareInteration() e Riccati()\&.
 .SS "int Riccati::num_iterations = 0"
 
 .PP

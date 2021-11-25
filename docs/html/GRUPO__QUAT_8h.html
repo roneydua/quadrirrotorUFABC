@@ -97,20 +97,17 @@ $(function() {
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="GRUPO__QUAT_8h__dep__incl.png" border="0" usemap="#alib_2GRUPO__QUAT_2GRUPO__QUAT_8hdep" alt=""/></div>
 <map name="alib_2GRUPO__QUAT_2GRUPO__QUAT_8hdep" id="alib_2GRUPO__QUAT_2GRUPO__QUAT_8hdep">
-<area shape="rect" title="Cabecalho com funcoes de quaternion." alt="" coords="283,5,425,41"/>
-<area shape="rect" href="AQUA_8h.html" title=" " alt="" coords="103,95,215,119"/>
-<area shape="rect" href="EKF_8cpp.html" title="Classe que implementa o filtro de Kalman estendido." alt="" coords="154,173,266,197"/>
-<area shape="rect" href="Controle_8h.html" title=" " alt="" coords="341,245,501,269"/>
-<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="256,317,351,341"/>
-<area shape="rect" href="Drone_8h.html" title=" " alt="" coords="392,95,516,119"/>
-<area shape="rect" href="GRUPO__QUAT_8cpp.html" title="Cabecalho com funcoes de quaternion." alt="" coords="540,89,683,125"/>
-<area shape="rect" href="Riccati_8h.html" title=" " alt="" coords="707,95,855,119"/>
+<area shape="rect" title="Cabecalho com funcoes de quaternion." alt="" coords="245,5,388,41"/>
+<area shape="rect" href="AQUA_8h.html" title=" " alt="" coords="91,95,203,119"/>
+<area shape="rect" href="EKF_8h.html" title="Classe que implementa o filtro de Kalman estendido." alt="" coords="153,173,253,197"/>
+<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="244,245,339,269"/>
+<area shape="rect" href="Controle_8h.html" title=" " alt="" coords="329,173,489,197"/>
+<area shape="rect" href="Drone_8h.html" title=" " alt="" coords="380,95,504,119"/>
+<area shape="rect" href="GRUPO__QUAT_8cpp.html" title="Cabecalho com funcoes de quaternion." alt="" coords="528,89,671,125"/>
 <area shape="rect" href="AQUA_8cpp.html" title=" " alt="" coords="5,173,129,197"/>
-<area shape="rect" href="Controle_8cpp.html" title=" " alt="" coords="375,317,547,341"/>
-<area shape="rect" href="Drone_8cpp.html" title=" " alt="" coords="450,173,586,197"/>
-<area shape="rect" href="Riccati_8cpp.html" title=" " alt="" coords="610,173,770,197"/>
-<area shape="rect" href="Sdre_8h.html" title=" " alt="" coords="794,173,906,197"/>
-<area shape="rect" href="Sdre_8cpp.html" title=" " alt="" coords="788,245,912,269"/>
+<area shape="rect" href="EKF_8cpp.html" title="Classe que implementa o filtro de Kalman estendido." alt="" coords="107,245,219,269"/>
+<area shape="rect" href="Controle_8cpp.html" title=" " alt="" coords="363,245,535,269"/>
+<area shape="rect" href="Drone_8cpp.html" title=" " alt="" coords="513,173,649,197"/>
 </map>
 </div>
 </div>
@@ -139,7 +136,7 @@ Funções</h2></td></tr>
 <tr class="memitem:a18db01f168af4cf4cabb02159b657be4"><td class="memItemLeft" align="right" valign="top">Eigen::Matrix4f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceekf.html#a18db01f168af4cf4cabb02159b657be4">ekf::S_r</a> (const Eigen::Ref&lt; Eigen::Vector4f &gt; &amp;q)</td></tr>
 <tr class="separator:a18db01f168af4cf4cabb02159b657be4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8177897fe9b962d8e0927a913fc36242"><td class="memItemLeft" align="right" valign="top">Eigen::Matrix4f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceekf.html#a8177897fe9b962d8e0927a913fc36242">ekf::S_l</a> (const Eigen::Ref&lt; Eigen::Vector4f &gt; &amp;q)</td></tr>
-<tr class="memdesc:a8177897fe9b962d8e0927a913fc36242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula a Matriz <em>Lefth-Quaternion</em> a partir do quaternion q.  <a href="namespaceekf.html#a8177897fe9b962d8e0927a913fc36242">Mais...</a><br /></td></tr>
+<tr class="memdesc:a8177897fe9b962d8e0927a913fc36242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula a Matriz <em>Left-Quaternion</em> a partir do quaternion q.  <a href="namespaceekf.html#a8177897fe9b962d8e0927a913fc36242">Mais...</a><br /></td></tr>
 <tr class="separator:a8177897fe9b962d8e0927a913fc36242"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9e1aaaa7793db099f4ef88b44aab8d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceekf.html#ae9e1aaaa7793db099f4ef88b44aab8d5">ekf::printEigen</a> (const Eigen::MatrixXf &amp;m)</td></tr>
 <tr class="separator:ae9e1aaaa7793db099f4ef88b44aab8d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -149,8 +146,8 @@ Funções</h2></td></tr>
 <tr class="separator:ac031eda654b199bd45807eed2acdb3ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e04862fd7bb992a28c1dada9a939716"><td class="memItemLeft" align="right" valign="top">Eigen::Vector3f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceekf.html#a4e04862fd7bb992a28c1dada9a939716">ekf::computeVectorProjection</a> (const Eigen::Ref&lt; Eigen::Vector3f &gt; &amp;v, const Eigen::Ref&lt; Eigen::Vector3f &gt; &amp;u)</td></tr>
 <tr class="separator:a4e04862fd7bb992a28c1dada9a939716"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0bb5c9402b49d6ba5be7c97ef269ceb1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceekf.html#a0bb5c9402b49d6ba5be7c97ef269ceb1">ekf::integrationQuaternion</a> (Eigen::Vector4f &amp;_quat, const Eigen::Ref&lt; const Eigen::VectorXf &gt; &amp;_gyroscopio, float &amp;_dt)</td></tr>
-<tr class="separator:a0bb5c9402b49d6ba5be7c97ef269ceb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c0b3448d5cac6f50ad025310b2a9c82"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceekf.html#a2c0b3448d5cac6f50ad025310b2a9c82">ekf::integrationQuaternion</a> (Eigen::Vector4f &amp;_quat, const Eigen::Ref&lt; const Eigen::VectorXf &gt; &amp;_gyroscope, float &amp;_dt)</td></tr>
+<tr class="separator:a2c0b3448d5cac6f50ad025310b2a9c82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab55e144edf7066b67232e15cca7b4646"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceekf.html#ab55e144edf7066b67232e15cca7b4646">ekf::invSqrt</a> (float _x)</td></tr>
 <tr class="memdesc:ab55e144edf7066b67232e15cca7b4646"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula o inverso do raiz de um float.  <a href="namespaceekf.html#ab55e144edf7066b67232e15cca7b4646">Mais...</a><br /></td></tr>
 <tr class="separator:ab55e144edf7066b67232e15cca7b4646"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -176,6 +173,24 @@ Funções</h2></td></tr>
 <tr class="memitem:a9a53e61c76edeebffe35da19a63b983f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceekf.html#a9a53e61c76edeebffe35da19a63b983f">ekf::conjugate</a> (Eigen::Ref&lt; Eigen::Vector4f &gt; _q)</td></tr>
 <tr class="memdesc:a9a53e61c76edeebffe35da19a63b983f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conjuga o quaternion _q.  <a href="namespaceekf.html#a9a53e61c76edeebffe35da19a63b983f">Mais...</a><br /></td></tr>
 <tr class="separator:a9a53e61c76edeebffe35da19a63b983f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad48c9ef49e8ccbde872958a81f6ed41a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceekf.html#ad48c9ef49e8ccbde872958a81f6ed41a">ekf::calc_phi</a> (float &amp;x, const Eigen::Ref&lt; const Eigen::Vector4f &gt; &amp;_q)</td></tr>
+<tr class="memdesc:ad48c9ef49e8ccbde872958a81f6ed41a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula, a partir de um quatérnio de atitude, o valor do ângulo Phi em Radianos.  <a href="namespaceekf.html#ad48c9ef49e8ccbde872958a81f6ed41a">Mais...</a><br /></td></tr>
+<tr class="separator:ad48c9ef49e8ccbde872958a81f6ed41a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6530a1bee6082aaa64ec7e8525d0ed54"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceekf.html#a6530a1bee6082aaa64ec7e8525d0ed54">ekf::calc_theta</a> (float &amp;x, const Eigen::Ref&lt; const Eigen::Vector4f &gt; &amp;_q)</td></tr>
+<tr class="memdesc:a6530a1bee6082aaa64ec7e8525d0ed54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula, a partir de um quatérnio de atitude, o valor do ângulo Theta em Radianos.  <a href="namespaceekf.html#a6530a1bee6082aaa64ec7e8525d0ed54">Mais...</a><br /></td></tr>
+<tr class="separator:a6530a1bee6082aaa64ec7e8525d0ed54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12f4cfdfc4baad066351f122771205a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceekf.html#a12f4cfdfc4baad066351f122771205a0">ekf::calc_psi</a> (float &amp;x, const Eigen::Ref&lt; const Eigen::Vector4f &gt; &amp;_q)</td></tr>
+<tr class="memdesc:a12f4cfdfc4baad066351f122771205a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula, a partir de um quatérnio de atitude, o valor do ângulo Psi em Radianos.  <a href="namespaceekf.html#a12f4cfdfc4baad066351f122771205a0">Mais...</a><br /></td></tr>
+<tr class="separator:a12f4cfdfc4baad066351f122771205a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79aece98f1e99172f29ec0ce8287dd33"><td class="memItemLeft" align="right" valign="top">Eigen::Vector4f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceekf.html#a79aece98f1e99172f29ec0ce8287dd33">ekf::q_theta</a> (float &amp;phi)</td></tr>
+<tr class="memdesc:a79aece98f1e99172f29ec0ce8287dd33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula o quaternion de atitude de rotação phi sobre o eixo x.  <a href="namespaceekf.html#a79aece98f1e99172f29ec0ce8287dd33">Mais...</a><br /></td></tr>
+<tr class="separator:a79aece98f1e99172f29ec0ce8287dd33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a193584b4cd93691d0dc552ace5e1b445"><td class="memItemLeft" align="right" valign="top">Eigen::Vector4f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceekf.html#a193584b4cd93691d0dc552ace5e1b445">ekf::q_phi</a> (float &amp;theta)</td></tr>
+<tr class="memdesc:a193584b4cd93691d0dc552ace5e1b445"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula o quaternion de atitude de rotação theta sobre o eixo y.  <a href="namespaceekf.html#a193584b4cd93691d0dc552ace5e1b445">Mais...</a><br /></td></tr>
+<tr class="separator:a193584b4cd93691d0dc552ace5e1b445"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24bc211c14d4e7d5ed48f895e3cdb75f"><td class="memItemLeft" align="right" valign="top">Eigen::Vector4f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceekf.html#a24bc211c14d4e7d5ed48f895e3cdb75f">ekf::q_psi</a> (float &amp;psi)</td></tr>
+<tr class="memdesc:a24bc211c14d4e7d5ed48f895e3cdb75f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula o quaternion de atitude de rotação psi sobre o eixo z.  <a href="namespaceekf.html#a24bc211c14d4e7d5ed48f895e3cdb75f">Mais...</a><br /></td></tr>
+<tr class="separator:a24bc211c14d4e7d5ed48f895e3cdb75f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
 <div class="textblock"><p>Cabecalho com funcoes de quaternion. </p>

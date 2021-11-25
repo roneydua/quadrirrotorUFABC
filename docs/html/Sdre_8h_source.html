@@ -71,47 +71,48 @@ $(function() {
 <div class="contents">
 <a href="Sdre_8h.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef SDRE_H</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">  #define SDRE_H</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">  #include &quot;../RICCATI/Riccati.h&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">  #ifndef __XTENSA__</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define SDRE_H</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;../RICCATI/Riccati.h&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#ifndef __XTENSA__</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">using namespace </span>std;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="Sdre_8h.html#a92102ea2f9ade1cc1a6dcce355db1677">   16</a></span>&#160;<span class="preprocessor">    #define PRINT_MAT(X) cout &lt;&lt; #X &lt;&lt; &quot;:\n&quot;</span> &lt;&lt; X &lt;&lt; &quot;\n&quot;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">  #endif</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">  #include &lt;eigen3/Eigen/Dense&gt;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classSdre.html">   20</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSdre.html">Sdre</a> {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classSdre.html#ae868a877b9ade90516f90ff46a673568">   25</a></span>&#160;  Eigen::MatrixXf *<a class="code" href="classSdre.html#ae868a877b9ade90516f90ff46a673568">phi</a>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classSdre.html#aa8e71f3403ee322804ac1e7a6d19b00e">   27</a></span>&#160;  Eigen::MatrixXf *<a class="code" href="classSdre.html#aa8e71f3403ee322804ac1e7a6d19b00e">gamma</a>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classSdre.html#ac29f58dd81643087f49ccbed42b794df">   29</a></span>&#160;  <a class="code" href="classRiccati.html">Riccati</a> *<a class="code" href="classSdre.html#ac29f58dd81643087f49ccbed42b794df">ricObj</a>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classSdre.html#a17464293d3a2f24ea0c55da3fcb0e864">   31</a></span>&#160;  Eigen::MatrixXf *<a class="code" href="classSdre.html#a17464293d3a2f24ea0c55da3fcb0e864">R</a>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classSdre.html#a6b63e08a6c981385373f45ee9ac1be73">   33</a></span>&#160;  Eigen::MatrixXf *<a class="code" href="classSdre.html#a6b63e08a6c981385373f45ee9ac1be73">Q</a>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classSdre.html#aad912686f9a487dce4ea7e4875efd563">   35</a></span>&#160;  Eigen::MatrixXf <a class="code" href="classSdre.html#aad912686f9a487dce4ea7e4875efd563">L</a>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classSdre.html#a348491f949fa0faae3fb86b7dbabd33d">   37</a></span>&#160;  Eigen::MatrixXf <a class="code" href="classSdre.html#a348491f949fa0faae3fb86b7dbabd33d">E</a>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classSdre.html#ad244c5cc1e70a1b08e8e4d5655993d8b">   39</a></span>&#160;  Eigen::MatrixXf <a class="code" href="classSdre.html#ad244c5cc1e70a1b08e8e4d5655993d8b">G</a>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="classSdre.html">Sdre</a>(Eigen::MatrixXf &amp;A, Eigen::MatrixXf &amp;B, Eigen::MatrixXf &amp;Q,</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;       Eigen::MatrixXf &amp;R);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  ~<a class="code" href="classSdre.html">Sdre</a>();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordtype">bool</span> updateControl();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  Eigen::MatrixXcf closeLoopEig();</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;};</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">/* SDRE_H */</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="Sdre_8h.html#a92102ea2f9ade1cc1a6dcce355db1677">   16</a></span>&#160;<span class="preprocessor">#define PRINT_MAT(X) cout &lt;&lt; #X &lt;&lt; &quot;:\n&quot;</span> &lt;&lt; X &lt;&lt; &quot;\n&quot;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;eigen3/Eigen/Dense&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">// #define COMPUTE_MAT_REALIMENTACAO</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classSdre.html">   21</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSdre.html">Sdre</a> {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classSdre.html#ae868a877b9ade90516f90ff46a673568">   26</a></span>&#160;  Eigen::MatrixXf *<a class="code" href="classSdre.html#ae868a877b9ade90516f90ff46a673568">phi</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classSdre.html#aa8e71f3403ee322804ac1e7a6d19b00e">   28</a></span>&#160;  Eigen::MatrixXf *<a class="code" href="classSdre.html#aa8e71f3403ee322804ac1e7a6d19b00e">gamma</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classSdre.html#ac29f58dd81643087f49ccbed42b794df">   30</a></span>&#160;  <a class="code" href="classRiccati.html">Riccati</a> *<a class="code" href="classSdre.html#ac29f58dd81643087f49ccbed42b794df">ricObj</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classSdre.html#a17464293d3a2f24ea0c55da3fcb0e864">   32</a></span>&#160;  Eigen::MatrixXf *<a class="code" href="classSdre.html#a17464293d3a2f24ea0c55da3fcb0e864">R</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classSdre.html#a6b63e08a6c981385373f45ee9ac1be73">   34</a></span>&#160;  Eigen::MatrixXf *<a class="code" href="classSdre.html#a6b63e08a6c981385373f45ee9ac1be73">Q</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classSdre.html#aad912686f9a487dce4ea7e4875efd563">   36</a></span>&#160;  Eigen::MatrixXf <a class="code" href="classSdre.html#aad912686f9a487dce4ea7e4875efd563">L</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classSdre.html#a348491f949fa0faae3fb86b7dbabd33d">   38</a></span>&#160;  Eigen::MatrixXf <a class="code" href="classSdre.html#a348491f949fa0faae3fb86b7dbabd33d">E</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#ifdef COMPUTE_MAT_REALIMENTACAO</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  Eigen::MatrixXf G;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <a class="code" href="classSdre.html">Sdre</a>(Eigen::MatrixXf &amp;A, Eigen::MatrixXf &amp;B, Eigen::MatrixXf &amp;Q,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;       Eigen::MatrixXf &amp;R);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  ~<a class="code" href="classSdre.html">Sdre</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordtype">bool</span> updateControl();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  Eigen::MatrixXcf closeLoopEig();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;};</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">/* SDRE_H */</span></div>
 <div class="ttc" id="aclassRiccati_html"><div class="ttname"><a href="classRiccati.html">Riccati</a></div><div class="ttdef"><b>Definition:</b> <a href="Riccati_8h_source.html#l00024">Riccati.h:24</a></div></div>
-<div class="ttc" id="aclassSdre_html"><div class="ttname"><a href="classSdre.html">Sdre</a></div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8h_source.html#l00020">Sdre.h:20</a></div></div>
-<div class="ttc" id="aclassSdre_html_a17464293d3a2f24ea0c55da3fcb0e864"><div class="ttname"><a href="classSdre.html#a17464293d3a2f24ea0c55da3fcb0e864">Sdre::R</a></div><div class="ttdeci">Eigen::MatrixXf * R</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8h_source.html#l00031">Sdre.h:31</a></div></div>
-<div class="ttc" id="aclassSdre_html_a348491f949fa0faae3fb86b7dbabd33d"><div class="ttname"><a href="classSdre.html#a348491f949fa0faae3fb86b7dbabd33d">Sdre::E</a></div><div class="ttdeci">Eigen::MatrixXf E</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8h_source.html#l00037">Sdre.h:37</a></div></div>
-<div class="ttc" id="aclassSdre_html_a6b63e08a6c981385373f45ee9ac1be73"><div class="ttname"><a href="classSdre.html#a6b63e08a6c981385373f45ee9ac1be73">Sdre::Q</a></div><div class="ttdeci">Eigen::MatrixXf * Q</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8h_source.html#l00033">Sdre.h:33</a></div></div>
-<div class="ttc" id="aclassSdre_html_aa8e71f3403ee322804ac1e7a6d19b00e"><div class="ttname"><a href="classSdre.html#aa8e71f3403ee322804ac1e7a6d19b00e">Sdre::gamma</a></div><div class="ttdeci">Eigen::MatrixXf * gamma</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8h_source.html#l00027">Sdre.h:27</a></div></div>
-<div class="ttc" id="aclassSdre_html_aad912686f9a487dce4ea7e4875efd563"><div class="ttname"><a href="classSdre.html#aad912686f9a487dce4ea7e4875efd563">Sdre::L</a></div><div class="ttdeci">Eigen::MatrixXf L</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8h_source.html#l00035">Sdre.h:35</a></div></div>
-<div class="ttc" id="aclassSdre_html_ac29f58dd81643087f49ccbed42b794df"><div class="ttname"><a href="classSdre.html#ac29f58dd81643087f49ccbed42b794df">Sdre::ricObj</a></div><div class="ttdeci">Riccati * ricObj</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8h_source.html#l00029">Sdre.h:29</a></div></div>
-<div class="ttc" id="aclassSdre_html_ad244c5cc1e70a1b08e8e4d5655993d8b"><div class="ttname"><a href="classSdre.html#ad244c5cc1e70a1b08e8e4d5655993d8b">Sdre::G</a></div><div class="ttdeci">Eigen::MatrixXf G</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8h_source.html#l00039">Sdre.h:39</a></div></div>
-<div class="ttc" id="aclassSdre_html_ae868a877b9ade90516f90ff46a673568"><div class="ttname"><a href="classSdre.html#ae868a877b9ade90516f90ff46a673568">Sdre::phi</a></div><div class="ttdeci">Eigen::MatrixXf * phi</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8h_source.html#l00025">Sdre.h:25</a></div></div>
+<div class="ttc" id="aclassSdre_html"><div class="ttname"><a href="classSdre.html">Sdre</a></div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8h_source.html#l00021">Sdre.h:21</a></div></div>
+<div class="ttc" id="aclassSdre_html_a17464293d3a2f24ea0c55da3fcb0e864"><div class="ttname"><a href="classSdre.html#a17464293d3a2f24ea0c55da3fcb0e864">Sdre::R</a></div><div class="ttdeci">Eigen::MatrixXf * R</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8h_source.html#l00032">Sdre.h:32</a></div></div>
+<div class="ttc" id="aclassSdre_html_a348491f949fa0faae3fb86b7dbabd33d"><div class="ttname"><a href="classSdre.html#a348491f949fa0faae3fb86b7dbabd33d">Sdre::E</a></div><div class="ttdeci">Eigen::MatrixXf E</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8h_source.html#l00038">Sdre.h:38</a></div></div>
+<div class="ttc" id="aclassSdre_html_a6b63e08a6c981385373f45ee9ac1be73"><div class="ttname"><a href="classSdre.html#a6b63e08a6c981385373f45ee9ac1be73">Sdre::Q</a></div><div class="ttdeci">Eigen::MatrixXf * Q</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8h_source.html#l00034">Sdre.h:34</a></div></div>
+<div class="ttc" id="aclassSdre_html_aa8e71f3403ee322804ac1e7a6d19b00e"><div class="ttname"><a href="classSdre.html#aa8e71f3403ee322804ac1e7a6d19b00e">Sdre::gamma</a></div><div class="ttdeci">Eigen::MatrixXf * gamma</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8h_source.html#l00028">Sdre.h:28</a></div></div>
+<div class="ttc" id="aclassSdre_html_aad912686f9a487dce4ea7e4875efd563"><div class="ttname"><a href="classSdre.html#aad912686f9a487dce4ea7e4875efd563">Sdre::L</a></div><div class="ttdeci">Eigen::MatrixXf L</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8h_source.html#l00036">Sdre.h:36</a></div></div>
+<div class="ttc" id="aclassSdre_html_ac29f58dd81643087f49ccbed42b794df"><div class="ttname"><a href="classSdre.html#ac29f58dd81643087f49ccbed42b794df">Sdre::ricObj</a></div><div class="ttdeci">Riccati * ricObj</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8h_source.html#l00030">Sdre.h:30</a></div></div>
+<div class="ttc" id="aclassSdre_html_ae868a877b9ade90516f90ff46a673568"><div class="ttname"><a href="classSdre.html#ae868a877b9ade90516f90ff46a673568">Sdre::phi</a></div><div class="ttdeci">Eigen::MatrixXf * phi</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8h_source.html#l00026">Sdre.h:26</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

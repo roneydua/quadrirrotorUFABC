@@ -1,4 +1,4 @@
-.TH "lib/EKF/EKF.h" 3 "Sexta, 17 de Setembro de 2021" "Quadrirrotor" \" -*- nroff -*-
+.TH "lib/EKF/EKF.h" 3 "Segunda, 25 de Outubro de 2021" "Quadrirrotor" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -9,7 +9,13 @@ lib/EKF/EKF.h \- Classe que implementa o filtro de Kalman estendido\&.
 .PP
 \fC#include 'eigen3/Eigen/Dense'\fP
 .br
-\fC#include '\&./\&.\&./READWRITEEIGEN/readWriteEigen\&.h'\fP
+\fC#include '\&.\&./\&.\&./include/READWRITEEIGEN/readWriteEigen\&.h'\fP
+.br
+\fC#include '\&.\&./AQUA/AQUA\&.h'\fP
+.br
+\fC#include '\&.\&./GRUPO_QUAT/GRUPO_QUAT\&.h'\fP
+.br
+\fC#include <iostream>\fP
 .br
 
 .SS "Estruturas de Dados"
@@ -30,6 +36,20 @@ lib/EKF/EKF.h \- Classe que implementa o filtro de Kalman estendido\&.
 .br
 .RI "Funções genéricas com álgebra de quatérnions e demais\&. "
 .in -1c
+.SS "Definições e Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBPM\fP(X)   cout << #X << ':\\n' << X << '\\n'"
+.br
+.in -1c
+.SS "Enumerações"
+
+.in +1c
+.ti -1c
+.RI "enum \fBekf::_status\fP { \fBekf::BEGIN\fP, \fBekf::READY\fP, \fBekf::FAIL\fP, \fBekf::STOPED\fP }"
+.br
+.in -1c
 .SH "Descrição detalhada"
 .PP 
 Classe que implementa o filtro de Kalman estendido\&. 
@@ -49,6 +69,12 @@ Classe que implementa o filtro de Kalman estendido\&.
 Last modified by: roney Last modified time: 01-Sep-2021 
 .PP
 Definição no arquivo \fBEKF\&.h\fP\&.
+.SH "Definições e macros"
+.PP 
+.SS "#define PM(X)   cout << #X << ':\\n' << X << '\\n'"
+
+.PP
+Definição na linha 26 do arquivo EKF\&.h\&.
 .SH "Autor"
 .PP 
 Gerado automaticamente por Doxygen para Quadrirrotor a partir do código-fonte\&.

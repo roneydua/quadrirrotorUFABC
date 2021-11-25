@@ -79,38 +79,53 @@ $(function() {
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;esp_now.h&quot;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">using namespace </span>Eigen;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="TELEMETRIA_8h.html#a9c603053286b613a1b3802a8dc762f3a">   19</a></span>&#160;<span class="preprocessor">#define DEBUG_BY_SERIAL</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="TELEMETRIA_8h.html#af55149bc1f05cf18af067a302e31e3f9">   20</a></span>&#160;<span class="preprocessor">#define DATA_SIZE 26</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classTELEMETRIA.html">   22</a></span>&#160;<span class="keyword">class </span><a class="code" href="classTELEMETRIA.html">TELEMETRIA</a> {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">using namespace </span>Eigen;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <a class="code" href="classTELEMETRIA.html">TELEMETRIA</a>();</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keywordtype">void</span> begin();</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keywordtype">void</span> envia(VectorXf a);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keywordtype">void</span> enviaMensagem(<span class="keywordtype">char</span> *aviso);</div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classTELEMETRIA.html#aacd01aa79091d1ee7dc4725e30a73d23">   29</a></span>&#160;  uint8_t _broadcast[6] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classTELEMETRIA.html#a3ed6613237ba555ebae298106a7369e8">   30</a></span>&#160;  <span class="keywordtype">void</span> pisca(uint8_t porta);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">typedef</span> <span class="keyword">struct </span>__attribute__((packed)) mensagem {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">float</span> dados[17];</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">char</span> info[35]; <span class="comment">// dados para informacao;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classTELEMETRIA.html#a02904fd20750c3eb7598dff99b20649b">   34</a></span>&#160;  } mensagem;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keyword">typedef</span> <span class="keyword">struct </span>__attribute__((packed)) controle {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    uint8_t dados;</div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classTELEMETRIA.html#aa7dcf13d1ec896ed759e16d47a6d31fb">   38</a></span>&#160;  } controle;</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classTELEMETRIA.html#a1282e1b8ab4ecaa1fd4fb1837b4d12d6">   39</a></span>&#160;  <span class="keyword">static</span> uint8_t <a class="code" href="classTELEMETRIA.html#a1282e1b8ab4ecaa1fd4fb1837b4d12d6">comAceito</a>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classTELEMETRIA.html#ae8ffac9b63a68baa5a4ffa3f14a4954d">   40</a></span>&#160;  uint8_t <a class="code" href="classTELEMETRIA.html#ae8ffac9b63a68baa5a4ffa3f14a4954d">_quantDados</a>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> OnDataRecv(<span class="keyword">const</span> uint8_t *_broadcast, <span class="keyword">const</span> uint8_t *<a class="code" href="GPS_8h.html#a27c939ba1a4f4d927aaa500781293ba7">data</a>,</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                         <span class="keywordtype">int</span> data_len);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;};</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classTELEMETRIA.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="classTELEMETRIA.html">TELEMETRIA</a> {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="classTELEMETRIA.html">TELEMETRIA</a>();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keywordtype">void</span> begin();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordtype">void</span> envia();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordtype">void</span> enviaTunningGains();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keywordtype">void</span> enviaMensagem(<span class="keywordtype">char</span> *aviso);</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classTELEMETRIA.html#aacd01aa79091d1ee7dc4725e30a73d23">   32</a></span>&#160;  uint8_t _broadcast[6] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordtype">void</span> pisca(uint8_t porta);</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="structTELEMETRIA_1_1IMU__DATA.html">   39</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="structTELEMETRIA_1_1IMU__DATA.html">IMU_DATA</a> {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">// uint16_t quantidadeValida;</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">union </span>{</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="structTELEMETRIA_1_1IMU__DATA.html#afdccdf0630d2607a54ec162276801027">   43</a></span>&#160;      <span class="keywordtype">float</span> dados[<a class="code" href="TELEMETRIA_8h.html#af55149bc1f05cf18af067a302e31e3f9">DATA_SIZE</a>];</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="structTELEMETRIA_1_1IMU__DATA.html#adc59258e2c8a5593dffe9007176675d1">   44</a></span>&#160;      Vector&lt;float, DATA_SIZE&gt; dadosEigen = VectorXf::Zero(<a class="code" href="TELEMETRIA_8h.html#af55149bc1f05cf18af067a302e31e3f9">DATA_SIZE</a>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    };</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classTELEMETRIA.html#a71317d1e99e1776c4b19738f53d52650">   46</a></span>&#160;  } imu;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classTELEMETRIA.html#a02904fd20750c3eb7598dff99b20649b">   48</a></span>&#160;  <span class="keywordtype">float</span> gainsTunning[3];</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="structTELEMETRIA_1_1MENSAGEM.html">   54</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="structTELEMETRIA_1_1MENSAGEM.html">MENSAGEM</a> {</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="structTELEMETRIA_1_1MENSAGEM.html#a39b1c3e6ce2fed1184fba64fbd81721d">   55</a></span>&#160;    <span class="keywordtype">char</span> info[35]; <span class="comment">// dados para informacao;</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  };</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keyword">typedef</span> <span class="keyword">struct </span>__attribute__((packed)) controle {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    uint8_t dados;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classTELEMETRIA.html#aa7dcf13d1ec896ed759e16d47a6d31fb">   59</a></span>&#160;  } controle;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classTELEMETRIA.html#a1282e1b8ab4ecaa1fd4fb1837b4d12d6">   61</a></span>&#160;  <span class="keyword">static</span> uint8_t <a class="code" href="classTELEMETRIA.html#a1282e1b8ab4ecaa1fd4fb1837b4d12d6">comAceito</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classTELEMETRIA.html#ae8ffac9b63a68baa5a4ffa3f14a4954d">   62</a></span>&#160;  uint8_t <a class="code" href="classTELEMETRIA.html#ae8ffac9b63a68baa5a4ffa3f14a4954d">_quantDados</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> OnDataRecv(<span class="keyword">const</span> uint8_t *_broadcast, <span class="keyword">const</span> uint8_t *<a class="code" href="GPS_8h.html#a27c939ba1a4f4d927aaa500781293ba7">data</a>,</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                         <span class="keywordtype">int</span> data_len);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;};</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aGPS_8h_html_a27c939ba1a4f4d927aaa500781293ba7"><div class="ttname"><a href="GPS_8h.html#a27c939ba1a4f4d927aaa500781293ba7">data</a></div><div class="ttdeci">PacketData data</div><div class="ttdef"><b>Definition:</b> <a href="GPS_8h_source.html#l00146">GPS.h:146</a></div></div>
-<div class="ttc" id="aclassTELEMETRIA_html"><div class="ttname"><a href="classTELEMETRIA.html">TELEMETRIA</a></div><div class="ttdef"><b>Definition:</b> <a href="TELEMETRIA_8h_source.html#l00022">TELEMETRIA.h:22</a></div></div>
-<div class="ttc" id="aclassTELEMETRIA_html_a1282e1b8ab4ecaa1fd4fb1837b4d12d6"><div class="ttname"><a href="classTELEMETRIA.html#a1282e1b8ab4ecaa1fd4fb1837b4d12d6">TELEMETRIA::comAceito</a></div><div class="ttdeci">static uint8_t comAceito</div><div class="ttdef"><b>Definition:</b> <a href="TELEMETRIA_8h_source.html#l00039">TELEMETRIA.h:39</a></div></div>
-<div class="ttc" id="aclassTELEMETRIA_html_ae8ffac9b63a68baa5a4ffa3f14a4954d"><div class="ttname"><a href="classTELEMETRIA.html#ae8ffac9b63a68baa5a4ffa3f14a4954d">TELEMETRIA::_quantDados</a></div><div class="ttdeci">uint8_t _quantDados</div><div class="ttdef"><b>Definition:</b> <a href="TELEMETRIA_8h_source.html#l00040">TELEMETRIA.h:40</a></div></div>
+<div class="ttc" id="aTELEMETRIA_8h_html_af55149bc1f05cf18af067a302e31e3f9"><div class="ttname"><a href="TELEMETRIA_8h.html#af55149bc1f05cf18af067a302e31e3f9">DATA_SIZE</a></div><div class="ttdeci">#define DATA_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="TELEMETRIA_8h_source.html#l00020">TELEMETRIA.h:20</a></div></div>
+<div class="ttc" id="aclassTELEMETRIA_html"><div class="ttname"><a href="classTELEMETRIA.html">TELEMETRIA</a></div><div class="ttdef"><b>Definition:</b> <a href="TELEMETRIA_8h_source.html#l00024">TELEMETRIA.h:24</a></div></div>
+<div class="ttc" id="aclassTELEMETRIA_html_a1282e1b8ab4ecaa1fd4fb1837b4d12d6"><div class="ttname"><a href="classTELEMETRIA.html#a1282e1b8ab4ecaa1fd4fb1837b4d12d6">TELEMETRIA::comAceito</a></div><div class="ttdeci">static uint8_t comAceito</div><div class="ttdef"><b>Definition:</b> <a href="TELEMETRIA_8h_source.html#l00061">TELEMETRIA.h:61</a></div></div>
+<div class="ttc" id="aclassTELEMETRIA_html_ae8ffac9b63a68baa5a4ffa3f14a4954d"><div class="ttname"><a href="classTELEMETRIA.html#ae8ffac9b63a68baa5a4ffa3f14a4954d">TELEMETRIA::_quantDados</a></div><div class="ttdeci">uint8_t _quantDados</div><div class="ttdef"><b>Definition:</b> <a href="TELEMETRIA_8h_source.html#l00062">TELEMETRIA.h:62</a></div></div>
+<div class="ttc" id="astructTELEMETRIA_1_1IMU__DATA_html"><div class="ttname"><a href="structTELEMETRIA_1_1IMU__DATA.html">TELEMETRIA::IMU_DATA</a></div><div class="ttdoc">Estrutura de mensagem.</div><div class="ttdef"><b>Definition:</b> <a href="TELEMETRIA_8h_source.html#l00039">TELEMETRIA.h:39</a></div></div>
+<div class="ttc" id="astructTELEMETRIA_1_1MENSAGEM_html"><div class="ttname"><a href="structTELEMETRIA_1_1MENSAGEM.html">TELEMETRIA::MENSAGEM</a></div><div class="ttdoc">Mensagem de texto para envio.</div><div class="ttdef"><b>Definition:</b> <a href="TELEMETRIA_8h_source.html#l00054">TELEMETRIA.h:54</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

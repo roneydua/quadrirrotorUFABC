@@ -356,7 +356,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="lib/IMU/IMU.h" line="73" column="12" bodyfile="lib/IMU/IMU.h" bodystart="73" bodyend="-1"/>
-        <referencedby refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" compoundref="EKF_8cpp" startline="39" endline="89">ekf::EKF::begin</referencedby>
+        <referencedby refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" compoundref="EKF_8cpp" startline="40" endline="97">ekf::EKF::begin</referencedby>
         <referencedby refid="classIMU_1ac574728dbbc752155239a35c8bbd6e79" compoundref="IMU_8cpp" startline="290" endline="335">readSensor</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classIMU_1a9d22cd7cb7bb93f2e04aa713aed73532" prot="public" static="no" mutable="no">
@@ -373,7 +373,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="lib/IMU/IMU.h" line="76" column="12" bodyfile="lib/IMU/IMU.h" bodystart="76" bodyend="-1"/>
-        <referencedby refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" compoundref="EKF_8cpp" startline="39" endline="89">ekf::EKF::begin</referencedby>
+        <referencedby refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" compoundref="EKF_8cpp" startline="40" endline="97">ekf::EKF::begin</referencedby>
         <referencedby refid="classIMU_1a5f096cb37d4b16851381bf09d6809403" compoundref="IMU_8cpp" startline="343" endline="358">calibraGyro</referencedby>
         <referencedby refid="classIMU_1ac574728dbbc752155239a35c8bbd6e79" compoundref="IMU_8cpp" startline="290" endline="335">readSensor</referencedby>
       </memberdef>
@@ -409,6 +409,7 @@
         </inbodydescription>
         <location file="lib/IMU/IMU.h" line="80" column="12" bodyfile="lib/IMU/IMU.h" bodystart="80" bodyend="-1"/>
         <referencedby refid="classIMU_1a3546779010d9128859f465195eff77f5" compoundref="IMU_8cpp" startline="458" endline="472">calibracaoMagnetometro</referencedby>
+        <referencedby refid="classIMU_1ac574728dbbc752155239a35c8bbd6e79" compoundref="IMU_8cpp" startline="290" endline="335">readSensor</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classIMU_1a18fe8e6be1b14c9e6c1b47d884dae375" prot="public" static="no" mutable="no">
         <type>TwoWire *</type>
@@ -1950,7 +1951,7 @@
         <references refid="classIMU_1acd2af48f4eb0a0321080332016e3c1f7" compoundref="IMU_8cpp" startline="449" endline="457">whoAmIAK8963</references>
         <references refid="classIMU_1af3b90e0b20d4bd55091be99f7aa67737" compoundref="IMU_8cpp" startline="368" endline="394">writeAK8963Register</references>
         <references refid="classIMU_1a37694424e4502ffc69bbb6c540c1a400" compoundref="IMU_8cpp" startline="402" endline="416">writeRegister</references>
-        <referencedby refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" compoundref="EKF_8cpp" startline="39" endline="89">ekf::EKF::begin</referencedby>
+        <referencedby refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" compoundref="EKF_8cpp" startline="40" endline="97">ekf::EKF::begin</referencedby>
       </memberdef>
       <memberdef kind="function" id="classIMU_1ac574728dbbc752155239a35c8bbd6e79" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -1985,11 +1986,12 @@ As variáveis <ref refid="classIMU_1a0efdfa77f452641689be4e9a4bae6a12" kindref="
         <references refid="classIMU_1adc2810ff775c9d2474aeb1cdc6737979" compoundref="IMU_8h" startline="99">_hzcounts</references>
         <references refid="classIMU_1a54e4834bdf8648b7ec11ca460b92facf" compoundref="IMU_8h" startline="60">_mag</references>
         <references refid="classIMU_1aca68ebe4db6de0261ad0c18ab93baa0c" compoundref="IMU_8h" startline="116">_magScaleX</references>
+        <references refid="classIMU_1af5d90aa5410529450fd31da2e1b1f296" compoundref="IMU_8h" startline="80">_sM</references>
         <references refid="classIMU_1a5e6bc8a1984acb82321f9b48db9e8a79" compoundref="IMU_8h" startline="126">ACCEL_OUT</references>
         <references refid="classIMU_1ae628afbcc858c70ea5d36a13d59998f2" compoundref="IMU_8h" startline="61">magTemp</references>
         <references refid="classIMU_1a87c200faa130ff4d2d3416b2d83f4f49" compoundref="IMU_8cpp" startline="424" endline="437">readRegisters</references>
         <references refid="classIMU_1a377a386f44cf1d85d31b4f2a6b1a43d1" compoundref="IMU_8h" startline="65">sFAccel</references>
-        <referencedby refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" compoundref="EKF_8cpp" startline="39" endline="89">ekf::EKF::begin</referencedby>
+        <referencedby refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" compoundref="EKF_8cpp" startline="40" endline="97">ekf::EKF::begin</referencedby>
         <referencedby refid="classIMU_1a3546779010d9128859f465195eff77f5" compoundref="IMU_8cpp" startline="458" endline="472">calibracaoMagnetometro</referencedby>
         <referencedby refid="classIMU_1a5f096cb37d4b16851381bf09d6809403" compoundref="IMU_8cpp" startline="343" endline="358">calibraGyro</referencedby>
       </memberdef>
@@ -2179,7 +2181,7 @@ Compensa-se o erro sistemático eliminando calculando a médida de #N medidas. O
         <location file="lib/IMU/IMU.h" line="89" column="7" bodyfile="lib/IMU/IMU.cpp" bodystart="458" bodyend="472"/>
         <references refid="classIMU_1a3ba42ad7f598311689e5eccd75daa019" compoundref="IMU_8h" startline="78">_biasMag</references>
         <references refid="classIMU_1af5d90aa5410529450fd31da2e1b1f296" compoundref="IMU_8h" startline="80">_sM</references>
-        <references refid="classMETODOSCALIBRACAO_1af0478ed112a1139bafefe7833568e641" compoundref="METODOSCALIBRACAO_8h" startline="43" endline="91">METODOSCALIBRACAO::calibracaoGeometrica</references>
+        <references refid="classMETODOSCALIBRACAO_1af0478ed112a1139bafefe7833568e641" compoundref="METODOSCALIBRACAO_8h" startline="44" endline="92">METODOSCALIBRACAO::calibracaoGeometrica</references>
         <references refid="classIMU_1ae628afbcc858c70ea5d36a13d59998f2" compoundref="IMU_8h" startline="61">magTemp</references>
         <references refid="classIMU_1ac574728dbbc752155239a35c8bbd6e79" compoundref="IMU_8cpp" startline="290" endline="335">readSensor</references>
       </memberdef>

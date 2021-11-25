@@ -5,58 +5,80 @@
     <includes refid="Controle_8h" local="yes">Controle.h</includes>
     <includes refid="EKF_8h" local="yes">EKF.h</includes>
     <includes refid="GRUPO__QUAT_8h" local="yes">GRUPO_QUAT.h</includes>
+    <includes refid="IBusBM_8h" local="yes">IBusBM.h</includes>
+    <includes refid="Motores_8h" local="yes">Motores.h</includes>
     <includes refid="PARAMETROS_8h" local="yes">PARAMETROS.h</includes>
     <includes refid="TELEMETRIA_8h" local="yes">TELEMETRIA.h</includes>
     <includes local="no">Arduino.h</includes>
     <includes local="no">eigen3/Eigen/Dense</includes>
-    <includes local="no">esp_now.h</includes>
-    <includes refid="IBusBM_8h" local="yes">IBusBM.h</includes>
+    <includes refid="COMMON_8h" local="yes">COMMON.h</includes>
+    <includes local="no">iostream</includes>
     <incdepgraph>
       <node id="2">
         <label>Controle.h</label>
         <link refid="Controle_8h"/>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="8" relation="include">
+        <childnode refid="7" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
         <childnode refid="6" relation="include">
         </childnode>
-      </node>
-      <node id="13">
-        <label>PARAMETROS.h</label>
-        <link refid="PARAMETROS_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
         <childnode refid="4" relation="include">
         </childnode>
       </node>
-      <node id="8">
+      <node id="17">
+        <label>PARAMETROS.h</label>
+        <link refid="PARAMETROS_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
         <label>../SDRE/Sdre.h</label>
         <link refid="Sdre_8h"/>
-        <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
+        <childnode refid="8" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
         </childnode>
       </node>
       <node id="16">
+        <label>Motores.h</label>
+        <link refid="Motores_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
         <label>esp_now.h</label>
       </node>
-      <node id="11">
+      <node id="10">
         <label>EKF.h</label>
         <link refid="EKF_8h"/>
-        <childnode refid="6" relation="include">
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
         </childnode>
         <childnode refid="12" relation="include">
         </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
       </node>
-      <node id="6">
+      <node id="4">
         <label>eigen3/Eigen/Dense</label>
+      </node>
+      <node id="13">
+        <label>IBusBM.h</label>
+        <link refid="IBusBM_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
       </node>
       <node id="3">
         <label>../DRONE/Drone.h</label>
@@ -68,38 +90,50 @@
         <childnode refid="6" relation="include">
         </childnode>
       </node>
-      <node id="14">
-        <label>TELEMETRIA.h</label>
-        <link refid="TELEMETRIA_8h"/>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="15" relation="include">
-        </childnode>
-        <childnode refid="16" relation="include">
+      <node id="11">
+        <label>../../include/READWRITEEIGEN/readWriteEigen.h</label>
+      </node>
+      <node id="21">
+        <label>COMMON.h</label>
+        <link refid="COMMON_8h"/>
+        <childnode refid="14" relation="include">
         </childnode>
       </node>
-      <node id="9">
+      <node id="18">
+        <label>TELEMETRIA.h</label>
+        <link refid="TELEMETRIA_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
         <label>../RICCATI/Riccati.h</label>
         <link refid="Riccati_8h"/>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
         <childnode refid="6" relation="include">
         </childnode>
       </node>
-      <node id="10">
+      <node id="12">
+        <label>../AQUA/AQUA.h</label>
+        <link refid="AQUA_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
         <label>../READWRITEEIGEN/readWriteEigen.h</label>
       </node>
-      <node id="4">
+      <node id="14">
         <label>Arduino.h</label>
       </node>
-      <node id="12">
-        <label>./../READWRITEEIGEN/readWriteEigen.h</label>
-      </node>
-      <node id="7">
+      <node id="6">
         <label>iostream</label>
       </node>
       <node id="1">
@@ -107,58 +141,194 @@
         <link refid="main_8cpp"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="11" relation="include">
+        <childnode refid="10" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="13" relation="include">
         </childnode>
-        <childnode refid="14" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
         <childnode refid="16" relation="include">
         </childnode>
         <childnode refid="17" relation="include">
         </childnode>
-      </node>
-      <node id="5">
-        <label>GRUPO_QUAT.h</label>
-        <link refid="GRUPO__QUAT_8h"/>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-      </node>
-      <node id="17">
-        <label>IBusBM.h</label>
-        <link refid="IBusBM_8h"/>
         <childnode refid="18" relation="include">
         </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
       </node>
-      <node id="15">
+      <node id="5">
+        <label>../../../quadricopterFinal/lib/GRUPO_QUAT/GRUPO_QUAT.h</label>
+        <link refid="GRUPO__QUAT_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
         <label>WiFi.h</label>
       </node>
-      <node id="18">
+      <node id="15">
         <label>inttypes.h</label>
       </node>
     </incdepgraph>
-      <sectiondef kind="var">
-      <memberdef kind="variable" id="main_8cpp_1aad20b5e553c06abe201d2985050078b2" prot="public" static="no" mutable="no">
-        <type><ref refid="classIBusBM" kindref="compound">IBusBM</ref></type>
-        <definition>IBusBM ibus</definition>
-        <argsstring></argsstring>
-        <name>ibus</name>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="main_8cpp_1a1581dcc96e74323eac4fd2076d130d5a" prot="public" static="no">
+        <name>DEBUG_MAIN</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/main.cpp" line="22" column="8" bodyfile="src/main.cpp" bodystart="22" bodyend="-1"/>
-        <referencedby refid="main_8cpp_1a4fc01d736fe50cf5b977f755b675f11d" compoundref="main_8cpp" startline="33" endline="47">setup</referencedby>
+        <location file="src/main.cpp" line="20" column="9" bodyfile="src/main.cpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="main_8cpp_1a30b9cf7c1ad8a006a9a5b815c02a67dc" prot="public" static="no">
+        <name>PM</name>
+        <param><defname>X</defname></param>
+        <initializer>std::cout &lt;&lt; #X &lt;&lt; &quot;:\n&quot; &lt;&lt; X &lt;&lt; &quot;\n&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="23" column="9" bodyfile="src/main.cpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="main_8cpp_1a34ab808b2feabd3e0ac744eaf7eb376b" prot="public" static="no">
+        <name>CALIBRATION_OF_MAGNETOMETER_GYROSCOPE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="26" column="11" bodyfile="src/main.cpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="main_8cpp_1a0b8c2b64555211f3dd9069fde81b4bdb" prot="public" static="no" mutable="no">
+        <type><ref refid="classIBusBM" kindref="compound">IBusBM</ref></type>
+        <definition>IBusBM iBus</definition>
+        <argsstring></argsstring>
+        <name>iBus</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="28" column="8" bodyfile="src/main.cpp" bodystart="28" bodyend="-1"/>
+        <referencedby refid="main_8cpp_1a1f32cff79659de71ff8de76c85e7c7b9" compoundref="main_8cpp" startline="114" endline="127">emergencyMethods</referencedby>
+        <referencedby refid="main_8cpp_1a4fc01d736fe50cf5b977f755b675f11d" compoundref="main_8cpp" startline="214" endline="235">setup</referencedby>
+        <referencedby refid="main_8cpp_1ad3d424dca818563665f9ab9bbf866fff" compoundref="main_8cpp" startline="128" endline="211">xTaskContol</referencedby>
+        <referencedby refid="main_8cpp_1a1d67803bd6f9b50c1e3686650e280f68" compoundref="main_8cpp" startline="87" endline="109">xTaskSetupFiltro</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1a69b5e71277e0e3a57afef1e2d7025e58" prot="public" static="no" mutable="no">
+        <type>Vector3f *</type>
+        <definition>Vector3f* eulerTarget</definition>
+        <argsstring></argsstring>
+        <name>eulerTarget</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="30" column="10" bodyfile="src/main.cpp" bodystart="30" bodyend="-1"/>
+        <referencedby refid="main_8cpp_1ad3d424dca818563665f9ab9bbf866fff" compoundref="main_8cpp" startline="128" endline="211">xTaskContol</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1adef42f887c2b14a9f43de1ae529a09e5" prot="public" static="no" mutable="no">
+        <type>Vector3f *</type>
+        <definition>Vector3f * ra</definition>
+        <argsstring></argsstring>
+        <name>ra</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="30" column="22" bodyfile="src/main.cpp" bodystart="30" bodyend="-1"/>
+        <referencedby refid="main_8cpp_1ad3d424dca818563665f9ab9bbf866fff" compoundref="main_8cpp" startline="128" endline="211">xTaskContol</referencedby>
+        <referencedby refid="main_8cpp_1abd3bd9c344e182dcb5f5a561ef562eb0" compoundref="main_8cpp" startline="51" endline="86">xTaskLoopFilter</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1a4de603e279aa24f62c1b8a40306140f3" prot="public" static="no" mutable="no">
+        <type>Vector3f *</type>
+        <definition>Vector3f * wa</definition>
+        <argsstring></argsstring>
+        <name>wa</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="30" column="25" bodyfile="src/main.cpp" bodystart="30" bodyend="-1"/>
+        <referencedby refid="main_8cpp_1ad3d424dca818563665f9ab9bbf866fff" compoundref="main_8cpp" startline="128" endline="211">xTaskContol</referencedby>
+        <referencedby refid="main_8cpp_1abd3bd9c344e182dcb5f5a561ef562eb0" compoundref="main_8cpp" startline="51" endline="86">xTaskLoopFilter</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1aff5ffbb08d9a949947ef687cb0531794" prot="public" static="no" mutable="no">
+        <type>Vector3f *</type>
+        <definition>Vector3f * rI</definition>
+        <argsstring></argsstring>
+        <name>rI</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="30" column="28" bodyfile="src/main.cpp" bodystart="30" bodyend="-1"/>
+        <referencedby refid="main_8cpp_1ad3d424dca818563665f9ab9bbf866fff" compoundref="main_8cpp" startline="128" endline="211">xTaskContol</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1a9e8de852b827cfc2d32be84a9a02dba9" prot="public" static="no" mutable="no">
+        <type>Vector3f</type>
+        <definition>Vector3f qa</definition>
+        <argsstring></argsstring>
+        <name>qa</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="30" column="31" bodyfile="src/main.cpp" bodystart="30" bodyend="-1"/>
+        <referencedby refid="main_8cpp_1ad3d424dca818563665f9ab9bbf866fff" compoundref="main_8cpp" startline="128" endline="211">xTaskContol</referencedby>
+        <referencedby refid="main_8cpp_1abd3bd9c344e182dcb5f5a561ef562eb0" compoundref="main_8cpp" startline="51" endline="86">xTaskLoopFilter</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1a63d9a57399cadda190f8e8cbddbff900" prot="public" static="no" mutable="no">
+        <type>Vector4f *</type>
+        <definition>Vector4f* moments</definition>
+        <argsstring></argsstring>
+        <name>moments</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="32" column="10" bodyfile="src/main.cpp" bodystart="32" bodyend="-1"/>
+        <referencedby refid="main_8cpp_1ad3d424dca818563665f9ab9bbf866fff" compoundref="main_8cpp" startline="128" endline="211">xTaskContol</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1a29b0f479e7948681bef12044e738d265" prot="public" static="no" mutable="no">
+        <type>Vector4i *</type>
+        <definition>Vector4i* comandosDigitais</definition>
+        <argsstring></argsstring>
+        <name>comandosDigitais</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="33" column="10" bodyfile="src/main.cpp" bodystart="33" bodyend="-1"/>
+        <referencedby refid="main_8cpp_1ad3d424dca818563665f9ab9bbf866fff" compoundref="main_8cpp" startline="128" endline="211">xTaskContol</referencedby>
       </memberdef>
       <memberdef kind="variable" id="main_8cpp_1ae81666800498192487a16bcd7308d5c4" prot="public" static="no" mutable="no">
         <type><ref refid="classTELEMETRIA" kindref="compound">TELEMETRIA</ref></type>
@@ -171,43 +341,236 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/main.cpp" line="23" column="12" bodyfile="src/main.cpp" bodystart="23" bodyend="-1"/>
-        <referencedby refid="main_8cpp_1afe461d27b9c48d5921c00d521181f12f" compoundref="main_8cpp" startline="50" endline="59">loop</referencedby>
-        <referencedby refid="main_8cpp_1a4fc01d736fe50cf5b977f755b675f11d" compoundref="main_8cpp" startline="33" endline="47">setup</referencedby>
+        <location file="src/main.cpp" line="35" column="12" bodyfile="src/main.cpp" bodystart="35" bodyend="-1"/>
+        <referencedby refid="main_8cpp_1a1f32cff79659de71ff8de76c85e7c7b9" compoundref="main_8cpp" startline="114" endline="127">emergencyMethods</referencedby>
+        <referencedby refid="main_8cpp_1a4fc01d736fe50cf5b977f755b675f11d" compoundref="main_8cpp" startline="214" endline="235">setup</referencedby>
+        <referencedby refid="main_8cpp_1ad3d424dca818563665f9ab9bbf866fff" compoundref="main_8cpp" startline="128" endline="211">xTaskContol</referencedby>
+        <referencedby refid="main_8cpp_1abd3bd9c344e182dcb5f5a561ef562eb0" compoundref="main_8cpp" startline="51" endline="86">xTaskLoopFilter</referencedby>
+        <referencedby refid="main_8cpp_1a1d67803bd6f9b50c1e3686650e280f68" compoundref="main_8cpp" startline="87" endline="109">xTaskSetupFiltro</referencedby>
       </memberdef>
-      <memberdef kind="variable" id="main_8cpp_1ae1f1091647c66e9cc962b4feab0525cd" prot="public" static="no" mutable="no">
-        <type><ref refid="classekf_1_1EKF" kindref="compound">ekf::EKF</ref></type>
-        <definition>ekf::EKF filtro</definition>
+      <memberdef kind="variable" id="main_8cpp_1a5a89228326c473f17abbd278991560d5" prot="public" static="no" mutable="no">
+        <type>TaskHandle_t</type>
+        <definition>TaskHandle_t xHandleSetupFilter</definition>
         <argsstring></argsstring>
-        <name>filtro</name>
+        <name>xHandleSetupFilter</name>
+        <initializer>= NULL</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/main.cpp" line="25" column="10" bodyfile="src/main.cpp" bodystart="25" bodyend="-1"/>
-        <referencedby refid="main_8cpp_1afe461d27b9c48d5921c00d521181f12f" compoundref="main_8cpp" startline="50" endline="59">loop</referencedby>
-        <referencedby refid="main_8cpp_1a4fc01d736fe50cf5b977f755b675f11d" compoundref="main_8cpp" startline="33" endline="47">setup</referencedby>
+        <location file="src/main.cpp" line="46" column="14" bodyfile="src/main.cpp" bodystart="46" bodyend="-1"/>
+        <referencedby refid="main_8cpp_1a4fc01d736fe50cf5b977f755b675f11d" compoundref="main_8cpp" startline="214" endline="235">setup</referencedby>
       </memberdef>
-      <memberdef kind="variable" id="main_8cpp_1a415ca717d7f13cfb8bcbaa07a3ddd062" prot="public" static="no" mutable="no">
-        <type>Eigen::Vector&lt; float, 17 &gt;</type>
-        <definition>Eigen::Vector&lt;float, 17&gt; t</definition>
+      <memberdef kind="variable" id="main_8cpp_1ad68258a9abebbcd50439c86377b6dce9" prot="public" static="no" mutable="no">
+        <type>TaskHandle_t</type>
+        <definition>TaskHandle_t xHandleLoopFilter</definition>
         <argsstring></argsstring>
-        <name>t</name>
-        <initializer>= Eigen::Vector&lt;float, 17&gt;::Zero()</initializer>
+        <name>xHandleLoopFilter</name>
+        <initializer>= NULL</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/main.cpp" line="49" column="15" bodyfile="src/main.cpp" bodystart="49" bodyend="-1"/>
-        <referencedby refid="main_8cpp_1afe461d27b9c48d5921c00d521181f12f" compoundref="main_8cpp" startline="50" endline="59">loop</referencedby>
-        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="171" endline="288">IBusBM::loop</referencedby>
+        <location file="src/main.cpp" line="47" column="14" bodyfile="src/main.cpp" bodystart="47" bodyend="-1"/>
+        <referencedby refid="main_8cpp_1a1d67803bd6f9b50c1e3686650e280f68" compoundref="main_8cpp" startline="87" endline="109">xTaskSetupFiltro</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1abc6d08e0fef7d2e6251a6822a57afe1a" prot="public" static="no" mutable="no">
+        <type>TaskHandle_t</type>
+        <definition>TaskHandle_t xHandleControl</definition>
+        <argsstring></argsstring>
+        <name>xHandleControl</name>
+        <initializer>= NULL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="48" column="14" bodyfile="src/main.cpp" bodystart="48" bodyend="-1"/>
+        <referencedby refid="main_8cpp_1a1f32cff79659de71ff8de76c85e7c7b9" compoundref="main_8cpp" startline="114" endline="127">emergencyMethods</referencedby>
+        <referencedby refid="main_8cpp_1a4fc01d736fe50cf5b977f755b675f11d" compoundref="main_8cpp" startline="214" endline="235">setup</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="main_8cpp_1aa3042e035552175f37c5ce7f156cc58f" prot="public" static="no" mutable="no">
+        <type>TaskHandle_t</type>
+        <definition>TaskHandle_t xHandleEmergency</definition>
+        <argsstring></argsstring>
+        <name>xHandleEmergency</name>
+        <initializer>= NULL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="49" column="14" bodyfile="src/main.cpp" bodystart="49" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
+      <memberdef kind="function" id="main_8cpp_1abd3bd9c344e182dcb5f5a561ef562eb0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void xTaskLoopFilter</definition>
+        <argsstring>(void *)</argsstring>
+        <name>xTaskLoopFilter</name>
+        <param>
+          <type>void *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="51" column="6" bodyfile="src/main.cpp" bodystart="51" bodyend="86"/>
+        <references refid="structTELEMETRIA_1_1IMU__DATA_1adc59258e2c8a5593dffe9007176675d1" compoundref="TELEMETRIA_8h" startline="44">TELEMETRIA::IMU_DATA::dadosEigen</references>
+        <references refid="classekf_1_1EKF_1a93f50b0576c3243487442a9f0934e038" compoundref="EKF_8h" startline="94">ekf::EKF::drNED</references>
+        <references refid="classTELEMETRIA_1a235abb2ba6888140e7dab2e73a050049" compoundref="TELEMETRIA_8cpp" startline="46" endline="62">TELEMETRIA::envia</references>
+        <references refid="classTELEMETRIA_1a6c13ae22d648afb2c7bd41f3e17ba4b6" compoundref="TELEMETRIA_8cpp" startline="69" endline="81">TELEMETRIA::enviaMensagem</references>
+        <references refid="classekf_1_1EKF_1adc3de40884689bb897ebe90979d6f28f" compoundref="EKF_8h" startline="84">ekf::EKF::euler</references>
+        <references refid="classekf_1_1EKF_1af990ea0dbcd3f286f04584ab663d08e6" compoundref="EKF_8h" startline="74">ekf::EKF::gyro</references>
+        <references refid="classTELEMETRIA_1a71317d1e99e1776c4b19738f53d52650">TELEMETRIA::imu</references>
+        <references refid="classekf_1_1EKF_1a651814ff64d234394572e2e7c5703a43" compoundref="EKF_8cpp" startline="101" endline="109">ekf::EKF::loopEKF</references>
+        <references refid="classekf_1_1EKF_1aa38bc83dfb656519cfcda0c0a589ef16" compoundref="EKF_8h" startline="82">ekf::EKF::q</references>
+        <references refid="main_8cpp_1a9e8de852b827cfc2d32be84a9a02dba9" compoundref="main_8cpp" startline="30">qa</references>
+        <references refid="namespaceekf_1aab2dcd522b40c160064cfae69cae6d98" compoundref="GRUPO__QUAT_8cpp" startline="152" endline="165">ekf::quaternion2Euler</references>
+        <references refid="main_8cpp_1adef42f887c2b14a9f43de1ae529a09e5" compoundref="main_8cpp" startline="30">ra</references>
+        <references refid="namespaceekf_1a3d0224f90468a854a2440df8b4f78869a638dfa2cadaad15202600951a2e30d4f" compoundref="EKF_8h" startline="44">ekf::READY</references>
+        <references refid="classekf_1_1EKF_1a7638c17e8939f2c45f1bbda2260621cc" compoundref="EKF_8h" startline="52">ekf::EKF::status</references>
+        <references refid="main_8cpp_1ae81666800498192487a16bcd7308d5c4" compoundref="main_8cpp" startline="35">tel</references>
+        <references refid="main_8cpp_1a4de603e279aa24f62c1b8a40306140f3" compoundref="main_8cpp" startline="30">wa</references>
+        <references refid="PARAMETROS_8h_1ade6e1f4a0c110e26850765ae6acbcbcb" compoundref="PARAMETROS_8h" startline="49">xdtTelemetry</references>
+        <referencedby refid="main_8cpp_1a1d67803bd6f9b50c1e3686650e280f68" compoundref="main_8cpp" startline="87" endline="109">xTaskSetupFiltro</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="main_8cpp_1a1d67803bd6f9b50c1e3686650e280f68" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void xTaskSetupFiltro</definition>
+        <argsstring>(void *pvParameters)</argsstring>
+        <name>xTaskSetupFiltro</name>
+        <param>
+          <type>void *</type>
+          <declname>pvParameters</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="87" column="6" bodyfile="src/main.cpp" bodystart="87" bodyend="109"/>
+        <references refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" compoundref="EKF_8cpp" startline="40" endline="97">ekf::EKF::begin</references>
+        <references refid="unionIBusBM_1_1ControlUnion_1a2da2b77327c32178cf0e4f37ada37bb4" compoundref="IBusBM_8h" startline="85">IBusBM::ControlUnion::calibration</references>
+        <references refid="PARAMETROS_8h_1a9cbadcfbca426e6cec9d14f30750ef04" compoundref="PARAMETROS_8h" startline="47">dtTelemetry</references>
+        <references refid="classTELEMETRIA_1a6c13ae22d648afb2c7bd41f3e17ba4b6" compoundref="TELEMETRIA_8cpp" startline="69" endline="81">TELEMETRIA::enviaMensagem</references>
+        <references refid="main_8cpp_1a0b8c2b64555211f3dd9069fde81b4bdb" compoundref="main_8cpp" startline="28">iBus</references>
+        <references refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="165" endline="282">IBusBM::loop</references>
+        <references refid="classIBusBM_1ad576c07af1ed09d8bc355e7f65c69000" compoundref="IBusBM_8h" startline="99">IBusBM::remoteControl</references>
+        <references refid="main_8cpp_1ae81666800498192487a16bcd7308d5c4" compoundref="main_8cpp" startline="35">tel</references>
+        <references refid="main_8cpp_1ad68258a9abebbcd50439c86377b6dce9" compoundref="main_8cpp" startline="47">xHandleLoopFilter</references>
+        <references refid="main_8cpp_1abd3bd9c344e182dcb5f5a561ef562eb0" compoundref="main_8cpp" startline="51" endline="86">xTaskLoopFilter</references>
+        <referencedby refid="main_8cpp_1a4fc01d736fe50cf5b977f755b675f11d" compoundref="main_8cpp" startline="214" endline="235">setup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="main_8cpp_1a1f32cff79659de71ff8de76c85e7c7b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void emergencyMethods</definition>
+        <argsstring>(void *pv)</argsstring>
+        <name>emergencyMethods</name>
+        <param>
+          <type>void *</type>
+          <declname>pv</declname>
+        </param>
+        <briefdescription>
+<para>Task de Procedimentos emergenciais. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="114" column="6" bodyfile="src/main.cpp" bodystart="114" bodyend="127"/>
+        <references refid="unionIBusBM_1_1ControlUnion_1a679d90f97047762a16a1159c68ec6b70" compoundref="IBusBM_8h" startline="83">IBusBM::ControlUnion::emergency</references>
+        <references refid="classTELEMETRIA_1a6c13ae22d648afb2c7bd41f3e17ba4b6" compoundref="TELEMETRIA_8cpp" startline="69" endline="81">TELEMETRIA::enviaMensagem</references>
+        <references refid="main_8cpp_1a0b8c2b64555211f3dd9069fde81b4bdb" compoundref="main_8cpp" startline="28">iBus</references>
+        <references refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="165" endline="282">IBusBM::loop</references>
+        <references refid="classIBusBM_1ad576c07af1ed09d8bc355e7f65c69000" compoundref="IBusBM_8h" startline="99">IBusBM::remoteControl</references>
+        <references refid="main_8cpp_1ae81666800498192487a16bcd7308d5c4" compoundref="main_8cpp" startline="35">tel</references>
+        <references refid="COMMON_8h_1a0e9b3928a2c3089998123715bcae29e9" compoundref="COMMON_8h" startline="41" endline="44">turnOffLed</references>
+        <references refid="COMMON_8h_1a8eabef94a982b1407d1ae4731b7e07ca" compoundref="COMMON_8h" startline="33" endline="36">turnOnLed</references>
+        <references refid="main_8cpp_1abc6d08e0fef7d2e6251a6822a57afe1a" compoundref="main_8cpp" startline="48">xHandleControl</references>
+        <referencedby refid="main_8cpp_1ad3d424dca818563665f9ab9bbf866fff" compoundref="main_8cpp" startline="128" endline="211">xTaskContol</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="main_8cpp_1ad3d424dca818563665f9ab9bbf866fff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void xTaskContol</definition>
+        <argsstring>(void *pv)</argsstring>
+        <name>xTaskContol</name>
+        <param>
+          <type>void *</type>
+          <declname>pv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="128" column="6" bodyfile="src/main.cpp" bodystart="128" bodyend="211"/>
+        <references refid="unionIBusBM_1_1ControlUnion_1ae762743840225801aca2831b9c13d318" compoundref="IBusBM_8h" startline="89">IBusBM::ControlUnion::adjustQrAngular</references>
+        <references refid="unionIBusBM_1_1ControlUnion_1a317cea019940a3c5623868627c456986" compoundref="IBusBM_8h" startline="87">IBusBM::ControlUnion::adjustQuat</references>
+        <references refid="main_8cpp_1a29b0f479e7948681bef12044e738d265" compoundref="main_8cpp" startline="33">comandosDigitais</references>
+        <references refid="classControle_1a78e5f662130811f409342a706d5c0d2f" compoundref="Controle_8cpp" startline="152" endline="163">Controle::controlLoop</references>
+        <references refid="classControle_1a0c776f38e5e922a847acbed22a0bb00c" compoundref="Controle_8h" startline="56">Controle::diffPsi</references>
+        <references refid="unionIBusBM_1_1ControlUnion_1ae5149d118500fb647bed5322d216464e" compoundref="IBusBM_8h" startline="81">IBusBM::ControlUnion::dPsi</references>
+        <references refid="classekf_1_1EKF_1a93f50b0576c3243487442a9f0934e038" compoundref="EKF_8h" startline="94">ekf::EKF::drNED</references>
+        <references refid="classControle_1a94276b811077802165f17603428e475e" compoundref="Controle_8h" startline="41">Controle::drone</references>
+        <references refid="PARAMETROS_8h_1ac3437d0d1acbe94e967793e5e4d8473d" compoundref="PARAMETROS_8h" startline="51">dtControle</references>
+        <references refid="unionIBusBM_1_1ControlUnion_1a7a86de4e71d501057f7bd4c42eb68747" compoundref="IBusBM_8h" startline="75">IBusBM::ControlUnion::dX</references>
+        <references refid="unionIBusBM_1_1ControlUnion_1a3321ea9dcef282cbd22948f7dee2cacc" compoundref="IBusBM_8h" startline="77">IBusBM::ControlUnion::dY</references>
+        <references refid="unionIBusBM_1_1ControlUnion_1aa5ca7ca4686bf8f5a4ce8bca2d65541e" compoundref="IBusBM_8h" startline="79">IBusBM::ControlUnion::dZ</references>
+        <references refid="unionIBusBM_1_1ControlUnion_1a679d90f97047762a16a1159c68ec6b70" compoundref="IBusBM_8h" startline="83">IBusBM::ControlUnion::emergency</references>
+        <references refid="main_8cpp_1a1f32cff79659de71ff8de76c85e7c7b9" compoundref="main_8cpp" startline="114" endline="127">emergencyMethods</references>
+        <references refid="classTELEMETRIA_1a6c13ae22d648afb2c7bd41f3e17ba4b6" compoundref="TELEMETRIA_8cpp" startline="69" endline="81">TELEMETRIA::enviaMensagem</references>
+        <references refid="classTELEMETRIA_1ac3b8fa789f6d00dca33ea41b4fd865c7" compoundref="TELEMETRIA_8cpp" startline="63" endline="68">TELEMETRIA::enviaTunningGains</references>
+        <references refid="classControle_1af678bba86e2e438490769db83d6f58ab" compoundref="Controle_8h" startline="36">Controle::eulerTarget</references>
+        <references refid="main_8cpp_1a69b5e71277e0e3a57afef1e2d7025e58" compoundref="main_8cpp" startline="30">eulerTarget</references>
+        <references refid="classTELEMETRIA_1a2cbf1b032f8a825a10b2d339aa27084c" compoundref="TELEMETRIA_8h" startline="48">TELEMETRIA::gainsTunning</references>
+        <references refid="classekf_1_1EKF_1af990ea0dbcd3f286f04584ab663d08e6" compoundref="EKF_8h" startline="74">ekf::EKF::gyro</references>
+        <references refid="main_8cpp_1a0b8c2b64555211f3dd9069fde81b4bdb" compoundref="main_8cpp" startline="28">iBus</references>
+        <references refid="classControle_1a4fc1f7f2b69a021f4bb433daada38430" compoundref="Controle_8h" startline="40">Controle::index_alt</references>
+        <references refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="165" endline="282">IBusBM::loop</references>
+        <references refid="classControle_1adf6b85a6ab34600ac480a5cf9c4c1f8e" compoundref="Controle_8h" startline="37">Controle::minimalDigitalCommand</references>
+        <references refid="main_8cpp_1a63d9a57399cadda190f8e8cbddbff900" compoundref="main_8cpp" startline="32">moments</references>
+        <references refid="structMOTOR__PINS_1a75c3ad59c9a4d74b4aad784c0d42aa9f" compoundref="PARAMETROS_8h" startline="19">MOTOR_PINS::motor_1</references>
+        <references refid="structMOTOR__PINS_1ac822ad9d410af01bc842d9e2805f2b8c" compoundref="PARAMETROS_8h" startline="21">MOTOR_PINS::motor_2</references>
+        <references refid="structMOTOR__PINS_1a35f019e1b631ba3ab3a68dca85d9c8ee" compoundref="PARAMETROS_8h" startline="23">MOTOR_PINS::motor_3</references>
+        <references refid="structMOTOR__PINS_1aaafa7fa4f83d2d5aa2f9f0c54a130040" compoundref="PARAMETROS_8h" startline="25">MOTOR_PINS::motor_4</references>
+        <references refid="classControle_1aacd18c8929cb59d7390a58d8dd68de6d" compoundref="Controle_8h" startline="93">Controle::motorCommands</references>
+        <references refid="classDrone_1a21bc2b617f8741c1733829d7498f610a" compoundref="Drone_8h" startline="66">Drone::p</references>
+        <references refid="classDrone_1a3d47c909c26ca68f771eb7ec0026e752" compoundref="Drone_8h" startline="70">Drone::q</references>
+        <references refid="classekf_1_1EKF_1aa38bc83dfb656519cfcda0c0a589ef16" compoundref="EKF_8h" startline="82">ekf::EKF::q</references>
+        <references refid="classControle_1a6525161e8e5de28081adb4fed00c8830" compoundref="Controle_8h" startline="46">Controle::qa</references>
+        <references refid="main_8cpp_1a9e8de852b827cfc2d32be84a9a02dba9" compoundref="main_8cpp" startline="30">qa</references>
+        <references refid="classControle_1a299b06de76fde5b6eb7e47a4a45938bb" compoundref="Controle_8h" startline="82">Controle::Qr</references>
+        <references refid="classControle_1a7b4f1db8c2182de9f1999819aace78e3" compoundref="Controle_8h" startline="44">Controle::r</references>
+        <references refid="main_8cpp_1adef42f887c2b14a9f43de1ae529a09e5" compoundref="main_8cpp" startline="30">ra</references>
+        <references refid="namespaceekf_1a3d0224f90468a854a2440df8b4f78869a638dfa2cadaad15202600951a2e30d4f" compoundref="EKF_8h" startline="44">ekf::READY</references>
+        <references refid="classIBusBM_1ad576c07af1ed09d8bc355e7f65c69000" compoundref="IBusBM_8h" startline="99">IBusBM::remoteControl</references>
+        <references refid="classControle_1abea037d2953202894021efd9e5c4fcaf" compoundref="Controle_8h" startline="59">Controle::rI</references>
+        <references refid="main_8cpp_1aff5ffbb08d9a949947ef687cb0531794" compoundref="main_8cpp" startline="30">rI</references>
+        <references refid="classekf_1_1EKF_1a833f15f8790f86633d8b02eb2fe3616e" compoundref="EKF_8h" startline="90">ekf::EKF::rNED</references>
+        <references refid="classMotores_1ac6264dc2b71015a3c9641025151edd4a" compoundref="Motores_8cpp" startline="42" endline="42">Motores::set_vel_mot</references>
+        <references refid="classekf_1_1EKF_1a7638c17e8939f2c45f1bbda2260621cc" compoundref="EKF_8h" startline="52">ekf::EKF::status</references>
+        <references refid="main_8cpp_1ae81666800498192487a16bcd7308d5c4" compoundref="main_8cpp" startline="35">tel</references>
+        <references refid="classControle_1a05ff4316f906c1e57a27ef81d983fba8" compoundref="Controle_8h" startline="91">Controle::u</references>
+        <references refid="classControle_1ad418683f52bf07661b72e9fbf463ecd1" compoundref="Controle_8h" startline="87">Controle::ut</references>
+        <references refid="classDrone_1a178db613c8b400ef949969d1ca5a5169" compoundref="Drone_8h" startline="68">Drone::v</references>
+        <references refid="classDrone_1a0b41e19233070e221d0eaa03ce213bf5" compoundref="Drone_8h" startline="72">Drone::w</references>
+        <references refid="classControle_1a51cecade068048c7a97a9dd4cb6a75b8" compoundref="Controle_8h" startline="50">Controle::wa</references>
+        <references refid="main_8cpp_1a4de603e279aa24f62c1b8a40306140f3" compoundref="main_8cpp" startline="30">wa</references>
+        <references refid="PARAMETROS_8h_1a2224425aa6b872a5926ee5a942e4080a" compoundref="PARAMETROS_8h" startline="53">xdtControle</references>
+        <referencedby refid="main_8cpp_1a4fc01d736fe50cf5b977f755b675f11d" compoundref="main_8cpp" startline="214" endline="235">setup</referencedby>
+      </memberdef>
       <memberdef kind="function" id="main_8cpp_1a4fc01d736fe50cf5b977f755b675f11d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void setup</definition>
@@ -219,17 +582,24 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/main.cpp" line="33" column="6" bodyfile="src/main.cpp" bodystart="33" bodyend="47"/>
+        <location file="src/main.cpp" line="214" column="6" bodyfile="src/main.cpp" bodystart="214" bodyend="235"/>
         <references refid="classTELEMETRIA_1a780be82ef9be2da12601a0ea7d10e647" compoundref="TELEMETRIA_8cpp" startline="20" endline="39">TELEMETRIA::begin</references>
-        <references refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" compoundref="EKF_8cpp" startline="39" endline="89">ekf::EKF::begin</references>
-        <references refid="classIBusBM_1afb01e4a762c8f575d8466fc8dadaa5cd" compoundref="IBusBM_8cpp" startline="89" endline="167">IBusBM::begin</references>
-        <references refid="PARAMETROS_8h_1a9cbadcfbca426e6cec9d14f30750ef04" compoundref="PARAMETROS_8h" startline="39">dtTelemetry</references>
-        <references refid="classTELEMETRIA_1a6c13ae22d648afb2c7bd41f3e17ba4b6" compoundref="TELEMETRIA_8cpp" startline="56" endline="67">TELEMETRIA::enviaMensagem</references>
-        <references refid="main_8cpp_1ae1f1091647c66e9cc962b4feab0525cd" compoundref="main_8cpp" startline="25">filtro</references>
-        <references refid="main_8cpp_1aad20b5e553c06abe201d2985050078b2" compoundref="main_8cpp" startline="22">ibus</references>
-        <references refid="IBusBM_8h_1a8b9fd84154bff010521710049dd8f090" compoundref="IBusBM_8h" startline="53">IBUSBM_NOTIMER</references>
-        <references refid="PARAMETROS_8h_1a9135a979a4e22c5a4095074dec5477f5">onboard_led</references>
-        <references refid="main_8cpp_1ae81666800498192487a16bcd7308d5c4" compoundref="main_8cpp" startline="23">tel</references>
+        <references refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" compoundref="EKF_8cpp" startline="40" endline="97">ekf::EKF::begin</references>
+        <references refid="classIBusBM_1afb01e4a762c8f575d8466fc8dadaa5cd" compoundref="IBusBM_8cpp" startline="83" endline="161">IBusBM::begin</references>
+        <references refid="PARAMETROS_8h_1a9cbadcfbca426e6cec9d14f30750ef04" compoundref="PARAMETROS_8h" startline="47">dtTelemetry</references>
+        <references refid="unionIBusBM_1_1ControlUnion_1a679d90f97047762a16a1159c68ec6b70" compoundref="IBusBM_8h" startline="83">IBusBM::ControlUnion::emergency</references>
+        <references refid="classTELEMETRIA_1a6c13ae22d648afb2c7bd41f3e17ba4b6" compoundref="TELEMETRIA_8cpp" startline="69" endline="81">TELEMETRIA::enviaMensagem</references>
+        <references refid="main_8cpp_1a0b8c2b64555211f3dd9069fde81b4bdb" compoundref="main_8cpp" startline="28">iBus</references>
+        <references refid="IBusBM_8h_1a8b9fd84154bff010521710049dd8f090" compoundref="IBusBM_8h" startline="52">IBUSBM_NOTIMER</references>
+        <references refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="165" endline="282">IBusBM::loop</references>
+        <references refid="PARAMETROS_8h_1a9135a979a4e22c5a4095074dec5477f5" compoundref="PARAMETROS_8h" startline="43">onboard_led</references>
+        <references refid="PARAMETROS_8h_1a493aff86cb19bf7b232753af37dabde8" compoundref="PARAMETROS_8h" startline="45">pin_rx_controle</references>
+        <references refid="classIBusBM_1ad576c07af1ed09d8bc355e7f65c69000" compoundref="IBusBM_8h" startline="99">IBusBM::remoteControl</references>
+        <references refid="main_8cpp_1ae81666800498192487a16bcd7308d5c4" compoundref="main_8cpp" startline="35">tel</references>
+        <references refid="main_8cpp_1abc6d08e0fef7d2e6251a6822a57afe1a" compoundref="main_8cpp" startline="48">xHandleControl</references>
+        <references refid="main_8cpp_1a5a89228326c473f17abbd278991560d5" compoundref="main_8cpp" startline="46">xHandleSetupFilter</references>
+        <references refid="main_8cpp_1ad3d424dca818563665f9ab9bbf866fff" compoundref="main_8cpp" startline="128" endline="211">xTaskContol</references>
+        <references refid="main_8cpp_1a1d67803bd6f9b50c1e3686650e280f68" compoundref="main_8cpp" startline="87" endline="109">xTaskSetupFiltro</references>
       </memberdef>
       <memberdef kind="function" id="main_8cpp_1afe461d27b9c48d5921c00d521181f12f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -242,21 +612,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/main.cpp" line="50" column="6" bodyfile="src/main.cpp" bodystart="50" bodyend="59"/>
-        <references refid="classekf_1_1EKF_1a30d3adf68cc6ee599fec8fa45a697bbb" compoundref="EKF_8h" startline="58">ekf::EKF::accel</references>
-        <references refid="classekf_1_1EKF_1ad27f8aac391293234c9e21c02b944cc4" compoundref="EKF_8h" startline="84">ekf::EKF::drNEDgps</references>
-        <references refid="classekf_1_1EKF_1aee84ca91742c11dd89683930a58d59e3" compoundref="EKF_8h" startline="56">ekf::EKF::dt</references>
-        <references refid="classTELEMETRIA_1af7d02e72d86c217544d195c3b3c9d4ef" compoundref="TELEMETRIA_8cpp" startline="41" endline="55">TELEMETRIA::envia</references>
-        <references refid="main_8cpp_1ae1f1091647c66e9cc962b4feab0525cd" compoundref="main_8cpp" startline="25">filtro</references>
-        <references refid="classekf_1_1EKF_1af990ea0dbcd3f286f04584ab663d08e6" compoundref="EKF_8h" startline="62">ekf::EKF::gyro</references>
-        <references refid="classekf_1_1EKF_1a651814ff64d234394572e2e7c5703a43" compoundref="EKF_8cpp" startline="93" endline="99">ekf::EKF::loopEKF</references>
-        <references refid="classekf_1_1EKF_1a3f84435c646a27ad0f922e5205c13eb3" compoundref="EKF_8h" startline="64">ekf::EKF::mag</references>
-        <references refid="classekf_1_1EKF_1a8d016a5adf9aa5f33a8c9e1f7dd73592" compoundref="EKF_8h" startline="89">ekf::EKF::messageGPS</references>
-        <references refid="classekf_1_1EKF_1a649f7d975dc55413be50d8f1e6bc2559" compoundref="EKF_8h" startline="80">ekf::EKF::rNEDgps</references>
-        <references refid="main_8cpp_1a415ca717d7f13cfb8bcbaa07a3ddd062" compoundref="main_8cpp" startline="49">t</references>
-        <references refid="main_8cpp_1ae81666800498192487a16bcd7308d5c4" compoundref="main_8cpp" startline="23">tel</references>
-        <references refid="PARAMETROS_8h_1ade6e1f4a0c110e26850765ae6acbcbcb" compoundref="PARAMETROS_8h" startline="41">xdtTelemetry</references>
-        <references refid="PARAMETROS_8h_1a8ec4aca2f6caa5c3a1290a2301dfb97b" compoundref="PARAMETROS_8h" startline="42">xLastdtTelemetry</references>
+        <location file="src/main.cpp" line="237" column="6" bodyfile="src/main.cpp" bodystart="237" bodyend="245"/>
+        <references refid="classekf_1_1EKF_1a30d3adf68cc6ee599fec8fa45a697bbb" compoundref="EKF_8h" startline="70">ekf::EKF::accel</references>
+        <references refid="classekf_1_1EKF_1af990ea0dbcd3f286f04584ab663d08e6" compoundref="EKF_8h" startline="74">ekf::EKF::gyro</references>
+        <references refid="classekf_1_1EKF_1a3f84435c646a27ad0f922e5205c13eb3" compoundref="EKF_8h" startline="76">ekf::EKF::mag</references>
+        <references refid="main_8cpp_1a30b9cf7c1ad8a006a9a5b815c02a67dc" compoundref="main_8cpp" startline="23">PM</references>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -273,53 +633,235 @@ Last modified by: roney Last modified time: 31-Aug-2021 </para>
 <codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Controle_8h" kindref="compound">Controle.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="EKF_8h" kindref="compound">EKF.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="GRUPO__QUAT_8h" kindref="compound">GRUPO_QUAT.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="PARAMETROS_8h" kindref="compound">PARAMETROS.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="TELEMETRIA_8h" kindref="compound">TELEMETRIA.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Arduino.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;eigen3/Eigen/Dense&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;esp_now.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">//<sp/>#include<sp/>&quot;Motores.h&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="IBusBM_8h" kindref="compound">IBusBM.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight></codeline>
-<codeline lineno="22" refid="main_8cpp_1aad20b5e553c06abe201d2985050078b2" refkind="member"><highlight class="normal"><ref refid="classIBusBM" kindref="compound">IBusBM</ref><sp/><ref refid="main_8cpp_1aad20b5e553c06abe201d2985050078b2" kindref="member">ibus</ref>;</highlight></codeline>
-<codeline lineno="23" refid="main_8cpp_1ae81666800498192487a16bcd7308d5c4" refkind="member"><highlight class="normal"><ref refid="classTELEMETRIA" kindref="compound">TELEMETRIA</ref><sp/><ref refid="main_8cpp_1ae81666800498192487a16bcd7308d5c4" kindref="member">tel</ref>;</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceekf" kindref="compound">ekf</ref>;</highlight></codeline>
-<codeline lineno="25" refid="main_8cpp_1ae1f1091647c66e9cc962b4feab0525cd" refkind="member"><highlight class="normal"><ref refid="classekf_1_1EKF" kindref="compound">ekf::EKF</ref><sp/><ref refid="main_8cpp_1ae1f1091647c66e9cc962b4feab0525cd" kindref="member">filtro</ref>;</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"></highlight></codeline>
-<codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Instancia<sp/>dos<sp/>motores</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Motores<sp/>motor1(motor_1,<sp/>0);</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Motores<sp/>motor2(motor_2,<sp/>1);</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Motores<sp/>motor3(motor_3,<sp/>2);</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Motores<sp/>motor4(motor_4,<sp/>3);</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="32"><highlight class="normal"></highlight></codeline>
-<codeline lineno="33" refid="main_8cpp_1a4fc01d736fe50cf5b977f755b675f11d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="main_8cpp_1a4fc01d736fe50cf5b977f755b675f11d" kindref="member">setup</ref>()<sp/>{</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/>pinMode(<ref refid="PARAMETROS_8h_1a9135a979a4e22c5a4095074dec5477f5" kindref="member">onboard_led</ref>,<sp/>OUTPUT);</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><ref refid="main_8cpp_1ae81666800498192487a16bcd7308d5c4" kindref="member">tel</ref>.<ref refid="classTELEMETRIA_1a780be82ef9be2da12601a0ea7d10e647" kindref="member">begin</ref>();</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><ref refid="main_8cpp_1ae1f1091647c66e9cc962b4feab0525cd" kindref="member">filtro</ref>.<ref refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" kindref="member">begin</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">(<ref refid="PARAMETROS_8h_1a9cbadcfbca426e6cec9d14f30750ef04" kindref="member">dtTelemetry</ref>)<sp/>*<sp/>1e-3);</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Serial.begin(115200);</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/>vTaskDelay(2000);</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><ref refid="main_8cpp_1ae81666800498192487a16bcd7308d5c4" kindref="member">tel</ref>.<ref refid="classTELEMETRIA_1a6c13ae22d648afb2c7bd41f3e17ba4b6" kindref="member">enviaMensagem</ref>((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)</highlight><highlight class="stringliteral">&quot;Ent.<sp/>no<sp/>método<sp/>de<sp/>Calibracao&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><ref refid="main_8cpp_1ae1f1091647c66e9cc962b4feab0525cd" kindref="member">filtro</ref>.calibrationMethods();</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><ref refid="main_8cpp_1ae81666800498192487a16bcd7308d5c4" kindref="member">tel</ref>.<ref refid="classTELEMETRIA_1a6c13ae22d648afb2c7bd41f3e17ba4b6" kindref="member">enviaMensagem</ref>((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)</highlight><highlight class="stringliteral">&quot;Calibracao<sp/>OK&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><ref refid="main_8cpp_1aad20b5e553c06abe201d2985050078b2" kindref="member">ibus</ref>.<ref refid="classIBusBM_1afb01e4a762c8f575d8466fc8dadaa5cd" kindref="member">begin</ref>(Serial2,<sp/><ref refid="IBusBM_8h_1a8b9fd84154bff010521710049dd8f090" kindref="member">IBUSBM_NOTIMER</ref>,<sp/>13);</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>xTaskCreatePinnedToCore(core_1,<sp/>&quot;funcao_core_1&quot;,<sp/>4000,<sp/>NULL,<sp/>10,<sp/>NULL,<sp/>1);</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>xTaskCreatePinnedToCore(telemetria,<sp/>&quot;telemetria&quot;,<sp/>2000,<sp/>NULL,<sp/>1,<sp/>NULL,<sp/>0);</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/>vTaskDelay(2000);</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><ref refid="main_8cpp_1ae81666800498192487a16bcd7308d5c4" kindref="member">tel</ref>.<ref refid="classTELEMETRIA_1a6c13ae22d648afb2c7bd41f3e17ba4b6" kindref="member">enviaMensagem</ref>((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)</highlight><highlight class="stringliteral">&quot;Setup<sp/>OK&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="47"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"></highlight></codeline>
-<codeline lineno="49" refid="main_8cpp_1a415ca717d7f13cfb8bcbaa07a3ddd062" refkind="member"><highlight class="normal">Eigen::Vector&lt;float,<sp/>17&gt;<sp/><ref refid="main_8cpp_1a415ca717d7f13cfb8bcbaa07a3ddd062" kindref="member">t</ref><sp/>=<sp/>Eigen::Vector&lt;float,<sp/>17&gt;::Zero();</highlight></codeline>
-<codeline lineno="50" refid="main_8cpp_1afe461d27b9c48d5921c00d521181f12f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="main_8cpp_1afe461d27b9c48d5921c00d521181f12f" kindref="member">loop</ref>()<sp/>{</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>filtro.updateOfMeasurements();</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><ref refid="main_8cpp_1ae1f1091647c66e9cc962b4feab0525cd" kindref="member">filtro</ref>.<ref refid="classekf_1_1EKF_1a651814ff64d234394572e2e7c5703a43" kindref="member">loopEKF</ref>();</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><ref refid="main_8cpp_1a415ca717d7f13cfb8bcbaa07a3ddd062" kindref="member">t</ref><sp/>&lt;&lt;<sp/><ref refid="main_8cpp_1ae1f1091647c66e9cc962b4feab0525cd" kindref="member">filtro</ref>.<ref refid="classekf_1_1EKF_1a8d016a5adf9aa5f33a8c9e1f7dd73592" kindref="member">messageGPS</ref>,<sp/><ref refid="main_8cpp_1ae1f1091647c66e9cc962b4feab0525cd" kindref="member">filtro</ref>.<ref refid="classekf_1_1EKF_1a30d3adf68cc6ee599fec8fa45a697bbb" kindref="member">accel</ref>,<sp/><ref refid="main_8cpp_1ae1f1091647c66e9cc962b4feab0525cd" kindref="member">filtro</ref>.<ref refid="classekf_1_1EKF_1a3f84435c646a27ad0f922e5205c13eb3" kindref="member">mag</ref>,<sp/><ref refid="main_8cpp_1ae1f1091647c66e9cc962b4feab0525cd" kindref="member">filtro</ref>.<ref refid="classekf_1_1EKF_1af990ea0dbcd3f286f04584ab663d08e6" kindref="member">gyro</ref>,<sp/><ref refid="main_8cpp_1ae1f1091647c66e9cc962b4feab0525cd" kindref="member">filtro</ref>.<ref refid="classekf_1_1EKF_1aee84ca91742c11dd89683930a58d59e3" kindref="member">dt</ref>,</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1ae1f1091647c66e9cc962b4feab0525cd" kindref="member">filtro</ref>.<ref refid="classekf_1_1EKF_1ad27f8aac391293234c9e21c02b944cc4" kindref="member">drNEDgps</ref>,<sp/><ref refid="main_8cpp_1ae1f1091647c66e9cc962b4feab0525cd" kindref="member">filtro</ref>.<ref refid="classekf_1_1EKF_1a649f7d975dc55413be50d8f1e6bc2559" kindref="member">rNEDgps</ref>;</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>ekf::printEigen(t.transpose());</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="56"><highlight class="normal"></highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><ref refid="main_8cpp_1ae81666800498192487a16bcd7308d5c4" kindref="member">tel</ref>.<ref refid="classTELEMETRIA_1af7d02e72d86c217544d195c3b3c9d4ef" kindref="member">envia</ref>(<ref refid="main_8cpp_1a415ca717d7f13cfb8bcbaa07a3ddd062" kindref="member">t</ref>);</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/>vTaskDelayUntil(&amp;<ref refid="PARAMETROS_8h_1a8ec4aca2f6caa5c3a1290a2301dfb97b" kindref="member">xLastdtTelemetry</ref>,<sp/><ref refid="PARAMETROS_8h_1ade6e1f4a0c110e26850765ae6acbcbcb" kindref="member">xdtTelemetry</ref>);</highlight></codeline>
-<codeline lineno="59"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="IBusBM_8h" kindref="compound">IBusBM.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Motores_8h" kindref="compound">Motores.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="PARAMETROS_8h" kindref="compound">PARAMETROS.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="TELEMETRIA_8h" kindref="compound">TELEMETRIA.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Arduino.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;eigen3/Eigen/Dense&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">//<sp/>#include<sp/>&lt;esp_now.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="main_8cpp_1a1581dcc96e74323eac4fd2076d130d5a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DEBUG_MAIN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="COMMON_8h" kindref="compound">COMMON.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>DEBUG_MAIN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="main_8cpp_1a30b9cf7c1ad8a006a9a5b815c02a67dc" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PM(X)<sp/>std::cout<sp/>&lt;&lt;<sp/>#X<sp/>&lt;&lt;<sp/>&quot;:\n&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>X<sp/>&lt;&lt;<sp/>&quot;\n&quot;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="main_8cpp_1a34ab808b2feabd3e0ac744eaf7eb376b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CALIBRATION_OF_MAGNETOMETER_GYROSCOPE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="main_8cpp_1a0b8c2b64555211f3dd9069fde81b4bdb" refkind="member"><highlight class="normal"><ref refid="classIBusBM" kindref="compound">IBusBM</ref><sp/><ref refid="main_8cpp_1a0b8c2b64555211f3dd9069fde81b4bdb" kindref="member">iBus</ref>;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment">//<sp/>ponteiros<sp/>para<sp/>telemetria</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="main_8cpp_1a69b5e71277e0e3a57afef1e2d7025e58" refkind="member"><highlight class="normal">Vector3f<sp/>*<ref refid="main_8cpp_1a69b5e71277e0e3a57afef1e2d7025e58" kindref="member">eulerTarget</ref>,<sp/>*<ref refid="main_8cpp_1adef42f887c2b14a9f43de1ae529a09e5" kindref="member">ra</ref>,<sp/>*<ref refid="main_8cpp_1a4de603e279aa24f62c1b8a40306140f3" kindref="member">wa</ref>,<sp/>*<ref refid="main_8cpp_1aff5ffbb08d9a949947ef687cb0531794" kindref="member">rI</ref>,<sp/><ref refid="main_8cpp_1a9e8de852b827cfc2d32be84a9a02dba9" kindref="member">qa</ref>;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="main_8cpp_1a63d9a57399cadda190f8e8cbddbff900" refkind="member"><highlight class="normal">Vector4f<sp/>*<ref refid="main_8cpp_1a63d9a57399cadda190f8e8cbddbff900" kindref="member">moments</ref>;</highlight></codeline>
+<codeline lineno="33" refid="main_8cpp_1a29b0f479e7948681bef12044e738d265" refkind="member"><highlight class="normal">Vector4i<sp/>*<ref refid="main_8cpp_1a29b0f479e7948681bef12044e738d265" kindref="member">comandosDigitais</ref>;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="main_8cpp_1ae81666800498192487a16bcd7308d5c4" refkind="member"><highlight class="normal"><ref refid="classTELEMETRIA" kindref="compound">TELEMETRIA</ref><sp/><ref refid="main_8cpp_1ae81666800498192487a16bcd7308d5c4" kindref="member">tel</ref>;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>EKF_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceekf" kindref="compound">ekf</ref>;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><ref refid="classekf_1_1EKF" kindref="compound">ekf::EKF</ref><sp/>filtro;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">STATUS_CLASS<sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ctrlStatus<sp/>=<sp/><ref refid="namespaceekf_1a3d0224f90468a854a2440df8b4f78869a4fc24b0fe219a9b7173fefcac7d48519" kindref="member">STOPED</ref>;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>filtroStatus<sp/>=<sp/><ref refid="namespaceekf_1a3d0224f90468a854a2440df8b4f78869a4fc24b0fe219a9b7173fefcac7d48519" kindref="member">STOPED</ref>;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">STATUS_CLASS<sp/>statusClass;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="comment">//<sp/>identificadores<sp/>de<sp/>tasks</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="main_8cpp_1a5a89228326c473f17abbd278991560d5" refkind="member"><highlight class="normal">TaskHandle_t<sp/><ref refid="main_8cpp_1a5a89228326c473f17abbd278991560d5" kindref="member">xHandleSetupFilter</ref><sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="47" refid="main_8cpp_1ad68258a9abebbcd50439c86377b6dce9" refkind="member"><highlight class="normal">TaskHandle_t<sp/><ref refid="main_8cpp_1ad68258a9abebbcd50439c86377b6dce9" kindref="member">xHandleLoopFilter</ref><sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="48" refid="main_8cpp_1abc6d08e0fef7d2e6251a6822a57afe1a" refkind="member"><highlight class="normal">TaskHandle_t<sp/><ref refid="main_8cpp_1abc6d08e0fef7d2e6251a6822a57afe1a" kindref="member">xHandleControl</ref><sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="49" refid="main_8cpp_1aa3042e035552175f37c5ce7f156cc58f" refkind="member"><highlight class="normal">TaskHandle_t<sp/><ref refid="main_8cpp_1aa3042e035552175f37c5ce7f156cc58f" kindref="member">xHandleEmergency</ref><sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="main_8cpp_1abd3bd9c344e182dcb5f5a561ef562eb0" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="main_8cpp_1abd3bd9c344e182dcb5f5a561ef562eb0" kindref="member">xTaskLoopFilter</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*)<sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><ref refid="main_8cpp_1ae81666800498192487a16bcd7308d5c4" kindref="member">tel</ref>.<ref refid="classTELEMETRIA_1a6c13ae22d648afb2c7bd41f3e17ba4b6" kindref="member">enviaMensagem</ref>((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)</highlight><highlight class="stringliteral">&quot;xTaskLoopFilter<sp/>Criada&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/>TickType_t<sp/>xLastDtTelemetry<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>size_data_to_send<sp/>=<sp/>2<sp/>*<sp/>(3<sp/>+<sp/>3<sp/>+<sp/>3<sp/>+<sp/>3);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/>Vector&lt;float,<sp/>size_data_to_send<sp/>+<sp/>1&gt;<sp/>dataSerial;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/>statusClass.filtroStatus<sp/>=<sp/>filtro.<ref refid="classekf_1_1EKF_1a7638c17e8939f2c45f1bbda2260621cc" kindref="member">status</ref>;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><ref refid="main_8cpp_1ae81666800498192487a16bcd7308d5c4" kindref="member">tel</ref>.<ref refid="classTELEMETRIA_1a6c13ae22d648afb2c7bd41f3e17ba4b6" kindref="member">enviaMensagem</ref>((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)</highlight><highlight class="stringliteral">&quot;Esperando<sp/>a<sp/>classe<sp/>controle...&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(statusClass.ctrlStatus<sp/>!=<sp/><ref refid="namespaceekf_1a3d0224f90468a854a2440df8b4f78869a638dfa2cadaad15202600951a2e30d4f" kindref="member">READY</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>vTaskDelay(1000);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><ref refid="main_8cpp_1ae81666800498192487a16bcd7308d5c4" kindref="member">tel</ref>.<ref refid="classTELEMETRIA_1a6c13ae22d648afb2c7bd41f3e17ba4b6" kindref="member">enviaMensagem</ref>((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)</highlight><highlight class="stringliteral">&quot;Contr.OK.<sp/>estimador<sp/>Rodando&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(;;)<sp/>{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>filtro.<ref refid="classekf_1_1EKF_1a651814ff64d234394572e2e7c5703a43" kindref="member">loopEKF</ref>();</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceekf_1aab2dcd522b40c160064cfae69cae6d98" kindref="member">quaternion2Euler</ref>(filtro.<ref refid="classekf_1_1EKF_1adc3de40884689bb897ebe90979d6f28f" kindref="member">euler</ref>,<sp/>filtro.<ref refid="classekf_1_1EKF_1aa38bc83dfb656519cfcda0c0a589ef16" kindref="member">q</ref>);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="comment">//<sp/>4<sp/>+<sp/>3+3+1+6</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1ae81666800498192487a16bcd7308d5c4" kindref="member">tel</ref>.<ref refid="classTELEMETRIA_1a71317d1e99e1776c4b19738f53d52650" kindref="member">imu</ref>.<ref refid="structTELEMETRIA_1_1IMU__DATA_1adc59258e2c8a5593dffe9007176675d1" kindref="member">dadosEigen</ref><sp/>&lt;&lt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>/*0:3*/<sp/>RAD_TO_DEG<sp/>*<sp/>filtro.euler,<sp/><sp/><sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*0:3*/</highlight><highlight class="normal"><sp/>filtro.<ref refid="classekf_1_1EKF_1aa38bc83dfb656519cfcda0c0a589ef16" kindref="member">q</ref>.tail(3),<sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*3:6*/</highlight><highlight class="normal"><sp/>filtro.<ref refid="classekf_1_1EKF_1af990ea0dbcd3f286f04584ab663d08e6" kindref="member">gyro</ref>,<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*6:9*/</highlight><highlight class="normal"><sp/>filtro.<ref refid="classekf_1_1EKF_1a93f50b0576c3243487442a9f0934e038" kindref="member">drNED</ref>,<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*9:12<sp/><sp/>filtro.rNED,<sp/>*/</highlight><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>/*9:12*/<sp/>RAD_TO_DEG<sp/>*<sp/>(*eulerTarget),<sp/><sp/><sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*9:12*/</highlight><highlight class="normal"><sp/><ref refid="main_8cpp_1a9e8de852b827cfc2d32be84a9a02dba9" kindref="member">qa</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*12:15*/</highlight><highlight class="normal"><sp/>*<ref refid="main_8cpp_1a4de603e279aa24f62c1b8a40306140f3" kindref="member">wa</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*15:18*/</highlight><highlight class="normal"><sp/>*<ref refid="main_8cpp_1adef42f887c2b14a9f43de1ae529a09e5" kindref="member">ra</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/>*rI*/</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*18:21*/</highlight><highlight class="normal"><sp/>(*moments),</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*22:25*/</highlight><highlight class="normal"><sp/>(*comandosDigitais).cast&lt;</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">&gt;();</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>tel.envia(size_data_to_send,<sp/>dataSerial);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1ae81666800498192487a16bcd7308d5c4" kindref="member">tel</ref>.<ref refid="classTELEMETRIA_1a235abb2ba6888140e7dab2e73a050049" kindref="member">envia</ref>();</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>vTaskDelayUntil(&amp;xLastDtTelemetry,<sp/><ref refid="PARAMETROS_8h_1ade6e1f4a0c110e26850765ae6acbcbcb" kindref="member">xdtTelemetry</ref>);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="87" refid="main_8cpp_1a1d67803bd6f9b50c1e3686650e280f68" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="main_8cpp_1a1d67803bd6f9b50c1e3686650e280f68" kindref="member">xTaskSetupFiltro</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*pvParameters)<sp/>{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><ref refid="main_8cpp_1ae81666800498192487a16bcd7308d5c4" kindref="member">tel</ref>.<ref refid="classTELEMETRIA_1a6c13ae22d648afb2c7bd41f3e17ba4b6" kindref="member">enviaMensagem</ref>((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)</highlight><highlight class="stringliteral">&quot;Dentro<sp/>da<sp/>xTaskSetupFiltro&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/>filtro.<ref refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" kindref="member">begin</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">(<ref refid="PARAMETROS_8h_1a9cbadcfbca426e6cec9d14f30750ef04" kindref="member">dtTelemetry</ref>)<sp/>*<sp/>1e-3);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><ref refid="main_8cpp_1ae81666800498192487a16bcd7308d5c4" kindref="member">tel</ref>.<ref refid="classTELEMETRIA_1a6c13ae22d648afb2c7bd41f3e17ba4b6" kindref="member">enviaMensagem</ref>((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)</highlight><highlight class="stringliteral">&quot;filtro.begin()<sp/>ok&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>CALIBRATION_OF_MAGNETOMETER_GYROSCOPE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><ref refid="main_8cpp_1ae81666800498192487a16bcd7308d5c4" kindref="member">tel</ref>.<ref refid="classTELEMETRIA_1a6c13ae22d648afb2c7bd41f3e17ba4b6" kindref="member">enviaMensagem</ref>((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)</highlight><highlight class="stringliteral">&quot;Dentro<sp/>da<sp/>Calibracao&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><ref refid="main_8cpp_1a0b8c2b64555211f3dd9069fde81b4bdb" kindref="member">iBus</ref>.<ref refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" kindref="member">loop</ref>();</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;<sp/>valor<sp/>da<sp/>calibracao<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="main_8cpp_1a0b8c2b64555211f3dd9069fde81b4bdb" kindref="member">iBus</ref>.<ref refid="classIBusBM_1ad576c07af1ed09d8bc355e7f65c69000" kindref="member">remoteControl</ref>.<ref refid="unionIBusBM_1_1ControlUnion_1a2da2b77327c32178cf0e4f37ada37bb4" kindref="member">calibration</ref>);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="main_8cpp_1a0b8c2b64555211f3dd9069fde81b4bdb" kindref="member">iBus</ref>.<ref refid="classIBusBM_1ad576c07af1ed09d8bc355e7f65c69000" kindref="member">remoteControl</ref>.<ref refid="unionIBusBM_1_1ControlUnion_1a2da2b77327c32178cf0e4f37ada37bb4" kindref="member">calibration</ref><sp/>&gt;<sp/>1500)<sp/>{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1ae81666800498192487a16bcd7308d5c4" kindref="member">tel</ref>.<ref refid="classTELEMETRIA_1a6c13ae22d648afb2c7bd41f3e17ba4b6" kindref="member">enviaMensagem</ref>((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)</highlight><highlight class="stringliteral">&quot;Ent.<sp/>no<sp/>método<sp/>de<sp/>Calibracao&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>filtro.calibrationMethods();</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(<ref refid="main_8cpp_1a0b8c2b64555211f3dd9069fde81b4bdb" kindref="member">iBus</ref>.<ref refid="classIBusBM_1ad576c07af1ed09d8bc355e7f65c69000" kindref="member">remoteControl</ref>.<ref refid="unionIBusBM_1_1ControlUnion_1a2da2b77327c32178cf0e4f37ada37bb4" kindref="member">calibration</ref><sp/>&gt;<sp/>1500)<sp/>{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a0b8c2b64555211f3dd9069fde81b4bdb" kindref="member">iBus</ref>.<ref refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" kindref="member">loop</ref>();</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1ae81666800498192487a16bcd7308d5c4" kindref="member">tel</ref>.<ref refid="classTELEMETRIA_1a6c13ae22d648afb2c7bd41f3e17ba4b6" kindref="member">enviaMensagem</ref>((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)</highlight><highlight class="stringliteral">&quot;Cal.<sp/>OK.<sp/>Turn<sp/>of<sp/>swb&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>vTaskDelay(500);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/>xTaskCreate(<ref refid="main_8cpp_1abd3bd9c344e182dcb5f5a561ef562eb0" kindref="member">xTaskLoopFilter</ref>,<sp/></highlight><highlight class="stringliteral">&quot;FilterLoop&quot;</highlight><highlight class="normal">,<sp/>15000,<sp/>NULL,<sp/>0,</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<ref refid="main_8cpp_1ad68258a9abebbcd50439c86377b6dce9" kindref="member">xHandleLoopFilter</ref>);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><ref refid="main_8cpp_1ae81666800498192487a16bcd7308d5c4" kindref="member">tel</ref>.<ref refid="classTELEMETRIA_1a6c13ae22d648afb2c7bd41f3e17ba4b6" kindref="member">enviaMensagem</ref>((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)</highlight><highlight class="stringliteral">&quot;xTaskLoopFiltro&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/>vTaskDelete(NULL);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="114" refid="main_8cpp_1a1f32cff79659de71ff8de76c85e7c7b9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="main_8cpp_1a1f32cff79659de71ff8de76c85e7c7b9" kindref="member">emergencyMethods</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*pv)<sp/>{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><ref refid="main_8cpp_1ae81666800498192487a16bcd7308d5c4" kindref="member">tel</ref>.<ref refid="classTELEMETRIA_1a6c13ae22d648afb2c7bd41f3e17ba4b6" kindref="member">enviaMensagem</ref>((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)</highlight><highlight class="stringliteral">&quot;emergencyMethods()<sp/>Ativada&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/>vTaskSuspend(<ref refid="main_8cpp_1abc6d08e0fef7d2e6251a6822a57afe1a" kindref="member">xHandleControl</ref>);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><ref refid="COMMON_8h_1a8eabef94a982b1407d1ae4731b7e07ca" kindref="member">turnOnLed</ref>();</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>pausa<sp/>a<sp/>task<sp/>de<sp/>controle</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(<ref refid="main_8cpp_1a0b8c2b64555211f3dd9069fde81b4bdb" kindref="member">iBus</ref>.<ref refid="classIBusBM_1ad576c07af1ed09d8bc355e7f65c69000" kindref="member">remoteControl</ref>.<ref refid="unionIBusBM_1_1ControlUnion_1a679d90f97047762a16a1159c68ec6b70" kindref="member">emergency</ref><sp/>&gt;<sp/>1500)<sp/>{</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a0b8c2b64555211f3dd9069fde81b4bdb" kindref="member">iBus</ref>.<ref refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" kindref="member">loop</ref>();</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>vTaskDelay(100);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><ref refid="COMMON_8h_1a0e9b3928a2c3089998123715bcae29e9" kindref="member">turnOffLed</ref>();</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/>vTaskResume(<ref refid="main_8cpp_1abc6d08e0fef7d2e6251a6822a57afe1a" kindref="member">xHandleControl</ref>);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><ref refid="main_8cpp_1ae81666800498192487a16bcd7308d5c4" kindref="member">tel</ref>.<ref refid="classTELEMETRIA_1a6c13ae22d648afb2c7bd41f3e17ba4b6" kindref="member">enviaMensagem</ref>((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)</highlight><highlight class="stringliteral">&quot;emergencyMethods()<sp/>Desativada&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/>vTaskDelete(NULL);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="128" refid="main_8cpp_1ad3d424dca818563665f9ab9bbf866fff" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="main_8cpp_1ad3d424dca818563665f9ab9bbf866fff" kindref="member">xTaskContol</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*pv)<sp/>{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><ref refid="classControle" kindref="compound">Controle</ref><sp/>ctrl(<ref refid="PARAMETROS_8h_1ac3437d0d1acbe94e967793e5e4d8473d" kindref="member">dtControle</ref><sp/>*<sp/>1e-3);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><ref refid="structMOTOR__PINS" kindref="compound">MOTOR_PINS</ref><sp/>mp;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><ref refid="main_8cpp_1a69b5e71277e0e3a57afef1e2d7025e58" kindref="member">eulerTarget</ref><sp/>=<sp/>&amp;ctrl.<ref refid="classControle_1af678bba86e2e438490769db83d6f58ab" kindref="member">eulerTarget</ref>;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><ref refid="main_8cpp_1a4de603e279aa24f62c1b8a40306140f3" kindref="member">wa</ref><sp/>=<sp/>&amp;ctrl.<ref refid="classControle_1a51cecade068048c7a97a9dd4cb6a75b8" kindref="member">wa</ref>;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><ref refid="main_8cpp_1adef42f887c2b14a9f43de1ae529a09e5" kindref="member">ra</ref><sp/>=<sp/>&amp;ctrl.<ref refid="classControle_1a7b4f1db8c2182de9f1999819aace78e3" kindref="member">r</ref>;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><ref refid="main_8cpp_1a63d9a57399cadda190f8e8cbddbff900" kindref="member">moments</ref><sp/>=<sp/>&amp;ctrl.<ref refid="classControle_1a05ff4316f906c1e57a27ef81d983fba8" kindref="member">u</ref>;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><ref refid="main_8cpp_1a29b0f479e7948681bef12044e738d265" kindref="member">comandosDigitais</ref><sp/>=<sp/>&amp;ctrl.<ref refid="classControle_1aacd18c8929cb59d7390a58d8dd68de6d" kindref="member">motorCommands</ref>;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>INTEGRAL_CONTROL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><ref refid="main_8cpp_1aff5ffbb08d9a949947ef687cb0531794" kindref="member">rI</ref><sp/>=<sp/>&amp;ctrl.<ref refid="classControle_1abea037d2953202894021efd9e5c4fcaf" kindref="member">rI</ref>;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><ref refid="main_8cpp_1aff5ffbb08d9a949947ef687cb0531794" kindref="member">rI</ref><sp/>=<sp/>&amp;ctrl.<ref refid="classControle_1a94276b811077802165f17603428e475e" kindref="member">drone</ref>-&gt;<ref refid="classDrone_1a21bc2b617f8741c1733829d7498f610a" kindref="member">p</ref>;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/>TickType_t<sp/>xLastDtControl<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Instancia<sp/>dos<sp/>motores</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><ref refid="classMotores" kindref="compound">Motores</ref><sp/>motor1(mp.<ref refid="structMOTOR__PINS_1a75c3ad59c9a4d74b4aad784c0d42aa9f" kindref="member">motor_1</ref>,<sp/>0);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><ref refid="classMotores" kindref="compound">Motores</ref><sp/>motor2(mp.<ref refid="structMOTOR__PINS_1ac822ad9d410af01bc842d9e2805f2b8c" kindref="member">motor_2</ref>,<sp/>1);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><ref refid="classMotores" kindref="compound">Motores</ref><sp/>motor3(mp.<ref refid="structMOTOR__PINS_1a35f019e1b631ba3ab3a68dca85d9c8ee" kindref="member">motor_3</ref>,<sp/>2);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><ref refid="classMotores" kindref="compound">Motores</ref><sp/>motor4(mp.<ref refid="structMOTOR__PINS_1aaafa7fa4f83d2d5aa2f9f0c54a130040" kindref="member">motor_4</ref>,<sp/>3);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><ref refid="main_8cpp_1ae81666800498192487a16bcd7308d5c4" kindref="member">tel</ref>.<ref refid="classTELEMETRIA_1a6c13ae22d648afb2c7bd41f3e17ba4b6" kindref="member">enviaMensagem</ref>((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)</highlight><highlight class="stringliteral">&quot;TaskControl<sp/>..<sp/>esperando<sp/>filtro&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(filtro.<ref refid="classekf_1_1EKF_1a7638c17e8939f2c45f1bbda2260621cc" kindref="member">status</ref><sp/>!=<sp/><ref refid="namespaceekf_1a3d0224f90468a854a2440df8b4f78869a638dfa2cadaad15202600951a2e30d4f" kindref="member">READY</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a0b8c2b64555211f3dd9069fde81b4bdb" kindref="member">iBus</ref>.<ref refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" kindref="member">loop</ref>();</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>vTaskDelay(pdMS_TO_TICKS(1000));</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><ref refid="main_8cpp_1ae81666800498192487a16bcd7308d5c4" kindref="member">tel</ref>.<ref refid="classTELEMETRIA_1a6c13ae22d648afb2c7bd41f3e17ba4b6" kindref="member">enviaMensagem</ref>((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)</highlight><highlight class="stringliteral">&quot;Filtro<sp/>ok&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><ref refid="main_8cpp_1a0b8c2b64555211f3dd9069fde81b4bdb" kindref="member">iBus</ref>.<ref refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" kindref="member">loop</ref>();</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/>statusClass.ctrlStatus<sp/>=<sp/><ref refid="namespaceekf_1a3d0224f90468a854a2440df8b4f78869a638dfa2cadaad15202600951a2e30d4f" kindref="member">READY</ref>;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/>ctrl.<ref refid="classControle_1a7b4f1db8c2182de9f1999819aace78e3" kindref="member">r</ref><sp/>=<sp/>Vector3f::Zero();</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(;;)<sp/>{</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>atualiza<sp/>estados<sp/>da<sp/>classe<sp/>Drone<sp/>dada<sp/>os<sp/>valores<sp/>estimado<sp/>no<sp/>EKF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a0b8c2b64555211f3dd9069fde81b4bdb" kindref="member">iBus</ref>.<ref refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" kindref="member">loop</ref>();</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>(ibus.readChannel(4)<sp/>&gt;<sp/>1500)<sp/>{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="main_8cpp_1a0b8c2b64555211f3dd9069fde81b4bdb" kindref="member">iBus</ref>.<ref refid="classIBusBM_1ad576c07af1ed09d8bc355e7f65c69000" kindref="member">remoteControl</ref>.<ref refid="unionIBusBM_1_1ControlUnion_1a679d90f97047762a16a1159c68ec6b70" kindref="member">emergency</ref><sp/>&lt;<sp/>1500)<sp/>{</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*Para<sp/>tentar<sp/>obter<sp/>os<sp/>corretos<sp/>valores<sp/>de<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ctrl.<ref refid="classControle_1a7b4f1db8c2182de9f1999819aace78e3" kindref="member">r</ref>(0)<sp/>=<sp/>((float)(<ref refid="main_8cpp_1a0b8c2b64555211f3dd9069fde81b4bdb" kindref="member">iBus</ref>.<ref refid="classIBusBM_1ad576c07af1ed09d8bc355e7f65c69000" kindref="member">remoteControl</ref>.<ref refid="unionIBusBM_1_1ControlUnion_1a7a86de4e71d501057f7bd4c42eb68747" kindref="member">dX</ref><sp/>-<sp/>1500))<sp/>/<sp/>500.f;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ctrl.<ref refid="classControle_1a7b4f1db8c2182de9f1999819aace78e3" kindref="member">r</ref>(1)<sp/>=<sp/>((float)(<ref refid="main_8cpp_1a0b8c2b64555211f3dd9069fde81b4bdb" kindref="member">iBus</ref>.<ref refid="classIBusBM_1ad576c07af1ed09d8bc355e7f65c69000" kindref="member">remoteControl</ref>.<ref refid="unionIBusBM_1_1ControlUnion_1a3321ea9dcef282cbd22948f7dee2cacc" kindref="member">dY</ref><sp/>-<sp/>1500))<sp/>/<sp/>500.f;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ctrl.<ref refid="classControle_1a7b4f1db8c2182de9f1999819aace78e3" kindref="member">r</ref>(2)<sp/>=<sp/>((float)(<ref refid="main_8cpp_1a0b8c2b64555211f3dd9069fde81b4bdb" kindref="member">iBus</ref>.<ref refid="classIBusBM_1ad576c07af1ed09d8bc355e7f65c69000" kindref="member">remoteControl</ref>.<ref refid="unionIBusBM_1_1ControlUnion_1aa5ca7ca4686bf8f5a4ce8bca2d65541e" kindref="member">dZ</ref><sp/>-<sp/>1500))<sp/>/<sp/>500.f;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Limita<sp/>o<sp/>máximo<sp/>que<sp/>o<sp/>commando<sp/>envia<sp/>para<sp/>o<sp/>cotrole.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>ctrl.maximalDigitalCommand<sp/>=<sp/>7.7<sp/>*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>ibus.remoteControl.throttle_limitation;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1ae81666800498192487a16bcd7308d5c4" kindref="member">tel</ref>.<ref refid="classTELEMETRIA_1a2cbf1b032f8a825a10b2d339aa27084c" kindref="member">gainsTunning</ref>[1]<sp/>=</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>9.999999<sp/>*<sp/>((float)<ref refid="main_8cpp_1a0b8c2b64555211f3dd9069fde81b4bdb" kindref="member">iBus</ref>.<ref refid="classIBusBM_1ad576c07af1ed09d8bc355e7f65c69000" kindref="member">remoteControl</ref>.<ref refid="unionIBusBM_1_1ControlUnion_1a317cea019940a3c5623868627c456986" kindref="member">adjustQuat</ref><sp/>-<sp/>1000.0f)<sp/>+<sp/>0.001f;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1ae81666800498192487a16bcd7308d5c4" kindref="member">tel</ref>.<ref refid="classTELEMETRIA_1a2cbf1b032f8a825a10b2d339aa27084c" kindref="member">gainsTunning</ref>[2]<sp/>=</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>9.999999<sp/>*<sp/>((float)<ref refid="main_8cpp_1a0b8c2b64555211f3dd9069fde81b4bdb" kindref="member">iBus</ref>.<ref refid="classIBusBM_1ad576c07af1ed09d8bc355e7f65c69000" kindref="member">remoteControl</ref>.<ref refid="unionIBusBM_1_1ControlUnion_1ae762743840225801aca2831b9c13d318" kindref="member">adjustQrAngular</ref><sp/>-<sp/>1000.0f)<sp/>+</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.001f;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ctrl.<ref refid="classControle_1a299b06de76fde5b6eb7e47a4a45938bb" kindref="member">Qr</ref>.topLeftCorner(3,<sp/>3)<sp/>=<sp/>Matrix3f::Identity()<sp/>*<sp/><ref refid="main_8cpp_1ae81666800498192487a16bcd7308d5c4" kindref="member">tel</ref>.<ref refid="classTELEMETRIA_1a2cbf1b032f8a825a10b2d339aa27084c" kindref="member">gainsTunning</ref>[1];</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ctrl.<ref refid="classControle_1a299b06de76fde5b6eb7e47a4a45938bb" kindref="member">Qr</ref>.bottomRightCorner(3,<sp/>3)<sp/>=</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Matrix3f::Identity()<sp/>*<sp/><ref refid="main_8cpp_1ae81666800498192487a16bcd7308d5c4" kindref="member">tel</ref>.<ref refid="classTELEMETRIA_1a2cbf1b032f8a825a10b2d339aa27084c" kindref="member">gainsTunning</ref>[2];</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1ae81666800498192487a16bcd7308d5c4" kindref="member">tel</ref>.<ref refid="classTELEMETRIA_1a2cbf1b032f8a825a10b2d339aa27084c" kindref="member">gainsTunning</ref>[0]<sp/>=<sp/>ctrl.<ref refid="classControle_1ad418683f52bf07661b72e9fbf463ecd1" kindref="member">ut</ref>[2];</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1ae81666800498192487a16bcd7308d5c4" kindref="member">tel</ref>.<ref refid="classTELEMETRIA_1ac3b8fa789f6d00dca33ea41b4fd865c7" kindref="member">enviaTunningGains</ref>();</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ctrl.<ref refid="classControle_1a0c776f38e5e922a847acbed22a0bb00c" kindref="member">diffPsi</ref><sp/>=<sp/>((float)(<ref refid="main_8cpp_1a0b8c2b64555211f3dd9069fde81b4bdb" kindref="member">iBus</ref>.<ref refid="classIBusBM_1ad576c07af1ed09d8bc355e7f65c69000" kindref="member">remoteControl</ref>.<ref refid="unionIBusBM_1_1ControlUnion_1ae5149d118500fb647bed5322d216464e" kindref="member">dPsi</ref><sp/>-<sp/>1500))<sp/>/<sp/>500.f;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Atualiza<sp/>estados<sp/>da<sp/>Classe<sp/>Drone.<sp/>Estes<sp/>mesmos<sp/>estados<sp/>são<sp/>utilizadas</highlight></codeline>
+<codeline lineno="184"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>pela<sp/>classe<sp/>Controle<sp/>para<sp/>calcular<sp/>as<sp/>rotações<sp/>dos<sp/>motores.*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ctrl.<ref refid="classControle_1a94276b811077802165f17603428e475e" kindref="member">drone</ref>-&gt;<ref refid="classDrone_1a21bc2b617f8741c1733829d7498f610a" kindref="member">p</ref><sp/>=<sp/>filtro.<ref refid="classekf_1_1EKF_1a833f15f8790f86633d8b02eb2fe3616e" kindref="member">rNED</ref>;</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ctrl.<ref refid="classControle_1a94276b811077802165f17603428e475e" kindref="member">drone</ref>-&gt;<ref refid="classDrone_1a178db613c8b400ef949969d1ca5a5169" kindref="member">v</ref><sp/>=<sp/>filtro.<ref refid="classekf_1_1EKF_1a93f50b0576c3243487442a9f0934e038" kindref="member">drNED</ref>;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ctrl.<ref refid="classControle_1a94276b811077802165f17603428e475e" kindref="member">drone</ref>-&gt;<ref refid="classDrone_1a3d47c909c26ca68f771eb7ec0026e752" kindref="member">q</ref><sp/>=<sp/>filtro.<ref refid="classekf_1_1EKF_1aa38bc83dfb656519cfcda0c0a589ef16" kindref="member">q</ref>;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ctrl.<ref refid="classControle_1a94276b811077802165f17603428e475e" kindref="member">drone</ref>-&gt;<ref refid="classDrone_1a0b41e19233070e221d0eaa03ce213bf5" kindref="member">w</ref><sp/>=<sp/>filtro.<ref refid="classekf_1_1EKF_1af990ea0dbcd3f286f04584ab663d08e6" kindref="member">gyro</ref>;</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a9e8de852b827cfc2d32be84a9a02dba9" kindref="member">qa</ref><sp/>=<sp/>ctrl.<ref refid="classControle_1a6525161e8e5de28081adb4fed00c8830" kindref="member">qa</ref>.block(1,<sp/>ctrl.<ref refid="classControle_1a4fc1f7f2b69a021f4bb433daada38430" kindref="member">index_alt</ref>,<sp/>3,<sp/>1);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>adiciona<sp/>as<sp/>rotacoes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ctrl.<ref refid="classControle_1a78e5f662130811f409342a706d5c0d2f" kindref="member">controlLoop</ref>();</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>motor1.<ref refid="classMotores_1ac6264dc2b71015a3c9641025151edd4a" kindref="member">set_vel_mot</ref>(ctrl.<ref refid="classControle_1aacd18c8929cb59d7390a58d8dd68de6d" kindref="member">motorCommands</ref>(0));</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>motor2.<ref refid="classMotores_1ac6264dc2b71015a3c9641025151edd4a" kindref="member">set_vel_mot</ref>(ctrl.<ref refid="classControle_1aacd18c8929cb59d7390a58d8dd68de6d" kindref="member">motorCommands</ref>(1));</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>motor3.<ref refid="classMotores_1ac6264dc2b71015a3c9641025151edd4a" kindref="member">set_vel_mot</ref>(ctrl.<ref refid="classControle_1aacd18c8929cb59d7390a58d8dd68de6d" kindref="member">motorCommands</ref>(2));</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>motor4.<ref refid="classMotores_1ac6264dc2b71015a3c9641025151edd4a" kindref="member">set_vel_mot</ref>(ctrl.<ref refid="classControle_1aacd18c8929cb59d7390a58d8dd68de6d" kindref="member">motorCommands</ref>(3));</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>para<sp/>os<sp/>motores</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>motor1.<ref refid="classMotores_1ac6264dc2b71015a3c9641025151edd4a" kindref="member">set_vel_mot</ref>(ctrl.<ref refid="classControle_1adf6b85a6ab34600ac480a5cf9c4c1f8e" kindref="member">minimalDigitalCommand</ref>);</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>motor2.<ref refid="classMotores_1ac6264dc2b71015a3c9641025151edd4a" kindref="member">set_vel_mot</ref>(ctrl.<ref refid="classControle_1adf6b85a6ab34600ac480a5cf9c4c1f8e" kindref="member">minimalDigitalCommand</ref>);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>motor3.<ref refid="classMotores_1ac6264dc2b71015a3c9641025151edd4a" kindref="member">set_vel_mot</ref>(ctrl.<ref refid="classControle_1adf6b85a6ab34600ac480a5cf9c4c1f8e" kindref="member">minimalDigitalCommand</ref>);</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>motor4.<ref refid="classMotores_1ac6264dc2b71015a3c9641025151edd4a" kindref="member">set_vel_mot</ref>(ctrl.<ref refid="classControle_1adf6b85a6ab34600ac480a5cf9c4c1f8e" kindref="member">minimalDigitalCommand</ref>);</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1ae81666800498192487a16bcd7308d5c4" kindref="member">tel</ref>.<ref refid="classTELEMETRIA_1a6c13ae22d648afb2c7bd41f3e17ba4b6" kindref="member">enviaMensagem</ref>((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)</highlight><highlight class="stringliteral">&quot;Condicao<sp/>de<sp/>paradada<sp/>emergencyMethods()&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>xTaskCreatePinnedToCore(<ref refid="main_8cpp_1a1f32cff79659de71ff8de76c85e7c7b9" kindref="member">emergencyMethods</ref>,<sp/></highlight><highlight class="stringliteral">&quot;emergencyMethods&quot;</highlight><highlight class="normal">,<sp/>2000,<sp/>NULL,</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>5,<sp/>NULL,<sp/>1);</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/>vTaskDelayUntil(&amp;xLastDtControl,<sp/><ref refid="PARAMETROS_8h_1a2224425aa6b872a5926ee5a942e4080a" kindref="member">xdtControle</ref>);</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="211"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight><highlight class="comment">//<sp/>#define<sp/>TEST_IMU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="214" refid="main_8cpp_1a4fc01d736fe50cf5b977f755b675f11d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="main_8cpp_1a4fc01d736fe50cf5b977f755b675f11d" kindref="member">setup</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/>pinMode(<ref refid="PARAMETROS_8h_1a9135a979a4e22c5a4095074dec5477f5" kindref="member">onboard_led</ref>,<sp/>OUTPUT);</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TEST_IMU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><ref refid="main_8cpp_1ae81666800498192487a16bcd7308d5c4" kindref="member">tel</ref>.<ref refid="classTELEMETRIA_1a780be82ef9be2da12601a0ea7d10e647" kindref="member">begin</ref>();</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><ref refid="main_8cpp_1a0b8c2b64555211f3dd9069fde81b4bdb" kindref="member">iBus</ref>.<ref refid="classIBusBM_1afb01e4a762c8f575d8466fc8dadaa5cd" kindref="member">begin</ref>(Serial2,<sp/><ref refid="IBusBM_8h_1a8b9fd84154bff010521710049dd8f090" kindref="member">IBUSBM_NOTIMER</ref>,<sp/><ref refid="PARAMETROS_8h_1a493aff86cb19bf7b232753af37dabde8" kindref="member">pin_rx_controle</ref>);</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><ref refid="main_8cpp_1a0b8c2b64555211f3dd9069fde81b4bdb" kindref="member">iBus</ref>.<ref refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" kindref="member">loop</ref>();</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(<ref refid="main_8cpp_1a0b8c2b64555211f3dd9069fde81b4bdb" kindref="member">iBus</ref>.<ref refid="classIBusBM_1ad576c07af1ed09d8bc355e7f65c69000" kindref="member">remoteControl</ref>.<ref refid="unionIBusBM_1_1ControlUnion_1a679d90f97047762a16a1159c68ec6b70" kindref="member">emergency</ref><sp/>&lt;<sp/>1000)<sp/>{</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1ae81666800498192487a16bcd7308d5c4" kindref="member">tel</ref>.<ref refid="classTELEMETRIA_1a6c13ae22d648afb2c7bd41f3e17ba4b6" kindref="member">enviaMensagem</ref>((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)</highlight><highlight class="stringliteral">&quot;Cont<sp/>Remoto<sp/>com<sp/>problema&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/>vTaskDelay(250);</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a0b8c2b64555211f3dd9069fde81b4bdb" kindref="member">iBus</ref>.<ref refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" kindref="member">loop</ref>();</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><ref refid="main_8cpp_1ae81666800498192487a16bcd7308d5c4" kindref="member">tel</ref>.<ref refid="classTELEMETRIA_1a6c13ae22d648afb2c7bd41f3e17ba4b6" kindref="member">enviaMensagem</ref>((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)</highlight><highlight class="stringliteral">&quot;Controle<sp/>ok&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><ref refid="main_8cpp_1ae81666800498192487a16bcd7308d5c4" kindref="member">tel</ref>.<ref refid="classTELEMETRIA_1a6c13ae22d648afb2c7bd41f3e17ba4b6" kindref="member">enviaMensagem</ref>((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)</highlight><highlight class="stringliteral">&quot;Criando<sp/>Task<sp/>xTaskSetupFiltro<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/>xTaskCreatePinnedToCore(<ref refid="main_8cpp_1a1d67803bd6f9b50c1e3686650e280f68" kindref="member">xTaskSetupFiltro</ref>,<sp/></highlight><highlight class="stringliteral">&quot;SetupFiltro&quot;</highlight><highlight class="normal">,<sp/>25000,<sp/>NULL,<sp/>0,</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<ref refid="main_8cpp_1a5a89228326c473f17abbd278991560d5" kindref="member">xHandleSetupFilter</ref>,<sp/>0);</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/>xTaskCreatePinnedToCore(<ref refid="main_8cpp_1ad3d424dca818563665f9ab9bbf866fff" kindref="member">xTaskContol</ref>,<sp/></highlight><highlight class="stringliteral">&quot;Control&quot;</highlight><highlight class="normal">,<sp/>20000,<sp/>NULL,<sp/>2,</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<ref refid="main_8cpp_1abc6d08e0fef7d2e6251a6822a57afe1a" kindref="member">xHandleControl</ref>,<sp/>1);</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/>filtro.<ref refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" kindref="member">begin</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">(<ref refid="PARAMETROS_8h_1a9cbadcfbca426e6cec9d14f30750ef04" kindref="member">dtTelemetry</ref>)<sp/>*<sp/>1e-3);</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="237" refid="main_8cpp_1afe461d27b9c48d5921c00d521181f12f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="main_8cpp_1afe461d27b9c48d5921c00d521181f12f" kindref="member">loop</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>TEST_IMU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/>filtro.updateOfMeasurements();</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><ref refid="main_8cpp_1a30b9cf7c1ad8a006a9a5b815c02a67dc" kindref="member">PM</ref>(filtro.<ref refid="classekf_1_1EKF_1af990ea0dbcd3f286f04584ab663d08e6" kindref="member">gyro</ref>.transpose());</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><ref refid="main_8cpp_1a30b9cf7c1ad8a006a9a5b815c02a67dc" kindref="member">PM</ref>(filtro.<ref refid="classekf_1_1EKF_1a30d3adf68cc6ee599fec8fa45a697bbb" kindref="member">accel</ref>.transpose());</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><ref refid="main_8cpp_1a30b9cf7c1ad8a006a9a5b815c02a67dc" kindref="member">PM</ref>(filtro.<ref refid="classekf_1_1EKF_1a3f84435c646a27ad0f922e5205c13eb3" kindref="member">mag</ref>.transpose());</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/>delay(500);</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="src/main.cpp"/>
   </compounddef>

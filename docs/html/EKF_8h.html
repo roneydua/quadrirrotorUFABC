@@ -67,7 +67,9 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Estruturas de Dados</a> &#124;
-<a href="#namespaces"><em>Namespaces</em></a>  </div>
+<a href="#namespaces"><em>Namespaces</em></a> &#124;
+<a href="#define-members">Definições e Macros</a> &#124;
+<a href="#enum-members">Enumerações</a>  </div>
   <div class="headertitle">
 <div class="title">Referência do Arquivo EKF.h</div>  </div>
 </div><!--header-->
@@ -76,7 +78,10 @@ $(function() {
 <p>Classe que implementa o filtro de Kalman estendido.  
 <a href="#details">Mais...</a></p>
 <div class="textblock"><code>#include &quot;eigen3/Eigen/Dense&quot;</code><br />
-<code>#include &quot;./../READWRITEEIGEN/readWriteEigen.h&quot;</code><br />
+<code>#include &quot;../../include/READWRITEEIGEN/readWriteEigen.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="AQUA_8h_source.html">../AQUA/AQUA.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GRUPO__QUAT_8h_source.html">../GRUPO_QUAT/GRUPO_QUAT.h</a>&quot;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Gráfico de dependência de inclusões para EKF.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -84,9 +89,12 @@ $(function() {
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="EKF_8h__incl.png" border="0" usemap="#alib_2EKF_2EKF_8h" alt=""/></div>
 <map name="alib_2EKF_2EKF_8h" id="alib_2EKF_2EKF_8h">
-<area shape="rect" title="Classe que implementa o filtro de Kalman estendido." alt="" coords="99,5,199,29"/>
-<area shape="rect" title=" " alt="" coords="5,83,136,107"/>
-<area shape="rect" title=" " alt="" coords="160,77,296,113"/>
+<area shape="rect" title="Classe que implementa o filtro de Kalman estendido." alt="" coords="251,5,351,29"/>
+<area shape="rect" title=" " alt="" coords="166,245,297,269"/>
+<area shape="rect" title=" " alt="" coords="32,77,223,113"/>
+<area shape="rect" href="AQUA_8h.html" title=" " alt="" coords="247,83,354,107"/>
+<area shape="rect" href="GRUPO__QUAT_8h.html" title="Cabecalho com funcoes de quaternion." alt="" coords="269,161,405,197"/>
+<area shape="rect" title=" " alt="" coords="364,245,435,269"/>
 </map>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -116,6 +124,20 @@ Estruturas de Dados</h2></td></tr>
 <tr class="memitem:namespaceekf"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceekf.html">ekf</a></td></tr>
 <tr class="memdesc:namespaceekf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funções genéricas com álgebra de quatérnions e demais. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Definições e Macros</h2></td></tr>
+<tr class="memitem:a30b9cf7c1ad8a006a9a5b815c02a67dc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="EKF_8h.html#a30b9cf7c1ad8a006a9a5b815c02a67dc">PM</a>(X)&#160;&#160;&#160;cout &lt;&lt; #X &lt;&lt; &quot;:\n&quot; &lt;&lt; X &lt;&lt; &quot;\n&quot;</td></tr>
+<tr class="separator:a30b9cf7c1ad8a006a9a5b815c02a67dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerações</h2></td></tr>
+<tr class="memitem:a3d0224f90468a854a2440df8b4f78869"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceekf.html#a3d0224f90468a854a2440df8b4f78869">ekf::_status</a> { <a class="el" href="namespaceekf.html#a3d0224f90468a854a2440df8b4f78869a0c401f1c67fce956b571e01d0f1a67d8">ekf::BEGIN</a>
+, <a class="el" href="namespaceekf.html#a3d0224f90468a854a2440df8b4f78869a638dfa2cadaad15202600951a2e30d4f">ekf::READY</a>
+, <a class="el" href="namespaceekf.html#a3d0224f90468a854a2440df8b4f78869a923984570a9110878bae6c24232b49ec">ekf::FAIL</a>
+, <a class="el" href="namespaceekf.html#a3d0224f90468a854a2440df8b4f78869a4fc24b0fe219a9b7173fefcac7d48519">ekf::STOPED</a>
+ }</td></tr>
+<tr class="separator:a3d0224f90468a854a2440df8b4f78869"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
 <div class="textblock"><p>Classe que implementa o filtro de Kalman estendido. </p>
@@ -124,7 +146,28 @@ Estruturas de Dados</h2></td></tr>
 <p>Last modified by: roney Last modified time: 01-Sep-2021 </p>
 
 <p class="definition">Definição no arquivo <a class="el" href="EKF_8h_source.html">EKF.h</a>.</p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Definições e macros</h2>
+<a id="a30b9cf7c1ad8a006a9a5b815c02a67dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30b9cf7c1ad8a006a9a5b815c02a67dc">&#9670;&nbsp;</a></span>PM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PM</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">X</td><td>)</td>
+          <td>&#160;&#160;&#160;cout &lt;&lt; #X &lt;&lt; &quot;:\n&quot; &lt;&lt; X &lt;&lt; &quot;\n&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="EKF_8h_source.html#l00026">26</a> do arquivo <a class="el" href="EKF_8h_source.html">EKF.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1

@@ -73,6 +73,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="python/drone.py" line="17" column="1" bodyfile="python/drone.py" bodystart="17" bodyend="-1"/>
+        <referencedby refid="classDrone_1a1f2103ef38b08c79aa88b3e790c16c5d" compoundref="Drone_8cpp" startline="67" endline="89">Drone::constructJ</referencedby>
       </memberdef>
       <memberdef kind="variable" id="namespacedrone_1a3e06d763422e3ea068add06fd5e3a98b" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -87,6 +88,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="python/drone.py" line="18" column="1" bodyfile="python/drone.py" bodystart="18" bodyend="-1"/>
+        <referencedby refid="classDrone_1a1f2103ef38b08c79aa88b3e790c16c5d" compoundref="Drone_8cpp" startline="67" endline="89">Drone::constructJ</referencedby>
       </memberdef>
       <memberdef kind="variable" id="namespacedrone_1ad00e49de24779292915067e7a3bb92e1" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -115,7 +117,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="python/drone.py" line="21" column="1" bodyfile="python/drone.py" bodystart="21" bodyend="-1"/>
-        <referencedby refid="namespaceekf_1afe4fb3935c9dc91fcc8b57793f03a170" compoundref="GRUPO__QUAT_8cpp" startline="293" endline="327">ekf::computeQuaternionFromMCDMarkley</referencedby>
+        <referencedby refid="namespaceekf_1afe4fb3935c9dc91fcc8b57793f03a170" compoundref="GRUPO__QUAT_8cpp" startline="350" endline="384">ekf::computeQuaternionFromMCDMarkley</referencedby>
         <referencedby refid="namespaceekf_1ae9e1aaaa7793db099f4ef88b44aab8d5" compoundref="GRUPO__QUAT_8cpp" startline="111" endline="121">ekf::printEigen</referencedby>
       </memberdef>
       <memberdef kind="variable" id="namespacedrone_1accb330ae92eee9c3a357abd54ed1864f" prot="public" static="no" mutable="no">

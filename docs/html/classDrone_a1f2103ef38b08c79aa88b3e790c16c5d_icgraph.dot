@@ -7,5 +7,5 @@ digraph "Drone::constructJ"
   rankdir="RL";
   Node1 [label="Drone::constructJ",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
-  Node2 [label="Drone::Drone",height=0.2,width=0.4,color="black",URL="$classDrone.html#aad2198acbdcbc49c22173ad156ccab99",tooltip=" "];
+  Node2 [label="Drone::Drone",height=0.2,width=0.4,color="black",URL="$classDrone.html#aad2198acbdcbc49c22173ad156ccab99",tooltip="Construct a new Drone object."];
 }

@@ -1,4 +1,4 @@
-.TH "lib/GRUPO_QUAT/GRUPO_QUAT.h" 3 "Sexta, 17 de Setembro de 2021" "Quadrirrotor" \" -*- nroff -*-
+.TH "lib/GRUPO_QUAT/GRUPO_QUAT.h" 3 "Segunda, 25 de Outubro de 2021" "Quadrirrotor" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -46,7 +46,7 @@ lib/GRUPO_QUAT/GRUPO_QUAT.h \- Cabecalho com funcoes de quaternion\&.
 .ti -1c
 .RI "Eigen::Matrix4f \fBekf::S_l\fP (const Eigen::Ref< Eigen::Vector4f > &q)"
 .br
-.RI "Calcula a Matriz \fILefth-Quaternion\fP a partir do quaternion q\&. "
+.RI "Calcula a Matriz \fILeft-Quaternion\fP a partir do quaternion q\&. "
 .ti -1c
 .RI "void \fBekf::printEigen\fP (const Eigen::MatrixXf &m)"
 .br
@@ -60,7 +60,7 @@ lib/GRUPO_QUAT/GRUPO_QUAT.h \- Cabecalho com funcoes de quaternion\&.
 .RI "Eigen::Vector3f \fBekf::computeVectorProjection\fP (const Eigen::Ref< Eigen::Vector3f > &v, const Eigen::Ref< Eigen::Vector3f > &u)"
 .br
 .ti -1c
-.RI "void \fBekf::integrationQuaternion\fP (Eigen::Vector4f &_quat, const Eigen::Ref< const Eigen::VectorXf > &_gyroscopio, float &_dt)"
+.RI "void \fBekf::integrationQuaternion\fP (Eigen::Vector4f &_quat, const Eigen::Ref< const Eigen::VectorXf > &_gyroscope, float &_dt)"
 .br
 .ti -1c
 .RI "float \fBekf::invSqrt\fP (float _x)"
@@ -97,6 +97,30 @@ lib/GRUPO_QUAT/GRUPO_QUAT.h \- Cabecalho com funcoes de quaternion\&.
 .RI "void \fBekf::conjugate\fP (Eigen::Ref< Eigen::Vector4f > _q)"
 .br
 .RI "Conjuga o quaternion _q\&. "
+.ti -1c
+.RI "void \fBekf::calc_phi\fP (float &x, const Eigen::Ref< const Eigen::Vector4f > &_q)"
+.br
+.RI "Calcula, a partir de um quatérnio de atitude, o valor do ângulo Phi em Radianos\&. "
+.ti -1c
+.RI "void \fBekf::calc_theta\fP (float &x, const Eigen::Ref< const Eigen::Vector4f > &_q)"
+.br
+.RI "Calcula, a partir de um quatérnio de atitude, o valor do ângulo Theta em Radianos\&. "
+.ti -1c
+.RI "void \fBekf::calc_psi\fP (float &x, const Eigen::Ref< const Eigen::Vector4f > &_q)"
+.br
+.RI "Calcula, a partir de um quatérnio de atitude, o valor do ângulo Psi em Radianos\&. "
+.ti -1c
+.RI "Eigen::Vector4f \fBekf::q_theta\fP (float &phi)"
+.br
+.RI "Calcula o quaternion de atitude de rotação phi sobre o eixo x\&. "
+.ti -1c
+.RI "Eigen::Vector4f \fBekf::q_phi\fP (float &theta)"
+.br
+.RI "Calcula o quaternion de atitude de rotação theta sobre o eixo y\&. "
+.ti -1c
+.RI "Eigen::Vector4f \fBekf::q_psi\fP (float &psi)"
+.br
+.RI "Calcula o quaternion de atitude de rotação psi sobre o eixo z\&. "
 .in -1c
 .SH "Descrição detalhada"
 .PP 

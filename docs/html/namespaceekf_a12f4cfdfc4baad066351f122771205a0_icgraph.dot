@@ -1,0 +1,26 @@
+digraph "ekf::calc_psi"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  rankdir="RL";
+  Node1 [label="ekf::calc_psi",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Calcula, a partir de um quatérnio de atitude, o valor do ângulo Psi em Radianos."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node2 [label="Controle::Controle",height=0.2,width=0.4,color="black",URL="$classControle.html#a8ae9a213e4a15ac1af0f158e3b5dc2cb",tooltip="Construct a new Controle:: Controle object."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node3 [label="ekf::quaternion2Euler",height=0.2,width=0.4,color="black",URL="$namespaceekf.html#aab2dcd522b40c160064cfae69cae6d98",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node4 [label="Controle::computeRotational\lTarget",height=0.2,width=0.4,color="black",URL="$classControle.html#a8ac9e933ce30f9c88ed421d4c0afcf99",tooltip=" "];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node5 [label="Controle::controlLoop",height=0.2,width=0.4,color="black",URL="$classControle.html#a78e5f662130811f409342a706d5c0d2f",tooltip="Loop de controle das duas dinâmicas."];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node6 [label="xTaskContol",height=0.2,width=0.4,color="black",URL="$main_8cpp.html#ad3d424dca818563665f9ab9bbf866fff",tooltip=" "];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node7 [label="setup",height=0.2,width=0.4,color="black",URL="$main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d",tooltip=" "];
+  Node3 -> Node8 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node8 [label="xTaskLoopFilter",height=0.2,width=0.4,color="black",URL="$main_8cpp.html#abd3bd9c344e182dcb5f5a561ef562eb0",tooltip=" "];
+  Node8 -> Node9 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node9 [label="xTaskSetupFiltro",height=0.2,width=0.4,color="black",URL="$main_8cpp.html#a1d67803bd6f9b50c1e3686650e280f68",tooltip=" "];
+  Node9 -> Node7 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+}

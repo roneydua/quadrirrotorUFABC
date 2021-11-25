@@ -1,4 +1,6 @@
 <map id="Controle::virtualCommandToMotorRpm" name="Controle::virtualCommandToMotorRpm">
-<area shape="rect" id="node1" title=" " alt="" coords="201,5,368,41"/>
-<area shape="rect" id="node2" href="$classControle.html#a78e5f662130811f409342a706d5c0d2f" title=" " alt="" coords="5,11,153,35"/>
+<area shape="rect" id="node1" title=" " alt="" coords="437,5,604,41"/>
+<area shape="rect" id="node2" href="$classControle.html#a78e5f662130811f409342a706d5c0d2f" title="Loop de controle das duas dinâmicas." alt="" coords="241,11,389,35"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#ad3d424dca818563665f9ab9bbf866fff" title=" " alt="" coords="105,11,193,35"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d" title=" " alt="" coords="5,11,57,35"/>
 </map>

@@ -1,6 +1,6 @@
 <map id="Motores::Motores" name="Motores::Motores">
-<area shape="rect" id="node1" title=" " alt="" coords="5,29,124,53"/>
-<area shape="rect" id="node2" href="$classMotores.html#a1895e0f2bc08b754d2c119a7d5fee68a" title=" " alt="" coords="172,29,308,53"/>
+<area shape="rect" id="node1" title="Construtor da classe motor." alt="" coords="5,29,124,53"/>
+<area shape="rect" id="node2" href="$classMotores.html#a1895e0f2bc08b754d2c119a7d5fee68a" title="configuracao das frequencias PWM que o esc&#39;s utilizam." alt="" coords="172,29,308,53"/>
 <area shape="rect" id="node3" href="$classMotores.html#abd97787aacf452410d0fb21bbe5c9287" title=" " alt="" coords="359,5,495,29"/>
-<area shape="rect" id="node4" href="$classMotores.html#ac6264dc2b71015a3c9641025151edd4a" title=" " alt="" coords="356,53,499,77"/>
+<area shape="rect" id="node4" href="$classMotores.html#ac6264dc2b71015a3c9641025151edd4a" title="funcao que muda a velocidade." alt="" coords="356,53,499,77"/>
 </map>

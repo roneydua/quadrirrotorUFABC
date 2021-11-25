@@ -5,11 +5,11 @@ digraph "Motores::Motores"
   edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
   node [fontname="DejaVuSansMono",fontsize="8",shape=record];
   rankdir="LR";
-  Node1 [label="Motores::Motores",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 [label="Motores::Motores",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Construtor da classe motor."];
   Node1 -> Node2 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
-  Node2 [label="Motores::inicializa",height=0.2,width=0.4,color="black",URL="$classMotores.html#a1895e0f2bc08b754d2c119a7d5fee68a",tooltip=" "];
+  Node2 [label="Motores::inicializa",height=0.2,width=0.4,color="black",URL="$classMotores.html#a1895e0f2bc08b754d2c119a7d5fee68a",tooltip="configuracao das frequencias PWM que o esc's utilizam."];
   Node2 -> Node3 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
   Node3 [label="Motores::set_portas",height=0.2,width=0.4,color="black",URL="$classMotores.html#abd97787aacf452410d0fb21bbe5c9287",tooltip=" "];
   Node2 -> Node4 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
-  Node4 [label="Motores::set_vel_mot",height=0.2,width=0.4,color="black",URL="$classMotores.html#ac6264dc2b71015a3c9641025151edd4a",tooltip=" "];
+  Node4 [label="Motores::set_vel_mot",height=0.2,width=0.4,color="black",URL="$classMotores.html#ac6264dc2b71015a3c9641025151edd4a",tooltip="funcao que muda a velocidade."];
 }

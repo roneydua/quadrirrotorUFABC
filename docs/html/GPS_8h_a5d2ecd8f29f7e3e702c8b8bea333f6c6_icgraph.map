@@ -1,8 +1,9 @@
 <map id="GPSSERIAL" name="GPSSERIAL">
-<area shape="rect" id="node1" title=" " alt="" coords="396,29,472,53"/>
-<area shape="rect" id="node2" href="$GPS_8h.html#aaab66558a5f695df7a6fcc3baa340da3" title=" " alt="" coords="117,5,205,29"/>
-<area shape="rect" id="node3" href="$GPS_8h.html#a35c55bcf9a6f5a52f34cb1ab02c91479" title=" " alt="" coords="271,77,342,101"/>
-<area shape="rect" id="node6" href="$GPS_8h.html#ad604e63cc857e5663dfba96c37c66bc7" title=" " alt="" coords="265,29,348,53"/>
-<area shape="rect" id="node4" href="$classekf_1_1EKF.html#a4a6998123529ab0d0844ad21419fc895" title="Inicializacao do filtro de Kalman." alt="" coords="105,77,217,101"/>
+<area shape="rect" id="node1" title=" " alt="" coords="563,29,639,53"/>
+<area shape="rect" id="node2" href="$GPS_8h.html#aaab66558a5f695df7a6fcc3baa340da3" title=" " alt="" coords="284,5,372,29"/>
+<area shape="rect" id="node3" href="$GPS_8h.html#a35c55bcf9a6f5a52f34cb1ab02c91479" title=" " alt="" coords="438,77,509,101"/>
+<area shape="rect" id="node7" href="$GPS_8h.html#ad604e63cc857e5663dfba96c37c66bc7" title=" " alt="" coords="432,29,515,53"/>
+<area shape="rect" id="node4" href="$classekf_1_1EKF.html#a4a6998123529ab0d0844ad21419fc895" title="Inicializacao do filtro de Kalman." alt="" coords="272,77,384,101"/>
 <area shape="rect" id="node5" href="$main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d" title=" " alt="" coords="5,77,57,101"/>
+<area shape="rect" id="node6" href="$main_8cpp.html#a1d67803bd6f9b50c1e3686650e280f68" title=" " alt="" coords="105,101,224,125"/>
 </map>

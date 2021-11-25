@@ -7,5 +7,9 @@ digraph "Controle::virtualCommandToMotorCommand"
   rankdir="RL";
   Node1 [label="Controle::virtualCommand\lToMotorCommand",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
-  Node2 [label="Controle::controlLoop",height=0.2,width=0.4,color="black",URL="$classControle.html#a78e5f662130811f409342a706d5c0d2f",tooltip=" "];
+  Node2 [label="Controle::controlLoop",height=0.2,width=0.4,color="black",URL="$classControle.html#a78e5f662130811f409342a706d5c0d2f",tooltip="Loop de controle das duas dinâmicas."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node3 [label="xTaskContol",height=0.2,width=0.4,color="black",URL="$main_8cpp.html#ad3d424dca818563665f9ab9bbf866fff",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node4 [label="setup",height=0.2,width=0.4,color="black",URL="$main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d",tooltip=" "];
 }

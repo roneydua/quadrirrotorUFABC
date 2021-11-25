@@ -66,6 +66,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#define-members">Definições e Macros</a> &#124;
 <a href="#func-members">Funções</a> &#124;
 <a href="#var-members">Variáveis</a>  </div>
   <div class="headertitle">
@@ -75,12 +76,14 @@ $(function() {
 <div class="textblock"><code>#include &quot;<a class="el" href="Controle_8h_source.html">Controle.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="EKF_8h_source.html">EKF.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="GRUPO__QUAT_8h_source.html">GRUPO_QUAT.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="IBusBM_8h_source.html">IBusBM.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Motores_8h_source.html">Motores.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="PARAMETROS_8h_source.html">PARAMETROS.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="TELEMETRIA_8h_source.html">TELEMETRIA.h</a>&quot;</code><br />
 <code>#include &lt;Arduino.h&gt;</code><br />
 <code>#include &lt;eigen3/Eigen/Dense&gt;</code><br />
-<code>#include &lt;esp_now.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="IBusBM_8h_source.html">IBusBM.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="COMMON_8h_source.html">COMMON.h</a>&quot;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Gráfico de dependência de inclusões para main.cpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -88,31 +91,52 @@ $(function() {
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="main_8cpp__incl.png" border="0" usemap="#asrc_2main_8cpp" alt=""/></div>
 <map name="asrc_2main_8cpp" id="asrc_2main_8cpp">
-<area shape="rect" title=" " alt="" coords="771,5,865,29"/>
-<area shape="rect" href="Controle_8h.html" title=" " alt="" coords="238,77,321,101"/>
-<area shape="rect" title=" " alt="" coords="500,305,576,329"/>
-<area shape="rect" href="GRUPO__QUAT_8h.html" title="Cabecalho com funcoes de quaternion." alt="" coords="111,305,205,329"/>
-<area shape="rect" title=" " alt="" coords="473,377,603,401"/>
-<area shape="rect" href="EKF_8h.html" title="Classe que implementa o filtro de Kalman estendido." alt="" coords="792,77,844,101"/>
-<area shape="rect" href="PARAMETROS_8h.html" title="Sobre os conversores digiais analógicos" alt="" coords="491,233,585,257"/>
-<area shape="rect" href="TELEMETRIA_8h.html" title=" " alt="" coords="925,77,1020,101"/>
-<area shape="rect" title=" " alt="" coords="1093,155,1169,179"/>
-<area shape="rect" href="IBusBM_8h.html" title=" " alt="" coords="1248,77,1319,101"/>
-<area shape="rect" href="Drone_8h.html" title=" " alt="" coords="129,233,248,257"/>
-<area shape="rect" title=" " alt="" coords="5,377,76,401"/>
-<area shape="rect" href="Sdre_8h.html" title=" " alt="" coords="395,155,502,179"/>
-<area shape="rect" title=" " alt="" coords="187,149,371,185"/>
-<area shape="rect" href="Riccati_8h.html" title=" " alt="" coords="272,233,415,257"/>
-<area shape="rect" title=" " alt="" coords="698,149,834,185"/>
-<area shape="rect" title=" " alt="" coords="1010,155,1069,179"/>
-<area shape="rect" title=" " alt="" coords="1245,155,1327,179"/>
+<area shape="rect" title=" " alt="" coords="1018,5,1113,29"/>
+<area shape="rect" href="Controle_8h.html" title=" " alt="" coords="400,77,483,101"/>
+<area shape="rect" title=" " alt="" coords="607,317,737,341"/>
+<area shape="rect" href="GRUPO__QUAT_8h.html" title="Cabecalho com funcoes de quaternion." alt="" coords="577,233,767,269"/>
+<area shape="rect" title=" " alt="" coords="121,317,191,341"/>
+<area shape="rect" href="EKF_8h.html" title="Classe que implementa o filtro de Kalman estendido." alt="" coords="865,77,917,101"/>
+<area shape="rect" href="IBusBM_8h.html" title=" " alt="" coords="1395,77,1466,101"/>
+<area shape="rect" title=" " alt="" coords="1227,155,1303,179"/>
+<area shape="rect" href="Motores_8h.html" title=" " alt="" coords="1177,77,1253,101"/>
+<area shape="rect" href="PARAMETROS_8h.html" title="Sobre os conversores digitais analógicos" alt="" coords="1277,77,1371,101"/>
+<area shape="rect" href="TELEMETRIA_8h.html" title=" " alt="" coords="1490,77,1585,101"/>
+<area shape="rect" href="COMMON_8h.html" title=" " alt="" coords="1030,77,1101,101"/>
+<area shape="rect" href="Drone_8h.html" title=" " alt="" coords="382,155,501,179"/>
+<area shape="rect" href="Sdre_8h.html" title=" " alt="" coords="43,155,149,179"/>
+<area shape="rect" title=" " alt="" coords="173,149,357,185"/>
+<area shape="rect" href="Riccati_8h.html" title=" " alt="" coords="194,239,337,263"/>
+<area shape="rect" title=" " alt="" coords="961,149,1151,185"/>
+<area shape="rect" href="AQUA_8h.html" title=" " alt="" coords="728,155,835,179"/>
+<area shape="rect" title=" " alt="" coords="1328,155,1411,179"/>
+<area shape="rect" title=" " alt="" coords="1435,155,1493,179"/>
+<area shape="rect" title=" " alt="" coords="1518,155,1594,179"/>
 </map>
 </div>
 </div>
 <p><a href="main_8cpp_source.html">Vá para o código-fonte desse arquivo.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Definições e Macros</h2></td></tr>
+<tr class="memitem:a1581dcc96e74323eac4fd2076d130d5a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a1581dcc96e74323eac4fd2076d130d5a">DEBUG_MAIN</a></td></tr>
+<tr class="separator:a1581dcc96e74323eac4fd2076d130d5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30b9cf7c1ad8a006a9a5b815c02a67dc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a30b9cf7c1ad8a006a9a5b815c02a67dc">PM</a>(X)&#160;&#160;&#160;std::cout &lt;&lt; #X &lt;&lt; &quot;:\n&quot; &lt;&lt; X &lt;&lt; &quot;\n&quot;</td></tr>
+<tr class="separator:a30b9cf7c1ad8a006a9a5b815c02a67dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34ab808b2feabd3e0ac744eaf7eb376b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a34ab808b2feabd3e0ac744eaf7eb376b">CALIBRATION_OF_MAGNETOMETER_GYROSCOPE</a></td></tr>
+<tr class="separator:a34ab808b2feabd3e0ac744eaf7eb376b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Funções</h2></td></tr>
+<tr class="memitem:abd3bd9c344e182dcb5f5a561ef562eb0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#abd3bd9c344e182dcb5f5a561ef562eb0">xTaskLoopFilter</a> (void *)</td></tr>
+<tr class="separator:abd3bd9c344e182dcb5f5a561ef562eb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d67803bd6f9b50c1e3686650e280f68"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a1d67803bd6f9b50c1e3686650e280f68">xTaskSetupFiltro</a> (void *pvParameters)</td></tr>
+<tr class="separator:a1d67803bd6f9b50c1e3686650e280f68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f32cff79659de71ff8de76c85e7c7b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a1f32cff79659de71ff8de76c85e7c7b9">emergencyMethods</a> (void *pv)</td></tr>
+<tr class="memdesc:a1f32cff79659de71ff8de76c85e7c7b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Task de Procedimentos emergenciais.  <a href="main_8cpp.html#a1f32cff79659de71ff8de76c85e7c7b9">Mais...</a><br /></td></tr>
+<tr class="separator:a1f32cff79659de71ff8de76c85e7c7b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3d424dca818563665f9ab9bbf866fff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ad3d424dca818563665f9ab9bbf866fff">xTaskContol</a> (void *pv)</td></tr>
+<tr class="separator:ad3d424dca818563665f9ab9bbf866fff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4fc01d736fe50cf5b977f755b675f11d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d">setup</a> ()</td></tr>
 <tr class="separator:a4fc01d736fe50cf5b977f755b675f11d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe461d27b9c48d5921c00d521181f12f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#afe461d27b9c48d5921c00d521181f12f">loop</a> ()</td></tr>
@@ -120,14 +144,32 @@ Funções</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variáveis</h2></td></tr>
-<tr class="memitem:aad20b5e553c06abe201d2985050078b2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classIBusBM.html">IBusBM</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#aad20b5e553c06abe201d2985050078b2">ibus</a></td></tr>
-<tr class="separator:aad20b5e553c06abe201d2985050078b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b8c2b64555211f3dd9069fde81b4bdb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classIBusBM.html">IBusBM</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a0b8c2b64555211f3dd9069fde81b4bdb">iBus</a></td></tr>
+<tr class="separator:a0b8c2b64555211f3dd9069fde81b4bdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69b5e71277e0e3a57afef1e2d7025e58"><td class="memItemLeft" align="right" valign="top">Vector3f *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a69b5e71277e0e3a57afef1e2d7025e58">eulerTarget</a></td></tr>
+<tr class="separator:a69b5e71277e0e3a57afef1e2d7025e58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adef42f887c2b14a9f43de1ae529a09e5"><td class="memItemLeft" align="right" valign="top">Vector3f *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#adef42f887c2b14a9f43de1ae529a09e5">ra</a></td></tr>
+<tr class="separator:adef42f887c2b14a9f43de1ae529a09e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4de603e279aa24f62c1b8a40306140f3"><td class="memItemLeft" align="right" valign="top">Vector3f *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a4de603e279aa24f62c1b8a40306140f3">wa</a></td></tr>
+<tr class="separator:a4de603e279aa24f62c1b8a40306140f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff5ffbb08d9a949947ef687cb0531794"><td class="memItemLeft" align="right" valign="top">Vector3f *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#aff5ffbb08d9a949947ef687cb0531794">rI</a></td></tr>
+<tr class="separator:aff5ffbb08d9a949947ef687cb0531794"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e8de852b827cfc2d32be84a9a02dba9"><td class="memItemLeft" align="right" valign="top">Vector3f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a9e8de852b827cfc2d32be84a9a02dba9">qa</a></td></tr>
+<tr class="separator:a9e8de852b827cfc2d32be84a9a02dba9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63d9a57399cadda190f8e8cbddbff900"><td class="memItemLeft" align="right" valign="top">Vector4f *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a63d9a57399cadda190f8e8cbddbff900">moments</a></td></tr>
+<tr class="separator:a63d9a57399cadda190f8e8cbddbff900"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29b0f479e7948681bef12044e738d265"><td class="memItemLeft" align="right" valign="top">Vector4i *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a29b0f479e7948681bef12044e738d265">comandosDigitais</a></td></tr>
+<tr class="separator:a29b0f479e7948681bef12044e738d265"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae81666800498192487a16bcd7308d5c4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTELEMETRIA.html">TELEMETRIA</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ae81666800498192487a16bcd7308d5c4">tel</a></td></tr>
 <tr class="separator:ae81666800498192487a16bcd7308d5c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1f1091647c66e9cc962b4feab0525cd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classekf_1_1EKF.html">ekf::EKF</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ae1f1091647c66e9cc962b4feab0525cd">filtro</a></td></tr>
-<tr class="separator:ae1f1091647c66e9cc962b4feab0525cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a415ca717d7f13cfb8bcbaa07a3ddd062"><td class="memItemLeft" align="right" valign="top">Eigen::Vector&lt; float, 17 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a415ca717d7f13cfb8bcbaa07a3ddd062">t</a> = Eigen::Vector&lt;float, 17&gt;::Zero()</td></tr>
-<tr class="separator:a415ca717d7f13cfb8bcbaa07a3ddd062"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a89228326c473f17abbd278991560d5"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a5a89228326c473f17abbd278991560d5">xHandleSetupFilter</a> = NULL</td></tr>
+<tr class="separator:a5a89228326c473f17abbd278991560d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad68258a9abebbcd50439c86377b6dce9"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ad68258a9abebbcd50439c86377b6dce9">xHandleLoopFilter</a> = NULL</td></tr>
+<tr class="separator:ad68258a9abebbcd50439c86377b6dce9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc6d08e0fef7d2e6251a6822a57afe1a"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#abc6d08e0fef7d2e6251a6822a57afe1a">xHandleControl</a> = NULL</td></tr>
+<tr class="separator:abc6d08e0fef7d2e6251a6822a57afe1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3042e035552175f37c5ce7f156cc58f"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#aa3042e035552175f37c5ce7f156cc58f">xHandleEmergency</a> = NULL</td></tr>
+<tr class="separator:aa3042e035552175f37c5ce7f156cc58f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
 <div class="textblock"><dl class="section author"><dt>Autor</dt><dd>: Roney Silva (roney) </dd></dl>
@@ -135,7 +177,135 @@ Variáveis</h2></td></tr>
 <p>Last modified by: roney Last modified time: 31-Aug-2021 </p>
 
 <p class="definition">Definição no arquivo <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-</div><h2 class="groupheader">Funções</h2>
+</div><h2 class="groupheader">Definições e macros</h2>
+<a id="a34ab808b2feabd3e0ac744eaf7eb376b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34ab808b2feabd3e0ac744eaf7eb376b">&#9670;&nbsp;</a></span>CALIBRATION_OF_MAGNETOMETER_GYROSCOPE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CALIBRATION_OF_MAGNETOMETER_GYROSCOPE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="main_8cpp_source.html#l00026">26</a> do arquivo <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a1581dcc96e74323eac4fd2076d130d5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1581dcc96e74323eac4fd2076d130d5a">&#9670;&nbsp;</a></span>DEBUG_MAIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DEBUG_MAIN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="main_8cpp_source.html#l00020">20</a> do arquivo <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a30b9cf7c1ad8a006a9a5b815c02a67dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30b9cf7c1ad8a006a9a5b815c02a67dc">&#9670;&nbsp;</a></span>PM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PM</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">X</td><td>)</td>
+          <td>&#160;&#160;&#160;std::cout &lt;&lt; #X &lt;&lt; &quot;:\n&quot; &lt;&lt; X &lt;&lt; &quot;\n&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="main_8cpp_source.html#l00023">23</a> do arquivo <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Funções</h2>
+<a id="a1f32cff79659de71ff8de76c85e7c7b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f32cff79659de71ff8de76c85e7c7b9">&#9670;&nbsp;</a></span>emergencyMethods()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void emergencyMethods </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>pv</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Task de Procedimentos emergenciais. </p>
+
+<p class="definition">Definição na linha <a class="el" href="main_8cpp_source.html#l00114">114</a> do arquivo <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                                {</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <a class="code" href="main_8cpp.html#ae81666800498192487a16bcd7308d5c4">tel</a>.<a class="code" href="classTELEMETRIA.html#a6c13ae22d648afb2c7bd41f3e17ba4b6">enviaMensagem</a>((<span class="keywordtype">char</span> *)<span class="stringliteral">&quot;emergencyMethods() Ativada&quot;</span>);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  vTaskSuspend(<a class="code" href="main_8cpp.html#abc6d08e0fef7d2e6251a6822a57afe1a">xHandleControl</a>);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <a class="code" href="COMMON_8h.html#a8eabef94a982b1407d1ae4731b7e07ca">turnOnLed</a>();</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  <span class="comment">// pausa a task de controle</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <span class="keywordflow">while</span> (<a class="code" href="main_8cpp.html#a0b8c2b64555211f3dd9069fde81b4bdb">iBus</a>.<a class="code" href="classIBusBM.html#ad576c07af1ed09d8bc355e7f65c69000">remoteControl</a>.<a class="code" href="unionIBusBM_1_1ControlUnion.html#a679d90f97047762a16a1159c68ec6b70">emergency</a> &gt; 1500) {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <a class="code" href="main_8cpp.html#a0b8c2b64555211f3dd9069fde81b4bdb">iBus</a>.<a class="code" href="classIBusBM.html#a3219abe525dde59156d00538d93faa11">loop</a>();</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    vTaskDelay(100);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  }</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <a class="code" href="COMMON_8h.html#a0e9b3928a2c3089998123715bcae29e9">turnOffLed</a>();</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  vTaskResume(<a class="code" href="main_8cpp.html#abc6d08e0fef7d2e6251a6822a57afe1a">xHandleControl</a>);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <a class="code" href="main_8cpp.html#ae81666800498192487a16bcd7308d5c4">tel</a>.<a class="code" href="classTELEMETRIA.html#a6c13ae22d648afb2c7bd41f3e17ba4b6">enviaMensagem</a>((<span class="keywordtype">char</span> *)<span class="stringliteral">&quot;emergencyMethods() Desativada&quot;</span>);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  vTaskDelete(NULL);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;}</div>
+<div class="ttc" id="aCOMMON_8h_html_a0e9b3928a2c3089998123715bcae29e9"><div class="ttname"><a href="COMMON_8h.html#a0e9b3928a2c3089998123715bcae29e9">turnOffLed</a></div><div class="ttdeci">void turnOffLed(void)</div><div class="ttdoc">Desliga o led de comunicação.</div><div class="ttdef"><b>Definition:</b> <a href="COMMON_8h_source.html#l00041">COMMON.h:41</a></div></div>
+<div class="ttc" id="aCOMMON_8h_html_a8eabef94a982b1407d1ae4731b7e07ca"><div class="ttname"><a href="COMMON_8h.html#a8eabef94a982b1407d1ae4731b7e07ca">turnOnLed</a></div><div class="ttdeci">void turnOnLed(void)</div><div class="ttdoc">Liga o led de comunicação.</div><div class="ttdef"><b>Definition:</b> <a href="COMMON_8h_source.html#l00033">COMMON.h:33</a></div></div>
+<div class="ttc" id="aclassIBusBM_html_a3219abe525dde59156d00538d93faa11"><div class="ttname"><a href="classIBusBM.html#a3219abe525dde59156d00538d93faa11">IBusBM::loop</a></div><div class="ttdeci">void loop(void)</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8cpp_source.html#l00165">IBusBM.cpp:165</a></div></div>
+<div class="ttc" id="aclassIBusBM_html_ad576c07af1ed09d8bc355e7f65c69000"><div class="ttname"><a href="classIBusBM.html#ad576c07af1ed09d8bc355e7f65c69000">IBusBM::remoteControl</a></div><div class="ttdeci">ControlUnion remoteControl</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8h_source.html#l00099">IBusBM.h:99</a></div></div>
+<div class="ttc" id="aclassTELEMETRIA_html_a6c13ae22d648afb2c7bd41f3e17ba4b6"><div class="ttname"><a href="classTELEMETRIA.html#a6c13ae22d648afb2c7bd41f3e17ba4b6">TELEMETRIA::enviaMensagem</a></div><div class="ttdeci">void enviaMensagem(char *aviso)</div><div class="ttdef"><b>Definition:</b> <a href="TELEMETRIA_8cpp_source.html#l00069">TELEMETRIA.cpp:69</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a0b8c2b64555211f3dd9069fde81b4bdb"><div class="ttname"><a href="main_8cpp.html#a0b8c2b64555211f3dd9069fde81b4bdb">iBus</a></div><div class="ttdeci">IBusBM iBus</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00028">main.cpp:28</a></div></div>
+<div class="ttc" id="amain_8cpp_html_abc6d08e0fef7d2e6251a6822a57afe1a"><div class="ttname"><a href="main_8cpp.html#abc6d08e0fef7d2e6251a6822a57afe1a">xHandleControl</a></div><div class="ttdeci">TaskHandle_t xHandleControl</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00048">main.cpp:48</a></div></div>
+<div class="ttc" id="amain_8cpp_html_ae81666800498192487a16bcd7308d5c4"><div class="ttname"><a href="main_8cpp.html#ae81666800498192487a16bcd7308d5c4">tel</a></div><div class="ttdeci">TELEMETRIA tel</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00035">main.cpp:35</a></div></div>
+<div class="ttc" id="aunionIBusBM_1_1ControlUnion_html_a679d90f97047762a16a1159c68ec6b70"><div class="ttname"><a href="unionIBusBM_1_1ControlUnion.html#a679d90f97047762a16a1159c68ec6b70">IBusBM::ControlUnion::emergency</a></div><div class="ttdeci">uint16_t emergency</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8h_source.html#l00083">IBusBM.h:83</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Referencias <a class="el" href="IBusBM_8h_source.html#l00083">IBusBM::ControlUnion::emergency</a>, <a class="el" href="TELEMETRIA_8cpp_source.html#l00069">TELEMETRIA::enviaMensagem()</a>, <a class="el" href="main_8cpp_source.html#l00028">iBus</a>, <a class="el" href="IBusBM_8cpp_source.html#l00165">IBusBM::loop()</a>, <a class="el" href="IBusBM_8h_source.html#l00099">IBusBM::remoteControl</a>, <a class="el" href="main_8cpp_source.html#l00035">tel</a>, <a class="el" href="COMMON_8h_source.html#l00041">turnOffLed()</a>, <a class="el" href="COMMON_8h_source.html#l00033">turnOnLed()</a> e <a class="el" href="main_8cpp_source.html#l00048">xHandleControl</a>.</p>
+
+<p class="reference">Referenciado(a) por <a class="el" href="main_8cpp_source.html#l00128">xTaskContol()</a>.</p>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Este é o diagrama das funções utilizadas por essa função:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="main_8cpp_a1f32cff79659de71ff8de76c85e7c7b9_cgraph.png" border="0" usemap="#amain_8cpp_a1f32cff79659de71ff8de76c85e7c7b9_cgraph" alt=""/></div>
+<map name="amain_8cpp_a1f32cff79659de71ff8de76c85e7c7b9_cgraph" id="amain_8cpp_a1f32cff79659de71ff8de76c85e7c7b9_cgraph">
+<area shape="rect" title="Task de Procedimentos emergenciais." alt="" coords="5,101,124,125"/>
+<area shape="rect" href="classTELEMETRIA.html#a6c13ae22d648afb2c7bd41f3e17ba4b6" title=" " alt="" coords="172,5,344,29"/>
+<area shape="rect" href="classIBusBM.html#a3219abe525dde59156d00538d93faa11" title=" " alt="" coords="211,77,305,101"/>
+<area shape="rect" href="COMMON_8h.html#a0e9b3928a2c3089998123715bcae29e9" title="Desliga o led de comunicação." alt="" coords="217,125,299,149"/>
+<area shape="rect" href="COMMON_8h.html#a8eabef94a982b1407d1ae4731b7e07ca" title="Liga o led de comunicação." alt="" coords="220,173,296,197"/>
+</map>
+</div>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Esse é o diagrama das funções que utilizam essa função:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="main_8cpp_a1f32cff79659de71ff8de76c85e7c7b9_icgraph.png" border="0" usemap="#amain_8cpp_a1f32cff79659de71ff8de76c85e7c7b9_icgraph" alt=""/></div>
+<map name="amain_8cpp_a1f32cff79659de71ff8de76c85e7c7b9_icgraph" id="amain_8cpp_a1f32cff79659de71ff8de76c85e7c7b9_icgraph">
+<area shape="rect" title="Task de Procedimentos emergenciais." alt="" coords="241,5,360,29"/>
+<area shape="rect" href="main_8cpp.html#ad3d424dca818563665f9ab9bbf866fff" title=" " alt="" coords="105,5,193,29"/>
+<area shape="rect" href="main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d" title=" " alt="" coords="5,5,57,29"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="afe461d27b9c48d5921c00d521181f12f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afe461d27b9c48d5921c00d521181f12f">&#9670;&nbsp;</a></span>loop()</h2>
 
@@ -151,45 +321,19 @@ Variáveis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definição na linha <a class="el" href="main_8cpp_source.html#l00050">50</a> do arquivo <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="comment">// filtro.updateOfMeasurements();</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="main_8cpp.html#ae1f1091647c66e9cc962b4feab0525cd">filtro</a>.<a class="code" href="classekf_1_1EKF.html#a651814ff64d234394572e2e7c5703a43">loopEKF</a>();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="main_8cpp.html#a415ca717d7f13cfb8bcbaa07a3ddd062">t</a> &lt;&lt; <a class="code" href="main_8cpp.html#ae1f1091647c66e9cc962b4feab0525cd">filtro</a>.<a class="code" href="classekf_1_1EKF.html#a8d016a5adf9aa5f33a8c9e1f7dd73592">messageGPS</a>, <a class="code" href="main_8cpp.html#ae1f1091647c66e9cc962b4feab0525cd">filtro</a>.<a class="code" href="classekf_1_1EKF.html#a30d3adf68cc6ee599fec8fa45a697bbb">accel</a>, <a class="code" href="main_8cpp.html#ae1f1091647c66e9cc962b4feab0525cd">filtro</a>.<a class="code" href="classekf_1_1EKF.html#a3f84435c646a27ad0f922e5205c13eb3">mag</a>, <a class="code" href="main_8cpp.html#ae1f1091647c66e9cc962b4feab0525cd">filtro</a>.<a class="code" href="classekf_1_1EKF.html#af990ea0dbcd3f286f04584ab663d08e6">gyro</a>, <a class="code" href="main_8cpp.html#ae1f1091647c66e9cc962b4feab0525cd">filtro</a>.<a class="code" href="classekf_1_1EKF.html#aee84ca91742c11dd89683930a58d59e3">dt</a>,</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      <a class="code" href="main_8cpp.html#ae1f1091647c66e9cc962b4feab0525cd">filtro</a>.<a class="code" href="classekf_1_1EKF.html#ad27f8aac391293234c9e21c02b944cc4">drNEDgps</a>, <a class="code" href="main_8cpp.html#ae1f1091647c66e9cc962b4feab0525cd">filtro</a>.<a class="code" href="classekf_1_1EKF.html#a649f7d975dc55413be50d8f1e6bc2559">rNEDgps</a>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="comment">// ekf::printEigen(t.transpose());</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <a class="code" href="main_8cpp.html#ae81666800498192487a16bcd7308d5c4">tel</a>.<a class="code" href="classTELEMETRIA.html#af7d02e72d86c217544d195c3b3c9d4ef">envia</a>(<a class="code" href="main_8cpp.html#a415ca717d7f13cfb8bcbaa07a3ddd062">t</a>);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  vTaskDelayUntil(&amp;<a class="code" href="PARAMETROS_8h.html#a8ec4aca2f6caa5c3a1290a2301dfb97b">xLastdtTelemetry</a>, <a class="code" href="PARAMETROS_8h.html#ade6e1f4a0c110e26850765ae6acbcbcb">xdtTelemetry</a>);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
-<div class="ttc" id="aPARAMETROS_8h_html_a8ec4aca2f6caa5c3a1290a2301dfb97b"><div class="ttname"><a href="PARAMETROS_8h.html#a8ec4aca2f6caa5c3a1290a2301dfb97b">xLastdtTelemetry</a></div><div class="ttdeci">TickType_t xLastdtTelemetry</div><div class="ttdef"><b>Definition:</b> <a href="PARAMETROS_8h_source.html#l00042">PARAMETROS.h:42</a></div></div>
-<div class="ttc" id="aPARAMETROS_8h_html_ade6e1f4a0c110e26850765ae6acbcbcb"><div class="ttname"><a href="PARAMETROS_8h.html#ade6e1f4a0c110e26850765ae6acbcbcb">xdtTelemetry</a></div><div class="ttdeci">const TickType_t xdtTelemetry</div><div class="ttdef"><b>Definition:</b> <a href="PARAMETROS_8h_source.html#l00041">PARAMETROS.h:41</a></div></div>
-<div class="ttc" id="aclassTELEMETRIA_html_af7d02e72d86c217544d195c3b3c9d4ef"><div class="ttname"><a href="classTELEMETRIA.html#af7d02e72d86c217544d195c3b3c9d4ef">TELEMETRIA::envia</a></div><div class="ttdeci">void envia(VectorXf a)</div><div class="ttdef"><b>Definition:</b> <a href="TELEMETRIA_8cpp_source.html#l00041">TELEMETRIA.cpp:41</a></div></div>
-<div class="ttc" id="aclassekf_1_1EKF_html_a30d3adf68cc6ee599fec8fa45a697bbb"><div class="ttname"><a href="classekf_1_1EKF.html#a30d3adf68cc6ee599fec8fa45a697bbb">ekf::EKF::accel</a></div><div class="ttdeci">Eigen::Vector3f accel</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00058">EKF.h:58</a></div></div>
-<div class="ttc" id="aclassekf_1_1EKF_html_a3f84435c646a27ad0f922e5205c13eb3"><div class="ttname"><a href="classekf_1_1EKF.html#a3f84435c646a27ad0f922e5205c13eb3">ekf::EKF::mag</a></div><div class="ttdeci">Eigen::Vector3f mag</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00064">EKF.h:64</a></div></div>
-<div class="ttc" id="aclassekf_1_1EKF_html_a649f7d975dc55413be50d8f1e6bc2559"><div class="ttname"><a href="classekf_1_1EKF.html#a649f7d975dc55413be50d8f1e6bc2559">ekf::EKF::rNEDgps</a></div><div class="ttdeci">Eigen::Vector3f rNEDgps</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00080">EKF.h:80</a></div></div>
-<div class="ttc" id="aclassekf_1_1EKF_html_a651814ff64d234394572e2e7c5703a43"><div class="ttname"><a href="classekf_1_1EKF.html#a651814ff64d234394572e2e7c5703a43">ekf::EKF::loopEKF</a></div><div class="ttdeci">void loopEKF()</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8cpp_source.html#l00093">EKF.cpp:93</a></div></div>
-<div class="ttc" id="aclassekf_1_1EKF_html_a8d016a5adf9aa5f33a8c9e1f7dd73592"><div class="ttname"><a href="classekf_1_1EKF.html#a8d016a5adf9aa5f33a8c9e1f7dd73592">ekf::EKF::messageGPS</a></div><div class="ttdeci">uint8_t messageGPS</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00089">EKF.h:89</a></div></div>
-<div class="ttc" id="aclassekf_1_1EKF_html_ad27f8aac391293234c9e21c02b944cc4"><div class="ttname"><a href="classekf_1_1EKF.html#ad27f8aac391293234c9e21c02b944cc4">ekf::EKF::drNEDgps</a></div><div class="ttdeci">Eigen::Vector3f drNEDgps</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00084">EKF.h:84</a></div></div>
-<div class="ttc" id="aclassekf_1_1EKF_html_aee84ca91742c11dd89683930a58d59e3"><div class="ttname"><a href="classekf_1_1EKF.html#aee84ca91742c11dd89683930a58d59e3">ekf::EKF::dt</a></div><div class="ttdeci">float dt</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00056">EKF.h:56</a></div></div>
-<div class="ttc" id="aclassekf_1_1EKF_html_af990ea0dbcd3f286f04584ab663d08e6"><div class="ttname"><a href="classekf_1_1EKF.html#af990ea0dbcd3f286f04584ab663d08e6">ekf::EKF::gyro</a></div><div class="ttdeci">Eigen::Vector3f gyro</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00062">EKF.h:62</a></div></div>
-<div class="ttc" id="amain_8cpp_html_a415ca717d7f13cfb8bcbaa07a3ddd062"><div class="ttname"><a href="main_8cpp.html#a415ca717d7f13cfb8bcbaa07a3ddd062">t</a></div><div class="ttdeci">Eigen::Vector&lt; float, 17 &gt; t</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00049">main.cpp:49</a></div></div>
-<div class="ttc" id="amain_8cpp_html_ae1f1091647c66e9cc962b4feab0525cd"><div class="ttname"><a href="main_8cpp.html#ae1f1091647c66e9cc962b4feab0525cd">filtro</a></div><div class="ttdeci">ekf::EKF filtro</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00025">main.cpp:25</a></div></div>
-<div class="ttc" id="amain_8cpp_html_ae81666800498192487a16bcd7308d5c4"><div class="ttname"><a href="main_8cpp.html#ae81666800498192487a16bcd7308d5c4">tel</a></div><div class="ttdeci">TELEMETRIA tel</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00023">main.cpp:23</a></div></div>
+<p class="definition">Definição na linha <a class="el" href="main_8cpp_source.html#l00237">237</a> do arquivo <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;            {</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="preprocessor">#ifdef TEST_IMU</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;  filtro.updateOfMeasurements();</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;  <a class="code" href="main_8cpp.html#a30b9cf7c1ad8a006a9a5b815c02a67dc">PM</a>(filtro.gyro.transpose());</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;  <a class="code" href="main_8cpp.html#a30b9cf7c1ad8a006a9a5b815c02a67dc">PM</a>(filtro.accel.transpose());</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;  <a class="code" href="main_8cpp.html#a30b9cf7c1ad8a006a9a5b815c02a67dc">PM</a>(filtro.mag.transpose());</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;  delay(500);</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;}</div>
+<div class="ttc" id="amain_8cpp_html_a30b9cf7c1ad8a006a9a5b815c02a67dc"><div class="ttname"><a href="main_8cpp.html#a30b9cf7c1ad8a006a9a5b815c02a67dc">PM</a></div><div class="ttdeci">#define PM(X)</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00023">main.cpp:23</a></div></div>
 </div><!-- fragment -->
-<p class="reference">Referencias <a class="el" href="EKF_8h_source.html#l00058">ekf::EKF::accel</a>, <a class="el" href="EKF_8h_source.html#l00084">ekf::EKF::drNEDgps</a>, <a class="el" href="EKF_8h_source.html#l00056">ekf::EKF::dt</a>, <a class="el" href="TELEMETRIA_8cpp_source.html#l00041">TELEMETRIA::envia()</a>, <a class="el" href="main_8cpp_source.html#l00025">filtro</a>, <a class="el" href="EKF_8h_source.html#l00062">ekf::EKF::gyro</a>, <a class="el" href="EKF_8cpp_source.html#l00093">ekf::EKF::loopEKF()</a>, <a class="el" href="EKF_8h_source.html#l00064">ekf::EKF::mag</a>, <a class="el" href="EKF_8h_source.html#l00089">ekf::EKF::messageGPS</a>, <a class="el" href="EKF_8h_source.html#l00080">ekf::EKF::rNEDgps</a>, <a class="el" href="main_8cpp_source.html#l00049">t</a>, <a class="el" href="main_8cpp_source.html#l00023">tel</a>, <a class="el" href="PARAMETROS_8h_source.html#l00041">xdtTelemetry</a> e <a class="el" href="PARAMETROS_8h_source.html#l00042">xLastdtTelemetry</a>.</p>
-<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Este é o diagrama das funções utilizadas por essa função:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="main_8cpp_afe461d27b9c48d5921c00d521181f12f_cgraph.png" border="0" usemap="#amain_8cpp_afe461d27b9c48d5921c00d521181f12f_cgraph" alt=""/></div>
-<map name="amain_8cpp_afe461d27b9c48d5921c00d521181f12f_cgraph" id="amain_8cpp_afe461d27b9c48d5921c00d521181f12f_cgraph">
-<area shape="rect" title=" " alt="" coords="5,29,52,53"/>
-<area shape="rect" href="classTELEMETRIA.html#af7d02e72d86c217544d195c3b3c9d4ef" title=" " alt="" coords="100,5,224,29"/>
-<area shape="rect" href="classekf_1_1EKF.html#a651814ff64d234394572e2e7c5703a43" title=" " alt="" coords="100,53,224,77"/>
-</map>
-</div>
+<p class="reference">Referencias <a class="el" href="EKF_8h_source.html#l00070">ekf::EKF::accel</a>, <a class="el" href="EKF_8h_source.html#l00074">ekf::EKF::gyro</a>, <a class="el" href="EKF_8h_source.html#l00076">ekf::EKF::mag</a> e <a class="el" href="main_8cpp_source.html#l00023">PM</a>.</p>
 
 </div>
 </div>
@@ -208,125 +352,597 @@ Variáveis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definição na linha <a class="el" href="main_8cpp_source.html#l00033">33</a> do arquivo <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;             {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  pinMode(<a class="code" href="PARAMETROS_8h.html#a9135a979a4e22c5a4095074dec5477f5">onboard_led</a>, OUTPUT);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <a class="code" href="main_8cpp.html#ae81666800498192487a16bcd7308d5c4">tel</a>.<a class="code" href="classTELEMETRIA.html#a780be82ef9be2da12601a0ea7d10e647">begin</a>();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <a class="code" href="main_8cpp.html#ae1f1091647c66e9cc962b4feab0525cd">filtro</a>.<a class="code" href="classekf_1_1EKF.html#a4a6998123529ab0d0844ad21419fc895">begin</a>(<span class="keywordtype">float</span>(<a class="code" href="PARAMETROS_8h.html#a9cbadcfbca426e6cec9d14f30750ef04">dtTelemetry</a>) * 1e-3);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="comment">// Serial.begin(115200);</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  vTaskDelay(2000);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <a class="code" href="main_8cpp.html#ae81666800498192487a16bcd7308d5c4">tel</a>.<a class="code" href="classTELEMETRIA.html#a6c13ae22d648afb2c7bd41f3e17ba4b6">enviaMensagem</a>((<span class="keywordtype">char</span> *)<span class="stringliteral">&quot;Ent. no método de Calibracao&quot;</span>);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <a class="code" href="main_8cpp.html#ae1f1091647c66e9cc962b4feab0525cd">filtro</a>.calibrationMethods();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="main_8cpp.html#ae81666800498192487a16bcd7308d5c4">tel</a>.<a class="code" href="classTELEMETRIA.html#a6c13ae22d648afb2c7bd41f3e17ba4b6">enviaMensagem</a>((<span class="keywordtype">char</span> *)<span class="stringliteral">&quot;Calibracao OK&quot;</span>);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="main_8cpp.html#aad20b5e553c06abe201d2985050078b2">ibus</a>.<a class="code" href="classIBusBM.html#afb01e4a762c8f575d8466fc8dadaa5cd">begin</a>(Serial2, <a class="code" href="IBusBM_8h.html#a8b9fd84154bff010521710049dd8f090">IBUSBM_NOTIMER</a>, 13);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="comment">// xTaskCreatePinnedToCore(core_1, &quot;funcao_core_1&quot;, 4000, NULL, 10, NULL, 1);</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="comment">// xTaskCreatePinnedToCore(telemetria, &quot;telemetria&quot;, 2000, NULL, 1, NULL, 0);</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  vTaskDelay(2000);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <a class="code" href="main_8cpp.html#ae81666800498192487a16bcd7308d5c4">tel</a>.<a class="code" href="classTELEMETRIA.html#a6c13ae22d648afb2c7bd41f3e17ba4b6">enviaMensagem</a>((<span class="keywordtype">char</span> *)<span class="stringliteral">&quot;Setup OK&quot;</span>);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
-<div class="ttc" id="aIBusBM_8h_html_a8b9fd84154bff010521710049dd8f090"><div class="ttname"><a href="IBusBM_8h.html#a8b9fd84154bff010521710049dd8f090">IBUSBM_NOTIMER</a></div><div class="ttdeci">#define IBUSBM_NOTIMER</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8h_source.html#l00053">IBusBM.h:53</a></div></div>
-<div class="ttc" id="aPARAMETROS_8h_html_a9135a979a4e22c5a4095074dec5477f5"><div class="ttname"><a href="PARAMETROS_8h.html#a9135a979a4e22c5a4095074dec5477f5">onboard_led</a></div><div class="ttdeci">gpio_num_t onboard_led</div></div>
-<div class="ttc" id="aPARAMETROS_8h_html_a9cbadcfbca426e6cec9d14f30750ef04"><div class="ttname"><a href="PARAMETROS_8h.html#a9cbadcfbca426e6cec9d14f30750ef04">dtTelemetry</a></div><div class="ttdeci">const uint16_t dtTelemetry</div><div class="ttdef"><b>Definition:</b> <a href="PARAMETROS_8h_source.html#l00039">PARAMETROS.h:39</a></div></div>
-<div class="ttc" id="aclassIBusBM_html_afb01e4a762c8f575d8466fc8dadaa5cd"><div class="ttname"><a href="classIBusBM.html#afb01e4a762c8f575d8466fc8dadaa5cd">IBusBM::begin</a></div><div class="ttdeci">void begin(HardwareSerial &amp;serial, int8_t timerid=0, int8_t rxPin=-1, int8_t txPin=-1)</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8cpp_source.html#l00089">IBusBM.cpp:89</a></div></div>
-<div class="ttc" id="aclassTELEMETRIA_html_a6c13ae22d648afb2c7bd41f3e17ba4b6"><div class="ttname"><a href="classTELEMETRIA.html#a6c13ae22d648afb2c7bd41f3e17ba4b6">TELEMETRIA::enviaMensagem</a></div><div class="ttdeci">void enviaMensagem(char *aviso)</div><div class="ttdef"><b>Definition:</b> <a href="TELEMETRIA_8cpp_source.html#l00056">TELEMETRIA.cpp:56</a></div></div>
+<p class="definition">Definição na linha <a class="el" href="main_8cpp_source.html#l00214">214</a> do arquivo <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;             {</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;  pinMode(<a class="code" href="PARAMETROS_8h.html#a9135a979a4e22c5a4095074dec5477f5">onboard_led</a>, OUTPUT);</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="preprocessor">#ifndef TEST_IMU</span></div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;  <a class="code" href="main_8cpp.html#ae81666800498192487a16bcd7308d5c4">tel</a>.<a class="code" href="classTELEMETRIA.html#a780be82ef9be2da12601a0ea7d10e647">begin</a>();</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;  <a class="code" href="main_8cpp.html#a0b8c2b64555211f3dd9069fde81b4bdb">iBus</a>.<a class="code" href="classIBusBM.html#afb01e4a762c8f575d8466fc8dadaa5cd">begin</a>(Serial2, <a class="code" href="IBusBM_8h.html#a8b9fd84154bff010521710049dd8f090">IBUSBM_NOTIMER</a>, <a class="code" href="PARAMETROS_8h.html#a493aff86cb19bf7b232753af37dabde8">pin_rx_controle</a>);</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;  <a class="code" href="main_8cpp.html#a0b8c2b64555211f3dd9069fde81b4bdb">iBus</a>.<a class="code" href="classIBusBM.html#a3219abe525dde59156d00538d93faa11">loop</a>();</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;  <span class="keywordflow">while</span> (<a class="code" href="main_8cpp.html#a0b8c2b64555211f3dd9069fde81b4bdb">iBus</a>.<a class="code" href="classIBusBM.html#ad576c07af1ed09d8bc355e7f65c69000">remoteControl</a>.<a class="code" href="unionIBusBM_1_1ControlUnion.html#a679d90f97047762a16a1159c68ec6b70">emergency</a> &lt; 1000) {</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <a class="code" href="main_8cpp.html#ae81666800498192487a16bcd7308d5c4">tel</a>.<a class="code" href="classTELEMETRIA.html#a6c13ae22d648afb2c7bd41f3e17ba4b6">enviaMensagem</a>((<span class="keywordtype">char</span> *)<span class="stringliteral">&quot;Cont Remoto com problema&quot;</span>);</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    vTaskDelay(250);</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <a class="code" href="main_8cpp.html#a0b8c2b64555211f3dd9069fde81b4bdb">iBus</a>.<a class="code" href="classIBusBM.html#a3219abe525dde59156d00538d93faa11">loop</a>();</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;  }</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;  <a class="code" href="main_8cpp.html#ae81666800498192487a16bcd7308d5c4">tel</a>.<a class="code" href="classTELEMETRIA.html#a6c13ae22d648afb2c7bd41f3e17ba4b6">enviaMensagem</a>((<span class="keywordtype">char</span> *)<span class="stringliteral">&quot;Controle ok&quot;</span>);</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;  <a class="code" href="main_8cpp.html#ae81666800498192487a16bcd7308d5c4">tel</a>.<a class="code" href="classTELEMETRIA.html#a6c13ae22d648afb2c7bd41f3e17ba4b6">enviaMensagem</a>((<span class="keywordtype">char</span> *)<span class="stringliteral">&quot;Criando Task xTaskSetupFiltro &quot;</span>);</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;  xTaskCreatePinnedToCore(<a class="code" href="main_8cpp.html#a1d67803bd6f9b50c1e3686650e280f68">xTaskSetupFiltro</a>, <span class="stringliteral">&quot;SetupFiltro&quot;</span>, 25000, NULL, 0,</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                          &amp;<a class="code" href="main_8cpp.html#a5a89228326c473f17abbd278991560d5">xHandleSetupFilter</a>, 0);</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;  xTaskCreatePinnedToCore(<a class="code" href="main_8cpp.html#ad3d424dca818563665f9ab9bbf866fff">xTaskContol</a>, <span class="stringliteral">&quot;Control&quot;</span>, 20000, NULL, 2,</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                          &amp;<a class="code" href="main_8cpp.html#abc6d08e0fef7d2e6251a6822a57afe1a">xHandleControl</a>, 1);</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;  filtro.begin(<span class="keywordtype">float</span>(<a class="code" href="PARAMETROS_8h.html#a9cbadcfbca426e6cec9d14f30750ef04">dtTelemetry</a>) * 1e-3);</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;}</div>
+<div class="ttc" id="aIBusBM_8h_html_a8b9fd84154bff010521710049dd8f090"><div class="ttname"><a href="IBusBM_8h.html#a8b9fd84154bff010521710049dd8f090">IBUSBM_NOTIMER</a></div><div class="ttdeci">#define IBUSBM_NOTIMER</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8h_source.html#l00052">IBusBM.h:52</a></div></div>
+<div class="ttc" id="aPARAMETROS_8h_html_a493aff86cb19bf7b232753af37dabde8"><div class="ttname"><a href="PARAMETROS_8h.html#a493aff86cb19bf7b232753af37dabde8">pin_rx_controle</a></div><div class="ttdeci">const int8_t pin_rx_controle</div><div class="ttdef"><b>Definition:</b> <a href="PARAMETROS_8h_source.html#l00045">PARAMETROS.h:45</a></div></div>
+<div class="ttc" id="aPARAMETROS_8h_html_a9135a979a4e22c5a4095074dec5477f5"><div class="ttname"><a href="PARAMETROS_8h.html#a9135a979a4e22c5a4095074dec5477f5">onboard_led</a></div><div class="ttdeci">gpio_num_t onboard_led</div><div class="ttdef"><b>Definition:</b> <a href="PARAMETROS_8h_source.html#l00043">PARAMETROS.h:43</a></div></div>
+<div class="ttc" id="aPARAMETROS_8h_html_a9cbadcfbca426e6cec9d14f30750ef04"><div class="ttname"><a href="PARAMETROS_8h.html#a9cbadcfbca426e6cec9d14f30750ef04">dtTelemetry</a></div><div class="ttdeci">const uint16_t dtTelemetry</div><div class="ttdef"><b>Definition:</b> <a href="PARAMETROS_8h_source.html#l00047">PARAMETROS.h:47</a></div></div>
+<div class="ttc" id="aclassIBusBM_html_afb01e4a762c8f575d8466fc8dadaa5cd"><div class="ttname"><a href="classIBusBM.html#afb01e4a762c8f575d8466fc8dadaa5cd">IBusBM::begin</a></div><div class="ttdeci">void begin(HardwareSerial &amp;serial, int8_t timerid=0, int8_t rxPin=-1, int8_t txPin=-1)</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8cpp_source.html#l00083">IBusBM.cpp:83</a></div></div>
 <div class="ttc" id="aclassTELEMETRIA_html_a780be82ef9be2da12601a0ea7d10e647"><div class="ttname"><a href="classTELEMETRIA.html#a780be82ef9be2da12601a0ea7d10e647">TELEMETRIA::begin</a></div><div class="ttdeci">void begin()</div><div class="ttdef"><b>Definition:</b> <a href="TELEMETRIA_8cpp_source.html#l00020">TELEMETRIA.cpp:20</a></div></div>
-<div class="ttc" id="aclassekf_1_1EKF_html_a4a6998123529ab0d0844ad21419fc895"><div class="ttname"><a href="classekf_1_1EKF.html#a4a6998123529ab0d0844ad21419fc895">ekf::EKF::begin</a></div><div class="ttdeci">void begin(float dt)</div><div class="ttdoc">Inicializacao do filtro de Kalman.</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8cpp_source.html#l00039">EKF.cpp:39</a></div></div>
-<div class="ttc" id="amain_8cpp_html_aad20b5e553c06abe201d2985050078b2"><div class="ttname"><a href="main_8cpp.html#aad20b5e553c06abe201d2985050078b2">ibus</a></div><div class="ttdeci">IBusBM ibus</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00022">main.cpp:22</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a1d67803bd6f9b50c1e3686650e280f68"><div class="ttname"><a href="main_8cpp.html#a1d67803bd6f9b50c1e3686650e280f68">xTaskSetupFiltro</a></div><div class="ttdeci">void xTaskSetupFiltro(void *pvParameters)</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00087">main.cpp:87</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a5a89228326c473f17abbd278991560d5"><div class="ttname"><a href="main_8cpp.html#a5a89228326c473f17abbd278991560d5">xHandleSetupFilter</a></div><div class="ttdeci">TaskHandle_t xHandleSetupFilter</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00046">main.cpp:46</a></div></div>
+<div class="ttc" id="amain_8cpp_html_ad3d424dca818563665f9ab9bbf866fff"><div class="ttname"><a href="main_8cpp.html#ad3d424dca818563665f9ab9bbf866fff">xTaskContol</a></div><div class="ttdeci">void xTaskContol(void *pv)</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00128">main.cpp:128</a></div></div>
 </div><!-- fragment -->
-<p class="reference">Referencias <a class="el" href="TELEMETRIA_8cpp_source.html#l00020">TELEMETRIA::begin()</a>, <a class="el" href="EKF_8cpp_source.html#l00039">ekf::EKF::begin()</a>, <a class="el" href="IBusBM_8cpp_source.html#l00089">IBusBM::begin()</a>, <a class="el" href="PARAMETROS_8h_source.html#l00039">dtTelemetry</a>, <a class="el" href="TELEMETRIA_8cpp_source.html#l00056">TELEMETRIA::enviaMensagem()</a>, <a class="el" href="main_8cpp_source.html#l00025">filtro</a>, <a class="el" href="main_8cpp_source.html#l00022">ibus</a>, <a class="el" href="IBusBM_8h_source.html#l00053">IBUSBM_NOTIMER</a>, <a class="el" href="PARAMETROS_8h.html#a9135a979a4e22c5a4095074dec5477f5">onboard_led</a> e <a class="el" href="main_8cpp_source.html#l00023">tel</a>.</p>
-<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Este é o diagrama das funções utilizadas por essa função:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<p class="reference">Referencias <a class="el" href="TELEMETRIA_8cpp_source.html#l00020">TELEMETRIA::begin()</a>, <a class="el" href="EKF_8cpp_source.html#l00040">ekf::EKF::begin()</a>, <a class="el" href="IBusBM_8cpp_source.html#l00083">IBusBM::begin()</a>, <a class="el" href="PARAMETROS_8h_source.html#l00047">dtTelemetry</a>, <a class="el" href="IBusBM_8h_source.html#l00083">IBusBM::ControlUnion::emergency</a>, <a class="el" href="TELEMETRIA_8cpp_source.html#l00069">TELEMETRIA::enviaMensagem()</a>, <a class="el" href="main_8cpp_source.html#l00028">iBus</a>, <a class="el" href="IBusBM_8h_source.html#l00052">IBUSBM_NOTIMER</a>, <a class="el" href="IBusBM_8cpp_source.html#l00165">IBusBM::loop()</a>, <a class="el" href="PARAMETROS_8h_source.html#l00043">onboard_led</a>, <a class="el" href="PARAMETROS_8h_source.html#l00045">pin_rx_controle</a>, <a class="el" href="IBusBM_8h_source.html#l00099">IBusBM::remoteControl</a>, <a class="el" href="main_8cpp_source.html#l00035">tel</a>, <a class="el" href="main_8cpp_source.html#l00048">xHandleControl</a>, <a class="el" href="main_8cpp_source.html#l00046">xHandleSetupFilter</a>, <a class="el" href="main_8cpp_source.html#l00128">xTaskContol()</a> e <a class="el" href="main_8cpp_source.html#l00087">xTaskSetupFiltro()</a>.</p>
+<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Este é o diagrama das funções utilizadas por essa função:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="main_8cpp_a4fc01d736fe50cf5b977f755b675f11d_cgraph.png" border="0" usemap="#amain_8cpp_a4fc01d736fe50cf5b977f755b675f11d_cgraph" alt=""/></div>
 <map name="amain_8cpp_a4fc01d736fe50cf5b977f755b675f11d_cgraph" id="amain_8cpp_a4fc01d736fe50cf5b977f755b675f11d_cgraph">
-<area shape="rect" title=" " alt="" coords="5,357,57,381"/>
-<area shape="rect" href="classTELEMETRIA.html#a780be82ef9be2da12601a0ea7d10e647" title=" " alt="" coords="129,55,253,79"/>
-<area shape="rect" href="classekf_1_1EKF.html#a4a6998123529ab0d0844ad21419fc895" title="Inicializacao do filtro de Kalman." alt="" coords="135,333,247,357"/>
-<area shape="rect" href="classIBusBM.html#afb01e4a762c8f575d8466fc8dadaa5cd" title=" " alt="" coords="141,381,241,405"/>
-<area shape="rect" href="classTELEMETRIA.html#a6c13ae22d648afb2c7bd41f3e17ba4b6" title=" " alt="" coords="105,429,277,453"/>
-<area shape="rect" href="classTELEMETRIA.html#ace27ccd5888ebc3802a4eb22cc3fd9da" title=" " alt="" coords="340,5,495,29"/>
-<area shape="rect" href="classTELEMETRIA.html#ae47c01609eec8284a663dd66e0d7c632" title=" " alt="" coords="584,5,739,29"/>
-<area shape="rect" href="classTIME.html#a8cd98765b05a23aa7afe8fa5234b9695" title=" " alt="" coords="373,357,461,381"/>
-<area shape="rect" href="classAQUA.html#a8809dddd7e4f74f3eb7bd1fc4a604ae4" title=" " alt="" coords="373,405,461,429"/>
-<area shape="rect" href="classIMU.html#ae0d964d2f8ec122be068c41b84bc18a8" title=" " alt="" coords="376,480,459,504"/>
-<area shape="rect" href="classAQUA.html#ae3ddff89a969a0d2a3d3c675ed5b8065" title=" " alt="" coords="325,156,509,180"/>
-<area shape="rect" href="GPS_8h.html#a35c55bcf9a6f5a52f34cb1ab02c91479" title=" " alt="" coords="382,259,453,283"/>
-<area shape="rect" href="classIMU.html#ac574728dbbc752155239a35c8bbd6e79" title=" " alt="" coords="1037,333,1149,357"/>
-<area shape="rect" href="classIMU.html#a914f8b4262fba70e6d8fd0e584fa7996" title=" " alt="" coords="813,407,980,431"/>
-<area shape="rect" href="classIMU.html#a37694424e4502ffc69bbb6c540c1a400" title=" " alt="" coords="1028,507,1159,531"/>
-<area shape="rect" href="classIMU.html#a5567bbe0d211f1e6d386eb69ffd960a7" title=" " alt="" coords="831,556,962,580"/>
-<area shape="rect" href="classIMU.html#a928fa5e2db05bd402a3fa93bd3584527" title=" " alt="" coords="823,656,971,680"/>
-<area shape="rect" href="classIMU.html#a834f21762003f831e5e632cc7974ba75" title=" " alt="" coords="835,605,959,629"/>
-<area shape="rect" href="classIMU.html#acd2af48f4eb0a0321080332016e3c1f7" title=" " alt="" coords="599,357,723,381"/>
-<area shape="rect" href="classIMU.html#af3b90e0b20d4bd55091be99f7aa67737" title=" " alt="" coords="578,456,745,480"/>
-<area shape="rect" href="classIMU.html#a87c200faa130ff4d2d3416b2d83f4f49" title=" " alt="" coords="1207,407,1337,431"/>
-<area shape="rect" href="classAQUA.html#abdff34437c9c066d046a342525a01b52" title="Calcula o quaternion de inclinacao." alt="" coords="566,211,757,235"/>
-<area shape="rect" href="classAQUA.html#a6adb2b857affb225b29fb91e6f6a7194" title=" " alt="" coords="572,53,751,77"/>
-<area shape="rect" href="namespaceekf.html#a0ae7d9ae45fba00d81bfe71ad73d7fee" title="Produto de quaternions aplicado." alt="" coords="578,101,745,125"/>
-<area shape="rect" href="namespaceekf.html#acb1dc12948420927eff91ed90c24b342" title="Rotaciona um vetor tridimensional com um quaternion conjugado." alt="" coords="557,150,765,186"/>
-<area shape="rect" href="namespaceekf.html#ab55e144edf7066b67232e15cca7b4646" title="Calcula o inverso do raiz de um float." alt="" coords="849,53,944,77"/>
-<area shape="rect" href="GPS_8h.html#a5d2ecd8f29f7e3e702c8b8bea333f6c6" title=" " alt="" coords="623,259,699,283"/>
-<area shape="rect" href="IBusBM_8cpp.html#a68b68e72a8323bb91995b38e98cf7d3e" title=" " alt="" coords="385,641,449,665"/>
-<area shape="rect" href="classIBusBM.html#a3219abe525dde59156d00538d93faa11" title=" " alt="" coords="614,731,709,755"/>
+<area shape="rect" title=" " alt="" coords="5,597,57,621"/>
+<area shape="rect" href="classTELEMETRIA.html#a780be82ef9be2da12601a0ea7d10e647" title=" " alt="" coords="105,55,229,79"/>
+<area shape="rect" href="classekf_1_1EKF.html#a4a6998123529ab0d0844ad21419fc895" title="Inicializacao do filtro de Kalman." alt="" coords="305,379,417,403"/>
+<area shape="rect" href="classIBusBM.html#afb01e4a762c8f575d8466fc8dadaa5cd" title=" " alt="" coords="117,597,217,621"/>
+<area shape="rect" href="classIBusBM.html#a3219abe525dde59156d00538d93faa11" title=" " alt="" coords="546,672,641,696"/>
+<area shape="rect" href="classTELEMETRIA.html#a6c13ae22d648afb2c7bd41f3e17ba4b6" title=" " alt="" coords="507,748,679,772"/>
+<area shape="rect" href="main_8cpp.html#ad3d424dca818563665f9ab9bbf866fff" title=" " alt="" coords="123,848,211,872"/>
+<area shape="rect" href="main_8cpp.html#a1d67803bd6f9b50c1e3686650e280f68" title=" " alt="" coords="108,497,227,521"/>
+<area shape="rect" href="classTELEMETRIA.html#ace27ccd5888ebc3802a4eb22cc3fd9da" title=" " alt="" coords="283,5,438,29"/>
+<area shape="rect" href="classTELEMETRIA.html#ae47c01609eec8284a663dd66e0d7c632" title=" " alt="" coords="516,5,671,29"/>
+<area shape="rect" href="classTIME.html#a8cd98765b05a23aa7afe8fa5234b9695" title=" " alt="" coords="549,357,637,381"/>
+<area shape="rect" href="classAQUA.html#a8809dddd7e4f74f3eb7bd1fc4a604ae4" title=" " alt="" coords="549,405,637,429"/>
+<area shape="rect" href="classIMU.html#ae0d964d2f8ec122be068c41b84bc18a8" title=" " alt="" coords="552,453,635,477"/>
+<area shape="rect" href="classAQUA.html#ae3ddff89a969a0d2a3d3c675ed5b8065" title=" " alt="" coords="501,213,685,237"/>
+<area shape="rect" href="GPS_8h.html#a35c55bcf9a6f5a52f34cb1ab02c91479" title=" " alt="" coords="558,309,629,333"/>
+<area shape="rect" href="classIMU.html#ac574728dbbc752155239a35c8bbd6e79" title=" " alt="" coords="1223,205,1335,229"/>
+<area shape="rect" href="classIMU.html#a914f8b4262fba70e6d8fd0e584fa7996" title=" " alt="" coords="999,405,1165,429"/>
+<area shape="rect" href="classIMU.html#a37694424e4502ffc69bbb6c540c1a400" title=" " alt="" coords="1213,505,1344,529"/>
+<area shape="rect" href="classIMU.html#a5567bbe0d211f1e6d386eb69ffd960a7" title=" " alt="" coords="1017,555,1147,579"/>
+<area shape="rect" href="classIMU.html#a928fa5e2db05bd402a3fa93bd3584527" title=" " alt="" coords="1008,604,1156,628"/>
+<area shape="rect" href="classIMU.html#a834f21762003f831e5e632cc7974ba75" title=" " alt="" coords="1020,655,1144,679"/>
+<area shape="rect" href="classIMU.html#acd2af48f4eb0a0321080332016e3c1f7" title=" " alt="" coords="785,408,909,432"/>
+<area shape="rect" href="classIMU.html#af3b90e0b20d4bd55091be99f7aa67737" title=" " alt="" coords="763,456,930,480"/>
+<area shape="rect" href="classIMU.html#a87c200faa130ff4d2d3416b2d83f4f49" title=" " alt="" coords="1392,405,1523,429"/>
+<area shape="rect" href="classAQUA.html#abdff34437c9c066d046a342525a01b52" title="Calcula o quaternion de inclinacao." alt="" coords="751,165,942,189"/>
+<area shape="rect" href="classAQUA.html#a6adb2b857affb225b29fb91e6f6a7194" title=" " alt="" coords="757,213,936,237"/>
+<area shape="rect" href="namespaceekf.html#a0ae7d9ae45fba00d81bfe71ad73d7fee" title="Produto de quaternions aplicado." alt="" coords="763,261,930,285"/>
+<area shape="rect" href="namespaceekf.html#acb1dc12948420927eff91ed90c24b342" title="Rotaciona um vetor tridimensional com um quaternion conjugado." alt="" coords="743,105,951,141"/>
+<area shape="rect" href="namespaceekf.html#ab55e144edf7066b67232e15cca7b4646" title="Calcula o inverso do raiz de um float." alt="" coords="1035,213,1129,237"/>
+<area shape="rect" href="GPS_8h.html#a5d2ecd8f29f7e3e702c8b8bea333f6c6" title=" " alt="" coords="809,309,885,333"/>
+<area shape="rect" href="IBusBM_8cpp.html#a68b68e72a8323bb91995b38e98cf7d3e" title=" " alt="" coords="329,597,393,621"/>
+<area shape="rect" href="classControle.html#a78e5f662130811f409342a706d5c0d2f" title="Loop de controle das duas dinâmicas." alt="" coords="287,1012,435,1036"/>
+<area shape="rect" href="main_8cpp.html#a1f32cff79659de71ff8de76c85e7c7b9" title="Task de Procedimentos emergenciais." alt="" coords="301,848,420,872"/>
+<area shape="rect" href="classTELEMETRIA.html#ac3b8fa789f6d00dca33ea41b4fd865c7" title=" " alt="" coords="277,945,444,981"/>
+<area shape="rect" href="classMotores.html#ac6264dc2b71015a3c9641025151edd4a" title="funcao que muda a velocidade." alt="" coords="289,896,432,920"/>
+<area shape="rect" href="classControle.html#abcf05dcff157e963fd65c09d45261a8f" title=" " alt="" coords="501,1134,685,1170"/>
+<area shape="rect" href="classControle.html#a8ac9e933ce30f9c88ed421d4c0afcf99" title=" " alt="" coords="501,954,685,990"/>
+<area shape="rect" href="classControle.html#add7378d03597a45ff09b2432d7739dfe" title=" " alt="" coords="492,1014,695,1050"/>
+<area shape="rect" href="classControle.html#a42aee0a4592b84bd793c8be0fde0095b" title=" " alt="" coords="510,1074,677,1110"/>
+<area shape="rect" href="classControle.html#a9b3718425d8602487eb9b14d6ee1c781" title=" " alt="" coords="510,894,677,930"/>
+<area shape="rect" href="namespaceekf.html#a8177897fe9b962d8e0927a913fc36242" title="Calcula a Matriz Left&#45;Quaternion a partir do quaternion q." alt="" coords="811,1164,882,1188"/>
+<area shape="rect" href="classSdre.html#af2f380ec3d018b60686e304ca7026846" title=" " alt="" coords="779,1116,915,1140"/>
+<area shape="rect" href="namespaceekf.html#a34993a331b6837e5274d556e4f0a1bea" title=" " alt="" coords="811,960,882,984"/>
+<area shape="rect" href="namespaceekf.html#aab2dcd522b40c160064cfae69cae6d98" title=" " alt="" coords="773,808,921,832"/>
+<area shape="rect" href="namespaceekf.html#ad48c9ef49e8ccbde872958a81f6ed41a" title="Calcula, a partir de um quatérnio de atitude, o valor do ângulo Phi em Radianos." alt="" coords="1032,808,1132,832"/>
+<area shape="rect" href="COMMON_8h.html#a0e9b3928a2c3089998123715bcae29e9" title="Desliga o led de comunicação." alt="" coords="552,845,635,869"/>
+<area shape="rect" href="COMMON_8h.html#a8eabef94a982b1407d1ae4731b7e07ca" title="Liga o led de comunicação." alt="" coords="555,797,631,821"/>
+<area shape="rect" href="main_8cpp.html#abd3bd9c344e182dcb5f5a561ef562eb0" title=" " alt="" coords="305,448,417,472"/>
+<area shape="rect" href="classTELEMETRIA.html#a235abb2ba6888140e7dab2e73a050049" title="Envia vetor Eigen de float." alt="" coords="531,552,655,576"/>
+<area shape="rect" href="classekf_1_1EKF.html#a651814ff64d234394572e2e7c5703a43" title=" " alt="" coords="531,600,655,624"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad3d424dca818563665f9ab9bbf866fff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3d424dca818563665f9ab9bbf866fff">&#9670;&nbsp;</a></span>xTaskContol()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void xTaskContol </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>pv</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="main_8cpp_source.html#l00128">128</a> do arquivo <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                           {</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <a class="code" href="classControle.html">Controle</a> ctrl(<a class="code" href="PARAMETROS_8h.html#ac3437d0d1acbe94e967793e5e4d8473d">dtControle</a> * 1e-3);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  <a class="code" href="structMOTOR__PINS.html">MOTOR_PINS</a> mp;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  <a class="code" href="main_8cpp.html#a69b5e71277e0e3a57afef1e2d7025e58">eulerTarget</a> = &amp;ctrl.eulerTarget;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  <a class="code" href="main_8cpp.html#a4de603e279aa24f62c1b8a40306140f3">wa</a> = &amp;ctrl.wa;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  <a class="code" href="main_8cpp.html#adef42f887c2b14a9f43de1ae529a09e5">ra</a> = &amp;ctrl.r;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  <a class="code" href="main_8cpp.html#a63d9a57399cadda190f8e8cbddbff900">moments</a> = &amp;ctrl.u;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  <a class="code" href="main_8cpp.html#a29b0f479e7948681bef12044e738d265">comandosDigitais</a> = &amp;ctrl.motorCommands;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="preprocessor">#ifdef INTEGRAL_CONTROL</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  <a class="code" href="main_8cpp.html#aff5ffbb08d9a949947ef687cb0531794">rI</a> = &amp;ctrl.rI;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  <a class="code" href="main_8cpp.html#aff5ffbb08d9a949947ef687cb0531794">rI</a> = &amp;ctrl.drone-&gt;p;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  TickType_t xLastDtControl = 0;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  <span class="comment">// Instancia dos motores</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  <a class="code" href="classMotores.html">Motores</a> motor1(mp.<a class="code" href="structMOTOR__PINS.html#a75c3ad59c9a4d74b4aad784c0d42aa9f">motor_1</a>, 0);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  <a class="code" href="classMotores.html">Motores</a> motor2(mp.<a class="code" href="structMOTOR__PINS.html#ac822ad9d410af01bc842d9e2805f2b8c">motor_2</a>, 1);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  <a class="code" href="classMotores.html">Motores</a> motor3(mp.<a class="code" href="structMOTOR__PINS.html#a35f019e1b631ba3ab3a68dca85d9c8ee">motor_3</a>, 2);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  <a class="code" href="classMotores.html">Motores</a> motor4(mp.<a class="code" href="structMOTOR__PINS.html#aaafa7fa4f83d2d5aa2f9f0c54a130040">motor_4</a>, 3);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  <a class="code" href="main_8cpp.html#ae81666800498192487a16bcd7308d5c4">tel</a>.<a class="code" href="classTELEMETRIA.html#a6c13ae22d648afb2c7bd41f3e17ba4b6">enviaMensagem</a>((<span class="keywordtype">char</span> *)<span class="stringliteral">&quot;TaskControl .. esperando filtro&quot;</span>);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  <span class="keywordflow">while</span> (filtro.status != <a class="code" href="namespaceekf.html#a3d0224f90468a854a2440df8b4f78869a638dfa2cadaad15202600951a2e30d4f">READY</a>) {</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <a class="code" href="main_8cpp.html#a0b8c2b64555211f3dd9069fde81b4bdb">iBus</a>.<a class="code" href="classIBusBM.html#a3219abe525dde59156d00538d93faa11">loop</a>();</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    vTaskDelay(pdMS_TO_TICKS(1000));</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  }</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  <a class="code" href="main_8cpp.html#ae81666800498192487a16bcd7308d5c4">tel</a>.<a class="code" href="classTELEMETRIA.html#a6c13ae22d648afb2c7bd41f3e17ba4b6">enviaMensagem</a>((<span class="keywordtype">char</span> *)<span class="stringliteral">&quot;Filtro ok&quot;</span>);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  <a class="code" href="main_8cpp.html#a0b8c2b64555211f3dd9069fde81b4bdb">iBus</a>.<a class="code" href="classIBusBM.html#a3219abe525dde59156d00538d93faa11">loop</a>();</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  statusClass.ctrlStatus = <a class="code" href="namespaceekf.html#a3d0224f90468a854a2440df8b4f78869a638dfa2cadaad15202600951a2e30d4f">READY</a>;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  ctrl.r = Vector3f::Zero();</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  <span class="keywordflow">for</span> (;;) {</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="comment">// atualiza estados da classe Drone dada os valores estimado no EKF</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <a class="code" href="main_8cpp.html#a0b8c2b64555211f3dd9069fde81b4bdb">iBus</a>.<a class="code" href="classIBusBM.html#a3219abe525dde59156d00538d93faa11">loop</a>();</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="comment">// if (ibus.readChannel(4) &gt; 1500) {</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="main_8cpp.html#a0b8c2b64555211f3dd9069fde81b4bdb">iBus</a>.<a class="code" href="classIBusBM.html#ad576c07af1ed09d8bc355e7f65c69000">remoteControl</a>.<a class="code" href="unionIBusBM_1_1ControlUnion.html#a679d90f97047762a16a1159c68ec6b70">emergency</a> &lt; 1500) {</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;      <span class="comment">/*Para tentar obter os corretos valores de */</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;      ctrl.r(0) = ((float)(<a class="code" href="main_8cpp.html#a0b8c2b64555211f3dd9069fde81b4bdb">iBus</a>.<a class="code" href="classIBusBM.html#ad576c07af1ed09d8bc355e7f65c69000">remoteControl</a>.<a class="code" href="unionIBusBM_1_1ControlUnion.html#a7a86de4e71d501057f7bd4c42eb68747">dX</a> - 1500)) / 500.f;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;      ctrl.r(1) = ((float)(<a class="code" href="main_8cpp.html#a0b8c2b64555211f3dd9069fde81b4bdb">iBus</a>.<a class="code" href="classIBusBM.html#ad576c07af1ed09d8bc355e7f65c69000">remoteControl</a>.<a class="code" href="unionIBusBM_1_1ControlUnion.html#a3321ea9dcef282cbd22948f7dee2cacc">dY</a> - 1500)) / 500.f;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;      ctrl.r(2) = ((float)(<a class="code" href="main_8cpp.html#a0b8c2b64555211f3dd9069fde81b4bdb">iBus</a>.<a class="code" href="classIBusBM.html#ad576c07af1ed09d8bc355e7f65c69000">remoteControl</a>.<a class="code" href="unionIBusBM_1_1ControlUnion.html#aa5ca7ca4686bf8f5a4ce8bca2d65541e">dZ</a> - 1500)) / 500.f;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;      <span class="comment">// Limita o máximo que o commando envia para o cotrole.</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;      <span class="comment">// ctrl.maximalDigitalCommand = 7.7 *</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;      <span class="comment">// ibus.remoteControl.throttle_limitation;</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;      <a class="code" href="main_8cpp.html#ae81666800498192487a16bcd7308d5c4">tel</a>.<a class="code" href="classTELEMETRIA.html#a2cbf1b032f8a825a10b2d339aa27084c">gainsTunning</a>[1] =</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;          9.999999 * ((float)<a class="code" href="main_8cpp.html#a0b8c2b64555211f3dd9069fde81b4bdb">iBus</a>.<a class="code" href="classIBusBM.html#ad576c07af1ed09d8bc355e7f65c69000">remoteControl</a>.<a class="code" href="unionIBusBM_1_1ControlUnion.html#a317cea019940a3c5623868627c456986">adjustQuat</a> - 1000.0f) + 0.001f;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;      <a class="code" href="main_8cpp.html#ae81666800498192487a16bcd7308d5c4">tel</a>.<a class="code" href="classTELEMETRIA.html#a2cbf1b032f8a825a10b2d339aa27084c">gainsTunning</a>[2] =</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;          9.999999 * ((float)<a class="code" href="main_8cpp.html#a0b8c2b64555211f3dd9069fde81b4bdb">iBus</a>.<a class="code" href="classIBusBM.html#ad576c07af1ed09d8bc355e7f65c69000">remoteControl</a>.<a class="code" href="unionIBusBM_1_1ControlUnion.html#ae762743840225801aca2831b9c13d318">adjustQrAngular</a> - 1000.0f) +</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;          0.001f;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;      ctrl.Qr.topLeftCorner(3, 3) = Matrix3f::Identity() * <a class="code" href="main_8cpp.html#ae81666800498192487a16bcd7308d5c4">tel</a>.<a class="code" href="classTELEMETRIA.html#a2cbf1b032f8a825a10b2d339aa27084c">gainsTunning</a>[1];</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;      ctrl.Qr.bottomRightCorner(3, 3) =</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;          Matrix3f::Identity() * <a class="code" href="main_8cpp.html#ae81666800498192487a16bcd7308d5c4">tel</a>.<a class="code" href="classTELEMETRIA.html#a2cbf1b032f8a825a10b2d339aa27084c">gainsTunning</a>[2];</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;      <a class="code" href="main_8cpp.html#ae81666800498192487a16bcd7308d5c4">tel</a>.<a class="code" href="classTELEMETRIA.html#a2cbf1b032f8a825a10b2d339aa27084c">gainsTunning</a>[0] = ctrl.ut[2];</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;      <a class="code" href="main_8cpp.html#ae81666800498192487a16bcd7308d5c4">tel</a>.<a class="code" href="classTELEMETRIA.html#ac3b8fa789f6d00dca33ea41b4fd865c7">enviaTunningGains</a>();</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;      ctrl.diffPsi = ((float)(<a class="code" href="main_8cpp.html#a0b8c2b64555211f3dd9069fde81b4bdb">iBus</a>.<a class="code" href="classIBusBM.html#ad576c07af1ed09d8bc355e7f65c69000">remoteControl</a>.<a class="code" href="unionIBusBM_1_1ControlUnion.html#ae5149d118500fb647bed5322d216464e">dPsi</a> - 1500)) / 500.f;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;      <span class="comment">/* Atualiza estados da Classe Drone. Estes mesmos estados são utilizadas</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="comment">       * pela classe Controle para calcular as rotações dos motores.*/</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;      ctrl.drone-&gt;p = filtro.rNED;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;      ctrl.drone-&gt;v = filtro.drNED;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;      ctrl.drone-&gt;q = filtro.q;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;      ctrl.drone-&gt;w = filtro.gyro;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;      <a class="code" href="main_8cpp.html#a9e8de852b827cfc2d32be84a9a02dba9">qa</a> = ctrl.qa.block(1, ctrl.index_alt, 3, 1);</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;      <span class="comment">// adiciona as rotacoes</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;      ctrl.controlLoop();</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;      motor1.set_vel_mot(ctrl.motorCommands(0));</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;      motor2.set_vel_mot(ctrl.motorCommands(1));</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;      motor3.set_vel_mot(ctrl.motorCommands(2));</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;      motor4.set_vel_mot(ctrl.motorCommands(3));</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;      <span class="comment">// para os motores</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;      motor1.set_vel_mot(ctrl.minimalDigitalCommand);</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;      motor2.set_vel_mot(ctrl.minimalDigitalCommand);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;      motor3.set_vel_mot(ctrl.minimalDigitalCommand);</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;      motor4.set_vel_mot(ctrl.minimalDigitalCommand);</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;      <a class="code" href="main_8cpp.html#ae81666800498192487a16bcd7308d5c4">tel</a>.<a class="code" href="classTELEMETRIA.html#a6c13ae22d648afb2c7bd41f3e17ba4b6">enviaMensagem</a>((<span class="keywordtype">char</span> *)<span class="stringliteral">&quot;Condicao de paradada emergencyMethods()&quot;</span>);</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;      xTaskCreatePinnedToCore(<a class="code" href="main_8cpp.html#a1f32cff79659de71ff8de76c85e7c7b9">emergencyMethods</a>, <span class="stringliteral">&quot;emergencyMethods&quot;</span>, 2000, NULL,</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                              5, NULL, 1);</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    }</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    vTaskDelayUntil(&amp;xLastDtControl, <a class="code" href="PARAMETROS_8h.html#a2224425aa6b872a5926ee5a942e4080a">xdtControle</a>);</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;  }</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;}</div>
+<div class="ttc" id="aPARAMETROS_8h_html_a2224425aa6b872a5926ee5a942e4080a"><div class="ttname"><a href="PARAMETROS_8h.html#a2224425aa6b872a5926ee5a942e4080a">xdtControle</a></div><div class="ttdeci">const TickType_t xdtControle</div><div class="ttdef"><b>Definition:</b> <a href="PARAMETROS_8h_source.html#l00053">PARAMETROS.h:53</a></div></div>
+<div class="ttc" id="aPARAMETROS_8h_html_ac3437d0d1acbe94e967793e5e4d8473d"><div class="ttname"><a href="PARAMETROS_8h.html#ac3437d0d1acbe94e967793e5e4d8473d">dtControle</a></div><div class="ttdeci">const uint16_t dtControle</div><div class="ttdef"><b>Definition:</b> <a href="PARAMETROS_8h_source.html#l00051">PARAMETROS.h:51</a></div></div>
+<div class="ttc" id="aclassControle_html"><div class="ttname"><a href="classControle.html">Controle</a></div><div class="ttdef"><b>Definition:</b> <a href="Controle_8h_source.html#l00030">Controle.h:30</a></div></div>
+<div class="ttc" id="aclassMotores_html"><div class="ttname"><a href="classMotores.html">Motores</a></div><div class="ttdef"><b>Definition:</b> <a href="Motores_8h_source.html#l00013">Motores.h:13</a></div></div>
+<div class="ttc" id="aclassTELEMETRIA_html_a2cbf1b032f8a825a10b2d339aa27084c"><div class="ttname"><a href="classTELEMETRIA.html#a2cbf1b032f8a825a10b2d339aa27084c">TELEMETRIA::gainsTunning</a></div><div class="ttdeci">float gainsTunning[3]</div><div class="ttdef"><b>Definition:</b> <a href="TELEMETRIA_8h_source.html#l00048">TELEMETRIA.h:48</a></div></div>
+<div class="ttc" id="aclassTELEMETRIA_html_ac3b8fa789f6d00dca33ea41b4fd865c7"><div class="ttname"><a href="classTELEMETRIA.html#ac3b8fa789f6d00dca33ea41b4fd865c7">TELEMETRIA::enviaTunningGains</a></div><div class="ttdeci">void enviaTunningGains()</div><div class="ttdef"><b>Definition:</b> <a href="TELEMETRIA_8cpp_source.html#l00063">TELEMETRIA.cpp:63</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a1f32cff79659de71ff8de76c85e7c7b9"><div class="ttname"><a href="main_8cpp.html#a1f32cff79659de71ff8de76c85e7c7b9">emergencyMethods</a></div><div class="ttdeci">void emergencyMethods(void *pv)</div><div class="ttdoc">Task de Procedimentos emergenciais.</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00114">main.cpp:114</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a29b0f479e7948681bef12044e738d265"><div class="ttname"><a href="main_8cpp.html#a29b0f479e7948681bef12044e738d265">comandosDigitais</a></div><div class="ttdeci">Vector4i * comandosDigitais</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00033">main.cpp:33</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a4de603e279aa24f62c1b8a40306140f3"><div class="ttname"><a href="main_8cpp.html#a4de603e279aa24f62c1b8a40306140f3">wa</a></div><div class="ttdeci">Vector3f * wa</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00030">main.cpp:30</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a63d9a57399cadda190f8e8cbddbff900"><div class="ttname"><a href="main_8cpp.html#a63d9a57399cadda190f8e8cbddbff900">moments</a></div><div class="ttdeci">Vector4f * moments</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00032">main.cpp:32</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a69b5e71277e0e3a57afef1e2d7025e58"><div class="ttname"><a href="main_8cpp.html#a69b5e71277e0e3a57afef1e2d7025e58">eulerTarget</a></div><div class="ttdeci">Vector3f * eulerTarget</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00030">main.cpp:30</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a9e8de852b827cfc2d32be84a9a02dba9"><div class="ttname"><a href="main_8cpp.html#a9e8de852b827cfc2d32be84a9a02dba9">qa</a></div><div class="ttdeci">Vector3f qa</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00030">main.cpp:30</a></div></div>
+<div class="ttc" id="amain_8cpp_html_adef42f887c2b14a9f43de1ae529a09e5"><div class="ttname"><a href="main_8cpp.html#adef42f887c2b14a9f43de1ae529a09e5">ra</a></div><div class="ttdeci">Vector3f * ra</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00030">main.cpp:30</a></div></div>
+<div class="ttc" id="amain_8cpp_html_aff5ffbb08d9a949947ef687cb0531794"><div class="ttname"><a href="main_8cpp.html#aff5ffbb08d9a949947ef687cb0531794">rI</a></div><div class="ttdeci">Vector3f * rI</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00030">main.cpp:30</a></div></div>
+<div class="ttc" id="anamespaceekf_html_a3d0224f90468a854a2440df8b4f78869a638dfa2cadaad15202600951a2e30d4f"><div class="ttname"><a href="namespaceekf.html#a3d0224f90468a854a2440df8b4f78869a638dfa2cadaad15202600951a2e30d4f">ekf::READY</a></div><div class="ttdeci">@ READY</div><div class="ttdef"><b>Definition:</b> <a href="EKF_8h_source.html#l00044">EKF.h:44</a></div></div>
+<div class="ttc" id="astructMOTOR__PINS_html"><div class="ttname"><a href="structMOTOR__PINS.html">MOTOR_PINS</a></div><div class="ttdoc">Pinos de conexão dos motores.</div><div class="ttdef"><b>Definition:</b> <a href="PARAMETROS_8h_source.html#l00017">PARAMETROS.h:17</a></div></div>
+<div class="ttc" id="astructMOTOR__PINS_html_a35f019e1b631ba3ab3a68dca85d9c8ee"><div class="ttname"><a href="structMOTOR__PINS.html#a35f019e1b631ba3ab3a68dca85d9c8ee">MOTOR_PINS::motor_3</a></div><div class="ttdeci">const gpio_num_t motor_3</div><div class="ttdef"><b>Definition:</b> <a href="PARAMETROS_8h_source.html#l00023">PARAMETROS.h:23</a></div></div>
+<div class="ttc" id="astructMOTOR__PINS_html_a75c3ad59c9a4d74b4aad784c0d42aa9f"><div class="ttname"><a href="structMOTOR__PINS.html#a75c3ad59c9a4d74b4aad784c0d42aa9f">MOTOR_PINS::motor_1</a></div><div class="ttdeci">const gpio_num_t motor_1</div><div class="ttdef"><b>Definition:</b> <a href="PARAMETROS_8h_source.html#l00019">PARAMETROS.h:19</a></div></div>
+<div class="ttc" id="astructMOTOR__PINS_html_aaafa7fa4f83d2d5aa2f9f0c54a130040"><div class="ttname"><a href="structMOTOR__PINS.html#aaafa7fa4f83d2d5aa2f9f0c54a130040">MOTOR_PINS::motor_4</a></div><div class="ttdeci">const gpio_num_t motor_4</div><div class="ttdef"><b>Definition:</b> <a href="PARAMETROS_8h_source.html#l00025">PARAMETROS.h:25</a></div></div>
+<div class="ttc" id="astructMOTOR__PINS_html_ac822ad9d410af01bc842d9e2805f2b8c"><div class="ttname"><a href="structMOTOR__PINS.html#ac822ad9d410af01bc842d9e2805f2b8c">MOTOR_PINS::motor_2</a></div><div class="ttdeci">const gpio_num_t motor_2</div><div class="ttdef"><b>Definition:</b> <a href="PARAMETROS_8h_source.html#l00021">PARAMETROS.h:21</a></div></div>
+<div class="ttc" id="aunionIBusBM_1_1ControlUnion_html_a317cea019940a3c5623868627c456986"><div class="ttname"><a href="unionIBusBM_1_1ControlUnion.html#a317cea019940a3c5623868627c456986">IBusBM::ControlUnion::adjustQuat</a></div><div class="ttdeci">uint16_t adjustQuat</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8h_source.html#l00087">IBusBM.h:87</a></div></div>
+<div class="ttc" id="aunionIBusBM_1_1ControlUnion_html_a3321ea9dcef282cbd22948f7dee2cacc"><div class="ttname"><a href="unionIBusBM_1_1ControlUnion.html#a3321ea9dcef282cbd22948f7dee2cacc">IBusBM::ControlUnion::dY</a></div><div class="ttdeci">uint16_t dY</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8h_source.html#l00077">IBusBM.h:77</a></div></div>
+<div class="ttc" id="aunionIBusBM_1_1ControlUnion_html_a7a86de4e71d501057f7bd4c42eb68747"><div class="ttname"><a href="unionIBusBM_1_1ControlUnion.html#a7a86de4e71d501057f7bd4c42eb68747">IBusBM::ControlUnion::dX</a></div><div class="ttdeci">uint16_t dX</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8h_source.html#l00075">IBusBM.h:75</a></div></div>
+<div class="ttc" id="aunionIBusBM_1_1ControlUnion_html_aa5ca7ca4686bf8f5a4ce8bca2d65541e"><div class="ttname"><a href="unionIBusBM_1_1ControlUnion.html#aa5ca7ca4686bf8f5a4ce8bca2d65541e">IBusBM::ControlUnion::dZ</a></div><div class="ttdeci">uint16_t dZ</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8h_source.html#l00079">IBusBM.h:79</a></div></div>
+<div class="ttc" id="aunionIBusBM_1_1ControlUnion_html_ae5149d118500fb647bed5322d216464e"><div class="ttname"><a href="unionIBusBM_1_1ControlUnion.html#ae5149d118500fb647bed5322d216464e">IBusBM::ControlUnion::dPsi</a></div><div class="ttdeci">uint16_t dPsi</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8h_source.html#l00081">IBusBM.h:81</a></div></div>
+<div class="ttc" id="aunionIBusBM_1_1ControlUnion_html_ae762743840225801aca2831b9c13d318"><div class="ttname"><a href="unionIBusBM_1_1ControlUnion.html#ae762743840225801aca2831b9c13d318">IBusBM::ControlUnion::adjustQrAngular</a></div><div class="ttdeci">uint16_t adjustQrAngular</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8h_source.html#l00089">IBusBM.h:89</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Referencias <a class="el" href="IBusBM_8h_source.html#l00089">IBusBM::ControlUnion::adjustQrAngular</a>, <a class="el" href="IBusBM_8h_source.html#l00087">IBusBM::ControlUnion::adjustQuat</a>, <a class="el" href="main_8cpp_source.html#l00033">comandosDigitais</a>, <a class="el" href="Controle_8cpp_source.html#l00152">Controle::controlLoop()</a>, <a class="el" href="Controle_8h_source.html#l00056">Controle::diffPsi</a>, <a class="el" href="IBusBM_8h_source.html#l00081">IBusBM::ControlUnion::dPsi</a>, <a class="el" href="EKF_8h_source.html#l00094">ekf::EKF::drNED</a>, <a class="el" href="Controle_8h_source.html#l00041">Controle::drone</a>, <a class="el" href="PARAMETROS_8h_source.html#l00051">dtControle</a>, <a class="el" href="IBusBM_8h_source.html#l00075">IBusBM::ControlUnion::dX</a>, <a class="el" href="IBusBM_8h_source.html#l00077">IBusBM::ControlUnion::dY</a>, <a class="el" href="IBusBM_8h_source.html#l00079">IBusBM::ControlUnion::dZ</a>, <a class="el" href="IBusBM_8h_source.html#l00083">IBusBM::ControlUnion::emergency</a>, <a class="el" href="main_8cpp_source.html#l00114">emergencyMethods()</a>, <a class="el" href="TELEMETRIA_8cpp_source.html#l00069">TELEMETRIA::enviaMensagem()</a>, <a class="el" href="TELEMETRIA_8cpp_source.html#l00063">TELEMETRIA::enviaTunningGains()</a>, <a class="el" href="Controle_8h_source.html#l00036">Controle::eulerTarget</a>, <a class="el" href="main_8cpp_source.html#l00030">eulerTarget</a>, <a class="el" href="TELEMETRIA_8h_source.html#l00048">TELEMETRIA::gainsTunning</a>, <a class="el" href="EKF_8h_source.html#l00074">ekf::EKF::gyro</a>, <a class="el" href="main_8cpp_source.html#l00028">iBus</a>, <a class="el" href="Controle_8h_source.html#l00040">Controle::index_alt</a>, <a class="el" href="IBusBM_8cpp_source.html#l00165">IBusBM::loop()</a>, <a class="el" href="Controle_8h_source.html#l00037">Controle::minimalDigitalCommand</a>, <a class="el" href="main_8cpp_source.html#l00032">moments</a>, <a class="el" href="PARAMETROS_8h_source.html#l00019">MOTOR_PINS::motor_1</a>, <a class="el" href="PARAMETROS_8h_source.html#l00021">MOTOR_PINS::motor_2</a>, <a class="el" href="PARAMETROS_8h_source.html#l00023">MOTOR_PINS::motor_3</a>, <a class="el" href="PARAMETROS_8h_source.html#l00025">MOTOR_PINS::motor_4</a>, <a class="el" href="Controle_8h_source.html#l00093">Controle::motorCommands</a>, <a class="el" href="Drone_8h_source.html#l00066">Drone::p</a>, <a class="el" href="Drone_8h_source.html#l00070">Drone::q</a>, <a class="el" href="EKF_8h_source.html#l00082">ekf::EKF::q</a>, <a class="el" href="Controle_8h_source.html#l00046">Controle::qa</a>, <a class="el" href="main_8cpp_source.html#l00030">qa</a>, <a class="el" href="Controle_8h_source.html#l00082">Controle::Qr</a>, <a class="el" href="Controle_8h_source.html#l00044">Controle::r</a>, <a class="el" href="main_8cpp_source.html#l00030">ra</a>, <a class="el" href="EKF_8h_source.html#l00044">ekf::READY</a>, <a class="el" href="IBusBM_8h_source.html#l00099">IBusBM::remoteControl</a>, <a class="el" href="Controle_8h_source.html#l00059">Controle::rI</a>, <a class="el" href="main_8cpp_source.html#l00030">rI</a>, <a class="el" href="EKF_8h_source.html#l00090">ekf::EKF::rNED</a>, <a class="el" href="Motores_8cpp_source.html#l00042">Motores::set_vel_mot()</a>, <a class="el" href="EKF_8h_source.html#l00052">ekf::EKF::status</a>, <a class="el" href="main_8cpp_source.html#l00035">tel</a>, <a class="el" href="Controle_8h_source.html#l00091">Controle::u</a>, <a class="el" href="Controle_8h_source.html#l00087">Controle::ut</a>, <a class="el" href="Drone_8h_source.html#l00068">Drone::v</a>, <a class="el" href="Drone_8h_source.html#l00072">Drone::w</a>, <a class="el" href="Controle_8h_source.html#l00050">Controle::wa</a>, <a class="el" href="main_8cpp_source.html#l00030">wa</a> e <a class="el" href="PARAMETROS_8h_source.html#l00053">xdtControle</a>.</p>
+
+<p class="reference">Referenciado(a) por <a class="el" href="main_8cpp_source.html#l00214">setup()</a>.</p>
+<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Este é o diagrama das funções utilizadas por essa função:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="main_8cpp_ad3d424dca818563665f9ab9bbf866fff_cgraph.png" border="0" usemap="#amain_8cpp_ad3d424dca818563665f9ab9bbf866fff_cgraph" alt=""/></div>
+<map name="amain_8cpp_ad3d424dca818563665f9ab9bbf866fff_cgraph" id="amain_8cpp_ad3d424dca818563665f9ab9bbf866fff_cgraph">
+<area shape="rect" title=" " alt="" coords="5,416,93,440"/>
+<area shape="rect" href="classControle.html#a78e5f662130811f409342a706d5c0d2f" title="Loop de controle das duas dinâmicas." alt="" coords="151,197,299,221"/>
+<area shape="rect" href="main_8cpp.html#a1f32cff79659de71ff8de76c85e7c7b9" title="Task de Procedimentos emergenciais." alt="" coords="165,391,284,415"/>
+<area shape="rect" href="classTELEMETRIA.html#a6c13ae22d648afb2c7bd41f3e17ba4b6" title=" " alt="" coords="371,341,543,365"/>
+<area shape="rect" href="classIBusBM.html#a3219abe525dde59156d00538d93faa11" title=" " alt="" coords="410,509,505,533"/>
+<area shape="rect" href="classTELEMETRIA.html#ac3b8fa789f6d00dca33ea41b4fd865c7" title=" " alt="" coords="141,490,308,526"/>
+<area shape="rect" href="classMotores.html#ac6264dc2b71015a3c9641025151edd4a" title="funcao que muda a velocidade." alt="" coords="153,551,296,575"/>
+<area shape="rect" href="classControle.html#abcf05dcff157e963fd65c09d45261a8f" title=" " alt="" coords="365,41,549,77"/>
+<area shape="rect" href="classControle.html#a8ac9e933ce30f9c88ed421d4c0afcf99" title=" " alt="" coords="365,101,549,137"/>
+<area shape="rect" href="classControle.html#add7378d03597a45ff09b2432d7739dfe" title=" " alt="" coords="356,161,559,197"/>
+<area shape="rect" href="classControle.html#a42aee0a4592b84bd793c8be0fde0095b" title=" " alt="" coords="374,221,541,257"/>
+<area shape="rect" href="classControle.html#a9b3718425d8602487eb9b14d6ee1c781" title=" " alt="" coords="374,281,541,317"/>
+<area shape="rect" href="namespaceekf.html#a8177897fe9b962d8e0927a913fc36242" title="Calcula a Matriz Left&#45;Quaternion a partir do quaternion q." alt="" coords="645,5,716,29"/>
+<area shape="rect" href="classSdre.html#af2f380ec3d018b60686e304ca7026846" title=" " alt="" coords="613,53,749,77"/>
+<area shape="rect" href="namespaceekf.html#af3f0a631343e55ec8b42f3fbea182461" title="Matrix antissimetrica." alt="" coords="821,29,897,53"/>
+<area shape="rect" href="namespaceekf.html#a34993a331b6837e5274d556e4f0a1bea" title=" " alt="" coords="645,101,716,125"/>
+<area shape="rect" href="namespaceekf.html#aab2dcd522b40c160064cfae69cae6d98" title=" " alt="" coords="607,149,755,173"/>
+<area shape="rect" href="namespaceekf.html#ad48c9ef49e8ccbde872958a81f6ed41a" title="Calcula, a partir de um quatérnio de atitude, o valor do ângulo Phi em Radianos." alt="" coords="809,101,909,125"/>
+<area shape="rect" href="namespaceekf.html#a12f4cfdfc4baad066351f122771205a0" title="Calcula, a partir de um quatérnio de atitude, o valor do ângulo Psi em Radianos." alt="" coords="809,149,909,173"/>
+<area shape="rect" href="namespaceekf.html#a6530a1bee6082aaa64ec7e8525d0ed54" title="Calcula, a partir de um quatérnio de atitude, o valor do ângulo Theta em Radianos." alt="" coords="803,197,915,221"/>
+<area shape="rect" href="COMMON_8h.html#a0e9b3928a2c3089998123715bcae29e9" title="Desliga o led de comunicação." alt="" coords="416,389,499,413"/>
+<area shape="rect" href="COMMON_8h.html#a8eabef94a982b1407d1ae4731b7e07ca" title="Liga o led de comunicação." alt="" coords="419,437,495,461"/>
+</map>
+</div>
+<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Esse é o diagrama das funções que utilizam essa função:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="main_8cpp_ad3d424dca818563665f9ab9bbf866fff_icgraph.png" border="0" usemap="#amain_8cpp_ad3d424dca818563665f9ab9bbf866fff_icgraph" alt=""/></div>
+<map name="amain_8cpp_ad3d424dca818563665f9ab9bbf866fff_icgraph" id="amain_8cpp_ad3d424dca818563665f9ab9bbf866fff_icgraph">
+<area shape="rect" title=" " alt="" coords="105,5,193,29"/>
+<area shape="rect" href="main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d" title=" " alt="" coords="5,5,57,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abd3bd9c344e182dcb5f5a561ef562eb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd3bd9c344e182dcb5f5a561ef562eb0">&#9670;&nbsp;</a></span>xTaskLoopFilter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void xTaskLoopFilter </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="main_8cpp_source.html#l00051">51</a> do arquivo <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                             {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="main_8cpp.html#ae81666800498192487a16bcd7308d5c4">tel</a>.<a class="code" href="classTELEMETRIA.html#a6c13ae22d648afb2c7bd41f3e17ba4b6">enviaMensagem</a>((<span class="keywordtype">char</span> *)<span class="stringliteral">&quot;xTaskLoopFilter Criada&quot;</span>);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  TickType_t xLastDtTelemetry = 0;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">const</span> uint8_t size_data_to_send = 2 * (3 + 3 + 3 + 3);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  Vector&lt;float, size_data_to_send + 1&gt; dataSerial;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  statusClass.filtroStatus = filtro.status;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <a class="code" href="main_8cpp.html#ae81666800498192487a16bcd7308d5c4">tel</a>.<a class="code" href="classTELEMETRIA.html#a6c13ae22d648afb2c7bd41f3e17ba4b6">enviaMensagem</a>((<span class="keywordtype">char</span> *)<span class="stringliteral">&quot;Esperando a classe controle...&quot;</span>);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordflow">while</span> (statusClass.ctrlStatus != <a class="code" href="namespaceekf.html#a3d0224f90468a854a2440df8b4f78869a638dfa2cadaad15202600951a2e30d4f">READY</a>) {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    vTaskDelay(1000);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <a class="code" href="main_8cpp.html#ae81666800498192487a16bcd7308d5c4">tel</a>.<a class="code" href="classTELEMETRIA.html#a6c13ae22d648afb2c7bd41f3e17ba4b6">enviaMensagem</a>((<span class="keywordtype">char</span> *)<span class="stringliteral">&quot;Contr.OK. estimador Rodando&quot;</span>);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keywordflow">for</span> (;;) {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    filtro.loopEKF();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="namespaceekf.html#aab2dcd522b40c160064cfae69cae6d98">quaternion2Euler</a>(filtro.euler, filtro.q);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">// 4 + 3+3+1+6</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#if 0</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="main_8cpp.html#ae81666800498192487a16bcd7308d5c4">tel</a>.<a class="code" href="classTELEMETRIA.html#a71317d1e99e1776c4b19738f53d52650">imu</a>.<a class="code" href="structTELEMETRIA_1_1IMU__DATA.html#adc59258e2c8a5593dffe9007176675d1">dadosEigen</a> &lt;&lt;         <span class="comment">//</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                                  <span class="comment">// /*0:3*/ RAD_TO_DEG * filtro.euler,   //</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="comment">/*0:3*/</span> filtro.q.tail(3), <span class="comment">//</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="comment">/*3:6*/</span> filtro.gyro,      <span class="comment">//</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="comment">/*6:9*/</span> filtro.drNED,     <span class="comment">//</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="comment">/*9:12  filtro.rNED, */</span>   <span class="comment">//</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                                  <span class="comment">// /*9:12*/ RAD_TO_DEG * (*eulerTarget),   //</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="comment">/*9:12*/</span> <a class="code" href="main_8cpp.html#a9e8de852b827cfc2d32be84a9a02dba9">qa</a>,              <span class="comment">//</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="comment">/*12:15*/</span> *<a class="code" href="main_8cpp.html#a4de603e279aa24f62c1b8a40306140f3">wa</a>,            <span class="comment">//</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="comment">/*15:18*/</span> *<a class="code" href="main_8cpp.html#adef42f887c2b14a9f43de1ae529a09e5">ra</a>,            <span class="comment">//</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="comment">/*  *rI*/</span>                 <span class="comment">//;</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="comment">/*18:21*/</span> (*moments),</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="comment">/*22:25*/</span> (*comandosDigitais).cast&lt;<span class="keywordtype">float</span>&gt;();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">// tel.envia(size_data_to_send, dataSerial);</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="main_8cpp.html#ae81666800498192487a16bcd7308d5c4">tel</a>.<a class="code" href="classTELEMETRIA.html#a235abb2ba6888140e7dab2e73a050049">envia</a>();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    vTaskDelayUntil(&amp;xLastDtTelemetry, <a class="code" href="PARAMETROS_8h.html#ade6e1f4a0c110e26850765ae6acbcbcb">xdtTelemetry</a>);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
+<div class="ttc" id="aPARAMETROS_8h_html_ade6e1f4a0c110e26850765ae6acbcbcb"><div class="ttname"><a href="PARAMETROS_8h.html#ade6e1f4a0c110e26850765ae6acbcbcb">xdtTelemetry</a></div><div class="ttdeci">const TickType_t xdtTelemetry</div><div class="ttdef"><b>Definition:</b> <a href="PARAMETROS_8h_source.html#l00049">PARAMETROS.h:49</a></div></div>
+<div class="ttc" id="aclassTELEMETRIA_html_a235abb2ba6888140e7dab2e73a050049"><div class="ttname"><a href="classTELEMETRIA.html#a235abb2ba6888140e7dab2e73a050049">TELEMETRIA::envia</a></div><div class="ttdeci">void envia()</div><div class="ttdoc">Envia vetor Eigen de float.</div><div class="ttdef"><b>Definition:</b> <a href="TELEMETRIA_8cpp_source.html#l00046">TELEMETRIA.cpp:46</a></div></div>
+<div class="ttc" id="aclassTELEMETRIA_html_a71317d1e99e1776c4b19738f53d52650"><div class="ttname"><a href="classTELEMETRIA.html#a71317d1e99e1776c4b19738f53d52650">TELEMETRIA::imu</a></div><div class="ttdeci">struct TELEMETRIA::IMU_DATA imu</div></div>
+<div class="ttc" id="anamespaceekf_html_aab2dcd522b40c160064cfae69cae6d98"><div class="ttname"><a href="namespaceekf.html#aab2dcd522b40c160064cfae69cae6d98">ekf::quaternion2Euler</a></div><div class="ttdeci">void quaternion2Euler(Eigen::Ref&lt; Eigen::Vector3f &gt; _euler, const Eigen::Ref&lt; const Eigen::Vector4f &gt; &amp;_q)</div><div class="ttdef"><b>Definition:</b> <a href="GRUPO__QUAT_8cpp_source.html#l00152">GRUPO_QUAT.cpp:152</a></div></div>
+<div class="ttc" id="astructTELEMETRIA_1_1IMU__DATA_html_adc59258e2c8a5593dffe9007176675d1"><div class="ttname"><a href="structTELEMETRIA_1_1IMU__DATA.html#adc59258e2c8a5593dffe9007176675d1">TELEMETRIA::IMU_DATA::dadosEigen</a></div><div class="ttdeci">Vector&lt; float, DATA_SIZE &gt; dadosEigen</div><div class="ttdef"><b>Definition:</b> <a href="TELEMETRIA_8h_source.html#l00044">TELEMETRIA.h:44</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Referencias <a class="el" href="TELEMETRIA_8h_source.html#l00044">TELEMETRIA::IMU_DATA::dadosEigen</a>, <a class="el" href="EKF_8h_source.html#l00094">ekf::EKF::drNED</a>, <a class="el" href="TELEMETRIA_8cpp_source.html#l00046">TELEMETRIA::envia()</a>, <a class="el" href="TELEMETRIA_8cpp_source.html#l00069">TELEMETRIA::enviaMensagem()</a>, <a class="el" href="EKF_8h_source.html#l00084">ekf::EKF::euler</a>, <a class="el" href="EKF_8h_source.html#l00074">ekf::EKF::gyro</a>, <a class="el" href="classTELEMETRIA.html#a71317d1e99e1776c4b19738f53d52650">TELEMETRIA::imu</a>, <a class="el" href="EKF_8cpp_source.html#l00101">ekf::EKF::loopEKF()</a>, <a class="el" href="EKF_8h_source.html#l00082">ekf::EKF::q</a>, <a class="el" href="main_8cpp_source.html#l00030">qa</a>, <a class="el" href="GRUPO__QUAT_8cpp_source.html#l00152">ekf::quaternion2Euler()</a>, <a class="el" href="main_8cpp_source.html#l00030">ra</a>, <a class="el" href="EKF_8h_source.html#l00044">ekf::READY</a>, <a class="el" href="EKF_8h_source.html#l00052">ekf::EKF::status</a>, <a class="el" href="main_8cpp_source.html#l00035">tel</a>, <a class="el" href="main_8cpp_source.html#l00030">wa</a> e <a class="el" href="PARAMETROS_8h_source.html#l00049">xdtTelemetry</a>.</p>
+
+<p class="reference">Referenciado(a) por <a class="el" href="main_8cpp_source.html#l00087">xTaskSetupFiltro()</a>.</p>
+<div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Este é o diagrama das funções utilizadas por essa função:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="main_8cpp_abd3bd9c344e182dcb5f5a561ef562eb0_cgraph.png" border="0" usemap="#amain_8cpp_abd3bd9c344e182dcb5f5a561ef562eb0_cgraph" alt=""/></div>
+<map name="amain_8cpp_abd3bd9c344e182dcb5f5a561ef562eb0_cgraph" id="amain_8cpp_abd3bd9c344e182dcb5f5a561ef562eb0_cgraph">
+<area shape="rect" title=" " alt="" coords="5,77,117,101"/>
+<area shape="rect" href="classTELEMETRIA.html#a235abb2ba6888140e7dab2e73a050049" title="Envia vetor Eigen de float." alt="" coords="189,5,313,29"/>
+<area shape="rect" href="classTELEMETRIA.html#a6c13ae22d648afb2c7bd41f3e17ba4b6" title=" " alt="" coords="165,53,337,77"/>
+<area shape="rect" href="classekf_1_1EKF.html#a651814ff64d234394572e2e7c5703a43" title=" " alt="" coords="189,101,313,125"/>
+<area shape="rect" href="namespaceekf.html#aab2dcd522b40c160064cfae69cae6d98" title=" " alt="" coords="177,149,325,173"/>
+<area shape="rect" href="namespaceekf.html#ad48c9ef49e8ccbde872958a81f6ed41a" title="Calcula, a partir de um quatérnio de atitude, o valor do ângulo Phi em Radianos." alt="" coords="391,101,491,125"/>
+<area shape="rect" href="namespaceekf.html#a12f4cfdfc4baad066351f122771205a0" title="Calcula, a partir de um quatérnio de atitude, o valor do ângulo Psi em Radianos." alt="" coords="391,149,491,173"/>
+<area shape="rect" href="namespaceekf.html#a6530a1bee6082aaa64ec7e8525d0ed54" title="Calcula, a partir de um quatérnio de atitude, o valor do ângulo Theta em Radianos." alt="" coords="385,197,497,221"/>
+</map>
+</div>
+<div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Esse é o diagrama das funções que utilizam essa função:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="main_8cpp_abd3bd9c344e182dcb5f5a561ef562eb0_icgraph.png" border="0" usemap="#amain_8cpp_abd3bd9c344e182dcb5f5a561ef562eb0_icgraph" alt=""/></div>
+<map name="amain_8cpp_abd3bd9c344e182dcb5f5a561ef562eb0_icgraph" id="amain_8cpp_abd3bd9c344e182dcb5f5a561ef562eb0_icgraph">
+<area shape="rect" title=" " alt="" coords="272,5,384,29"/>
+<area shape="rect" href="main_8cpp.html#a1d67803bd6f9b50c1e3686650e280f68" title=" " alt="" coords="105,5,224,29"/>
+<area shape="rect" href="main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d" title=" " alt="" coords="5,5,57,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1d67803bd6f9b50c1e3686650e280f68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d67803bd6f9b50c1e3686650e280f68">&#9670;&nbsp;</a></span>xTaskSetupFiltro()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void xTaskSetupFiltro </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>pvParameters</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="main_8cpp_source.html#l00087">87</a> do arquivo <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                                          {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <a class="code" href="main_8cpp.html#ae81666800498192487a16bcd7308d5c4">tel</a>.<a class="code" href="classTELEMETRIA.html#a6c13ae22d648afb2c7bd41f3e17ba4b6">enviaMensagem</a>((<span class="keywordtype">char</span> *)<span class="stringliteral">&quot;Dentro da xTaskSetupFiltro&quot;</span>);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  filtro.begin(<span class="keywordtype">float</span>(<a class="code" href="PARAMETROS_8h.html#a9cbadcfbca426e6cec9d14f30750ef04">dtTelemetry</a>) * 1e-3);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <a class="code" href="main_8cpp.html#ae81666800498192487a16bcd7308d5c4">tel</a>.<a class="code" href="classTELEMETRIA.html#a6c13ae22d648afb2c7bd41f3e17ba4b6">enviaMensagem</a>((<span class="keywordtype">char</span> *)<span class="stringliteral">&quot;filtro.begin() ok&quot;</span>);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#ifdef CALIBRATION_OF_MAGNETOMETER_GYROSCOPE</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <a class="code" href="main_8cpp.html#ae81666800498192487a16bcd7308d5c4">tel</a>.<a class="code" href="classTELEMETRIA.html#a6c13ae22d648afb2c7bd41f3e17ba4b6">enviaMensagem</a>((<span class="keywordtype">char</span> *)<span class="stringliteral">&quot;Dentro da Calibracao&quot;</span>);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <a class="code" href="main_8cpp.html#a0b8c2b64555211f3dd9069fde81b4bdb">iBus</a>.<a class="code" href="classIBusBM.html#a3219abe525dde59156d00538d93faa11">loop</a>();</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  printf(<span class="stringliteral">&quot; valor da calibracao %d\n&quot;</span>, <a class="code" href="main_8cpp.html#a0b8c2b64555211f3dd9069fde81b4bdb">iBus</a>.<a class="code" href="classIBusBM.html#ad576c07af1ed09d8bc355e7f65c69000">remoteControl</a>.<a class="code" href="unionIBusBM_1_1ControlUnion.html#a2da2b77327c32178cf0e4f37ada37bb4">calibration</a>);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="main_8cpp.html#a0b8c2b64555211f3dd9069fde81b4bdb">iBus</a>.<a class="code" href="classIBusBM.html#ad576c07af1ed09d8bc355e7f65c69000">remoteControl</a>.<a class="code" href="unionIBusBM_1_1ControlUnion.html#a2da2b77327c32178cf0e4f37ada37bb4">calibration</a> &gt; 1500) {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <a class="code" href="main_8cpp.html#ae81666800498192487a16bcd7308d5c4">tel</a>.<a class="code" href="classTELEMETRIA.html#a6c13ae22d648afb2c7bd41f3e17ba4b6">enviaMensagem</a>((<span class="keywordtype">char</span> *)<span class="stringliteral">&quot;Ent. no método de Calibracao&quot;</span>);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    filtro.calibrationMethods();</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">while</span> (<a class="code" href="main_8cpp.html#a0b8c2b64555211f3dd9069fde81b4bdb">iBus</a>.<a class="code" href="classIBusBM.html#ad576c07af1ed09d8bc355e7f65c69000">remoteControl</a>.<a class="code" href="unionIBusBM_1_1ControlUnion.html#a2da2b77327c32178cf0e4f37ada37bb4">calibration</a> &gt; 1500) {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      <a class="code" href="main_8cpp.html#a0b8c2b64555211f3dd9069fde81b4bdb">iBus</a>.<a class="code" href="classIBusBM.html#a3219abe525dde59156d00538d93faa11">loop</a>();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;      <a class="code" href="main_8cpp.html#ae81666800498192487a16bcd7308d5c4">tel</a>.<a class="code" href="classTELEMETRIA.html#a6c13ae22d648afb2c7bd41f3e17ba4b6">enviaMensagem</a>((<span class="keywordtype">char</span> *)<span class="stringliteral">&quot;Cal. OK. Turn of swb&quot;</span>);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;      vTaskDelay(500);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  xTaskCreate(<a class="code" href="main_8cpp.html#abd3bd9c344e182dcb5f5a561ef562eb0">xTaskLoopFilter</a>, <span class="stringliteral">&quot;FilterLoop&quot;</span>, 15000, NULL, 0,</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;              &amp;<a class="code" href="main_8cpp.html#ad68258a9abebbcd50439c86377b6dce9">xHandleLoopFilter</a>);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <a class="code" href="main_8cpp.html#ae81666800498192487a16bcd7308d5c4">tel</a>.<a class="code" href="classTELEMETRIA.html#a6c13ae22d648afb2c7bd41f3e17ba4b6">enviaMensagem</a>((<span class="keywordtype">char</span> *)<span class="stringliteral">&quot;xTaskLoopFiltro&quot;</span>);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  vTaskDelete(NULL);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
+<div class="ttc" id="amain_8cpp_html_abd3bd9c344e182dcb5f5a561ef562eb0"><div class="ttname"><a href="main_8cpp.html#abd3bd9c344e182dcb5f5a561ef562eb0">xTaskLoopFilter</a></div><div class="ttdeci">void xTaskLoopFilter(void *)</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00051">main.cpp:51</a></div></div>
+<div class="ttc" id="amain_8cpp_html_ad68258a9abebbcd50439c86377b6dce9"><div class="ttname"><a href="main_8cpp.html#ad68258a9abebbcd50439c86377b6dce9">xHandleLoopFilter</a></div><div class="ttdeci">TaskHandle_t xHandleLoopFilter</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00047">main.cpp:47</a></div></div>
+<div class="ttc" id="aunionIBusBM_1_1ControlUnion_html_a2da2b77327c32178cf0e4f37ada37bb4"><div class="ttname"><a href="unionIBusBM_1_1ControlUnion.html#a2da2b77327c32178cf0e4f37ada37bb4">IBusBM::ControlUnion::calibration</a></div><div class="ttdeci">uint16_t calibration</div><div class="ttdef"><b>Definition:</b> <a href="IBusBM_8h_source.html#l00085">IBusBM.h:85</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Referencias <a class="el" href="EKF_8cpp_source.html#l00040">ekf::EKF::begin()</a>, <a class="el" href="IBusBM_8h_source.html#l00085">IBusBM::ControlUnion::calibration</a>, <a class="el" href="PARAMETROS_8h_source.html#l00047">dtTelemetry</a>, <a class="el" href="TELEMETRIA_8cpp_source.html#l00069">TELEMETRIA::enviaMensagem()</a>, <a class="el" href="main_8cpp_source.html#l00028">iBus</a>, <a class="el" href="IBusBM_8cpp_source.html#l00165">IBusBM::loop()</a>, <a class="el" href="IBusBM_8h_source.html#l00099">IBusBM::remoteControl</a>, <a class="el" href="main_8cpp_source.html#l00035">tel</a>, <a class="el" href="main_8cpp_source.html#l00047">xHandleLoopFilter</a> e <a class="el" href="main_8cpp_source.html#l00051">xTaskLoopFilter()</a>.</p>
+
+<p class="reference">Referenciado(a) por <a class="el" href="main_8cpp_source.html#l00214">setup()</a>.</p>
+<div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Este é o diagrama das funções utilizadas por essa função:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="main_8cpp_a1d67803bd6f9b50c1e3686650e280f68_cgraph.png" border="0" usemap="#amain_8cpp_a1d67803bd6f9b50c1e3686650e280f68_cgraph" alt=""/></div>
+<map name="amain_8cpp_a1d67803bd6f9b50c1e3686650e280f68_cgraph" id="amain_8cpp_a1d67803bd6f9b50c1e3686650e280f68_cgraph">
+<area shape="rect" title=" " alt="" coords="5,726,124,750"/>
+<area shape="rect" href="classekf_1_1EKF.html#a4a6998123529ab0d0844ad21419fc895" title="Inicializacao do filtro de Kalman." alt="" coords="172,592,284,616"/>
+<area shape="rect" href="classTELEMETRIA.html#a6c13ae22d648afb2c7bd41f3e17ba4b6" title=" " alt="" coords="338,738,510,762"/>
+<area shape="rect" href="classIBusBM.html#a3219abe525dde59156d00538d93faa11" title=" " alt="" coords="181,762,275,786"/>
+<area shape="rect" href="main_8cpp.html#abd3bd9c344e182dcb5f5a561ef562eb0" title=" " alt="" coords="172,810,284,834"/>
+<area shape="rect" href="classTIME.html#a8cd98765b05a23aa7afe8fa5234b9695" title=" " alt="" coords="380,642,468,666"/>
+<area shape="rect" href="classAQUA.html#a8809dddd7e4f74f3eb7bd1fc4a604ae4" title=" " alt="" coords="380,690,468,714"/>
+<area shape="rect" href="classIMU.html#ae0d964d2f8ec122be068c41b84bc18a8" title=" " alt="" coords="383,162,465,186"/>
+<area shape="rect" href="classAQUA.html#ae3ddff89a969a0d2a3d3c675ed5b8065" title=" " alt="" coords="332,434,516,458"/>
+<area shape="rect" href="GPS_8h.html#a35c55bcf9a6f5a52f34cb1ab02c91479" title=" " alt="" coords="389,543,459,567"/>
+<area shape="rect" href="classIMU.html#ac574728dbbc752155239a35c8bbd6e79" title=" " alt="" coords="1044,390,1156,414"/>
+<area shape="rect" href="classIMU.html#a914f8b4262fba70e6d8fd0e584fa7996" title=" " alt="" coords="820,38,987,62"/>
+<area shape="rect" href="classIMU.html#a37694424e4502ffc69bbb6c540c1a400" title=" " alt="" coords="1035,163,1165,187"/>
+<area shape="rect" href="classIMU.html#a5567bbe0d211f1e6d386eb69ffd960a7" title=" " alt="" coords="838,187,969,211"/>
+<area shape="rect" href="classIMU.html#a928fa5e2db05bd402a3fa93bd3584527" title=" " alt="" coords="829,287,977,311"/>
+<area shape="rect" href="classIMU.html#a834f21762003f831e5e632cc7974ba75" title=" " alt="" coords="841,236,965,260"/>
+<area shape="rect" href="classIMU.html#acd2af48f4eb0a0321080332016e3c1f7" title=" " alt="" coords="606,39,730,63"/>
+<area shape="rect" href="classIMU.html#af3b90e0b20d4bd55091be99f7aa67737" title=" " alt="" coords="585,87,751,111"/>
+<area shape="rect" href="classIMU.html#a87c200faa130ff4d2d3416b2d83f4f49" title=" " alt="" coords="1213,163,1344,187"/>
+<area shape="rect" href="classAQUA.html#abdff34437c9c066d046a342525a01b52" title="Calcula o quaternion de inclinacao." alt="" coords="573,338,763,362"/>
+<area shape="rect" href="classAQUA.html#a6adb2b857affb225b29fb91e6f6a7194" title=" " alt="" coords="579,386,757,410"/>
+<area shape="rect" href="namespaceekf.html#a0ae7d9ae45fba00d81bfe71ad73d7fee" title="Produto de quaternions aplicado." alt="" coords="585,434,751,458"/>
+<area shape="rect" href="namespaceekf.html#acb1dc12948420927eff91ed90c24b342" title="Rotaciona um vetor tridimensional com um quaternion conjugado." alt="" coords="564,482,772,518"/>
+<area shape="rect" href="namespaceekf.html#ab55e144edf7066b67232e15cca7b4646" title="Calcula o inverso do raiz de um float." alt="" coords="856,386,951,410"/>
+<area shape="rect" href="GPS_8h.html#a5d2ecd8f29f7e3e702c8b8bea333f6c6" title=" " alt="" coords="630,543,706,567"/>
+<area shape="rect" href="classTELEMETRIA.html#a235abb2ba6888140e7dab2e73a050049" title="Envia vetor Eigen de float." alt="" coords="362,834,486,858"/>
+<area shape="rect" href="classekf_1_1EKF.html#a651814ff64d234394572e2e7c5703a43" title=" " alt="" coords="362,882,486,906"/>
+<area shape="rect" href="namespaceekf.html#aab2dcd522b40c160064cfae69cae6d98" title=" " alt="" coords="350,786,498,810"/>
+<area shape="rect" href="namespaceekf.html#ad48c9ef49e8ccbde872958a81f6ed41a" title="Calcula, a partir de um quatérnio de atitude, o valor do ângulo Phi em Radianos." alt="" coords="618,786,718,810"/>
+<area shape="rect" href="namespaceekf.html#a12f4cfdfc4baad066351f122771205a0" title="Calcula, a partir de um quatérnio de atitude, o valor do ângulo Psi em Radianos." alt="" coords="618,834,718,858"/>
+<area shape="rect" href="namespaceekf.html#a6530a1bee6082aaa64ec7e8525d0ed54" title="Calcula, a partir de um quatérnio de atitude, o valor do ângulo Theta em Radianos." alt="" coords="612,738,724,762"/>
+</map>
+</div>
+<div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Esse é o diagrama das funções que utilizam essa função:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="main_8cpp_a1d67803bd6f9b50c1e3686650e280f68_icgraph.png" border="0" usemap="#amain_8cpp_a1d67803bd6f9b50c1e3686650e280f68_icgraph" alt=""/></div>
+<map name="amain_8cpp_a1d67803bd6f9b50c1e3686650e280f68_icgraph" id="amain_8cpp_a1d67803bd6f9b50c1e3686650e280f68_icgraph">
+<area shape="rect" title=" " alt="" coords="105,5,224,29"/>
+<area shape="rect" href="main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d" title=" " alt="" coords="5,5,57,29"/>
 </map>
 </div>
 
 </div>
 </div>
 <h2 class="groupheader">Variáveis</h2>
-<a id="ae1f1091647c66e9cc962b4feab0525cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae1f1091647c66e9cc962b4feab0525cd">&#9670;&nbsp;</a></span>filtro</h2>
+<a id="a29b0f479e7948681bef12044e738d265"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29b0f479e7948681bef12044e738d265">&#9670;&nbsp;</a></span>comandosDigitais</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classekf_1_1EKF.html">ekf::EKF</a> filtro</td>
+          <td class="memname">Vector4i* comandosDigitais</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definição na linha <a class="el" href="main_8cpp_source.html#l00025">25</a> do arquivo <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definição na linha <a class="el" href="main_8cpp_source.html#l00033">33</a> do arquivo <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Referenciado(a) por <a class="el" href="main_8cpp_source.html#l00050">loop()</a> e <a class="el" href="main_8cpp_source.html#l00033">setup()</a>.</p>
+<p class="reference">Referenciado(a) por <a class="el" href="main_8cpp_source.html#l00128">xTaskContol()</a>.</p>
 
 </div>
 </div>
-<a id="aad20b5e553c06abe201d2985050078b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad20b5e553c06abe201d2985050078b2">&#9670;&nbsp;</a></span>ibus</h2>
+<a id="a69b5e71277e0e3a57afef1e2d7025e58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69b5e71277e0e3a57afef1e2d7025e58">&#9670;&nbsp;</a></span>eulerTarget</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classIBusBM.html">IBusBM</a> ibus</td>
+          <td class="memname">Vector3f* eulerTarget</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definição na linha <a class="el" href="main_8cpp_source.html#l00022">22</a> do arquivo <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definição na linha <a class="el" href="main_8cpp_source.html#l00030">30</a> do arquivo <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Referenciado(a) por <a class="el" href="main_8cpp_source.html#l00033">setup()</a>.</p>
+<p class="reference">Referenciado(a) por <a class="el" href="main_8cpp_source.html#l00128">xTaskContol()</a>.</p>
 
 </div>
 </div>
-<a id="a415ca717d7f13cfb8bcbaa07a3ddd062"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a415ca717d7f13cfb8bcbaa07a3ddd062">&#9670;&nbsp;</a></span>t</h2>
+<a id="a0b8c2b64555211f3dd9069fde81b4bdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b8c2b64555211f3dd9069fde81b4bdb">&#9670;&nbsp;</a></span>iBus</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Eigen::Vector&lt;float, 17&gt; t = Eigen::Vector&lt;float, 17&gt;::Zero()</td>
+          <td class="memname"><a class="el" href="classIBusBM.html">IBusBM</a> iBus</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definição na linha <a class="el" href="main_8cpp_source.html#l00049">49</a> do arquivo <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definição na linha <a class="el" href="main_8cpp_source.html#l00028">28</a> do arquivo <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Referenciado(a) por <a class="el" href="main_8cpp_source.html#l00050">loop()</a> e <a class="el" href="IBusBM_8cpp_source.html#l00171">IBusBM::loop()</a>.</p>
+<p class="reference">Referenciado(a) por <a class="el" href="main_8cpp_source.html#l00114">emergencyMethods()</a>, <a class="el" href="main_8cpp_source.html#l00214">setup()</a>, <a class="el" href="main_8cpp_source.html#l00128">xTaskContol()</a> e <a class="el" href="main_8cpp_source.html#l00087">xTaskSetupFiltro()</a>.</p>
+
+</div>
+</div>
+<a id="a63d9a57399cadda190f8e8cbddbff900"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63d9a57399cadda190f8e8cbddbff900">&#9670;&nbsp;</a></span>moments</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vector4f* moments</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="main_8cpp_source.html#l00032">32</a> do arquivo <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+<p class="reference">Referenciado(a) por <a class="el" href="main_8cpp_source.html#l00128">xTaskContol()</a>.</p>
+
+</div>
+</div>
+<a id="a9e8de852b827cfc2d32be84a9a02dba9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e8de852b827cfc2d32be84a9a02dba9">&#9670;&nbsp;</a></span>qa</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vector3f qa</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="main_8cpp_source.html#l00030">30</a> do arquivo <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+<p class="reference">Referenciado(a) por <a class="el" href="main_8cpp_source.html#l00128">xTaskContol()</a> e <a class="el" href="main_8cpp_source.html#l00051">xTaskLoopFilter()</a>.</p>
+
+</div>
+</div>
+<a id="adef42f887c2b14a9f43de1ae529a09e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adef42f887c2b14a9f43de1ae529a09e5">&#9670;&nbsp;</a></span>ra</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vector3f * ra</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="main_8cpp_source.html#l00030">30</a> do arquivo <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+<p class="reference">Referenciado(a) por <a class="el" href="main_8cpp_source.html#l00128">xTaskContol()</a> e <a class="el" href="main_8cpp_source.html#l00051">xTaskLoopFilter()</a>.</p>
+
+</div>
+</div>
+<a id="aff5ffbb08d9a949947ef687cb0531794"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff5ffbb08d9a949947ef687cb0531794">&#9670;&nbsp;</a></span>rI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vector3f * rI</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="main_8cpp_source.html#l00030">30</a> do arquivo <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+<p class="reference">Referenciado(a) por <a class="el" href="main_8cpp_source.html#l00128">xTaskContol()</a>.</p>
 
 </div>
 </div>
@@ -342,9 +958,97 @@ Variáveis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definição na linha <a class="el" href="main_8cpp_source.html#l00023">23</a> do arquivo <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definição na linha <a class="el" href="main_8cpp_source.html#l00035">35</a> do arquivo <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Referenciado(a) por <a class="el" href="main_8cpp_source.html#l00050">loop()</a> e <a class="el" href="main_8cpp_source.html#l00033">setup()</a>.</p>
+<p class="reference">Referenciado(a) por <a class="el" href="main_8cpp_source.html#l00114">emergencyMethods()</a>, <a class="el" href="main_8cpp_source.html#l00214">setup()</a>, <a class="el" href="main_8cpp_source.html#l00128">xTaskContol()</a>, <a class="el" href="main_8cpp_source.html#l00051">xTaskLoopFilter()</a> e <a class="el" href="main_8cpp_source.html#l00087">xTaskSetupFiltro()</a>.</p>
+
+</div>
+</div>
+<a id="a4de603e279aa24f62c1b8a40306140f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4de603e279aa24f62c1b8a40306140f3">&#9670;&nbsp;</a></span>wa</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vector3f * wa</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="main_8cpp_source.html#l00030">30</a> do arquivo <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+<p class="reference">Referenciado(a) por <a class="el" href="main_8cpp_source.html#l00128">xTaskContol()</a> e <a class="el" href="main_8cpp_source.html#l00051">xTaskLoopFilter()</a>.</p>
+
+</div>
+</div>
+<a id="abc6d08e0fef7d2e6251a6822a57afe1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc6d08e0fef7d2e6251a6822a57afe1a">&#9670;&nbsp;</a></span>xHandleControl</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TaskHandle_t xHandleControl = NULL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="main_8cpp_source.html#l00048">48</a> do arquivo <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+<p class="reference">Referenciado(a) por <a class="el" href="main_8cpp_source.html#l00114">emergencyMethods()</a> e <a class="el" href="main_8cpp_source.html#l00214">setup()</a>.</p>
+
+</div>
+</div>
+<a id="aa3042e035552175f37c5ce7f156cc58f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3042e035552175f37c5ce7f156cc58f">&#9670;&nbsp;</a></span>xHandleEmergency</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TaskHandle_t xHandleEmergency = NULL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="main_8cpp_source.html#l00049">49</a> do arquivo <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ad68258a9abebbcd50439c86377b6dce9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad68258a9abebbcd50439c86377b6dce9">&#9670;&nbsp;</a></span>xHandleLoopFilter</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TaskHandle_t xHandleLoopFilter = NULL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="main_8cpp_source.html#l00047">47</a> do arquivo <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+<p class="reference">Referenciado(a) por <a class="el" href="main_8cpp_source.html#l00087">xTaskSetupFiltro()</a>.</p>
+
+</div>
+</div>
+<a id="a5a89228326c473f17abbd278991560d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a89228326c473f17abbd278991560d5">&#9670;&nbsp;</a></span>xHandleSetupFilter</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TaskHandle_t xHandleSetupFilter = NULL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="main_8cpp_source.html#l00046">46</a> do arquivo <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+<p class="reference">Referenciado(a) por <a class="el" href="main_8cpp_source.html#l00214">setup()</a>.</p>
 
 </div>
 </div>

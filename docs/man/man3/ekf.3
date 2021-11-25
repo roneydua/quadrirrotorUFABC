@@ -1,4 +1,4 @@
-.TH "ekf" 3 "Sexta, 17 de Setembro de 2021" "Quadrirrotor" \" -*- nroff -*-
+.TH "ekf" 3 "Segunda, 25 de Outubro de 2021" "Quadrirrotor" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -12,6 +12,13 @@ ekf \- Funções genéricas com álgebra de quatérnions e demais\&.
 .in +1c
 .ti -1c
 .RI "class \fBEKF\fP"
+.br
+.in -1c
+.SS "Enumerações"
+
+.in +1c
+.ti -1c
+.RI "enum \fB_status\fP { \fBBEGIN\fP, \fBREADY\fP, \fBFAIL\fP, \fBSTOPED\fP }"
 .br
 .in -1c
 .SS "Funções"
@@ -34,7 +41,7 @@ ekf \- Funções genéricas com álgebra de quatérnions e demais\&.
 .ti -1c
 .RI "Eigen::Matrix4f \fBS_l\fP (const Eigen::Ref< Eigen::Vector4f > &q)"
 .br
-.RI "Calcula a Matriz \fILefth-Quaternion\fP a partir do quaternion q\&. "
+.RI "Calcula a Matriz \fILeft-Quaternion\fP a partir do quaternion q\&. "
 .ti -1c
 .RI "void \fBcomputeMcdFromQuaternion\fP (const Eigen::Vector4f &q, Eigen::Matrix3f &mcd)"
 .br
@@ -52,7 +59,19 @@ ekf \- Funções genéricas com álgebra de quatérnions e demais\&.
 .RI "void \fBquaternion2Euler\fP (Eigen::Ref< Eigen::Vector3f > _euler, const Eigen::Ref< const Eigen::Vector4f > &_q)"
 .br
 .ti -1c
-.RI "void \fBintegrationQuaternion\fP (Eigen::Vector4f &_quat, const Eigen::Ref< const Eigen::VectorXf > &_gyroscopio, float &_dt)"
+.RI "void \fBcalc_phi\fP (float &x, const Eigen::Ref< const Eigen::Vector4f > &_q)"
+.br
+.RI "Calcula, a partir de um quatérnio de atitude, o valor do ângulo Phi em Radianos\&. "
+.ti -1c
+.RI "void \fBcalc_theta\fP (float &x, const Eigen::Ref< const Eigen::Vector4f > &_q)"
+.br
+.RI "Calcula, a partir de um quatérnio de atitude, o valor do ângulo Theta em Radianos\&. "
+.ti -1c
+.RI "void \fBcalc_psi\fP (float &x, const Eigen::Ref< const Eigen::Vector4f > &_q)"
+.br
+.RI "Calcula, a partir de um quatérnio de atitude, o valor do ângulo Psi em Radianos\&. "
+.ti -1c
+.RI "void \fBintegrationQuaternion\fP (Eigen::Vector4f &_quat, const Eigen::Ref< const Eigen::VectorXf > &_gyroscope, float &_dt)"
 .br
 .ti -1c
 .RI "Eigen::Vector3f \fBrotateVectorWithQuaternion\fP (Eigen::Vector4f &q, Eigen::Vector3f &v_old)"
@@ -66,6 +85,18 @@ ekf \- Funções genéricas com álgebra de quatérnions e demais\&.
 .RI "float \fBinvSqrt\fP (float _x)"
 .br
 .RI "Calcula o inverso do raiz de um float\&. "
+.ti -1c
+.RI "Eigen::Vector4f \fBq_theta\fP (float &phi)"
+.br
+.RI "Calcula o quaternion de atitude de rotação phi sobre o eixo x\&. "
+.ti -1c
+.RI "Eigen::Vector4f \fBq_phi\fP (float &theta)"
+.br
+.RI "Calcula o quaternion de atitude de rotação theta sobre o eixo y\&. "
+.ti -1c
+.RI "Eigen::Vector4f \fBq_psi\fP (float &psi)"
+.br
+.RI "Calcula o quaternion de atitude de rotação psi sobre o eixo z\&. "
 .ti -1c
 .RI "void \fBcomputeQuaternionFromMCDMarkley\fP (Eigen::Matrix3f &m, Eigen::Ref< Eigen::Vector4f > q)"
 .br
@@ -99,8 +130,100 @@ ekf \- Funções genéricas com álgebra de quatérnions e demais\&.
 .SH "Descrição detalhada"
 .PP 
 Funções genéricas com álgebra de quatérnions e demais\&. 
+.SH "Enumerações"
+.PP 
+.SS "enum \fBekf::_status\fP"
+Enum Status Filter 
+.PP
+\fBEnumeradores\fP
+.in +1c
+.TP
+\fB\fIBEGIN \fP\fP
+.TP
+\fB\fIREADY \fP\fP
+.TP
+\fB\fIFAIL \fP\fP
+.TP
+\fB\fISTOPED \fP\fP
+.PP
+Definição na linha 44 do arquivo EKF\&.h\&.
+.PP
+.nf
+44 { BEGIN, READY, FAIL, STOPED };
+.fi
 .SH "Funções"
 .PP 
+.SS "void ekf::calc_phi (float & x, const Eigen::Ref< const Eigen::Vector4f > & _q)"
+
+.PP
+Calcula, a partir de um quatérnio de atitude, o valor do ângulo Phi em Radianos\&. 
+.PP
+\fBParâmetros\fP
+.RS 4
+\fIx\fP Referencia a ser sobrescrita\&. -pi < x < pi 
+.br
+\fI_q\fP Quaternion de atitude 
+.RE
+.PP
+
+.PP
+Definição na linha 173 do arquivo GRUPO_QUAT\&.cpp\&.
+.PP
+.nf
+173                                                                  {
+174   x = -atan2f(_q(2) * _q(3) - _q(0) * _q(1),
+175               _q(0) * _q(0) + _q(3) * _q(3) - 0\&.5f);
+176 }
+.fi
+.PP
+Referenciado(a) por quaternion2Euler()\&.
+.SS "void ekf::calc_psi (float & x, const Eigen::Ref< const Eigen::Vector4f > & _q)"
+
+.PP
+Calcula, a partir de um quatérnio de atitude, o valor do ângulo Psi em Radianos\&. 
+.PP
+\fBParâmetros\fP
+.RS 4
+\fIx\fP Referencia a ser sobrescrita\&. -pi < x < pi 
+.br
+\fI_q\fP Quaternion de atitude 
+.RE
+.PP
+
+.PP
+Definição na linha 194 do arquivo GRUPO_QUAT\&.cpp\&.
+.PP
+.nf
+194                                                                  {
+195   x = -atan2f(_q(1) * _q(2) - _q(0) * _q(3),
+196               _q(0) * _q(0) + _q(1) * _q(1) - 0\&.5f);
+197 }
+.fi
+.PP
+Referenciado(a) por Controle::Controle() e quaternion2Euler()\&.
+.SS "void ekf::calc_theta (float & x, const Eigen::Ref< const Eigen::Vector4f > & _q)"
+
+.PP
+Calcula, a partir de um quatérnio de atitude, o valor do ângulo Theta em Radianos\&. 
+.PP
+\fBParâmetros\fP
+.RS 4
+\fIx\fP Referencia a ser sobrescrita\&. -pi/2 < x < pi/2 
+.br
+\fI_q\fP Quaternion de atitude 
+.RE
+.PP
+
+.PP
+Definição na linha 184 do arquivo GRUPO_QUAT\&.cpp\&.
+.PP
+.nf
+184                                                                    {
+185   x = -asinf(-2\&.0f * (_q(0) * _q(2) + _q(1) * _q(3)));
+186 }
+.fi
+.PP
+Referenciado(a) por quaternion2Euler()\&.
 .SS "void ekf::computeMcdFromQuaternion (const Eigen::Vector4f & q, Eigen::Matrix3f & mcd)"
 Calcula a matriz de cossenos ditores a parir do quaternion de atitude 
 .PP
@@ -141,43 +264,43 @@ Utiza o algoritmo BUG
 .PP
 
 .PP
-Definição na linha 293 do arquivo GRUPO_QUAT\&.cpp\&.
+Definição na linha 350 do arquivo GRUPO_QUAT\&.cpp\&.
 .PP
 .nf
-294                                                                 {
-295   Eigen::Vector4f indexVector;
-296   float _trace = m\&.trace();
-297   indexVector << _trace, m\&.diagonal();
-298   Eigen::Vector4f::Index max_index;
-299   indexVector\&.maxCoeff(&max_index);
-300   switch (max_index) {
-301   case 0:
-302     q(0) = 1\&.0f + _trace;
-303     q(1) = m(2, 1) - m(1, 2);
-304     q(2) = m(0, 2) - m(2, 0);
-305     q(3) = m(1, 0) - m(0, 1);
-306     break;
-307   case 1:
-308     q(0) = m(2, 1) - m(1, 2);
-309     q(1) = 1\&.0f + m(0, 0) - m(1, 1) - m(2, 2);
-310     q(2) = m(0, 1) + m(1, 0);
-311     q(3) = m(2, 0) + m(0, 2);
-312     break;
-313   case 2:
-314     q(0) = m(2, 0) - m(0, 2);
-315     q(1) = m(0, 1) + m(1, 0);
-316     q(2) = 1\&.0f - m(0, 0) + m(1, 1) - m(2, 2);
-317     q(3) = m(1, 2) + m(2, 1);
-318     break;
-319   default:
-320     q(0) = m(1, 0) - m(0, 1);
-321     q(1) = m(2, 0) + m(0, 2);
-322     q(2) = m(2, 1) + m(1, 2);
-323     q(3) = 1\&.0f - m(0, 0) - m(1, 1) + m(2, 2);
-324     break;
-325   }
-326   q\&.normalize();
-327 }
+351                                                                 {
+352   Eigen::Vector4f indexVector;
+353   float _trace = m\&.trace();
+354   indexVector << _trace, m\&.diagonal();
+355   Eigen::Vector4f::Index max_index;
+356   indexVector\&.maxCoeff(&max_index);
+357   switch (max_index) {
+358   case 0:
+359     q(0) = 1\&.0f + _trace;
+360     q(1) = m(2, 1) - m(1, 2);
+361     q(2) = m(0, 2) - m(2, 0);
+362     q(3) = m(1, 0) - m(0, 1);
+363     break;
+364   case 1:
+365     q(0) = m(2, 1) - m(1, 2);
+366     q(1) = 1\&.0f + m(0, 0) - m(1, 1) - m(2, 2);
+367     q(2) = m(0, 1) + m(1, 0);
+368     q(3) = m(2, 0) + m(0, 2);
+369     break;
+370   case 2:
+371     q(0) = m(2, 0) - m(0, 2);
+372     q(1) = m(0, 1) + m(1, 0);
+373     q(2) = 1\&.0f - m(0, 0) + m(1, 1) - m(2, 2);
+374     q(3) = m(1, 2) + m(2, 1);
+375     break;
+376   default:
+377     q(0) = m(1, 0) - m(0, 1);
+378     q(1) = m(2, 0) + m(0, 2);
+379     q(2) = m(2, 1) + m(1, 2);
+380     q(3) = 1\&.0f - m(0, 0) - m(1, 1) + m(2, 2);
+381     break;
+382   }
+383   q\&.normalize();
+384 }
 .fi
 .PP
 Referencias drone::m\&.
@@ -220,19 +343,19 @@ Conjuga o quaternion _q\&.
 .PP
 
 .PP
-Definição na linha 343 do arquivo GRUPO_QUAT\&.cpp\&.
+Definição na linha 400 do arquivo GRUPO_QUAT\&.cpp\&.
 .PP
 .nf
-343 { _q\&.tail(3) *= -1\&.0f; }
+400 { _q\&.tail(3) *= -1\&.0f; }
 .fi
-.SS "void ekf::integrationQuaternion (Eigen::Vector4f & _quat, const Eigen::Ref< const Eigen::VectorXf > & _gyroscopio, float & _dt)"
+.SS "void ekf::integrationQuaternion (Eigen::Vector4f & _quat, const Eigen::Ref< const Eigen::VectorXf > & _gyroscope, float & _dt)"
 Integracao de quaternion com mapa exponecial\&. 
 .PP
 \fBParâmetros\fP
 .RS 4
 \fI_quat\fP Quaternion q_k 
 .br
-\fI_gyroscopio\fP mediads do giroscópio [Radianos] 
+\fI_giroscopio\fP medidas do giroscópio [Radianos] 
 .br
 \fI_dt\fP Passo de integração\&.
 .RE
@@ -244,21 +367,20 @@ computa norma para evitar instabilidade
 .PP
 
 .PP
-Definição na linha 168 do arquivo GRUPO_QUAT\&.cpp\&.
+Definição na linha 198 do arquivo GRUPO_QUAT\&.cpp\&.
 .PP
 .nf
-170                                        {
-178   float _gyroscopio_norm = _gyroscopio\&.norm();
-179 
-180   if (_gyroscopio_norm > TOLERANCE) {
-181     Eigen::Vector4f expMap;
-182     float _dt_gyroscopio_norm_half = 0\&.5f * _dt * _gyroscopio_norm;
-183     expMap(0) = cosf(_dt_gyroscopio_norm_half);
-184     expMap\&.tail(3) =
-185         _gyroscopio / _gyroscopio_norm * sinf(_dt_gyroscopio_norm_half);
-186     _quat = multiplyQuaternions(_quat, expMap);
-187   }
-188 }
+200                                        {
+208   float _gyroscopeNorm = _gyroscope\&.norm();
+209 
+210   if (_gyroscopeNorm > TOLERANCE) {
+211     Eigen::Vector4f expMap;
+212     float _dtGyroscopeNormHalf = 0\&.5f * _dt * _gyroscopeNorm;
+213     expMap(0) = cosf(_dtGyroscopeNormHalf);
+214     expMap\&.tail(3) = _gyroscope / _gyroscopeNorm * sinf(_dtGyroscopeNormHalf);
+215     _quat = multiplyQuaternions(_quat, expMap);
+216   }
+217 }
 .fi
 .PP
 Referencias multiplyQuaternions() e TOLERANCE\&.
@@ -284,24 +406,24 @@ Para mais detalhes consulte \fCFast inverse square-root\fP
 .PP
 
 .PP
-Definição na linha 227 do arquivo GRUPO_QUAT\&.cpp\&.
+Definição na linha 256 do arquivo GRUPO_QUAT\&.cpp\&.
 .PP
 .nf
-227                         {
-228   float halfx = 0\&.5f * _x;
-229   union {
-230     float _y;
-231     uint32_t _i;
-232   } conv = {\&._y = _x};
-233   // float _y = _x;
-234   // long i = *(long *)&_y;
-235   conv\&._i = 0x5f3759df - (conv\&._i >> 1);
-236   // _y = *(float *)&i;
-237   conv\&._y *= (1\&.5f - (halfx * conv\&._y * conv\&._y));
-238   // segunda iteracao\&.
-239   // _y = _y * (1\&.5f - (halfx * _y * _y));
-240   return conv\&._y;
-241 }
+256                         {
+257   float halfx = 0\&.5f * _x;
+258   union {
+259     float _y;
+260     uint32_t _i;
+261   } conv = {\&._y = _x};
+262   // float _y = _x;
+263   // long i = *(long *)&_y;
+264   conv\&._i = 0x5f3759df - (conv\&._i >> 1);
+265   // _y = *(float *)&i;
+266   conv\&._y *= (1\&.5f - (halfx * conv\&._y * conv\&._y));
+267   // segunda iteracao\&.
+268   // _y = _y * (1\&.5f - (halfx * _y * _y));
+269   return conv\&._y;
+270 }
 .fi
 .PP
 Referenciado(a) por AQUA::computeQuaternionMag()\&.
@@ -396,6 +518,54 @@ Definição na linha 45 do arquivo GRUPO_QUAT\&.cpp\&.
 Referencias skew()\&.
 .PP
 Referenciado(a) por Controle::computeRotationalTarget()\&.
+.SS "Eigen::Vector4f ekf::q_phi (float & theta)"
+
+.PP
+Calcula o quaternion de atitude de rotação theta sobre o eixo y\&. 
+.PP
+\fBParâmetros\fP
+.RS 4
+\fItheta\fP 
+.RE
+.PP
+\fBRetorna\fP
+.RS 4
+Eigen::Vector4f Quaternion de rotacao theta 
+.RE
+.PP
+
+.PP
+Definição na linha 286 do arquivo GRUPO_QUAT\&.cpp\&.
+.PP
+.nf
+286                                   {
+287   return Eigen::Vector4f{cosf(0\&.5f * theta), 0, sinf(0\&.5f * theta), 0};
+288 }
+.fi
+.SS "Eigen::Vector4f ekf::q_psi (float & psi)"
+
+.PP
+Calcula o quaternion de atitude de rotação psi sobre o eixo z\&. 
+.PP
+\fBParâmetros\fP
+.RS 4
+\fIpsi\fP 
+.RE
+.PP
+\fBRetorna\fP
+.RS 4
+Eigen::Vector4f Quaternion de rotacao psi 
+.RE
+.PP
+
+.PP
+Definição na linha 295 do arquivo GRUPO_QUAT\&.cpp\&.
+.PP
+.nf
+295                                 {
+296   return Eigen::Vector4f{cosf(0\&.5f * psi), 0, 0, sinf(0\&.5f * psi)};
+297 }
+.fi
 .SS "Eigen::MatrixXf ekf::Q_r (const Eigen::Ref< Eigen::Vector4f > & q)"
 Matrix Right-Quaternion Q 
 .PP
@@ -425,6 +595,30 @@ Definição na linha 31 do arquivo GRUPO_QUAT\&.cpp\&.
 .fi
 .PP
 Referencias skew()\&.
+.SS "Eigen::Vector4f ekf::q_theta (float & phi)"
+
+.PP
+Calcula o quaternion de atitude de rotação phi sobre o eixo x\&. 
+.PP
+\fBParâmetros\fP
+.RS 4
+\fIphi\fP 
+.RE
+.PP
+\fBRetorna\fP
+.RS 4
+Eigen::Vector4f Quaternion de rotacao phi 
+.RE
+.PP
+
+.PP
+Definição na linha 277 do arquivo GRUPO_QUAT\&.cpp\&.
+.PP
+.nf
+277                                   {
+278   return Eigen::Vector4f{cosf(0\&.5f * phi), sinf(0\&.5f * phi), 0, 0};
+279 }
+.fi
 .SS "void ekf::quaternion2Euler (Eigen::Ref< Eigen::Vector3f > _euler, const Eigen::Ref< const Eigen::Vector4f > & _q)"
 Extrai os ângulos de Euler do quatérnion\&. 
 .PP
@@ -442,33 +636,33 @@ Definição na linha 152 do arquivo GRUPO_QUAT\&.cpp\&.
 .nf
 153                                                                {
 159   // calculo de fi
-160   _euler(0) = RAD_TO_DEG * atan2f(_q(2) * _q(3) + _q(0) * _q(1),
-161                                   _q(0) * _q(0) + _q(3) * _q(3) - 0\&.5f);
-162   // calculo de theta
-163   _euler(1) = RAD_TO_DEG * asinf(2\&.0f * (_q(0) * _q(2) - _q(1) * _q(3)));
-164   // calculo de psi
-165   _euler(2) = RAD_TO_DEG * atan2f(_q(1) * _q(2) + _q(0) * _q(3),
-166                                   _q(0) * _q(0) + _q(1) * _q(1) - 0\&.5f);
-167 }
+160   calc_phi(_euler(0), _q);
+161   // calculo de theta
+162   calc_theta(_euler(1), _q);
+163   // calculo de psi
+164   calc_psi(_euler(2), _q);
+165 }
 .fi
 .PP
-Referencias RAD_TO_DEG\&.
+Referencias calc_phi(), calc_psi() e calc_theta()\&.
+.PP
+Referenciado(a) por Controle::computeRotationalTarget() e xTaskLoopFilter()\&.
 .SS "Eigen::VectorXf ekf::RK (float h, const Eigen ::Ref< Eigen::VectorXf > & xk, const Eigen ::Ref< Eigen::VectorXf > & u, Eigen::VectorXf  fnEigen::VectorXf x, Eigen::VectorXf u)"
 
 .SS "Eigen::VectorXf ekf::RK (float h, const Eigen ::Ref< Eigen::VectorXf > & xk, const Eigen ::Ref< Eigen::VectorXf > & u, Eigen::VectorXf(fn)(Eigen::VectorXf x, Eigen::VectorXf u)   )"
 
 .PP
-Definição na linha 328 do arquivo GRUPO_QUAT\&.cpp\&.
+Definição na linha 385 do arquivo GRUPO_QUAT\&.cpp\&.
 .PP
 .nf
-330                                                                         {
-331   Eigen::VectorXf k1(xk\&.rows()), k2(xk\&.rows()), k3(xk\&.rows()), k4(xk\&.rows());
-332   k1 = h * (*fn)(xk, u);
-333   k2 = h * (*fn)(xk + 0\&.5 * k1, u);
-334   k3 = h * (*fn)(xk + 0\&.5 * k2, u);
-335   k4 = h * (*fn)(xk + k3, u);
-336   return xk + (k1 + 2\&.0f * (k2 + k3) + k4) / 6\&.0;
-337 }
+387                                                                         {
+388   Eigen::VectorXf k1(xk\&.rows()), k2(xk\&.rows()), k3(xk\&.rows()), k4(xk\&.rows());
+389   k1 = h * (*fn)(xk, u);
+390   k2 = h * (*fn)(xk + 0\&.5 * k1, u);
+391   k3 = h * (*fn)(xk + 0\&.5 * k2, u);
+392   k4 = h * (*fn)(xk + k3, u);
+393   return xk + (k1 + 2\&.0f * (k2 + k3) + k4) / 6\&.0;
+394 }
 .fi
 .SS "Eigen::Vector3f ekf::rotateVectorWithQuaternion (Eigen::Vector4f & q, Eigen::Vector3f & v_old)"
 
@@ -489,18 +683,18 @@ v_new vetor rotacionado\&.
 .PP
 \fBObservação\fP
 .RS 4
-A trasnfromação desta forma possui 30 operações (15 produtos e 15 multiplicações\&.)(Rotacao de vetor tridimensional com formalismo de eixo/angulo)[https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation#Performance_comparisons] 
+A transformação desta forma possui 30 operações (15 produtos e 15 multiplicações\&.)(Rotacao de vetor tridimensional com formalismo de eixo/angulo)[https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation#Performance_comparisons] 
 .RE
 .PP
 
 .PP
-Definição na linha 198 do arquivo GRUPO_QUAT\&.cpp\&.
+Definição na linha 227 do arquivo GRUPO_QUAT\&.cpp\&.
 .PP
 .nf
-199                                                                  {
-200   return v_old +
-201          2\&.0f * q\&.tail<3>()\&.cross(q\&.tail<3>()\&.cross(v_old) + q(0) * v_old);
-202 }
+228                                                                  {
+229   return v_old +
+230          2\&.0f * q\&.tail<3>()\&.cross(q\&.tail<3>()\&.cross(v_old) + q(0) * v_old);
+231 }
 .fi
 .SS "Eigen::Vector3f ekf::rotateVectorWithQuaternion_Conjugate (Eigen::Vector4f & q, Eigen::Vector3f & v_old)"
 
@@ -526,21 +720,21 @@ A trasnfromação desta forma possui 30 operações (15 produtos e 15 multiplica
 .PP
 
 .PP
-Definição na linha 213 do arquivo GRUPO_QUAT\&.cpp\&.
+Definição na linha 242 do arquivo GRUPO_QUAT\&.cpp\&.
 .PP
 .nf
-214                                                                            {
-215   return v_old +
-216          2\&.0f *
-217              (-q\&.tail<3>())\&.cross((-q\&.tail<3>())\&.cross(v_old) + q(0) * v_old);
-218 }
+243                                                                            {
+244   return v_old +
+245          2\&.0f *
+246              (-q\&.tail<3>())\&.cross((-q\&.tail<3>())\&.cross(v_old) + q(0) * v_old);
+247 }
 .fi
 .PP
 Referenciado(a) por AQUA::computeAQUAQuaternion()\&.
 .SS "Eigen::Matrix4f ekf::S_l (const Eigen::Ref< Eigen::Vector4f > & q)"
 
 .PP
-Calcula a Matriz \fILefth-Quaternion\fP a partir do quaternion q\&. 
+Calcula a Matriz \fILeft-Quaternion\fP a partir do quaternion q\&. 
 .PP
 \fBParâmetros\fP
 .RS 4
@@ -552,7 +746,7 @@ Calcula a Matriz \fILefth-Quaternion\fP a partir do quaternion q\&.
 mS_l Matrix \fIRight-Quaternion\fP
 .RE
 .PP
-A matrix \fILefth-Quaternion\fP torna possível realizar o produto de quaternions como um produto matricial comum\&. 
+A matrix \fILeft-Quaternion\fP torna possível realizar o produto de quaternions como um produto matricial comum\&. 
 .PP
 Definição na linha 90 do arquivo GRUPO_QUAT\&.cpp\&.
 .PP
@@ -617,7 +811,7 @@ Matrix antissimetrica\&.
 [M] Matrix antissimetrica
 .RE
 .PP
-\fCA matrix antissimetrica\fP torna possivel converter um produtod vetorial em produto de matrizes\&. 
+\fCA matrix antissimetrica\fP torna possivel converter um produto vetorial em produto de matrizes\&. 
 .PP
 Definição na linha 62 do arquivo GRUPO_QUAT\&.cpp\&.
 .PP
@@ -636,7 +830,7 @@ Referenciado(a) por computeMcdFromQuaternion(), Q_l(), Q_r(), S_l(), S_r() e Dro
 .SS "\fBAQUA\fP ekf::aqua"
 Classe do filtro de Kalman\&. 
 .PP
-Definição na linha 31 do arquivo EKF\&.cpp\&.
+Definição na linha 32 do arquivo EKF\&.cpp\&.
 .PP
 Referenciado(a) por ekf::EKF::begin()\&.
 .SS "const float ekf::TOLERANCE = 1e\-6"

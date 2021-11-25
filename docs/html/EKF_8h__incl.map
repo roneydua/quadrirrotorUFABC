@@ -1,5 +1,8 @@
 <map id="lib/EKF/EKF.h" name="lib/EKF/EKF.h">
-<area shape="rect" id="node1" title="Classe que implementa o filtro de Kalman estendido." alt="" coords="99,5,199,29"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,83,136,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="160,77,296,113"/>
+<area shape="rect" id="node1" title="Classe que implementa o filtro de Kalman estendido." alt="" coords="251,5,351,29"/>
+<area shape="rect" id="node2" title=" " alt="" coords="166,245,297,269"/>
+<area shape="rect" id="node3" title=" " alt="" coords="32,77,223,113"/>
+<area shape="rect" id="node4" href="$AQUA_8h.html" title=" " alt="" coords="247,83,354,107"/>
+<area shape="rect" id="node5" href="$GRUPO__QUAT_8h.html" title="Cabecalho com funcoes de quaternion." alt="" coords="269,161,405,197"/>
+<area shape="rect" id="node6" title=" " alt="" coords="364,245,435,269"/>
 </map>

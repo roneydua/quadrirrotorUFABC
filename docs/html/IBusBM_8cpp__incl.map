@@ -1,6 +1,6 @@
-<map id="lib/IBUSBM/IBusBM.cpp" name="lib/IBUSBM/IBusBM.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="17,5,165,29"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,77,81,101"/>
-<area shape="rect" id="node3" href="$IBusBM_8h.html" title=" " alt="" coords="105,77,176,101"/>
-<area shape="rect" id="node4" title=" " alt="" coords="99,149,182,173"/>
+<map id="src/IBusBM.cpp" name="src/IBusBM.cpp">
+<area shape="rect" id="node1" title=" " alt="" coords="26,5,133,29"/>
+<area shape="rect" id="node2" href="$IBusBM_8h.html" title=" " alt="" coords="81,77,152,101"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,149,81,173"/>
+<area shape="rect" id="node4" title=" " alt="" coords="106,149,189,173"/>
 </map>

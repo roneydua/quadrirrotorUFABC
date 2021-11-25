@@ -9,7 +9,11 @@ digraph "Sdre::updateControl"
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
   Node2 [label="Controle::computeRotational\lControl",height=0.2,width=0.4,color="black",URL="$classControle.html#abcf05dcff157e963fd65c09d45261a8f",tooltip=" "];
   Node2 -> Node3 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
-  Node3 [label="Controle::controlLoop",height=0.2,width=0.4,color="black",URL="$classControle.html#a78e5f662130811f409342a706d5c0d2f",tooltip=" "];
-  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
-  Node4 [label="Controle::Controle",height=0.2,width=0.4,color="black",URL="$classControle.html#abbe044aad705ef7d663c45275948fd12",tooltip=" "];
+  Node3 [label="Controle::controlLoop",height=0.2,width=0.4,color="black",URL="$classControle.html#a78e5f662130811f409342a706d5c0d2f",tooltip="Loop de controle das duas dinâmicas."];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node4 [label="xTaskContol",height=0.2,width=0.4,color="black",URL="$main_8cpp.html#ad3d424dca818563665f9ab9bbf866fff",tooltip=" "];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node5 [label="setup",height=0.2,width=0.4,color="black",URL="$main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node6 [label="Controle::Controle",height=0.2,width=0.4,color="black",URL="$classControle.html#a8ae9a213e4a15ac1af0f158e3b5dc2cb",tooltip="Construct a new Controle:: Controle object."];
 }

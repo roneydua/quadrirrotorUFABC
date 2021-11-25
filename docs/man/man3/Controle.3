@@ -1,4 +1,4 @@
-.TH "Controle" 3 "Sexta, 17 de Setembro de 2021" "Quadrirrotor" \" -*- nroff -*-
+.TH "Controle" 3 "Segunda, 25 de Outubro de 2021" "Quadrirrotor" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -12,8 +12,9 @@ Controle
 
 .in +1c
 .ti -1c
-.RI "\fBControle\fP ()"
+.RI "\fBControle\fP (float discreteTime)"
 .br
+.RI "Construct a new \fBControle\fP:: \fBControle\fP object\&. "
 .ti -1c
 .RI "void \fBcomputeTranslationalControl\fP ()"
 .br
@@ -32,10 +33,14 @@ Controle
 .ti -1c
 .RI "void \fBcontrolLoop\fP ()"
 .br
+.RI "Loop de controle das duas dinâmicas\&. "
 .in -1c
 .SS "Campos de Dados"
 
 .in +1c
+.ti -1c
+.RI "Eigen::Vector3f \fBeulerTarget\fP"
+.br
 .ti -1c
 .RI "int \fBminimalDigitalCommand\fP = 7700"
 .br
@@ -55,13 +60,10 @@ Controle
 .RI "\fBSdre\fP * \fBsdre\fP"
 .br
 .ti -1c
-.RI "Eigen::Vector3f \fBrI\fP = Eigen::Vector3f::Zero()"
-.br
-.ti -1c
 .RI "Eigen::Vector3f \fBr\fP = Eigen::Vector3f::Zero()"
 .br
 .ti -1c
-.RI "Eigen::MatrixXf \fBqa\fP = Eigen::MatrixXf::Zero(4, 2)"
+.RI "Eigen::Matrix< float, 4, 2 > \fBqa\fP = Eigen::Matrix<float, 4, 2>::Zero(4, 2)"
 .br
 .ti -1c
 .RI "Eigen::Vector4f \fBqe\fP {1, 0, 0, 0}"
@@ -73,19 +75,19 @@ Controle
 .RI "float \fBpsi\fP = 0\&.0f"
 .br
 .ti -1c
-.RI "float \fBdpsi\fP = 0\&.0f"
+.RI "float \fBdiffPsi\fP = 0\&.0f"
 .br
 .ti -1c
-.RI "Eigen::MatrixXf \fBLt\fP = Eigen::MatrixXf::Identity(3, 3)"
+.RI "Eigen::Vector3f \fBrI\fP = Eigen::Vector3f::Zero()"
 .br
 .ti -1c
-.RI "Eigen::MatrixXf \fBLs_G\fP = Eigen::MatrixXf::Identity(3, 3)"
-.br
-.ti -1c
-.RI "Eigen::MatrixXf \fBRt\fP = \&.5 * Eigen::MatrixXf::Identity(3, 3)"
+.RI "Eigen::Matrix< float, 3, 6 > \fBLt\fP = Eigen::MatrixXf::Zero(3, 6)"
 .br
 .ti -1c
 .RI "Eigen::MatrixXf \fBQt\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXf \fBRt\fP"
 .br
 .ti -1c
 .RI "Eigen::MatrixXf \fBRr\fP"
@@ -109,174 +111,220 @@ Controle
 .RI "float \fBoldPsi\fP = 0"
 .br
 .ti -1c
-.RI "bool \fBnegativeq0\fP = false"
+.RI "bool \fBnegative_q0\fP = false"
+.br
+.ti -1c
+.RI "float \fBTSum\fP = 10\&.0f"
 .br
 .in -1c
 .SH "Descrição detalhada"
 .PP 
-Definição na linha 26 do arquivo Controle\&.h\&.
+Definição na linha 30 do arquivo Controle\&.h\&.
 .SH "Construtores e Destrutores"
 .PP 
-.SS "Controle::Controle ()"
-Control class\&. 
+.SS "Controle::Controle (float discreteTime)"
+
 .PP
-Definição na linha 14 do arquivo Controle\&.cpp\&.
+Construct a new \fBControle\fP:: \fBControle\fP object\&. 
+.PP
+\fBParâmetros\fP
+.RS 4
+\fIdiscreteTime\fP intervalo de tempo de discretização em seconds 
+.RE
+.PP
+
+.PP
+Definição na linha 17 do arquivo Controle\&.cpp\&.
 .PP
 .nf
-14                    {
-15 #ifdef __GNUC__
-16   string _folderPlace = "include/CONTROLE/";
-17   Qt = csvLeia<Eigen::MatrixXf>(_folderPlace + "Qt_66");
-18   Rt = csvLeia<Eigen::MatrixXf>(_folderPlace + "Rt_66");
-19   Qr = csvLeia<Eigen::MatrixXf>(_folderPlace + "Qr");
-20   Rr = csvLeia<Eigen::MatrixXf>(_folderPlace + "Rr");
+17                                      {
+18 #ifdef __XTENSA__
+19   printf("Nucleo do Controle: %d\n", xPortGetCoreID());
+20   vTaskDelay(2000);
 21 #endif
-22   drone = new Drone(0\&.04);
-23   u(0) = drone->massa * gravidade;
-24   ut(2) = drone->massa * gravidade;
-25   qa(0, 1) = 1\&.0f;
-26   /*Calcula o ganho para controle da dinâmica translacional*/
-27   sdre = new Sdre(drone->matAT, drone->matBT, Qt, Rt);
-28   sdre->updateControl();
-29   Lt = sdre->L;
-30   Ls_G = sdre->ricObj->Ls * sdre->G;
-31   PRINT_MAT(sdre->closeLoopEig());
-32   sdre->~Sdre();
-33 
-34   /* Instância a classe SDRE para computo da dinâmica rotacional\&.*/
-35   sdre = new Sdre(drone->matAR, drone->matBR, Qr, Rr);
-36 }
+22 #if defined(DEBUG_CONTROL) && defined(LOAD_GAINS)
+23   // Para debugar diversos valores de ganho este trecho pode ser descomentado
+24   // mas
+25   //     as variáveis Qt,
+26   //     Rt,
+27   //     Qr e Rr devem deixar de ser constantes\&.
+28   string _folderPlace = "include/CONTROLE/";
+29 #ifdef INTEGRAL_CONTROL
+30   Qt = csvLeia<Eigen::MatrixXf>(_folderPlace + "Qt_INTEGRAL\&.csv");
+31   Rt = csvLeia<Eigen::MatrixXf>(_folderPlace + "Rt_INTEGRAL\&.csv");
+32 #else
+33   Qt = csvLeia<Eigen::MatrixXf>(_folderPlace + "Qt\&.csv");
+34   Rt = csvLeia<Eigen::MatrixXf>(_folderPlace + "Rt\&.csv");
+35 
+36 #endif
+37   Qr = csvLeia<Eigen::MatrixXf>(_folderPlace + "Qr\&.csv");
+38   Rr = csvLeia<Eigen::MatrixXf>(_folderPlace + "Rr\&.csv");
+39 #endif
+40   drone = new Drone(discreteTime);
+41   u(0) = drone->massa * gravidade;
+42   ut(2) = drone->massa * gravidade;
+43   qa(0, 1) = 1\&.0f;
+44 /*Calcula o ganho para controle da dinâmica translacional*/
+45 #ifdef INTEGRAL_CONTROL
+46   sdre = new Sdre(drone->matAT, drone->matBT, Qt, Rt);
+47 #else
+48   Eigen::MatrixXf matAt_temp = drone->matAT\&.bottomRightCorner(3, 3);
+49   Eigen::MatrixXf matBt_temp = drone->matBT\&.bottomRightCorner(3, 3);
+50   sdre = new Sdre(matAt_temp, matBt_temp, Qt, Rt);
+51 #endif
+52   // força a convergência inicial
+53   sdre->ricObj->dareInteration(1e-5, 10000);
+54   sdre->updateControl();
+55   Lt = sdre->L;
+56   Eigen::MatrixXcf eigenValuesTranslacional = sdre->closeLoopEig();
+57   PRINT_MAT(drone->matAT);
+58   PRINT_MAT(drone->matBT);
+59   PRINT_MAT(eigenValuesTranslacional);
+60   sdre->~Sdre();
+61   /* Instância a classe SDRE para computo da dinâmica rotacional\&.*/
+62   sdre = new Sdre(drone->matAR, drone->matBR, Qr, Rr);
+63   ekf::calc_psi(psi, drone->q);
+64 #ifdef DEBUG_CONTROL
+65   PRINT_MAT(Qt);
+66   PRINT_MAT(Rt);
+67   PRINT_MAT(Qr);
+68   PRINT_MAT(Rr);
+69 #endif
+70 }
 .fi
 .PP
-Referencias Sdre::closeLoopEig(), Sdre::G, gravidade, Sdre::L, Riccati::Ls, Ls_G, Lt, PRINT_MAT, qa, Qr, Qt, Sdre::ricObj, Rr, Rt, sdre, u, Sdre::updateControl(), ut e Sdre::~Sdre()\&.
+Referencias ekf::calc_psi(), Sdre::closeLoopEig(), Riccati::dareInteration(), gravidade, Sdre::L, Lt, PRINT_MAT, psi, qa, Qr, Qt, Sdre::ricObj, Rr, Rt, sdre, u, Sdre::updateControl(), ut e Sdre::~Sdre()\&.
 .SH "Funções membros"
 .PP 
 .SS "void Controle::computeRotationalControl ()"
 Computa do controle da dinâmica rotacional\&. 
 .PP
-Definição na linha 84 do arquivo Controle\&.cpp\&.
+Definição na linha 116 do arquivo Controle\&.cpp\&.
 .PP
 .nf
-84                                         {
-85   sdre->updateControl();
-86   Eigen::VectorXf _r(6), _x(6);
-87   // #ifdef __GNUC__
-88   qe = (ekf::S_l(drone->q))\&.transpose() * qa\&.col(index_alt);
-89   // #endif
-90   _x << qe\&.tail(3), drone->w - wa;
-91   // _x << drone->q\&.tail(3), drone->w;
-92   // _r << qa\&.block(1, index_alt, 3, 1), wa;
-93   // u\&.tail(3) = -sdre->L * _x + sdre->ricObj->Ls * sdre->G * Qr * _r;
-94 
-95   u\&.tail(3) = -sdre->L * _x; // + sdre->ricObj->Ls * sdre->G * Qr * _r;
-96 }
+116                                         {
+117   sdre->updateControl();
+118   //  Eigen::VectorXf _r(6), _x(6);
+119   Eigen::VectorXf _x(6);
+120   qe = (ekf::S_l(drone->q))\&.transpose() * qa\&.col(index_alt);
+121   // _qI = ;
+122   if (negative_q0) {
+123     _x << qe\&.tail(3), drone->w - wa;
+124   } else {
+125     _x << -qe\&.tail(3), drone->w - wa;
+126   }
+127   u\&.tail(3) = -sdre->L * _x;
+128 }
 .fi
 .PP
-Referencias index_alt, Sdre::L, qa, qe, ekf::S_l(), sdre, u, Sdre::updateControl() e wa\&.
+Referencias index_alt, Sdre::L, negative_q0, qa, qe, ekf::S_l(), sdre, u, Sdre::updateControl() e wa\&.
 .PP
 Referenciado(a) por controlLoop()\&.
 .SS "void Controle::computeRotationalTarget ()"
-attention ut(2) já comtém a gravidade adicionada no método &computeTranslationalControl
+attention ut(2) já contém a gravidade adicionada no método &computeTranslationalControl
 .PP
-Definição na linha 51 do arquivo Controle\&.cpp\&.
+Definição na linha 90 do arquivo Controle\&.cpp\&.
 .PP
 .nf
-51                                        {
-54   float qc0 = sqrtf(0\&.5 * (ut(2) / u(0) + 1\&.0f));
-55   float cosPhi_2 = cosf(0\&.5f * psi);
-56   float sinPhi_2 = sinf(0\&.5f * psi);
-57   /* Calculo do quaternion de atitude alvo\&.*/
-58   qa(0, index_alt) = qc0 * cosPhi_2;
-59   qa(1, index_alt) =
-60       (ut(1) * cosPhi_2 - ut(0) * sinPhi_2) * \&.5f / (-u(0)) / qc0;
-61   qa(2, index_alt) = (ut(0) * cosPhi_2 + ut(1) * sinPhi_2) * \&.5f / u(0) / qc0;
-62   qa(3, index_alt) = qc0 * sinPhi_2;
-63   // Continuidade do quaternion de atitude\&.
-64   // if (isless(qa\&.col(index_alt)\&.dot(qa\&.col(1 - index_alt)), 0\&.0f)) {
-65   //   qa\&.col(index_alt) *= -1\&.0f;
-66   // }
-67   // if (isless(qa\&.col(index_alt)\&.dot(drone->q), 0\&.0f)) {
-68   //   qa\&.col(index_alt) *= -1\&.0f;
-69   // }
-70   // Atualiza a flag da parte escalar do quatenrion alvo\&.
-71   (qa(0, index_alt)) < 0\&.0f ? negativeq0 = true : negativeq0 = false;
-72   // Calcula a velocidade ângular\&.
-73   wa = 2\&.0f / drone->dt * (ekf::Q_l(qa\&.col(1 - index_alt)))\&.transpose() *
-74        qa\&.col(index_alt);
-75   // Eigen::Vector3f _wg = 2\&.0f / drone->dt *
-76   //                       (ekf::Q_r(qa\&.col(1 - index_alt)))\&.transpose() *
-77   //                       qa\&.col(index_alt);
-78   // wa = ekf::rotateVectorWithQuaternion_Conjugate(drone->q, _wg);
-79   u(0) *= drone->massa;
-80 }
+90                                        {
+93   psi += diffPsi * drone->dt;
+94   float qc0 = sqrtf(0\&.5f * (ut(2) / u(0) + 1\&.0f));
+95   float cosPhi_2 = cosf(0\&.5f * psi);
+96   float sinPhi_2 = sinf(0\&.5f * psi);
+97   /* Calculo do quaternion de atitude alvo\&.*/
+98 
+99   qa(0, index_alt) = qc0 * cosPhi_2;
+100   qa(1, index_alt) =
+101       (ut(1) * cosPhi_2 - ut(0) * sinPhi_2) * \&.5f / (-u(0)) / qc0;
+102   qa(2, index_alt) = (ut(0) * cosPhi_2 + ut(1) * sinPhi_2) * \&.5f / u(0) / qc0;
+103   qa(3, index_alt) = qc0 * sinPhi_2;
+104   // Atualiza a flag da parte escalar do quaternion alvo\&.
+105   (qa(0, index_alt)) < 0\&.0f ? negative_q0 = true : negative_q0 = false;
+106   // Calcula a velocidade angular\&.
+107   wa = 2\&.0f / drone->dt * (ekf::Q_l(qa\&.col(1 - index_alt)))\&.transpose() *
+108        qa\&.col(index_alt);
+109 
+110   ekf::quaternion2Euler(eulerTarget, qa\&.col(index_alt));
+111   u(0) *= drone->massa;
+112 }
 .fi
 .PP
-Referencias index_alt, negativeq0, psi, ekf::Q_l(), qa, u, ut e wa\&.
+Referencias diffPsi, eulerTarget, index_alt, negative_q0, psi, ekf::Q_l(), qa, ekf::quaternion2Euler(), u, ut e wa\&.
 .PP
 Referenciado(a) por controlLoop()\&.
 .SS "void Controle::computeTranslationalControl ()"
-Calcula o controle de tranlação\&. 
+Calcula o controle de translação\&. 
 .PP
-Definição na linha 41 do arquivo Controle\&.cpp\&.
+Definição na linha 75 do arquivo Controle\&.cpp\&.
 .PP
 .nf
-41                                            { /* */
-42   index_alt = 1 - index_alt;
-43   Eigen::VectorXf _x(6);
-44   _x << drone->p - rI, drone->v - r;
-45   ut = -Lt * _x; // + Ls_G * r;
-46   // ut = -Lt * (drone->v - r); // + Ls_G * r;
-47   ut(2) -= gravidade;
-48   // u(0) = -ut\&.norm() * drone->massa;
-49   u(0) = -ut\&.norm(); // * drone->massa;
-50 }
+75                                            { /* */
+76   index_alt = 1 - index_alt;
+77 #ifdef INTEGRAL_CONTROL
+78   Eigen::VectorXf _x(6);
+79   rI += r * drone->dt;
+80   _x << drone->p - rI, drone->v - r;
+81   ut = -Lt * _x; // + Ls_G * r;
+82 #else
+83   ut = -Lt * (drone->v - r); // + Ls_G * r;
+84 #endif
+85   ut(2) -= gravidade;
+86   // Tração local
+87 
+88   u(0) = -ut\&.norm(); // * drone->massa;
+89 }
 .fi
 .PP
 Referencias gravidade, index_alt, Lt, r, rI, u e ut\&.
 .PP
 Referenciado(a) por controlLoop()\&.
 .SS "void Controle::controlLoop ()"
-Loop de controle\&. 
+
 .PP
-Definição na linha 118 do arquivo Controle\&.cpp\&.
+Loop de controle das duas dinâmicas\&. 
+.PP
+Definição na linha 152 do arquivo Controle\&.cpp\&.
 .PP
 .nf
-118                            {
-119   // atualiza as matriz com os valores de q e wb
-120   drone->updateStateMatrices(negativeq0);
-121   computeTranslationalControl();
-122   computeRotationalTarget();
-123   computeRotationalControl();
-124   virtualCommandToMotorCommand();
-125 #ifdef __GNUC__
-126   //  Na aplicação embarcda esta etapana não eh necessária\&.
-127   virtualCommandToMotorRpm();
-128 #endif
-129 }
+152                            {
+153   // atualiza as matriz com os valores de q e wb
+154   drone->updateStateMatrices(negative_q0);
+155   computeTranslationalControl();
+156   computeRotationalTarget();
+157   computeRotationalControl();
+158   virtualCommandToMotorCommand();
+159 #ifndef __XTENSA__
+160   //  Na aplicação embarcada esta etapa não eh necessária\&.
+161   virtualCommandToMotorRpm();
+162 #endif
+163 }
 .fi
 .PP
-Referencias computeRotationalControl(), computeRotationalTarget(), computeTranslationalControl(), negativeq0, virtualCommandToMotorCommand() e virtualCommandToMotorRpm()\&.
+Referencias computeRotationalControl(), computeRotationalTarget(), computeTranslationalControl(), negative_q0, virtualCommandToMotorCommand() e virtualCommandToMotorRpm()\&.
+.PP
+Referenciado(a) por xTaskContol()\&.
 .SS "void Controle::virtualCommandToMotorCommand ()"
 Converte a tração e os momentos em valores digitais de entrada do ESC na classe #Motores\&.h 
 .PP
 \fBObservação\fP
 .RS 4
-: Esta funcao liminta os 
+: Esta funcao limita os 
 .RE
 .PP
 
 .PP
-Definição na linha 102 do arquivo Controle\&.cpp\&.
+Definição na linha 134 do arquivo Controle\&.cpp\&.
 .PP
 .nf
-102                                             {
-103   motorCommands =
-104       (drone->Hinv * ((drone->Jinv * u)\&.cwiseSqrt() - drone->h))\&.cast<int>();
-105   motorCommands = motorCommands\&.array()
-106                       \&.min(maximalDigitalCommand)
-107                       \&.max(minimalDigitalCommand)
-108                       \&.matrix();
-109 }
+134                                             {
+135   motorCommands =
+136       (drone->HInverse * ((drone->JInverse * u)\&.cwiseSqrt() - drone->h))
+137           \&.cast<int>();
+138   motorCommands = motorCommands\&.array()
+139                       \&.min(maximalDigitalCommand)
+140                       \&.max(minimalDigitalCommand)
+141                       \&.matrix();
+142 }
 .fi
 .PP
 Referencias maximalDigitalCommand, minimalDigitalCommand, motorCommands e u\&.
@@ -285,14 +333,14 @@ Referenciado(a) por controlLoop()\&.
 .SS "void Controle::virtualCommandToMotorRpm ()"
 
 .PP
-Definição na linha 110 do arquivo Controle\&.cpp\&.
+Definição na linha 143 do arquivo Controle\&.cpp\&.
 .PP
 .nf
-110                                         { /* */
-111   // rotationsOfMotors << (drone->Jinv * u)\&.array()\&.sqrt()\&.matrix();
-112   rotationsOfMotors << drone->H * (motorCommands\&.cast<float>()) + drone->h;
-113   u = drone->J * rotationsOfMotors\&.array()\&.square()\&.matrix();
-114 }
+143                                         { /* */
+144   // rotationsOfMotors << (drone->JInvese * u)\&.array()\&.sqrt()\&.matrix();
+145   rotationsOfMotors << drone->H * (motorCommands\&.cast<float>()) + drone->h;
+146   u = drone->J * rotationsOfMotors\&.array()\&.square()\&.matrix();
+147 }
 .fi
 .PP
 Referencias motorCommands, rotationsOfMotors e u\&.
@@ -300,126 +348,131 @@ Referencias motorCommands, rotationsOfMotors e u\&.
 Referenciado(a) por controlLoop()\&.
 .SH "Campos"
 .PP 
-.SS "float Controle::dpsi = 0\&.0f"
+.SS "float Controle::diffPsi = 0\&.0f"
 Velocidade Psi alvo 
 .PP
-Definição na linha 51 do arquivo Controle\&.h\&.
+Definição na linha 56 do arquivo Controle\&.h\&.
+.PP
+Referenciado(a) por computeRotationalTarget() e xTaskContol()\&.
 .SS "\fBDrone\fP* Controle::drone"
 
 .PP
-Definição na linha 34 do arquivo Controle\&.h\&.
+Definição na linha 41 do arquivo Controle\&.h\&.
+.PP
+Referenciado(a) por xTaskContol()\&.
+.SS "Eigen::Vector3f Controle::eulerTarget"
+
+.PP
+Definição na linha 36 do arquivo Controle\&.h\&.
+.PP
+Referenciado(a) por computeRotationalTarget() e xTaskContol()\&.
 .SS "float Controle::gravidade = 9\&.80f"
 
 .PP
-Definição na linha 32 do arquivo Controle\&.h\&.
+Definição na linha 39 do arquivo Controle\&.h\&.
 .PP
 Referenciado(a) por computeTranslationalControl() e Controle()\&.
 .SS "uint8_t Controle::index_alt = 1"
 
 .PP
-Definição na linha 33 do arquivo Controle\&.h\&.
+Definição na linha 40 do arquivo Controle\&.h\&.
 .PP
-Referenciado(a) por computeRotationalControl(), computeRotationalTarget() e computeTranslationalControl()\&.
-.SS "Eigen::MatrixXf Controle::Ls_G = Eigen::MatrixXf::Identity(3, 3)"
-
-.PP
-Definição na linha 54 do arquivo Controle\&.h\&.
-.PP
-Referenciado(a) por Controle()\&.
-.SS "Eigen::MatrixXf Controle::Lt = Eigen::MatrixXf::Identity(3, 3)"
+Referenciado(a) por computeRotationalControl(), computeRotationalTarget(), computeTranslationalControl() e xTaskContol()\&.
+.SS "Eigen::Matrix<float, 3, 6> Controle::Lt = Eigen::MatrixXf::Zero(3, 6)"
 Matriz Ganho de Kalman\&. u = -L * x da dinâmica translacional 
 .PP
-Definição na linha 53 do arquivo Controle\&.h\&.
+Definição na linha 61 do arquivo Controle\&.h\&.
 .PP
 Referenciado(a) por computeTranslationalControl() e Controle()\&.
 .SS "int Controle::maximalDigitalCommand = 15400"
 
 .PP
-Definição na linha 31 do arquivo Controle\&.h\&.
+Definição na linha 38 do arquivo Controle\&.h\&.
 .PP
 Referenciado(a) por virtualCommandToMotorCommand()\&.
 .SS "int Controle::minimalDigitalCommand = 7700"
 
 .PP
-Definição na linha 30 do arquivo Controle\&.h\&.
+Definição na linha 37 do arquivo Controle\&.h\&.
 .PP
-Referenciado(a) por virtualCommandToMotorCommand()\&.
+Referenciado(a) por virtualCommandToMotorCommand() e xTaskContol()\&.
 .SS "Eigen::Vector4i Controle::motorCommands = Eigen::Vector4i::Zero()"
 Comandos digitais 
 .PP
-Definição na linha 79 do arquivo Controle\&.h\&.
+Definição na linha 93 do arquivo Controle\&.h\&.
 .PP
-Referenciado(a) por virtualCommandToMotorCommand() e virtualCommandToMotorRpm()\&.
-.SS "bool Controle::negativeq0 = false"
+Referenciado(a) por virtualCommandToMotorCommand(), virtualCommandToMotorRpm() e xTaskContol()\&.
+.SS "bool Controle::negative_q0 = false"
 
 .PP
-Definição na linha 91 do arquivo Controle\&.h\&.
+Definição na linha 105 do arquivo Controle\&.h\&.
 .PP
-Referenciado(a) por computeRotationalTarget() e controlLoop()\&.
+Referenciado(a) por computeRotationalControl(), computeRotationalTarget() e controlLoop()\&.
 .SS "float Controle::oldPsi = 0"
 
 .PP
-Definição na linha 83 do arquivo Controle\&.h\&.
+Definição na linha 97 do arquivo Controle\&.h\&.
 .SS "float Controle::psi = 0\&.0f"
 Ponteiros de velocidade angular
 .PP
 Psi alvo 
 .PP
-Definição na linha 48 do arquivo Controle\&.h\&.
+Definição na linha 53 do arquivo Controle\&.h\&.
 .PP
-Referenciado(a) por computeRotationalTarget()\&.
-.SS "Eigen::MatrixXf Controle::qa = Eigen::MatrixXf::Zero(4, 2)"
+Referenciado(a) por computeRotationalTarget() e Controle()\&.
+.SS "Eigen::Matrix<float, 4, 2> Controle::qa = Eigen::Matrix<float, 4, 2>::Zero(4, 2)"
 Quaternion alvo de atitude 
 .PP
-Definição na linha 41 do arquivo Controle\&.h\&.
+Definição na linha 46 do arquivo Controle\&.h\&.
 .PP
-Referenciado(a) por computeRotationalControl(), computeRotationalTarget() e Controle()\&.
+Referenciado(a) por computeRotationalControl(), computeRotationalTarget(), Controle() e xTaskContol()\&.
 .SS "Eigen::Vector4f Controle::qe {1, 0, 0, 0}"
-
+Quaternio de erro de atitude 
 .PP
-Definição na linha 42 do arquivo Controle\&.h\&.
+Definição na linha 48 do arquivo Controle\&.h\&.
 .PP
 Referenciado(a) por computeRotationalControl()\&.
 .SS "Eigen::MatrixXf Controle::Qr"
 \fBValor inicial:\fP
 .PP
 .nf
-=
-      2 * (Eigen::VectorXf(6) << 1, 1, 1, \&.1, \&.1, \&.1)\&.finished()\&.asDiagonal()
+= (Eigen::VectorXf(6) << 1e1, 1e1, 1e1, 1e1, 1e1, 1e1)
+                           \&.finished()
+                           \&.asDiagonal()
 .fi
 Matriz de ponderação do estado rotacional\&. 
 .PP
-Definição na linha 65 do arquivo Controle\&.h\&.
+Definição na linha 82 do arquivo Controle\&.h\&.
 .PP
-Referenciado(a) por Controle()\&.
+Referenciado(a) por Controle() e xTaskContol()\&.
 .SS "Eigen::MatrixXf Controle::Qt"
 \fBValor inicial:\fP
 .PP
 .nf
 =
-      50 * (Eigen::VectorXf(6) << 1, 1, 1, 1, 1, 1)\&.finished()\&.asDiagonal()
+      (Eigen::VectorXf(6) << 5, 5, 5, 3, 3, 3)\&.finished()\&.asDiagonal()
 .fi
 Matriz de ponderação do estado translacional\&. 
 .PP
-Definição na linha 58 do arquivo Controle\&.h\&.
+Definição na linha 63 do arquivo Controle\&.h\&.
 .PP
 Referenciado(a) por Controle()\&.
 .SS "Eigen::Vector3f Controle::r = Eigen::Vector3f::Zero()"
-Referência de velocidade tranlacional 
+Referência de velocidade translacional 
 .PP
-Definição na linha 39 do arquivo Controle\&.h\&.
+Definição na linha 44 do arquivo Controle\&.h\&.
 .PP
-Referenciado(a) por computeTranslationalControl()\&.
+Referenciado(a) por computeTranslationalControl() e xTaskContol()\&.
 .SS "Eigen::Vector3f Controle::rI = Eigen::Vector3f::Zero()"
-Integral da referência de velocidade tranlacional 
+Integral da referência de velocidade translacional 
 .PP
-Definição na linha 37 do arquivo Controle\&.h\&.
+Definição na linha 59 do arquivo Controle\&.h\&.
 .PP
-Referenciado(a) por computeTranslationalControl()\&.
+Referenciado(a) por computeTranslationalControl() e xTaskContol()\&.
 .SS "Eigen::Vector4f Controle::rotationsOfMotors = Eigen::Vector4f::Zero()"
 Vetor de rotação dos motores 
 .PP
-Definição na linha 81 do arquivo Controle\&.h\&.
+Definição na linha 95 do arquivo Controle\&.h\&.
 .PP
 Referenciado(a) por virtualCommandToMotorRpm()\&.
 .SS "Eigen::MatrixXf Controle::Rr"
@@ -427,27 +480,37 @@ Referenciado(a) por virtualCommandToMotorRpm()\&.
 .PP
 .nf
 =
-      \&.01 * (Eigen::VectorXf(3) << 1, 1, 1)\&.finished()\&.asDiagonal()
+      (Eigen::Vector3f() << 1e1, 1e1, 1e1)\&.finished()\&.asDiagonal()
 .fi
 Matriz de ponderação do controle rotacional\&. 
 .PP
-Definição na linha 61 do arquivo Controle\&.h\&.
+Definição na linha 79 do arquivo Controle\&.h\&.
 .PP
 Referenciado(a) por Controle()\&.
-.SS "Eigen::MatrixXf Controle::Rt = \&.5 * Eigen::MatrixXf::Identity(3, 3)"
+.SS "Eigen::MatrixXf Controle::Rt"
+\fBValor inicial:\fP
+.PP
+.nf
+=
+      (Eigen::Vector3f() << 1e1, 1e1, 1e1)\&.finished()\&.asDiagonal()
+.fi
 Matriz de ponderação do controle translacional\&. 
 .PP
-Definição na linha 56 do arquivo Controle\&.h\&.
+Definição na linha 75 do arquivo Controle\&.h\&.
 .PP
 Referenciado(a) por Controle()\&.
 .SS "\fBSdre\fP* Controle::sdre"
 
 .PP
-Definição na linha 35 do arquivo Controle\&.h\&.
+Definição na linha 42 do arquivo Controle\&.h\&.
 .PP
 Referenciado(a) por computeRotationalControl() e Controle()\&.
+.SS "float Controle::TSum = 10\&.0f"
+
+.PP
+Definição na linha 106 do arquivo Controle\&.h\&.
 .SS "Eigen::Vector4f Controle::u = Eigen::Vector4f::Zero()"
-Vetor de controle da dinâmica rotacional \fI/ Eigen::Vector3f ur = Eigen::Vector3f::Zero(); /\fP! Vetor de tração específica e momentos no corpo\&. 
+Vetor de tração específica e momentos no corpo\&. 
 .PP
 \fBObservação\fP
 .RS 4
@@ -456,21 +519,21 @@ que a tração já esta considerando a massa\&.
 .PP
 
 .PP
-Definição na linha 77 do arquivo Controle\&.h\&.
+Definição na linha 91 do arquivo Controle\&.h\&.
 .PP
-Referenciado(a) por computeRotationalControl(), computeRotationalTarget(), computeTranslationalControl(), Controle(), virtualCommandToMotorCommand() e virtualCommandToMotorRpm()\&.
+Referenciado(a) por computeRotationalControl(), computeRotationalTarget(), computeTranslationalControl(), Controle(), virtualCommandToMotorCommand(), virtualCommandToMotorRpm() e xTaskContol()\&.
 .SS "Eigen::Vector3f Controle::ut = Eigen::Vector3f::Zero()"
 Vetor de controle da dinâmica translacional 
 .PP
-Definição na linha 71 do arquivo Controle\&.h\&.
+Definição na linha 87 do arquivo Controle\&.h\&.
 .PP
-Referenciado(a) por computeRotationalTarget(), computeTranslationalControl() e Controle()\&.
+Referenciado(a) por computeRotationalTarget(), computeTranslationalControl(), Controle() e xTaskContol()\&.
 .SS "Eigen::Vector3f Controle::wa = Eigen::Vector3f::Zero()"
 Velocidade angular alvo 
 .PP
-Definição na linha 44 do arquivo Controle\&.h\&.
+Definição na linha 50 do arquivo Controle\&.h\&.
 .PP
-Referenciado(a) por computeRotationalControl() e computeRotationalTarget()\&.
+Referenciado(a) por computeRotationalControl(), computeRotationalTarget() e xTaskContol()\&.
 
 .SH "Autor"
 .PP 

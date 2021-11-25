@@ -1,4 +1,4 @@
-.TH "TELEMETRIA" 3 "Sexta, 17 de Setembro de 2021" "Quadrirrotor" \" -*- nroff -*-
+.TH "TELEMETRIA" 3 "Segunda, 25 de Outubro de 2021" "Quadrirrotor" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -8,6 +8,18 @@ TELEMETRIA
 .PP
 .PP
 \fC#include <TELEMETRIA\&.h>\fP
+.SS "Estruturas de Dados"
+
+.in +1c
+.ti -1c
+.RI "struct \fBIMU_DATA\fP"
+.br
+.RI "Estrutura de mensagem\&. "
+.ti -1c
+.RI "struct \fBMENSAGEM\fP"
+.br
+.RI "Mensagem de texto para envio\&. "
+.in -1c
 .SS "Membros Públicos"
 
 .in +1c
@@ -18,16 +30,17 @@ TELEMETRIA
 .RI "void \fBbegin\fP ()"
 .br
 .ti -1c
-.RI "void \fBenvia\fP (VectorXf a)"
+.RI "void \fBenvia\fP ()"
+.br
+.RI "Envia vetor Eigen de float\&. "
+.ti -1c
+.RI "void \fBenviaTunningGains\fP ()"
 .br
 .ti -1c
 .RI "void \fBenviaMensagem\fP (char *aviso)"
 .br
 .ti -1c
 .RI "void \fBpisca\fP (uint8_t porta)"
-.br
-.ti -1c
-.RI "struct \fB__attribute__\fP ((packed)) \fBmensagem\fP"
 .br
 .ti -1c
 .RI "struct \fB__attribute__\fP ((packed)) \fBcontrole\fP"
@@ -40,7 +53,10 @@ TELEMETRIA
 .RI "uint8_t \fB_broadcast\fP [6] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF}"
 .br
 .ti -1c
-.RI "\fBmensagem\fP"
+.RI "struct \fBTELEMETRIA::IMU_DATA\fP \fBimu\fP"
+.br
+.ti -1c
+.RI "float \fBgainsTunning\fP [3]"
 .br
 .ti -1c
 .RI "\fBcontrole\fP"
@@ -65,7 +81,7 @@ TELEMETRIA
 .in -1c
 .SH "Descrição detalhada"
 .PP 
-Definição na linha 22 do arquivo TELEMETRIA\&.h\&.
+Definição na linha 24 do arquivo TELEMETRIA\&.h\&.
 .SH "Construtores e Destrutores"
 .PP 
 .SS "TELEMETRIA::TELEMETRIA ()"
@@ -85,23 +101,12 @@ Referenciado(a) por OnDataRecv()\&.
 .SS "struct TELEMETRIA::__attribute__ ((packed))\fC [inline]\fP"
 
 .PP
-Definição na linha 34 do arquivo TELEMETRIA\&.h\&.
+Definição na linha 48 do arquivo TELEMETRIA\&.h\&.
 .PP
 .nf
-36                                                   {
-37     uint8_t dados;
-38   } controle;
-.fi
-.SS "struct TELEMETRIA::__attribute__ ((packed))\fC [inline]\fP"
-
-.PP
-Definição na linha 30 do arquivo TELEMETRIA\&.h\&.
-.PP
-.nf
-31                                                   {
-32     float dados[17];
-33     char info[35]; // dados para informacao;
-34   } mensagem;
+57                                                   {
+58     uint8_t dados;
+59   } controle;
 .fi
 .SS "void TELEMETRIA::begin ()"
 Inicialização da telemetria 
@@ -134,69 +139,100 @@ Definição na linha 20 do arquivo TELEMETRIA\&.cpp\&.
 Referencias _broadcast e OnDataRecv()\&.
 .PP
 Referenciado(a) por setup() e TELEMETRIA()\&.
-.SS "void TELEMETRIA::envia (VectorXf a)"
+.SS "void TELEMETRIA::envia ()"
 
 .PP
-Definição na linha 41 do arquivo TELEMETRIA\&.cpp\&.
+Envia vetor Eigen de float\&. 
 .PP
-.nf
-41                                   {
-42   // Array que irá armazenar os valores lidos
-43   mensagem msg;
-44   // float temp[_a\&.size()];
-45   strcpy(msg\&.info, "");
-46   for (size_t i = 0; i < _a\&.size(); i++) {
-47     msg\&.dados[i] = (float)_a(i);
-48     // Serial\&.print(msg\&.dados[i]);
-49   }
-50   // Serial\&.println();
-51   uint8_t bs[sizeof(mensagem)];
-52 
-53   memcpy(&bs, &msg, sizeof(msg));
-54   esp_now_send(_broadcast, bs, sizeof(bs));
-55 }
-.fi
+\fBParâmetros\fP
+.RS 4
+\fIquant\fP Dimensão maxima de 20 
+.br
+\fI_a\fP Vetor com dados\&. 
+.RE
 .PP
-Referencias _broadcast e mensagem\&.
-.PP
-Referenciado(a) por loop()\&.
-.SS "void TELEMETRIA::enviaMensagem (char * aviso)"
 
 .PP
-Definição na linha 56 do arquivo TELEMETRIA\&.cpp\&.
+Definição na linha 46 do arquivo TELEMETRIA\&.cpp\&.
 .PP
 .nf
-56                                           {
+46                        {
+47 // Array que irá armazenar os valores lidos
+48 // IMU_DATA imu;
+49 // float temp[_a\&.size()];
+50 // imu\&.quantidadeValida = quant;
+51 #ifdef DEBUG_BY_SERIAL
+52   for (uint16_t i = 0; i < imu\&.dadosEigen\&.size(); i++) {
+53     printf("%f  ", imu\&.dados[i]);
+54   }
+55   printf("\n");
+56 #endif
 57 
-58   mensagem msg;
-59   for (size_t i = 0; i < 10; i++) {
-60     msg\&.dados[i] = 0\&.0f;
-61   }
-62   strcpy(msg\&.info, aviso);
-63   // Serial\&.println(msg\&.info);
-64   uint8_t bs[sizeof(mensagem)];
-65   memcpy(&bs, &msg, sizeof(msg));
-66   esp_now_send(_broadcast, bs, sizeof(bs));
-67 }
+58   uint8_t bs[DATA_SIZE * 4];
+59 
+60   memcpy(&bs, &imu, sizeof(bs));
+61   esp_now_send(_broadcast, bs, sizeof(bs));
+62 }
 .fi
 .PP
-Referencias _broadcast e mensagem\&.
+Referencias _broadcast, TELEMETRIA::IMU_DATA::dados, TELEMETRIA::IMU_DATA::dadosEigen, DATA_SIZE e imu\&.
 .PP
-Referenciado(a) por setup()\&.
-.SS "void TELEMETRIA::OnDataRecv (const uint8_t * _broadcast, const uint8_t * data, int data_len)\fC [static]\fP, \fC [private]\fP"
+Referenciado(a) por xTaskLoopFilter()\&.
+.SS "void TELEMETRIA::enviaMensagem (char * aviso)"
 
 .PP
 Definição na linha 69 do arquivo TELEMETRIA\&.cpp\&.
 .PP
 .nf
-70                                           {
-71   TELEMETRIA TELEMETRIA;
-72   // Para cada pino
-73   controle ctrl;
-74   memcpy(&ctrl, data, sizeof(controle));
-75   // atualizacontrole(ctrl\&.dados);
-76   TELEMETRIA::comAceito = ctrl\&.dados;
-77 }
+69                                           {
+70   MENSAGEM msg;
+71 
+72   strcpy(msg\&.info, aviso);
+73 #ifdef DEBUG_BY_SERIAL
+74   printf(msg\&.info);
+75   printf("\n");
+76 #endif
+77   // Serial\&.println(msg\&.info);
+78   uint8_t bs[sizeof(msg)];
+79   memcpy(&bs, &msg, sizeof(msg));
+80   esp_now_send(_broadcast, bs, sizeof(bs));
+81 }
+.fi
+.PP
+Referencias _broadcast e TELEMETRIA::MENSAGEM::info\&.
+.PP
+Referenciado(a) por emergencyMethods(), setup(), xTaskContol(), xTaskLoopFilter() e xTaskSetupFiltro()\&.
+.SS "void TELEMETRIA::enviaTunningGains ()"
+
+.PP
+Definição na linha 63 do arquivo TELEMETRIA\&.cpp\&.
+.PP
+.nf
+63                                    {
+64 
+65   uint8_t bs[sizeof(gainsTunning)];
+66   memcpy(&bs, &gainsTunning, sizeof(gainsTunning));
+67   esp_now_send(_broadcast, bs, sizeof(bs));
+68 }
+.fi
+.PP
+Referencias _broadcast e gainsTunning\&.
+.PP
+Referenciado(a) por xTaskContol()\&.
+.SS "void TELEMETRIA::OnDataRecv (const uint8_t * _broadcast, const uint8_t * data, int data_len)\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definição na linha 83 do arquivo TELEMETRIA\&.cpp\&.
+.PP
+.nf
+84                                           {
+85   TELEMETRIA TELEMETRIA;
+86   // Para cada pino
+87   controle ctrl;
+88   memcpy(&ctrl, data, sizeof(controle));
+89   // atualizacontrole(ctrl\&.dados);
+90   TELEMETRIA::comAceito = ctrl\&.dados;
+91 }
 .fi
 .PP
 Referencias comAceito, controle, data e TELEMETRIA()\&.
@@ -205,46 +241,50 @@ Referenciado(a) por begin()\&.
 .SS "void TELEMETRIA::pisca (uint8_t porta)"
 
 .PP
-Definição na linha 79 do arquivo TELEMETRIA\&.cpp\&.
+Definição na linha 93 do arquivo TELEMETRIA\&.cpp\&.
 .PP
 .nf
-79                                     {
-80   digitalWrite(porta, HIGH);
-81   delay(1000);
-82   digitalWrite(porta, LOW);
-83   delay(1000);
-84 }
+93                                     {
+94   digitalWrite(porta, HIGH);
+95   delay(1000);
+96   digitalWrite(porta, LOW);
+97   delay(1000);
+98 }
 .fi
 .SH "Campos"
 .PP 
 .SS "uint8_t TELEMETRIA::_broadcast[6] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF}"
 
 .PP
-Definição na linha 29 do arquivo TELEMETRIA\&.h\&.
+Definição na linha 32 do arquivo TELEMETRIA\&.h\&.
 .PP
-Referenciado(a) por begin(), envia() e enviaMensagem()\&.
+Referenciado(a) por begin(), envia(), enviaMensagem() e enviaTunningGains()\&.
 .SS "uint8_t TELEMETRIA::_quantDados"
 
 .PP
-Definição na linha 40 do arquivo TELEMETRIA\&.h\&.
+Definição na linha 62 do arquivo TELEMETRIA\&.h\&.
 .SS "uint8_t TELEMETRIA::comAceito\fC [static]\fP"
 
 .PP
-Definição na linha 39 do arquivo TELEMETRIA\&.h\&.
+Definição na linha 61 do arquivo TELEMETRIA\&.h\&.
 .PP
 Referenciado(a) por OnDataRecv()\&.
 .SS "TELEMETRIA::controle"
 
 .PP
-Definição na linha 38 do arquivo TELEMETRIA\&.h\&.
+Definição na linha 59 do arquivo TELEMETRIA\&.h\&.
 .PP
 Referenciado(a) por OnDataRecv()\&.
-.SS "TELEMETRIA::mensagem"
+.SS "float TELEMETRIA::gainsTunning[3]"
 
 .PP
-Definição na linha 34 do arquivo TELEMETRIA\&.h\&.
+Definição na linha 48 do arquivo TELEMETRIA\&.h\&.
 .PP
-Referenciado(a) por envia() e enviaMensagem()\&.
+Referenciado(a) por enviaTunningGains() e xTaskContol()\&.
+.SS "struct \fBTELEMETRIA::IMU_DATA\fP TELEMETRIA::imu"
+
+.PP
+Referenciado(a) por envia() e xTaskLoopFilter()\&.
 
 .SH "Autor"
 .PP 

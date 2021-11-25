@@ -1,4 +1,4 @@
-.TH "Motores" 3 "Sexta, 17 de Setembro de 2021" "Quadrirrotor" \" -*- nroff -*-
+.TH "Motores" 3 "Segunda, 25 de Outubro de 2021" "Quadrirrotor" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -14,18 +14,22 @@ Motores
 .ti -1c
 .RI "\fBMotores\fP (gpio_num_t \fBmotor_pin\fP, uint8_t \fBcanal\fP=0)"
 .br
+.RI "Construtor da classe motor\&. "
 .ti -1c
 .RI "void \fBinicializa\fP ()"
 .br
+.RI "configuracao das frequencias PWM que o esc's utilizam\&. "
 .ti -1c
 .RI "void \fBset_portas\fP ()"
 .br
 .ti -1c
 .RI "void \fBcalibra\fP ()"
 .br
+.RI "Rotina de calibração dos motores\&. "
 .ti -1c
 .RI "void \fBset_vel_mot\fP (uint16_t vel)"
 .br
+.RI "funcao que muda a velocidade\&. "
 .in -1c
 .SS "Campos de Dados"
 
@@ -35,12 +39,6 @@ Motores
 .br
 .ti -1c
 .RI "uint16_t \fBmax_vel\fP"
-.br
-.ti -1c
-.RI "float \fBkf\fP = 1\&.4351e\-5"
-.br
-.ti -1c
-.RI "float \fBkm\fP = 2\&.4086e\-7"
 .br
 .in -1c
 .SS "Atributos Privados"
@@ -55,7 +53,6 @@ Motores
 .ti -1c
 .RI "const uint16_t \fBtempo_calibracao\fP = 8000"
 .br
-.RI "Tempo para calibracao entre atribuicao de minimo e maximo\&. [millisegundos]\&. "
 .ti -1c
 .RI "const uint16_t \fBresolucao\fP = 14"
 .br
@@ -67,25 +64,27 @@ Motores
 .in -1c
 .SH "Descrição detalhada"
 .PP 
-Definição na linha 15 do arquivo Motores\&.h\&.
+Definição na linha 13 do arquivo Motores\&.h\&.
 .SH "Construtores e Destrutores"
 .PP 
 .SS "Motores::Motores (gpio_num_t motor_pin, uint8_t canal = \fC0\fP)"
+
+.PP
 Construtor da classe motor\&. 
 .PP
 \fBParâmetros\fP
 .RS 4
 \fImotor_pin\fP GPIO que ESC esta conectado 
 .br
-\fIcanal\fP que o PWM sera conectado
+\fIcanal\fP que o PWM sera conectado 
 .RE
 .PP
 
 .PP
-Definição na linha 13 do arquivo Motores\&.cpp\&.
+Definição na linha 18 do arquivo Motores\&.cpp\&.
 .PP
 .nf
-13                                                     {
+18                                                     {
 19   this->motor_pin = motor_pin;
 20   this->canal = canal;
 21   min_vel = int((pow(2, resolucao) - 1) * 0\&.001 * freq);
@@ -100,44 +99,50 @@ Referencias canal, freq, inicializa(), max_vel, min_vel, motor_pin e resolucao\&
 .SS "void Motores::calibra ()"
 
 .PP
-Definição na linha 51 do arquivo Motores\&.cpp\&.
+Rotina de calibração dos motores\&. 
+.PP
+Definição na linha 56 do arquivo Motores\&.cpp\&.
 .PP
 .nf
-51                       {
-52 
-53   // escrevendo o valor inicial
-54   Serial\&.println("Ligue Os esc's na bateria");
-55   Serial\&.println("Atribuindo maximo");
-56   ledcWrite(this->canal, max_vel);
-57   while (Serial\&.parseInt() != 1) {
-58     Serial\&.println("Conecte a bateria no ESC e digite 1 para proseguir");
-59     delay(1000);
-60   }
-61   delay(tempo_calibracao);
-62   Serial\&.println("Atribuindo minimo");
-63   ledcWrite(this->canal, min_vel);
-64   delay(tempo_calibracao);
-65   Serial\&.println("Calibrado\&.");
-66   Serial\&.println("Desligue seu ESC da bateira e tambem da placa de comando");
-67 
-68   delay(10000);
-69 };
+56                       {
+57 
+58   // escrevendo o valor inicial
+59   Serial\&.println("Ligue Os esc's na bateria");
+60   Serial\&.println("Atribuindo maximo");
+61   ledcWrite(this->canal, max_vel);
+62   while (Serial\&.parseInt() != 1) {
+63     Serial\&.println("Conecte a bateria no ESC e digite 1 para proseguir");
+64     delay(1000);
+65   }
+66   delay(tempo_calibracao);
+67   Serial\&.println("Atribuindo minimo");
+68   ledcWrite(this->canal, min_vel);
+69   delay(tempo_calibracao);
+70   Serial\&.println("Calibrado\&.");
+71   Serial\&.println("Desligue seu ESC da bateira e tambem da placa de comando");
+72 
+73   delay(10000);
+74 };
 .fi
 .PP
 Referencias canal, max_vel, min_vel e tempo_calibracao\&.
 .SS "void Motores::inicializa ()"
-configuracao das frequencias PWM que o esc's utilizam\&.
+
 .PP
-Definição na linha 25 do arquivo Motores\&.cpp\&.
+configuracao das frequencias PWM que o esc's utilizam\&. 
+.PP
+Definição na linha 28 do arquivo Motores\&.cpp\&.
 .PP
 .nf
-25                          {
+28                          {
+29 #ifdef DEBUG_MOTOR
 30   Serial\&.println("Configurando os ESc'");
-31   ledcSetup(this->canal, this->freq, resolucao);
-32   set_portas();
-33   delay(100);
-34   set_vel_mot(min_vel);
-35 }
+31   delay(100);
+32 #endif
+33   ledcSetup(this->canal, this->freq, resolucao);
+34   set_portas();
+35   set_vel_mot(min_vel);
+36 }
 .fi
 .PP
 Referencias canal, freq, min_vel, resolucao, set_portas() e set_vel_mot()\&.
@@ -146,48 +151,50 @@ Referenciado(a) por Motores()\&.
 .SS "void Motores::set_portas ()"
 
 .PP
-Definição na linha 44 do arquivo Motores\&.cpp\&.
+Definição na linha 43 do arquivo Motores\&.cpp\&.
 .PP
 .nf
-44                          {
-45   // define como saida cada pino ligado aos motores
+43                          {
+44 // define como saida cada pino ligado aos motores
+45 #ifdef DEBUG_MOTOR
 46   delay(1000);
 47   Serial\&.println("Inicializando");
-48   pinMode(this->motor_pin, OUTPUT);
-49   ledcAttachPin(this->motor_pin, this->canal);
-50 }
+48 #endif
+49   pinMode(this->motor_pin, OUTPUT);
+50   ledcAttachPin(this->motor_pin, this->canal);
+51 }
 .fi
 .PP
 Referencias canal e motor_pin\&.
 .PP
 Referenciado(a) por inicializa()\&.
 .SS "void Motores::set_vel_mot (uint16_t vel)"
+
+.PP
 funcao que muda a velocidade\&. 
 .PP
 \fBParâmetros\fP
 .RS 4
-\fIvel\fP inteiro que possui valor entre min_vel e max_vel
+\fIvel\fP inteiro que possui valor entre min_vel e max_vel 
 .RE
 .PP
 
 .PP
-Definição na linha 36 do arquivo Motores\&.cpp\&.
+Definição na linha 42 do arquivo Motores\&.cpp\&.
 .PP
 .nf
-36                                       {
-42   ledcWrite(this->canal, vel);
-43 }
+42 { ledcWrite(this->canal, vel); }
 .fi
 .PP
 Referencias canal\&.
 .PP
-Referenciado(a) por inicializa()\&.
+Referenciado(a) por inicializa() e xTaskContol()\&.
 .SH "Campos"
 .PP 
 .SS "uint8_t Motores::canal = 0\fC [private]\fP"
 Canal utilizado pelo motor\&. 
 .PP
-Definição na linha 21 do arquivo Motores\&.h\&.
+Definição na linha 18 do arquivo Motores\&.h\&.
 .PP
 Referenciado(a) por calibra(), inicializa(), Motores(), set_portas() e set_vel_mot()\&.
 .SS "const double Motores::freq = 470\&.0\fC [private]\fP"
@@ -195,33 +202,25 @@ Referenciado(a) por calibra(), inicializa(), Motores(), set_portas() e set_vel_m
 .PP
 Frequencia do PWM de controle\&. 
 .PP
-Definição na linha 27 do arquivo Motores\&.h\&.
+Definição na linha 25 do arquivo Motores\&.h\&.
 .PP
 Referenciado(a) por inicializa() e Motores()\&.
-.SS "float Motores::kf = 1\&.4351e\-5"
-
-.PP
-Definição na linha 36 do arquivo Motores\&.h\&.
-.SS "float Motores::km = 2\&.4086e\-7"
-
-.PP
-Definição na linha 36 do arquivo Motores\&.h\&.
 .SS "uint16_t Motores::max_vel"
-Maximo valor do dutty cicle 
+Maximo valor do duty cycle 
 .PP
-Definição na linha 34 do arquivo Motores\&.h\&.
+Definição na linha 32 do arquivo Motores\&.h\&.
 .PP
 Referenciado(a) por calibra() e Motores()\&.
 .SS "uint16_t Motores::min_vel"
-Minimo valor do dutty cicle 
+Minimo valor do duty cycle 
 .PP
-Definição na linha 32 do arquivo Motores\&.h\&.
+Definição na linha 30 do arquivo Motores\&.h\&.
 .PP
 Referenciado(a) por calibra(), inicializa() e Motores()\&.
 .SS "gpio_num_t Motores::motor_pin\fC [private]\fP"
 pino do motor 
 .PP
-Definição na linha 19 do arquivo Motores\&.h\&.
+Definição na linha 16 do arquivo Motores\&.h\&.
 .PP
 Referenciado(a) por Motores() e set_portas()\&.
 .SS "const uint16_t Motores::resolucao = 14\fC [private]\fP"
@@ -229,15 +228,13 @@ Referenciado(a) por Motores() e set_portas()\&.
 .PP
 Resolucao do controle PWM\&. 
 .PP
-Definição na linha 25 do arquivo Motores\&.h\&.
+Definição na linha 23 do arquivo Motores\&.h\&.
 .PP
 Referenciado(a) por inicializa() e Motores()\&.
 .SS "const uint16_t Motores::tempo_calibracao = 8000\fC [private]\fP"
-
+Tempo para calibracao entre atribuicao de minimo e maximo\&. milli segundos] 
 .PP
-Tempo para calibracao entre atribuicao de minimo e maximo\&. [millisegundos]\&. 
-.PP
-Definição na linha 23 do arquivo Motores\&.h\&.
+Definição na linha 21 do arquivo Motores\&.h\&.
 .PP
 Referenciado(a) por calibra()\&.
 

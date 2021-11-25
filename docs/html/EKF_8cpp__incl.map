@@ -1,9 +1,9 @@
 <map id="lib/EKF/EKF.cpp" name="lib/EKF/EKF.cpp">
-<area shape="rect" id="node1" title="Classe que implementa o filtro de Kalman estendido." alt="" coords="145,5,257,29"/>
-<area shape="rect" id="node2" href="$EKF_8h.html" title="Classe que implementa o filtro de Kalman estendido." alt="" coords="66,77,118,101"/>
-<area shape="rect" id="node5" href="$AQUA_8h.html" title=" " alt="" coords="148,77,254,101"/>
-<area shape="rect" id="node6" href="$GRUPO__QUAT_8h.html" title="Cabecalho com funcoes de quaternion." alt="" coords="234,149,370,185"/>
-<area shape="rect" id="node3" title=" " alt="" coords="121,233,252,257"/>
-<area shape="rect" id="node4" title=" " alt="" coords="24,149,160,185"/>
-<area shape="rect" id="node7" title=" " alt="" coords="276,233,347,257"/>
+<area shape="rect" id="node1" title="Classe que implementa o filtro de Kalman estendido." alt="" coords="245,5,357,29"/>
+<area shape="rect" id="node2" href="$EKF_8h.html" title="Classe que implementa o filtro de Kalman estendido." alt="" coords="275,77,327,101"/>
+<area shape="rect" id="node3" title=" " alt="" coords="166,317,297,341"/>
+<area shape="rect" id="node4" title=" " alt="" coords="32,149,223,185"/>
+<area shape="rect" id="node5" href="$AQUA_8h.html" title=" " alt="" coords="247,155,354,179"/>
+<area shape="rect" id="node6" href="$GRUPO__QUAT_8h.html" title="Cabecalho com funcoes de quaternion." alt="" coords="269,233,405,269"/>
+<area shape="rect" id="node7" title=" " alt="" coords="364,317,435,341"/>
 </map>

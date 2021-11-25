@@ -1,11 +1,13 @@
-.TH "lib/IBUSBM/IBusBM.h" 3 "Sexta, 17 de Setembro de 2021" "Quadrirrotor" \" -*- nroff -*-
+.TH "src/IBusBM.h" 3 "Segunda, 25 de Outubro de 2021" "Quadrirrotor" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-lib/IBUSBM/IBusBM.h
+src/IBusBM.h
 .SH SYNOPSIS
 .br
 .PP
+\fC#include <Arduino\&.h>\fP
+.br
 \fC#include <inttypes\&.h>\fP
 .br
 
@@ -14,6 +16,9 @@ lib/IBUSBM/IBusBM.h
 .in +1c
 .ti -1c
 .RI "class \fBIBusBM\fP"
+.br
+.ti -1c
+.RI "union \fBIBusBM::ControlUnion\fP"
 .br
 .ti -1c
 .RI "struct \fBIBusBM::sensorinfo\fP"
@@ -57,7 +62,7 @@ Definição na linha 30 do arquivo IBusBM\&.h\&.
 .SS "#define IBUSBM_NOTIMER   \-1"
 
 .PP
-Definição na linha 53 do arquivo IBusBM\&.h\&.
+Definição na linha 52 do arquivo IBusBM\&.h\&.
 .SS "#define IBUSS_EXTV   0x03"
 
 .PP

@@ -1,12 +1,14 @@
 <map id="ekf::skew" name="ekf::skew">
-<area shape="rect" id="node1" title="Matrix antissimetrica." alt="" coords="677,125,753,149"/>
-<area shape="rect" id="node2" href="$namespaceekf.html#ac031eda654b199bd45807eed2acdb3ec" title=" " alt="" coords="433,5,629,29"/>
-<area shape="rect" id="node3" href="$namespaceekf.html#a34993a331b6837e5274d556e4f0a1bea" title=" " alt="" coords="496,53,567,77"/>
-<area shape="rect" id="node6" href="$namespaceekf.html#abd4511440a60041d2e32a0dcbd28e29b" title=" " alt="" coords="496,101,567,125"/>
-<area shape="rect" id="node7" href="$namespaceekf.html#a8177897fe9b962d8e0927a913fc36242" title="Calcula a Matriz Lefth&#45;Quaternion a partir do quaternion q." alt="" coords="496,149,567,173"/>
-<area shape="rect" id="node9" href="$namespaceekf.html#a97bc65b3f2d630a876b271fc21e9da9c" title="Calcula a Matriz Right&#45;Quaternion a partir do quaternion q." alt="" coords="496,197,567,221"/>
-<area shape="rect" id="node10" href="$classDrone.html#a1531c9d38e26bb12a8b650ba40d915ca" title=" " alt="" coords="442,245,621,269"/>
-<area shape="rect" id="node4" href="$classControle.html#a8ac9e933ce30f9c88ed421d4c0afcf99" title=" " alt="" coords="201,57,385,93"/>
-<area shape="rect" id="node5" href="$classControle.html#a78e5f662130811f409342a706d5c0d2f" title=" " alt="" coords="5,103,153,127"/>
-<area shape="rect" id="node8" href="$classControle.html#abcf05dcff157e963fd65c09d45261a8f" title=" " alt="" coords="201,126,385,162"/>
+<area shape="rect" id="node1" title="Matrix antissimetrica." alt="" coords="913,125,989,149"/>
+<area shape="rect" id="node2" href="$namespaceekf.html#ac031eda654b199bd45807eed2acdb3ec" title=" " alt="" coords="669,5,865,29"/>
+<area shape="rect" id="node3" href="$namespaceekf.html#a34993a331b6837e5274d556e4f0a1bea" title=" " alt="" coords="732,53,803,77"/>
+<area shape="rect" id="node8" href="$namespaceekf.html#abd4511440a60041d2e32a0dcbd28e29b" title=" " alt="" coords="732,101,803,125"/>
+<area shape="rect" id="node9" href="$namespaceekf.html#a8177897fe9b962d8e0927a913fc36242" title="Calcula a Matriz Left&#45;Quaternion a partir do quaternion q." alt="" coords="732,149,803,173"/>
+<area shape="rect" id="node11" href="$namespaceekf.html#a97bc65b3f2d630a876b271fc21e9da9c" title="Calcula a Matriz Right&#45;Quaternion a partir do quaternion q." alt="" coords="732,197,803,221"/>
+<area shape="rect" id="node12" href="$classDrone.html#a1531c9d38e26bb12a8b650ba40d915ca" title=" " alt="" coords="678,245,857,269"/>
+<area shape="rect" id="node4" href="$classControle.html#a8ac9e933ce30f9c88ed421d4c0afcf99" title=" " alt="" coords="437,57,621,93"/>
+<area shape="rect" id="node5" href="$classControle.html#a78e5f662130811f409342a706d5c0d2f" title="Loop de controle das duas dinâmicas." alt="" coords="241,103,389,127"/>
+<area shape="rect" id="node6" href="$main_8cpp.html#ad3d424dca818563665f9ab9bbf866fff" title=" " alt="" coords="105,103,193,127"/>
+<area shape="rect" id="node7" href="$main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d" title=" " alt="" coords="5,103,57,127"/>
+<area shape="rect" id="node10" href="$classControle.html#abcf05dcff157e963fd65c09d45261a8f" title=" " alt="" coords="437,126,621,162"/>
 </map>

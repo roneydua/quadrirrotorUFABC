@@ -1,0 +1,54 @@
+.TH "TELEMETRIA::IMU_DATA" 3 "Segunda, 25 de Outubro de 2021" "Quadrirrotor" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TELEMETRIA::IMU_DATA \- Estrutura de mensagem\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <TELEMETRIA\&.h>\fP
+.SS "Campos de Dados"
+
+.in +1c
+.ti -1c
+.RI "union {"
+.br
+.ti -1c
+.RI "   float \fBdados\fP [\fBDATA_SIZE\fP]"
+.br
+.ti -1c
+.RI "   Vector< float, \fBDATA_SIZE\fP > \fBdadosEigen\fP = VectorXf::Zero(\fBDATA_SIZE\fP)"
+.br
+.ti -1c
+.RI "}; "
+.br
+.in -1c
+.SH "Descrição detalhada"
+.PP 
+Estrutura de mensagem\&. 
+
+Tamanho 72 
+.PP
+Definição na linha 39 do arquivo TELEMETRIA\&.h\&.
+.SH "Campos"
+.PP 
+.SS "union { \&.\&.\&. } "
+Tipo de mensagem\&. 
+.SS "float TELEMETRIA::IMU_DATA::dados[\fBDATA_SIZE\fP]"
+
+.PP
+Definição na linha 43 do arquivo TELEMETRIA\&.h\&.
+.PP
+Referenciado(a) por TELEMETRIA::envia()\&.
+.SS "Vector<float, \fBDATA_SIZE\fP> TELEMETRIA::IMU_DATA::dadosEigen = VectorXf::Zero(\fBDATA_SIZE\fP)"
+
+.PP
+Definição na linha 44 do arquivo TELEMETRIA\&.h\&.
+.PP
+Referenciado(a) por TELEMETRIA::envia() e xTaskLoopFilter()\&.
+
+.SH "Autor"
+.PP 
+Gerado automaticamente por Doxygen para Quadrirrotor a partir do código-fonte\&.

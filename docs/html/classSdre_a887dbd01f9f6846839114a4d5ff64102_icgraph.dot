@@ -7,5 +7,5 @@ digraph "Sdre::~Sdre"
   rankdir="RL";
   Node1 [label="Sdre::~Sdre",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
-  Node2 [label="Controle::Controle",height=0.2,width=0.4,color="black",URL="$classControle.html#abbe044aad705ef7d663c45275948fd12",tooltip=" "];
+  Node2 [label="Controle::Controle",height=0.2,width=0.4,color="black",URL="$classControle.html#a8ae9a213e4a15ac1af0f158e3b5dc2cb",tooltip="Construct a new Controle:: Controle object."];
 }

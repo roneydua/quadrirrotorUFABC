@@ -7,9 +7,8 @@
     <includedby refid="AQUA_8h" local="yes">lib/AQUA/AQUA.h</includedby>
     <includedby refid="Controle_8h" local="yes">lib/CONTROLE/Controle.h</includedby>
     <includedby refid="Drone_8h" local="yes">lib/DRONE/Drone.h</includedby>
-    <includedby refid="EKF_8cpp" local="yes">lib/EKF/EKF.cpp</includedby>
+    <includedby refid="EKF_8h" local="yes">lib/EKF/EKF.h</includedby>
     <includedby refid="GRUPO__QUAT_8cpp" local="yes">lib/GRUPO_QUAT/GRUPO_QUAT.cpp</includedby>
-    <includedby refid="Riccati_8h" local="yes">lib/RICCATI/Riccati.h</includedby>
     <includedby refid="main_8cpp" local="yes">src/main.cpp</includedby>
     <incdepgraph>
       <node id="2">
@@ -28,53 +27,41 @@
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="5">
+      <node id="7">
         <label>lib/CONTROLE/Controle.h</label>
         <link refid="Controle_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
         <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-      </node>
-      <node id="14">
-        <label>lib/SDRE/Sdre.cpp</label>
-        <link refid="Sdre_8cpp"/>
-      </node>
-      <node id="9">
-        <label>lib/DRONE/Drone.cpp</label>
-        <link refid="Drone_8cpp"/>
-      </node>
-      <node id="13">
-        <label>lib/SDRE/Sdre.h</label>
-        <link refid="Sdre_8h"/>
-        <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="14" relation="include">
         </childnode>
       </node>
       <node id="10">
+        <label>lib/DRONE/Drone.cpp</label>
+        <link refid="Drone_8cpp"/>
+      </node>
+      <node id="11">
         <label>lib/GRUPO_QUAT/GRUPO_QUAT.cpp</label>
         <link refid="GRUPO__QUAT_8cpp"/>
       </node>
-      <node id="8">
-        <label>lib/DRONE/Drone.h</label>
-        <link refid="Drone_8h"/>
+      <node id="4">
+        <label>lib/EKF/EKF.h</label>
+        <link refid="EKF_8h"/>
         <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="9" relation="include">
+        <childnode refid="6" relation="include">
         </childnode>
       </node>
-      <node id="6">
+      <node id="9">
+        <label>lib/DRONE/Drone.h</label>
+        <link refid="Drone_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
         <label>lib/CONTROLE/Controle.cpp</label>
         <link refid="Controle_8cpp"/>
-      </node>
-      <node id="11">
-        <label>lib/RICCATI/Riccati.h</label>
-        <link refid="Riccati_8h"/>
-        <childnode refid="12" relation="include">
-        </childnode>
-        <childnode refid="13" relation="include">
-        </childnode>
       </node>
       <node id="2">
         <label>lib/AQUA/AQUA.h</label>
@@ -84,19 +71,15 @@
         <childnode refid="4" relation="include">
         </childnode>
       </node>
-      <node id="4">
+      <node id="5">
         <label>lib/EKF/EKF.cpp</label>
         <link refid="EKF_8cpp"/>
-      </node>
-      <node id="12">
-        <label>lib/RICCATI/Riccati.cpp</label>
-        <link refid="Riccati_8cpp"/>
       </node>
       <node id="3">
         <label>lib/AQUA/AQUA.cpp</label>
         <link refid="AQUA_8cpp"/>
       </node>
-      <node id="7">
+      <node id="6">
         <label>src/main.cpp</label>
         <link refid="main_8cpp"/>
       </node>
@@ -105,17 +88,15 @@
         <link refid="GRUPO__QUAT_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="5" relation="include">
+        <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="8" relation="include">
+        <childnode refid="9" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
         <childnode refid="11" relation="include">
         </childnode>
-        <childnode refid="7" relation="include">
+        <childnode refid="6" relation="include">
         </childnode>
       </node>
     </invincdepgraph>
@@ -203,7 +184,7 @@
 <codeline lineno="50"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Eigen::Vector4f<sp/>multiplyQuaternions(const<sp/>Eigen::Vector4f<sp/>&amp;p,</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="51"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>const<sp/>Eigen::VectorXf<sp/>&amp;q);</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="52"><highlight class="normal"></highlight></codeline>
-<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceekf_1a0bb5c9402b49d6ba5be7c97ef269ceb1" kindref="member">integrationQuaternion</ref>(Eigen::Vector4f<sp/>&amp;_quat,</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceekf_1a2c0b3448d5cac6f50ad025310b2a9c82" kindref="member">integrationQuaternion</ref>(Eigen::Vector4f<sp/>&amp;_quat,</highlight></codeline>
 <codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Ref&lt;const<sp/>Eigen::VectorXf&gt;<sp/>&amp;_gyroscopio,</highlight></codeline>
 <codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>&amp;_dt);</highlight></codeline>
 <codeline lineno="56"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="namespaceekf_1ab55e144edf7066b67232e15cca7b4646" kindref="member">invSqrt</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>_x);</highlight></codeline>
@@ -222,9 +203,15 @@
 <codeline lineno="69"><highlight class="normal">Eigen::MatrixXf<sp/><ref refid="namespaceekf_1a34993a331b6837e5274d556e4f0a1bea" kindref="member">Q_l</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Ref&lt;Eigen::Vector4f&gt;<sp/>&amp;q);</highlight></codeline>
 <codeline lineno="70"><highlight class="normal">Eigen::MatrixXf<sp/><ref refid="namespaceekf_1abd4511440a60041d2e32a0dcbd28e29b" kindref="member">Q_r</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Ref&lt;Eigen::Vector4f&gt;<sp/>&amp;q);</highlight></codeline>
 <codeline lineno="71"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceekf_1a9a53e61c76edeebffe35da19a63b983f" kindref="member">conjugate</ref>(Eigen::Ref&lt;Eigen::Vector4f&gt;<sp/>_q);</highlight></codeline>
-<codeline lineno="72"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>ekf</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="73"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="74"><highlight class="normal"></highlight><highlight class="comment">/*GRUPO_QUAT_H*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceekf_1ad48c9ef49e8ccbde872958a81f6ed41a" kindref="member">calc_phi</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>&amp;x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Ref&lt;const<sp/>Eigen::Vector4f&gt;<sp/>&amp;_q);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceekf_1a6530a1bee6082aaa64ec7e8525d0ed54" kindref="member">calc_theta</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>&amp;x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Ref&lt;const<sp/>Eigen::Vector4f&gt;<sp/>&amp;_q);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceekf_1a12f4cfdfc4baad066351f122771205a0" kindref="member">calc_psi</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>&amp;x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Ref&lt;const<sp/>Eigen::Vector4f&gt;<sp/>&amp;_q);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">Eigen::Vector4f<sp/><ref refid="namespaceekf_1a79aece98f1e99172f29ec0ce8287dd33" kindref="member">q_theta</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>&amp;t);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">Eigen::Vector4f<sp/><ref refid="namespaceekf_1a193584b4cd93691d0dc552ace5e1b445" kindref="member">q_phi</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>&amp;t);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">Eigen::Vector4f<sp/><ref refid="namespaceekf_1a24bc211c14d4e7d5ed48f895e3cdb75f" kindref="member">q_psi</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>&amp;t);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>ekf</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="comment">/*GRUPO_QUAT_H*/</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="lib/GRUPO_QUAT/GRUPO_QUAT.h"/>
   </compounddef>

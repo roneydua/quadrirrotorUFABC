@@ -1,0 +1,8 @@
+digraph "TELEMETRIA::IMU_DATA"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  Node1 [label="{TELEMETRIA::IMU_DATA\n|+ float dados\l+ Vector\< float, DATA\l_SIZE \> dadosEigen\l+ union TELEMETRIA::IMU\l_DATA::@0 @1\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Estrutura de mensagem."];
+}

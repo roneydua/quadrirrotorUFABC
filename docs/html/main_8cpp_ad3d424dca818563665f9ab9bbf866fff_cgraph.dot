@@ -1,0 +1,55 @@
+digraph "xTaskContol"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  rankdir="LR";
+  Node1 [label="xTaskContol",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node2 [label="Controle::controlLoop",height=0.2,width=0.4,color="black",URL="$classControle.html#a78e5f662130811f409342a706d5c0d2f",tooltip="Loop de controle das duas dinâmicas."];
+  Node2 -> Node3 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node3 [label="Controle::computeRotational\lControl",height=0.2,width=0.4,color="black",URL="$classControle.html#abcf05dcff157e963fd65c09d45261a8f",tooltip=" "];
+  Node3 -> Node4 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node4 [label="ekf::S_l",height=0.2,width=0.4,color="black",URL="$namespaceekf.html#a8177897fe9b962d8e0927a913fc36242",tooltip="Calcula a Matriz Left-Quaternion a partir do quaternion q."];
+  Node4 -> Node5 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node5 [label="ekf::skew",height=0.2,width=0.4,color="black",URL="$namespaceekf.html#af3f0a631343e55ec8b42f3fbea182461",tooltip="Matrix antissimetrica."];
+  Node3 -> Node6 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node6 [label="Sdre::updateControl",height=0.2,width=0.4,color="black",URL="$classSdre.html#af2f380ec3d018b60686e304ca7026846",tooltip=" "];
+  Node2 -> Node7 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node7 [label="Controle::computeRotational\lTarget",height=0.2,width=0.4,color="black",URL="$classControle.html#a8ac9e933ce30f9c88ed421d4c0afcf99",tooltip=" "];
+  Node7 -> Node8 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node8 [label="ekf::Q_l",height=0.2,width=0.4,color="black",URL="$namespaceekf.html#a34993a331b6837e5274d556e4f0a1bea",tooltip=" "];
+  Node8 -> Node5 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node7 -> Node9 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node9 [label="ekf::quaternion2Euler",height=0.2,width=0.4,color="black",URL="$namespaceekf.html#aab2dcd522b40c160064cfae69cae6d98",tooltip=" "];
+  Node9 -> Node10 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node10 [label="ekf::calc_phi",height=0.2,width=0.4,color="black",URL="$namespaceekf.html#ad48c9ef49e8ccbde872958a81f6ed41a",tooltip="Calcula, a partir de um quatérnio de atitude, o valor do ângulo Phi em Radianos."];
+  Node9 -> Node11 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node11 [label="ekf::calc_psi",height=0.2,width=0.4,color="black",URL="$namespaceekf.html#a12f4cfdfc4baad066351f122771205a0",tooltip="Calcula, a partir de um quatérnio de atitude, o valor do ângulo Psi em Radianos."];
+  Node9 -> Node12 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node12 [label="ekf::calc_theta",height=0.2,width=0.4,color="black",URL="$namespaceekf.html#a6530a1bee6082aaa64ec7e8525d0ed54",tooltip="Calcula, a partir de um quatérnio de atitude, o valor do ângulo Theta em Radianos."];
+  Node2 -> Node13 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node13 [label="Controle::computeTranslational\lControl",height=0.2,width=0.4,color="black",URL="$classControle.html#add7378d03597a45ff09b2432d7739dfe",tooltip=" "];
+  Node2 -> Node14 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node14 [label="Controle::virtualCommand\lToMotorCommand",height=0.2,width=0.4,color="black",URL="$classControle.html#a42aee0a4592b84bd793c8be0fde0095b",tooltip=" "];
+  Node2 -> Node15 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node15 [label="Controle::virtualCommand\lToMotorRpm",height=0.2,width=0.4,color="black",URL="$classControle.html#a9b3718425d8602487eb9b14d6ee1c781",tooltip=" "];
+  Node1 -> Node16 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node16 [label="emergencyMethods",height=0.2,width=0.4,color="black",URL="$main_8cpp.html#a1f32cff79659de71ff8de76c85e7c7b9",tooltip="Task de Procedimentos emergenciais."];
+  Node16 -> Node17 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node17 [label="TELEMETRIA::enviaMensagem",height=0.2,width=0.4,color="black",URL="$classTELEMETRIA.html#a6c13ae22d648afb2c7bd41f3e17ba4b6",tooltip=" "];
+  Node16 -> Node18 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node18 [label="IBusBM::loop",height=0.2,width=0.4,color="black",URL="$classIBusBM.html#a3219abe525dde59156d00538d93faa11",tooltip=" "];
+  Node18 -> Node18 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node16 -> Node19 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node19 [label="turnOffLed",height=0.2,width=0.4,color="black",URL="$COMMON_8h.html#a0e9b3928a2c3089998123715bcae29e9",tooltip="Desliga o led de comunicação."];
+  Node16 -> Node20 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node20 [label="turnOnLed",height=0.2,width=0.4,color="black",URL="$COMMON_8h.html#a8eabef94a982b1407d1ae4731b7e07ca",tooltip="Liga o led de comunicação."];
+  Node1 -> Node17 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node1 -> Node21 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node21 [label="TELEMETRIA::enviaTunning\lGains",height=0.2,width=0.4,color="black",URL="$classTELEMETRIA.html#ac3b8fa789f6d00dca33ea41b4fd865c7",tooltip=" "];
+  Node1 -> Node18 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node1 -> Node22 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node22 [label="Motores::set_vel_mot",height=0.2,width=0.4,color="black",URL="$classMotores.html#ac6264dc2b71015a3c9641025151edd4a",tooltip="funcao que muda a velocidade."];
+}

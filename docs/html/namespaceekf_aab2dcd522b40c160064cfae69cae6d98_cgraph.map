@@ -1,0 +1,6 @@
+<map id="ekf::quaternion2Euler" name="ekf::quaternion2Euler">
+<area shape="rect" id="node1" title=" " alt="" coords="5,53,153,77"/>
+<area shape="rect" id="node2" href="$namespaceekf.html#ad48c9ef49e8ccbde872958a81f6ed41a" title="Calcula, a partir de um quatérnio de atitude, o valor do ângulo Phi em Radianos." alt="" coords="207,5,307,29"/>
+<area shape="rect" id="node3" href="$namespaceekf.html#a12f4cfdfc4baad066351f122771205a0" title="Calcula, a partir de um quatérnio de atitude, o valor do ângulo Psi em Radianos." alt="" coords="207,53,307,77"/>
+<area shape="rect" id="node4" href="$namespaceekf.html#a6530a1bee6082aaa64ec7e8525d0ed54" title="Calcula, a partir de um quatérnio de atitude, o valor do ângulo Theta em Radianos." alt="" coords="201,101,313,125"/>
+</map>

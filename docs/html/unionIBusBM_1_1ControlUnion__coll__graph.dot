@@ -1,0 +1,8 @@
+digraph "IBusBM::ControlUnion"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  Node1 [label="{IBusBM::ControlUnion\n|+ uint16_t channel\l+ uint16_t dX\l+ uint16_t dY\l+ uint16_t dZ\l+ uint16_t dPsi\l+ uint16_t emergency\l+ uint16_t calibration\l+ uint16_t adjustQuat\l+ uint16_t adjustQrAngular\l+ uint16_t control_mode\l+ uint16_t swd\l+ uint16_t reserved\l+ struct IBusBM::ControlUnion\l::@2 @3\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

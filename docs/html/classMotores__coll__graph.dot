@@ -4,5 +4,5 @@ digraph "Motores"
   bgcolor="transparent";
   edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
   node [fontname="DejaVuSansMono",fontsize="8",shape=record];
-  Node1 [label="{Motores\n|+ uint16_t min_vel\l+ uint16_t max_vel\l+ float kf\l+ float km\l- gpio_num_t motor_pin\l- uint8_t canal\l- const uint16_t tempo\l_calibracao\l- const uint16_t resolucao\l- const double freq\l|+  Motores(gpio_num_t\l motor_pin, uint8_t\l canal=0)\l+ void inicializa()\l+ void set_portas()\l+ void calibra()\l+ void set_vel_mot(uint16\l_t vel)\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 [label="{Motores\n|+ uint16_t min_vel\l+ uint16_t max_vel\l- gpio_num_t motor_pin\l- uint8_t canal\l- const uint16_t tempo\l_calibracao\l- const uint16_t resolucao\l- const double freq\l|+  Motores(gpio_num_t\l motor_pin, uint8_t\l canal=0)\l+ void inicializa()\l+ void set_portas()\l+ void calibra()\l+ void set_vel_mot(uint16\l_t vel)\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
 }

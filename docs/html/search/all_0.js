@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['_5f_5fattribute_5f_5f_0',['__attribute__',['../classTELEMETRIA.html#a02904fd20750c3eb7598dff99b20649b',1,'TELEMETRIA::__attribute__((packed)) controle'],['../classTELEMETRIA.html#a3ed6613237ba555ebae298106a7369e8',1,'TELEMETRIA::__attribute__((packed)) mensagem']]],
+  ['_5f_5fattribute_5f_5f_0',['__attribute__',['../classTELEMETRIA.html#a02904fd20750c3eb7598dff99b20649b',1,'TELEMETRIA']]],
   ['_5f_5finit_5f_5f_1',['__init__',['../classdrone_1_1Drone.html#a53ec705858db58590204fd0078526c4c',1,'drone::Drone']]],
   ['_5faccelrange_2',['_accelRange',['../classIMU.html#a81407c3f7e8e63735dfc672b53fd99dd',1,'IMU']]],
   ['_5faccelscale_3',['_accelScale',['../classIMU.html#a28eb12db9c58ca68e4ddb5020dd9dd20',1,'IMU']]],
@@ -34,7 +34,7 @@ var searchData=
   ['_5fquantdados_31',['_quantDados',['../classTELEMETRIA.html#ae8ffac9b63a68baa5a4ffa3f14a4954d',1,'TELEMETRIA']]],
   ['_5fsm_32',['_sM',['../classIMU.html#af5d90aa5410529450fd31da2e1b1f296',1,'IMU']]],
   ['_5fsrd_33',['_srd',['../classIMU.html#a3eb0783394601a5a41fa7079e4c929b0',1,'IMU']]],
-  ['_5fstatus_34',['_status',['../classIMU.html#a279015ea1ea0a32b45a9a1a26b2d4fda',1,'IMU']]],
+  ['_5fstatus_34',['_status',['../classIMU.html#a279015ea1ea0a32b45a9a1a26b2d4fda',1,'IMU::_status()'],['../namespaceekf.html#a3d0224f90468a854a2440df8b4f78869',1,'ekf::_status()']]],
   ['_5ft_35',['_t',['../classIMU.html#a23880868a20bc15879232b9ed3c1cbbd',1,'IMU']]],
   ['_5ftcounts_36',['_tcounts',['../classIMU.html#a4274d743239871f6cbc54de5c84eca3a',1,'IMU']]],
   ['_5fubxmsgtype_37',['_ubxMsgType',['../GPS_8h.html#a9730e8d0bbbe3f1515ed1d0b2acda1e1',1,'GPS.h']]]

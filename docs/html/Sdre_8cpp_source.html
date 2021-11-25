@@ -80,53 +80,56 @@ $(function() {
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <a class="code" href="classSdre.html#a17464293d3a2f24ea0c55da3fcb0e864">R</a> = &amp;_R;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="comment">/* instancia o Solver de Riccati */</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <a class="code" href="classSdre.html#ac29f58dd81643087f49ccbed42b794df">ricObj</a> = <span class="keyword">new</span> <a class="code" href="classRiccati.html">Riccati</a>(A, B, *<a class="code" href="classSdre.html#a6b63e08a6c981385373f45ee9ac1be73">Q</a>, *<a class="code" href="classSdre.html#a17464293d3a2f24ea0c55da3fcb0e864">R</a>);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="comment">/* Salvas os enderços das matrizes de estado e controle*/</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="comment">/* Salvas os endereços das matrizes de estado e controle*/</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <a class="code" href="classSdre.html#ae868a877b9ade90516f90ff46a673568">phi</a> = &amp;A;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <a class="code" href="classSdre.html#aa8e71f3403ee322804ac1e7a6d19b00e">gamma</a> = &amp;B;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <a class="code" href="classSdre.html#a348491f949fa0faae3fb86b7dbabd33d">E</a> = B * _R.inverse() * B.transpose();</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <a class="code" href="classSdre.html#ad244c5cc1e70a1b08e8e4d5655993d8b">G</a> = Eigen::MatrixXf::Identity(n, n);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classSdre.html#a887dbd01f9f6846839114a4d5ff64102">   25</a></span>&#160;<a class="code" href="classSdre.html#a887dbd01f9f6846839114a4d5ff64102">Sdre::~Sdre</a>() {}</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classSdre.html#af2f380ec3d018b60686e304ca7026846">   30</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classSdre.html#af2f380ec3d018b60686e304ca7026846">Sdre::updateControl</a>() {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="comment">// Verifica o se o algoritmo converge com o numero de iterações e tolerância</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="comment">// desejado.</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordflow">if</span> ((*ricObj).dareInteration()) { <span class="comment">// Obtem a matriz de Riccati.</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// atualiza a matriz de ganho de Kalman</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="classSdre.html#aad912686f9a487dce4ea7e4875efd563">L</a> = (*ricObj).Ls * (*ricObj).K * (*phi);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="classSdre.html#ad244c5cc1e70a1b08e8e4d5655993d8b">G</a> = ((*ricObj).I -</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;         (*phi).transpose() *</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;             ((*ricObj).I -</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;              (*ricObj).K * ((*ricObj).I + <a class="code" href="classSdre.html#a348491f949fa0faae3fb86b7dbabd33d">E</a> * (*ricObj).K).inverse() * <a class="code" href="classSdre.html#a348491f949fa0faae3fb86b7dbabd33d">E</a>))</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            .inverse();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">// Retorna falso mantendo o ultimo ganho de Riccati.</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classSdre.html#a4848cfbce14035e6b3733a628de9e24f">   51</a></span>&#160;Eigen::MatrixXcf <a class="code" href="classSdre.html#a4848cfbce14035e6b3733a628de9e24f">Sdre::closeLoopEig</a>() {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="comment">// Eigen::MatrixXf closeLoop =</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="comment">//     *phi - *gamma * (*R).inverse() * (*gamma).transpose() * (*ricObj).K;</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  Eigen::MatrixXf closeLoop = *<a class="code" href="classSdre.html#ae868a877b9ade90516f90ff46a673568">phi</a> - *<a class="code" href="classSdre.html#aa8e71f3403ee322804ac1e7a6d19b00e">gamma</a> * <a class="code" href="classSdre.html#aad912686f9a487dce4ea7e4875efd563">L</a>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  Eigen::EigenSolver&lt;Eigen::MatrixXf&gt; Eigs(closeLoop);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordflow">return</span> Eigs.eigenvalues();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;};</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#ifdef COMPUTE_MAT_REALIMENTACAO</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  G = Eigen::MatrixXf::Identity(n, n);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classSdre.html#a887dbd01f9f6846839114a4d5ff64102">   27</a></span>&#160;<a class="code" href="classSdre.html#a887dbd01f9f6846839114a4d5ff64102">Sdre::~Sdre</a>() {}</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classSdre.html#af2f380ec3d018b60686e304ca7026846">   32</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classSdre.html#af2f380ec3d018b60686e304ca7026846">Sdre::updateControl</a>() {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="comment">// Verifica o se o algoritmo converge com o numero de iterações e tolerância</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="comment">// desejado.</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordflow">if</span> ((*ricObj).dareInteration()) { <span class="comment">// Obtem a matriz de Riccati.</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">// atualiza a matriz de ganho de Kalman</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="classSdre.html#aad912686f9a487dce4ea7e4875efd563">L</a> = (*ricObj).Ls * (*ricObj).K * (*phi);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#ifdef COMPUTE_MAT_REALIMENTACAO</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    G = ((*ricObj).I -</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;         (*phi).transpose() *</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;             ((*ricObj).I -</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;              (*ricObj).K * ((*ricObj).I + <a class="code" href="classSdre.html#a348491f949fa0faae3fb86b7dbabd33d">E</a> * (*ricObj).K).inverse() * <a class="code" href="classSdre.html#a348491f949fa0faae3fb86b7dbabd33d">E</a>))</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            .inverse();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">// Retorna falso mantendo o ultimo ganho de Riccati.</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classSdre.html#a4848cfbce14035e6b3733a628de9e24f">   55</a></span>&#160;Eigen::MatrixXcf <a class="code" href="classSdre.html#a4848cfbce14035e6b3733a628de9e24f">Sdre::closeLoopEig</a>() {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="comment">// Eigen::MatrixXf closeLoop =</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="comment">//     *phi - *gamma * (*R).inverse() * (*gamma).transpose() * (*ricObj).K;</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  Eigen::MatrixXf closeLoop = *<a class="code" href="classSdre.html#ae868a877b9ade90516f90ff46a673568">phi</a> - *<a class="code" href="classSdre.html#aa8e71f3403ee322804ac1e7a6d19b00e">gamma</a> * <a class="code" href="classSdre.html#aad912686f9a487dce4ea7e4875efd563">L</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  Eigen::EigenSolver&lt;Eigen::MatrixXf&gt; Eigs(closeLoop);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordflow">return</span> Eigs.eigenvalues();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;};</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;;</div>
 <div class="ttc" id="aSdre_8h_html"><div class="ttname"><a href="Sdre_8h.html">Sdre.h</a></div></div>
 <div class="ttc" id="aclassRiccati_html"><div class="ttname"><a href="classRiccati.html">Riccati</a></div><div class="ttdef"><b>Definition:</b> <a href="Riccati_8h_source.html#l00024">Riccati.h:24</a></div></div>
-<div class="ttc" id="aclassSdre_html_a17464293d3a2f24ea0c55da3fcb0e864"><div class="ttname"><a href="classSdre.html#a17464293d3a2f24ea0c55da3fcb0e864">Sdre::R</a></div><div class="ttdeci">Eigen::MatrixXf * R</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8h_source.html#l00031">Sdre.h:31</a></div></div>
-<div class="ttc" id="aclassSdre_html_a348491f949fa0faae3fb86b7dbabd33d"><div class="ttname"><a href="classSdre.html#a348491f949fa0faae3fb86b7dbabd33d">Sdre::E</a></div><div class="ttdeci">Eigen::MatrixXf E</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8h_source.html#l00037">Sdre.h:37</a></div></div>
-<div class="ttc" id="aclassSdre_html_a4848cfbce14035e6b3733a628de9e24f"><div class="ttname"><a href="classSdre.html#a4848cfbce14035e6b3733a628de9e24f">Sdre::closeLoopEig</a></div><div class="ttdeci">Eigen::MatrixXcf closeLoopEig()</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8cpp_source.html#l00051">Sdre.cpp:51</a></div></div>
-<div class="ttc" id="aclassSdre_html_a6b63e08a6c981385373f45ee9ac1be73"><div class="ttname"><a href="classSdre.html#a6b63e08a6c981385373f45ee9ac1be73">Sdre::Q</a></div><div class="ttdeci">Eigen::MatrixXf * Q</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8h_source.html#l00033">Sdre.h:33</a></div></div>
-<div class="ttc" id="aclassSdre_html_a887dbd01f9f6846839114a4d5ff64102"><div class="ttname"><a href="classSdre.html#a887dbd01f9f6846839114a4d5ff64102">Sdre::~Sdre</a></div><div class="ttdeci">~Sdre()</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8cpp_source.html#l00025">Sdre.cpp:25</a></div></div>
-<div class="ttc" id="aclassSdre_html_aa8e71f3403ee322804ac1e7a6d19b00e"><div class="ttname"><a href="classSdre.html#aa8e71f3403ee322804ac1e7a6d19b00e">Sdre::gamma</a></div><div class="ttdeci">Eigen::MatrixXf * gamma</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8h_source.html#l00027">Sdre.h:27</a></div></div>
-<div class="ttc" id="aclassSdre_html_aad912686f9a487dce4ea7e4875efd563"><div class="ttname"><a href="classSdre.html#aad912686f9a487dce4ea7e4875efd563">Sdre::L</a></div><div class="ttdeci">Eigen::MatrixXf L</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8h_source.html#l00035">Sdre.h:35</a></div></div>
-<div class="ttc" id="aclassSdre_html_ac29f58dd81643087f49ccbed42b794df"><div class="ttname"><a href="classSdre.html#ac29f58dd81643087f49ccbed42b794df">Sdre::ricObj</a></div><div class="ttdeci">Riccati * ricObj</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8h_source.html#l00029">Sdre.h:29</a></div></div>
+<div class="ttc" id="aclassSdre_html_a17464293d3a2f24ea0c55da3fcb0e864"><div class="ttname"><a href="classSdre.html#a17464293d3a2f24ea0c55da3fcb0e864">Sdre::R</a></div><div class="ttdeci">Eigen::MatrixXf * R</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8h_source.html#l00032">Sdre.h:32</a></div></div>
+<div class="ttc" id="aclassSdre_html_a348491f949fa0faae3fb86b7dbabd33d"><div class="ttname"><a href="classSdre.html#a348491f949fa0faae3fb86b7dbabd33d">Sdre::E</a></div><div class="ttdeci">Eigen::MatrixXf E</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8h_source.html#l00038">Sdre.h:38</a></div></div>
+<div class="ttc" id="aclassSdre_html_a4848cfbce14035e6b3733a628de9e24f"><div class="ttname"><a href="classSdre.html#a4848cfbce14035e6b3733a628de9e24f">Sdre::closeLoopEig</a></div><div class="ttdeci">Eigen::MatrixXcf closeLoopEig()</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8cpp_source.html#l00055">Sdre.cpp:55</a></div></div>
+<div class="ttc" id="aclassSdre_html_a6b63e08a6c981385373f45ee9ac1be73"><div class="ttname"><a href="classSdre.html#a6b63e08a6c981385373f45ee9ac1be73">Sdre::Q</a></div><div class="ttdeci">Eigen::MatrixXf * Q</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8h_source.html#l00034">Sdre.h:34</a></div></div>
+<div class="ttc" id="aclassSdre_html_a887dbd01f9f6846839114a4d5ff64102"><div class="ttname"><a href="classSdre.html#a887dbd01f9f6846839114a4d5ff64102">Sdre::~Sdre</a></div><div class="ttdeci">~Sdre()</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8cpp_source.html#l00027">Sdre.cpp:27</a></div></div>
+<div class="ttc" id="aclassSdre_html_aa8e71f3403ee322804ac1e7a6d19b00e"><div class="ttname"><a href="classSdre.html#aa8e71f3403ee322804ac1e7a6d19b00e">Sdre::gamma</a></div><div class="ttdeci">Eigen::MatrixXf * gamma</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8h_source.html#l00028">Sdre.h:28</a></div></div>
+<div class="ttc" id="aclassSdre_html_aad912686f9a487dce4ea7e4875efd563"><div class="ttname"><a href="classSdre.html#aad912686f9a487dce4ea7e4875efd563">Sdre::L</a></div><div class="ttdeci">Eigen::MatrixXf L</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8h_source.html#l00036">Sdre.h:36</a></div></div>
+<div class="ttc" id="aclassSdre_html_ac29f58dd81643087f49ccbed42b794df"><div class="ttname"><a href="classSdre.html#ac29f58dd81643087f49ccbed42b794df">Sdre::ricObj</a></div><div class="ttdeci">Riccati * ricObj</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8h_source.html#l00030">Sdre.h:30</a></div></div>
 <div class="ttc" id="aclassSdre_html_acfa822102ba368dde55594e9f041f9df"><div class="ttname"><a href="classSdre.html#acfa822102ba368dde55594e9f041f9df">Sdre::Sdre</a></div><div class="ttdeci">Sdre(Eigen::MatrixXf &amp;A, Eigen::MatrixXf &amp;B, Eigen::MatrixXf &amp;Q, Eigen::MatrixXf &amp;R)</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8cpp_source.html#l00010">Sdre.cpp:10</a></div></div>
-<div class="ttc" id="aclassSdre_html_ad244c5cc1e70a1b08e8e4d5655993d8b"><div class="ttname"><a href="classSdre.html#ad244c5cc1e70a1b08e8e4d5655993d8b">Sdre::G</a></div><div class="ttdeci">Eigen::MatrixXf G</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8h_source.html#l00039">Sdre.h:39</a></div></div>
-<div class="ttc" id="aclassSdre_html_ae868a877b9ade90516f90ff46a673568"><div class="ttname"><a href="classSdre.html#ae868a877b9ade90516f90ff46a673568">Sdre::phi</a></div><div class="ttdeci">Eigen::MatrixXf * phi</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8h_source.html#l00025">Sdre.h:25</a></div></div>
-<div class="ttc" id="aclassSdre_html_af2f380ec3d018b60686e304ca7026846"><div class="ttname"><a href="classSdre.html#af2f380ec3d018b60686e304ca7026846">Sdre::updateControl</a></div><div class="ttdeci">bool updateControl()</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8cpp_source.html#l00030">Sdre.cpp:30</a></div></div>
+<div class="ttc" id="aclassSdre_html_ae868a877b9ade90516f90ff46a673568"><div class="ttname"><a href="classSdre.html#ae868a877b9ade90516f90ff46a673568">Sdre::phi</a></div><div class="ttdeci">Eigen::MatrixXf * phi</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8h_source.html#l00026">Sdre.h:26</a></div></div>
+<div class="ttc" id="aclassSdre_html_af2f380ec3d018b60686e304ca7026846"><div class="ttname"><a href="classSdre.html#af2f380ec3d018b60686e304ca7026846">Sdre::updateControl</a></div><div class="ttdeci">bool updateControl()</div><div class="ttdef"><b>Definition:</b> <a href="Sdre_8cpp_source.html#l00032">Sdre.cpp:32</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

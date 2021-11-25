@@ -4,5 +4,5 @@ digraph "Riccati"
   bgcolor="transparent";
   edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
   node [fontname="DejaVuSansMono",fontsize="8",shape=record];
-  Node1 [label="{Riccati\n|+ Eigen::MatrixXf K\l+ Eigen::MatrixXf K_new\l+ Eigen::MatrixXf * phi\l+ Eigen::MatrixXf * gamma\l+ Eigen::MatrixXf * R\l+ Eigen::MatrixXf * Q\l+ Eigen::MatrixXf I\l+ Eigen::MatrixXf Ls\l+ int num_iterations\l|+  Riccati(Eigen::MatrixXf\l &_A, Eigen::MatrixXf &\l_B, Eigen::MatrixXf &_Q,\l Eigen::MatrixXf &_R)\l+ bool dareInteration\l(const float &tolerance\l=1.0E-5, const uint16_t\l iter_max=100)\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 [label="{Riccati\n|+ Eigen::MatrixXf K\l+ Eigen::MatrixXf K_new\l+ Eigen::MatrixXf * phi\l+ Eigen::MatrixXf * gamma\l+ Eigen::MatrixXf * R\l+ Eigen::MatrixXf * Q\l+ Eigen::MatrixXf I\l+ Eigen::MatrixXf Ls\l+ int num_iterations\l|+  Riccati(Eigen::MatrixXf\l &A, Eigen::MatrixXf &B,\l Eigen::MatrixXf &Q, Eigen\l::MatrixXf &R)\l+ bool dareInteration\l(const float &tolerance\l=1.0E-4, const uint16_t\l iter_max=50)\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
 }

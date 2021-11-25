@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compounddef id="structRPM__PIN" kind="struct" language="C++" prot="public">
+    <compoundname>RPM_PIN</compoundname>
+    <includes refid="PARAMETROS_8h" local="no">PARAMETROS.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structRPM__PIN_1aa6ec2287803bff359d5dcf912a4f99c0" prot="public" static="no" mutable="no">
+        <type>const gpio_num_t</type>
+        <definition>const gpio_num_t RPM_PIN::pin_rpm_motor_1</definition>
+        <argsstring></argsstring>
+        <name>pin_rpm_motor_1</name>
+        <initializer>= GPIO_NUM_18</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pino de leitura do RPM do motor 1 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/PARAMETROS.h" line="34" column="20" bodyfile="src/PARAMETROS.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structRPM__PIN_1a3d3abcef9e7170d3142f03bcc8f45619" prot="public" static="no" mutable="no">
+        <type>const gpio_num_t</type>
+        <definition>const gpio_num_t RPM_PIN::pin_rpm_motor_2</definition>
+        <argsstring></argsstring>
+        <name>pin_rpm_motor_2</name>
+        <initializer>= GPIO_NUM_34</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pino de leitura do RPM do motor 2 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/PARAMETROS.h" line="36" column="20" bodyfile="src/PARAMETROS.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structRPM__PIN_1a1a67d54627cf2595e3499a33300e3cbb" prot="public" static="no" mutable="no">
+        <type>const gpio_num_t</type>
+        <definition>const gpio_num_t RPM_PIN::pin_rpm_motor_3</definition>
+        <argsstring></argsstring>
+        <name>pin_rpm_motor_3</name>
+        <initializer>= GPIO_NUM_25</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pino de leitura do RPM do motor 3 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/PARAMETROS.h" line="38" column="20" bodyfile="src/PARAMETROS.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structRPM__PIN_1ab757f144fd7e4e0c1c9ec53e04d914cb" prot="public" static="no" mutable="no">
+        <type>const gpio_num_t</type>
+        <definition>const gpio_num_t RPM_PIN::pin_rpm_motor_4</definition>
+        <argsstring></argsstring>
+        <name>pin_rpm_motor_4</name>
+        <initializer>= GPIO_NUM_12</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pino de leitura do RPM do 4 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/PARAMETROS.h" line="40" column="20" bodyfile="src/PARAMETROS.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Pinos de contadores de RPM. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>RPM_PIN</label>
+        <link refid="structRPM__PIN"/>
+      </node>
+    </collaborationgraph>
+    <location file="src/PARAMETROS.h" line="32" column="1" bodyfile="src/PARAMETROS.h" bodystart="32" bodyend="41"/>
+    <listofallmembers>
+      <member refid="structRPM__PIN_1aa6ec2287803bff359d5dcf912a4f99c0" prot="public" virt="non-virtual"><scope>RPM_PIN</scope><name>pin_rpm_motor_1</name></member>
+      <member refid="structRPM__PIN_1a3d3abcef9e7170d3142f03bcc8f45619" prot="public" virt="non-virtual"><scope>RPM_PIN</scope><name>pin_rpm_motor_2</name></member>
+      <member refid="structRPM__PIN_1a1a67d54627cf2595e3499a33300e3cbb" prot="public" virt="non-virtual"><scope>RPM_PIN</scope><name>pin_rpm_motor_3</name></member>
+      <member refid="structRPM__PIN_1ab757f144fd7e4e0c1c9ec53e04d914cb" prot="public" virt="non-virtual"><scope>RPM_PIN</scope><name>pin_rpm_motor_4</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

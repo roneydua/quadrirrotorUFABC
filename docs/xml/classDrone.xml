@@ -17,8 +17,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/DRONE/Drone.h" line="26" column="15" bodyfile="lib/DRONE/Drone.h" bodystart="26" bodyend="-1"/>
-        <referencedby refid="classDrone_1a1f2103ef38b08c79aa88b3e790c16c5d" compoundref="Drone_8cpp" startline="67" endline="83">constructJ</referencedby>
+        <location file="lib/DRONE/Drone.h" line="27" column="15" bodyfile="lib/DRONE/Drone.h" bodystart="27" bodyend="-1"/>
+        <referencedby refid="classDrone_1a1f2103ef38b08c79aa88b3e790c16c5d" compoundref="Drone_8cpp" startline="67" endline="89">constructJ</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classDrone_1ae68802ad8fe8bbb370a19326fd7b5aef" prot="private" static="no" mutable="no">
         <type>float</type>
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/DRONE/Drone.h" line="27" column="9" bodyfile="lib/DRONE/Drone.h" bodystart="27" bodyend="-1"/>
+        <location file="lib/DRONE/Drone.h" line="28" column="9" bodyfile="lib/DRONE/Drone.h" bodystart="28" bodyend="-1"/>
         <referencedby refid="classDrone_1aad2198acbdcbc49c22173ad156ccab99" compoundref="Drone_8cpp" startline="13" endline="26">Drone</referencedby>
         <referencedby refid="classDrone_1a1531c9d38e26bb12a8b650ba40d915ca" compoundref="Drone_8cpp" startline="30" endline="66">updateStateMatrices</referencedby>
       </memberdef>
@@ -49,14 +49,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/DRONE/Drone.h" line="31" column="19" bodyfile="lib/DRONE/Drone.h" bodystart="31" bodyend="-1"/>
-        <referencedby refid="classDrone_1a1f2103ef38b08c79aa88b3e790c16c5d" compoundref="Drone_8cpp" startline="67" endline="83">constructJ</referencedby>
+        <location file="lib/DRONE/Drone.h" line="32" column="19" bodyfile="lib/DRONE/Drone.h" bodystart="32" bodyend="-1"/>
+        <referencedby refid="classDrone_1a1f2103ef38b08c79aa88b3e790c16c5d" compoundref="Drone_8cpp" startline="67" endline="89">constructJ</referencedby>
       </memberdef>
-      <memberdef kind="variable" id="classDrone_1adcfd685c1857b1b6b20984daac7e56e3" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="classDrone_1a63c1b3a18b61a34b0a084eff48ec2f12" prot="public" static="no" mutable="no">
         <type>Eigen::Matrix4f</type>
-        <definition>Eigen::Matrix4f Drone::Jinv</definition>
+        <definition>Eigen::Matrix4f Drone::JInverse</definition>
         <argsstring></argsstring>
-        <name>Jinv</name>
+        <name>JInverse</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -64,8 +64,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/DRONE/Drone.h" line="33" column="19" bodyfile="lib/DRONE/Drone.h" bodystart="33" bodyend="-1"/>
-        <referencedby refid="classDrone_1a1f2103ef38b08c79aa88b3e790c16c5d" compoundref="Drone_8cpp" startline="67" endline="83">constructJ</referencedby>
+        <location file="lib/DRONE/Drone.h" line="34" column="19" bodyfile="lib/DRONE/Drone.h" bodystart="34" bodyend="-1"/>
+        <referencedby refid="classDrone_1a1f2103ef38b08c79aa88b3e790c16c5d" compoundref="Drone_8cpp" startline="67" endline="89">constructJ</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classDrone_1a0f5dde1e661b072ffd1dcd2cde690e2b" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -78,7 +78,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/DRONE/Drone.h" line="35" column="9" bodyfile="lib/DRONE/Drone.h" bodystart="35" bodyend="-1"/>
+        <location file="lib/DRONE/Drone.h" line="36" column="9" bodyfile="lib/DRONE/Drone.h" bodystart="36" bodyend="-1"/>
         <referencedby refid="classDrone_1aad2198acbdcbc49c22173ad156ccab99" compoundref="Drone_8cpp" startline="13" endline="26">Drone</referencedby>
         <referencedby refid="classDrone_1a1531c9d38e26bb12a8b650ba40d915ca" compoundref="Drone_8cpp" startline="30" endline="66">updateStateMatrices</referencedby>
       </memberdef>
@@ -87,7 +87,7 @@
         <definition>float Drone::dx</definition>
         <argsstring></argsstring>
         <name>dx</name>
-        <initializer>= 0.1f</initializer>
+        <initializer>= 0.25f</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -95,7 +95,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/DRONE/Drone.h" line="37" column="9" bodyfile="lib/DRONE/Drone.h" bodystart="37" bodyend="-1"/>
+        <location file="lib/DRONE/Drone.h" line="38" column="9" bodyfile="lib/DRONE/Drone.h" bodystart="38" bodyend="-1"/>
         <referencedby refid="classDrone_1aad2198acbdcbc49c22173ad156ccab99" compoundref="Drone_8cpp" startline="13" endline="26">Drone</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classDrone_1ad04507c1b20ac5822461193ac819d929" prot="public" static="no" mutable="no">
@@ -103,15 +103,16 @@
         <definition>float Drone::massa</definition>
         <argsstring></argsstring>
         <name>massa</name>
-        <initializer>= 1.135f</initializer>
+        <initializer>= 1.136f</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>&quot;Massa do quadrirrotor em kg&quot; </para>
+<para>&quot;Massa do quadrirrotor em kg. Sem os apoios e as proteções massa=1.135,
+coso contrário, massa = 1.363&quot; </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/DRONE/Drone.h" line="39" column="9" bodyfile="lib/DRONE/Drone.h" bodystart="39" bodyend="-1"/>
+        <location file="lib/DRONE/Drone.h" line="41" column="9" bodyfile="lib/DRONE/Drone.h" bodystart="41" bodyend="-1"/>
         <referencedby refid="classDrone_1aad2198acbdcbc49c22173ad156ccab99" compoundref="Drone_8cpp" startline="13" endline="26">Drone</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classDrone_1a01882d591197d6978b479f0788ce01fc" prot="public" static="no" mutable="no">
@@ -119,7 +120,7 @@
         <definition>const Eigen::DiagonalMatrix&lt;float, 3&gt; Drone::matrizInercia</definition>
         <argsstring></argsstring>
         <name>matrizInercia</name>
-        <initializer>{10e-3f, 11e-3f, 18e-3f}</initializer>
+        <initializer>{10e-3f, 10e-3f, 18e-3f}</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -129,7 +130,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/DRONE/Drone.h" line="47" column="31" bodyfile="lib/DRONE/Drone.h" bodystart="47" bodyend="-1"/>
+        <location file="lib/DRONE/Drone.h" line="57" column="31" bodyfile="lib/DRONE/Drone.h" bodystart="57" bodyend="-1"/>
         <referencedby refid="classDrone_1a1531c9d38e26bb12a8b650ba40d915ca" compoundref="Drone_8cpp" startline="30" endline="66">updateStateMatrices</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classDrone_1a06cb6081fc81dd73b0fe9f9d68e5e8f7" prot="public" static="no" mutable="no">
@@ -148,7 +149,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/DRONE/Drone.h" line="53" column="31" bodyfile="lib/DRONE/Drone.h" bodystart="53" bodyend="-1"/>
+        <location file="lib/DRONE/Drone.h" line="63" column="31" bodyfile="lib/DRONE/Drone.h" bodystart="63" bodyend="-1"/>
         <referencedby refid="classDrone_1aad2198acbdcbc49c22173ad156ccab99" compoundref="Drone_8cpp" startline="13" endline="26">Drone</referencedby>
         <referencedby refid="classDrone_1a1531c9d38e26bb12a8b650ba40d915ca" compoundref="Drone_8cpp" startline="30" endline="66">updateStateMatrices</referencedby>
       </memberdef>
@@ -165,7 +166,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/DRONE/Drone.h" line="56" column="19" bodyfile="lib/DRONE/Drone.h" bodystart="56" bodyend="-1"/>
+        <location file="lib/DRONE/Drone.h" line="66" column="19" bodyfile="lib/DRONE/Drone.h" bodystart="66" bodyend="-1"/>
+        <referencedby refid="main_8cpp_1ad3d424dca818563665f9ab9bbf866fff" compoundref="main_8cpp" startline="128" endline="211">xTaskContol</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classDrone_1a178db613c8b400ef949969d1ca5a5169" prot="public" static="no" mutable="no">
         <type>Eigen::Vector3f</type>
@@ -180,7 +182,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/DRONE/Drone.h" line="58" column="19" bodyfile="lib/DRONE/Drone.h" bodystart="58" bodyend="-1"/>
+        <location file="lib/DRONE/Drone.h" line="68" column="19" bodyfile="lib/DRONE/Drone.h" bodystart="68" bodyend="-1"/>
+        <referencedby refid="main_8cpp_1ad3d424dca818563665f9ab9bbf866fff" compoundref="main_8cpp" startline="128" endline="211">xTaskContol</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classDrone_1a3d47c909c26ca68f771eb7ec0026e752" prot="public" static="no" mutable="no">
         <type>Eigen::Vector4f</type>
@@ -195,9 +198,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/DRONE/Drone.h" line="60" column="19" bodyfile="lib/DRONE/Drone.h" bodystart="60" bodyend="-1"/>
+        <location file="lib/DRONE/Drone.h" line="70" column="19" bodyfile="lib/DRONE/Drone.h" bodystart="70" bodyend="-1"/>
         <referencedby refid="classDrone_1a1531c9d38e26bb12a8b650ba40d915ca" compoundref="Drone_8cpp" startline="30" endline="66">updateStateMatrices</referencedby>
         <referencedby refid="classdrone_1_1Drone_1a76f6bdaa9ba1a10abd1b727c1681a2f1" compoundref="drone_8py" startline="59" endline="62">drone.Drone.updateStates</referencedby>
+        <referencedby refid="main_8cpp_1ad3d424dca818563665f9ab9bbf866fff" compoundref="main_8cpp" startline="128" endline="211">xTaskContol</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classDrone_1a0b41e19233070e221d0eaa03ce213bf5" prot="public" static="no" mutable="no">
         <type>Eigen::Vector3f</type>
@@ -212,8 +216,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/DRONE/Drone.h" line="62" column="19" bodyfile="lib/DRONE/Drone.h" bodystart="62" bodyend="-1"/>
+        <location file="lib/DRONE/Drone.h" line="72" column="19" bodyfile="lib/DRONE/Drone.h" bodystart="72" bodyend="-1"/>
         <referencedby refid="classDrone_1a1531c9d38e26bb12a8b650ba40d915ca" compoundref="Drone_8cpp" startline="30" endline="66">updateStateMatrices</referencedby>
+        <referencedby refid="main_8cpp_1ad3d424dca818563665f9ab9bbf866fff" compoundref="main_8cpp" startline="128" endline="211">xTaskContol</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classDrone_1a7441826ef17c5566c910dc76844fbde3" prot="public" static="no" mutable="no">
         <type>Eigen::MatrixXf</type>
@@ -228,7 +233,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/DRONE/Drone.h" line="65" column="19" bodyfile="lib/DRONE/Drone.h" bodystart="65" bodyend="-1"/>
+        <location file="lib/DRONE/Drone.h" line="75" column="19" bodyfile="lib/DRONE/Drone.h" bodystart="75" bodyend="-1"/>
         <referencedby refid="classDrone_1aad2198acbdcbc49c22173ad156ccab99" compoundref="Drone_8cpp" startline="13" endline="26">Drone</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classDrone_1aadb4722611d7c3bf7f397361f6cd208e" prot="public" static="no" mutable="no">
@@ -244,7 +249,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/DRONE/Drone.h" line="68" column="19" bodyfile="lib/DRONE/Drone.h" bodystart="68" bodyend="-1"/>
+        <location file="lib/DRONE/Drone.h" line="78" column="19" bodyfile="lib/DRONE/Drone.h" bodystart="78" bodyend="-1"/>
         <referencedby refid="classDrone_1aad2198acbdcbc49c22173ad156ccab99" compoundref="Drone_8cpp" startline="13" endline="26">Drone</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classDrone_1ad10e4c0ff42b803d922bff24ff9a1710" prot="public" static="no" mutable="no">
@@ -260,7 +265,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/DRONE/Drone.h" line="70" column="19" bodyfile="lib/DRONE/Drone.h" bodystart="70" bodyend="-1"/>
+        <location file="lib/DRONE/Drone.h" line="81" column="19" bodyfile="lib/DRONE/Drone.h" bodystart="81" bodyend="-1"/>
         <referencedby refid="classDrone_1a1531c9d38e26bb12a8b650ba40d915ca" compoundref="Drone_8cpp" startline="30" endline="66">updateStateMatrices</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classDrone_1a8b19688fe7deefa69ab8a864cd5b6024" prot="public" static="no" mutable="no">
@@ -276,7 +281,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/DRONE/Drone.h" line="72" column="19" bodyfile="lib/DRONE/Drone.h" bodystart="72" bodyend="-1"/>
+        <location file="lib/DRONE/Drone.h" line="83" column="19" bodyfile="lib/DRONE/Drone.h" bodystart="83" bodyend="-1"/>
         <referencedby refid="classDrone_1aad2198acbdcbc49c22173ad156ccab99" compoundref="Drone_8cpp" startline="13" endline="26">Drone</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classDrone_1ac6e19b1cde8263a3e9a96b965bdd71d7" prot="public" static="no" mutable="no">
@@ -295,13 +300,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/DRONE/Drone.h" line="74" column="31" bodyfile="lib/DRONE/Drone.h" bodystart="74" bodyend="-1"/>
+        <location file="lib/DRONE/Drone.h" line="91" column="31" bodyfile="lib/DRONE/Drone.h" bodystart="91" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classDrone_1a4e3fa542ac32a6564c83adaf62cc34b3" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="classDrone_1ac5169f79489402261d68671ff6483da0" prot="public" static="no" mutable="no">
         <type>const Eigen::DiagonalMatrix&lt; float, 4 &gt;</type>
-        <definition>const Eigen::DiagonalMatrix&lt;float, 4&gt; Drone::Hinv</definition>
+        <definition>const Eigen::DiagonalMatrix&lt;float, 4&gt; Drone::HInverse</definition>
         <argsstring></argsstring>
-        <name>Hinv</name>
+        <name>HInverse</name>
         <initializer>=
       (Eigen::Vector4f(4) &lt;&lt; 1.0f / 0.724048f, 1.0f / 0.73493f,
        1.0f / 0.707656f, 1.0f / 0.727027f)
@@ -313,7 +318,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/DRONE/Drone.h" line="78" column="31" bodyfile="lib/DRONE/Drone.h" bodystart="78" bodyend="-1"/>
+        <location file="lib/DRONE/Drone.h" line="102" column="31" bodyfile="lib/DRONE/Drone.h" bodystart="102" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classDrone_1adecfbf29f2f305ec0987c8742994d185" prot="public" static="no" mutable="no">
         <type>const Eigen::Vector4f</type>
@@ -328,7 +333,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/DRONE/Drone.h" line="84" column="25" bodyfile="lib/DRONE/Drone.h" bodystart="84" bodyend="-1"/>
+        <location file="lib/DRONE/Drone.h" line="109" column="25" bodyfile="lib/DRONE/Drone.h" bodystart="109" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classDrone_1aa715343de198585f9266431776d58784" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -342,7 +347,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/DRONE/Drone.h" line="88" column="7" bodyfile="lib/DRONE/Drone.h" bodystart="88" bodyend="-1"/>
+        <location file="lib/DRONE/Drone.h" line="114" column="7" bodyfile="lib/DRONE/Drone.h" bodystart="114" bodyend="-1"/>
         <referencedby refid="classDrone_1a1531c9d38e26bb12a8b650ba40d915ca" compoundref="Drone_8cpp" startline="30" endline="66">updateStateMatrices</referencedby>
       </memberdef>
       </sectiondef>
@@ -357,21 +362,32 @@
           <declname>_dt</declname>
         </param>
         <briefdescription>
+<para>Construct a new <ref refid="classDrone" kindref="compound">Drone</ref> object. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>_dt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tempo do discretização da planta para loop do controle. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/DRONE/Drone.h" line="41" column="3" bodyfile="lib/DRONE/Drone.cpp" bodystart="13" bodyend="26"/>
-        <references refid="classDrone_1a1f2103ef38b08c79aa88b3e790c16c5d" compoundref="Drone_8cpp" startline="67" endline="83">constructJ</references>
-        <references refid="classDrone_1a0f5dde1e661b072ffd1dcd2cde690e2b" compoundref="Drone_8h" startline="35">dt</references>
-        <references refid="classDrone_1acc28d2a6d7fc4265e8ad012910b41add" compoundref="Drone_8h" startline="37">dx</references>
-        <references refid="classDrone_1ae68802ad8fe8bbb370a19326fd7b5aef" compoundref="Drone_8h" startline="27">half_dt</references>
-        <references refid="classDrone_1a06cb6081fc81dd73b0fe9f9d68e5e8f7" compoundref="Drone_8h" startline="53">inverseMatrizInercia</references>
-        <references refid="classDrone_1ad04507c1b20ac5822461193ac819d929" compoundref="Drone_8h" startline="39">massa</references>
-        <references refid="classDrone_1a7441826ef17c5566c910dc76844fbde3" compoundref="Drone_8h" startline="65">matAT</references>
-        <references refid="classDrone_1a8b19688fe7deefa69ab8a864cd5b6024" compoundref="Drone_8h" startline="72">matBR</references>
-        <references refid="classDrone_1aadb4722611d7c3bf7f397361f6cd208e" compoundref="Drone_8h" startline="68">matBT</references>
+        <location file="lib/DRONE/Drone.h" line="49" column="3" bodyfile="lib/DRONE/Drone.cpp" bodystart="13" bodyend="26"/>
+        <references refid="classDrone_1a1f2103ef38b08c79aa88b3e790c16c5d" compoundref="Drone_8cpp" startline="67" endline="89">constructJ</references>
+        <references refid="classDrone_1a0f5dde1e661b072ffd1dcd2cde690e2b" compoundref="Drone_8h" startline="36">dt</references>
+        <references refid="classDrone_1acc28d2a6d7fc4265e8ad012910b41add" compoundref="Drone_8h" startline="38">dx</references>
+        <references refid="classDrone_1ae68802ad8fe8bbb370a19326fd7b5aef" compoundref="Drone_8h" startline="28">half_dt</references>
+        <references refid="classDrone_1a06cb6081fc81dd73b0fe9f9d68e5e8f7" compoundref="Drone_8h" startline="63">inverseMatrizInercia</references>
+        <references refid="classDrone_1ad04507c1b20ac5822461193ac819d929" compoundref="Drone_8h" startline="41">massa</references>
+        <references refid="classDrone_1a7441826ef17c5566c910dc76844fbde3" compoundref="Drone_8h" startline="75">matAT</references>
+        <references refid="classDrone_1a8b19688fe7deefa69ab8a864cd5b6024" compoundref="Drone_8h" startline="83">matBR</references>
+        <references refid="classDrone_1aadb4722611d7c3bf7f397361f6cd208e" compoundref="Drone_8h" startline="78">matBT</references>
       </memberdef>
       <memberdef kind="function" id="classDrone_1a1531c9d38e26bb12a8b650ba40d915ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -389,16 +405,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/DRONE/Drone.h" line="85" column="8" bodyfile="lib/DRONE/Drone.cpp" bodystart="30" bodyend="66"/>
-        <references refid="classDrone_1a0f5dde1e661b072ffd1dcd2cde690e2b" compoundref="Drone_8h" startline="35">dt</references>
-        <references refid="classDrone_1aa715343de198585f9266431776d58784" compoundref="Drone_8h" startline="88">flagSDC</references>
-        <references refid="classDrone_1ae68802ad8fe8bbb370a19326fd7b5aef" compoundref="Drone_8h" startline="27">half_dt</references>
-        <references refid="classDrone_1a06cb6081fc81dd73b0fe9f9d68e5e8f7" compoundref="Drone_8h" startline="53">inverseMatrizInercia</references>
-        <references refid="classDrone_1ad10e4c0ff42b803d922bff24ff9a1710" compoundref="Drone_8h" startline="70">matAR</references>
-        <references refid="classDrone_1a01882d591197d6978b479f0788ce01fc" compoundref="Drone_8h" startline="47">matrizInercia</references>
-        <references refid="classDrone_1a3d47c909c26ca68f771eb7ec0026e752" compoundref="Drone_8h" startline="60">q</references>
+        <location file="lib/DRONE/Drone.h" line="111" column="8" bodyfile="lib/DRONE/Drone.cpp" bodystart="30" bodyend="66"/>
+        <references refid="classDrone_1a0f5dde1e661b072ffd1dcd2cde690e2b" compoundref="Drone_8h" startline="36">dt</references>
+        <references refid="classDrone_1aa715343de198585f9266431776d58784" compoundref="Drone_8h" startline="114">flagSDC</references>
+        <references refid="classDrone_1ae68802ad8fe8bbb370a19326fd7b5aef" compoundref="Drone_8h" startline="28">half_dt</references>
+        <references refid="classDrone_1a06cb6081fc81dd73b0fe9f9d68e5e8f7" compoundref="Drone_8h" startline="63">inverseMatrizInercia</references>
+        <references refid="classDrone_1ad10e4c0ff42b803d922bff24ff9a1710" compoundref="Drone_8h" startline="81">matAR</references>
+        <references refid="classDrone_1a01882d591197d6978b479f0788ce01fc" compoundref="Drone_8h" startline="57">matrizInercia</references>
+        <references refid="classDrone_1a3d47c909c26ca68f771eb7ec0026e752" compoundref="Drone_8h" startline="70">q</references>
         <references refid="namespaceekf_1af3f0a631343e55ec8b42f3fbea182461" compoundref="GRUPO__QUAT_8cpp" startline="62" endline="67">ekf::skew</references>
-        <references refid="classDrone_1a0b41e19233070e221d0eaa03ce213bf5" compoundref="Drone_8h" startline="62">w</references>
+        <references refid="classDrone_1a0b41e19233070e221d0eaa03ce213bf5" compoundref="Drone_8h" startline="72">w</references>
       </memberdef>
       <memberdef kind="function" id="classDrone_1a1f2103ef38b08c79aa88b3e790c16c5d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -411,10 +427,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/DRONE/Drone.h" line="86" column="8" bodyfile="lib/DRONE/Drone.cpp" bodystart="67" bodyend="83"/>
-        <references refid="classDrone_1a30d56665a907276e7ca50ab3c75d730a" compoundref="Drone_8h" startline="31">J</references>
-        <references refid="classDrone_1adcfd685c1857b1b6b20984daac7e56e3" compoundref="Drone_8h" startline="33">Jinv</references>
-        <references refid="classDrone_1aa44361841fbfc3ac45bed2cdfb598262" compoundref="Drone_8h" startline="26">L</references>
+        <location file="lib/DRONE/Drone.h" line="112" column="8" bodyfile="lib/DRONE/Drone.cpp" bodystart="67" bodyend="89"/>
+        <references refid="classDrone_1a30d56665a907276e7ca50ab3c75d730a" compoundref="Drone_8h" startline="32">J</references>
+        <references refid="classDrone_1a63c1b3a18b61a34b0a084eff48ec2f12" compoundref="Drone_8h" startline="34">JInverse</references>
+        <references refid="namespacedrone_1ab194ab949cad78f85bdb8238f9731f37" compoundref="drone_8py" startline="17">drone.kf</references>
+        <references refid="namespacedrone_1a3e06d763422e3ea068add06fd5e3a98b" compoundref="drone_8py" startline="18">drone.km</references>
+        <references refid="classDrone_1aa44361841fbfc3ac45bed2cdfb598262" compoundref="Drone_8h" startline="27">L</references>
         <referencedby refid="classDrone_1aad2198acbdcbc49c22173ad156ccab99" compoundref="Drone_8cpp" startline="13" endline="26">Drone</referencedby>
       </memberdef>
       </sectiondef>
@@ -428,7 +446,7 @@
         <link refid="classDrone"/>
       </node>
     </collaborationgraph>
-    <location file="lib/DRONE/Drone.h" line="22" column="1" bodyfile="lib/DRONE/Drone.h" bodystart="22" bodyend="89"/>
+    <location file="lib/DRONE/Drone.h" line="23" column="1" bodyfile="lib/DRONE/Drone.h" bodystart="23" bodyend="115"/>
     <listofallmembers>
       <member refid="classDrone_1a1f2103ef38b08c79aa88b3e790c16c5d" prot="public" virt="non-virtual"><scope>Drone</scope><name>constructJ</name></member>
       <member refid="classDrone_1aad2198acbdcbc49c22173ad156ccab99" prot="public" virt="non-virtual"><scope>Drone</scope><name>Drone</name></member>
@@ -438,10 +456,10 @@
       <member refid="classDrone_1adecfbf29f2f305ec0987c8742994d185" prot="public" virt="non-virtual"><scope>Drone</scope><name>h</name></member>
       <member refid="classDrone_1ac6e19b1cde8263a3e9a96b965bdd71d7" prot="public" virt="non-virtual"><scope>Drone</scope><name>H</name></member>
       <member refid="classDrone_1ae68802ad8fe8bbb370a19326fd7b5aef" prot="private" virt="non-virtual"><scope>Drone</scope><name>half_dt</name></member>
-      <member refid="classDrone_1a4e3fa542ac32a6564c83adaf62cc34b3" prot="public" virt="non-virtual"><scope>Drone</scope><name>Hinv</name></member>
+      <member refid="classDrone_1ac5169f79489402261d68671ff6483da0" prot="public" virt="non-virtual"><scope>Drone</scope><name>HInverse</name></member>
       <member refid="classDrone_1a06cb6081fc81dd73b0fe9f9d68e5e8f7" prot="public" virt="non-virtual"><scope>Drone</scope><name>inverseMatrizInercia</name></member>
       <member refid="classDrone_1a30d56665a907276e7ca50ab3c75d730a" prot="public" virt="non-virtual"><scope>Drone</scope><name>J</name></member>
-      <member refid="classDrone_1adcfd685c1857b1b6b20984daac7e56e3" prot="public" virt="non-virtual"><scope>Drone</scope><name>Jinv</name></member>
+      <member refid="classDrone_1a63c1b3a18b61a34b0a084eff48ec2f12" prot="public" virt="non-virtual"><scope>Drone</scope><name>JInverse</name></member>
       <member refid="classDrone_1aa44361841fbfc3ac45bed2cdfb598262" prot="private" virt="non-virtual"><scope>Drone</scope><name>L</name></member>
       <member refid="classDrone_1ad04507c1b20ac5822461193ac819d929" prot="public" virt="non-virtual"><scope>Drone</scope><name>massa</name></member>
       <member refid="classDrone_1ad10e4c0ff42b803d922bff24ff9a1710" prot="public" virt="non-virtual"><scope>Drone</scope><name>matAR</name></member>

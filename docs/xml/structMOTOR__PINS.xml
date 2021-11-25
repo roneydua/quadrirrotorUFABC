@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compounddef id="structMOTOR__PINS" kind="struct" language="C++" prot="public">
+    <compoundname>MOTOR_PINS</compoundname>
+    <includes refid="PARAMETROS_8h" local="no">PARAMETROS.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structMOTOR__PINS_1a75c3ad59c9a4d74b4aad784c0d42aa9f" prot="public" static="no" mutable="no">
+        <type>const gpio_num_t</type>
+        <definition>const gpio_num_t MOTOR_PINS::motor_1</definition>
+        <argsstring></argsstring>
+        <name>motor_1</name>
+        <initializer>= GPIO_NUM_18</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pino do motor 1 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/PARAMETROS.h" line="19" column="20" bodyfile="src/PARAMETROS.h" bodystart="19" bodyend="-1"/>
+        <referencedby refid="main_8cpp_1ad3d424dca818563665f9ab9bbf866fff" compoundref="main_8cpp" startline="128" endline="211">xTaskContol</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structMOTOR__PINS_1ac822ad9d410af01bc842d9e2805f2b8c" prot="public" static="no" mutable="no">
+        <type>const gpio_num_t</type>
+        <definition>const gpio_num_t MOTOR_PINS::motor_2</definition>
+        <argsstring></argsstring>
+        <name>motor_2</name>
+        <initializer>= GPIO_NUM_32</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pino do motor 2 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/PARAMETROS.h" line="21" column="20" bodyfile="src/PARAMETROS.h" bodystart="21" bodyend="-1"/>
+        <referencedby refid="main_8cpp_1ad3d424dca818563665f9ab9bbf866fff" compoundref="main_8cpp" startline="128" endline="211">xTaskContol</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structMOTOR__PINS_1a35f019e1b631ba3ab3a68dca85d9c8ee" prot="public" static="no" mutable="no">
+        <type>const gpio_num_t</type>
+        <definition>const gpio_num_t MOTOR_PINS::motor_3</definition>
+        <argsstring></argsstring>
+        <name>motor_3</name>
+        <initializer>= GPIO_NUM_33</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pino do motor 3 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/PARAMETROS.h" line="23" column="20" bodyfile="src/PARAMETROS.h" bodystart="23" bodyend="-1"/>
+        <referencedby refid="main_8cpp_1ad3d424dca818563665f9ab9bbf866fff" compoundref="main_8cpp" startline="128" endline="211">xTaskContol</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structMOTOR__PINS_1aaafa7fa4f83d2d5aa2f9f0c54a130040" prot="public" static="no" mutable="no">
+        <type>const gpio_num_t</type>
+        <definition>const gpio_num_t MOTOR_PINS::motor_4</definition>
+        <argsstring></argsstring>
+        <name>motor_4</name>
+        <initializer>= GPIO_NUM_14</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pino do motor 4 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/PARAMETROS.h" line="25" column="20" bodyfile="src/PARAMETROS.h" bodystart="25" bodyend="-1"/>
+        <referencedby refid="main_8cpp_1ad3d424dca818563665f9ab9bbf866fff" compoundref="main_8cpp" startline="128" endline="211">xTaskContol</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Pinos de conexão dos motores. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>MOTOR_PINS</label>
+        <link refid="structMOTOR__PINS"/>
+      </node>
+    </collaborationgraph>
+    <location file="src/PARAMETROS.h" line="17" column="1" bodyfile="src/PARAMETROS.h" bodystart="17" bodyend="26"/>
+    <listofallmembers>
+      <member refid="structMOTOR__PINS_1a75c3ad59c9a4d74b4aad784c0d42aa9f" prot="public" virt="non-virtual"><scope>MOTOR_PINS</scope><name>motor_1</name></member>
+      <member refid="structMOTOR__PINS_1ac822ad9d410af01bc842d9e2805f2b8c" prot="public" virt="non-virtual"><scope>MOTOR_PINS</scope><name>motor_2</name></member>
+      <member refid="structMOTOR__PINS_1a35f019e1b631ba3ab3a68dca85d9c8ee" prot="public" virt="non-virtual"><scope>MOTOR_PINS</scope><name>motor_3</name></member>
+      <member refid="structMOTOR__PINS_1aaafa7fa4f83d2d5aa2f9f0c54a130040" prot="public" virt="non-virtual"><scope>MOTOR_PINS</scope><name>motor_4</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

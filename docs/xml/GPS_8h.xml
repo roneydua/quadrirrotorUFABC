@@ -158,9 +158,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="lib/EKF/GPS.h" line="146" column="12" bodyfile="lib/EKF/GPS.h" bodystart="146" bodyend="-1"/>
-        <referencedby refid="classMETODOSCALIBRACAO_1ad7b555b5f46cdad7ae551f5cd4886a9b" compoundref="METODOSCALIBRACAO_8h" startline="103" endline="144">METODOSCALIBRACAO::calibracaoAcelerometro</referencedby>
-        <referencedby refid="classMETODOSCALIBRACAO_1af0478ed112a1139bafefe7833568e641" compoundref="METODOSCALIBRACAO_8h" startline="43" endline="91">METODOSCALIBRACAO::calibracaoGeometrica</referencedby>
-        <referencedby refid="classTELEMETRIA_1ace27ccd5888ebc3802a4eb22cc3fd9da" compoundref="TELEMETRIA_8cpp" startline="69" endline="77">TELEMETRIA::OnDataRecv</referencedby>
+        <referencedby refid="classMETODOSCALIBRACAO_1ad7b555b5f46cdad7ae551f5cd4886a9b" compoundref="METODOSCALIBRACAO_8h" startline="104" endline="145">METODOSCALIBRACAO::calibracaoAcelerometro</referencedby>
+        <referencedby refid="classMETODOSCALIBRACAO_1af0478ed112a1139bafefe7833568e641" compoundref="METODOSCALIBRACAO_8h" startline="44" endline="92">METODOSCALIBRACAO::calibracaoGeometrica</referencedby>
+        <referencedby refid="classTELEMETRIA_1ace27ccd5888ebc3802a4eb22cc3fd9da" compoundref="TELEMETRIA_8cpp" startline="83" endline="91">TELEMETRIA::OnDataRecv</referencedby>
         <referencedby refid="classIMU_1af3b90e0b20d4bd55091be99f7aa67737" compoundref="IMU_8cpp" startline="368" endline="394">IMU::writeAK8963Register</referencedby>
         <referencedby refid="classIMU_1a37694424e4502ffc69bbb6c540c1a400" compoundref="IMU_8cpp" startline="402" endline="416">IMU::writeRegister</referencedby>
       </memberdef>
@@ -215,7 +215,7 @@
         </inbodydescription>
         <location file="lib/EKF/GPS.h" line="181" column="6" bodyfile="lib/EKF/GPS.h" bodystart="181" bodyend="282"/>
         <references refid="GPS_8h_1a5d2ecd8f29f7e3e702c8b8bea333f6c6">GPSSERIAL</references>
-        <referencedby refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" compoundref="EKF_8cpp" startline="39" endline="89">ekf::EKF::begin</referencedby>
+        <referencedby refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" compoundref="EKF_8cpp" startline="40" endline="97">ekf::EKF::begin</referencedby>
       </memberdef>
       <memberdef kind="function" id="GPS_8h_1aa2fac937d6e192633f020459321241e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>

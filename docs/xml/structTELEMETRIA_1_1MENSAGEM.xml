@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compounddef id="structTELEMETRIA_1_1MENSAGEM" kind="struct" language="C++" prot="public">
+    <compoundname>TELEMETRIA::MENSAGEM</compoundname>
+    <includes refid="TELEMETRIA_8h" local="no">TELEMETRIA.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structTELEMETRIA_1_1MENSAGEM_1a39b1c3e6ce2fed1184fba64fbd81721d" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char TELEMETRIA::MENSAGEM::info[35]</definition>
+        <argsstring>[35]</argsstring>
+        <name>info</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TELEMETRIA/TELEMETRIA.h" line="55" column="10" bodyfile="lib/TELEMETRIA/TELEMETRIA.h" bodystart="55" bodyend="-1"/>
+        <referencedby refid="classTELEMETRIA_1a6c13ae22d648afb2c7bd41f3e17ba4b6" compoundref="TELEMETRIA_8cpp" startline="69" endline="81">TELEMETRIA::enviaMensagem</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Mensagem de texto para envio. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Tamanho 35 Bytes </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>TELEMETRIA::MENSAGEM</label>
+        <link refid="structTELEMETRIA_1_1MENSAGEM"/>
+      </node>
+    </collaborationgraph>
+    <location file="lib/TELEMETRIA/TELEMETRIA.h" line="54" column="3" bodyfile="lib/TELEMETRIA/TELEMETRIA.h" bodystart="54" bodyend="56"/>
+    <listofallmembers>
+      <member refid="structTELEMETRIA_1_1MENSAGEM_1a39b1c3e6ce2fed1184fba64fbd81721d" prot="public" virt="non-virtual"><scope>TELEMETRIA::MENSAGEM</scope><name>info</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

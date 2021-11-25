@@ -14,9 +14,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/IBUSBM/IBusBM.h" line="100" column="13" bodyfile="lib/IBUSBM/IBusBM.h" bodystart="100" bodyend="-1"/>
-        <referencedby refid="classIBusBM_1a126cc857adec1367f7264f27ae68a347" compoundref="IBusBM_8cpp" startline="298" endline="310">IBusBM::addSensor</referencedby>
-        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="171" endline="288">IBusBM::loop</referencedby>
+        <location file="src/IBusBM.h" line="131" column="13" bodyfile="src/IBusBM.h" bodystart="131" bodyend="-1"/>
+        <referencedby refid="classIBusBM_1a126cc857adec1367f7264f27ae68a347" compoundref="IBusBM_8cpp" startline="292" endline="304">IBusBM::addSensor</referencedby>
+        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="165" endline="282">IBusBM::loop</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structIBusBM_1_1sensorinfo_1a0838975a9991ce94a7009f237cd7edc2" prot="public" static="no" mutable="no">
         <type>uint8_t</type>
@@ -29,9 +29,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/IBUSBM/IBusBM.h" line="101" column="13" bodyfile="lib/IBUSBM/IBusBM.h" bodystart="101" bodyend="-1"/>
-        <referencedby refid="classIBusBM_1a126cc857adec1367f7264f27ae68a347" compoundref="IBusBM_8cpp" startline="298" endline="310">IBusBM::addSensor</referencedby>
-        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="171" endline="288">IBusBM::loop</referencedby>
+        <location file="src/IBusBM.h" line="132" column="13" bodyfile="src/IBusBM.h" bodystart="132" bodyend="-1"/>
+        <referencedby refid="classIBusBM_1a126cc857adec1367f7264f27ae68a347" compoundref="IBusBM_8cpp" startline="292" endline="304">IBusBM::addSensor</referencedby>
+        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="165" endline="282">IBusBM::loop</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structIBusBM_1_1sensorinfo_1a07cfd12b2c2a8982a88aeecf85bd322b" prot="public" static="no" mutable="no">
         <type>int32_t</type>
@@ -44,10 +44,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/IBUSBM/IBusBM.h" line="102" column="13" bodyfile="lib/IBUSBM/IBusBM.h" bodystart="102" bodyend="-1"/>
-        <referencedby refid="classIBusBM_1a126cc857adec1367f7264f27ae68a347" compoundref="IBusBM_8cpp" startline="298" endline="310">IBusBM::addSensor</referencedby>
-        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="171" endline="288">IBusBM::loop</referencedby>
-        <referencedby refid="classIBusBM_1acbd0bcad0529b872c72d4e7a49233460" compoundref="IBusBM_8cpp" startline="312" endline="315">IBusBM::setSensorMeasurement</referencedby>
+        <location file="src/IBusBM.h" line="133" column="13" bodyfile="src/IBusBM.h" bodystart="133" bodyend="-1"/>
+        <referencedby refid="classIBusBM_1a126cc857adec1367f7264f27ae68a347" compoundref="IBusBM_8cpp" startline="292" endline="304">IBusBM::addSensor</referencedby>
+        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="165" endline="282">IBusBM::loop</referencedby>
+        <referencedby refid="classIBusBM_1acbd0bcad0529b872c72d4e7a49233460" compoundref="IBusBM_8cpp" startline="306" endline="309">IBusBM::setSensorMeasurement</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -60,7 +60,7 @@
         <link refid="structIBusBM_1_1sensorinfo"/>
       </node>
     </collaborationgraph>
-    <location file="lib/IBUSBM/IBusBM.h" line="99" column="3" bodyfile="lib/IBUSBM/IBusBM.h" bodystart="99" bodyend="103"/>
+    <location file="src/IBusBM.h" line="130" column="3" bodyfile="src/IBusBM.h" bodystart="130" bodyend="134"/>
     <listofallmembers>
       <member refid="structIBusBM_1_1sensorinfo_1a0838975a9991ce94a7009f237cd7edc2" prot="public" virt="non-virtual"><scope>IBusBM::sensorinfo</scope><name>sensorLength</name></member>
       <member refid="structIBusBM_1_1sensorinfo_1abd881da866db85793dcdd020d8eecb5c" prot="public" virt="non-virtual"><scope>IBusBM::sensorinfo</scope><name>sensorType</name></member>

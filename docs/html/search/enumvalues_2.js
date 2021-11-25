@@ -1,11 +1,10 @@
 var searchData=
 [
-  ['get_5fchksumh_1044',['GET_CHKSUMH',['../classIBusBM.html#aed184764706c5dcb4b82ae4a53b917ecaf7c395fada4d5074ad979c56cfde8ed0',1,'IBusBM']]],
-  ['get_5fchksuml_1045',['GET_CHKSUML',['../classIBusBM.html#aed184764706c5dcb4b82ae4a53b917ecaa7f315ef3b8eab0e0f6abc1b3f25bcc0',1,'IBusBM']]],
-  ['get_5fdata_1046',['GET_DATA',['../classIBusBM.html#aed184764706c5dcb4b82ae4a53b917eca4ed4c7f6e05b116601121d0bac402f42',1,'IBusBM']]],
-  ['get_5flength_1047',['GET_LENGTH',['../classIBusBM.html#aed184764706c5dcb4b82ae4a53b917eca0c01e1a9f134347f73969aeba38df424',1,'IBusBM']]],
-  ['gyro_5frange_5f1000dps_1048',['GYRO_RANGE_1000DPS',['../classIMU.html#aeb363437539137b5c1eabd3641d242d1ac11c26d662eb1906caf70fb73d96e8bb',1,'IMU']]],
-  ['gyro_5frange_5f2000dps_1049',['GYRO_RANGE_2000DPS',['../classIMU.html#aeb363437539137b5c1eabd3641d242d1aa9e87e7d062d3bb23e1c9b5a1e85af11',1,'IMU']]],
-  ['gyro_5frange_5f250dps_1050',['GYRO_RANGE_250DPS',['../classIMU.html#aeb363437539137b5c1eabd3641d242d1a1726a676d603df0b5c73ff7f1fff00d3',1,'IMU']]],
-  ['gyro_5frange_5f500dps_1051',['GYRO_RANGE_500DPS',['../classIMU.html#aeb363437539137b5c1eabd3641d242d1a8a24172a6bd08e9402c83af2f12bed57',1,'IMU']]]
+  ['discard_1137',['DISCARD',['../classIBusBM.html#aed184764706c5dcb4b82ae4a53b917eca9c69e26c2830eb900cd5603714acd289',1,'IBusBM']]],
+  ['dlpf_5fbandwidth_5f10hz_1138',['DLPF_BANDWIDTH_10HZ',['../classIMU.html#a90c4f91f60185430b763f152ecb39521a38fa7998dfeb640e0289bc7407c40285',1,'IMU']]],
+  ['dlpf_5fbandwidth_5f184hz_1139',['DLPF_BANDWIDTH_184HZ',['../classIMU.html#a90c4f91f60185430b763f152ecb39521a461c657b4bc9c4f82936a9cb3b5ef54e',1,'IMU']]],
+  ['dlpf_5fbandwidth_5f20hz_1140',['DLPF_BANDWIDTH_20HZ',['../classIMU.html#a90c4f91f60185430b763f152ecb39521a174ee7819d598dcbb0d29cf8d0f17e8f',1,'IMU']]],
+  ['dlpf_5fbandwidth_5f41hz_1141',['DLPF_BANDWIDTH_41HZ',['../classIMU.html#a90c4f91f60185430b763f152ecb39521afcbbbba2e520cdd50dcb40da160137f0',1,'IMU']]],
+  ['dlpf_5fbandwidth_5f5hz_1142',['DLPF_BANDWIDTH_5HZ',['../classIMU.html#a90c4f91f60185430b763f152ecb39521a1d05af591f93fc300ae7ef2608c62f51',1,'IMU']]],
+  ['dlpf_5fbandwidth_5f92hz_1143',['DLPF_BANDWIDTH_92HZ',['../classIMU.html#a90c4f91f60185430b763f152ecb39521ac652b0fb4733da213152970ebc6ab53d',1,'IMU']]]
 ];

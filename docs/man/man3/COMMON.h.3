@@ -1,4 +1,4 @@
-.TH "src/COMMON.h" 3 "Sexta, 17 de Setembro de 2021" "Quadrirrotor" \" -*- nroff -*-
+.TH "src/COMMON.h" 3 "Segunda, 25 de Outubro de 2021" "Quadrirrotor" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -15,27 +15,107 @@ src/COMMON.h
 .ti -1c
 .RI "void \fBblindLED\fP (size_t times)"
 .br
+.RI "Pisca o led #times vezes\&. "
+.ti -1c
+.RI "void \fBturnOnLed\fP (void)"
+.br
+.RI "Liga o led de comunicação\&. "
+.ti -1c
+.RI "void \fBturnOffLed\fP (void)"
+.br
+.RI "Desliga o led de comunicação\&. "
 .in -1c
+.SH "Descrição detalhada"
+.PP 
+
+.PP
+\fBAutor\fP
+.RS 4
+roneydua (roneyddasilva@gmail.com) 
+.RE
+.PP
+\fBVersão\fP
+.RS 4
+0\&.1 
+.RE
+.PP
+\fBData\fP
+.RS 4
+2021-10-15
+.RE
+.PP
+\fBCopyright\fP
+.RS 4
+Copyright (c) 2021 
+.RE
+.PP
+
+.PP
+Definição no arquivo \fBCOMMON\&.h\fP\&.
 .SH "Funções"
 .PP 
 .SS "void blindLED (size_t times)\fC [inline]\fP"
 
 .PP
-Definição na linha 4 do arquivo COMMON\&.h\&.
+Pisca o led #times vezes\&. 
+.PP
+\fBParâmetros\fP
+.RS 4
+\fItimes\fP Número de vezes que o led piscará\&. 
+.RE
+.PP
+
+.PP
+Definição na linha 19 do arquivo COMMON\&.h\&.
 .PP
 .nf
-4                                    {
-5   extern gpio_num_t onboard_led;
-6   int count = 0;
-7   for (size_t i = 0; i < 2 * times; i++) {
-8     digitalWrite(onboard_led, count);
-9     vTaskDelay(500);
-10     count = 1 - count;
-11   }
-12 }
+19                                    {
+20   extern gpio_num_t onboard_led;
+21   int count = 0;
+22 
+23   for (size_t i = 0; i < 2 * times; i++) {
+24     digitalWrite(onboard_led, count);
+25     vTaskDelay(500);
+26     count = 1 - count;
+27   }
+28 }
 .fi
 .PP
 Referencias onboard_led\&.
+.SS "void turnOffLed (void)\fC [inline]\fP"
+
+.PP
+Desliga o led de comunicação\&. 
+.PP
+Definição na linha 41 do arquivo COMMON\&.h\&.
+.PP
+.nf
+41                              {
+42   extern gpio_num_t onboard_led;
+43   digitalWrite(onboard_led, HIGH);
+44 }
+.fi
+.PP
+Referencias onboard_led\&.
+.PP
+Referenciado(a) por emergencyMethods()\&.
+.SS "void turnOnLed (void)\fC [inline]\fP"
+
+.PP
+Liga o led de comunicação\&. 
+.PP
+Definição na linha 33 do arquivo COMMON\&.h\&.
+.PP
+.nf
+33                             {
+34   extern gpio_num_t onboard_led;
+35   digitalWrite(onboard_led, LOW);
+36 }
+.fi
+.PP
+Referencias onboard_led\&.
+.PP
+Referenciado(a) por emergencyMethods()\&.
 .SH "Autor"
 .PP 
 Gerado automaticamente por Doxygen para Quadrirrotor a partir do código-fonte\&.

@@ -1,0 +1,33 @@
+<map id="xTaskSetupFiltro" name="xTaskSetupFiltro">
+<area shape="rect" id="node1" title=" " alt="" coords="5,726,124,750"/>
+<area shape="rect" id="node2" href="$classekf_1_1EKF.html#a4a6998123529ab0d0844ad21419fc895" title="Inicializacao do filtro de Kalman." alt="" coords="172,592,284,616"/>
+<area shape="rect" id="node23" href="$classTELEMETRIA.html#a6c13ae22d648afb2c7bd41f3e17ba4b6" title=" " alt="" coords="338,738,510,762"/>
+<area shape="rect" id="node24" href="$classIBusBM.html#a3219abe525dde59156d00538d93faa11" title=" " alt="" coords="181,762,275,786"/>
+<area shape="rect" id="node25" href="$main_8cpp.html#abd3bd9c344e182dcb5f5a561ef562eb0" title=" " alt="" coords="172,810,284,834"/>
+<area shape="rect" id="node3" href="$classTIME.html#a8cd98765b05a23aa7afe8fa5234b9695" title=" " alt="" coords="380,642,468,666"/>
+<area shape="rect" id="node4" href="$classAQUA.html#a8809dddd7e4f74f3eb7bd1fc4a604ae4" title=" " alt="" coords="380,690,468,714"/>
+<area shape="rect" id="node5" href="$classIMU.html#ae0d964d2f8ec122be068c41b84bc18a8" title=" " alt="" coords="383,162,465,186"/>
+<area shape="rect" id="node14" href="$classAQUA.html#ae3ddff89a969a0d2a3d3c675ed5b8065" title=" " alt="" coords="332,434,516,458"/>
+<area shape="rect" id="node20" href="$GPS_8h.html#a35c55bcf9a6f5a52f34cb1ab02c91479" title=" " alt="" coords="389,543,459,567"/>
+<area shape="rect" id="node22" href="$classIMU.html#ac574728dbbc752155239a35c8bbd6e79" title=" " alt="" coords="1044,390,1156,414"/>
+<area shape="rect" id="node6" href="$classIMU.html#a914f8b4262fba70e6d8fd0e584fa7996" title=" " alt="" coords="820,38,987,62"/>
+<area shape="rect" id="node8" href="$classIMU.html#a37694424e4502ffc69bbb6c540c1a400" title=" " alt="" coords="1035,163,1165,187"/>
+<area shape="rect" id="node9" href="$classIMU.html#a5567bbe0d211f1e6d386eb69ffd960a7" title=" " alt="" coords="838,187,969,211"/>
+<area shape="rect" id="node10" href="$classIMU.html#a928fa5e2db05bd402a3fa93bd3584527" title=" " alt="" coords="829,287,977,311"/>
+<area shape="rect" id="node11" href="$classIMU.html#a834f21762003f831e5e632cc7974ba75" title=" " alt="" coords="841,236,965,260"/>
+<area shape="rect" id="node12" href="$classIMU.html#acd2af48f4eb0a0321080332016e3c1f7" title=" " alt="" coords="606,39,730,63"/>
+<area shape="rect" id="node13" href="$classIMU.html#af3b90e0b20d4bd55091be99f7aa67737" title=" " alt="" coords="585,87,751,111"/>
+<area shape="rect" id="node7" href="$classIMU.html#a87c200faa130ff4d2d3416b2d83f4f49" title=" " alt="" coords="1213,163,1344,187"/>
+<area shape="rect" id="node15" href="$classAQUA.html#abdff34437c9c066d046a342525a01b52" title="Calcula o quaternion de inclinacao." alt="" coords="573,338,763,362"/>
+<area shape="rect" id="node16" href="$classAQUA.html#a6adb2b857affb225b29fb91e6f6a7194" title=" " alt="" coords="579,386,757,410"/>
+<area shape="rect" id="node18" href="$namespaceekf.html#a0ae7d9ae45fba00d81bfe71ad73d7fee" title="Produto de quaternions aplicado." alt="" coords="585,434,751,458"/>
+<area shape="rect" id="node19" href="$namespaceekf.html#acb1dc12948420927eff91ed90c24b342" title="Rotaciona um vetor tridimensional com um quaternion conjugado." alt="" coords="564,482,772,518"/>
+<area shape="rect" id="node17" href="$namespaceekf.html#ab55e144edf7066b67232e15cca7b4646" title="Calcula o inverso do raiz de um float." alt="" coords="856,386,951,410"/>
+<area shape="rect" id="node21" href="$GPS_8h.html#a5d2ecd8f29f7e3e702c8b8bea333f6c6" title=" " alt="" coords="630,543,706,567"/>
+<area shape="rect" id="node26" href="$classTELEMETRIA.html#a235abb2ba6888140e7dab2e73a050049" title="Envia vetor Eigen de float." alt="" coords="362,834,486,858"/>
+<area shape="rect" id="node27" href="$classekf_1_1EKF.html#a651814ff64d234394572e2e7c5703a43" title=" " alt="" coords="362,882,486,906"/>
+<area shape="rect" id="node28" href="$namespaceekf.html#aab2dcd522b40c160064cfae69cae6d98" title=" " alt="" coords="350,786,498,810"/>
+<area shape="rect" id="node29" href="$namespaceekf.html#ad48c9ef49e8ccbde872958a81f6ed41a" title="Calcula, a partir de um quatérnio de atitude, o valor do ângulo Phi em Radianos." alt="" coords="618,786,718,810"/>
+<area shape="rect" id="node30" href="$namespaceekf.html#a12f4cfdfc4baad066351f122771205a0" title="Calcula, a partir de um quatérnio de atitude, o valor do ângulo Psi em Radianos." alt="" coords="618,834,718,858"/>
+<area shape="rect" id="node31" href="$namespaceekf.html#a6530a1bee6082aaa64ec7e8525d0ed54" title="Calcula, a partir de um quatérnio de atitude, o valor do ângulo Theta em Radianos." alt="" coords="612,738,724,762"/>
+</map>

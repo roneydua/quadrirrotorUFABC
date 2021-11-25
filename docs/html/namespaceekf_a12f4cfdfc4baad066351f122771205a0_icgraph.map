@@ -1,0 +1,11 @@
+<map id="ekf::calc_psi" name="ekf::calc_psi">
+<area shape="rect" id="node1" title="Calcula, a partir de um quatérnio de atitude, o valor do ângulo Psi em Radianos." alt="" coords="896,29,996,53"/>
+<area shape="rect" id="node2" href="$classControle.html#a8ae9a213e4a15ac1af0f158e3b5dc2cb" title="Construct a new Controle:: Controle object." alt="" coords="709,5,839,29"/>
+<area shape="rect" id="node3" href="$namespaceekf.html#aab2dcd522b40c160064cfae69cae6d98" title=" " alt="" coords="700,53,848,77"/>
+<area shape="rect" id="node4" href="$classControle.html#a8ac9e933ce30f9c88ed421d4c0afcf99" title=" " alt="" coords="468,19,652,55"/>
+<area shape="rect" id="node8" href="$main_8cpp.html#abd3bd9c344e182dcb5f5a561ef562eb0" title=" " alt="" coords="504,80,616,104"/>
+<area shape="rect" id="node5" href="$classControle.html#a78e5f662130811f409342a706d5c0d2f" title="Loop de controle das duas dinâmicas." alt="" coords="272,27,420,51"/>
+<area shape="rect" id="node6" href="$main_8cpp.html#ad3d424dca818563665f9ab9bbf866fff" title=" " alt="" coords="121,29,209,53"/>
+<area shape="rect" id="node7" href="$main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d" title=" " alt="" coords="5,53,57,77"/>
+<area shape="rect" id="node9" href="$main_8cpp.html#a1d67803bd6f9b50c1e3686650e280f68" title=" " alt="" coords="105,77,224,101"/>
+</map>

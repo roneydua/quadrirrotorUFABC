@@ -1,4 +1,4 @@
-.TH "IMU" 3 "Sexta, 17 de Setembro de 2021" "Quadrirrotor" \" -*- nroff -*-
+.TH "IMU" 3 "Segunda, 25 de Outubro de 2021" "Quadrirrotor" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -837,8 +837,8 @@ Definição na linha 290 do arquivo IMU\&.cpp\&.
 325   // para analise da calibracao
 326   magTemp << -(float)_hxcounts * _magScaleX, -(float)_hycounts * _magScaleX,
 327       -(float)_hzcounts * _magScaleX;
-328   // *_mag = _sM * (magTemp - _biasMag);
-329   *_mag = (magTemp - _biasMag);
+328   *_mag = _sM * (magTemp - _biasMag);
+329   // *_mag = (magTemp - _biasMag);
 330   /* @annotation retirado do manual de registros da mpu9250 pag\&.33*/
 331   // TEMP_degC = ((TEMP_OUT – RoomTemp_Offset)/Temp_Sensitivity)+ 21degC
 332   // RoomTemp_Offset = 21; Temp_Sensitivity = 333\&.87
@@ -847,7 +847,7 @@ Definição na linha 290 do arquivo IMU\&.cpp\&.
 335 }
 .fi
 .PP
-Referencias _acel, _axcounts, _aycounts, _azcounts, _biasAccel, _biasGyro, _biasMag, _buffer, _gxcounts, _gycounts, _gyro, _gyroScale, _gzcounts, _hxcounts, _hycounts, _hzcounts, _mag, _magScaleX, ACCEL_OUT, magTemp, readRegisters() e sFAccel\&.
+Referencias _acel, _axcounts, _aycounts, _azcounts, _biasAccel, _biasGyro, _biasMag, _buffer, _gxcounts, _gycounts, _gyro, _gyroScale, _gzcounts, _hxcounts, _hycounts, _hzcounts, _mag, _magScaleX, _sM, ACCEL_OUT, magTemp, readRegisters() e sFAccel\&.
 .PP
 Referenciado(a) por ekf::EKF::begin(), calibracaoMagnetometro() e calibraGyro()\&.
 .SS "int IMU::setAccelRange (\fBAccelRange\fP range)"
@@ -1367,7 +1367,7 @@ Matriz fator de escala\&.
 .PP
 Definição na linha 80 do arquivo IMU\&.h\&.
 .PP
-Referenciado(a) por calibracaoMagnetometro()\&.
+Referenciado(a) por calibracaoMagnetometro() e readSensor()\&.
 .SS "uint8_t IMU::_srd\fC [protected]\fP"
 
 .PP

@@ -1,4 +1,4 @@
-.TH "lib/CONTROLE/Controle.h" 3 "Sexta, 17 de Setembro de 2021" "Quadrirrotor" \" -*- nroff -*-
+.TH "lib/CONTROLE/Controle.h" 3 "Segunda, 25 de Outubro de 2021" "Quadrirrotor" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -30,10 +30,16 @@ lib/CONTROLE/Controle.h
 
 .in +1c
 .ti -1c
-.RI "#define \fBDEBUG\fP"
+.RI "#define \fBDEBUG_CONTROL\fP"
+.br
+.ti -1c
+.RI "#define \fBLOAD_GAINS\fP"
 .br
 .ti -1c
 .RI "#define \fBPRINT_MAT\fP(X)   cout << #X << ':\\n' << X << '\\n'"
+.br
+.ti -1c
+.RI "#define \fBINTEGRAL_CONTROL\fP"
 .br
 .in -1c
 .SH "Descrição detalhada"
@@ -47,7 +53,7 @@ lib/CONTROLE/Controle.h
 .PP
 \fBData\fP
 .RS 4
-: 16-Aug-2021 Email: roneyddasilva@gmail.com Project: quadrirrotorUFABC
+: 19-Aug-2021 Email: roneyddasilva@gmail.com Project: quadrirrotorUFABC
 .RE
 .PP
 Last modified by: roneydua Last modified time: 25-Aug-2021 
@@ -55,14 +61,22 @@ Last modified by: roneydua Last modified time: 25-Aug-2021
 Definição no arquivo \fBControle\&.h\fP\&.
 .SH "Definições e macros"
 .PP 
-.SS "#define DEBUG"
+.SS "#define DEBUG_CONTROL"
 
 .PP
-Definição na linha 15 do arquivo Controle\&.h\&.
+Definição na linha 16 do arquivo Controle\&.h\&.
+.SS "#define INTEGRAL_CONTROL"
+
+.PP
+Definição na linha 29 do arquivo Controle\&.h\&.
+.SS "#define LOAD_GAINS"
+Precompilador para leitrua dos ganhos 
+.PP
+Definição na linha 18 do arquivo Controle\&.h\&.
 .SS "#define PRINT_MAT(X)   cout << #X << ':\\n' << X << '\\n'"
 
 .PP
-Definição na linha 18 do arquivo Controle\&.h\&.
+Definição na linha 21 do arquivo Controle\&.h\&.
 .SH "Autor"
 .PP 
 Gerado automaticamente por Doxygen para Quadrirrotor a partir do código-fonte\&.

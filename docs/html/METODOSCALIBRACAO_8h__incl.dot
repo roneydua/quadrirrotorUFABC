@@ -8,5 +8,7 @@ digraph "lib/IMU/METODOSCALIBRACAO.h"
   Node1 -> Node2 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
   Node2 [label="eigen3/Eigen/Dense",height=0.2,width=0.4,color="grey75",tooltip=" "];
   Node1 -> Node3 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
-  Node3 [label="Arduino.h",height=0.2,width=0.4,color="grey75",tooltip=" "];
+  Node3 [label="math.h",height=0.2,width=0.4,color="grey75",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node4 [label="Arduino.h",height=0.2,width=0.4,color="grey75",tooltip=" "];
 }

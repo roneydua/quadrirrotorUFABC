@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
+  <compounddef id="structTELEMETRIA_1_1IMU__DATA" kind="struct" language="C++" prot="public">
+    <compoundname>TELEMETRIA::IMU_DATA</compoundname>
+    <includes refid="TELEMETRIA_8h" local="no">TELEMETRIA.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structTELEMETRIA_1_1IMU__DATA_1afdccdf0630d2607a54ec162276801027" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float TELEMETRIA::IMU_DATA::dados[DATA_SIZE]</definition>
+        <argsstring>[DATA_SIZE]</argsstring>
+        <name>dados</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TELEMETRIA/TELEMETRIA.h" line="43" column="13" bodyfile="lib/TELEMETRIA/TELEMETRIA.h" bodystart="43" bodyend="-1"/>
+        <referencedby refid="classTELEMETRIA_1a235abb2ba6888140e7dab2e73a050049" compoundref="TELEMETRIA_8cpp" startline="46" endline="62">TELEMETRIA::envia</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structTELEMETRIA_1_1IMU__DATA_1adc59258e2c8a5593dffe9007176675d1" prot="public" static="no" mutable="no">
+        <type>Vector&lt; float, <ref refid="TELEMETRIA_8h_1af55149bc1f05cf18af067a302e31e3f9" kindref="member">DATA_SIZE</ref> &gt;</type>
+        <definition>Vector&lt;float, DATA_SIZE&gt; TELEMETRIA::IMU_DATA::dadosEigen</definition>
+        <argsstring></argsstring>
+        <name>dadosEigen</name>
+        <initializer>= VectorXf::Zero(<ref refid="TELEMETRIA_8h_1af55149bc1f05cf18af067a302e31e3f9" kindref="member">DATA_SIZE</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TELEMETRIA/TELEMETRIA.h" line="44" column="14" bodyfile="lib/TELEMETRIA/TELEMETRIA.h" bodystart="44" bodyend="-1"/>
+        <referencedby refid="classTELEMETRIA_1a235abb2ba6888140e7dab2e73a050049" compoundref="TELEMETRIA_8cpp" startline="46" endline="62">TELEMETRIA::envia</referencedby>
+        <referencedby refid="main_8cpp_1abd3bd9c344e182dcb5f5a561ef562eb0" compoundref="main_8cpp" startline="51" endline="86">xTaskLoopFilter</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structTELEMETRIA_1_1IMU__DATA_1a94a1a01d0fc07d5247fba369830a04fa" prot="public" static="no" mutable="no">
+        <type>union TELEMETRIA::IMU_DATA::@0</type>
+        <definition>union TELEMETRIA::IMU_DATA::@0 TELEMETRIA::IMU_DATA::@1</definition>
+        <argsstring></argsstring>
+        <name>@1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Tipo de mensagem. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TELEMETRIA/TELEMETRIA.h" line="45" column="5"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Estrutura de mensagem. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Tamanho 72 </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>TELEMETRIA::IMU_DATA</label>
+        <link refid="structTELEMETRIA_1_1IMU__DATA"/>
+      </node>
+    </collaborationgraph>
+    <location file="lib/TELEMETRIA/TELEMETRIA.h" line="39" column="3" bodyfile="lib/TELEMETRIA/TELEMETRIA.h" bodystart="39" bodyend="46"/>
+    <listofallmembers>
+      <member refid="structTELEMETRIA_1_1IMU__DATA_1afdccdf0630d2607a54ec162276801027" prot="public" virt="non-virtual"><scope>TELEMETRIA::IMU_DATA</scope><name>dados</name></member>
+      <member refid="structTELEMETRIA_1_1IMU__DATA_1adc59258e2c8a5593dffe9007176675d1" prot="public" virt="non-virtual"><scope>TELEMETRIA::IMU_DATA</scope><name>dadosEigen</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

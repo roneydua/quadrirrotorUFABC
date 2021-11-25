@@ -10,9 +10,11 @@ digraph "lib/IMU/IMU.h"
   Node2 -> Node3 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
   Node3 [label="eigen3/Eigen/Dense",height=0.2,width=0.4,color="grey75",tooltip=" "];
   Node2 -> Node4 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
-  Node4 [label="Arduino.h",height=0.2,width=0.4,color="grey75",tooltip=" "];
-  Node1 -> Node4 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node4 [label="math.h",height=0.2,width=0.4,color="grey75",tooltip=" "];
+  Node2 -> Node5 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node5 [label="Arduino.h",height=0.2,width=0.4,color="grey75",tooltip=" "];
   Node1 -> Node5 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
-  Node5 [label="Wire.h",height=0.2,width=0.4,color="grey75",tooltip=" "];
+  Node1 -> Node6 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node6 [label="Wire.h",height=0.2,width=0.4,color="grey75",tooltip=" "];
   Node1 -> Node3 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
 }

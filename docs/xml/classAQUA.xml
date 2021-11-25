@@ -18,7 +18,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="lib/AQUA/AQUA.h" line="26" column="19" bodyfile="lib/AQUA/AQUA.h" bodystart="26" bodyend="-1"/>
-        <referencedby refid="classAQUA_1ae3ddff89a969a0d2a3d3c675ed5b8065" compoundref="AQUA_8cpp" startline="66" endline="83">computeAQUAQuaternion</referencedby>
+        <referencedby refid="classAQUA_1ae3ddff89a969a0d2a3d3c675ed5b8065" compoundref="AQUA_8cpp" startline="73" endline="89">computeAQUAQuaternion</referencedby>
         <referencedby refid="classAQUA_1abdff34437c9c066d046a342525a01b52" compoundref="AQUA_8cpp" startline="28" endline="43">computeQuaternionAccel</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classAQUA_1ac3283e2209f2a22409bf701c6a381e85" prot="public" static="no" mutable="no">
@@ -35,14 +35,14 @@
         <inbodydescription>
         </inbodydescription>
         <location file="lib/AQUA/AQUA.h" line="28" column="19" bodyfile="lib/AQUA/AQUA.h" bodystart="28" bodyend="-1"/>
-        <referencedby refid="classAQUA_1ae3ddff89a969a0d2a3d3c675ed5b8065" compoundref="AQUA_8cpp" startline="66" endline="83">computeAQUAQuaternion</referencedby>
+        <referencedby refid="classAQUA_1ae3ddff89a969a0d2a3d3c675ed5b8065" compoundref="AQUA_8cpp" startline="73" endline="89">computeAQUAQuaternion</referencedby>
         <referencedby refid="classAQUA_1a6adb2b857affb225b29fb91e6f6a7194" compoundref="AQUA_8cpp" startline="47" endline="58">computeQuaternionMag</referencedby>
       </memberdef>
-      <memberdef kind="variable" id="classAQUA_1a9da4c7495ececdfd099949b8ab7bd34d" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="classAQUA_1a51d97911c1936d431b9f01cab2411394" prot="public" static="no" mutable="no">
         <type>Eigen::Vector3f</type>
-        <definition>Eigen::Vector3f AQUA::gravNormalized</definition>
+        <definition>Eigen::Vector3f AQUA::normalizedGravity</definition>
         <argsstring></argsstring>
-        <name>gravNormalized</name>
+        <name>normalizedGravity</name>
         <initializer>= Eigen::Vector3f::Zero()</initializer>
         <briefdescription>
         </briefdescription>
@@ -52,7 +52,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="lib/AQUA/AQUA.h" line="30" column="19" bodyfile="lib/AQUA/AQUA.h" bodystart="30" bodyend="-1"/>
-        <referencedby refid="classAQUA_1ae3ddff89a969a0d2a3d3c675ed5b8065" compoundref="AQUA_8cpp" startline="66" endline="83">computeAQUAQuaternion</referencedby>
+        <referencedby refid="classAQUA_1ae3ddff89a969a0d2a3d3c675ed5b8065" compoundref="AQUA_8cpp" startline="73" endline="89">computeAQUAQuaternion</referencedby>
         <referencedby refid="classAQUA_1abdff34437c9c066d046a342525a01b52" compoundref="AQUA_8cpp" startline="28" endline="43">computeQuaternionAccel</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classAQUA_1ad374de1bdc463f6fe179e1c7b16e64dc" prot="public" static="no" mutable="no">
@@ -69,7 +69,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="lib/AQUA/AQUA.h" line="32" column="19" bodyfile="lib/AQUA/AQUA.h" bodystart="32" bodyend="-1"/>
-        <referencedby refid="classAQUA_1ae3ddff89a969a0d2a3d3c675ed5b8065" compoundref="AQUA_8cpp" startline="66" endline="83">computeAQUAQuaternion</referencedby>
+        <referencedby refid="classAQUA_1ae3ddff89a969a0d2a3d3c675ed5b8065" compoundref="AQUA_8cpp" startline="73" endline="89">computeAQUAQuaternion</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classAQUA_1a396021bd861ef78e46c78e5d72fe7cdd" prot="public" static="no" mutable="no">
         <type>Eigen::Vector3f</type>
@@ -85,7 +85,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="lib/AQUA/AQUA.h" line="34" column="19" bodyfile="lib/AQUA/AQUA.h" bodystart="34" bodyend="-1"/>
-        <referencedby refid="classAQUA_1ae3ddff89a969a0d2a3d3c675ed5b8065" compoundref="AQUA_8cpp" startline="66" endline="83">computeAQUAQuaternion</referencedby>
+        <referencedby refid="classAQUA_1ae3ddff89a969a0d2a3d3c675ed5b8065" compoundref="AQUA_8cpp" startline="73" endline="89">computeAQUAQuaternion</referencedby>
         <referencedby refid="classAQUA_1a6adb2b857affb225b29fb91e6f6a7194" compoundref="AQUA_8cpp" startline="47" endline="58">computeQuaternionMag</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classAQUA_1a1c408cae6b02beae92ba10513fdb61e3" prot="public" static="no" mutable="no">
@@ -96,13 +96,13 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Ponteiro do quaternion de atititude. </para>
+<para>Ponteiro do quaternion de atitude. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="lib/AQUA/AQUA.h" line="36" column="19" bodyfile="lib/AQUA/AQUA.h" bodystart="36" bodyend="-1"/>
         <referencedby refid="classAQUA_1a8809dddd7e4f74f3eb7bd1fc4a604ae4" compoundref="AQUA_8cpp" startline="18" endline="23">begin</referencedby>
-        <referencedby refid="classAQUA_1ae3ddff89a969a0d2a3d3c675ed5b8065" compoundref="AQUA_8cpp" startline="66" endline="83">computeAQUAQuaternion</referencedby>
+        <referencedby refid="classAQUA_1ae3ddff89a969a0d2a3d3c675ed5b8065" compoundref="AQUA_8cpp" startline="73" endline="89">computeAQUAQuaternion</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classAQUA_1a372bd06e8afc3bd745c5bf97b56e1354" prot="public" static="no" mutable="no">
         <type>Eigen::Vector3f *</type>
@@ -133,6 +133,21 @@
         <location file="lib/AQUA/AQUA.h" line="38" column="25" bodyfile="lib/AQUA/AQUA.h" bodystart="38" bodyend="-1"/>
         <referencedby refid="classAQUA_1a8809dddd7e4f74f3eb7bd1fc4a604ae4" compoundref="AQUA_8cpp" startline="18" endline="23">begin</referencedby>
       </memberdef>
+      <memberdef kind="variable" id="classAQUA_1aa1b31642eb86421671083e9dd72d6aa7" prot="public" static="no" mutable="no">
+        <type>Eigen::Vector4f</type>
+        <definition>Eigen::Vector4f AQUA::qAlignment</definition>
+        <argsstring></argsstring>
+        <name>qAlignment</name>
+        <initializer>{1.0f, 0.0f, 0.0f, 0.0f}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Quaternion de desalinhamento. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/AQUA/AQUA.h" line="40" column="19" bodyfile="lib/AQUA/AQUA.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
       <memberdef kind="function" id="classAQUA_1a38e150b644efa5f4c6f348de89da8934" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -143,11 +158,27 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Intância da classe <ref refid="classAQUA" kindref="compound">AQUA</ref>. </para>
+<para>Instância da classe <ref refid="classAQUA" kindref="compound">AQUA</ref>. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="lib/AQUA/AQUA.h" line="24" column="3" bodyfile="lib/AQUA/AQUA.cpp" bodystart="17" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classAQUA_1a42907de6c1834b61243dfb1a740fa3f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AQUA::getInitialAlignment</definition>
+        <argsstring>(Eigen::Vector4f &amp;)</argsstring>
+        <name>getInitialAlignment</name>
+        <param>
+          <type>Eigen::Vector4f &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/AQUA/AQUA.h" line="41" column="8"/>
       </memberdef>
       <memberdef kind="function" id="classAQUA_1a8809dddd7e4f74f3eb7bd1fc4a604ae4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -172,11 +203,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/AQUA/AQUA.h" line="40" column="8" bodyfile="lib/AQUA/AQUA.cpp" bodystart="18" bodyend="23"/>
+        <location file="lib/AQUA/AQUA.h" line="42" column="8" bodyfile="lib/AQUA/AQUA.cpp" bodystart="18" bodyend="23"/>
         <references refid="classAQUA_1a372bd06e8afc3bd745c5bf97b56e1354" compoundref="AQUA_8h" startline="38">accel</references>
         <references refid="classAQUA_1a1025f41d2f30997822088d1982383019" compoundref="AQUA_8h" startline="38">mag</references>
         <references refid="classAQUA_1a1c408cae6b02beae92ba10513fdb61e3" compoundref="AQUA_8h" startline="36">qAQUA</references>
-        <referencedby refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" compoundref="EKF_8cpp" startline="39" endline="89">ekf::EKF::begin</referencedby>
+        <referencedby refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" compoundref="EKF_8cpp" startline="40" endline="97">ekf::EKF::begin</referencedby>
       </memberdef>
       <memberdef kind="function" id="classAQUA_1ae3ddff89a969a0d2a3d3c675ed5b8065" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -186,41 +217,24 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Calcula o quaternion de atitude com o algoritimo <ref refid="classAQUA" kindref="compound">AQUA</ref>. <parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>acel</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Vetor de medidas do acelerometro </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>mag</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Vetor de medidas do magnetometro </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>0 se falhar ou 1 se sucesso. </para>
+<para>Calcula o quaternion de atitude com o algoritimo <ref refid="classAQUA" kindref="compound">AQUA</ref>. <simplesect kind="return"><para>0 se falhar ou 1 se sucesso. </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/AQUA/AQUA.h" line="42" column="7" bodyfile="lib/AQUA/AQUA.cpp" bodystart="66" bodyend="83"/>
+        <location file="lib/AQUA/AQUA.h" line="44" column="7" bodyfile="lib/AQUA/AQUA.cpp" bodystart="73" bodyend="89"/>
         <references refid="classAQUA_1abdff34437c9c066d046a342525a01b52" compoundref="AQUA_8cpp" startline="28" endline="43">computeQuaternionAccel</references>
         <references refid="classAQUA_1a6adb2b857affb225b29fb91e6f6a7194" compoundref="AQUA_8cpp" startline="47" endline="58">computeQuaternionMag</references>
-        <references refid="classAQUA_1a9da4c7495ececdfd099949b8ab7bd34d" compoundref="AQUA_8h" startline="30">gravNormalized</references>
         <references refid="classAQUA_1a396021bd861ef78e46c78e5d72fe7cdd" compoundref="AQUA_8h" startline="34">l</references>
         <references refid="classAQUA_1ad374de1bdc463f6fe179e1c7b16e64dc" compoundref="AQUA_8h" startline="32">magNormalized</references>
         <references refid="namespaceekf_1a0ae7d9ae45fba00d81bfe71ad73d7fee" compoundref="GRUPO__QUAT_8cpp" startline="142" endline="150">ekf::multiplyQuaternions</references>
+        <references refid="classAQUA_1a51d97911c1936d431b9f01cab2411394" compoundref="AQUA_8h" startline="30">normalizedGravity</references>
         <references refid="classAQUA_1a288e646d31498e19d5ec68bcf6a12272" compoundref="AQUA_8h" startline="26">qAcc</references>
         <references refid="classAQUA_1a1c408cae6b02beae92ba10513fdb61e3" compoundref="AQUA_8h" startline="36">qAQUA</references>
         <references refid="classAQUA_1ac3283e2209f2a22409bf701c6a381e85" compoundref="AQUA_8h" startline="28">qMag</references>
-        <references refid="namespaceekf_1acb1dc12948420927eff91ed90c24b342" compoundref="GRUPO__QUAT_8cpp" startline="213" endline="218">ekf::rotateVectorWithQuaternion_Conjugate</references>
-        <referencedby refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" compoundref="EKF_8cpp" startline="39" endline="89">ekf::EKF::begin</referencedby>
+        <references refid="namespaceekf_1acb1dc12948420927eff91ed90c24b342" compoundref="GRUPO__QUAT_8cpp" startline="242" endline="247">ekf::rotateVectorWithQuaternion_Conjugate</references>
+        <referencedby refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" compoundref="EKF_8cpp" startline="40" endline="97">ekf::EKF::begin</referencedby>
       </memberdef>
       <memberdef kind="function" id="classAQUA_1abdff34437c9c066d046a342525a01b52" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -234,11 +248,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/AQUA/AQUA.h" line="44" column="8" bodyfile="lib/AQUA/AQUA.cpp" bodystart="28" bodyend="43"/>
-        <references refid="classAQUA_1a9da4c7495ececdfd099949b8ab7bd34d" compoundref="AQUA_8h" startline="30">gravNormalized</references>
+        <location file="lib/AQUA/AQUA.h" line="46" column="8" bodyfile="lib/AQUA/AQUA.cpp" bodystart="28" bodyend="43"/>
         <references refid="GRUPO__QUAT_8h_1a7563b707d50597768569491a1232a53f" compoundref="GRUPO__QUAT_8h" startline="31">INVERSE_SQUARE_2</references>
+        <references refid="classAQUA_1a51d97911c1936d431b9f01cab2411394" compoundref="AQUA_8h" startline="30">normalizedGravity</references>
         <references refid="classAQUA_1a288e646d31498e19d5ec68bcf6a12272" compoundref="AQUA_8h" startline="26">qAcc</references>
-        <referencedby refid="classAQUA_1ae3ddff89a969a0d2a3d3c675ed5b8065" compoundref="AQUA_8cpp" startline="66" endline="83">computeAQUAQuaternion</referencedby>
+        <referencedby refid="classAQUA_1ae3ddff89a969a0d2a3d3c675ed5b8065" compoundref="AQUA_8cpp" startline="73" endline="89">computeAQUAQuaternion</referencedby>
       </memberdef>
       <memberdef kind="function" id="classAQUA_1a6adb2b857affb225b29fb91e6f6a7194" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -252,12 +266,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/AQUA/AQUA.h" line="45" column="8" bodyfile="lib/AQUA/AQUA.cpp" bodystart="47" bodyend="58"/>
+        <location file="lib/AQUA/AQUA.h" line="47" column="8" bodyfile="lib/AQUA/AQUA.cpp" bodystart="47" bodyend="58"/>
         <references refid="GRUPO__QUAT_8h_1a7563b707d50597768569491a1232a53f" compoundref="GRUPO__QUAT_8h" startline="31">INVERSE_SQUARE_2</references>
-        <references refid="namespaceekf_1ab55e144edf7066b67232e15cca7b4646" compoundref="GRUPO__QUAT_8cpp" startline="227" endline="241">ekf::invSqrt</references>
+        <references refid="namespaceekf_1ab55e144edf7066b67232e15cca7b4646" compoundref="GRUPO__QUAT_8cpp" startline="256" endline="270">ekf::invSqrt</references>
         <references refid="classAQUA_1a396021bd861ef78e46c78e5d72fe7cdd" compoundref="AQUA_8h" startline="34">l</references>
         <references refid="classAQUA_1ac3283e2209f2a22409bf701c6a381e85" compoundref="AQUA_8h" startline="28">qMag</references>
-        <referencedby refid="classAQUA_1ae3ddff89a969a0d2a3d3c675ed5b8065" compoundref="AQUA_8cpp" startline="66" endline="83">computeAQUAQuaternion</referencedby>
+        <referencedby refid="classAQUA_1ae3ddff89a969a0d2a3d3c675ed5b8065" compoundref="AQUA_8cpp" startline="73" endline="89">computeAQUAQuaternion</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -270,7 +284,7 @@
         <link refid="classAQUA"/>
       </node>
     </collaborationgraph>
-    <location file="lib/AQUA/AQUA.h" line="21" column="1" bodyfile="lib/AQUA/AQUA.h" bodystart="21" bodyend="48"/>
+    <location file="lib/AQUA/AQUA.h" line="21" column="1" bodyfile="lib/AQUA/AQUA.h" bodystart="21" bodyend="50"/>
     <listofallmembers>
       <member refid="classAQUA_1a372bd06e8afc3bd745c5bf97b56e1354" prot="public" virt="non-virtual"><scope>AQUA</scope><name>accel</name></member>
       <member refid="classAQUA_1a38e150b644efa5f4c6f348de89da8934" prot="public" virt="non-virtual"><scope>AQUA</scope><name>AQUA</name></member>
@@ -278,11 +292,13 @@
       <member refid="classAQUA_1ae3ddff89a969a0d2a3d3c675ed5b8065" prot="public" virt="non-virtual"><scope>AQUA</scope><name>computeAQUAQuaternion</name></member>
       <member refid="classAQUA_1abdff34437c9c066d046a342525a01b52" prot="public" virt="non-virtual"><scope>AQUA</scope><name>computeQuaternionAccel</name></member>
       <member refid="classAQUA_1a6adb2b857affb225b29fb91e6f6a7194" prot="public" virt="non-virtual"><scope>AQUA</scope><name>computeQuaternionMag</name></member>
-      <member refid="classAQUA_1a9da4c7495ececdfd099949b8ab7bd34d" prot="public" virt="non-virtual"><scope>AQUA</scope><name>gravNormalized</name></member>
+      <member refid="classAQUA_1a42907de6c1834b61243dfb1a740fa3f4" prot="public" virt="non-virtual"><scope>AQUA</scope><name>getInitialAlignment</name></member>
       <member refid="classAQUA_1a396021bd861ef78e46c78e5d72fe7cdd" prot="public" virt="non-virtual"><scope>AQUA</scope><name>l</name></member>
       <member refid="classAQUA_1a1025f41d2f30997822088d1982383019" prot="public" virt="non-virtual"><scope>AQUA</scope><name>mag</name></member>
       <member refid="classAQUA_1ad374de1bdc463f6fe179e1c7b16e64dc" prot="public" virt="non-virtual"><scope>AQUA</scope><name>magNormalized</name></member>
+      <member refid="classAQUA_1a51d97911c1936d431b9f01cab2411394" prot="public" virt="non-virtual"><scope>AQUA</scope><name>normalizedGravity</name></member>
       <member refid="classAQUA_1a288e646d31498e19d5ec68bcf6a12272" prot="public" virt="non-virtual"><scope>AQUA</scope><name>qAcc</name></member>
+      <member refid="classAQUA_1aa1b31642eb86421671083e9dd72d6aa7" prot="public" virt="non-virtual"><scope>AQUA</scope><name>qAlignment</name></member>
       <member refid="classAQUA_1a1c408cae6b02beae92ba10513fdb61e3" prot="public" virt="non-virtual"><scope>AQUA</scope><name>qAQUA</name></member>
       <member refid="classAQUA_1ac3283e2209f2a22409bf701c6a381e85" prot="public" virt="non-virtual"><scope>AQUA</scope><name>qMag</name></member>
     </listofallmembers>

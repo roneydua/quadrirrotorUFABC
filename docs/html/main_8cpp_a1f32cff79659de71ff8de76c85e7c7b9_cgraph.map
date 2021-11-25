@@ -1,0 +1,7 @@
+<map id="emergencyMethods" name="emergencyMethods">
+<area shape="rect" id="node1" title="Task de Procedimentos emergenciais." alt="" coords="5,101,124,125"/>
+<area shape="rect" id="node2" href="$classTELEMETRIA.html#a6c13ae22d648afb2c7bd41f3e17ba4b6" title=" " alt="" coords="172,5,344,29"/>
+<area shape="rect" id="node3" href="$classIBusBM.html#a3219abe525dde59156d00538d93faa11" title=" " alt="" coords="211,77,305,101"/>
+<area shape="rect" id="node4" href="$COMMON_8h.html#a0e9b3928a2c3089998123715bcae29e9" title="Desliga o led de comunicação." alt="" coords="217,125,299,149"/>
+<area shape="rect" id="node5" href="$COMMON_8h.html#a8eabef94a982b1407d1ae4731b7e07ca" title="Liga o led de comunicação." alt="" coords="220,173,296,197"/>
+</map>

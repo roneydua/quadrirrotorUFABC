@@ -1,0 +1,8 @@
+<map id="Controle::Controle" name="Controle::Controle">
+<area shape="rect" id="node1" title="Construct a new Controle:: Controle object." alt="" coords="5,101,136,125"/>
+<area shape="rect" id="node2" href="$namespaceekf.html#a12f4cfdfc4baad066351f122771205a0" title="Calcula, a partir de um quatérnio de atitude, o valor do ângulo Psi em Radianos." alt="" coords="214,5,314,29"/>
+<area shape="rect" id="node3" href="$classSdre.html#a4848cfbce14035e6b3733a628de9e24f" title=" " alt="" coords="199,53,329,77"/>
+<area shape="rect" id="node4" href="$classRiccati.html#a5b6c65a7a7682f505494331eee41545f" title=" " alt="" coords="184,101,344,125"/>
+<area shape="rect" id="node5" href="$classSdre.html#af2f380ec3d018b60686e304ca7026846" title=" " alt="" coords="196,149,332,173"/>
+<area shape="rect" id="node6" href="$classSdre.html#a887dbd01f9f6846839114a4d5ff64102" title=" " alt="" coords="220,197,308,221"/>
+</map>

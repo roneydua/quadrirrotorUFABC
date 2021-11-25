@@ -1,0 +1,18 @@
+digraph "emergencyMethods"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  rankdir="LR";
+  Node1 [label="emergencyMethods",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Task de Procedimentos emergenciais."];
+  Node1 -> Node2 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node2 [label="TELEMETRIA::enviaMensagem",height=0.2,width=0.4,color="black",URL="$classTELEMETRIA.html#a6c13ae22d648afb2c7bd41f3e17ba4b6",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node3 [label="IBusBM::loop",height=0.2,width=0.4,color="black",URL="$classIBusBM.html#a3219abe525dde59156d00538d93faa11",tooltip=" "];
+  Node3 -> Node3 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node1 -> Node4 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node4 [label="turnOffLed",height=0.2,width=0.4,color="black",URL="$COMMON_8h.html#a0e9b3928a2c3089998123715bcae29e9",tooltip="Desliga o led de comunicação."];
+  Node1 -> Node5 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node5 [label="turnOnLed",height=0.2,width=0.4,color="black",URL="$COMMON_8h.html#a8eabef94a982b1407d1ae4731b7e07ca",tooltip="Liga o led de comunicação."];
+}

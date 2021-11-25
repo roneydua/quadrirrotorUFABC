@@ -78,7 +78,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/IMU/METODOSCALIBRACAO.h" line="43" column="7" bodyfile="lib/IMU/METODOSCALIBRACAO.h" bodystart="43" bodyend="91"/>
+        <location file="lib/IMU/METODOSCALIBRACAO.h" line="44" column="7" bodyfile="lib/IMU/METODOSCALIBRACAO.h" bodystart="44" bodyend="92"/>
         <references refid="GPS_8h_1a27c939ba1a4f4d927aaa500781293ba7" compoundref="GPS_8h" startline="146">data</references>
         <referencedby refid="classIMU_1a3546779010d9128859f465195eff77f5" compoundref="IMU_8cpp" startline="458" endline="472">IMU::calibracaoMagnetometro</referencedby>
       </memberdef>
@@ -134,7 +134,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/IMU/METODOSCALIBRACAO.h" line="103" column="7" bodyfile="lib/IMU/METODOSCALIBRACAO.h" bodystart="103" bodyend="144"/>
+        <location file="lib/IMU/METODOSCALIBRACAO.h" line="104" column="7" bodyfile="lib/IMU/METODOSCALIBRACAO.h" bodystart="104" bodyend="145"/>
         <references refid="GPS_8h_1a27c939ba1a4f4d927aaa500781293ba7" compoundref="GPS_8h" startline="146">data</references>
       </memberdef>
       <memberdef kind="function" id="classMETODOSCALIBRACAO_1aeeb5884d970064b5e60fea7bbf515742" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
@@ -188,7 +188,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/IMU/METODOSCALIBRACAO.h" line="156" column="7" bodyfile="lib/IMU/METODOSCALIBRACAO.h" bodystart="156" bodyend="192"/>
+        <location file="lib/IMU/METODOSCALIBRACAO.h" line="157" column="7" bodyfile="lib/IMU/METODOSCALIBRACAO.h" bodystart="157" bodyend="193"/>
         <references refid="GPS_8h_1a27c939ba1a4f4d927aaa500781293ba7" compoundref="GPS_8h" startline="146">data</references>
       </memberdef>
       </sectiondef>
@@ -202,7 +202,7 @@
         <link refid="classMETODOSCALIBRACAO"/>
       </node>
     </collaborationgraph>
-    <location file="lib/IMU/METODOSCALIBRACAO.h" line="25" column="1" bodyfile="lib/IMU/METODOSCALIBRACAO.h" bodystart="25" bodyend="193"/>
+    <location file="lib/IMU/METODOSCALIBRACAO.h" line="26" column="1" bodyfile="lib/IMU/METODOSCALIBRACAO.h" bodystart="26" bodyend="194"/>
     <listofallmembers>
       <member refid="classMETODOSCALIBRACAO_1ad7b555b5f46cdad7ae551f5cd4886a9b" prot="public" virt="non-virtual"><scope>METODOSCALIBRACAO</scope><name>calibracaoAcelerometro</name></member>
       <member refid="classMETODOSCALIBRACAO_1aeeb5884d970064b5e60fea7bbf515742" prot="public" virt="non-virtual"><scope>METODOSCALIBRACAO</scope><name>calibracaoAcelerometro</name></member>

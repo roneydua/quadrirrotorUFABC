@@ -85,15 +85,14 @@ $(function() {
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="Controle_8h__incl.png" border="0" usemap="#alib_2CONTROLE_2Controle_8h" alt=""/></div>
 <map name="alib_2CONTROLE_2Controle_8h" id="alib_2CONTROLE_2Controle_8h">
-<area shape="rect" title=" " alt="" coords="312,5,472,29"/>
-<area shape="rect" href="Drone_8h.html" title=" " alt="" coords="63,161,182,185"/>
-<area shape="rect" href="GRUPO__QUAT_8h.html" title="Cabecalho com funcoes de quaternion." alt="" coords="261,233,355,257"/>
-<area shape="rect" title=" " alt="" coords="5,305,136,329"/>
-<area shape="rect" title=" " alt="" coords="358,305,429,329"/>
-<area shape="rect" href="Sdre_8h.html" title=" " alt="" coords="259,83,365,107"/>
-<area shape="rect" title=" " alt="" coords="525,77,709,113"/>
-<area shape="rect" title=" " alt="" coords="109,233,185,257"/>
-<area shape="rect" href="Riccati_8h.html" title=" " alt="" coords="206,161,349,185"/>
+<area shape="rect" title=" " alt="" coords="318,5,478,29"/>
+<area shape="rect" href="Drone_8h.html" title=" " alt="" coords="290,83,409,107"/>
+<area shape="rect" title=" " alt="" coords="40,245,171,269"/>
+<area shape="rect" href="GRUPO__QUAT_8h.html" title="Cabecalho com funcoes de quaternion." alt="" coords="304,161,494,197"/>
+<area shape="rect" title=" " alt="" coords="364,245,434,269"/>
+<area shape="rect" href="Sdre_8h.html" title=" " alt="" coords="130,83,236,107"/>
+<area shape="rect" title=" " alt="" coords="620,77,804,113"/>
+<area shape="rect" href="Riccati_8h.html" title=" " alt="" coords="34,167,177,191"/>
 </map>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -118,31 +117,68 @@ Estruturas de Dados</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Definições e Macros</h2></td></tr>
-<tr class="memitem:ad72dbcf6d0153db1b8d8a58001feed83"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Controle_8h.html#ad72dbcf6d0153db1b8d8a58001feed83">DEBUG</a></td></tr>
-<tr class="separator:ad72dbcf6d0153db1b8d8a58001feed83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a324d50ea513e7bf94a9cf7feada7c5c2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Controle_8h.html#a324d50ea513e7bf94a9cf7feada7c5c2">DEBUG_CONTROL</a></td></tr>
+<tr class="separator:a324d50ea513e7bf94a9cf7feada7c5c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2528b2999cf4c41f445fea864ce88d75"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Controle_8h.html#a2528b2999cf4c41f445fea864ce88d75">LOAD_GAINS</a></td></tr>
+<tr class="separator:a2528b2999cf4c41f445fea864ce88d75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92102ea2f9ade1cc1a6dcce355db1677"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Controle_8h.html#a92102ea2f9ade1cc1a6dcce355db1677">PRINT_MAT</a>(X)&#160;&#160;&#160;cout &lt;&lt; #X &lt;&lt; &quot;:\n&quot; &lt;&lt; X &lt;&lt; &quot;\n&quot;</td></tr>
 <tr class="separator:a92102ea2f9ade1cc1a6dcce355db1677"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0696d950346950ac98e6c5c969bfbe42"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Controle_8h.html#a0696d950346950ac98e6c5c969bfbe42">INTEGRAL_CONTROL</a></td></tr>
+<tr class="separator:a0696d950346950ac98e6c5c969bfbe42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
 <div class="textblock"><dl class="section author"><dt>Autor</dt><dd>: Roney Silva (roneydua) </dd></dl>
-<dl class="section date"><dt>Data</dt><dd>: 16-Aug-2021 Email: <a href="#" onclick="location.href='mai'+'lto:'+'ron'+'ey'+'dda'+'si'+'lva'+'@g'+'mai'+'l.'+'com'; return false;">roney<span style="display: none;">.nosp@m.</span>ddas<span style="display: none;">.nosp@m.</span>ilva@<span style="display: none;">.nosp@m.</span>gmai<span style="display: none;">.nosp@m.</span>l.com</a> Project: quadrirrotorUFABC</dd></dl>
+<dl class="section date"><dt>Data</dt><dd>: 19-Aug-2021 Email: <a href="#" onclick="location.href='mai'+'lto:'+'ron'+'ey'+'dda'+'si'+'lva'+'@g'+'mai'+'l.'+'com'; return false;">roney<span style="display: none;">.nosp@m.</span>ddas<span style="display: none;">.nosp@m.</span>ilva@<span style="display: none;">.nosp@m.</span>gmai<span style="display: none;">.nosp@m.</span>l.com</a> Project: quadrirrotorUFABC</dd></dl>
 <p>Last modified by: roneydua Last modified time: 25-Aug-2021 </p>
 
 <p class="definition">Definição no arquivo <a class="el" href="Controle_8h_source.html">Controle.h</a>.</p>
 </div><h2 class="groupheader">Definições e macros</h2>
-<a id="ad72dbcf6d0153db1b8d8a58001feed83"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad72dbcf6d0153db1b8d8a58001feed83">&#9670;&nbsp;</a></span>DEBUG</h2>
+<a id="a324d50ea513e7bf94a9cf7feada7c5c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a324d50ea513e7bf94a9cf7feada7c5c2">&#9670;&nbsp;</a></span>DEBUG_CONTROL</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DEBUG</td>
+          <td class="memname">#define DEBUG_CONTROL</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definição na linha <a class="el" href="Controle_8h_source.html#l00015">15</a> do arquivo <a class="el" href="Controle_8h_source.html">Controle.h</a>.</p>
+<p class="definition">Definição na linha <a class="el" href="Controle_8h_source.html#l00016">16</a> do arquivo <a class="el" href="Controle_8h_source.html">Controle.h</a>.</p>
+
+</div>
+</div>
+<a id="a0696d950346950ac98e6c5c969bfbe42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0696d950346950ac98e6c5c969bfbe42">&#9670;&nbsp;</a></span>INTEGRAL_CONTROL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INTEGRAL_CONTROL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="Controle_8h_source.html#l00029">29</a> do arquivo <a class="el" href="Controle_8h_source.html">Controle.h</a>.</p>
+
+</div>
+</div>
+<a id="a2528b2999cf4c41f445fea864ce88d75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2528b2999cf4c41f445fea864ce88d75">&#9670;&nbsp;</a></span>LOAD_GAINS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOAD_GAINS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Precompilador para leitrua dos ganhos </p>
+
+<p class="definition">Definição na linha <a class="el" href="Controle_8h_source.html#l00018">18</a> do arquivo <a class="el" href="Controle_8h_source.html">Controle.h</a>.</p>
 
 </div>
 </div>
@@ -162,7 +198,7 @@ Definições e Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definição na linha <a class="el" href="Controle_8h_source.html#l00018">18</a> do arquivo <a class="el" href="Controle_8h_source.html">Controle.h</a>.</p>
+<p class="definition">Definição na linha <a class="el" href="Controle_8h_source.html#l00021">21</a> do arquivo <a class="el" href="Controle_8h_source.html">Controle.h</a>.</p>
 
 </div>
 </div>

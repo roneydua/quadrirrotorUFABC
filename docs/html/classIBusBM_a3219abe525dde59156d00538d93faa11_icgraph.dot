@@ -6,11 +6,21 @@ digraph "IBusBM::loop"
   node [fontname="DejaVuSansMono",fontsize="8",shape=record];
   rankdir="RL";
   Node1 [label="IBusBM::loop",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
-  Node1 -> Node1 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
-  Node2 [label="onTimer",height=0.2,width=0.4,color="black",URL="$IBusBM_8cpp.html#a68b68e72a8323bb91995b38e98cf7d3e",tooltip=" "];
+  Node2 [label="emergencyMethods",height=0.2,width=0.4,color="black",URL="$main_8cpp.html#a1f32cff79659de71ff8de76c85e7c7b9",tooltip="Task de Procedimentos emergenciais."];
   Node2 -> Node3 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
-  Node3 [label="IBusBM::begin",height=0.2,width=0.4,color="black",URL="$classIBusBM.html#afb01e4a762c8f575d8466fc8dadaa5cd",tooltip=" "];
+  Node3 [label="xTaskContol",height=0.2,width=0.4,color="black",URL="$main_8cpp.html#ad3d424dca818563665f9ab9bbf866fff",tooltip=" "];
   Node3 -> Node4 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
   Node4 [label="setup",height=0.2,width=0.4,color="black",URL="$main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d",tooltip=" "];
+  Node1 -> Node1 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node5 [label="onTimer",height=0.2,width=0.4,color="black",URL="$IBusBM_8cpp.html#a68b68e72a8323bb91995b38e98cf7d3e",tooltip=" "];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node6 [label="IBusBM::begin",height=0.2,width=0.4,color="black",URL="$classIBusBM.html#afb01e4a762c8f575d8466fc8dadaa5cd",tooltip=" "];
+  Node6 -> Node4 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node7 [label="xTaskSetupFiltro",height=0.2,width=0.4,color="black",URL="$main_8cpp.html#a1d67803bd6f9b50c1e3686650e280f68",tooltip=" "];
+  Node7 -> Node4 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
 }

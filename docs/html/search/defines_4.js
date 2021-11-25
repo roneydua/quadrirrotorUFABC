@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['rad_5fto_5fdeg_1080',['RAD_TO_DEG',['../GRUPO__QUAT_8h.html#a89e47af0449640d4f15191aba5ca24c6',1,'GRUPO_QUAT.h']]],
-  ['rate_5f10_1081',['RATE_10',['../GPS_8h.html#ad7a8928b2d0331ab5eea166050a41c37',1,'GPS.h']]]
+  ['nav_5fmode_5f1g_1186',['NAV_MODE_1G',['../GPS_8h.html#a4afb4aaa3fa37c26d148c32f7af5a944',1,'GPS.h']]],
+  ['nav_5fposecef_1187',['NAV_POSECEF',['../GPS_8h.html#a9241bba6283212e1bf773680a3f1a31f',1,'GPS.h']]],
+  ['nav_5fpvt_1188',['NAV_PVT',['../GPS_8h.html#a63332ee69ceebaa458f065465e43f202',1,'GPS.h']]]
 ];

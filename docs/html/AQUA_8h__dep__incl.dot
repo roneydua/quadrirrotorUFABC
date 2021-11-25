@@ -8,5 +8,9 @@ digraph "lib/AQUA/AQUA.h"
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
   Node2 [label="lib/AQUA/AQUA.cpp",height=0.2,width=0.4,color="black",URL="$AQUA_8cpp.html",tooltip=" "];
   Node1 -> Node3 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
-  Node3 [label="lib/EKF/EKF.cpp",height=0.2,width=0.4,color="black",URL="$EKF_8cpp.html",tooltip="Classe que implementa o filtro de Kalman estendido."];
+  Node3 [label="lib/EKF/EKF.h",height=0.2,width=0.4,color="black",URL="$EKF_8h.html",tooltip="Classe que implementa o filtro de Kalman estendido."];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node4 [label="lib/EKF/EKF.cpp",height=0.2,width=0.4,color="black",URL="$EKF_8cpp.html",tooltip="Classe que implementa o filtro de Kalman estendido."];
+  Node3 -> Node5 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node5 [label="src/main.cpp",height=0.2,width=0.4,color="black",URL="$main_8cpp.html",tooltip=" "];
 }

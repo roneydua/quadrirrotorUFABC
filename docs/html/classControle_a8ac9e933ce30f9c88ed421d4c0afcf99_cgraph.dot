@@ -10,4 +10,12 @@ digraph "Controle::computeRotationalTarget"
   Node2 [label="ekf::Q_l",height=0.2,width=0.4,color="black",URL="$namespaceekf.html#a34993a331b6837e5274d556e4f0a1bea",tooltip=" "];
   Node2 -> Node3 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
   Node3 [label="ekf::skew",height=0.2,width=0.4,color="black",URL="$namespaceekf.html#af3f0a631343e55ec8b42f3fbea182461",tooltip="Matrix antissimetrica."];
+  Node1 -> Node4 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node4 [label="ekf::quaternion2Euler",height=0.2,width=0.4,color="black",URL="$namespaceekf.html#aab2dcd522b40c160064cfae69cae6d98",tooltip=" "];
+  Node4 -> Node5 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node5 [label="ekf::calc_phi",height=0.2,width=0.4,color="black",URL="$namespaceekf.html#ad48c9ef49e8ccbde872958a81f6ed41a",tooltip="Calcula, a partir de um quatérnio de atitude, o valor do ângulo Phi em Radianos."];
+  Node4 -> Node6 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node6 [label="ekf::calc_psi",height=0.2,width=0.4,color="black",URL="$namespaceekf.html#a12f4cfdfc4baad066351f122771205a0",tooltip="Calcula, a partir de um quatérnio de atitude, o valor do ângulo Psi em Radianos."];
+  Node4 -> Node7 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node7 [label="ekf::calc_theta",height=0.2,width=0.4,color="black",URL="$namespaceekf.html#a6530a1bee6082aaa64ec7e8525d0ed54",tooltip="Calcula, a partir de um quatérnio de atitude, o valor do ângulo Theta em Radianos."];
 }

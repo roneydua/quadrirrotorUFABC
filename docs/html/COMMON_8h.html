@@ -83,15 +83,40 @@ $(function() {
 <area shape="rect" title=" " alt="" coords="15,77,91,101"/>
 </map>
 </div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Este grafo mostra quais arquivos estão direta ou indiretamente relacionados com esse arquivo:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="COMMON_8h__dep__incl.png" border="0" usemap="#asrc_2COMMON_8hdep" alt=""/></div>
+<map name="asrc_2COMMON_8hdep" id="asrc_2COMMON_8hdep">
+<area shape="rect" title=" " alt="" coords="5,5,100,29"/>
+<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="5,77,100,101"/>
+</map>
+</div>
 </div>
 <p><a href="COMMON_8h_source.html">Vá para o código-fonte desse arquivo.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Funções</h2></td></tr>
 <tr class="memitem:a6c89b6571752f2a19aff170b1d3d6e58"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="COMMON_8h.html#a6c89b6571752f2a19aff170b1d3d6e58">blindLED</a> (size_t times)</td></tr>
+<tr class="memdesc:a6c89b6571752f2a19aff170b1d3d6e58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pisca o led #times vezes.  <a href="COMMON_8h.html#a6c89b6571752f2a19aff170b1d3d6e58">Mais...</a><br /></td></tr>
 <tr class="separator:a6c89b6571752f2a19aff170b1d3d6e58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8eabef94a982b1407d1ae4731b7e07ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="COMMON_8h.html#a8eabef94a982b1407d1ae4731b7e07ca">turnOnLed</a> (void)</td></tr>
+<tr class="memdesc:a8eabef94a982b1407d1ae4731b7e07ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liga o led de comunicação.  <a href="COMMON_8h.html#a8eabef94a982b1407d1ae4731b7e07ca">Mais...</a><br /></td></tr>
+<tr class="separator:a8eabef94a982b1407d1ae4731b7e07ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e9b3928a2c3089998123715bcae29e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="COMMON_8h.html#a0e9b3928a2c3089998123715bcae29e9">turnOffLed</a> (void)</td></tr>
+<tr class="memdesc:a0e9b3928a2c3089998123715bcae29e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Desliga o led de comunicação.  <a href="COMMON_8h.html#a0e9b3928a2c3089998123715bcae29e9">Mais...</a><br /></td></tr>
+<tr class="separator:a0e9b3928a2c3089998123715bcae29e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Funções</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><dl class="section author"><dt>Autor</dt><dd>roneydua (<a href="#" onclick="location.href='mai'+'lto:'+'ron'+'ey'+'dda'+'si'+'lva'+'@g'+'mai'+'l.'+'com'; return false;">roney<span style="display: none;">.nosp@m.</span>ddas<span style="display: none;">.nosp@m.</span>ilva@<span style="display: none;">.nosp@m.</span>gmai<span style="display: none;">.nosp@m.</span>l.com</a>) </dd></dl>
+<dl class="section version"><dt>Versão</dt><dd>0.1 </dd></dl>
+<dl class="section date"><dt>Data</dt><dd>2021-10-15</dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2021 </dd></dl>
+
+<p class="definition">Definição no arquivo <a class="el" href="COMMON_8h_source.html">COMMON.h</a>.</p>
+</div><h2 class="groupheader">Funções</h2>
 <a id="a6c89b6571752f2a19aff170b1d3d6e58"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6c89b6571752f2a19aff170b1d3d6e58">&#9670;&nbsp;</a></span>blindLED()</h2>
 
@@ -116,19 +141,130 @@ Funções</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definição na linha <a class="el" href="COMMON_8h_source.html#l00004">4</a> do arquivo <a class="el" href="COMMON_8h_source.html">COMMON.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;                                   {</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;  <span class="keyword">extern</span> gpio_num_t <a class="code" href="PARAMETROS_8h.html#a9135a979a4e22c5a4095074dec5477f5">onboard_led</a>;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;  <span class="keywordtype">int</span> count = 0;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; 2 * times; i++) {</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    digitalWrite(<a class="code" href="PARAMETROS_8h.html#a9135a979a4e22c5a4095074dec5477f5">onboard_led</a>, count);</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    vTaskDelay(500);</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    count = 1 - count;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  }</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
-<div class="ttc" id="aPARAMETROS_8h_html_a9135a979a4e22c5a4095074dec5477f5"><div class="ttname"><a href="PARAMETROS_8h.html#a9135a979a4e22c5a4095074dec5477f5">onboard_led</a></div><div class="ttdeci">gpio_num_t onboard_led</div></div>
+<p>Pisca o led #times vezes. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">times</td><td>Número de vezes que o led piscará. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definição na linha <a class="el" href="COMMON_8h_source.html#l00019">19</a> do arquivo <a class="el" href="COMMON_8h_source.html">COMMON.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                                   {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keyword">extern</span> gpio_num_t <a class="code" href="PARAMETROS_8h.html#a9135a979a4e22c5a4095074dec5477f5">onboard_led</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keywordtype">int</span> count = 0;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; 2 * times; i++) {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    digitalWrite(<a class="code" href="PARAMETROS_8h.html#a9135a979a4e22c5a4095074dec5477f5">onboard_led</a>, count);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    vTaskDelay(500);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    count = 1 - count;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<div class="ttc" id="aPARAMETROS_8h_html_a9135a979a4e22c5a4095074dec5477f5"><div class="ttname"><a href="PARAMETROS_8h.html#a9135a979a4e22c5a4095074dec5477f5">onboard_led</a></div><div class="ttdeci">gpio_num_t onboard_led</div><div class="ttdef"><b>Definition:</b> <a href="PARAMETROS_8h_source.html#l00043">PARAMETROS.h:43</a></div></div>
 </div><!-- fragment -->
-<p class="reference">Referencias <a class="el" href="PARAMETROS_8h.html#a9135a979a4e22c5a4095074dec5477f5">onboard_led</a>.</p>
+<p class="reference">Referencias <a class="el" href="PARAMETROS_8h_source.html#l00043">onboard_led</a>.</p>
+
+</div>
+</div>
+<a id="a0e9b3928a2c3089998123715bcae29e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e9b3928a2c3089998123715bcae29e9">&#9670;&nbsp;</a></span>turnOffLed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void turnOffLed </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Desliga o led de comunicação. </p>
+
+<p class="definition">Definição na linha <a class="el" href="COMMON_8h_source.html#l00041">41</a> do arquivo <a class="el" href="COMMON_8h_source.html">COMMON.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                             {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">extern</span> gpio_num_t <a class="code" href="PARAMETROS_8h.html#a9135a979a4e22c5a4095074dec5477f5">onboard_led</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  digitalWrite(<a class="code" href="PARAMETROS_8h.html#a9135a979a4e22c5a4095074dec5477f5">onboard_led</a>, HIGH);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">Referencias <a class="el" href="PARAMETROS_8h_source.html#l00043">onboard_led</a>.</p>
+
+<p class="reference">Referenciado(a) por <a class="el" href="main_8cpp_source.html#l00114">emergencyMethods()</a>.</p>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Esse é o diagrama das funções que utilizam essa função:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="COMMON_8h_a0e9b3928a2c3089998123715bcae29e9_icgraph.png" border="0" usemap="#aCOMMON_8h_a0e9b3928a2c3089998123715bcae29e9_icgraph" alt=""/></div>
+<map name="aCOMMON_8h_a0e9b3928a2c3089998123715bcae29e9_icgraph" id="aCOMMON_8h_a0e9b3928a2c3089998123715bcae29e9_icgraph">
+<area shape="rect" title="Desliga o led de comunicação." alt="" coords="408,5,491,29"/>
+<area shape="rect" href="main_8cpp.html#a1f32cff79659de71ff8de76c85e7c7b9" title="Task de Procedimentos emergenciais." alt="" coords="241,5,360,29"/>
+<area shape="rect" href="main_8cpp.html#ad3d424dca818563665f9ab9bbf866fff" title=" " alt="" coords="105,5,193,29"/>
+<area shape="rect" href="main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d" title=" " alt="" coords="5,5,57,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8eabef94a982b1407d1ae4731b7e07ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8eabef94a982b1407d1ae4731b7e07ca">&#9670;&nbsp;</a></span>turnOnLed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void turnOnLed </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Liga o led de comunicação. </p>
+
+<p class="definition">Definição na linha <a class="el" href="COMMON_8h_source.html#l00033">33</a> do arquivo <a class="el" href="COMMON_8h_source.html">COMMON.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                            {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keyword">extern</span> gpio_num_t <a class="code" href="PARAMETROS_8h.html#a9135a979a4e22c5a4095074dec5477f5">onboard_led</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  digitalWrite(<a class="code" href="PARAMETROS_8h.html#a9135a979a4e22c5a4095074dec5477f5">onboard_led</a>, LOW);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">Referencias <a class="el" href="PARAMETROS_8h_source.html#l00043">onboard_led</a>.</p>
+
+<p class="reference">Referenciado(a) por <a class="el" href="main_8cpp_source.html#l00114">emergencyMethods()</a>.</p>
+<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Esse é o diagrama das funções que utilizam essa função:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="COMMON_8h_a8eabef94a982b1407d1ae4731b7e07ca_icgraph.png" border="0" usemap="#aCOMMON_8h_a8eabef94a982b1407d1ae4731b7e07ca_icgraph" alt=""/></div>
+<map name="aCOMMON_8h_a8eabef94a982b1407d1ae4731b7e07ca_icgraph" id="aCOMMON_8h_a8eabef94a982b1407d1ae4731b7e07ca_icgraph">
+<area shape="rect" title="Liga o led de comunicação." alt="" coords="408,5,484,29"/>
+<area shape="rect" href="main_8cpp.html#a1f32cff79659de71ff8de76c85e7c7b9" title="Task de Procedimentos emergenciais." alt="" coords="241,5,360,29"/>
+<area shape="rect" href="main_8cpp.html#ad3d424dca818563665f9ab9bbf866fff" title=" " alt="" coords="105,5,193,29"/>
+<area shape="rect" href="main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d" title=" " alt="" coords="5,5,57,29"/>
+</map>
+</div>
 
 </div>
 </div>

@@ -1,4 +1,8 @@
 <map id="TELEMETRIA::enviaMensagem" name="TELEMETRIA::enviaMensagem">
-<area shape="rect" id="node1" title=" " alt="" coords="105,5,277,29"/>
-<area shape="rect" id="node2" href="$main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d" title=" " alt="" coords="5,5,57,29"/>
+<area shape="rect" id="node1" title=" " alt="" coords="439,105,611,129"/>
+<area shape="rect" id="node2" href="$main_8cpp.html#a1f32cff79659de71ff8de76c85e7c7b9" title="Task de Procedimentos emergenciais." alt="" coords="272,5,391,29"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#ad3d424dca818563665f9ab9bbf866fff" title=" " alt="" coords="121,55,209,79"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d" title=" " alt="" coords="5,105,57,129"/>
+<area shape="rect" id="node5" href="$main_8cpp.html#abd3bd9c344e182dcb5f5a561ef562eb0" title=" " alt="" coords="275,155,387,179"/>
+<area shape="rect" id="node6" href="$main_8cpp.html#a1d67803bd6f9b50c1e3686650e280f68" title=" " alt="" coords="105,155,224,179"/>
 </map>

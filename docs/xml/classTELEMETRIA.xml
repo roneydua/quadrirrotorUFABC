@@ -3,6 +3,8 @@
   <compounddef id="classTELEMETRIA" kind="class" language="C++" prot="public">
     <compoundname>TELEMETRIA</compoundname>
     <includes refid="TELEMETRIA_8h" local="no">TELEMETRIA.h</includes>
+    <innerclass refid="structTELEMETRIA_1_1IMU__DATA" prot="public">TELEMETRIA::IMU_DATA</innerclass>
+    <innerclass refid="structTELEMETRIA_1_1MENSAGEM" prot="public">TELEMETRIA::MENSAGEM</innerclass>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="classTELEMETRIA_1aacd01aa79091d1ee7dc4725e30a73d23" prot="public" static="no" mutable="no">
         <type>uint8_t</type>
@@ -16,25 +18,41 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/TELEMETRIA/TELEMETRIA.h" line="29" column="11" bodyfile="lib/TELEMETRIA/TELEMETRIA.h" bodystart="29" bodyend="-1"/>
+        <location file="lib/TELEMETRIA/TELEMETRIA.h" line="32" column="11" bodyfile="lib/TELEMETRIA/TELEMETRIA.h" bodystart="32" bodyend="-1"/>
         <referencedby refid="classTELEMETRIA_1a780be82ef9be2da12601a0ea7d10e647" compoundref="TELEMETRIA_8cpp" startline="20" endline="39">begin</referencedby>
-        <referencedby refid="classTELEMETRIA_1af7d02e72d86c217544d195c3b3c9d4ef" compoundref="TELEMETRIA_8cpp" startline="41" endline="55">envia</referencedby>
-        <referencedby refid="classTELEMETRIA_1a6c13ae22d648afb2c7bd41f3e17ba4b6" compoundref="TELEMETRIA_8cpp" startline="56" endline="67">enviaMensagem</referencedby>
+        <referencedby refid="classTELEMETRIA_1a235abb2ba6888140e7dab2e73a050049" compoundref="TELEMETRIA_8cpp" startline="46" endline="62">envia</referencedby>
+        <referencedby refid="classTELEMETRIA_1a6c13ae22d648afb2c7bd41f3e17ba4b6" compoundref="TELEMETRIA_8cpp" startline="69" endline="81">enviaMensagem</referencedby>
+        <referencedby refid="classTELEMETRIA_1ac3b8fa789f6d00dca33ea41b4fd865c7" compoundref="TELEMETRIA_8cpp" startline="63" endline="68">enviaTunningGains</referencedby>
       </memberdef>
-      <memberdef kind="variable" id="classTELEMETRIA_1a0bbc0dd42d67ab178c9a30a141f1b58b" prot="public" static="no" mutable="no">
-        <type></type>
-        <definition>TELEMETRIA::mensagem</definition>
+      <memberdef kind="variable" id="classTELEMETRIA_1a71317d1e99e1776c4b19738f53d52650" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structTELEMETRIA_1_1IMU__DATA" kindref="compound">TELEMETRIA::IMU_DATA</ref></type>
+        <definition>struct TELEMETRIA::IMU_DATA TELEMETRIA::imu</definition>
         <argsstring></argsstring>
-        <name>mensagem</name>
+        <name>imu</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/TELEMETRIA/TELEMETRIA.h" line="34" column="4" bodyfile="lib/TELEMETRIA/TELEMETRIA.h" bodystart="34" bodyend="-1"/>
-        <referencedby refid="classTELEMETRIA_1af7d02e72d86c217544d195c3b3c9d4ef" compoundref="TELEMETRIA_8cpp" startline="41" endline="55">envia</referencedby>
-        <referencedby refid="classTELEMETRIA_1a6c13ae22d648afb2c7bd41f3e17ba4b6" compoundref="TELEMETRIA_8cpp" startline="56" endline="67">enviaMensagem</referencedby>
+        <location file="lib/TELEMETRIA/TELEMETRIA.h" line="46" column="7"/>
+        <referencedby refid="classTELEMETRIA_1a235abb2ba6888140e7dab2e73a050049" compoundref="TELEMETRIA_8cpp" startline="46" endline="62">envia</referencedby>
+        <referencedby refid="main_8cpp_1abd3bd9c344e182dcb5f5a561ef562eb0" compoundref="main_8cpp" startline="51" endline="86">xTaskLoopFilter</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classTELEMETRIA_1a2cbf1b032f8a825a10b2d339aa27084c" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float TELEMETRIA::gainsTunning[3]</definition>
+        <argsstring>[3]</argsstring>
+        <name>gainsTunning</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TELEMETRIA/TELEMETRIA.h" line="48" column="9" bodyfile="lib/TELEMETRIA/TELEMETRIA.h" bodystart="48" bodyend="-1"/>
+        <referencedby refid="classTELEMETRIA_1ac3b8fa789f6d00dca33ea41b4fd865c7" compoundref="TELEMETRIA_8cpp" startline="63" endline="68">enviaTunningGains</referencedby>
+        <referencedby refid="main_8cpp_1ad3d424dca818563665f9ab9bbf866fff" compoundref="main_8cpp" startline="128" endline="211">xTaskContol</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classTELEMETRIA_1aa7dcf13d1ec896ed759e16d47a6d31fb" prot="public" static="no" mutable="no">
         <type></type>
@@ -47,8 +65,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/TELEMETRIA/TELEMETRIA.h" line="38" column="4" bodyfile="lib/TELEMETRIA/TELEMETRIA.h" bodystart="38" bodyend="-1"/>
-        <referencedby refid="classTELEMETRIA_1ace27ccd5888ebc3802a4eb22cc3fd9da" compoundref="TELEMETRIA_8cpp" startline="69" endline="77">OnDataRecv</referencedby>
+        <location file="lib/TELEMETRIA/TELEMETRIA.h" line="59" column="4" bodyfile="lib/TELEMETRIA/TELEMETRIA.h" bodystart="59" bodyend="-1"/>
+        <referencedby refid="classTELEMETRIA_1ace27ccd5888ebc3802a4eb22cc3fd9da" compoundref="TELEMETRIA_8cpp" startline="83" endline="91">OnDataRecv</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classTELEMETRIA_1ae8ffac9b63a68baa5a4ffa3f14a4954d" prot="public" static="no" mutable="no">
         <type>uint8_t</type>
@@ -61,7 +79,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/TELEMETRIA/TELEMETRIA.h" line="40" column="11" bodyfile="lib/TELEMETRIA/TELEMETRIA.h" bodystart="40" bodyend="-1"/>
+        <location file="lib/TELEMETRIA/TELEMETRIA.h" line="62" column="11" bodyfile="lib/TELEMETRIA/TELEMETRIA.h" bodystart="62" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-attrib">
@@ -76,8 +94,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/TELEMETRIA/TELEMETRIA.h" line="39" column="18" bodyfile="lib/TELEMETRIA/TELEMETRIA.h" bodystart="39" bodyend="-1"/>
-        <referencedby refid="classTELEMETRIA_1ace27ccd5888ebc3802a4eb22cc3fd9da" compoundref="TELEMETRIA_8cpp" startline="69" endline="77">OnDataRecv</referencedby>
+        <location file="lib/TELEMETRIA/TELEMETRIA.h" line="61" column="18" bodyfile="lib/TELEMETRIA/TELEMETRIA.h" bodystart="61" bodyend="-1"/>
+        <referencedby refid="classTELEMETRIA_1ace27ccd5888ebc3802a4eb22cc3fd9da" compoundref="TELEMETRIA_8cpp" startline="83" endline="91">OnDataRecv</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -93,9 +111,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/TELEMETRIA/TELEMETRIA.h" line="25" column="3" bodyfile="lib/TELEMETRIA/TELEMETRIA.cpp" bodystart="16" bodyend="16"/>
+        <location file="lib/TELEMETRIA/TELEMETRIA.h" line="27" column="3" bodyfile="lib/TELEMETRIA/TELEMETRIA.cpp" bodystart="16" bodyend="16"/>
         <references refid="classTELEMETRIA_1a780be82ef9be2da12601a0ea7d10e647" compoundref="TELEMETRIA_8cpp" startline="20" endline="39">begin</references>
-        <referencedby refid="classTELEMETRIA_1ace27ccd5888ebc3802a4eb22cc3fd9da" compoundref="TELEMETRIA_8cpp" startline="69" endline="77">OnDataRecv</referencedby>
+        <referencedby refid="classTELEMETRIA_1ace27ccd5888ebc3802a4eb22cc3fd9da" compoundref="TELEMETRIA_8cpp" startline="83" endline="91">OnDataRecv</referencedby>
       </memberdef>
       <memberdef kind="function" id="classTELEMETRIA_1a780be82ef9be2da12601a0ea7d10e647" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -109,31 +127,65 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/TELEMETRIA/TELEMETRIA.h" line="26" column="8" bodyfile="lib/TELEMETRIA/TELEMETRIA.cpp" bodystart="20" bodyend="39"/>
-        <references refid="classTELEMETRIA_1aacd01aa79091d1ee7dc4725e30a73d23" compoundref="TELEMETRIA_8h" startline="29">_broadcast</references>
-        <references refid="classTELEMETRIA_1ace27ccd5888ebc3802a4eb22cc3fd9da" compoundref="TELEMETRIA_8cpp" startline="69" endline="77">OnDataRecv</references>
-        <referencedby refid="main_8cpp_1a4fc01d736fe50cf5b977f755b675f11d" compoundref="main_8cpp" startline="33" endline="47">setup</referencedby>
+        <location file="lib/TELEMETRIA/TELEMETRIA.h" line="28" column="8" bodyfile="lib/TELEMETRIA/TELEMETRIA.cpp" bodystart="20" bodyend="39"/>
+        <references refid="classTELEMETRIA_1aacd01aa79091d1ee7dc4725e30a73d23" compoundref="TELEMETRIA_8h" startline="32">_broadcast</references>
+        <references refid="classTELEMETRIA_1ace27ccd5888ebc3802a4eb22cc3fd9da" compoundref="TELEMETRIA_8cpp" startline="83" endline="91">OnDataRecv</references>
+        <referencedby refid="main_8cpp_1a4fc01d736fe50cf5b977f755b675f11d" compoundref="main_8cpp" startline="214" endline="235">setup</referencedby>
         <referencedby refid="classTELEMETRIA_1ae47c01609eec8284a663dd66e0d7c632" compoundref="TELEMETRIA_8cpp" startline="16" endline="16">TELEMETRIA</referencedby>
       </memberdef>
-      <memberdef kind="function" id="classTELEMETRIA_1af7d02e72d86c217544d195c3b3c9d4ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classTELEMETRIA_1a235abb2ba6888140e7dab2e73a050049" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void TELEMETRIA::envia</definition>
-        <argsstring>(VectorXf a)</argsstring>
+        <argsstring>()</argsstring>
         <name>envia</name>
-        <param>
-          <type>VectorXf</type>
-          <declname>a</declname>
-        </param>
+        <briefdescription>
+<para>Envia vetor Eigen de float. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>quant</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dimensão maxima de 20 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>_a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vetor com dados. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/TELEMETRIA/TELEMETRIA.h" line="29" column="8" bodyfile="lib/TELEMETRIA/TELEMETRIA.cpp" bodystart="46" bodyend="62"/>
+        <references refid="classTELEMETRIA_1aacd01aa79091d1ee7dc4725e30a73d23" compoundref="TELEMETRIA_8h" startline="32">_broadcast</references>
+        <references refid="structTELEMETRIA_1_1IMU__DATA_1afdccdf0630d2607a54ec162276801027" compoundref="TELEMETRIA_8h" startline="43">TELEMETRIA::IMU_DATA::dados</references>
+        <references refid="structTELEMETRIA_1_1IMU__DATA_1adc59258e2c8a5593dffe9007176675d1" compoundref="TELEMETRIA_8h" startline="44">TELEMETRIA::IMU_DATA::dadosEigen</references>
+        <references refid="TELEMETRIA_8h_1af55149bc1f05cf18af067a302e31e3f9" compoundref="TELEMETRIA_8h" startline="20">DATA_SIZE</references>
+        <references refid="classTELEMETRIA_1a71317d1e99e1776c4b19738f53d52650">imu</references>
+        <referencedby refid="main_8cpp_1abd3bd9c344e182dcb5f5a561ef562eb0" compoundref="main_8cpp" startline="51" endline="86">xTaskLoopFilter</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classTELEMETRIA_1ac3b8fa789f6d00dca33ea41b4fd865c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TELEMETRIA::enviaTunningGains</definition>
+        <argsstring>()</argsstring>
+        <name>enviaTunningGains</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/TELEMETRIA/TELEMETRIA.h" line="27" column="8" bodyfile="lib/TELEMETRIA/TELEMETRIA.cpp" bodystart="41" bodyend="55"/>
-        <references refid="classTELEMETRIA_1aacd01aa79091d1ee7dc4725e30a73d23" compoundref="TELEMETRIA_8h" startline="29">_broadcast</references>
-        <references refid="classTELEMETRIA_1a0bbc0dd42d67ab178c9a30a141f1b58b" compoundref="TELEMETRIA_8h" startline="34">mensagem</references>
-        <referencedby refid="main_8cpp_1afe461d27b9c48d5921c00d521181f12f" compoundref="main_8cpp" startline="50" endline="59">loop</referencedby>
+        <location file="lib/TELEMETRIA/TELEMETRIA.h" line="30" column="8" bodyfile="lib/TELEMETRIA/TELEMETRIA.cpp" bodystart="63" bodyend="68"/>
+        <references refid="classTELEMETRIA_1aacd01aa79091d1ee7dc4725e30a73d23" compoundref="TELEMETRIA_8h" startline="32">_broadcast</references>
+        <references refid="classTELEMETRIA_1a2cbf1b032f8a825a10b2d339aa27084c" compoundref="TELEMETRIA_8h" startline="48">gainsTunning</references>
+        <referencedby refid="main_8cpp_1ad3d424dca818563665f9ab9bbf866fff" compoundref="main_8cpp" startline="128" endline="211">xTaskContol</referencedby>
       </memberdef>
       <memberdef kind="function" id="classTELEMETRIA_1a6c13ae22d648afb2c7bd41f3e17ba4b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -150,10 +202,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/TELEMETRIA/TELEMETRIA.h" line="28" column="8" bodyfile="lib/TELEMETRIA/TELEMETRIA.cpp" bodystart="56" bodyend="67"/>
-        <references refid="classTELEMETRIA_1aacd01aa79091d1ee7dc4725e30a73d23" compoundref="TELEMETRIA_8h" startline="29">_broadcast</references>
-        <references refid="classTELEMETRIA_1a0bbc0dd42d67ab178c9a30a141f1b58b" compoundref="TELEMETRIA_8h" startline="34">mensagem</references>
-        <referencedby refid="main_8cpp_1a4fc01d736fe50cf5b977f755b675f11d" compoundref="main_8cpp" startline="33" endline="47">setup</referencedby>
+        <location file="lib/TELEMETRIA/TELEMETRIA.h" line="31" column="8" bodyfile="lib/TELEMETRIA/TELEMETRIA.cpp" bodystart="69" bodyend="81"/>
+        <references refid="classTELEMETRIA_1aacd01aa79091d1ee7dc4725e30a73d23" compoundref="TELEMETRIA_8h" startline="32">_broadcast</references>
+        <references refid="structTELEMETRIA_1_1MENSAGEM_1a39b1c3e6ce2fed1184fba64fbd81721d" compoundref="TELEMETRIA_8h" startline="55">TELEMETRIA::MENSAGEM::info</references>
+        <referencedby refid="main_8cpp_1a1f32cff79659de71ff8de76c85e7c7b9" compoundref="main_8cpp" startline="114" endline="127">emergencyMethods</referencedby>
+        <referencedby refid="main_8cpp_1a4fc01d736fe50cf5b977f755b675f11d" compoundref="main_8cpp" startline="214" endline="235">setup</referencedby>
+        <referencedby refid="main_8cpp_1ad3d424dca818563665f9ab9bbf866fff" compoundref="main_8cpp" startline="128" endline="211">xTaskContol</referencedby>
+        <referencedby refid="main_8cpp_1abd3bd9c344e182dcb5f5a561ef562eb0" compoundref="main_8cpp" startline="51" endline="86">xTaskLoopFilter</referencedby>
+        <referencedby refid="main_8cpp_1a1d67803bd6f9b50c1e3686650e280f68" compoundref="main_8cpp" startline="87" endline="109">xTaskSetupFiltro</referencedby>
       </memberdef>
       <memberdef kind="function" id="classTELEMETRIA_1a4098a02f670b029836ab05a2b2bff229" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -170,23 +226,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/TELEMETRIA/TELEMETRIA.h" line="30" column="8" bodyfile="lib/TELEMETRIA/TELEMETRIA.cpp" bodystart="79" bodyend="84"/>
-      </memberdef>
-      <memberdef kind="function" id="classTELEMETRIA_1a3ed6613237ba555ebae298106a7369e8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>struct</type>
-        <definition>struct TELEMETRIA::__attribute__</definition>
-        <argsstring>((packed)) mensagem</argsstring>
-        <name>__attribute__</name>
-        <param>
-          <type>(packed)</type>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="lib/TELEMETRIA/TELEMETRIA.h" line="30" column="8" bodyfile="lib/TELEMETRIA/TELEMETRIA.h" bodystart="31" bodyend="34"/>
+        <location file="lib/TELEMETRIA/TELEMETRIA.h" line="33" column="8" bodyfile="lib/TELEMETRIA/TELEMETRIA.cpp" bodystart="93" bodyend="98"/>
       </memberdef>
       <memberdef kind="function" id="classTELEMETRIA_1a02904fd20750c3eb7598dff99b20649b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>struct</type>
@@ -202,7 +242,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/TELEMETRIA/TELEMETRIA.h" line="34" column="4" bodyfile="lib/TELEMETRIA/TELEMETRIA.h" bodystart="36" bodyend="38"/>
+        <location file="lib/TELEMETRIA/TELEMETRIA.h" line="48" column="9" bodyfile="lib/TELEMETRIA/TELEMETRIA.h" bodystart="57" bodyend="59"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-static-func">
@@ -229,9 +269,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/TELEMETRIA/TELEMETRIA.h" line="43" column="15" bodyfile="lib/TELEMETRIA/TELEMETRIA.cpp" bodystart="69" bodyend="77"/>
-        <references refid="classTELEMETRIA_1a1282e1b8ab4ecaa1fd4fb1837b4d12d6" compoundref="TELEMETRIA_8h" startline="39">comAceito</references>
-        <references refid="classTELEMETRIA_1aa7dcf13d1ec896ed759e16d47a6d31fb" compoundref="TELEMETRIA_8h" startline="38">controle</references>
+        <location file="lib/TELEMETRIA/TELEMETRIA.h" line="65" column="15" bodyfile="lib/TELEMETRIA/TELEMETRIA.cpp" bodystart="83" bodyend="91"/>
+        <references refid="classTELEMETRIA_1a1282e1b8ab4ecaa1fd4fb1837b4d12d6" compoundref="TELEMETRIA_8h" startline="61">comAceito</references>
+        <references refid="classTELEMETRIA_1aa7dcf13d1ec896ed759e16d47a6d31fb" compoundref="TELEMETRIA_8h" startline="59">controle</references>
         <references refid="GPS_8h_1a27c939ba1a4f4d927aaa500781293ba7" compoundref="GPS_8h" startline="146">data</references>
         <references refid="classTELEMETRIA_1ae47c01609eec8284a663dd66e0d7c632" compoundref="TELEMETRIA_8cpp" startline="16" endline="16">TELEMETRIA</references>
         <referencedby refid="classTELEMETRIA_1a780be82ef9be2da12601a0ea7d10e647" compoundref="TELEMETRIA_8cpp" startline="20" endline="39">begin</referencedby>
@@ -242,23 +282,31 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
+      <node id="2">
+        <label>TELEMETRIA::IMU_DATA</label>
+        <link refid="structTELEMETRIA_1_1IMU__DATA"/>
+      </node>
       <node id="1">
         <label>TELEMETRIA</label>
         <link refid="classTELEMETRIA"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+imu</edgelabel>
+        </childnode>
       </node>
     </collaborationgraph>
-    <location file="lib/TELEMETRIA/TELEMETRIA.h" line="22" column="1" bodyfile="lib/TELEMETRIA/TELEMETRIA.h" bodystart="22" bodyend="45"/>
+    <location file="lib/TELEMETRIA/TELEMETRIA.h" line="24" column="1" bodyfile="lib/TELEMETRIA/TELEMETRIA.h" bodystart="24" bodyend="67"/>
     <listofallmembers>
-      <member refid="classTELEMETRIA_1a3ed6613237ba555ebae298106a7369e8" prot="public" virt="non-virtual"><scope>TELEMETRIA</scope><name>__attribute__</name></member>
       <member refid="classTELEMETRIA_1a02904fd20750c3eb7598dff99b20649b" prot="public" virt="non-virtual"><scope>TELEMETRIA</scope><name>__attribute__</name></member>
       <member refid="classTELEMETRIA_1aacd01aa79091d1ee7dc4725e30a73d23" prot="public" virt="non-virtual"><scope>TELEMETRIA</scope><name>_broadcast</name></member>
       <member refid="classTELEMETRIA_1ae8ffac9b63a68baa5a4ffa3f14a4954d" prot="public" virt="non-virtual"><scope>TELEMETRIA</scope><name>_quantDados</name></member>
       <member refid="classTELEMETRIA_1a780be82ef9be2da12601a0ea7d10e647" prot="public" virt="non-virtual"><scope>TELEMETRIA</scope><name>begin</name></member>
       <member refid="classTELEMETRIA_1a1282e1b8ab4ecaa1fd4fb1837b4d12d6" prot="public" virt="non-virtual"><scope>TELEMETRIA</scope><name>comAceito</name></member>
       <member refid="classTELEMETRIA_1aa7dcf13d1ec896ed759e16d47a6d31fb" prot="public" virt="non-virtual"><scope>TELEMETRIA</scope><name>controle</name></member>
-      <member refid="classTELEMETRIA_1af7d02e72d86c217544d195c3b3c9d4ef" prot="public" virt="non-virtual"><scope>TELEMETRIA</scope><name>envia</name></member>
+      <member refid="classTELEMETRIA_1a235abb2ba6888140e7dab2e73a050049" prot="public" virt="non-virtual"><scope>TELEMETRIA</scope><name>envia</name></member>
       <member refid="classTELEMETRIA_1a6c13ae22d648afb2c7bd41f3e17ba4b6" prot="public" virt="non-virtual"><scope>TELEMETRIA</scope><name>enviaMensagem</name></member>
-      <member refid="classTELEMETRIA_1a0bbc0dd42d67ab178c9a30a141f1b58b" prot="public" virt="non-virtual"><scope>TELEMETRIA</scope><name>mensagem</name></member>
+      <member refid="classTELEMETRIA_1ac3b8fa789f6d00dca33ea41b4fd865c7" prot="public" virt="non-virtual"><scope>TELEMETRIA</scope><name>enviaTunningGains</name></member>
+      <member refid="classTELEMETRIA_1a2cbf1b032f8a825a10b2d339aa27084c" prot="public" virt="non-virtual"><scope>TELEMETRIA</scope><name>gainsTunning</name></member>
+      <member refid="classTELEMETRIA_1a71317d1e99e1776c4b19738f53d52650" prot="public" virt="non-virtual"><scope>TELEMETRIA</scope><name>imu</name></member>
       <member refid="classTELEMETRIA_1ace27ccd5888ebc3802a4eb22cc3fd9da" prot="private" virt="non-virtual"><scope>TELEMETRIA</scope><name>OnDataRecv</name></member>
       <member refid="classTELEMETRIA_1a4098a02f670b029836ab05a2b2bff229" prot="public" virt="non-virtual"><scope>TELEMETRIA</scope><name>pisca</name></member>
       <member refid="classTELEMETRIA_1ae47c01609eec8284a663dd66e0d7c632" prot="public" virt="non-virtual"><scope>TELEMETRIA</scope><name>TELEMETRIA</name></member>

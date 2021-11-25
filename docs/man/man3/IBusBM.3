@@ -1,4 +1,4 @@
-.TH "IBusBM" 3 "Sexta, 17 de Setembro de 2021" "Quadrirrotor" \" -*- nroff -*-
+.TH "IBusBM" 3 "Segunda, 25 de Outubro de 2021" "Quadrirrotor" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -11,6 +11,9 @@ IBusBM
 .SS "Estruturas de Dados"
 
 .in +1c
+.ti -1c
+.RI "union \fBControlUnion\fP"
+.br
 .ti -1c
 .RI "struct \fBsensorinfo\fP"
 .br
@@ -46,6 +49,9 @@ IBusBM
 .ti -1c
 .RI "volatile uint8_t \fBcnt_rec\fP"
 .br
+.ti -1c
+.RI "\fBControlUnion\fP \fBremoteControl\fP"
+.br
 .in -1c
 .SS "Tipos Privados"
 
@@ -74,9 +80,6 @@ IBusBM
 .br
 .ti -1c
 .RI "uint8_t \fBlen\fP"
-.br
-.ti -1c
-.RI "uint16_t \fBchannel\fP [\fBPROTOCOL_CHANNELS\fP]"
 .br
 .ti -1c
 .RI "uint16_t \fBchksum\fP"
@@ -127,7 +130,7 @@ IBusBM
 .in -1c
 .SH "Descrição detalhada"
 .PP 
-Definição na linha 41 do arquivo IBusBM\&.h\&.
+Definição na linha 40 do arquivo IBusBM\&.h\&.
 .SH "Enumerações"
 .PP 
 .SS "enum \fBIBusBM::State\fP\fC [private]\fP"
@@ -146,119 +149,119 @@ Definição na linha 41 do arquivo IBusBM\&.h\&.
 .TP
 \fB\fIDISCARD \fP\fP
 .PP
-Definição na linha 72 do arquivo IBusBM\&.h\&.
+Definição na linha 102 do arquivo IBusBM\&.h\&.
 .PP
 .nf
-72 { GET_LENGTH, GET_DATA, GET_CHKSUML, GET_CHKSUMH, DISCARD };
+102 { GET_LENGTH, GET_DATA, GET_CHKSUML, GET_CHKSUMH, DISCARD };
 .fi
 .SH "Funções membros"
 .PP 
 .SS "uint8_t IBusBM::addSensor (uint8_t type, uint8_t len = \fC2\fP)"
 
 .PP
-Definição na linha 298 do arquivo IBusBM\&.cpp\&.
+Definição na linha 292 do arquivo IBusBM\&.cpp\&.
 .PP
 .nf
-298                                                    {
-299   // add a sensor, return sensor number
-300   if (len != 2 && len != 4)
-301     len = 2;
-302   if (NumberSensors < SENSORMAX) {
-303     sensorinfo *s = &sensors[NumberSensors];
-304     s->sensorType = type;
-305     s->sensorLength = len;
-306     s->sensorValue = 0;
-307     NumberSensors++;
-308   }
-309   return NumberSensors;
-310 }
+292                                                    {
+293   // add a sensor, return sensor number
+294   if (len != 2 && len != 4)
+295     len = 2;
+296   if (NumberSensors < SENSORMAX) {
+297     sensorinfo *s = &sensors[NumberSensors];
+298     s->sensorType = type;
+299     s->sensorLength = len;
+300     s->sensorValue = 0;
+301     NumberSensors++;
+302   }
+303   return NumberSensors;
+304 }
 .fi
 .PP
 Referencias len, NumberSensors, IBusBM::sensorinfo::sensorLength, SENSORMAX, sensors, IBusBM::sensorinfo::sensorType e IBusBM::sensorinfo::sensorValue\&.
 .SS "void IBusBM::begin (HardwareSerial & serial, int8_t timerid = \fC0\fP, int8_t rxPin = \fC\-1\fP, int8_t txPin = \fC\-1\fP)"
 
 .PP
-Definição na linha 89 do arquivo IBusBM\&.cpp\&.
+Definição na linha 83 do arquivo IBusBM\&.cpp\&.
 .PP
 .nf
-90                                  {
+84                                  {
+85 #endif
+86 
+87 #ifdef ARDUINO_ARCH_ESP32
+88   serial\&.begin(115200, SERIAL_8N1, rxPin, txPin);
+89 #else
+90   serial\&.begin(115200, SERIAL_8N1);
 91 #endif
 92 
-93 #ifdef ARDUINO_ARCH_ESP32
-94   serial\&.begin(115200, SERIAL_8N1, rxPin, txPin);
-95 #else
-96   serial\&.begin(115200, SERIAL_8N1);
-97 #endif
-98 
-99   this->stream = &serial;
-100   this->state = DISCARD;
-101   this->last = millis();
-102   this->ptr = 0;
-103   this->len = 0;
-104   this->chksum = 0;
-105   this->lchksum = 0;
+93   this->stream = &serial;
+94   this->state = DISCARD;
+95   this->last = millis();
+96   this->ptr = 0;
+97   this->len = 0;
+98   this->chksum = 0;
+99   this->lchksum = 0;
+100 
+101   // we need to process the iBUS sensor protocol handler frequently enough (at
+102   // least once each ms) to ensure the response data from the sensor is sent on
+103   // time to the receiver if timerid==IBUSBM_NOTIMER the user is responsible for
+104   // calling the loop function
+105   this->IBusBMnext = IBusBMfirst;
 106 
-107   // we need to process the iBUS sensor protocol handler frequently enough (at
-108   // least once each ms) to ensure the response data from the sensor is sent on
-109   // time to the receiver if timerid==IBUSBM_NOTIMER the user is responsible for
-110   // calling the loop function
-111   this->IBusBMnext = IBusBMfirst;
-112 
-113   if (!IBusBMfirst && timerid != IBUSBM_NOTIMER) {
-114 #ifdef ARDUINO_ARCH_AVR
-115     // on AVR architectures Timer0 is already used for millis() - we'll just
-116     // interrupt somewhere in the middle and call the TIMER0_COMPA_vect
-117     // interrupt
-118     OCR0A = 0xAF;
-119     TIMSK0 |= _BV(OCIE0A);
-120 #else
-121   // on other architectures we need to use a time
-122   #if defined(ARDUINO_ARCH_ESP32)
-123     hw_timer_t *timer = NULL;
-124     timer = timerBegin(
-125         timerid, F_CPU / 1000000L,
-126         true); // defaults to timer_id = 0; divider=80 (1 ms); countUp = true;
-127     timerAttachInterrupt(timer, &onTimer, true); // edge = true
-128     timerAlarmWrite(timer, 1000, true);          // 1 ms
-129     timerAlarmEnable(timer);
-130   #elif defined(_VARIANT_ARDUINO_STM32_)
-131     // see https://github\&.com/stm32duino/wiki/wiki/HardwareTimer-library
-132     HardwareTimer *stimer_t = new HardwareTimer(timerid);
-133     stimer_t->setOverflow(1000, HERTZ_FORMAT); // 1000 Hz
-134     stimer_t->attachInterrupt(onTimer);
-135     stimer_t->resume();
-136   #elif defined(ARDUINO_ARCH_MBED)
-137     NRF_TIMER4->TASKS_STOP = 1;               // Stop timer
-138     NRF_TIMER4->MODE = TIMER_MODE_MODE_Timer; // Set the timer in Counter Mode
-139     NRF_TIMER4->BITMODE = TIMER_BITMODE_BITMODE_16Bit
-140                           << TIMER_BITMODE_BITMODE_Pos;
-141     NRF_TIMER2->TASKS_CLEAR = 1; // clear the task first to be usable for later
+107   if (!IBusBMfirst && timerid != IBUSBM_NOTIMER) {
+108 #ifdef ARDUINO_ARCH_AVR
+109     // on AVR architectures Timer0 is already used for millis() - we'll just
+110     // interrupt somewhere in the middle and call the TIMER0_COMPA_vect
+111     // interrupt
+112     OCR0A = 0xAF;
+113     TIMSK0 |= _BV(OCIE0A);
+114 #else
+115 // on other architectures we need to use a time
+116 #if defined(ARDUINO_ARCH_ESP32)
+117     hw_timer_t *timer = NULL;
+118     timer = timerBegin(
+119         timerid, F_CPU / 1000000L,
+120         true); // defaults to timer_id = 0; divider=80 (1 ms); countUp = true;
+121     timerAttachInterrupt(timer, &onTimer, true); // edge = true
+122     timerAlarmWrite(timer, 1000, true);          // 1 ms
+123     timerAlarmEnable(timer);
+124 #elif defined(_VARIANT_ARDUINO_STM32_)
+125     // see https://github\&.com/stm32duino/wiki/wiki/HardwareTimer-library
+126     HardwareTimer *stimer_t = new HardwareTimer(timerid);
+127     stimer_t->setOverflow(1000, HERTZ_FORMAT); // 1000 Hz
+128     stimer_t->attachInterrupt(onTimer);
+129     stimer_t->resume();
+130 #elif defined(ARDUINO_ARCH_MBED)
+131     NRF_TIMER4->TASKS_STOP = 1;               // Stop timer
+132     NRF_TIMER4->MODE = TIMER_MODE_MODE_Timer; // Set the timer in Counter Mode
+133     NRF_TIMER4->BITMODE = TIMER_BITMODE_BITMODE_16Bit
+134                           << TIMER_BITMODE_BITMODE_Pos;
+135     NRF_TIMER2->TASKS_CLEAR = 1; // clear the task first to be usable for later
+136 
+137     // Set prescaler & compare register\&.
+138     // Prescaler = 0 gives 16MHz timer\&.
+139     // Prescaler = 4 (2^4) gives 1MHz timer\&.
+140     NRF_TIMER4->PRESCALER = 4 << TIMER_PRESCALER_PRESCALER_Pos;
+141     NRF_TIMER4->CC[0] = 1000;
 142 
-143     // Set prescaler & compare register\&.
-144     // Prescaler = 0 gives 16MHz timer\&.
-145     // Prescaler = 4 (2^4) gives 1MHz timer\&.
-146     NRF_TIMER4->PRESCALER = 4 << TIMER_PRESCALER_PRESCALER_Pos;
-147     NRF_TIMER4->CC[0] = 1000;
+143     // Enable interrupt on Timer 4 for CC[0] compare match events
+144     NRF_TIMER4->INTENSET = TIMER_INTENSET_COMPARE0_Enabled
+145                            << TIMER_INTENSET_COMPARE0_Pos;
+146     NRF_TIMER4->SHORTS = TIMER_SHORTS_COMPARE0_CLEAR_Enabled
+147                          << TIMER_SHORTS_COMPARE0_CLEAR_Pos;
 148 
-149     // Enable interrupt on Timer 4 for CC[0] compare match events
-150     NRF_TIMER4->INTENSET = TIMER_INTENSET_COMPARE0_Enabled
-151                            << TIMER_INTENSET_COMPARE0_Pos;
-152     NRF_TIMER4->SHORTS = TIMER_SHORTS_COMPARE0_CLEAR_Enabled
-153                          << TIMER_SHORTS_COMPARE0_CLEAR_Pos;
-154 
-155     NVIC_EnableIRQ(TIMER4_IRQn);
-156 
-157     NRF_TIMER4->TASKS_START = 1; // Start TIMER2
-158   #else
-159     // It should not be too difficult to support additional architectures as
-160     // most have timer functions, but I only tested AVR and ESP32
-161     #warning                                                                   \
-162         "Timing only supportted for AVR, ESP32 and STM32 architectures\&. Use timerid IBUSBM_NOTIMER"
-163   #endif
-164 #endif
-165   }
-166   IBusBMfirst = this;
-167 }
+149     NVIC_EnableIRQ(TIMER4_IRQn);
+150 
+151     NRF_TIMER4->TASKS_START = 1; // Start TIMER2
+152 #else
+153 // It should not be too difficult to support additional architectures as most
+154 // have timer functions, but I only tested AVR and ESP32
+155 #warning                                                                       \
+156     "Timing only supportted for AVR, ESP32 and STM32 architectures\&. Use timerid IBUSBM_NOTIMER"
+157 #endif
+158 #endif
+159   }
+160   IBusBMfirst = this;
+161 }
 .fi
 .PP
 Referencias chksum, DISCARD, IBUSBM_NOTIMER, IBusBMfirst, IBusBMnext, last, lchksum, len, onTimer(), ptr, state e stream\&.
@@ -267,158 +270,158 @@ Referenciado(a) por setup()\&.
 .SS "void IBusBM::loop (void)"
 
 .PP
-Definição na linha 171 do arquivo IBusBM\&.cpp\&.
+Definição na linha 165 do arquivo IBusBM\&.cpp\&.
 .PP
 .nf
-171                       {
-172 
-173   // if we have multiple instances of IBusBM, we (recursively) call the other
-174   // instances loop() function
-175   if (IBusBMnext)
-176     IBusBMnext->loop();
-177 
-178   // only process data already in our UART receive buffer
-179   while (stream->available() > 0) {
-180     // only consider a new data package if we have not heard anything for >3ms
-181     uint32_t now = millis();
-182     if (now - last >= PROTOCOL_TIMEGAP) {
-183       state = GET_LENGTH;
-184     }
-185     last = now;
-186 
-187     uint8_t v = stream->read();
-188     switch (state) {
-189     case GET_LENGTH:
-190       if (v <= PROTOCOL_LENGTH && v > PROTOCOL_OVERHEAD) {
-191         ptr = 0;
-192         len = v - PROTOCOL_OVERHEAD;
-193         chksum = 0xFFFF - v;
-194         state = GET_DATA;
-195       } else {
-196         state = DISCARD;
-197       }
-198       break;
-199 
-200     case GET_DATA:
-201       buffer[ptr++] = v;
-202       chksum -= v;
-203       if (ptr == len) {
-204         state = GET_CHKSUML;
-205       }
-206       break;
-207 
-208     case GET_CHKSUML:
-209       lchksum = v;
-210       state = GET_CHKSUMH;
-211       break;
-212 
-213     case GET_CHKSUMH:
-214       // Validate checksum
-215       if (chksum == (v << 8) + lchksum) {
-216         // Checksum is all fine Execute command -
-217         uint8_t adr = buffer[0] & 0x0f;
-218         if (buffer[0] == PROTOCOL_COMMAND40) {
-219           // Valid servo command received - extract channel data
-220           for (uint8_t i = 1; i < PROTOCOL_CHANNELS * 2 + 1; i += 2) {
-221             channel[i / 2] = buffer[i] | (buffer[i + 1] << 8);
-222           }
-223           cnt_rec++;
-224         } else if (adr <= NumberSensors && adr > 0 && len == 1) {
-225 
-226           // all sensor data commands go here
-227           // we only process the len==1 commands (=message length is 4 bytes
-228           // incl overhead) to prevent the case the return messages from the
-229           // UART TX port loop back to the RX port and are processed again\&. This
-230           // is extra precaution as it will also be prevented by the
-231           // PROTOCOL_TIMEGAP required
-232           sensorinfo *s = &sensors[adr - 1];
-233           delayMicroseconds(100);
-234           switch (buffer[0] & 0x0f0) {
-235           case PROTOCOL_COMMAND_DISCOVER: // 0x80, discover sensor
-236             cnt_poll++;
-237             // echo discover command: 0x04, 0x81, 0x7A, 0xFF
-238             stream->write(0x04);
-239             stream->write(PROTOCOL_COMMAND_DISCOVER + adr);
-240             chksum = 0xFFFF - (0x04 + PROTOCOL_COMMAND_DISCOVER + adr);
-241             break;
-242           case PROTOCOL_COMMAND_TYPE: // 0x90, send sensor type
-243             // echo sensortype command: 0x06 0x91 0x00 0x02 0x66 0xFF
-244             stream->write(0x06);
-245             stream->write(PROTOCOL_COMMAND_TYPE + adr);
-246             stream->write(s->sensorType);
-247             stream->write(s->sensorLength);
-248             chksum = 0xFFFF - (0x06 + PROTOCOL_COMMAND_TYPE + adr +
-249                                s->sensorType + s->sensorLength);
-250             break;
-251           case PROTOCOL_COMMAND_VALUE: // 0xA0, send sensor data
-252             cnt_sensor++;
-253             uint8_t t;
-254             // echo sensor value command: 0x06 0x91 0x00 0x02 0x66 0xFF
-255             stream->write(t = 0x04 + s->sensorLength);
-256             chksum = 0xFFFF - t;
-257             stream->write(t = PROTOCOL_COMMAND_VALUE + adr);
-258             chksum -= t;
-259             stream->write(t = s->sensorValue & 0x0ff);
-260             chksum -= t;
-261             stream->write(t = (s->sensorValue >> 8) & 0x0ff);
-262             chksum -= t;
-263             if (s->sensorLength == 4) {
-264               stream->write(t = (s->sensorValue >> 16) & 0x0ff);
-265               chksum -= t;
-266               stream->write(t = (s->sensorValue >> 24) & 0x0ff);
-267               chksum -= t;
-268             }
-269             break;
-270           default:
-271             adr = 0; // unknown command, prevent sending chksum
-272             break;
-273           }
-274           if (adr > 0) {
-275             stream->write(chksum & 0x0ff);
-276             stream->write(chksum >> 8);
-277           }
-278         }
-279       }
-280       state = DISCARD;
-281       break;
-282 
-283     case DISCARD:
-284     default:
-285       break;
-286     }
-287   }
-288 }
+165                       {
+166 
+167   // if we have multiple instances of IBusBM, we (recursively) call the other
+168   // instances loop() function
+169   if (IBusBMnext)
+170     IBusBMnext->loop();
+171 
+172   // only process data already in our UART receive buffer
+173   while (stream->available() > 0) {
+174     // only consider a new data package if we have not heard anything for >3ms
+175     uint32_t now = millis();
+176     if (now - last >= PROTOCOL_TIMEGAP) {
+177       state = GET_LENGTH;
+178     }
+179     last = now;
+180 
+181     uint8_t v = stream->read();
+182     switch (state) {
+183     case GET_LENGTH:
+184       if (v <= PROTOCOL_LENGTH && v > PROTOCOL_OVERHEAD) {
+185         ptr = 0;
+186         len = v - PROTOCOL_OVERHEAD;
+187         chksum = 0xFFFF - v;
+188         state = GET_DATA;
+189       } else {
+190         state = DISCARD;
+191       }
+192       break;
+193 
+194     case GET_DATA:
+195       buffer[ptr++] = v;
+196       chksum -= v;
+197       if (ptr == len) {
+198         state = GET_CHKSUML;
+199       }
+200       break;
+201 
+202     case GET_CHKSUML:
+203       lchksum = v;
+204       state = GET_CHKSUMH;
+205       break;
+206 
+207     case GET_CHKSUMH:
+208       // Validate checksum
+209       if (chksum == (v << 8) + lchksum) {
+210         // Checksum is all fine Execute command -
+211         uint8_t adr = buffer[0] & 0x0f;
+212         if (buffer[0] == PROTOCOL_COMMAND40) {
+213           // Valid servo command received - extract channel data
+214           for (uint8_t i = 1; i < PROTOCOL_CHANNELS * 2 + 1; i += 2) {
+215             remoteControl\&.channel[i / 2] = buffer[i] | (buffer[i + 1] << 8);
+216           }
+217           cnt_rec++;
+218         } else if (adr <= NumberSensors && adr > 0 && len == 1) {
+219 
+220           // all sensor data commands go here
+221           // we only process the len==1 commands (=message length is 4 bytes
+222           // incl overhead) to prevent the case the return messages from the
+223           // UART TX port loop back to the RX port and are processed again\&. This
+224           // is extra precaution as it will also be prevented by the
+225           // PROTOCOL_TIMEGAP required
+226           sensorinfo *s = &sensors[adr - 1];
+227           delayMicroseconds(100);
+228           switch (buffer[0] & 0x0f0) {
+229           case PROTOCOL_COMMAND_DISCOVER: // 0x80, discover sensor
+230             cnt_poll++;
+231             // echo discover command: 0x04, 0x81, 0x7A, 0xFF
+232             stream->write(0x04);
+233             stream->write(PROTOCOL_COMMAND_DISCOVER + adr);
+234             chksum = 0xFFFF - (0x04 + PROTOCOL_COMMAND_DISCOVER + adr);
+235             break;
+236           case PROTOCOL_COMMAND_TYPE: // 0x90, send sensor type
+237             // echo sensortype command: 0x06 0x91 0x00 0x02 0x66 0xFF
+238             stream->write(0x06);
+239             stream->write(PROTOCOL_COMMAND_TYPE + adr);
+240             stream->write(s->sensorType);
+241             stream->write(s->sensorLength);
+242             chksum = 0xFFFF - (0x06 + PROTOCOL_COMMAND_TYPE + adr +
+243                                s->sensorType + s->sensorLength);
+244             break;
+245           case PROTOCOL_COMMAND_VALUE: // 0xA0, send sensor data
+246             cnt_sensor++;
+247             uint8_t t;
+248             // echo sensor value command: 0x06 0x91 0x00 0x02 0x66 0xFF
+249             stream->write(t = 0x04 + s->sensorLength);
+250             chksum = 0xFFFF - t;
+251             stream->write(t = PROTOCOL_COMMAND_VALUE + adr);
+252             chksum -= t;
+253             stream->write(t = s->sensorValue & 0x0ff);
+254             chksum -= t;
+255             stream->write(t = (s->sensorValue >> 8) & 0x0ff);
+256             chksum -= t;
+257             if (s->sensorLength == 4) {
+258               stream->write(t = (s->sensorValue >> 16) & 0x0ff);
+259               chksum -= t;
+260               stream->write(t = (s->sensorValue >> 24) & 0x0ff);
+261               chksum -= t;
+262             }
+263             break;
+264           default:
+265             adr = 0; // unknown command, prevent sending chksum
+266             break;
+267           }
+268           if (adr > 0) {
+269             stream->write(chksum & 0x0ff);
+270             stream->write(chksum >> 8);
+271           }
+272         }
+273       }
+274       state = DISCARD;
+275       break;
+276 
+277     case DISCARD:
+278     default:
+279       break;
+280     }
+281   }
+282 }
 .fi
 .PP
-Referencias buffer, channel, chksum, cnt_poll, cnt_rec, cnt_sensor, DISCARD, GET_CHKSUMH, GET_CHKSUML, GET_DATA, GET_LENGTH, IBusBMnext, last, lchksum, len, loop(), PROTOCOL_CHANNELS, PROTOCOL_COMMAND40, PROTOCOL_COMMAND_DISCOVER, PROTOCOL_COMMAND_TYPE, PROTOCOL_COMMAND_VALUE, PROTOCOL_OVERHEAD, PROTOCOL_TIMEGAP, ptr, IBusBM::sensorinfo::sensorLength, sensors, IBusBM::sensorinfo::sensorType, IBusBM::sensorinfo::sensorValue, state, stream e t\&.
+Referencias buffer, IBusBM::ControlUnion::channel, chksum, cnt_poll, cnt_rec, cnt_sensor, DISCARD, GET_CHKSUMH, GET_CHKSUML, GET_DATA, GET_LENGTH, IBusBMnext, last, lchksum, len, loop(), PROTOCOL_CHANNELS, PROTOCOL_COMMAND40, PROTOCOL_COMMAND_DISCOVER, PROTOCOL_COMMAND_TYPE, PROTOCOL_COMMAND_VALUE, PROTOCOL_OVERHEAD, PROTOCOL_TIMEGAP, ptr, remoteControl, IBusBM::sensorinfo::sensorLength, sensors, IBusBM::sensorinfo::sensorType, IBusBM::sensorinfo::sensorValue, state e stream\&.
 .PP
-Referenciado(a) por loop() e onTimer()\&.
+Referenciado(a) por emergencyMethods(), loop(), onTimer(), setup(), xTaskContol() e xTaskSetupFiltro()\&.
 .SS "uint16_t IBusBM::readChannel (uint8_t channelNr)"
 
 .PP
-Definição na linha 290 do arquivo IBusBM\&.cpp\&.
+Definição na linha 284 do arquivo IBusBM\&.cpp\&.
 .PP
 .nf
-290                                               {
-291   if (channelNr < PROTOCOL_CHANNELS) {
-292     return channel[channelNr];
-293   } else {
-294     return 0;
-295   }
-296 }
+284                                               {
+285   if (channelNr < PROTOCOL_CHANNELS) {
+286     return remoteControl\&.channel[channelNr];
+287   } else {
+288     return 0;
+289   }
+290 }
 .fi
 .PP
-Referencias channel e PROTOCOL_CHANNELS\&.
+Referencias IBusBM::ControlUnion::channel, PROTOCOL_CHANNELS e remoteControl\&.
 .SS "void IBusBM::setSensorMeasurement (uint8_t adr, int32_t value)"
 
 .PP
-Definição na linha 312 do arquivo IBusBM\&.cpp\&.
+Definição na linha 306 do arquivo IBusBM\&.cpp\&.
 .PP
 .nf
-312                                                             {
-313   if (adr <= NumberSensors && adr > 0)
-314     sensors[adr - 1]\&.sensorValue = value;
-315 }
+306                                                             {
+307   if (adr <= NumberSensors && adr > 0)
+308     sensors[adr - 1]\&.sensorValue = value;
+309 }
 .fi
 .PP
 Referencias sensors e IBusBM::sensorinfo::sensorValue\&.
@@ -427,73 +430,67 @@ Referencias sensors e IBusBM::sensorinfo::sensorValue\&.
 .SS "uint8_t IBusBM::buffer[\fBPROTOCOL_LENGTH\fP]\fC [private]\fP"
 
 .PP
-Definição na linha 93 do arquivo IBusBM\&.h\&.
+Definição na linha 124 do arquivo IBusBM\&.h\&.
 .PP
 Referenciado(a) por loop()\&.
-.SS "uint16_t IBusBM::channel[\fBPROTOCOL_CHANNELS\fP]\fC [private]\fP"
-
-.PP
-Definição na linha 96 do arquivo IBusBM\&.h\&.
-.PP
-Referenciado(a) por loop() e readChannel()\&.
 .SS "uint16_t IBusBM::chksum\fC [private]\fP"
 
 .PP
-Definição na linha 97 do arquivo IBusBM\&.h\&.
+Definição na linha 128 do arquivo IBusBM\&.h\&.
 .PP
 Referenciado(a) por begin() e loop()\&.
 .SS "volatile uint8_t IBusBM::cnt_poll"
 
 .PP
-Definição na linha 67 do arquivo IBusBM\&.h\&.
+Definição na linha 66 do arquivo IBusBM\&.h\&.
 .PP
 Referenciado(a) por loop()\&.
 .SS "volatile uint8_t IBusBM::cnt_rec"
 
 .PP
-Definição na linha 69 do arquivo IBusBM\&.h\&.
+Definição na linha 68 do arquivo IBusBM\&.h\&.
 .PP
 Referenciado(a) por loop()\&.
 .SS "volatile uint8_t IBusBM::cnt_sensor"
 
 .PP
-Definição na linha 68 do arquivo IBusBM\&.h\&.
+Definição na linha 67 do arquivo IBusBM\&.h\&.
 .PP
 Referenciado(a) por loop()\&.
 .SS "\fBIBusBM\fP* IBusBM::IBusBMnext = NULL\fC [private]\fP"
 
 .PP
-Definição na linha 106 do arquivo IBusBM\&.h\&.
+Definição na linha 137 do arquivo IBusBM\&.h\&.
 .PP
 Referenciado(a) por begin() e loop()\&.
 .SS "uint32_t IBusBM::last\fC [private]\fP"
 
 .PP
-Definição na linha 92 do arquivo IBusBM\&.h\&.
+Definição na linha 123 do arquivo IBusBM\&.h\&.
 .PP
 Referenciado(a) por begin() e loop()\&.
 .SS "uint8_t IBusBM::lchksum\fC [private]\fP"
 
 .PP
-Definição na linha 98 do arquivo IBusBM\&.h\&.
+Definição na linha 129 do arquivo IBusBM\&.h\&.
 .PP
 Referenciado(a) por begin() e loop()\&.
 .SS "uint8_t IBusBM::len\fC [private]\fP"
 
 .PP
-Definição na linha 95 do arquivo IBusBM\&.h\&.
+Definição na linha 126 do arquivo IBusBM\&.h\&.
 .PP
 Referenciado(a) por addSensor(), begin() e loop()\&.
 .SS "uint8_t IBusBM::NumberSensors = 0\fC [private]\fP"
 
 .PP
-Definição na linha 105 do arquivo IBusBM\&.h\&.
+Definição na linha 136 do arquivo IBusBM\&.h\&.
 .PP
 Referenciado(a) por addSensor()\&.
 .SS "const uint8_t IBusBM::PROTOCOL_CHANNELS = 14\fC [static]\fP, \fC [private]\fP"
 
 .PP
-Definição na linha 79 do arquivo IBusBM\&.h\&.
+Definição na linha 109 do arquivo IBusBM\&.h\&.
 .PP
 Referenciado(a) por loop() e readChannel()\&.
 .SS "const uint8_t IBusBM::PROTOCOL_COMMAND40\fC [static]\fP, \fC [private]\fP"
@@ -504,7 +501,7 @@ Referenciado(a) por loop() e readChannel()\&.
       0x40
 .fi
 .PP
-Definição na linha 80 do arquivo IBusBM\&.h\&.
+Definição na linha 111 do arquivo IBusBM\&.h\&.
 .PP
 Referenciado(a) por loop()\&.
 .SS "const uint8_t IBusBM::PROTOCOL_COMMAND_DISCOVER\fC [static]\fP, \fC [private]\fP"
@@ -515,7 +512,7 @@ Referenciado(a) por loop()\&.
       0x80
 .fi
 .PP
-Definição na linha 82 do arquivo IBusBM\&.h\&.
+Definição na linha 113 do arquivo IBusBM\&.h\&.
 .PP
 Referenciado(a) por loop()\&.
 .SS "const uint8_t IBusBM::PROTOCOL_COMMAND_TYPE\fC [static]\fP, \fC [private]\fP"
@@ -526,7 +523,7 @@ Referenciado(a) por loop()\&.
       0x90
 .fi
 .PP
-Definição na linha 84 do arquivo IBusBM\&.h\&.
+Definição na linha 115 do arquivo IBusBM\&.h\&.
 .PP
 Referenciado(a) por loop()\&.
 .SS "const uint8_t IBusBM::PROTOCOL_COMMAND_VALUE\fC [static]\fP, \fC [private]\fP"
@@ -537,13 +534,13 @@ Referenciado(a) por loop()\&.
       0xA0
 .fi
 .PP
-Definição na linha 86 do arquivo IBusBM\&.h\&.
+Definição na linha 117 do arquivo IBusBM\&.h\&.
 .PP
 Referenciado(a) por loop()\&.
 .SS "const uint8_t IBusBM::PROTOCOL_LENGTH = 0x20\fC [static]\fP, \fC [private]\fP"
 
 .PP
-Definição na linha 74 do arquivo IBusBM\&.h\&.
+Definição na linha 104 do arquivo IBusBM\&.h\&.
 .SS "const uint8_t IBusBM::PROTOCOL_OVERHEAD\fC [static]\fP, \fC [private]\fP"
 \fBValor inicial:\fP
 .PP
@@ -552,7 +549,7 @@ Definição na linha 74 do arquivo IBusBM\&.h\&.
       3
 .fi
 .PP
-Definição na linha 75 do arquivo IBusBM\&.h\&.
+Definição na linha 105 do arquivo IBusBM\&.h\&.
 .PP
 Referenciado(a) por loop()\&.
 .SS "const uint8_t IBusBM::PROTOCOL_TIMEGAP\fC [static]\fP, \fC [private]\fP"
@@ -563,37 +560,43 @@ Referenciado(a) por loop()\&.
       3
 .fi
 .PP
-Definição na linha 77 do arquivo IBusBM\&.h\&.
+Definição na linha 107 do arquivo IBusBM\&.h\&.
 .PP
 Referenciado(a) por loop()\&.
 .SS "uint8_t IBusBM::ptr\fC [private]\fP"
 
 .PP
-Definição na linha 94 do arquivo IBusBM\&.h\&.
+Definição na linha 125 do arquivo IBusBM\&.h\&.
 .PP
 Referenciado(a) por begin() e loop()\&.
+.SS "\fBControlUnion\fP IBusBM::remoteControl"
+
+.PP
+Definição na linha 99 do arquivo IBusBM\&.h\&.
+.PP
+Referenciado(a) por emergencyMethods(), loop(), readChannel(), setup(), xTaskContol() e xTaskSetupFiltro()\&.
 .SS "const uint8_t IBusBM::SENSORMAX = 10\fC [static]\fP, \fC [private]\fP"
 
 .PP
-Definição na linha 88 do arquivo IBusBM\&.h\&.
+Definição na linha 119 do arquivo IBusBM\&.h\&.
 .PP
 Referenciado(a) por addSensor()\&.
 .SS "\fBsensorinfo\fP IBusBM::sensors[\fBSENSORMAX\fP]\fC [private]\fP"
 
 .PP
-Definição na linha 104 do arquivo IBusBM\&.h\&.
+Definição na linha 135 do arquivo IBusBM\&.h\&.
 .PP
 Referenciado(a) por addSensor(), loop() e setSensorMeasurement()\&.
 .SS "uint8_t IBusBM::state\fC [private]\fP"
 
 .PP
-Definição na linha 90 do arquivo IBusBM\&.h\&.
+Definição na linha 121 do arquivo IBusBM\&.h\&.
 .PP
 Referenciado(a) por begin() e loop()\&.
 .SS "HardwareSerial* IBusBM::stream\fC [private]\fP"
 
 .PP
-Definição na linha 91 do arquivo IBusBM\&.h\&.
+Definição na linha 122 do arquivo IBusBM\&.h\&.
 .PP
 Referenciado(a) por begin() e loop()\&.
 

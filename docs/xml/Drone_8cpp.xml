@@ -10,7 +10,7 @@
         <childnode refid="2" relation="include">
         </childnode>
       </node>
-      <node id="5">
+      <node id="3">
         <label>eigen3/Eigen/Dense</label>
       </node>
       <node id="2">
@@ -23,18 +23,15 @@
         <childnode refid="5" relation="include">
         </childnode>
       </node>
-      <node id="3">
-        <label>Arduino.h</label>
-      </node>
-      <node id="6">
+      <node id="5">
         <label>iostream</label>
       </node>
       <node id="4">
-        <label>GRUPO_QUAT.h</label>
+        <label>../../../quadricopterFinal/lib/GRUPO_QUAT/GRUPO_QUAT.h</label>
         <link refid="GRUPO__QUAT_8h"/>
-        <childnode refid="5" relation="include">
+        <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="6" relation="include">
+        <childnode refid="5" relation="include">
         </childnode>
       </node>
     </incdepgraph>
@@ -60,25 +57,25 @@ Last modified by: roney Last modified time: 25-Aug-2021 </para>
 <codeline lineno="19"><highlight class="normal"><sp/><sp/><ref refid="classDrone_1a7441826ef17c5566c910dc76844fbde3" kindref="member">matAT</ref>.bottomRightCorner(3,<sp/>3)<sp/>=</highlight></codeline>
 <codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>(1.0f<sp/>-<sp/><ref refid="classDrone_1a0f5dde1e661b072ffd1dcd2cde690e2b" kindref="member">dt</ref><sp/>*<sp/><ref refid="classDrone_1acc28d2a6d7fc4265e8ad012910b41add" kindref="member">dx</ref><sp/>/<sp/><ref refid="classDrone_1ad04507c1b20ac5822461193ac819d929" kindref="member">massa</ref>)<sp/>*<sp/>Eigen::Matrix3f::Identity();</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>bloco<sp/>integral</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><ref refid="classDrone_1a7441826ef17c5566c910dc76844fbde3" kindref="member">matAT</ref>.topRightCorner(3,<sp/>3)<sp/>=<sp/><ref refid="classDrone_1a0f5dde1e661b072ffd1dcd2cde690e2b" kindref="member">dt</ref><sp/>*<sp/>Eigen::Matrix3f::Identity();</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><ref refid="classDrone_1a7441826ef17c5566c910dc76844fbde3" kindref="member">matAT</ref>.topRightCorner(3,<sp/>3)<sp/>=<sp/>(1.0f<sp/>+<sp/><ref refid="classDrone_1a0f5dde1e661b072ffd1dcd2cde690e2b" kindref="member">dt</ref>)<sp/>*<sp/>Eigen::Matrix3f::Identity();</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight></codeline>
 <codeline lineno="24"><highlight class="normal"><sp/><sp/><ref refid="classDrone_1aadb4722611d7c3bf7f397361f6cd208e" kindref="member">matBT</ref>.bottomRightCorner(3,<sp/>3)<sp/>=<sp/><ref refid="classDrone_1a0f5dde1e661b072ffd1dcd2cde690e2b" kindref="member">dt</ref><sp/>*<sp/>Eigen::Matrix3f::Identity();</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><ref refid="classDrone_1a8b19688fe7deefa69ab8a864cd5b6024" kindref="member">matBR</ref>.bottomRightCorner(3,<sp/>3)<sp/>=<sp/><ref refid="classDrone_1a0f5dde1e661b072ffd1dcd2cde690e2b" kindref="member">dt</ref><sp/>*<sp/><ref refid="classDrone_1a06cb6081fc81dd73b0fe9f9d68e5e8f7" kindref="member">inverseMatrizInercia</ref>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><ref refid="classDrone_1a8b19688fe7deefa69ab8a864cd5b6024" kindref="member">matBR</ref>.block&lt;3,<sp/>3&gt;(3,<sp/>0)<sp/>=<sp/><ref refid="classDrone_1a0f5dde1e661b072ffd1dcd2cde690e2b" kindref="member">dt</ref><sp/>*<sp/><ref refid="classDrone_1a06cb6081fc81dd73b0fe9f9d68e5e8f7" kindref="member">inverseMatrizInercia</ref>;</highlight></codeline>
 <codeline lineno="26"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="30" refid="classDrone_1a1531c9d38e26bb12a8b650ba40d915ca" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDrone_1a1531c9d38e26bb12a8b650ba40d915ca" kindref="member">Drone::updateStateMatrices</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>&amp;negativeq0)<sp/>{</highlight></codeline>
 <codeline lineno="31"><highlight class="normal"></highlight></codeline>
 <codeline lineno="32"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>_q0<sp/>=<sp/>0.0f;</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>HACK</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>#if<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="comment">//<sp/>HACK</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>0</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="35"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(negativeq0)<sp/>{</highlight></codeline>
 <codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>_q0<sp/>=<sp/>-abs(<ref refid="classDrone_1a3d47c909c26ca68f771eb7ec0026e752" kindref="member">q</ref>(0));</highlight></codeline>
 <codeline lineno="37"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>_q0<sp/>=<sp/>abs(<ref refid="classDrone_1a3d47c909c26ca68f771eb7ec0026e752" kindref="member">q</ref>(0));</highlight></codeline>
 <codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>_q0<sp/>=<sp/>q(0);</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="40"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>_q0<sp/>=<sp/>q(0);</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(abs(<ref refid="classDrone_1a3d47c909c26ca68f771eb7ec0026e752" kindref="member">q</ref>(0))<sp/>&gt;<sp/>0.0001)<sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/>_q0<sp/>=<sp/><ref refid="classDrone_1a3d47c909c26ca68f771eb7ec0026e752" kindref="member">q</ref>(0);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(abs(<ref refid="classDrone_1a3d47c909c26ca68f771eb7ec0026e752" kindref="member">q</ref>(0))<sp/>&gt;<sp/>0.01)<sp/>{</highlight></codeline>
 <codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDrone_1aa715343de198585f9266431776d58784" kindref="member">flagSDC</ref><sp/>=<sp/>1;</highlight></codeline>
 <codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDrone_1ad10e4c0ff42b803d922bff24ff9a1710" kindref="member">matAR</ref>(0,<sp/>0)<sp/>=<sp/>1.0f;</highlight></codeline>
 <codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDrone_1ad10e4c0ff42b803d922bff24ff9a1710" kindref="member">matAR</ref>(1,<sp/>1)<sp/>=<sp/>1.0f;</highlight></codeline>
@@ -96,14 +93,14 @@ Last modified by: roney Last modified time: 25-Aug-2021 </para>
 <codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDrone_1ad10e4c0ff42b803d922bff24ff9a1710" kindref="member">matAR</ref>(1,<sp/>4)<sp/>=<sp/><ref refid="classDrone_1ae68802ad8fe8bbb370a19326fd7b5aef" kindref="member">half_dt</ref><sp/>*<sp/>(<ref refid="classDrone_1a3d47c909c26ca68f771eb7ec0026e752" kindref="member">q</ref>(2)<sp/>*<sp/><ref refid="classDrone_1a3d47c909c26ca68f771eb7ec0026e752" kindref="member">q</ref>(2));</highlight></codeline>
 <codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDrone_1ad10e4c0ff42b803d922bff24ff9a1710" kindref="member">matAR</ref>(2,<sp/>5)<sp/>=<sp/><ref refid="classDrone_1ae68802ad8fe8bbb370a19326fd7b5aef" kindref="member">half_dt</ref><sp/>*<sp/>(<ref refid="classDrone_1a3d47c909c26ca68f771eb7ec0026e752" kindref="member">q</ref>(3)<sp/>*<sp/><ref refid="classDrone_1a3d47c909c26ca68f771eb7ec0026e752" kindref="member">q</ref>(3));</highlight></codeline>
 <codeline lineno="60"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><ref refid="classDrone_1ad10e4c0ff42b803d922bff24ff9a1710" kindref="member">matAR</ref>.bottomRightCorner(3,<sp/>3)<sp/>=</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><ref refid="classDrone_1ad10e4c0ff42b803d922bff24ff9a1710" kindref="member">matAR</ref>.block&lt;3,<sp/>3&gt;(3,<sp/>3)<sp/>=</highlight></codeline>
 <codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>-<ref refid="classDrone_1a0f5dde1e661b072ffd1dcd2cde690e2b" kindref="member">dt</ref><sp/>*<sp/><ref refid="classDrone_1a06cb6081fc81dd73b0fe9f9d68e5e8f7" kindref="member">inverseMatrizInercia</ref><sp/>*<sp/><ref refid="namespaceekf_1af3f0a631343e55ec8b42f3fbea182461" kindref="member">ekf::skew</ref>(<ref refid="classDrone_1a0b41e19233070e221d0eaa03ce213bf5" kindref="member">w</ref>)<sp/>*<sp/><ref refid="classDrone_1a01882d591197d6978b479f0788ce01fc" kindref="member">matrizInercia</ref>;</highlight></codeline>
 <codeline lineno="63"><highlight class="normal"><sp/><sp/><ref refid="classDrone_1ad10e4c0ff42b803d922bff24ff9a1710" kindref="member">matAR</ref>(3,<sp/>3)<sp/>=<sp/>1.0f;</highlight></codeline>
 <codeline lineno="64"><highlight class="normal"><sp/><sp/><ref refid="classDrone_1ad10e4c0ff42b803d922bff24ff9a1710" kindref="member">matAR</ref>(4,<sp/>4)<sp/>=<sp/>1.0f;</highlight></codeline>
 <codeline lineno="65"><highlight class="normal"><sp/><sp/><ref refid="classDrone_1ad10e4c0ff42b803d922bff24ff9a1710" kindref="member">matAR</ref>(5,<sp/>5)<sp/>=<sp/>1.0f;</highlight></codeline>
 <codeline lineno="66"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="67" refid="classDrone_1a1f2103ef38b08c79aa88b3e790c16c5d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDrone_1a1f2103ef38b08c79aa88b3e790c16c5d" kindref="member">Drone::constructJ</ref>()<sp/>{</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>MOTOR_MODEL_SIMPLE</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="69"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Constantes<sp/>de<sp/>força*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="70"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>kf1<sp/>=<sp/>1.2457e-7;</highlight></codeline>
 <codeline lineno="71"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>kf2<sp/>=<sp/>1.4793e-7;</highlight></codeline>
@@ -116,29 +113,15 @@ Last modified by: roney Last modified time: 25-Aug-2021 </para>
 <codeline lineno="78"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>km4<sp/>=<sp/>3.1051e-9;</highlight></codeline>
 <codeline lineno="79"><highlight class="normal"></highlight></codeline>
 <codeline lineno="80"><highlight class="normal"><sp/><sp/><ref refid="classDrone_1a30d56665a907276e7ca50ab3c75d730a" kindref="member">J</ref><sp/>&lt;&lt;<sp/>-kf1,<sp/>-kf2,<sp/>-kf3,<sp/>-kf4,<sp/>-<ref refid="classDrone_1aa44361841fbfc3ac45bed2cdfb598262" kindref="member">L</ref><sp/>*<sp/>kf1,<sp/>0,<sp/><ref refid="classDrone_1aa44361841fbfc3ac45bed2cdfb598262" kindref="member">L</ref><sp/>*<sp/>kf3,<sp/>0,<sp/>0,<sp/><ref refid="classDrone_1aa44361841fbfc3ac45bed2cdfb598262" kindref="member">L</ref><sp/>*<sp/>kf2,<sp/>0,<sp/>-<ref refid="classDrone_1aa44361841fbfc3ac45bed2cdfb598262" kindref="member">L</ref><sp/>*<sp/>kf4,</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>-km1,<sp/>km2,<sp/>-km3,<sp/>km4;</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><ref refid="classDrone_1adcfd685c1857b1b6b20984daac7e56e3" kindref="member">Jinv</ref><sp/>=<sp/><ref refid="classDrone_1a30d56665a907276e7ca50ab3c75d730a" kindref="member">J</ref>.inverse();</highlight></codeline>
-<codeline lineno="83"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"></highlight></codeline>
-<codeline lineno="85"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Eigen::VectorXf<sp/>Drone::continuosModel(Eigen::VectorXf<sp/>x,<sp/>Eigen::VectorXf<sp/>u)<sp/>{</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="86"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="87"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>Eigen::VectorXf<sp/>xk<sp/>=<sp/>Eigen::VectorXf::Zero(10);</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="88"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>//<sp/>v,<sp/>q<sp/>e<sp/>omega</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="89"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>Eigen::Matrix3f<sp/>matRot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="90"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>ekf::computeMcdFromQuaternion(x.segment(3,<sp/>4),<sp/>matRot);</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="91"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>xk<sp/>=<sp/>matRot.col(2)<sp/>*<sp/>u(0)<sp/>/<sp/>massa;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="92"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>xk(2)<sp/>+=<sp/>9.80f;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="93"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>xk(3)<sp/>=<sp/>0.5f<sp/>*<sp/>x.segment(4,<sp/>3).dot(x.segment(8,<sp/>3));</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="94"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>xk.segment(4,<sp/>3)<sp/>=</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="95"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.5f<sp/>*<sp/>(x(3)<sp/>*<sp/>Eigen::Matrix3f::Identity()<sp/>+<sp/>ekf::skew(x.segment(5,</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="96"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/>3)))<sp/>*<sp/>x.tail(3);</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="97"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>//<sp/>o<sp/>menos<sp/>eh<sp/>apenas<sp/>para<sp/>evitar<sp/>o<sp/>transposto<sp/>da<sp/>matriz<sp/>antissimétrica.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="98"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>xk.tail(3)<sp/>=</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="99"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/>-(inverseMatrizInercia<sp/>*<sp/>ekf::skew(x.segment(5,<sp/>3))<sp/>*<sp/>matrizInercia)<sp/>*</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="100"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x.tail(3)<sp/>+</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="101"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/>inverseMatrizInercia<sp/>*<sp/>u.tail(3);</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="102"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>return<sp/>xk;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="103"><highlight class="normal"></highlight><highlight class="comment">//<sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>km1,<sp/>-km2,<sp/>km3,<sp/>-km4;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="namespacedrone_1ab194ab949cad78f85bdb8238f9731f37" kindref="member">kf</ref><sp/>=<sp/>1.469e-7;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="namespacedrone_1a3e06d763422e3ea068add06fd5e3a98b" kindref="member">km</ref><sp/>=<sp/>3.1518e-9;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><ref refid="classDrone_1a30d56665a907276e7ca50ab3c75d730a" kindref="member">J</ref><sp/>&lt;&lt;<sp/>-<ref refid="namespacedrone_1ab194ab949cad78f85bdb8238f9731f37" kindref="member">kf</ref>,<sp/>-<ref refid="namespacedrone_1ab194ab949cad78f85bdb8238f9731f37" kindref="member">kf</ref>,<sp/>-<ref refid="namespacedrone_1ab194ab949cad78f85bdb8238f9731f37" kindref="member">kf</ref>,<sp/>-<ref refid="namespacedrone_1ab194ab949cad78f85bdb8238f9731f37" kindref="member">kf</ref>,<sp/>-<ref refid="classDrone_1aa44361841fbfc3ac45bed2cdfb598262" kindref="member">L</ref><sp/>*<sp/><ref refid="namespacedrone_1ab194ab949cad78f85bdb8238f9731f37" kindref="member">kf</ref>,<sp/>0,<sp/><ref refid="classDrone_1aa44361841fbfc3ac45bed2cdfb598262" kindref="member">L</ref><sp/>*<sp/><ref refid="namespacedrone_1ab194ab949cad78f85bdb8238f9731f37" kindref="member">kf</ref>,<sp/>0,<sp/>0,<sp/><ref refid="classDrone_1aa44361841fbfc3ac45bed2cdfb598262" kindref="member">L</ref><sp/>*<sp/><ref refid="namespacedrone_1ab194ab949cad78f85bdb8238f9731f37" kindref="member">kf</ref>,<sp/>0,<sp/>-<ref refid="classDrone_1aa44361841fbfc3ac45bed2cdfb598262" kindref="member">L</ref><sp/>*<sp/><ref refid="namespacedrone_1ab194ab949cad78f85bdb8238f9731f37" kindref="member">kf</ref>,<sp/>-<ref refid="namespacedrone_1a3e06d763422e3ea068add06fd5e3a98b" kindref="member">km</ref>,</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacedrone_1a3e06d763422e3ea068add06fd5e3a98b" kindref="member">km</ref>,<sp/>-<ref refid="namespacedrone_1a3e06d763422e3ea068add06fd5e3a98b" kindref="member">km</ref>,<sp/><ref refid="namespacedrone_1a3e06d763422e3ea068add06fd5e3a98b" kindref="member">km</ref>;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><ref refid="classDrone_1a63c1b3a18b61a34b0a084eff48ec2f12" kindref="member">JInverse</ref><sp/>=<sp/><ref refid="classDrone_1a30d56665a907276e7ca50ab3c75d730a" kindref="member">J</ref>.inverse();</highlight></codeline>
+<codeline lineno="89"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="lib/DRONE/Drone.cpp"/>
   </compounddef>

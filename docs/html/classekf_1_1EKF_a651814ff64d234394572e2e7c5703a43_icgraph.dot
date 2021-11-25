@@ -7,5 +7,9 @@ digraph "ekf::EKF::loopEKF"
   rankdir="RL";
   Node1 [label="ekf::EKF::loopEKF",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
-  Node2 [label="loop",height=0.2,width=0.4,color="black",URL="$main_8cpp.html#afe461d27b9c48d5921c00d521181f12f",tooltip=" "];
+  Node2 [label="xTaskLoopFilter",height=0.2,width=0.4,color="black",URL="$main_8cpp.html#abd3bd9c344e182dcb5f5a561ef562eb0",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node3 [label="xTaskSetupFiltro",height=0.2,width=0.4,color="black",URL="$main_8cpp.html#a1d67803bd6f9b50c1e3686650e280f68",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node4 [label="setup",height=0.2,width=0.4,color="black",URL="$main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d",tooltip=" "];
 }

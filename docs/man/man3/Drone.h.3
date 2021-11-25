@@ -1,4 +1,4 @@
-.TH "lib/DRONE/Drone.h" 3 "Sexta, 17 de Setembro de 2021" "Quadrirrotor" \" -*- nroff -*-
+.TH "lib/DRONE/Drone.h" 3 "Segunda, 25 de Outubro de 2021" "Quadrirrotor" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -6,11 +6,11 @@ lib/DRONE/Drone.h
 .SH SYNOPSIS
 .br
 .PP
-\fC#include 'Arduino\&.h'\fP
+\fC#include 'eigen3/Eigen/Dense'\fP
 .br
-\fC#include 'GRUPO_QUAT\&.h'\fP
+\fC#include '\&.\&./\&.\&./\&.\&./quadricopterFinal/lib/GRUPO_QUAT/GRUPO_QUAT\&.h'\fP
 .br
-\fC#include <eigen3/Eigen/Dense>\fP
+\fC#include <iostream>\fP
 .br
 
 .SS "Estruturas de Dados"
@@ -18,6 +18,13 @@ lib/DRONE/Drone.h
 .in +1c
 .ti -1c
 .RI "class \fBDrone\fP"
+.br
+.in -1c
+.SS "Definições e Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBPRINT_MAT\fP(X)   cout << #X << ':\\n' << X << '\\n'"
 .br
 .in -1c
 .SH "Descrição detalhada"
@@ -37,6 +44,12 @@ lib/DRONE/Drone.h
 Last modified by: roney Last modified time: 25-Aug-2021 
 .PP
 Definição no arquivo \fBDrone\&.h\fP\&.
+.SH "Definições e macros"
+.PP 
+.SS "#define PRINT_MAT(X)   cout << #X << ':\\n' << X << '\\n'"
+
+.PP
+Definição na linha 17 do arquivo Drone\&.h\&.
 .SH "Autor"
 .PP 
 Gerado automaticamente por Doxygen para Quadrirrotor a partir do código-fonte\&.

@@ -196,8 +196,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="python/drone.py" line="59" column="1" bodyfile="python/drone.py" bodystart="59" bodyend="62"/>
-        <references refid="classDrone_1a3d47c909c26ca68f771eb7ec0026e752" compoundref="Drone_8h" startline="60">Drone::q</references>
-        <references refid="classekf_1_1EKF_1aa38bc83dfb656519cfcda0c0a589ef16" compoundref="EKF_8h" startline="70">ekf::EKF::q</references>
+        <references refid="classDrone_1a3d47c909c26ca68f771eb7ec0026e752" compoundref="Drone_8h" startline="70">Drone::q</references>
+        <references refid="classekf_1_1EKF_1aa38bc83dfb656519cfcda0c0a589ef16" compoundref="EKF_8h" startline="82">ekf::EKF::q</references>
         <references refid="classdrone_1_1Drone_1aac6da8f1354e10c00e27b024d71ffbeb" compoundref="drone_8py" startline="57">drone.Drone.q</references>
       </memberdef>
       </sectiondef>

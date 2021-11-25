@@ -5,11 +5,11 @@ digraph "Controle::controlLoop"
   edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
   node [fontname="DejaVuSansMono",fontsize="8",shape=record];
   rankdir="LR";
-  Node1 [label="Controle::controlLoop",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 [label="Controle::controlLoop",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Loop de controle das duas dinâmicas."];
   Node1 -> Node2 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
   Node2 [label="Controle::computeRotational\lControl",height=0.2,width=0.4,color="black",URL="$classControle.html#abcf05dcff157e963fd65c09d45261a8f",tooltip=" "];
   Node2 -> Node3 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
-  Node3 [label="ekf::S_l",height=0.2,width=0.4,color="black",URL="$namespaceekf.html#a8177897fe9b962d8e0927a913fc36242",tooltip="Calcula a Matriz Lefth-Quaternion a partir do quaternion q."];
+  Node3 [label="ekf::S_l",height=0.2,width=0.4,color="black",URL="$namespaceekf.html#a8177897fe9b962d8e0927a913fc36242",tooltip="Calcula a Matriz Left-Quaternion a partir do quaternion q."];
   Node3 -> Node4 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
   Node4 [label="ekf::skew",height=0.2,width=0.4,color="black",URL="$namespaceekf.html#af3f0a631343e55ec8b42f3fbea182461",tooltip="Matrix antissimetrica."];
   Node2 -> Node5 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
@@ -19,10 +19,18 @@ digraph "Controle::controlLoop"
   Node6 -> Node7 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
   Node7 [label="ekf::Q_l",height=0.2,width=0.4,color="black",URL="$namespaceekf.html#a34993a331b6837e5274d556e4f0a1bea",tooltip=" "];
   Node7 -> Node4 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
-  Node1 -> Node8 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
-  Node8 [label="Controle::computeTranslational\lControl",height=0.2,width=0.4,color="black",URL="$classControle.html#add7378d03597a45ff09b2432d7739dfe",tooltip=" "];
-  Node1 -> Node9 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
-  Node9 [label="Controle::virtualCommand\lToMotorCommand",height=0.2,width=0.4,color="black",URL="$classControle.html#a42aee0a4592b84bd793c8be0fde0095b",tooltip=" "];
-  Node1 -> Node10 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
-  Node10 [label="Controle::virtualCommand\lToMotorRpm",height=0.2,width=0.4,color="black",URL="$classControle.html#a9b3718425d8602487eb9b14d6ee1c781",tooltip=" "];
+  Node6 -> Node8 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node8 [label="ekf::quaternion2Euler",height=0.2,width=0.4,color="black",URL="$namespaceekf.html#aab2dcd522b40c160064cfae69cae6d98",tooltip=" "];
+  Node8 -> Node9 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node9 [label="ekf::calc_phi",height=0.2,width=0.4,color="black",URL="$namespaceekf.html#ad48c9ef49e8ccbde872958a81f6ed41a",tooltip="Calcula, a partir de um quatérnio de atitude, o valor do ângulo Phi em Radianos."];
+  Node8 -> Node10 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node10 [label="ekf::calc_psi",height=0.2,width=0.4,color="black",URL="$namespaceekf.html#a12f4cfdfc4baad066351f122771205a0",tooltip="Calcula, a partir de um quatérnio de atitude, o valor do ângulo Psi em Radianos."];
+  Node8 -> Node11 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node11 [label="ekf::calc_theta",height=0.2,width=0.4,color="black",URL="$namespaceekf.html#a6530a1bee6082aaa64ec7e8525d0ed54",tooltip="Calcula, a partir de um quatérnio de atitude, o valor do ângulo Theta em Radianos."];
+  Node1 -> Node12 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node12 [label="Controle::computeTranslational\lControl",height=0.2,width=0.4,color="black",URL="$classControle.html#add7378d03597a45ff09b2432d7739dfe",tooltip=" "];
+  Node1 -> Node13 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node13 [label="Controle::virtualCommand\lToMotorCommand",height=0.2,width=0.4,color="black",URL="$classControle.html#a42aee0a4592b84bd793c8be0fde0095b",tooltip=" "];
+  Node1 -> Node14 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node14 [label="Controle::virtualCommand\lToMotorRpm",height=0.2,width=0.4,color="black",URL="$classControle.html#a9b3718425d8602487eb9b14d6ee1c781",tooltip=" "];
 }

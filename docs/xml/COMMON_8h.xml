@@ -3,6 +3,7 @@
   <compounddef id="COMMON_8h" kind="file" language="C++">
     <compoundname>COMMON.h</compoundname>
     <includes local="no">Arduino.h</includes>
+    <includedby refid="main_8cpp" local="yes">src/main.cpp</includedby>
     <incdepgraph>
       <node id="1">
         <label>src/COMMON.h</label>
@@ -14,6 +15,18 @@
         <label>Arduino.h</label>
       </node>
     </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>src/COMMON.h</label>
+        <link refid="COMMON_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
       <sectiondef kind="func">
       <memberdef kind="function" id="COMMON_8h_1a6c89b6571752f2a19aff170b1d3d6e58" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -25,34 +38,102 @@
           <declname>times</declname>
         </param>
         <briefdescription>
+<para>Pisca o led #times vezes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>times</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Número de vezes que o led piscará. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/COMMON.h" line="19" column="13" bodyfile="src/COMMON.h" bodystart="19" bodyend="28"/>
+        <references refid="PARAMETROS_8h_1a9135a979a4e22c5a4095074dec5477f5" compoundref="PARAMETROS_8h" startline="43">onboard_led</references>
+      </memberdef>
+      <memberdef kind="function" id="COMMON_8h_1a8eabef94a982b1407d1ae4731b7e07ca" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void turnOnLed</definition>
+        <argsstring>(void)</argsstring>
+        <name>turnOnLed</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Liga o led de comunicação. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/COMMON.h" line="4" column="13" bodyfile="src/COMMON.h" bodystart="4" bodyend="12"/>
-        <references refid="PARAMETROS_8h_1a9135a979a4e22c5a4095074dec5477f5">onboard_led</references>
+        <location file="src/COMMON.h" line="33" column="13" bodyfile="src/COMMON.h" bodystart="33" bodyend="36"/>
+        <references refid="PARAMETROS_8h_1a9135a979a4e22c5a4095074dec5477f5" compoundref="PARAMETROS_8h" startline="43">onboard_led</references>
+        <referencedby refid="main_8cpp_1a1f32cff79659de71ff8de76c85e7c7b9" compoundref="main_8cpp" startline="114" endline="127">emergencyMethods</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="COMMON_8h_1a0e9b3928a2c3089998123715bcae29e9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void turnOffLed</definition>
+        <argsstring>(void)</argsstring>
+        <name>turnOffLed</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Desliga o led de comunicação. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/COMMON.h" line="41" column="13" bodyfile="src/COMMON.h" bodystart="41" bodyend="44"/>
+        <references refid="PARAMETROS_8h_1a9135a979a4e22c5a4095074dec5477f5" compoundref="PARAMETROS_8h" startline="43">onboard_led</references>
+        <referencedby refid="main_8cpp_1a1f32cff79659de71ff8de76c85e7c7b9" compoundref="main_8cpp" startline="114" endline="127">emergencyMethods</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
+<para><simplesect kind="author"><para>roneydua (<ulink url="mailto:roneyddasilva@gmail.com">roneyddasilva@gmail.com</ulink>) </para>
+</simplesect>
+<simplesect kind="version"><para>0.1 </para>
+</simplesect>
+<simplesect kind="date"><para>2021-10-15</para>
+</simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2021 </para>
+</simplesect>
+</para>
     </detaileddescription>
     <programlisting>
-<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>COMMON_H</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>COMMON_H</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Arduino.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="4" refid="COMMON_8h_1a6c89b6571752f2a19aff170b1d3d6e58" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="COMMON_8h_1a6c89b6571752f2a19aff170b1d3d6e58" kindref="member">blindLED</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>times)<sp/>{</highlight></codeline>
-<codeline lineno="5"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>gpio_num_t<sp/><ref refid="PARAMETROS_8h_1a9135a979a4e22c5a4095074dec5477f5" kindref="member">onboard_led</ref>;</highlight></codeline>
-<codeline lineno="6"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>count<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="7"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>2<sp/>*<sp/>times;<sp/>i++)<sp/>{</highlight></codeline>
-<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>digitalWrite(<ref refid="PARAMETROS_8h_1a9135a979a4e22c5a4095074dec5477f5" kindref="member">onboard_led</ref>,<sp/>count);</highlight></codeline>
-<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>vTaskDelay(500);</highlight></codeline>
-<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>count<sp/>=<sp/>1<sp/>-<sp/>count;</highlight></codeline>
-<codeline lineno="11"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="12"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*COMMON_H*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>COMMON_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>COMMON_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Arduino.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="COMMON_8h_1a6c89b6571752f2a19aff170b1d3d6e58" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="COMMON_8h_1a6c89b6571752f2a19aff170b1d3d6e58" kindref="member">blindLED</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>times)<sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>gpio_num_t<sp/><ref refid="PARAMETROS_8h_1a9135a979a4e22c5a4095074dec5477f5" kindref="member">onboard_led</ref>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>count<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>2<sp/>*<sp/>times;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>digitalWrite(<ref refid="PARAMETROS_8h_1a9135a979a4e22c5a4095074dec5477f5" kindref="member">onboard_led</ref>,<sp/>count);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>vTaskDelay(500);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>count<sp/>=<sp/>1<sp/>-<sp/>count;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="33" refid="COMMON_8h_1a8eabef94a982b1407d1ae4731b7e07ca" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="COMMON_8h_1a8eabef94a982b1407d1ae4731b7e07ca" kindref="member">turnOnLed</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>gpio_num_t<sp/><ref refid="PARAMETROS_8h_1a9135a979a4e22c5a4095074dec5477f5" kindref="member">onboard_led</ref>;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/>digitalWrite(<ref refid="PARAMETROS_8h_1a9135a979a4e22c5a4095074dec5477f5" kindref="member">onboard_led</ref>,<sp/>LOW);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="41" refid="COMMON_8h_1a0e9b3928a2c3089998123715bcae29e9" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="COMMON_8h_1a0e9b3928a2c3089998123715bcae29e9" kindref="member">turnOffLed</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>gpio_num_t<sp/><ref refid="PARAMETROS_8h_1a9135a979a4e22c5a4095074dec5477f5" kindref="member">onboard_led</ref>;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/>digitalWrite(<ref refid="PARAMETROS_8h_1a9135a979a4e22c5a4095074dec5477f5" kindref="member">onboard_led</ref>,<sp/>HIGH);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*COMMON_H*/</highlight><highlight class="preprocessor"></highlight></codeline>
     </programlisting>
     <location file="src/COMMON.h"/>
   </compounddef>

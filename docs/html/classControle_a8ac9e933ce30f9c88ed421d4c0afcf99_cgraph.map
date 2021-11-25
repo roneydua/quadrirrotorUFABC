@@ -1,5 +1,9 @@
 <map id="Controle::computeRotationalTarget" name="Controle::computeRotationalTarget">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,189,41"/>
-<area shape="rect" id="node2" href="$namespaceekf.html#a34993a331b6837e5274d556e4f0a1bea" title=" " alt="" coords="237,11,308,35"/>
-<area shape="rect" id="node3" href="$namespaceekf.html#af3f0a631343e55ec8b42f3fbea182461" title="Matrix antissimetrica." alt="" coords="356,11,432,35"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,47,189,83"/>
+<area shape="rect" id="node2" href="$namespaceekf.html#a34993a331b6837e5274d556e4f0a1bea" title=" " alt="" coords="276,17,347,41"/>
+<area shape="rect" id="node4" href="$namespaceekf.html#aab2dcd522b40c160064cfae69cae6d98" title=" " alt="" coords="237,77,385,101"/>
+<area shape="rect" id="node3" href="$namespaceekf.html#af3f0a631343e55ec8b42f3fbea182461" title="Matrix antissimetrica." alt="" coords="451,5,527,29"/>
+<area shape="rect" id="node5" href="$namespaceekf.html#ad48c9ef49e8ccbde872958a81f6ed41a" title="Calcula, a partir de um quatérnio de atitude, o valor do ângulo Phi em Radianos." alt="" coords="439,53,539,77"/>
+<area shape="rect" id="node6" href="$namespaceekf.html#a12f4cfdfc4baad066351f122771205a0" title="Calcula, a partir de um quatérnio de atitude, o valor do ângulo Psi em Radianos." alt="" coords="439,101,539,125"/>
+<area shape="rect" id="node7" href="$namespaceekf.html#a6530a1bee6082aaa64ec7e8525d0ed54" title="Calcula, a partir de um quatérnio de atitude, o valor do ângulo Theta em Radianos." alt="" coords="433,149,545,173"/>
 </map>

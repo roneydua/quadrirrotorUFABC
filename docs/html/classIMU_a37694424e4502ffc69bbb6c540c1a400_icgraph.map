@@ -1,12 +1,13 @@
 <map id="IMU::writeRegister" name="IMU::writeRegister">
-<area shape="rect" id="node1" title=" " alt="" coords="825,130,956,154"/>
-<area shape="rect" id="node2" href="$classIMU.html#ae0d964d2f8ec122be068c41b84bc18a8" title=" " alt="" coords="265,106,348,130"/>
-<area shape="rect" id="node5" href="$classIMU.html#a914f8b4262fba70e6d8fd0e584fa7996" title=" " alt="" coords="611,55,777,79"/>
-<area shape="rect" id="node7" href="$classIMU.html#af3b90e0b20d4bd55091be99f7aa67737" title=" " alt="" coords="396,106,563,130"/>
-<area shape="rect" id="node8" href="$classIMU.html#a5567bbe0d211f1e6d386eb69ffd960a7" title=" " alt="" coords="414,154,545,178"/>
-<area shape="rect" id="node9" href="$classIMU.html#a928fa5e2db05bd402a3fa93bd3584527" title=" " alt="" coords="620,204,768,228"/>
-<area shape="rect" id="node10" href="$classIMU.html#a834f21762003f831e5e632cc7974ba75" title=" " alt="" coords="632,252,756,276"/>
-<area shape="rect" id="node3" href="$classekf_1_1EKF.html#a4a6998123529ab0d0844ad21419fc895" title="Inicializacao do filtro de Kalman." alt="" coords="105,106,217,130"/>
+<area shape="rect" id="node1" title=" " alt="" coords="992,130,1123,154"/>
+<area shape="rect" id="node2" href="$classIMU.html#ae0d964d2f8ec122be068c41b84bc18a8" title=" " alt="" coords="432,106,515,130"/>
+<area shape="rect" id="node6" href="$classIMU.html#a914f8b4262fba70e6d8fd0e584fa7996" title=" " alt="" coords="777,55,944,79"/>
+<area shape="rect" id="node8" href="$classIMU.html#af3b90e0b20d4bd55091be99f7aa67737" title=" " alt="" coords="563,106,729,130"/>
+<area shape="rect" id="node9" href="$classIMU.html#a5567bbe0d211f1e6d386eb69ffd960a7" title=" " alt="" coords="581,154,711,178"/>
+<area shape="rect" id="node10" href="$classIMU.html#a928fa5e2db05bd402a3fa93bd3584527" title=" " alt="" coords="787,204,935,228"/>
+<area shape="rect" id="node11" href="$classIMU.html#a834f21762003f831e5e632cc7974ba75" title=" " alt="" coords="799,252,923,276"/>
+<area shape="rect" id="node3" href="$classekf_1_1EKF.html#a4a6998123529ab0d0844ad21419fc895" title="Inicializacao do filtro de Kalman." alt="" coords="272,106,384,130"/>
 <area shape="rect" id="node4" href="$main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d" title=" " alt="" coords="5,106,57,130"/>
-<area shape="rect" id="node6" href="$classIMU.html#acd2af48f4eb0a0321080332016e3c1f7" title=" " alt="" coords="417,58,541,82"/>
+<area shape="rect" id="node5" href="$main_8cpp.html#a1d67803bd6f9b50c1e3686650e280f68" title=" " alt="" coords="105,130,224,154"/>
+<area shape="rect" id="node7" href="$classIMU.html#acd2af48f4eb0a0321080332016e3c1f7" title=" " alt="" coords="584,58,708,82"/>
 </map>

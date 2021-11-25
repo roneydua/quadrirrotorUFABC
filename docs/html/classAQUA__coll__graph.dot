@@ -4,5 +4,5 @@ digraph "AQUA"
   bgcolor="transparent";
   edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
   node [fontname="DejaVuSansMono",fontsize="8",shape=record];
-  Node1 [label="{AQUA\n|+ Eigen::Vector4f qAcc\l+ Eigen::Vector4f qMag\l+ Eigen::Vector3f gravNormalized\l+ Eigen::Vector3f magNormalized\l+ Eigen::Vector3f l\l+ Eigen::Vector4f * qAQUA\l+ Eigen::Vector3f * accel\l+ Eigen::Vector3f * mag\l|+  AQUA()\l+ void begin(Eigen::Vector4f\l &_qObs, Eigen::Vector3f\l &accel, Eigen::Vector3f &mag)\l+ int computeAQUAQuaternion()\l+ void computeQuaternionAccel()\l+ void computeQuaternionMag()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 [label="{AQUA\n|+ Eigen::Vector4f qAcc\l+ Eigen::Vector4f qMag\l+ Eigen::Vector3f normalized\lGravity\l+ Eigen::Vector3f magNormalized\l+ Eigen::Vector3f l\l+ Eigen::Vector4f * qAQUA\l+ Eigen::Vector3f * accel\l+ Eigen::Vector3f * mag\l+ Eigen::Vector4f qAlignment\l|+  AQUA()\l+ void getInitialAlignment\l(Eigen::Vector4f &)\l+ void begin(Eigen::Vector4f\l &_qObs, Eigen::Vector3f\l &accel, Eigen::Vector3f &mag)\l+ int computeAQUAQuaternion()\l+ void computeQuaternionAccel()\l+ void computeQuaternionMag()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
 }

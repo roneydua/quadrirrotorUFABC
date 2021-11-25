@@ -2,13 +2,13 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="pt-BR">
   <compounddef id="Drone_8h" kind="file" language="C++">
     <compoundname>Drone.h</compoundname>
-    <includes local="yes">Arduino.h</includes>
-    <includes refid="GRUPO__QUAT_8h" local="yes">GRUPO_QUAT.h</includes>
-    <includes local="no">eigen3/Eigen/Dense</includes>
+    <includes local="yes">eigen3/Eigen/Dense</includes>
+    <includes refid="GRUPO__QUAT_8h" local="yes">../../../quadricopterFinal/lib/GRUPO_QUAT/GRUPO_QUAT.h</includes>
+    <includes local="no">iostream</includes>
     <includedby refid="Controle_8h" local="yes">lib/CONTROLE/Controle.h</includedby>
     <includedby refid="Drone_8cpp" local="yes">lib/DRONE/Drone.cpp</includedby>
     <incdepgraph>
-      <node id="4">
+      <node id="2">
         <label>eigen3/Eigen/Dense</label>
       </node>
       <node id="1">
@@ -21,18 +21,15 @@
         <childnode refid="4" relation="include">
         </childnode>
       </node>
-      <node id="2">
-        <label>Arduino.h</label>
-      </node>
-      <node id="5">
+      <node id="4">
         <label>iostream</label>
       </node>
       <node id="3">
-        <label>GRUPO_QUAT.h</label>
+        <label>../../../quadricopterFinal/lib/GRUPO_QUAT/GRUPO_QUAT.h</label>
         <link refid="GRUPO__QUAT_8h"/>
-        <childnode refid="4" relation="include">
+        <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="5" relation="include">
+        <childnode refid="4" relation="include">
         </childnode>
       </node>
     </incdepgraph>
@@ -67,6 +64,20 @@
       </node>
     </invincdepgraph>
     <innerclass refid="classDrone" prot="public">Drone</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="Drone_8h_1a92102ea2f9ade1cc1a6dcce355db1677" prot="public" static="no">
+        <name>PRINT_MAT</name>
+        <param><defname>X</defname></param>
+        <initializer>cout &lt;&lt; #X &lt;&lt; &quot;:\n&quot; &lt;&lt; X &lt;&lt; &quot;\n&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/DRONE/Drone.h" line="17" column="9" bodyfile="lib/DRONE/Drone.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -79,62 +90,81 @@ Last modified by: roney Last modified time: 25-Aug-2021 </para>
     <programlisting>
 <codeline lineno="1"><highlight class="normal"></highlight></codeline>
 <codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DRONE_H</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#define<sp/>DRONE_H</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#ifdef<sp/>__GNUC__</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&quot;../../../quadricopterFinal/lib/GRUPO_QUAT/GRUPO_QUAT.h&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">std;</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>PRINT_MAT(X)<sp/>cout<sp/>&lt;&lt;<sp/>#X<sp/>&lt;&lt;<sp/>&quot;:\n&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>X<sp/>&lt;&lt;<sp/>&quot;\n&quot;</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&quot;Arduino.h&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&quot;<ref refid="GRUPO__QUAT_8h" kindref="compound">GRUPO_QUAT.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#include<sp/>&lt;eigen3/Eigen/Dense&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="22" refid="classDrone" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classDrone" kindref="compound">Drone</ref><sp/>{</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"></highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="26" refid="classDrone_1aa44361841fbfc3ac45bed2cdfb598262" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>L<sp/>=<sp/>0.225f;</highlight></codeline>
-<codeline lineno="27" refid="classDrone_1ae68802ad8fe8bbb370a19326fd7b5aef" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classDrone_1ae68802ad8fe8bbb370a19326fd7b5aef" kindref="member">half_dt</ref>;</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"></highlight></codeline>
-<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="31" refid="classDrone_1a30d56665a907276e7ca50ab3c75d730a" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Matrix4f<sp/><ref refid="classDrone_1a30d56665a907276e7ca50ab3c75d730a" kindref="member">J</ref>;</highlight></codeline>
-<codeline lineno="33" refid="classDrone_1adcfd685c1857b1b6b20984daac7e56e3" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Matrix4f<sp/><ref refid="classDrone_1adcfd685c1857b1b6b20984daac7e56e3" kindref="member">Jinv</ref>;</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Período<sp/>do<sp/>cotrole<sp/>discreto<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="35" refid="classDrone_1a0f5dde1e661b072ffd1dcd2cde690e2b" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classDrone_1a0f5dde1e661b072ffd1dcd2cde690e2b" kindref="member">dt</ref>;</highlight></codeline>
-<codeline lineno="37" refid="classDrone_1acc28d2a6d7fc4265e8ad012910b41add" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>dx<sp/>=<sp/>0.1f;</highlight></codeline>
-<codeline lineno="39" refid="classDrone_1ad04507c1b20ac5822461193ac819d929" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>massa<sp/>=<sp/>1.135f;</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"></highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><ref refid="classDrone" kindref="compound">Drone</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>_dt);</highlight></codeline>
-<codeline lineno="47" refid="classDrone_1a01882d591197d6978b479f0788ce01fc" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::DiagonalMatrix&lt;float,<sp/>3&gt;<sp/>matrizInercia{10e-3f,<sp/>11e-3f,<sp/>18e-3f};</highlight></codeline>
-<codeline lineno="53" refid="classDrone_1a06cb6081fc81dd73b0fe9f9d68e5e8f7" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::DiagonalMatrix&lt;float,<sp/>3&gt;<sp/>inverseMatrizInercia<sp/>=</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>matrizInercia.inverse();</highlight></codeline>
-<codeline lineno="56" refid="classDrone_1a21bc2b617f8741c1733829d7498f610a" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Vector3f<sp/>p{0,<sp/>0,<sp/>0};</highlight></codeline>
-<codeline lineno="58" refid="classDrone_1a178db613c8b400ef949969d1ca5a5169" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Vector3f<sp/>v{0,<sp/>0,<sp/>0};</highlight></codeline>
-<codeline lineno="60" refid="classDrone_1a3d47c909c26ca68f771eb7ec0026e752" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Vector4f<sp/>q{1.0f,<sp/>0.0f,<sp/>0.0f,<sp/>0.0f};</highlight></codeline>
-<codeline lineno="62" refid="classDrone_1a0b41e19233070e221d0eaa03ce213bf5" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Vector3f<sp/>w{0.0f,<sp/>0.0f,<sp/>0.0f};</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Eigen::MatrixXf<sp/>matAT<sp/>=<sp/>Eigen::MatrixXf::Identity(3,<sp/>3);</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="65" refid="classDrone_1a7441826ef17c5566c910dc76844fbde3" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::MatrixXf<sp/>matAT<sp/>=<sp/>Eigen::MatrixXf::Identity(6,<sp/>6);</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Eigen::MatrixXf<sp/>matBT<sp/>=<sp/>Eigen::MatrixXf::Identity(3,<sp/>3);</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="68" refid="classDrone_1aadb4722611d7c3bf7f397361f6cd208e" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::MatrixXf<sp/>matBT<sp/>=<sp/>Eigen::MatrixXf::Zero(6,<sp/>3);</highlight></codeline>
-<codeline lineno="70" refid="classDrone_1ad10e4c0ff42b803d922bff24ff9a1710" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::MatrixXf<sp/>matAR<sp/>=<sp/>Eigen::MatrixXf::Identity(6,<sp/>6);</highlight></codeline>
-<codeline lineno="72" refid="classDrone_1a8b19688fe7deefa69ab8a864cd5b6024" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::MatrixXf<sp/>matBR<sp/>=<sp/>Eigen::MatrixXf::Zero(6,<sp/>3);</highlight></codeline>
-<codeline lineno="74" refid="classDrone_1ac6e19b1cde8263a3e9a96b965bdd71d7" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::DiagonalMatrix&lt;float,<sp/>4&gt;<sp/>H<sp/>=</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>(Eigen::Vector4f(4)<sp/>&lt;&lt;<sp/>0.724048f,<sp/>0.73493f,<sp/>0.707656f,<sp/>0.727027f)</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.finished()</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.asDiagonal();</highlight></codeline>
-<codeline lineno="78" refid="classDrone_1a4e3fa542ac32a6564c83adaf62cc34b3" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::DiagonalMatrix&lt;float,<sp/>4&gt;<sp/>Hinv<sp/>=</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>(Eigen::Vector4f(4)<sp/>&lt;&lt;<sp/>1.0f<sp/>/<sp/>0.724048f,<sp/>1.0f<sp/>/<sp/>0.73493f,</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1.0f<sp/>/<sp/>0.707656f,<sp/>1.0f<sp/>/<sp/>0.727027f)</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.finished()</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.asDiagonal();</highlight></codeline>
-<codeline lineno="84" refid="classDrone_1adecfbf29f2f305ec0987c8742994d185" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Vector4f<sp/>h{-3911.13f,<sp/>-4180.05f,<sp/>-3620.13f,<sp/>-4279.45f};</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>updateStateMatrices(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>&amp;negativeq0);</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>constructJ();</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Eigen::VectorXf<sp/>continuosModel(Eigen::VectorXf<sp/>x,<sp/>Eigen::VectorXf<sp/>u);</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="88" refid="classDrone_1aa715343de198585f9266431776d58784" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>flagSDC<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="89"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="90"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="91"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>DRONE_H<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DRONE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;eigen3/Eigen/Dense&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__XTENSA__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../../../quadricopterFinal/lib/GRUPO_QUAT/GRUPO_QUAT.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">std;</highlight></codeline>
+<codeline lineno="17" refid="Drone_8h_1a92102ea2f9ade1cc1a6dcce355db1677" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PRINT_MAT(X)<sp/>cout<sp/>&lt;&lt;<sp/>#X<sp/>&lt;&lt;<sp/>&quot;:\n&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>X<sp/>&lt;&lt;<sp/>&quot;\n&quot;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Arduino.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="GRUPO__QUAT_8h" kindref="compound">GRUPO_QUAT.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">//<sp/>#define<sp/>MOTOR_MODEL_SIMPLE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="classDrone" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classDrone" kindref="compound">Drone</ref><sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="27" refid="classDrone_1aa44361841fbfc3ac45bed2cdfb598262" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>L<sp/>=<sp/>0.225f;</highlight></codeline>
+<codeline lineno="28" refid="classDrone_1ae68802ad8fe8bbb370a19326fd7b5aef" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classDrone_1ae68802ad8fe8bbb370a19326fd7b5aef" kindref="member">half_dt</ref>;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="32" refid="classDrone_1a30d56665a907276e7ca50ab3c75d730a" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Matrix4f<sp/><ref refid="classDrone_1a30d56665a907276e7ca50ab3c75d730a" kindref="member">J</ref>;</highlight></codeline>
+<codeline lineno="34" refid="classDrone_1a63c1b3a18b61a34b0a084eff48ec2f12" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Matrix4f<sp/><ref refid="classDrone_1a63c1b3a18b61a34b0a084eff48ec2f12" kindref="member">JInverse</ref>;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Período<sp/>do<sp/>controle<sp/>discreto*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="classDrone_1a0f5dde1e661b072ffd1dcd2cde690e2b" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classDrone_1a0f5dde1e661b072ffd1dcd2cde690e2b" kindref="member">dt</ref>;</highlight></codeline>
+<codeline lineno="38" refid="classDrone_1acc28d2a6d7fc4265e8ad012910b41add" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>dx<sp/>=<sp/>0.25f;</highlight></codeline>
+<codeline lineno="41" refid="classDrone_1ad04507c1b20ac5822461193ac819d929" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>massa<sp/>=<sp/>1.136f;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>float<sp/>massa<sp/>=<sp/>1.0f;</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/><ref refid="classDrone" kindref="compound">Drone</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>_dt);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>const<sp/>Eigen::DiagonalMatrix&lt;float,<sp/>3&gt;<sp/>matrizInercia{10e-3f,<sp/>11e-3f,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>18e-3f};</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="classDrone_1a01882d591197d6978b479f0788ce01fc" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::DiagonalMatrix&lt;float,<sp/>3&gt;<sp/>matrizInercia{10e-3f,<sp/>10e-3f,<sp/>18e-3f};</highlight></codeline>
+<codeline lineno="63" refid="classDrone_1a06cb6081fc81dd73b0fe9f9d68e5e8f7" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::DiagonalMatrix&lt;float,<sp/>3&gt;<sp/>inverseMatrizInercia<sp/>=</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>matrizInercia.inverse();</highlight></codeline>
+<codeline lineno="66" refid="classDrone_1a21bc2b617f8741c1733829d7498f610a" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Vector3f<sp/>p{0,<sp/>0,<sp/>0};</highlight></codeline>
+<codeline lineno="68" refid="classDrone_1a178db613c8b400ef949969d1ca5a5169" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Vector3f<sp/>v{0,<sp/>0,<sp/>0};</highlight></codeline>
+<codeline lineno="70" refid="classDrone_1a3d47c909c26ca68f771eb7ec0026e752" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Vector4f<sp/>q{1.0f,<sp/>0.0f,<sp/>0.0f,<sp/>0.0f};</highlight></codeline>
+<codeline lineno="72" refid="classDrone_1a0b41e19233070e221d0eaa03ce213bf5" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::Vector3f<sp/>w{0.0f,<sp/>0.0f,<sp/>0.0f};</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Eigen::MatrixXf<sp/>matAT<sp/>=<sp/>Eigen::MatrixXf::Identity(3,<sp/>3);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="classDrone_1a7441826ef17c5566c910dc76844fbde3" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::MatrixXf<sp/>matAT<sp/>=<sp/>Eigen::MatrixXf::Identity(6,<sp/>6);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Eigen::MatrixXf<sp/>matBT<sp/>=<sp/>Eigen::MatrixXf::Identity(3,<sp/>3);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="classDrone_1aadb4722611d7c3bf7f397361f6cd208e" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::MatrixXf<sp/>matBT<sp/>=<sp/>Eigen::MatrixXf::Zero(6,<sp/>3);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>TEST:<sp/>INTEGRAL<sp/>CONTROL</highlight></codeline>
+<codeline lineno="81" refid="classDrone_1ad10e4c0ff42b803d922bff24ff9a1710" refkind="member"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/>Eigen::MatrixXf<sp/>matAR<sp/>=<sp/>Eigen::MatrixXf::Identity(6,<sp/>6);</highlight></codeline>
+<codeline lineno="83" refid="classDrone_1a8b19688fe7deefa69ab8a864cd5b6024" refkind="member"><highlight class="normal"><sp/><sp/>Eigen::MatrixXf<sp/>matBR<sp/>=<sp/>Eigen::MatrixXf::Zero(6,<sp/>3);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>const<sp/>Eigen::DiagonalMatrix&lt;float,<sp/>4&gt;<sp/>H<sp/>=</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>(Eigen::Vector4f(4)<sp/>&lt;&lt;<sp/>0.724048f,<sp/>0.724048f,<sp/>0.724048f,<sp/>0.724048f)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.finished()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.asDiagonal();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="classDrone_1ac6e19b1cde8263a3e9a96b965bdd71d7" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::DiagonalMatrix&lt;float,<sp/>4&gt;<sp/>H<sp/>=</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>(Eigen::Vector4f(4)<sp/>&lt;&lt;<sp/>0.724048f,<sp/>0.73493f,<sp/>0.707656f,<sp/>0.727027f)</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.finished()</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.asDiagonal();</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>const<sp/>Eigen::DiagonalMatrix&lt;float,<sp/>4&gt;<sp/>HInverse<sp/>=</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>(Eigen::Vector4f(4)<sp/>&lt;&lt;<sp/>1.0f<sp/>/<sp/>0.724048f,<sp/>1.0f<sp/>/<sp/>0.724048f,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>1.0f<sp/>/<sp/>0.724048f,<sp/>1.0f<sp/>/<sp/>0.724048f)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.finished()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.asDiagonal();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102" refid="classDrone_1ac5169f79489402261d68671ff6483da0" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::DiagonalMatrix&lt;float,<sp/>4&gt;<sp/>HInverse<sp/>=</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>(Eigen::Vector4f(4)<sp/>&lt;&lt;<sp/>1.0f<sp/>/<sp/>0.724048f,<sp/>1.0f<sp/>/<sp/>0.73493f,</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1.0f<sp/>/<sp/>0.707656f,<sp/>1.0f<sp/>/<sp/>0.727027f)</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.finished()</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.asDiagonal();</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109" refid="classDrone_1adecfbf29f2f305ec0987c8742994d185" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Vector4f<sp/>h{-3911.13f,<sp/>-4180.05f,<sp/>-3620.13f,<sp/>-4279.45f};</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>const<sp/>Eigen::Vector4f<sp/>h{-3911.13f,<sp/>-3911.13f,<sp/>-3911.13f,<sp/>-3911.13f};</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>updateStateMatrices(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>&amp;negativeq0);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>constructJ();</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Eigen::VectorXf<sp/>continuosModel(Eigen::VectorXf<sp/>x,<sp/>Eigen::VectorXf<sp/>u);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114" refid="classDrone_1aa715343de198585f9266431776d58784" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>flagSDC<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>DRONE_H<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="lib/DRONE/Drone.h"/>
   </compounddef>

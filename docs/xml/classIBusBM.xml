@@ -3,6 +3,7 @@
   <compounddef id="classIBusBM" kind="class" language="C++" prot="public">
     <compoundname>IBusBM</compoundname>
     <includes refid="IBusBM_8h" local="no">IBusBM.h</includes>
+    <innerclass refid="unionIBusBM_1_1ControlUnion" prot="public">IBusBM::ControlUnion</innerclass>
     <innerclass refid="structIBusBM_1_1sensorinfo" prot="private">IBusBM::sensorinfo</innerclass>
       <sectiondef kind="private-type">
       <memberdef kind="enum" id="classIBusBM_1aed184764706c5dcb4b82ae4a53b917ec" prot="private" static="no" strong="no">
@@ -49,7 +50,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/IBUSBM/IBusBM.h" line="72" column="3" bodyfile="lib/IBUSBM/IBusBM.h" bodystart="72" bodyend="72"/>
+        <location file="src/IBusBM.h" line="102" column="3" bodyfile="src/IBusBM.h" bodystart="102" bodyend="102"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-attrib">
@@ -64,8 +65,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/IBUSBM/IBusBM.h" line="67" column="20" bodyfile="lib/IBUSBM/IBusBM.h" bodystart="67" bodyend="-1"/>
-        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="171" endline="288">loop</referencedby>
+        <location file="src/IBusBM.h" line="66" column="20" bodyfile="src/IBusBM.h" bodystart="66" bodyend="-1"/>
+        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="165" endline="282">loop</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classIBusBM_1a4bf0677885cb0944adfc7725fffe0ccc" prot="public" static="no" mutable="no">
         <type>uint8_t</type>
@@ -78,8 +79,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/IBUSBM/IBusBM.h" line="68" column="20" bodyfile="lib/IBUSBM/IBusBM.h" bodystart="68" bodyend="-1"/>
-        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="171" endline="288">loop</referencedby>
+        <location file="src/IBusBM.h" line="67" column="20" bodyfile="src/IBusBM.h" bodystart="67" bodyend="-1"/>
+        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="165" endline="282">loop</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classIBusBM_1a15332b57310d1cbca77180befc27cd99" prot="public" static="no" mutable="no">
         <type>uint8_t</type>
@@ -92,8 +93,27 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/IBUSBM/IBusBM.h" line="69" column="20" bodyfile="lib/IBUSBM/IBusBM.h" bodystart="69" bodyend="-1"/>
-        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="171" endline="288">loop</referencedby>
+        <location file="src/IBusBM.h" line="68" column="20" bodyfile="src/IBusBM.h" bodystart="68" bodyend="-1"/>
+        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="165" endline="282">loop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classIBusBM_1ad576c07af1ed09d8bc355e7f65c69000" prot="public" static="no" mutable="no">
+        <type><ref refid="unionIBusBM_1_1ControlUnion" kindref="compound">ControlUnion</ref></type>
+        <definition>ControlUnion IBusBM::remoteControl</definition>
+        <argsstring></argsstring>
+        <name>remoteControl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/IBusBM.h" line="99" column="16" bodyfile="src/IBusBM.h" bodystart="99" bodyend="-1"/>
+        <referencedby refid="main_8cpp_1a1f32cff79659de71ff8de76c85e7c7b9" compoundref="main_8cpp" startline="114" endline="127">emergencyMethods</referencedby>
+        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="165" endline="282">loop</referencedby>
+        <referencedby refid="classIBusBM_1af21822cffd62a1f2f8da19c407c00b94" compoundref="IBusBM_8cpp" startline="284" endline="290">readChannel</referencedby>
+        <referencedby refid="main_8cpp_1a4fc01d736fe50cf5b977f755b675f11d" compoundref="main_8cpp" startline="214" endline="235">setup</referencedby>
+        <referencedby refid="main_8cpp_1ad3d424dca818563665f9ab9bbf866fff" compoundref="main_8cpp" startline="128" endline="211">xTaskContol</referencedby>
+        <referencedby refid="main_8cpp_1a1d67803bd6f9b50c1e3686650e280f68" compoundref="main_8cpp" startline="87" endline="109">xTaskSetupFiltro</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-static-attrib">
@@ -109,7 +129,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/IBUSBM/IBusBM.h" line="74" column="24" bodyfile="lib/IBUSBM/IBusBM.h" bodystart="74" bodyend="-1"/>
+        <location file="src/IBusBM.h" line="104" column="24" bodyfile="src/IBusBM.h" bodystart="104" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classIBusBM_1ad79ec4b372325fcfb0fa542093250583" prot="private" static="yes" mutable="no">
         <type>const uint8_t</type>
@@ -124,8 +144,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/IBUSBM/IBusBM.h" line="75" column="24" bodyfile="lib/IBUSBM/IBusBM.h" bodystart="75" bodyend="-1"/>
-        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="171" endline="288">loop</referencedby>
+        <location file="src/IBusBM.h" line="105" column="24" bodyfile="src/IBusBM.h" bodystart="105" bodyend="-1"/>
+        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="165" endline="282">loop</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classIBusBM_1a7432721ad94f78fc5df8fd3004e7b84b" prot="private" static="yes" mutable="no">
         <type>const uint8_t</type>
@@ -140,8 +160,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/IBUSBM/IBusBM.h" line="77" column="24" bodyfile="lib/IBUSBM/IBusBM.h" bodystart="77" bodyend="-1"/>
-        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="171" endline="288">loop</referencedby>
+        <location file="src/IBusBM.h" line="107" column="24" bodyfile="src/IBusBM.h" bodystart="107" bodyend="-1"/>
+        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="165" endline="282">loop</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classIBusBM_1ac1d183fc712d8136da488fcc823715a1" prot="private" static="yes" mutable="no">
         <type>const uint8_t</type>
@@ -155,9 +175,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/IBUSBM/IBusBM.h" line="79" column="24" bodyfile="lib/IBUSBM/IBusBM.h" bodystart="79" bodyend="-1"/>
-        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="171" endline="288">loop</referencedby>
-        <referencedby refid="classIBusBM_1af21822cffd62a1f2f8da19c407c00b94" compoundref="IBusBM_8cpp" startline="290" endline="296">readChannel</referencedby>
+        <location file="src/IBusBM.h" line="109" column="24" bodyfile="src/IBusBM.h" bodystart="109" bodyend="-1"/>
+        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="165" endline="282">loop</referencedby>
+        <referencedby refid="classIBusBM_1af21822cffd62a1f2f8da19c407c00b94" compoundref="IBusBM_8cpp" startline="284" endline="290">readChannel</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classIBusBM_1a04af78a0dfdab275bdb2fa82253c8b49" prot="private" static="yes" mutable="no">
         <type>const uint8_t</type>
@@ -172,8 +192,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/IBUSBM/IBusBM.h" line="80" column="24" bodyfile="lib/IBUSBM/IBusBM.h" bodystart="80" bodyend="-1"/>
-        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="171" endline="288">loop</referencedby>
+        <location file="src/IBusBM.h" line="111" column="24" bodyfile="src/IBusBM.h" bodystart="111" bodyend="-1"/>
+        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="165" endline="282">loop</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classIBusBM_1a5a474b243c8a027b395314b052d283e7" prot="private" static="yes" mutable="no">
         <type>const uint8_t</type>
@@ -188,8 +208,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/IBUSBM/IBusBM.h" line="82" column="24" bodyfile="lib/IBUSBM/IBusBM.h" bodystart="82" bodyend="-1"/>
-        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="171" endline="288">loop</referencedby>
+        <location file="src/IBusBM.h" line="113" column="24" bodyfile="src/IBusBM.h" bodystart="113" bodyend="-1"/>
+        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="165" endline="282">loop</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classIBusBM_1a270b74b38e646b87402d4a2340187e20" prot="private" static="yes" mutable="no">
         <type>const uint8_t</type>
@@ -204,8 +224,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/IBUSBM/IBusBM.h" line="84" column="24" bodyfile="lib/IBUSBM/IBusBM.h" bodystart="84" bodyend="-1"/>
-        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="171" endline="288">loop</referencedby>
+        <location file="src/IBusBM.h" line="115" column="24" bodyfile="src/IBusBM.h" bodystart="115" bodyend="-1"/>
+        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="165" endline="282">loop</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classIBusBM_1af7d9b5d197f47071a8d6d8723cb14a72" prot="private" static="yes" mutable="no">
         <type>const uint8_t</type>
@@ -220,8 +240,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/IBUSBM/IBusBM.h" line="86" column="24" bodyfile="lib/IBUSBM/IBusBM.h" bodystart="86" bodyend="-1"/>
-        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="171" endline="288">loop</referencedby>
+        <location file="src/IBusBM.h" line="117" column="24" bodyfile="src/IBusBM.h" bodystart="117" bodyend="-1"/>
+        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="165" endline="282">loop</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classIBusBM_1abf1b1c4c0bac139f0d5f9cfb78d5f88f" prot="private" static="yes" mutable="no">
         <type>const uint8_t</type>
@@ -235,8 +255,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/IBUSBM/IBusBM.h" line="88" column="24" bodyfile="lib/IBUSBM/IBusBM.h" bodystart="88" bodyend="-1"/>
-        <referencedby refid="classIBusBM_1a126cc857adec1367f7264f27ae68a347" compoundref="IBusBM_8cpp" startline="298" endline="310">addSensor</referencedby>
+        <location file="src/IBusBM.h" line="119" column="24" bodyfile="src/IBusBM.h" bodystart="119" bodyend="-1"/>
+        <referencedby refid="classIBusBM_1a126cc857adec1367f7264f27ae68a347" compoundref="IBusBM_8cpp" startline="292" endline="304">addSensor</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -251,9 +271,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/IBUSBM/IBusBM.h" line="90" column="11" bodyfile="lib/IBUSBM/IBusBM.h" bodystart="90" bodyend="-1"/>
-        <referencedby refid="classIBusBM_1afb01e4a762c8f575d8466fc8dadaa5cd" compoundref="IBusBM_8cpp" startline="89" endline="167">begin</referencedby>
-        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="171" endline="288">loop</referencedby>
+        <location file="src/IBusBM.h" line="121" column="11" bodyfile="src/IBusBM.h" bodystart="121" bodyend="-1"/>
+        <referencedby refid="classIBusBM_1afb01e4a762c8f575d8466fc8dadaa5cd" compoundref="IBusBM_8cpp" startline="83" endline="161">begin</referencedby>
+        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="165" endline="282">loop</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classIBusBM_1a00c0e49a0d4fcb8ac567b2e92bc74d3d" prot="private" static="no" mutable="no">
         <type>HardwareSerial *</type>
@@ -266,9 +286,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/IBUSBM/IBusBM.h" line="91" column="18" bodyfile="lib/IBUSBM/IBusBM.h" bodystart="91" bodyend="-1"/>
-        <referencedby refid="classIBusBM_1afb01e4a762c8f575d8466fc8dadaa5cd" compoundref="IBusBM_8cpp" startline="89" endline="167">begin</referencedby>
-        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="171" endline="288">loop</referencedby>
+        <location file="src/IBusBM.h" line="122" column="18" bodyfile="src/IBusBM.h" bodystart="122" bodyend="-1"/>
+        <referencedby refid="classIBusBM_1afb01e4a762c8f575d8466fc8dadaa5cd" compoundref="IBusBM_8cpp" startline="83" endline="161">begin</referencedby>
+        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="165" endline="282">loop</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classIBusBM_1a20f49c47b7c40cb6f5bee2f3d4649fe3" prot="private" static="no" mutable="no">
         <type>uint32_t</type>
@@ -281,9 +301,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/IBUSBM/IBusBM.h" line="92" column="12" bodyfile="lib/IBUSBM/IBusBM.h" bodystart="92" bodyend="-1"/>
-        <referencedby refid="classIBusBM_1afb01e4a762c8f575d8466fc8dadaa5cd" compoundref="IBusBM_8cpp" startline="89" endline="167">begin</referencedby>
-        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="171" endline="288">loop</referencedby>
+        <location file="src/IBusBM.h" line="123" column="12" bodyfile="src/IBusBM.h" bodystart="123" bodyend="-1"/>
+        <referencedby refid="classIBusBM_1afb01e4a762c8f575d8466fc8dadaa5cd" compoundref="IBusBM_8cpp" startline="83" endline="161">begin</referencedby>
+        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="165" endline="282">loop</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classIBusBM_1a5e950d8524d32e3adfad0a654a9e69d1" prot="private" static="no" mutable="no">
         <type>uint8_t</type>
@@ -296,8 +316,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/IBUSBM/IBusBM.h" line="93" column="11" bodyfile="lib/IBUSBM/IBusBM.h" bodystart="93" bodyend="-1"/>
-        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="171" endline="288">loop</referencedby>
+        <location file="src/IBusBM.h" line="124" column="11" bodyfile="src/IBusBM.h" bodystart="124" bodyend="-1"/>
+        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="165" endline="282">loop</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classIBusBM_1a4a9932e9c78e976e9adb4ff09d9ed69a" prot="private" static="no" mutable="no">
         <type>uint8_t</type>
@@ -310,9 +330,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/IBUSBM/IBusBM.h" line="94" column="11" bodyfile="lib/IBUSBM/IBusBM.h" bodystart="94" bodyend="-1"/>
-        <referencedby refid="classIBusBM_1afb01e4a762c8f575d8466fc8dadaa5cd" compoundref="IBusBM_8cpp" startline="89" endline="167">begin</referencedby>
-        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="171" endline="288">loop</referencedby>
+        <location file="src/IBusBM.h" line="125" column="11" bodyfile="src/IBusBM.h" bodystart="125" bodyend="-1"/>
+        <referencedby refid="classIBusBM_1afb01e4a762c8f575d8466fc8dadaa5cd" compoundref="IBusBM_8cpp" startline="83" endline="161">begin</referencedby>
+        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="165" endline="282">loop</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classIBusBM_1af10cf8a59adab541e055aaac1fa21cb8" prot="private" static="no" mutable="no">
         <type>uint8_t</type>
@@ -325,25 +345,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/IBUSBM/IBusBM.h" line="95" column="11" bodyfile="lib/IBUSBM/IBusBM.h" bodystart="95" bodyend="-1"/>
-        <referencedby refid="classIBusBM_1a126cc857adec1367f7264f27ae68a347" compoundref="IBusBM_8cpp" startline="298" endline="310">addSensor</referencedby>
-        <referencedby refid="classIBusBM_1afb01e4a762c8f575d8466fc8dadaa5cd" compoundref="IBusBM_8cpp" startline="89" endline="167">begin</referencedby>
-        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="171" endline="288">loop</referencedby>
-      </memberdef>
-      <memberdef kind="variable" id="classIBusBM_1ac1f54297358da1bd0dcfe3af9eed31ea" prot="private" static="no" mutable="no">
-        <type>uint16_t</type>
-        <definition>uint16_t IBusBM::channel[PROTOCOL_CHANNELS]</definition>
-        <argsstring>[PROTOCOL_CHANNELS]</argsstring>
-        <name>channel</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="lib/IBUSBM/IBusBM.h" line="96" column="12" bodyfile="lib/IBUSBM/IBusBM.h" bodystart="96" bodyend="-1"/>
-        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="171" endline="288">loop</referencedby>
-        <referencedby refid="classIBusBM_1af21822cffd62a1f2f8da19c407c00b94" compoundref="IBusBM_8cpp" startline="290" endline="296">readChannel</referencedby>
+        <location file="src/IBusBM.h" line="126" column="11" bodyfile="src/IBusBM.h" bodystart="126" bodyend="-1"/>
+        <referencedby refid="classIBusBM_1a126cc857adec1367f7264f27ae68a347" compoundref="IBusBM_8cpp" startline="292" endline="304">addSensor</referencedby>
+        <referencedby refid="classIBusBM_1afb01e4a762c8f575d8466fc8dadaa5cd" compoundref="IBusBM_8cpp" startline="83" endline="161">begin</referencedby>
+        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="165" endline="282">loop</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classIBusBM_1a60daa234d83a024b0e626a85d80b7c6c" prot="private" static="no" mutable="no">
         <type>uint16_t</type>
@@ -356,9 +361,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/IBUSBM/IBusBM.h" line="97" column="12" bodyfile="lib/IBUSBM/IBusBM.h" bodystart="97" bodyend="-1"/>
-        <referencedby refid="classIBusBM_1afb01e4a762c8f575d8466fc8dadaa5cd" compoundref="IBusBM_8cpp" startline="89" endline="167">begin</referencedby>
-        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="171" endline="288">loop</referencedby>
+        <location file="src/IBusBM.h" line="128" column="12" bodyfile="src/IBusBM.h" bodystart="128" bodyend="-1"/>
+        <referencedby refid="classIBusBM_1afb01e4a762c8f575d8466fc8dadaa5cd" compoundref="IBusBM_8cpp" startline="83" endline="161">begin</referencedby>
+        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="165" endline="282">loop</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classIBusBM_1a025b034376f9e774e70b74207d9ea9f0" prot="private" static="no" mutable="no">
         <type>uint8_t</type>
@@ -371,9 +376,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/IBUSBM/IBusBM.h" line="98" column="11" bodyfile="lib/IBUSBM/IBusBM.h" bodystart="98" bodyend="-1"/>
-        <referencedby refid="classIBusBM_1afb01e4a762c8f575d8466fc8dadaa5cd" compoundref="IBusBM_8cpp" startline="89" endline="167">begin</referencedby>
-        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="171" endline="288">loop</referencedby>
+        <location file="src/IBusBM.h" line="129" column="11" bodyfile="src/IBusBM.h" bodystart="129" bodyend="-1"/>
+        <referencedby refid="classIBusBM_1afb01e4a762c8f575d8466fc8dadaa5cd" compoundref="IBusBM_8cpp" startline="83" endline="161">begin</referencedby>
+        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="165" endline="282">loop</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classIBusBM_1a2f6eb7d18ab2dccf0a87c0bbf4c15dfc" prot="private" static="no" mutable="no">
         <type><ref refid="structIBusBM_1_1sensorinfo" kindref="compound">sensorinfo</ref></type>
@@ -386,10 +391,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/IBUSBM/IBusBM.h" line="104" column="14" bodyfile="lib/IBUSBM/IBusBM.h" bodystart="104" bodyend="-1"/>
-        <referencedby refid="classIBusBM_1a126cc857adec1367f7264f27ae68a347" compoundref="IBusBM_8cpp" startline="298" endline="310">addSensor</referencedby>
-        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="171" endline="288">loop</referencedby>
-        <referencedby refid="classIBusBM_1acbd0bcad0529b872c72d4e7a49233460" compoundref="IBusBM_8cpp" startline="312" endline="315">setSensorMeasurement</referencedby>
+        <location file="src/IBusBM.h" line="135" column="14" bodyfile="src/IBusBM.h" bodystart="135" bodyend="-1"/>
+        <referencedby refid="classIBusBM_1a126cc857adec1367f7264f27ae68a347" compoundref="IBusBM_8cpp" startline="292" endline="304">addSensor</referencedby>
+        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="165" endline="282">loop</referencedby>
+        <referencedby refid="classIBusBM_1acbd0bcad0529b872c72d4e7a49233460" compoundref="IBusBM_8cpp" startline="306" endline="309">setSensorMeasurement</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classIBusBM_1afd1a0be2e13c31156d32e242383915b5" prot="private" static="no" mutable="no">
         <type>uint8_t</type>
@@ -403,8 +408,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/IBUSBM/IBusBM.h" line="105" column="11" bodyfile="lib/IBUSBM/IBusBM.h" bodystart="105" bodyend="-1"/>
-        <referencedby refid="classIBusBM_1a126cc857adec1367f7264f27ae68a347" compoundref="IBusBM_8cpp" startline="298" endline="310">addSensor</referencedby>
+        <location file="src/IBusBM.h" line="136" column="11" bodyfile="src/IBusBM.h" bodystart="136" bodyend="-1"/>
+        <referencedby refid="classIBusBM_1a126cc857adec1367f7264f27ae68a347" compoundref="IBusBM_8cpp" startline="292" endline="304">addSensor</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classIBusBM_1a2308638e357b6a34e0752e9f7d6e2ae6" prot="private" static="no" mutable="no">
         <type><ref refid="classIBusBM" kindref="compound">IBusBM</ref> *</type>
@@ -418,9 +423,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/IBUSBM/IBusBM.h" line="106" column="10" bodyfile="lib/IBUSBM/IBusBM.h" bodystart="106" bodyend="-1"/>
-        <referencedby refid="classIBusBM_1afb01e4a762c8f575d8466fc8dadaa5cd" compoundref="IBusBM_8cpp" startline="89" endline="167">begin</referencedby>
-        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="171" endline="288">loop</referencedby>
+        <location file="src/IBusBM.h" line="137" column="10" bodyfile="src/IBusBM.h" bodystart="137" bodyend="-1"/>
+        <referencedby refid="classIBusBM_1afb01e4a762c8f575d8466fc8dadaa5cd" compoundref="IBusBM_8cpp" startline="83" endline="161">begin</referencedby>
+        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="165" endline="282">loop</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -454,20 +459,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/IBUSBM/IBusBM.h" line="54" column="8" bodyfile="lib/IBUSBM/IBusBM.cpp" bodystart="89" bodyend="167"/>
-        <references refid="classIBusBM_1a60daa234d83a024b0e626a85d80b7c6c" compoundref="IBusBM_8h" startline="97">chksum</references>
-        <references refid="classIBusBM_1aed184764706c5dcb4b82ae4a53b917eca9c69e26c2830eb900cd5603714acd289" compoundref="IBusBM_8h" startline="72">DISCARD</references>
-        <references refid="IBusBM_8h_1a8b9fd84154bff010521710049dd8f090" compoundref="IBusBM_8h" startline="53">IBUSBM_NOTIMER</references>
+        <location file="src/IBusBM.h" line="53" column="8" bodyfile="src/IBusBM.cpp" bodystart="83" bodyend="161"/>
+        <references refid="classIBusBM_1a60daa234d83a024b0e626a85d80b7c6c" compoundref="IBusBM_8h" startline="128">chksum</references>
+        <references refid="classIBusBM_1aed184764706c5dcb4b82ae4a53b917eca9c69e26c2830eb900cd5603714acd289" compoundref="IBusBM_8h" startline="102">DISCARD</references>
+        <references refid="IBusBM_8h_1a8b9fd84154bff010521710049dd8f090" compoundref="IBusBM_8h" startline="52">IBUSBM_NOTIMER</references>
         <references refid="IBusBM_8cpp_1a1f0b921ce997d0d31139ca4a01afa2dc" compoundref="IBusBM_8cpp" startline="32">IBusBMfirst</references>
-        <references refid="classIBusBM_1a2308638e357b6a34e0752e9f7d6e2ae6" compoundref="IBusBM_8h" startline="106">IBusBMnext</references>
-        <references refid="classIBusBM_1a20f49c47b7c40cb6f5bee2f3d4649fe3" compoundref="IBusBM_8h" startline="92">last</references>
-        <references refid="classIBusBM_1a025b034376f9e774e70b74207d9ea9f0" compoundref="IBusBM_8h" startline="98">lchksum</references>
-        <references refid="classIBusBM_1af10cf8a59adab541e055aaac1fa21cb8" compoundref="IBusBM_8h" startline="95">len</references>
+        <references refid="classIBusBM_1a2308638e357b6a34e0752e9f7d6e2ae6" compoundref="IBusBM_8h" startline="137">IBusBMnext</references>
+        <references refid="classIBusBM_1a20f49c47b7c40cb6f5bee2f3d4649fe3" compoundref="IBusBM_8h" startline="123">last</references>
+        <references refid="classIBusBM_1a025b034376f9e774e70b74207d9ea9f0" compoundref="IBusBM_8h" startline="129">lchksum</references>
+        <references refid="classIBusBM_1af10cf8a59adab541e055aaac1fa21cb8" compoundref="IBusBM_8h" startline="126">len</references>
         <references refid="IBusBM_8cpp_1a68b68e72a8323bb91995b38e98cf7d3e" compoundref="IBusBM_8cpp" startline="44" endline="48">onTimer</references>
-        <references refid="classIBusBM_1a4a9932e9c78e976e9adb4ff09d9ed69a" compoundref="IBusBM_8h" startline="94">ptr</references>
-        <references refid="classIBusBM_1a2a316d2088ea51aeea5ce8c025687eef" compoundref="IBusBM_8h" startline="90">state</references>
-        <references refid="classIBusBM_1a00c0e49a0d4fcb8ac567b2e92bc74d3d" compoundref="IBusBM_8h" startline="91">stream</references>
-        <referencedby refid="main_8cpp_1a4fc01d736fe50cf5b977f755b675f11d" compoundref="main_8cpp" startline="33" endline="47">setup</referencedby>
+        <references refid="classIBusBM_1a4a9932e9c78e976e9adb4ff09d9ed69a" compoundref="IBusBM_8h" startline="125">ptr</references>
+        <references refid="classIBusBM_1a2a316d2088ea51aeea5ce8c025687eef" compoundref="IBusBM_8h" startline="121">state</references>
+        <references refid="classIBusBM_1a00c0e49a0d4fcb8ac567b2e92bc74d3d" compoundref="IBusBM_8h" startline="122">stream</references>
+        <referencedby refid="main_8cpp_1a4fc01d736fe50cf5b977f755b675f11d" compoundref="main_8cpp" startline="214" endline="235">setup</referencedby>
       </memberdef>
       <memberdef kind="function" id="classIBusBM_1af21822cffd62a1f2f8da19c407c00b94" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>uint16_t</type>
@@ -484,9 +489,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/IBUSBM/IBusBM.h" line="57" column="12" bodyfile="lib/IBUSBM/IBusBM.cpp" bodystart="290" bodyend="296"/>
-        <references refid="classIBusBM_1ac1f54297358da1bd0dcfe3af9eed31ea" compoundref="IBusBM_8h" startline="96">channel</references>
-        <references refid="classIBusBM_1ac1d183fc712d8136da488fcc823715a1" compoundref="IBusBM_8h" startline="79">PROTOCOL_CHANNELS</references>
+        <location file="src/IBusBM.h" line="56" column="12" bodyfile="src/IBusBM.cpp" bodystart="284" bodyend="290"/>
+        <references refid="unionIBusBM_1_1ControlUnion_1ac2319ac50728084a0617bd9d547288f7" compoundref="IBusBM_8h" startline="72">IBusBM::ControlUnion::channel</references>
+        <references refid="classIBusBM_1ac1d183fc712d8136da488fcc823715a1" compoundref="IBusBM_8h" startline="109">PROTOCOL_CHANNELS</references>
+        <references refid="classIBusBM_1ad576c07af1ed09d8bc355e7f65c69000" compoundref="IBusBM_8h" startline="99">remoteControl</references>
       </memberdef>
       <memberdef kind="function" id="classIBusBM_1a126cc857adec1367f7264f27ae68a347" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>uint8_t</type>
@@ -508,14 +514,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/IBUSBM/IBusBM.h" line="59" column="3" bodyfile="lib/IBUSBM/IBusBM.cpp" bodystart="298" bodyend="310"/>
-        <references refid="classIBusBM_1af10cf8a59adab541e055aaac1fa21cb8" compoundref="IBusBM_8h" startline="95">len</references>
-        <references refid="classIBusBM_1afd1a0be2e13c31156d32e242383915b5" compoundref="IBusBM_8h" startline="105">NumberSensors</references>
-        <references refid="structIBusBM_1_1sensorinfo_1a0838975a9991ce94a7009f237cd7edc2" compoundref="IBusBM_8h" startline="101">IBusBM::sensorinfo::sensorLength</references>
-        <references refid="classIBusBM_1abf1b1c4c0bac139f0d5f9cfb78d5f88f" compoundref="IBusBM_8h" startline="88">SENSORMAX</references>
-        <references refid="classIBusBM_1a2f6eb7d18ab2dccf0a87c0bbf4c15dfc" compoundref="IBusBM_8h" startline="104">sensors</references>
-        <references refid="structIBusBM_1_1sensorinfo_1abd881da866db85793dcdd020d8eecb5c" compoundref="IBusBM_8h" startline="100">IBusBM::sensorinfo::sensorType</references>
-        <references refid="structIBusBM_1_1sensorinfo_1a07cfd12b2c2a8982a88aeecf85bd322b" compoundref="IBusBM_8h" startline="102">IBusBM::sensorinfo::sensorValue</references>
+        <location file="src/IBusBM.h" line="58" column="3" bodyfile="src/IBusBM.cpp" bodystart="292" bodyend="304"/>
+        <references refid="classIBusBM_1af10cf8a59adab541e055aaac1fa21cb8" compoundref="IBusBM_8h" startline="126">len</references>
+        <references refid="classIBusBM_1afd1a0be2e13c31156d32e242383915b5" compoundref="IBusBM_8h" startline="136">NumberSensors</references>
+        <references refid="structIBusBM_1_1sensorinfo_1a0838975a9991ce94a7009f237cd7edc2" compoundref="IBusBM_8h" startline="132">IBusBM::sensorinfo::sensorLength</references>
+        <references refid="classIBusBM_1abf1b1c4c0bac139f0d5f9cfb78d5f88f" compoundref="IBusBM_8h" startline="119">SENSORMAX</references>
+        <references refid="classIBusBM_1a2f6eb7d18ab2dccf0a87c0bbf4c15dfc" compoundref="IBusBM_8h" startline="135">sensors</references>
+        <references refid="structIBusBM_1_1sensorinfo_1abd881da866db85793dcdd020d8eecb5c" compoundref="IBusBM_8h" startline="131">IBusBM::sensorinfo::sensorType</references>
+        <references refid="structIBusBM_1_1sensorinfo_1a07cfd12b2c2a8982a88aeecf85bd322b" compoundref="IBusBM_8h" startline="133">IBusBM::sensorinfo::sensorValue</references>
       </memberdef>
       <memberdef kind="function" id="classIBusBM_1acbd0bcad0529b872c72d4e7a49233460" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -536,9 +542,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/IBUSBM/IBusBM.h" line="62" column="8" bodyfile="lib/IBUSBM/IBusBM.cpp" bodystart="312" bodyend="315"/>
-        <references refid="classIBusBM_1a2f6eb7d18ab2dccf0a87c0bbf4c15dfc" compoundref="IBusBM_8h" startline="104">sensors</references>
-        <references refid="structIBusBM_1_1sensorinfo_1a07cfd12b2c2a8982a88aeecf85bd322b" compoundref="IBusBM_8h" startline="102">IBusBM::sensorinfo::sensorValue</references>
+        <location file="src/IBusBM.h" line="61" column="8" bodyfile="src/IBusBM.cpp" bodystart="306" bodyend="309"/>
+        <references refid="classIBusBM_1a2f6eb7d18ab2dccf0a87c0bbf4c15dfc" compoundref="IBusBM_8h" startline="135">sensors</references>
+        <references refid="structIBusBM_1_1sensorinfo_1a07cfd12b2c2a8982a88aeecf85bd322b" compoundref="IBusBM_8h" startline="133">IBusBM::sensorinfo::sensorValue</references>
       </memberdef>
       <memberdef kind="function" id="classIBusBM_1a3219abe525dde59156d00538d93faa11" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -554,40 +560,44 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/IBUSBM/IBusBM.h" line="64" column="8" bodyfile="lib/IBUSBM/IBusBM.cpp" bodystart="171" bodyend="288"/>
-        <references refid="classIBusBM_1a5e950d8524d32e3adfad0a654a9e69d1" compoundref="IBusBM_8h" startline="93">buffer</references>
-        <references refid="classIBusBM_1ac1f54297358da1bd0dcfe3af9eed31ea" compoundref="IBusBM_8h" startline="96">channel</references>
-        <references refid="classIBusBM_1a60daa234d83a024b0e626a85d80b7c6c" compoundref="IBusBM_8h" startline="97">chksum</references>
-        <references refid="classIBusBM_1ae980c3b427d1c12d93c2fc13322f7665" compoundref="IBusBM_8h" startline="67">cnt_poll</references>
-        <references refid="classIBusBM_1a15332b57310d1cbca77180befc27cd99" compoundref="IBusBM_8h" startline="69">cnt_rec</references>
-        <references refid="classIBusBM_1a4bf0677885cb0944adfc7725fffe0ccc" compoundref="IBusBM_8h" startline="68">cnt_sensor</references>
-        <references refid="classIBusBM_1aed184764706c5dcb4b82ae4a53b917eca9c69e26c2830eb900cd5603714acd289" compoundref="IBusBM_8h" startline="72">DISCARD</references>
-        <references refid="classIBusBM_1aed184764706c5dcb4b82ae4a53b917ecaf7c395fada4d5074ad979c56cfde8ed0" compoundref="IBusBM_8h" startline="72">GET_CHKSUMH</references>
-        <references refid="classIBusBM_1aed184764706c5dcb4b82ae4a53b917ecaa7f315ef3b8eab0e0f6abc1b3f25bcc0" compoundref="IBusBM_8h" startline="72">GET_CHKSUML</references>
-        <references refid="classIBusBM_1aed184764706c5dcb4b82ae4a53b917eca4ed4c7f6e05b116601121d0bac402f42" compoundref="IBusBM_8h" startline="72">GET_DATA</references>
-        <references refid="classIBusBM_1aed184764706c5dcb4b82ae4a53b917eca0c01e1a9f134347f73969aeba38df424" compoundref="IBusBM_8h" startline="72">GET_LENGTH</references>
-        <references refid="classIBusBM_1a2308638e357b6a34e0752e9f7d6e2ae6" compoundref="IBusBM_8h" startline="106">IBusBMnext</references>
-        <references refid="classIBusBM_1a20f49c47b7c40cb6f5bee2f3d4649fe3" compoundref="IBusBM_8h" startline="92">last</references>
-        <references refid="classIBusBM_1a025b034376f9e774e70b74207d9ea9f0" compoundref="IBusBM_8h" startline="98">lchksum</references>
-        <references refid="classIBusBM_1af10cf8a59adab541e055aaac1fa21cb8" compoundref="IBusBM_8h" startline="95">len</references>
-        <references refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="171" endline="288">loop</references>
-        <references refid="classIBusBM_1ac1d183fc712d8136da488fcc823715a1" compoundref="IBusBM_8h" startline="79">PROTOCOL_CHANNELS</references>
-        <references refid="classIBusBM_1a04af78a0dfdab275bdb2fa82253c8b49" compoundref="IBusBM_8h" startline="80">PROTOCOL_COMMAND40</references>
-        <references refid="classIBusBM_1a5a474b243c8a027b395314b052d283e7" compoundref="IBusBM_8h" startline="82">PROTOCOL_COMMAND_DISCOVER</references>
-        <references refid="classIBusBM_1a270b74b38e646b87402d4a2340187e20" compoundref="IBusBM_8h" startline="84">PROTOCOL_COMMAND_TYPE</references>
-        <references refid="classIBusBM_1af7d9b5d197f47071a8d6d8723cb14a72" compoundref="IBusBM_8h" startline="86">PROTOCOL_COMMAND_VALUE</references>
-        <references refid="classIBusBM_1ad79ec4b372325fcfb0fa542093250583" compoundref="IBusBM_8h" startline="75">PROTOCOL_OVERHEAD</references>
-        <references refid="classIBusBM_1a7432721ad94f78fc5df8fd3004e7b84b" compoundref="IBusBM_8h" startline="77">PROTOCOL_TIMEGAP</references>
-        <references refid="classIBusBM_1a4a9932e9c78e976e9adb4ff09d9ed69a" compoundref="IBusBM_8h" startline="94">ptr</references>
-        <references refid="structIBusBM_1_1sensorinfo_1a0838975a9991ce94a7009f237cd7edc2" compoundref="IBusBM_8h" startline="101">IBusBM::sensorinfo::sensorLength</references>
-        <references refid="classIBusBM_1a2f6eb7d18ab2dccf0a87c0bbf4c15dfc" compoundref="IBusBM_8h" startline="104">sensors</references>
-        <references refid="structIBusBM_1_1sensorinfo_1abd881da866db85793dcdd020d8eecb5c" compoundref="IBusBM_8h" startline="100">IBusBM::sensorinfo::sensorType</references>
-        <references refid="structIBusBM_1_1sensorinfo_1a07cfd12b2c2a8982a88aeecf85bd322b" compoundref="IBusBM_8h" startline="102">IBusBM::sensorinfo::sensorValue</references>
-        <references refid="classIBusBM_1a2a316d2088ea51aeea5ce8c025687eef" compoundref="IBusBM_8h" startline="90">state</references>
-        <references refid="classIBusBM_1a00c0e49a0d4fcb8ac567b2e92bc74d3d" compoundref="IBusBM_8h" startline="91">stream</references>
-        <references refid="main_8cpp_1a415ca717d7f13cfb8bcbaa07a3ddd062" compoundref="main_8cpp" startline="49">t</references>
-        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="171" endline="288">loop</referencedby>
+        <location file="src/IBusBM.h" line="63" column="8" bodyfile="src/IBusBM.cpp" bodystart="165" bodyend="282"/>
+        <references refid="classIBusBM_1a5e950d8524d32e3adfad0a654a9e69d1" compoundref="IBusBM_8h" startline="124">buffer</references>
+        <references refid="unionIBusBM_1_1ControlUnion_1ac2319ac50728084a0617bd9d547288f7" compoundref="IBusBM_8h" startline="72">IBusBM::ControlUnion::channel</references>
+        <references refid="classIBusBM_1a60daa234d83a024b0e626a85d80b7c6c" compoundref="IBusBM_8h" startline="128">chksum</references>
+        <references refid="classIBusBM_1ae980c3b427d1c12d93c2fc13322f7665" compoundref="IBusBM_8h" startline="66">cnt_poll</references>
+        <references refid="classIBusBM_1a15332b57310d1cbca77180befc27cd99" compoundref="IBusBM_8h" startline="68">cnt_rec</references>
+        <references refid="classIBusBM_1a4bf0677885cb0944adfc7725fffe0ccc" compoundref="IBusBM_8h" startline="67">cnt_sensor</references>
+        <references refid="classIBusBM_1aed184764706c5dcb4b82ae4a53b917eca9c69e26c2830eb900cd5603714acd289" compoundref="IBusBM_8h" startline="102">DISCARD</references>
+        <references refid="classIBusBM_1aed184764706c5dcb4b82ae4a53b917ecaf7c395fada4d5074ad979c56cfde8ed0" compoundref="IBusBM_8h" startline="102">GET_CHKSUMH</references>
+        <references refid="classIBusBM_1aed184764706c5dcb4b82ae4a53b917ecaa7f315ef3b8eab0e0f6abc1b3f25bcc0" compoundref="IBusBM_8h" startline="102">GET_CHKSUML</references>
+        <references refid="classIBusBM_1aed184764706c5dcb4b82ae4a53b917eca4ed4c7f6e05b116601121d0bac402f42" compoundref="IBusBM_8h" startline="102">GET_DATA</references>
+        <references refid="classIBusBM_1aed184764706c5dcb4b82ae4a53b917eca0c01e1a9f134347f73969aeba38df424" compoundref="IBusBM_8h" startline="102">GET_LENGTH</references>
+        <references refid="classIBusBM_1a2308638e357b6a34e0752e9f7d6e2ae6" compoundref="IBusBM_8h" startline="137">IBusBMnext</references>
+        <references refid="classIBusBM_1a20f49c47b7c40cb6f5bee2f3d4649fe3" compoundref="IBusBM_8h" startline="123">last</references>
+        <references refid="classIBusBM_1a025b034376f9e774e70b74207d9ea9f0" compoundref="IBusBM_8h" startline="129">lchksum</references>
+        <references refid="classIBusBM_1af10cf8a59adab541e055aaac1fa21cb8" compoundref="IBusBM_8h" startline="126">len</references>
+        <references refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="165" endline="282">loop</references>
+        <references refid="classIBusBM_1ac1d183fc712d8136da488fcc823715a1" compoundref="IBusBM_8h" startline="109">PROTOCOL_CHANNELS</references>
+        <references refid="classIBusBM_1a04af78a0dfdab275bdb2fa82253c8b49" compoundref="IBusBM_8h" startline="111">PROTOCOL_COMMAND40</references>
+        <references refid="classIBusBM_1a5a474b243c8a027b395314b052d283e7" compoundref="IBusBM_8h" startline="113">PROTOCOL_COMMAND_DISCOVER</references>
+        <references refid="classIBusBM_1a270b74b38e646b87402d4a2340187e20" compoundref="IBusBM_8h" startline="115">PROTOCOL_COMMAND_TYPE</references>
+        <references refid="classIBusBM_1af7d9b5d197f47071a8d6d8723cb14a72" compoundref="IBusBM_8h" startline="117">PROTOCOL_COMMAND_VALUE</references>
+        <references refid="classIBusBM_1ad79ec4b372325fcfb0fa542093250583" compoundref="IBusBM_8h" startline="105">PROTOCOL_OVERHEAD</references>
+        <references refid="classIBusBM_1a7432721ad94f78fc5df8fd3004e7b84b" compoundref="IBusBM_8h" startline="107">PROTOCOL_TIMEGAP</references>
+        <references refid="classIBusBM_1a4a9932e9c78e976e9adb4ff09d9ed69a" compoundref="IBusBM_8h" startline="125">ptr</references>
+        <references refid="classIBusBM_1ad576c07af1ed09d8bc355e7f65c69000" compoundref="IBusBM_8h" startline="99">remoteControl</references>
+        <references refid="structIBusBM_1_1sensorinfo_1a0838975a9991ce94a7009f237cd7edc2" compoundref="IBusBM_8h" startline="132">IBusBM::sensorinfo::sensorLength</references>
+        <references refid="classIBusBM_1a2f6eb7d18ab2dccf0a87c0bbf4c15dfc" compoundref="IBusBM_8h" startline="135">sensors</references>
+        <references refid="structIBusBM_1_1sensorinfo_1abd881da866db85793dcdd020d8eecb5c" compoundref="IBusBM_8h" startline="131">IBusBM::sensorinfo::sensorType</references>
+        <references refid="structIBusBM_1_1sensorinfo_1a07cfd12b2c2a8982a88aeecf85bd322b" compoundref="IBusBM_8h" startline="133">IBusBM::sensorinfo::sensorValue</references>
+        <references refid="classIBusBM_1a2a316d2088ea51aeea5ce8c025687eef" compoundref="IBusBM_8h" startline="121">state</references>
+        <references refid="classIBusBM_1a00c0e49a0d4fcb8ac567b2e92bc74d3d" compoundref="IBusBM_8h" startline="122">stream</references>
+        <referencedby refid="main_8cpp_1a1f32cff79659de71ff8de76c85e7c7b9" compoundref="main_8cpp" startline="114" endline="127">emergencyMethods</referencedby>
+        <referencedby refid="classIBusBM_1a3219abe525dde59156d00538d93faa11" compoundref="IBusBM_8cpp" startline="165" endline="282">loop</referencedby>
         <referencedby refid="IBusBM_8cpp_1a68b68e72a8323bb91995b38e98cf7d3e" compoundref="IBusBM_8cpp" startline="44" endline="48">onTimer</referencedby>
+        <referencedby refid="main_8cpp_1a4fc01d736fe50cf5b977f755b675f11d" compoundref="main_8cpp" startline="214" endline="235">setup</referencedby>
+        <referencedby refid="main_8cpp_1ad3d424dca818563665f9ab9bbf866fff" compoundref="main_8cpp" startline="128" endline="211">xTaskContol</referencedby>
+        <referencedby refid="main_8cpp_1a1d67803bd6f9b50c1e3686650e280f68" compoundref="main_8cpp" startline="87" endline="109">xTaskSetupFiltro</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -602,20 +612,26 @@
           <edgelabel>-IBusBMnext</edgelabel>
         </childnode>
         <childnode refid="2" relation="usage">
+          <edgelabel>+remoteControl</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
           <edgelabel>-sensors</edgelabel>
         </childnode>
       </node>
       <node id="2">
+        <label>IBusBM::ControlUnion</label>
+        <link refid="unionIBusBM_1_1ControlUnion"/>
+      </node>
+      <node id="3">
         <label>IBusBM::sensorinfo</label>
         <link refid="structIBusBM_1_1sensorinfo"/>
       </node>
     </collaborationgraph>
-    <location file="lib/IBUSBM/IBusBM.h" line="41" column="1" bodyfile="lib/IBUSBM/IBusBM.h" bodystart="41" bodyend="108"/>
+    <location file="src/IBusBM.h" line="40" column="1" bodyfile="src/IBusBM.h" bodystart="40" bodyend="139"/>
     <listofallmembers>
       <member refid="classIBusBM_1a126cc857adec1367f7264f27ae68a347" prot="public" virt="non-virtual"><scope>IBusBM</scope><name>addSensor</name></member>
       <member refid="classIBusBM_1afb01e4a762c8f575d8466fc8dadaa5cd" prot="public" virt="non-virtual"><scope>IBusBM</scope><name>begin</name></member>
       <member refid="classIBusBM_1a5e950d8524d32e3adfad0a654a9e69d1" prot="private" virt="non-virtual"><scope>IBusBM</scope><name>buffer</name></member>
-      <member refid="classIBusBM_1ac1f54297358da1bd0dcfe3af9eed31ea" prot="private" virt="non-virtual"><scope>IBusBM</scope><name>channel</name></member>
       <member refid="classIBusBM_1a60daa234d83a024b0e626a85d80b7c6c" prot="private" virt="non-virtual"><scope>IBusBM</scope><name>chksum</name></member>
       <member refid="classIBusBM_1ae980c3b427d1c12d93c2fc13322f7665" prot="public" virt="non-virtual"><scope>IBusBM</scope><name>cnt_poll</name></member>
       <member refid="classIBusBM_1a15332b57310d1cbca77180befc27cd99" prot="public" virt="non-virtual"><scope>IBusBM</scope><name>cnt_rec</name></member>
@@ -641,11 +657,12 @@
       <member refid="classIBusBM_1a7432721ad94f78fc5df8fd3004e7b84b" prot="private" virt="non-virtual"><scope>IBusBM</scope><name>PROTOCOL_TIMEGAP</name></member>
       <member refid="classIBusBM_1a4a9932e9c78e976e9adb4ff09d9ed69a" prot="private" virt="non-virtual"><scope>IBusBM</scope><name>ptr</name></member>
       <member refid="classIBusBM_1af21822cffd62a1f2f8da19c407c00b94" prot="public" virt="non-virtual"><scope>IBusBM</scope><name>readChannel</name></member>
+      <member refid="classIBusBM_1ad576c07af1ed09d8bc355e7f65c69000" prot="public" virt="non-virtual"><scope>IBusBM</scope><name>remoteControl</name></member>
       <member refid="classIBusBM_1abf1b1c4c0bac139f0d5f9cfb78d5f88f" prot="private" virt="non-virtual"><scope>IBusBM</scope><name>SENSORMAX</name></member>
       <member refid="classIBusBM_1a2f6eb7d18ab2dccf0a87c0bbf4c15dfc" prot="private" virt="non-virtual"><scope>IBusBM</scope><name>sensors</name></member>
       <member refid="classIBusBM_1acbd0bcad0529b872c72d4e7a49233460" prot="public" virt="non-virtual"><scope>IBusBM</scope><name>setSensorMeasurement</name></member>
-      <member refid="classIBusBM_1aed184764706c5dcb4b82ae4a53b917ec" prot="private" virt="non-virtual"><scope>IBusBM</scope><name>State</name></member>
       <member refid="classIBusBM_1a2a316d2088ea51aeea5ce8c025687eef" prot="private" virt="non-virtual"><scope>IBusBM</scope><name>state</name></member>
+      <member refid="classIBusBM_1aed184764706c5dcb4b82ae4a53b917ec" prot="private" virt="non-virtual"><scope>IBusBM</scope><name>State</name></member>
       <member refid="classIBusBM_1a00c0e49a0d4fcb8ac567b2e92bc74d3d" prot="private" virt="non-virtual"><scope>IBusBM</scope><name>stream</name></member>
     </listofallmembers>
   </compounddef>

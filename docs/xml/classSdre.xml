@@ -16,9 +16,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/SDRE/Sdre.h" line="25" column="19" bodyfile="lib/SDRE/Sdre.h" bodystart="25" bodyend="-1"/>
-        <referencedby refid="classSdre_1a4848cfbce14035e6b3733a628de9e24f" compoundref="Sdre_8cpp" startline="51" endline="57">closeLoopEig</referencedby>
-        <referencedby refid="classSdre_1acfa822102ba368dde55594e9f041f9df" compoundref="Sdre_8cpp" startline="10" endline="24">Sdre</referencedby>
+        <location file="lib/SDRE/Sdre.h" line="26" column="19" bodyfile="lib/SDRE/Sdre.h" bodystart="26" bodyend="-1"/>
+        <referencedby refid="classSdre_1a4848cfbce14035e6b3733a628de9e24f" compoundref="Sdre_8cpp" startline="55" endline="61">closeLoopEig</referencedby>
+        <referencedby refid="classSdre_1acfa822102ba368dde55594e9f041f9df" compoundref="Sdre_8cpp" startline="10" endline="26">Sdre</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classSdre_1aa8e71f3403ee322804ac1e7a6d19b00e" prot="public" static="no" mutable="no">
         <type>Eigen::MatrixXf *</type>
@@ -32,9 +32,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/SDRE/Sdre.h" line="27" column="19" bodyfile="lib/SDRE/Sdre.h" bodystart="27" bodyend="-1"/>
-        <referencedby refid="classSdre_1a4848cfbce14035e6b3733a628de9e24f" compoundref="Sdre_8cpp" startline="51" endline="57">closeLoopEig</referencedby>
-        <referencedby refid="classSdre_1acfa822102ba368dde55594e9f041f9df" compoundref="Sdre_8cpp" startline="10" endline="24">Sdre</referencedby>
+        <location file="lib/SDRE/Sdre.h" line="28" column="19" bodyfile="lib/SDRE/Sdre.h" bodystart="28" bodyend="-1"/>
+        <referencedby refid="classSdre_1a4848cfbce14035e6b3733a628de9e24f" compoundref="Sdre_8cpp" startline="55" endline="61">closeLoopEig</referencedby>
+        <referencedby refid="classSdre_1acfa822102ba368dde55594e9f041f9df" compoundref="Sdre_8cpp" startline="10" endline="26">Sdre</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classSdre_1ac29f58dd81643087f49ccbed42b794df" prot="public" static="no" mutable="no">
         <type><ref refid="classRiccati" kindref="compound">Riccati</ref> *</type>
@@ -48,9 +48,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/SDRE/Sdre.h" line="29" column="11" bodyfile="lib/SDRE/Sdre.h" bodystart="29" bodyend="-1"/>
-        <referencedby refid="classControle_1abbe044aad705ef7d663c45275948fd12" compoundref="Controle_8cpp" startline="14" endline="36">Controle::Controle</referencedby>
-        <referencedby refid="classSdre_1acfa822102ba368dde55594e9f041f9df" compoundref="Sdre_8cpp" startline="10" endline="24">Sdre</referencedby>
+        <location file="lib/SDRE/Sdre.h" line="30" column="11" bodyfile="lib/SDRE/Sdre.h" bodystart="30" bodyend="-1"/>
+        <referencedby refid="classControle_1a8ae9a213e4a15ac1af0f158e3b5dc2cb" compoundref="Controle_8cpp" startline="17" endline="70">Controle::Controle</referencedby>
+        <referencedby refid="classSdre_1acfa822102ba368dde55594e9f041f9df" compoundref="Sdre_8cpp" startline="10" endline="26">Sdre</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classSdre_1a17464293d3a2f24ea0c55da3fcb0e864" prot="public" static="no" mutable="no">
         <type>Eigen::MatrixXf *</type>
@@ -64,8 +64,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/SDRE/Sdre.h" line="31" column="19" bodyfile="lib/SDRE/Sdre.h" bodystart="31" bodyend="-1"/>
-        <referencedby refid="classSdre_1acfa822102ba368dde55594e9f041f9df" compoundref="Sdre_8cpp" startline="10" endline="24">Sdre</referencedby>
+        <location file="lib/SDRE/Sdre.h" line="32" column="19" bodyfile="lib/SDRE/Sdre.h" bodystart="32" bodyend="-1"/>
+        <referencedby refid="classSdre_1acfa822102ba368dde55594e9f041f9df" compoundref="Sdre_8cpp" startline="10" endline="26">Sdre</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classSdre_1a6b63e08a6c981385373f45ee9ac1be73" prot="public" static="no" mutable="no">
         <type>Eigen::MatrixXf *</type>
@@ -79,8 +79,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/SDRE/Sdre.h" line="33" column="19" bodyfile="lib/SDRE/Sdre.h" bodystart="33" bodyend="-1"/>
-        <referencedby refid="classSdre_1acfa822102ba368dde55594e9f041f9df" compoundref="Sdre_8cpp" startline="10" endline="24">Sdre</referencedby>
+        <location file="lib/SDRE/Sdre.h" line="34" column="19" bodyfile="lib/SDRE/Sdre.h" bodystart="34" bodyend="-1"/>
+        <referencedby refid="classSdre_1acfa822102ba368dde55594e9f041f9df" compoundref="Sdre_8cpp" startline="10" endline="26">Sdre</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classSdre_1aad912686f9a487dce4ea7e4875efd563" prot="public" static="no" mutable="no">
         <type>Eigen::MatrixXf</type>
@@ -94,12 +94,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/SDRE/Sdre.h" line="35" column="19" bodyfile="lib/SDRE/Sdre.h" bodystart="35" bodyend="-1"/>
-        <referencedby refid="classSdre_1a4848cfbce14035e6b3733a628de9e24f" compoundref="Sdre_8cpp" startline="51" endline="57">closeLoopEig</referencedby>
-        <referencedby refid="classControle_1abcf05dcff157e963fd65c09d45261a8f" compoundref="Controle_8cpp" startline="84" endline="96">Controle::computeRotationalControl</referencedby>
-        <referencedby refid="classControle_1abbe044aad705ef7d663c45275948fd12" compoundref="Controle_8cpp" startline="14" endline="36">Controle::Controle</referencedby>
-        <referencedby refid="classSdre_1acfa822102ba368dde55594e9f041f9df" compoundref="Sdre_8cpp" startline="10" endline="24">Sdre</referencedby>
-        <referencedby refid="classSdre_1af2f380ec3d018b60686e304ca7026846" compoundref="Sdre_8cpp" startline="30" endline="46">updateControl</referencedby>
+        <location file="lib/SDRE/Sdre.h" line="36" column="19" bodyfile="lib/SDRE/Sdre.h" bodystart="36" bodyend="-1"/>
+        <referencedby refid="classSdre_1a4848cfbce14035e6b3733a628de9e24f" compoundref="Sdre_8cpp" startline="55" endline="61">closeLoopEig</referencedby>
+        <referencedby refid="classControle_1abcf05dcff157e963fd65c09d45261a8f" compoundref="Controle_8cpp" startline="116" endline="128">Controle::computeRotationalControl</referencedby>
+        <referencedby refid="classControle_1a8ae9a213e4a15ac1af0f158e3b5dc2cb" compoundref="Controle_8cpp" startline="17" endline="70">Controle::Controle</referencedby>
+        <referencedby refid="classSdre_1acfa822102ba368dde55594e9f041f9df" compoundref="Sdre_8cpp" startline="10" endline="26">Sdre</referencedby>
+        <referencedby refid="classSdre_1af2f380ec3d018b60686e304ca7026846" compoundref="Sdre_8cpp" startline="32" endline="50">updateControl</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classSdre_1a348491f949fa0faae3fb86b7dbabd33d" prot="public" static="no" mutable="no">
         <type>Eigen::MatrixXf</type>
@@ -113,26 +113,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/SDRE/Sdre.h" line="37" column="19" bodyfile="lib/SDRE/Sdre.h" bodystart="37" bodyend="-1"/>
-        <referencedby refid="classSdre_1acfa822102ba368dde55594e9f041f9df" compoundref="Sdre_8cpp" startline="10" endline="24">Sdre</referencedby>
-        <referencedby refid="classSdre_1af2f380ec3d018b60686e304ca7026846" compoundref="Sdre_8cpp" startline="30" endline="46">updateControl</referencedby>
-      </memberdef>
-      <memberdef kind="variable" id="classSdre_1ad244c5cc1e70a1b08e8e4d5655993d8b" prot="public" static="no" mutable="no">
-        <type>Eigen::MatrixXf</type>
-        <definition>Eigen::MatrixXf Sdre::G</definition>
-        <argsstring></argsstring>
-        <name>G</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>Vetor de realimentacao; </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="lib/SDRE/Sdre.h" line="39" column="19" bodyfile="lib/SDRE/Sdre.h" bodystart="39" bodyend="-1"/>
-        <referencedby refid="classControle_1abbe044aad705ef7d663c45275948fd12" compoundref="Controle_8cpp" startline="14" endline="36">Controle::Controle</referencedby>
-        <referencedby refid="classSdre_1acfa822102ba368dde55594e9f041f9df" compoundref="Sdre_8cpp" startline="10" endline="24">Sdre</referencedby>
-        <referencedby refid="classSdre_1af2f380ec3d018b60686e304ca7026846" compoundref="Sdre_8cpp" startline="30" endline="46">updateControl</referencedby>
+        <location file="lib/SDRE/Sdre.h" line="38" column="19" bodyfile="lib/SDRE/Sdre.h" bodystart="38" bodyend="-1"/>
+        <referencedby refid="classSdre_1acfa822102ba368dde55594e9f041f9df" compoundref="Sdre_8cpp" startline="10" endline="26">Sdre</referencedby>
+        <referencedby refid="classSdre_1af2f380ec3d018b60686e304ca7026846" compoundref="Sdre_8cpp" startline="32" endline="50">updateControl</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -170,15 +153,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/SDRE/Sdre.h" line="41" column="3" bodyfile="lib/SDRE/Sdre.cpp" bodystart="10" bodyend="24"/>
-        <references refid="classSdre_1a348491f949fa0faae3fb86b7dbabd33d" compoundref="Sdre_8h" startline="37">E</references>
-        <references refid="classSdre_1ad244c5cc1e70a1b08e8e4d5655993d8b" compoundref="Sdre_8h" startline="39">G</references>
-        <references refid="classSdre_1aa8e71f3403ee322804ac1e7a6d19b00e" compoundref="Sdre_8h" startline="27">gamma</references>
-        <references refid="classSdre_1aad912686f9a487dce4ea7e4875efd563" compoundref="Sdre_8h" startline="35">L</references>
-        <references refid="classSdre_1ae868a877b9ade90516f90ff46a673568" compoundref="Sdre_8h" startline="25">phi</references>
-        <references refid="classSdre_1a6b63e08a6c981385373f45ee9ac1be73" compoundref="Sdre_8h" startline="33">Q</references>
-        <references refid="classSdre_1a17464293d3a2f24ea0c55da3fcb0e864" compoundref="Sdre_8h" startline="31">R</references>
-        <references refid="classSdre_1ac29f58dd81643087f49ccbed42b794df" compoundref="Sdre_8h" startline="29">ricObj</references>
+        <location file="lib/SDRE/Sdre.h" line="43" column="3" bodyfile="lib/SDRE/Sdre.cpp" bodystart="10" bodyend="26"/>
+        <references refid="classSdre_1a348491f949fa0faae3fb86b7dbabd33d" compoundref="Sdre_8h" startline="38">E</references>
+        <references refid="classSdre_1aa8e71f3403ee322804ac1e7a6d19b00e" compoundref="Sdre_8h" startline="28">gamma</references>
+        <references refid="classSdre_1aad912686f9a487dce4ea7e4875efd563" compoundref="Sdre_8h" startline="36">L</references>
+        <references refid="classSdre_1ae868a877b9ade90516f90ff46a673568" compoundref="Sdre_8h" startline="26">phi</references>
+        <references refid="classSdre_1a6b63e08a6c981385373f45ee9ac1be73" compoundref="Sdre_8h" startline="34">Q</references>
+        <references refid="classSdre_1a17464293d3a2f24ea0c55da3fcb0e864" compoundref="Sdre_8h" startline="32">R</references>
+        <references refid="classSdre_1ac29f58dd81643087f49ccbed42b794df" compoundref="Sdre_8h" startline="30">ricObj</references>
       </memberdef>
       <memberdef kind="function" id="classSdre_1a887dbd01f9f6846839114a4d5ff64102" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -191,8 +173,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/SDRE/Sdre.h" line="43" column="3" bodyfile="lib/SDRE/Sdre.cpp" bodystart="25" bodyend="25"/>
-        <referencedby refid="classControle_1abbe044aad705ef7d663c45275948fd12" compoundref="Controle_8cpp" startline="14" endline="36">Controle::Controle</referencedby>
+        <location file="lib/SDRE/Sdre.h" line="45" column="3" bodyfile="lib/SDRE/Sdre.cpp" bodystart="27" bodyend="27"/>
+        <referencedby refid="classControle_1a8ae9a213e4a15ac1af0f158e3b5dc2cb" compoundref="Controle_8cpp" startline="17" endline="70">Controle::Controle</referencedby>
       </memberdef>
       <memberdef kind="function" id="classSdre_1af2f380ec3d018b60686e304ca7026846" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -208,12 +190,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/SDRE/Sdre.h" line="44" column="8" bodyfile="lib/SDRE/Sdre.cpp" bodystart="30" bodyend="46"/>
-        <references refid="classSdre_1a348491f949fa0faae3fb86b7dbabd33d" compoundref="Sdre_8h" startline="37">E</references>
-        <references refid="classSdre_1ad244c5cc1e70a1b08e8e4d5655993d8b" compoundref="Sdre_8h" startline="39">G</references>
-        <references refid="classSdre_1aad912686f9a487dce4ea7e4875efd563" compoundref="Sdre_8h" startline="35">L</references>
-        <referencedby refid="classControle_1abcf05dcff157e963fd65c09d45261a8f" compoundref="Controle_8cpp" startline="84" endline="96">Controle::computeRotationalControl</referencedby>
-        <referencedby refid="classControle_1abbe044aad705ef7d663c45275948fd12" compoundref="Controle_8cpp" startline="14" endline="36">Controle::Controle</referencedby>
+        <location file="lib/SDRE/Sdre.h" line="46" column="8" bodyfile="lib/SDRE/Sdre.cpp" bodystart="32" bodyend="50"/>
+        <references refid="classSdre_1a348491f949fa0faae3fb86b7dbabd33d" compoundref="Sdre_8h" startline="38">E</references>
+        <references refid="classSdre_1aad912686f9a487dce4ea7e4875efd563" compoundref="Sdre_8h" startline="36">L</references>
+        <referencedby refid="classControle_1abcf05dcff157e963fd65c09d45261a8f" compoundref="Controle_8cpp" startline="116" endline="128">Controle::computeRotationalControl</referencedby>
+        <referencedby refid="classControle_1a8ae9a213e4a15ac1af0f158e3b5dc2cb" compoundref="Controle_8cpp" startline="17" endline="70">Controle::Controle</referencedby>
       </memberdef>
       <memberdef kind="function" id="classSdre_1a4848cfbce14035e6b3733a628de9e24f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Eigen::MatrixXcf</type>
@@ -227,11 +208,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/SDRE/Sdre.h" line="45" column="20" bodyfile="lib/SDRE/Sdre.cpp" bodystart="51" bodyend="57"/>
-        <references refid="classSdre_1aa8e71f3403ee322804ac1e7a6d19b00e" compoundref="Sdre_8h" startline="27">gamma</references>
-        <references refid="classSdre_1aad912686f9a487dce4ea7e4875efd563" compoundref="Sdre_8h" startline="35">L</references>
-        <references refid="classSdre_1ae868a877b9ade90516f90ff46a673568" compoundref="Sdre_8h" startline="25">phi</references>
-        <referencedby refid="classControle_1abbe044aad705ef7d663c45275948fd12" compoundref="Controle_8cpp" startline="14" endline="36">Controle::Controle</referencedby>
+        <location file="lib/SDRE/Sdre.h" line="47" column="20" bodyfile="lib/SDRE/Sdre.cpp" bodystart="55" bodyend="61"/>
+        <references refid="classSdre_1aa8e71f3403ee322804ac1e7a6d19b00e" compoundref="Sdre_8h" startline="28">gamma</references>
+        <references refid="classSdre_1aad912686f9a487dce4ea7e4875efd563" compoundref="Sdre_8h" startline="36">L</references>
+        <references refid="classSdre_1ae868a877b9ade90516f90ff46a673568" compoundref="Sdre_8h" startline="26">phi</references>
+        <referencedby refid="classControle_1a8ae9a213e4a15ac1af0f158e3b5dc2cb" compoundref="Controle_8cpp" startline="17" endline="70">Controle::Controle</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -251,11 +232,10 @@
         <link refid="classRiccati"/>
       </node>
     </collaborationgraph>
-    <location file="lib/SDRE/Sdre.h" line="20" column="1" bodyfile="lib/SDRE/Sdre.h" bodystart="20" bodyend="46"/>
+    <location file="lib/SDRE/Sdre.h" line="21" column="1" bodyfile="lib/SDRE/Sdre.h" bodystart="21" bodyend="48"/>
     <listofallmembers>
       <member refid="classSdre_1a4848cfbce14035e6b3733a628de9e24f" prot="public" virt="non-virtual"><scope>Sdre</scope><name>closeLoopEig</name></member>
       <member refid="classSdre_1a348491f949fa0faae3fb86b7dbabd33d" prot="public" virt="non-virtual"><scope>Sdre</scope><name>E</name></member>
-      <member refid="classSdre_1ad244c5cc1e70a1b08e8e4d5655993d8b" prot="public" virt="non-virtual"><scope>Sdre</scope><name>G</name></member>
       <member refid="classSdre_1aa8e71f3403ee322804ac1e7a6d19b00e" prot="public" virt="non-virtual"><scope>Sdre</scope><name>gamma</name></member>
       <member refid="classSdre_1aad912686f9a487dce4ea7e4875efd563" prot="public" virt="non-virtual"><scope>Sdre</scope><name>L</name></member>
       <member refid="classSdre_1ae868a877b9ade90516f90ff46a673568" prot="public" virt="non-virtual"><scope>Sdre</scope><name>phi</name></member>

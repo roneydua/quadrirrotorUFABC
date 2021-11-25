@@ -1,4 +1,4 @@
-.TH "BASE" 3 "Sexta, 17 de Setembro de 2021" "Quadrirrotor" \" -*- nroff -*-
+.TH "BASE" 3 "Segunda, 25 de Outubro de 2021" "Quadrirrotor" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -21,7 +21,7 @@ BASE
 .RI "float \fBhMSL\fP"
 .br
 .ti -1c
-.RI "Eigen::Matrix3f \fBRecef2ned\fP"
+.RI "Eigen::Matrix3f \fBRotEcef2ned\fP"
 .br
 .ti -1c
 .RI "long \fBrECEF\fP [3]"
@@ -29,29 +29,29 @@ BASE
 .in -1c
 .SH "Descrição detalhada"
 .PP 
-Definição na linha 22 do arquivo EKF\&.h\&.
+Definição na linha 29 do arquivo EKF\&.h\&.
 .SH "Campos"
 .PP 
 .SS "float BASE::hMSL"
 Altitude ao nível do mar 
 .PP
-Definição na linha 28 do arquivo EKF\&.h\&.
+Definição na linha 35 do arquivo EKF\&.h\&.
 .SS "float BASE::lat"
 Latitude em Radianos 
 .PP
-Definição na linha 24 do arquivo EKF\&.h\&.
+Definição na linha 31 do arquivo EKF\&.h\&.
 .SS "float BASE::lon"
 Longitude em Radianos 
 .PP
-Definição na linha 26 do arquivo EKF\&.h\&.
+Definição na linha 33 do arquivo EKF\&.h\&.
 .SS "long BASE::rECEF[3]"
 Coordenadas da base no sistema ECEF 
 .PP
-Definição na linha 32 do arquivo EKF\&.h\&.
-.SS "Eigen::Matrix3f BASE::Recef2ned"
+Definição na linha 39 do arquivo EKF\&.h\&.
+.SS "Eigen::Matrix3f BASE::RotEcef2ned"
 Matriz de transformação 
 .PP
-Definição na linha 30 do arquivo EKF\&.h\&.
+Definição na linha 37 do arquivo EKF\&.h\&.
 
 .SH "Autor"
 .PP 

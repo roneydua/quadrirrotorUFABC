@@ -7,7 +7,6 @@
     <innerdir refid="dir_e938b59efd27c0d7e7402c87a3faf3f8">lib/DRONE</innerdir>
     <innerdir refid="dir_f81b21074929c51f0f8ec4455f2eeb05">lib/EKF</innerdir>
     <innerdir refid="dir_12ce51c2f27d7b7c42f475577e8e188a">lib/GRUPO_QUAT</innerdir>
-    <innerdir refid="dir_d0e0a026526f6bba31a4b7e0c38bb1de">lib/IBUSBM</innerdir>
     <innerdir refid="dir_3554028ee2797c78c7765098b85f4139">lib/IMU</innerdir>
     <innerdir refid="dir_39c7dc484126c690eab758240f2a6725">lib/MOTORES</innerdir>
     <innerdir refid="dir_c512fa13478e4b8bbcd706bda4ab9220">lib/RICCATI</innerdir>

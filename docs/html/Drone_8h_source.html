@@ -71,68 +71,87 @@ $(function() {
 <div class="contents">
 <a href="Drone_8h.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#ifndef DRONE_H</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">  #define DRONE_H</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">  #ifdef __GNUC__</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    #include &quot;../../../quadricopterFinal/lib/GRUPO_QUAT/GRUPO_QUAT.h&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">    #define PRINT_MAT(X) cout &lt;&lt; #X &lt;&lt; &quot;:\n&quot;</span> &lt;&lt; X &lt;&lt; &quot;\n&quot;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">  #else</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">    #include &quot;Arduino.h&quot;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="GRUPO__QUAT_8h.html">GRUPO_QUAT.h</a>&quot;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">  #endif</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">  #include &lt;eigen3/Eigen/Dense&gt;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classDrone.html">   22</a></span>&#160;<span class="keyword">class </span><a class="code" href="classDrone.html">Drone</a> {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classDrone.html#aa44361841fbfc3ac45bed2cdfb598262">   26</a></span>&#160;  <span class="keyword">const</span> <span class="keywordtype">float</span> L = 0.225f;</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classDrone.html#ae68802ad8fe8bbb370a19326fd7b5aef">   27</a></span>&#160;  <span class="keywordtype">float</span> <a class="code" href="classDrone.html#ae68802ad8fe8bbb370a19326fd7b5aef">half_dt</a>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classDrone.html#a30d56665a907276e7ca50ab3c75d730a">   31</a></span>&#160;  Eigen::Matrix4f <a class="code" href="classDrone.html#a30d56665a907276e7ca50ab3c75d730a">J</a>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classDrone.html#adcfd685c1857b1b6b20984daac7e56e3">   33</a></span>&#160;  Eigen::Matrix4f <a class="code" href="classDrone.html#adcfd685c1857b1b6b20984daac7e56e3">Jinv</a>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="comment">/* Período do cotrole discreto */</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classDrone.html#a0f5dde1e661b072ffd1dcd2cde690e2b">   35</a></span>&#160;  <span class="keywordtype">float</span> <a class="code" href="classDrone.html#a0f5dde1e661b072ffd1dcd2cde690e2b">dt</a>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classDrone.html#acc28d2a6d7fc4265e8ad012910b41add">   37</a></span>&#160;  <span class="keywordtype">float</span> dx = 0.1f;</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classDrone.html#ad04507c1b20ac5822461193ac819d929">   39</a></span>&#160;  <span class="keywordtype">float</span> massa = 1.135f;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="classDrone.html">Drone</a>(<span class="keywordtype">float</span> _dt);</div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classDrone.html#a01882d591197d6978b479f0788ce01fc">   47</a></span>&#160;  <span class="keyword">const</span> Eigen::DiagonalMatrix&lt;float, 3&gt; matrizInercia{10e-3f, 11e-3f, 18e-3f};</div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classDrone.html#a06cb6081fc81dd73b0fe9f9d68e5e8f7">   53</a></span>&#160;  <span class="keyword">const</span> Eigen::DiagonalMatrix&lt;float, 3&gt; inverseMatrizInercia =</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      matrizInercia.inverse();</div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classDrone.html#a21bc2b617f8741c1733829d7498f610a">   56</a></span>&#160;  Eigen::Vector3f p{0, 0, 0};</div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classDrone.html#a178db613c8b400ef949969d1ca5a5169">   58</a></span>&#160;  Eigen::Vector3f v{0, 0, 0};</div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classDrone.html#a3d47c909c26ca68f771eb7ec0026e752">   60</a></span>&#160;  Eigen::Vector4f q{1.0f, 0.0f, 0.0f, 0.0f};</div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classDrone.html#a0b41e19233070e221d0eaa03ce213bf5">   62</a></span>&#160;  Eigen::Vector3f w{0.0f, 0.0f, 0.0f};</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="comment">// Eigen::MatrixXf matAT = Eigen::MatrixXf::Identity(3, 3);</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classDrone.html#a7441826ef17c5566c910dc76844fbde3">   65</a></span>&#160;  Eigen::MatrixXf matAT = Eigen::MatrixXf::Identity(6, 6);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="comment">// Eigen::MatrixXf matBT = Eigen::MatrixXf::Identity(3, 3);</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classDrone.html#aadb4722611d7c3bf7f397361f6cd208e">   68</a></span>&#160;  Eigen::MatrixXf matBT = Eigen::MatrixXf::Zero(6, 3);</div>
-<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="classDrone.html#ad10e4c0ff42b803d922bff24ff9a1710">   70</a></span>&#160;  Eigen::MatrixXf matAR = Eigen::MatrixXf::Identity(6, 6);</div>
-<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classDrone.html#a8b19688fe7deefa69ab8a864cd5b6024">   72</a></span>&#160;  Eigen::MatrixXf matBR = Eigen::MatrixXf::Zero(6, 3);</div>
-<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classDrone.html#ac6e19b1cde8263a3e9a96b965bdd71d7">   74</a></span>&#160;  <span class="keyword">const</span> Eigen::DiagonalMatrix&lt;float, 4&gt; H =</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      (Eigen::Vector4f(4) &lt;&lt; 0.724048f, 0.73493f, 0.707656f, 0.727027f)</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;          .finished()</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;          .asDiagonal();</div>
-<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="classDrone.html#a4e3fa542ac32a6564c83adaf62cc34b3">   78</a></span>&#160;  <span class="keyword">const</span> Eigen::DiagonalMatrix&lt;float, 4&gt; Hinv =</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      (Eigen::Vector4f(4) &lt;&lt; 1.0f / 0.724048f, 1.0f / 0.73493f,</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;       1.0f / 0.707656f, 1.0f / 0.727027f)</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;          .finished()</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;          .asDiagonal();</div>
-<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classDrone.html#adecfbf29f2f305ec0987c8742994d185">   84</a></span>&#160;  <span class="keyword">const</span> Eigen::Vector4f h{-3911.13f, -4180.05f, -3620.13f, -4279.45f};</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordtype">void</span> updateStateMatrices(<span class="keywordtype">bool</span> &amp;negativeq0);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keywordtype">void</span> constructJ();</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="comment">// Eigen::VectorXf continuosModel(Eigen::VectorXf x, Eigen::VectorXf u);</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="classDrone.html#aa715343de198585f9266431776d58784">   88</a></span>&#160;  <span class="keywordtype">int</span> flagSDC = 0;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;};</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">/* DRONE_H */</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define DRONE_H</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;eigen3/Eigen/Dense&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#ifndef __XTENSA__</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;../../../quadricopterFinal/lib/GRUPO_QUAT/GRUPO_QUAT.h&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="Drone_8h.html#a92102ea2f9ade1cc1a6dcce355db1677">   17</a></span>&#160;<span class="preprocessor">#define PRINT_MAT(X) cout &lt;&lt; #X &lt;&lt; &quot;:\n&quot;</span> &lt;&lt; X &lt;&lt; &quot;\n&quot;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;Arduino.h&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="GRUPO__QUAT_8h.html">GRUPO_QUAT.h</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// #define MOTOR_MODEL_SIMPLE</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classDrone.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="classDrone.html">Drone</a> {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classDrone.html#aa44361841fbfc3ac45bed2cdfb598262">   27</a></span>&#160;  <span class="keyword">const</span> <span class="keywordtype">float</span> L = 0.225f;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classDrone.html#ae68802ad8fe8bbb370a19326fd7b5aef">   28</a></span>&#160;  <span class="keywordtype">float</span> <a class="code" href="classDrone.html#ae68802ad8fe8bbb370a19326fd7b5aef">half_dt</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classDrone.html#a30d56665a907276e7ca50ab3c75d730a">   32</a></span>&#160;  Eigen::Matrix4f <a class="code" href="classDrone.html#a30d56665a907276e7ca50ab3c75d730a">J</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classDrone.html#a63c1b3a18b61a34b0a084eff48ec2f12">   34</a></span>&#160;  Eigen::Matrix4f <a class="code" href="classDrone.html#a63c1b3a18b61a34b0a084eff48ec2f12">JInverse</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="comment">/* Período do controle discreto*/</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classDrone.html#a0f5dde1e661b072ffd1dcd2cde690e2b">   36</a></span>&#160;  <span class="keywordtype">float</span> <a class="code" href="classDrone.html#a0f5dde1e661b072ffd1dcd2cde690e2b">dt</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classDrone.html#acc28d2a6d7fc4265e8ad012910b41add">   38</a></span>&#160;  <span class="keywordtype">float</span> dx = 0.25f;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classDrone.html#ad04507c1b20ac5822461193ac819d929">   41</a></span>&#160;  <span class="keywordtype">float</span> massa = 1.136f;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="comment">// float massa = 1.0f;</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment"></span>  <a class="code" href="classDrone.html">Drone</a>(<span class="keywordtype">float</span> _dt);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="comment">// const Eigen::DiagonalMatrix&lt;float, 3&gt; matrizInercia{10e-3f, 11e-3f,</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="comment">// 18e-3f};</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classDrone.html#a01882d591197d6978b479f0788ce01fc">   57</a></span>&#160;  <span class="keyword">const</span> Eigen::DiagonalMatrix&lt;float, 3&gt; matrizInercia{10e-3f, 10e-3f, 18e-3f};</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classDrone.html#a06cb6081fc81dd73b0fe9f9d68e5e8f7">   63</a></span>&#160;  <span class="keyword">const</span> Eigen::DiagonalMatrix&lt;float, 3&gt; inverseMatrizInercia =</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      matrizInercia.inverse();</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classDrone.html#a21bc2b617f8741c1733829d7498f610a">   66</a></span>&#160;  Eigen::Vector3f p{0, 0, 0};</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classDrone.html#a178db613c8b400ef949969d1ca5a5169">   68</a></span>&#160;  Eigen::Vector3f v{0, 0, 0};</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="classDrone.html#a3d47c909c26ca68f771eb7ec0026e752">   70</a></span>&#160;  Eigen::Vector4f q{1.0f, 0.0f, 0.0f, 0.0f};</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classDrone.html#a0b41e19233070e221d0eaa03ce213bf5">   72</a></span>&#160;  Eigen::Vector3f w{0.0f, 0.0f, 0.0f};</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="comment">// Eigen::MatrixXf matAT = Eigen::MatrixXf::Identity(3, 3);</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classDrone.html#a7441826ef17c5566c910dc76844fbde3">   75</a></span>&#160;  Eigen::MatrixXf matAT = Eigen::MatrixXf::Identity(6, 6);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="comment">// Eigen::MatrixXf matBT = Eigen::MatrixXf::Identity(3, 3);</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="classDrone.html#aadb4722611d7c3bf7f397361f6cd208e">   78</a></span>&#160;  Eigen::MatrixXf matBT = Eigen::MatrixXf::Zero(6, 3);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="comment">// TEST: INTEGRAL CONTROL</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="classDrone.html#ad10e4c0ff42b803d922bff24ff9a1710">   81</a></span>&#160;<span class="comment"></span>  Eigen::MatrixXf matAR = Eigen::MatrixXf::Identity(6, 6);</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="classDrone.html#a8b19688fe7deefa69ab8a864cd5b6024">   83</a></span>&#160;  Eigen::MatrixXf matBR = Eigen::MatrixXf::Zero(6, 3);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="comment">// const Eigen::DiagonalMatrix&lt;float, 4&gt; H =</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="comment">//     (Eigen::Vector4f(4) &lt;&lt; 0.724048f, 0.724048f, 0.724048f, 0.724048f)</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="comment">//         .finished()</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="comment">//         .asDiagonal();</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="classDrone.html#ac6e19b1cde8263a3e9a96b965bdd71d7">   91</a></span>&#160;  <span class="keyword">const</span> Eigen::DiagonalMatrix&lt;float, 4&gt; H =</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      (Eigen::Vector4f(4) &lt;&lt; 0.724048f, 0.73493f, 0.707656f, 0.727027f)</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;          .finished()</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;          .asDiagonal();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <span class="comment">// const Eigen::DiagonalMatrix&lt;float, 4&gt; HInverse =</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="comment">//     (Eigen::Vector4f(4) &lt;&lt; 1.0f / 0.724048f, 1.0f / 0.724048f,</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="comment">//      1.0f / 0.724048f, 1.0f / 0.724048f)</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="comment">//         .finished()</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="comment">//         .asDiagonal();</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="classDrone.html#ac5169f79489402261d68671ff6483da0">  102</a></span>&#160;  <span class="keyword">const</span> Eigen::DiagonalMatrix&lt;float, 4&gt; HInverse =</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;      (Eigen::Vector4f(4) &lt;&lt; 1.0f / 0.724048f, 1.0f / 0.73493f,</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;       1.0f / 0.707656f, 1.0f / 0.727027f)</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;          .finished()</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;          .asDiagonal();</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="classDrone.html#adecfbf29f2f305ec0987c8742994d185">  109</a></span>&#160;  <span class="keyword">const</span> Eigen::Vector4f h{-3911.13f, -4180.05f, -3620.13f, -4279.45f};</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <span class="comment">// const Eigen::Vector4f h{-3911.13f, -3911.13f, -3911.13f, -3911.13f};</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="keywordtype">void</span> updateStateMatrices(<span class="keywordtype">bool</span> &amp;negativeq0);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <span class="keywordtype">void</span> constructJ();</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <span class="comment">// Eigen::VectorXf continuosModel(Eigen::VectorXf x, Eigen::VectorXf u);</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="classDrone.html#aa715343de198585f9266431776d58784">  114</a></span>&#160;  <span class="keywordtype">int</span> flagSDC = 0;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;};</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="comment">/* DRONE_H */</span></div>
 <div class="ttc" id="aGRUPO__QUAT_8h_html"><div class="ttname"><a href="GRUPO__QUAT_8h.html">GRUPO_QUAT.h</a></div><div class="ttdoc">Cabecalho com funcoes de quaternion.</div></div>
-<div class="ttc" id="aclassDrone_html"><div class="ttname"><a href="classDrone.html">Drone</a></div><div class="ttdef"><b>Definition:</b> <a href="Drone_8h_source.html#l00022">Drone.h:22</a></div></div>
-<div class="ttc" id="aclassDrone_html_a0f5dde1e661b072ffd1dcd2cde690e2b"><div class="ttname"><a href="classDrone.html#a0f5dde1e661b072ffd1dcd2cde690e2b">Drone::dt</a></div><div class="ttdeci">float dt</div><div class="ttdef"><b>Definition:</b> <a href="Drone_8h_source.html#l00035">Drone.h:35</a></div></div>
-<div class="ttc" id="aclassDrone_html_a30d56665a907276e7ca50ab3c75d730a"><div class="ttname"><a href="classDrone.html#a30d56665a907276e7ca50ab3c75d730a">Drone::J</a></div><div class="ttdeci">Eigen::Matrix4f J</div><div class="ttdef"><b>Definition:</b> <a href="Drone_8h_source.html#l00031">Drone.h:31</a></div></div>
-<div class="ttc" id="aclassDrone_html_adcfd685c1857b1b6b20984daac7e56e3"><div class="ttname"><a href="classDrone.html#adcfd685c1857b1b6b20984daac7e56e3">Drone::Jinv</a></div><div class="ttdeci">Eigen::Matrix4f Jinv</div><div class="ttdef"><b>Definition:</b> <a href="Drone_8h_source.html#l00033">Drone.h:33</a></div></div>
-<div class="ttc" id="aclassDrone_html_ae68802ad8fe8bbb370a19326fd7b5aef"><div class="ttname"><a href="classDrone.html#ae68802ad8fe8bbb370a19326fd7b5aef">Drone::half_dt</a></div><div class="ttdeci">float half_dt</div><div class="ttdef"><b>Definition:</b> <a href="Drone_8h_source.html#l00027">Drone.h:27</a></div></div>
+<div class="ttc" id="aclassDrone_html"><div class="ttname"><a href="classDrone.html">Drone</a></div><div class="ttdef"><b>Definition:</b> <a href="Drone_8h_source.html#l00023">Drone.h:23</a></div></div>
+<div class="ttc" id="aclassDrone_html_a0f5dde1e661b072ffd1dcd2cde690e2b"><div class="ttname"><a href="classDrone.html#a0f5dde1e661b072ffd1dcd2cde690e2b">Drone::dt</a></div><div class="ttdeci">float dt</div><div class="ttdef"><b>Definition:</b> <a href="Drone_8h_source.html#l00036">Drone.h:36</a></div></div>
+<div class="ttc" id="aclassDrone_html_a30d56665a907276e7ca50ab3c75d730a"><div class="ttname"><a href="classDrone.html#a30d56665a907276e7ca50ab3c75d730a">Drone::J</a></div><div class="ttdeci">Eigen::Matrix4f J</div><div class="ttdef"><b>Definition:</b> <a href="Drone_8h_source.html#l00032">Drone.h:32</a></div></div>
+<div class="ttc" id="aclassDrone_html_a63c1b3a18b61a34b0a084eff48ec2f12"><div class="ttname"><a href="classDrone.html#a63c1b3a18b61a34b0a084eff48ec2f12">Drone::JInverse</a></div><div class="ttdeci">Eigen::Matrix4f JInverse</div><div class="ttdef"><b>Definition:</b> <a href="Drone_8h_source.html#l00034">Drone.h:34</a></div></div>
+<div class="ttc" id="aclassDrone_html_ae68802ad8fe8bbb370a19326fd7b5aef"><div class="ttname"><a href="classDrone.html#ae68802ad8fe8bbb370a19326fd7b5aef">Drone::half_dt</a></div><div class="ttdeci">float half_dt</div><div class="ttdef"><b>Definition:</b> <a href="Drone_8h_source.html#l00028">Drone.h:28</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

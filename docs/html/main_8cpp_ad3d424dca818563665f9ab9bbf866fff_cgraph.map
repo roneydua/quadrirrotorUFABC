@@ -1,0 +1,24 @@
+<map id="xTaskContol" name="xTaskContol">
+<area shape="rect" id="node1" title=" " alt="" coords="5,416,93,440"/>
+<area shape="rect" id="node2" href="$classControle.html#a78e5f662130811f409342a706d5c0d2f" title="Loop de controle das duas dinâmicas." alt="" coords="151,197,299,221"/>
+<area shape="rect" id="node16" href="$main_8cpp.html#a1f32cff79659de71ff8de76c85e7c7b9" title="Task de Procedimentos emergenciais." alt="" coords="165,391,284,415"/>
+<area shape="rect" id="node17" href="$classTELEMETRIA.html#a6c13ae22d648afb2c7bd41f3e17ba4b6" title=" " alt="" coords="371,341,543,365"/>
+<area shape="rect" id="node18" href="$classIBusBM.html#a3219abe525dde59156d00538d93faa11" title=" " alt="" coords="410,509,505,533"/>
+<area shape="rect" id="node21" href="$classTELEMETRIA.html#ac3b8fa789f6d00dca33ea41b4fd865c7" title=" " alt="" coords="141,490,308,526"/>
+<area shape="rect" id="node22" href="$classMotores.html#ac6264dc2b71015a3c9641025151edd4a" title="funcao que muda a velocidade." alt="" coords="153,551,296,575"/>
+<area shape="rect" id="node3" href="$classControle.html#abcf05dcff157e963fd65c09d45261a8f" title=" " alt="" coords="365,41,549,77"/>
+<area shape="rect" id="node7" href="$classControle.html#a8ac9e933ce30f9c88ed421d4c0afcf99" title=" " alt="" coords="365,101,549,137"/>
+<area shape="rect" id="node13" href="$classControle.html#add7378d03597a45ff09b2432d7739dfe" title=" " alt="" coords="356,161,559,197"/>
+<area shape="rect" id="node14" href="$classControle.html#a42aee0a4592b84bd793c8be0fde0095b" title=" " alt="" coords="374,221,541,257"/>
+<area shape="rect" id="node15" href="$classControle.html#a9b3718425d8602487eb9b14d6ee1c781" title=" " alt="" coords="374,281,541,317"/>
+<area shape="rect" id="node4" href="$namespaceekf.html#a8177897fe9b962d8e0927a913fc36242" title="Calcula a Matriz Left&#45;Quaternion a partir do quaternion q." alt="" coords="645,5,716,29"/>
+<area shape="rect" id="node6" href="$classSdre.html#af2f380ec3d018b60686e304ca7026846" title=" " alt="" coords="613,53,749,77"/>
+<area shape="rect" id="node5" href="$namespaceekf.html#af3f0a631343e55ec8b42f3fbea182461" title="Matrix antissimetrica." alt="" coords="821,29,897,53"/>
+<area shape="rect" id="node8" href="$namespaceekf.html#a34993a331b6837e5274d556e4f0a1bea" title=" " alt="" coords="645,101,716,125"/>
+<area shape="rect" id="node9" href="$namespaceekf.html#aab2dcd522b40c160064cfae69cae6d98" title=" " alt="" coords="607,149,755,173"/>
+<area shape="rect" id="node10" href="$namespaceekf.html#ad48c9ef49e8ccbde872958a81f6ed41a" title="Calcula, a partir de um quatérnio de atitude, o valor do ângulo Phi em Radianos." alt="" coords="809,101,909,125"/>
+<area shape="rect" id="node11" href="$namespaceekf.html#a12f4cfdfc4baad066351f122771205a0" title="Calcula, a partir de um quatérnio de atitude, o valor do ângulo Psi em Radianos." alt="" coords="809,149,909,173"/>
+<area shape="rect" id="node12" href="$namespaceekf.html#a6530a1bee6082aaa64ec7e8525d0ed54" title="Calcula, a partir de um quatérnio de atitude, o valor do ângulo Theta em Radianos." alt="" coords="803,197,915,221"/>
+<area shape="rect" id="node19" href="$COMMON_8h.html#a0e9b3928a2c3089998123715bcae29e9" title="Desliga o led de comunicação." alt="" coords="416,389,499,413"/>
+<area shape="rect" id="node20" href="$COMMON_8h.html#a8eabef94a982b1407d1ae4731b7e07ca" title="Liga o led de comunicação." alt="" coords="419,437,495,461"/>
+</map>

@@ -1,6 +1,6 @@
 <map id="Controle::computeRotationalControl" name="Controle::computeRotationalControl">
 <area shape="rect" id="node1" title=" " alt="" coords="5,23,189,59"/>
-<area shape="rect" id="node2" href="$namespaceekf.html#a8177897fe9b962d8e0927a913fc36242" title="Calcula a Matriz Lefth&#45;Quaternion a partir do quaternion q." alt="" coords="270,5,341,29"/>
+<area shape="rect" id="node2" href="$namespaceekf.html#a8177897fe9b962d8e0927a913fc36242" title="Calcula a Matriz Left&#45;Quaternion a partir do quaternion q." alt="" coords="270,5,341,29"/>
 <area shape="rect" id="node4" href="$classSdre.html#af2f380ec3d018b60686e304ca7026846" title=" " alt="" coords="237,53,373,77"/>
 <area shape="rect" id="node3" href="$namespaceekf.html#af3f0a631343e55ec8b42f3fbea182461" title="Matrix antissimetrica." alt="" coords="421,5,497,29"/>
 </map>

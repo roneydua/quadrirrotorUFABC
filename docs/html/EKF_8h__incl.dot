@@ -8,5 +8,15 @@ digraph "lib/EKF/EKF.h"
   Node1 -> Node2 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
   Node2 [label="eigen3/Eigen/Dense",height=0.2,width=0.4,color="grey75",tooltip=" "];
   Node1 -> Node3 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
-  Node3 [label="./../READWRITEEIGEN\l/readWriteEigen.h",height=0.2,width=0.4,color="grey75",tooltip=" "];
+  Node3 [label="../../include/READWRITEEIGEN\l/readWriteEigen.h",height=0.2,width=0.4,color="grey75",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node4 [label="../AQUA/AQUA.h",height=0.2,width=0.4,color="black",URL="$AQUA_8h.html",tooltip=" "];
+  Node4 -> Node2 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node4 -> Node5 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node5 [label="../GRUPO_QUAT/GRUPO\l_QUAT.h",height=0.2,width=0.4,color="black",URL="$GRUPO__QUAT_8h.html",tooltip="Cabecalho com funcoes de quaternion."];
+  Node5 -> Node2 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node5 -> Node6 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node6 [label="iostream",height=0.2,width=0.4,color="grey75",tooltip=" "];
+  Node1 -> Node5 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node1 -> Node6 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
 }

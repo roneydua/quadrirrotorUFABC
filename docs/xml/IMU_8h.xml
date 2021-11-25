@@ -18,11 +18,16 @@
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
       </node>
-      <node id="5">
+      <node id="6">
         <label>Wire.h</label>
       </node>
       <node id="4">
+        <label>math.h</label>
+      </node>
+      <node id="5">
         <label>Arduino.h</label>
       </node>
       <node id="1">
@@ -30,9 +35,9 @@
         <link refid="IMU_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
         <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>

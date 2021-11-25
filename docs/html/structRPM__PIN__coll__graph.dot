@@ -1,0 +1,8 @@
+digraph "RPM_PIN"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  Node1 [label="{RPM_PIN\n|+ const gpio_num_t pin\l_rpm_motor_1\l+ const gpio_num_t pin\l_rpm_motor_2\l+ const gpio_num_t pin\l_rpm_motor_3\l+ const gpio_num_t pin\l_rpm_motor_4\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Pinos de contadores de RPM."];
+}

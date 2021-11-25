@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/EKF/EKF.h" line="24" column="9" bodyfile="lib/EKF/EKF.h" bodystart="24" bodyend="-1"/>
+        <location file="lib/EKF/EKF.h" line="31" column="9" bodyfile="lib/EKF/EKF.h" bodystart="31" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structBASE_1ac118821d55d84bee606a64e60098c7d4" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/EKF/EKF.h" line="26" column="9" bodyfile="lib/EKF/EKF.h" bodystart="26" bodyend="-1"/>
+        <location file="lib/EKF/EKF.h" line="33" column="9" bodyfile="lib/EKF/EKF.h" bodystart="33" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structBASE_1a24573bad2d025ea1b7023eb23b59a46e" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -44,13 +44,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/EKF/EKF.h" line="28" column="9" bodyfile="lib/EKF/EKF.h" bodystart="28" bodyend="-1"/>
+        <location file="lib/EKF/EKF.h" line="35" column="9" bodyfile="lib/EKF/EKF.h" bodystart="35" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structBASE_1ab4bcf2a27b373820efe4f530a101704d" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structBASE_1a9a3fd8900988c019d0e2da0491f5600f" prot="public" static="no" mutable="no">
         <type>Eigen::Matrix3f</type>
-        <definition>Eigen::Matrix3f BASE::Recef2ned</definition>
+        <definition>Eigen::Matrix3f BASE::RotEcef2ned</definition>
         <argsstring></argsstring>
-        <name>Recef2ned</name>
+        <name>RotEcef2ned</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -58,7 +58,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/EKF/EKF.h" line="30" column="19" bodyfile="lib/EKF/EKF.h" bodystart="30" bodyend="-1"/>
+        <location file="lib/EKF/EKF.h" line="37" column="19" bodyfile="lib/EKF/EKF.h" bodystart="37" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structBASE_1ae9e7517ae5f24d671f404d18c1d0b90b" prot="public" static="no" mutable="no">
         <type>long</type>
@@ -72,7 +72,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/EKF/EKF.h" line="32" column="8" bodyfile="lib/EKF/EKF.h" bodystart="32" bodyend="-1"/>
+        <location file="lib/EKF/EKF.h" line="39" column="8" bodyfile="lib/EKF/EKF.h" bodystart="39" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -85,13 +85,13 @@
         <link refid="structBASE"/>
       </node>
     </collaborationgraph>
-    <location file="lib/EKF/EKF.h" line="22" column="1" bodyfile="lib/EKF/EKF.h" bodystart="22" bodyend="33"/>
+    <location file="lib/EKF/EKF.h" line="29" column="1" bodyfile="lib/EKF/EKF.h" bodystart="29" bodyend="40"/>
     <listofallmembers>
       <member refid="structBASE_1a24573bad2d025ea1b7023eb23b59a46e" prot="public" virt="non-virtual"><scope>BASE</scope><name>hMSL</name></member>
       <member refid="structBASE_1a76e12d3fb168dc1ce3f163c985382129" prot="public" virt="non-virtual"><scope>BASE</scope><name>lat</name></member>
       <member refid="structBASE_1ac118821d55d84bee606a64e60098c7d4" prot="public" virt="non-virtual"><scope>BASE</scope><name>lon</name></member>
       <member refid="structBASE_1ae9e7517ae5f24d671f404d18c1d0b90b" prot="public" virt="non-virtual"><scope>BASE</scope><name>rECEF</name></member>
-      <member refid="structBASE_1ab4bcf2a27b373820efe4f530a101704d" prot="public" virt="non-virtual"><scope>BASE</scope><name>Recef2ned</name></member>
+      <member refid="structBASE_1a9a3fd8900988c019d0e2da0491f5600f" prot="public" virt="non-virtual"><scope>BASE</scope><name>RotEcef2ned</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

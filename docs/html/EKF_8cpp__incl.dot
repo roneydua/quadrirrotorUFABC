@@ -10,8 +10,8 @@ digraph "lib/EKF/EKF.cpp"
   Node2 -> Node3 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
   Node3 [label="eigen3/Eigen/Dense",height=0.2,width=0.4,color="grey75",tooltip=" "];
   Node2 -> Node4 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
-  Node4 [label="./../READWRITEEIGEN\l/readWriteEigen.h",height=0.2,width=0.4,color="grey75",tooltip=" "];
-  Node1 -> Node5 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node4 [label="../../include/READWRITEEIGEN\l/readWriteEigen.h",height=0.2,width=0.4,color="grey75",tooltip=" "];
+  Node2 -> Node5 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
   Node5 [label="../AQUA/AQUA.h",height=0.2,width=0.4,color="black",URL="$AQUA_8h.html",tooltip=" "];
   Node5 -> Node3 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
   Node5 -> Node6 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
@@ -19,5 +19,6 @@ digraph "lib/EKF/EKF.cpp"
   Node6 -> Node3 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
   Node6 -> Node7 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
   Node7 [label="iostream",height=0.2,width=0.4,color="grey75",tooltip=" "];
-  Node1 -> Node6 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node2 -> Node6 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node2 -> Node7 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
 }

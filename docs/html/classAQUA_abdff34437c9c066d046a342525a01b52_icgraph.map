@@ -1,6 +1,7 @@
 <map id="AQUA::computeQuaternionAccel" name="AQUA::computeQuaternionAccel">
-<area shape="rect" id="node1" title="Calcula o quaternion de inclinacao." alt="" coords="497,5,688,29"/>
-<area shape="rect" id="node2" href="$classAQUA.html#ae3ddff89a969a0d2a3d3c675ed5b8065" title=" " alt="" coords="265,5,449,29"/>
-<area shape="rect" id="node3" href="$classekf_1_1EKF.html#a4a6998123529ab0d0844ad21419fc895" title="Inicializacao do filtro de Kalman." alt="" coords="105,5,217,29"/>
+<area shape="rect" id="node1" title="Calcula o quaternion de inclinacao." alt="" coords="664,5,855,29"/>
+<area shape="rect" id="node2" href="$classAQUA.html#ae3ddff89a969a0d2a3d3c675ed5b8065" title=" " alt="" coords="432,5,616,29"/>
+<area shape="rect" id="node3" href="$classekf_1_1EKF.html#a4a6998123529ab0d0844ad21419fc895" title="Inicializacao do filtro de Kalman." alt="" coords="272,5,384,29"/>
 <area shape="rect" id="node4" href="$main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d" title=" " alt="" coords="5,5,57,29"/>
+<area shape="rect" id="node5" href="$main_8cpp.html#a1d67803bd6f9b50c1e3686650e280f68" title=" " alt="" coords="105,29,224,53"/>
 </map>

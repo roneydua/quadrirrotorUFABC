@@ -3,6 +3,48 @@
   <compounddef id="namespaceekf" kind="namespace" language="C++">
     <compoundname>ekf</compoundname>
     <innerclass refid="classekf_1_1EKF" prot="public">ekf::EKF</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespaceekf_1a3d0224f90468a854a2440df8b4f78869" prot="public" static="no" strong="no">
+        <type></type>
+        <name>_status</name>
+        <enumvalue id="namespaceekf_1a3d0224f90468a854a2440df8b4f78869a0c401f1c67fce956b571e01d0f1a67d8" prot="public">
+          <name>BEGIN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceekf_1a3d0224f90468a854a2440df8b4f78869a638dfa2cadaad15202600951a2e30d4f" prot="public">
+          <name>READY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceekf_1a3d0224f90468a854a2440df8b4f78869a923984570a9110878bae6c24232b49ec" prot="public">
+          <name>FAIL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceekf_1a3d0224f90468a854a2440df8b4f78869a4fc24b0fe219a9b7173fefcac7d48519" prot="public">
+          <name>STOPED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Enum Status Filter </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/EKF.h" line="44" column="1" bodyfile="lib/EKF/EKF.h" bodystart="44" bodyend="44"/>
+      </memberdef>
+      </sectiondef>
       <sectiondef kind="var">
       <memberdef kind="variable" id="namespaceekf_1a224c884f9fa345bfef8f140150919b3e" prot="public" static="no" mutable="no">
         <type><ref refid="classAQUA" kindref="compound">AQUA</ref></type>
@@ -16,8 +58,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/EKF/EKF.cpp" line="31" column="6" bodyfile="lib/EKF/EKF.cpp" bodystart="31" bodyend="-1"/>
-        <referencedby refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" compoundref="EKF_8cpp" startline="39" endline="89">ekf::EKF::begin</referencedby>
+        <location file="lib/EKF/EKF.cpp" line="32" column="6" bodyfile="lib/EKF/EKF.cpp" bodystart="32" bodyend="-1"/>
+        <referencedby refid="classekf_1_1EKF_1a4a6998123529ab0d0844ad21419fc895" compoundref="EKF_8cpp" startline="40" endline="97">ekf::EKF::begin</referencedby>
       </memberdef>
       <memberdef kind="variable" id="namespaceekf_1a6cebd8d5c8351ad9e2ae4de5bc0065c2" prot="public" static="no" mutable="no">
         <type>const float</type>
@@ -32,7 +74,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" line="24" column="13" bodyfile="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" bodystart="24" bodyend="-1"/>
-        <referencedby refid="namespaceekf_1a0bb5c9402b49d6ba5be7c97ef269ceb1" compoundref="GRUPO__QUAT_8cpp" startline="168" endline="188">integrationQuaternion</referencedby>
+        <referencedby refid="namespaceekf_1a2c0b3448d5cac6f50ad025310b2a9c82" compoundref="GRUPO__QUAT_8cpp" startline="198" endline="217">integrationQuaternion</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -95,7 +137,7 @@
         </inbodydescription>
         <location file="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" line="45" column="17" bodyfile="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" bodystart="45" bodyend="52" declfile="lib/GRUPO_QUAT/GRUPO_QUAT.h" declline="69" declcolumn="17"/>
         <references refid="namespaceekf_1af3f0a631343e55ec8b42f3fbea182461" compoundref="GRUPO__QUAT_8cpp" startline="62" endline="67">skew</references>
-        <referencedby refid="classControle_1a8ac9e933ce30f9c88ed421d4c0afcf99" compoundref="Controle_8cpp" startline="51" endline="80">Controle::computeRotationalTarget</referencedby>
+        <referencedby refid="classControle_1a8ac9e933ce30f9c88ed421d4c0afcf99" compoundref="Controle_8cpp" startline="90" endline="112">Controle::computeRotationalTarget</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespaceekf_1af3f0a631343e55ec8b42f3fbea182461" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Eigen::Matrix3f</type>
@@ -121,7 +163,7 @@
 </parameterlist>
 <simplesect kind="return"><para>[M] Matrix antissimetrica</para>
 </simplesect>
-<ulink url="https://mathworld.wolfram.com/AntisymmetricMatrix.html">A matrix antissimetrica</ulink> torna possivel converter um produtod vetorial em produto de matrizes. </para>
+<ulink url="https://mathworld.wolfram.com/AntisymmetricMatrix.html">A matrix antissimetrica</ulink> torna possivel converter um produto vetorial em produto de matrizes. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -174,7 +216,7 @@ A matrix <emphasis>Right-Quaternion</emphasis> torna possível realizar o produt
           <declname>q</declname>
         </param>
         <briefdescription>
-<para>Calcula a Matriz <emphasis>Lefth-Quaternion</emphasis> a partir do quaternion q. </para>
+<para>Calcula a Matriz <emphasis>Left-Quaternion</emphasis> a partir do quaternion q. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -188,13 +230,13 @@ A matrix <emphasis>Right-Quaternion</emphasis> torna possível realizar o produt
 </parameterlist>
 <simplesect kind="return"><para>mS_l Matrix <emphasis>Right-Quaternion</emphasis></para>
 </simplesect>
-A matrix <emphasis>Lefth-Quaternion</emphasis> torna possível realizar o produto de quaternions como um produto matricial comum. </para>
+A matrix <emphasis>Left-Quaternion</emphasis> torna possível realizar o produto de quaternions como um produto matricial comum. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" line="90" column="17" bodyfile="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" bodystart="90" bodyend="96" declfile="lib/GRUPO_QUAT/GRUPO_QUAT.h" declline="40" declcolumn="17"/>
         <references refid="namespaceekf_1af3f0a631343e55ec8b42f3fbea182461" compoundref="GRUPO__QUAT_8cpp" startline="62" endline="67">skew</references>
-        <referencedby refid="classControle_1abcf05dcff157e963fd65c09d45261a8f" compoundref="Controle_8cpp" startline="84" endline="96">Controle::computeRotationalControl</referencedby>
+        <referencedby refid="classControle_1abcf05dcff157e963fd65c09d45261a8f" compoundref="Controle_8cpp" startline="116" endline="128">Controle::computeRotationalControl</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespaceekf_1ac031eda654b199bd45807eed2acdb3ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -346,8 +388,8 @@ A matrix <emphasis>Lefth-Quaternion</emphasis> torna possível realizar o produt
         <inbodydescription>
         </inbodydescription>
         <location file="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" line="142" column="17" bodyfile="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" bodystart="142" bodyend="150" declfile="lib/GRUPO_QUAT/GRUPO_QUAT.h" declline="61" declcolumn="17"/>
-        <referencedby refid="classAQUA_1ae3ddff89a969a0d2a3d3c675ed5b8065" compoundref="AQUA_8cpp" startline="66" endline="83">AQUA::computeAQUAQuaternion</referencedby>
-        <referencedby refid="namespaceekf_1a0bb5c9402b49d6ba5be7c97ef269ceb1" compoundref="GRUPO__QUAT_8cpp" startline="168" endline="188">integrationQuaternion</referencedby>
+        <referencedby refid="classAQUA_1ae3ddff89a969a0d2a3d3c675ed5b8065" compoundref="AQUA_8cpp" startline="73" endline="89">AQUA::computeAQUAQuaternion</referencedby>
+        <referencedby refid="namespaceekf_1a2c0b3448d5cac6f50ad025310b2a9c82" compoundref="GRUPO__QUAT_8cpp" startline="198" endline="217">integrationQuaternion</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespaceekf_1aab2dcd522b40c160064cfae69cae6d98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -386,13 +428,141 @@ A matrix <emphasis>Lefth-Quaternion</emphasis> torna possível realizar o produt
 </parameterlist>
 </para>
         </inbodydescription>
-        <location file="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" line="152" column="6" bodyfile="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" bodystart="152" bodyend="167" declfile="lib/GRUPO_QUAT/GRUPO_QUAT.h" declline="42" declcolumn="6"/>
-        <references refid="GRUPO__QUAT_8h_1a89e47af0449640d4f15191aba5ca24c6" compoundref="GRUPO__QUAT_8h" startline="24">RAD_TO_DEG</references>
+        <location file="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" line="152" column="6" bodyfile="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" bodystart="152" bodyend="165" declfile="lib/GRUPO_QUAT/GRUPO_QUAT.h" declline="42" declcolumn="6"/>
+        <references refid="namespaceekf_1ad48c9ef49e8ccbde872958a81f6ed41a" compoundref="GRUPO__QUAT_8cpp" startline="173" endline="176">calc_phi</references>
+        <references refid="namespaceekf_1a12f4cfdfc4baad066351f122771205a0" compoundref="GRUPO__QUAT_8cpp" startline="194" endline="197">calc_psi</references>
+        <references refid="namespaceekf_1a6530a1bee6082aaa64ec7e8525d0ed54" compoundref="GRUPO__QUAT_8cpp" startline="184" endline="186">calc_theta</references>
+        <referencedby refid="classControle_1a8ac9e933ce30f9c88ed421d4c0afcf99" compoundref="Controle_8cpp" startline="90" endline="112">Controle::computeRotationalTarget</referencedby>
+        <referencedby refid="main_8cpp_1abd3bd9c344e182dcb5f5a561ef562eb0" compoundref="main_8cpp" startline="51" endline="86">xTaskLoopFilter</referencedby>
       </memberdef>
-      <memberdef kind="function" id="namespaceekf_1a0bb5c9402b49d6ba5be7c97ef269ceb1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceekf_1ad48c9ef49e8ccbde872958a81f6ed41a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ekf::calc_phi</definition>
+        <argsstring>(float &amp;x, const Eigen::Ref&lt; const Eigen::Vector4f &gt; &amp;_q)</argsstring>
+        <name>calc_phi</name>
+        <param>
+          <type>float &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const Eigen::Ref&lt; const Eigen::Vector4f &gt; &amp;</type>
+          <declname>_q</declname>
+        </param>
+        <briefdescription>
+<para>Calcula, a partir de um quatérnio de atitude, o valor do ângulo Phi em Radianos. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Referencia a ser sobrescrita. -pi &lt; x &lt; pi </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>_q</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Quaternion de atitude </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" line="173" column="6" bodyfile="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" bodystart="173" bodyend="176" declfile="lib/GRUPO_QUAT/GRUPO_QUAT.h" declline="72" declcolumn="6"/>
+        <referencedby refid="namespaceekf_1aab2dcd522b40c160064cfae69cae6d98" compoundref="GRUPO__QUAT_8cpp" startline="152" endline="165">quaternion2Euler</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespaceekf_1a6530a1bee6082aaa64ec7e8525d0ed54" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ekf::calc_theta</definition>
+        <argsstring>(float &amp;x, const Eigen::Ref&lt; const Eigen::Vector4f &gt; &amp;_q)</argsstring>
+        <name>calc_theta</name>
+        <param>
+          <type>float &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const Eigen::Ref&lt; const Eigen::Vector4f &gt; &amp;</type>
+          <declname>_q</declname>
+        </param>
+        <briefdescription>
+<para>Calcula, a partir de um quatérnio de atitude, o valor do ângulo Theta em Radianos. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Referencia a ser sobrescrita. -pi/2 &lt; x &lt; pi/2 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>_q</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Quaternion de atitude </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" line="184" column="6" bodyfile="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" bodystart="184" bodyend="186" declfile="lib/GRUPO_QUAT/GRUPO_QUAT.h" declline="73" declcolumn="6"/>
+        <referencedby refid="namespaceekf_1aab2dcd522b40c160064cfae69cae6d98" compoundref="GRUPO__QUAT_8cpp" startline="152" endline="165">quaternion2Euler</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespaceekf_1a12f4cfdfc4baad066351f122771205a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ekf::calc_psi</definition>
+        <argsstring>(float &amp;x, const Eigen::Ref&lt; const Eigen::Vector4f &gt; &amp;_q)</argsstring>
+        <name>calc_psi</name>
+        <param>
+          <type>float &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const Eigen::Ref&lt; const Eigen::Vector4f &gt; &amp;</type>
+          <declname>_q</declname>
+        </param>
+        <briefdescription>
+<para>Calcula, a partir de um quatérnio de atitude, o valor do ângulo Psi em Radianos. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Referencia a ser sobrescrita. -pi &lt; x &lt; pi </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>_q</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Quaternion de atitude </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" line="194" column="6" bodyfile="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" bodystart="194" bodyend="197" declfile="lib/GRUPO_QUAT/GRUPO_QUAT.h" declline="74" declcolumn="6"/>
+        <referencedby refid="classControle_1a8ae9a213e4a15ac1af0f158e3b5dc2cb" compoundref="Controle_8cpp" startline="17" endline="70">Controle::Controle</referencedby>
+        <referencedby refid="namespaceekf_1aab2dcd522b40c160064cfae69cae6d98" compoundref="GRUPO__QUAT_8cpp" startline="152" endline="165">quaternion2Euler</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespaceekf_1a2c0b3448d5cac6f50ad025310b2a9c82" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void ekf::integrationQuaternion</definition>
-        <argsstring>(Eigen::Vector4f &amp;_quat, const Eigen::Ref&lt; const Eigen::VectorXf &gt; &amp;_gyroscopio, float &amp;_dt)</argsstring>
+        <argsstring>(Eigen::Vector4f &amp;_quat, const Eigen::Ref&lt; const Eigen::VectorXf &gt; &amp;_gyroscope, float &amp;_dt)</argsstring>
         <name>integrationQuaternion</name>
         <param>
           <type>Eigen::Vector4f &amp;</type>
@@ -400,7 +570,7 @@ A matrix <emphasis>Lefth-Quaternion</emphasis> torna possível realizar o produt
         </param>
         <param>
           <type>const Eigen::Ref&lt; const Eigen::VectorXf &gt; &amp;</type>
-          <declname>_gyroscopio</declname>
+          <declname>_gyroscope</declname>
         </param>
         <param>
           <type>float &amp;</type>
@@ -421,10 +591,10 @@ A matrix <emphasis>Lefth-Quaternion</emphasis> torna possível realizar o produt
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>_gyroscopio</parametername>
+<parametername>_giroscopio</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>mediads do giroscópio [Radianos] </para>
+<para>medidas do giroscópio [Radianos] </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -440,7 +610,7 @@ A matrix <emphasis>Lefth-Quaternion</emphasis> torna possível realizar o produt
 </simplesect>
 </para>
         </inbodydescription>
-        <location file="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" line="168" column="6" bodyfile="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" bodystart="168" bodyend="188" declfile="lib/GRUPO_QUAT/GRUPO_QUAT.h" declline="53" declcolumn="6"/>
+        <location file="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" line="198" column="6" bodyfile="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" bodystart="198" bodyend="217" declfile="lib/GRUPO_QUAT/GRUPO_QUAT.h" declline="53" declcolumn="6"/>
         <references refid="namespaceekf_1a0ae7d9ae45fba00d81bfe71ad73d7fee" compoundref="GRUPO__QUAT_8cpp" startline="142" endline="150">multiplyQuaternions</references>
         <references refid="namespaceekf_1a6cebd8d5c8351ad9e2ae4de5bc0065c2" compoundref="GRUPO__QUAT_8cpp" startline="24">TOLERANCE</references>
       </memberdef>
@@ -480,13 +650,13 @@ A matrix <emphasis>Lefth-Quaternion</emphasis> torna possível realizar o produt
 </parameterlist>
 <simplesect kind="return"><para>v_new vetor rotacionado. </para>
 </simplesect>
-<simplesect kind="note"><para>A trasnfromação desta forma possui 30 operações (15 produtos e 15 multiplicações.)(Rotacao de vetor tridimensional com formalismo de eixo/angulo)[<ulink url="https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation#Performance_comparisons">https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation#Performance_comparisons</ulink>] </para>
+<simplesect kind="note"><para>A transformação desta forma possui 30 operações (15 produtos e 15 multiplicações.)(Rotacao de vetor tridimensional com formalismo de eixo/angulo)[<ulink url="https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation#Performance_comparisons">https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation#Performance_comparisons</ulink>] </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" line="198" column="17" bodyfile="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" bodystart="198" bodyend="202" declfile="lib/GRUPO_QUAT/GRUPO_QUAT.h" declline="57" declcolumn="17"/>
+        <location file="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" line="227" column="17" bodyfile="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" bodystart="227" bodyend="231" declfile="lib/GRUPO_QUAT/GRUPO_QUAT.h" declline="57" declcolumn="17"/>
       </memberdef>
       <memberdef kind="function" id="namespaceekf_1acb1dc12948420927eff91ed90c24b342" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Eigen::Vector3f</type>
@@ -530,8 +700,8 @@ A matrix <emphasis>Lefth-Quaternion</emphasis> torna possível realizar o produt
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" line="213" column="17" bodyfile="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" bodystart="213" bodyend="218" declfile="lib/GRUPO_QUAT/GRUPO_QUAT.h" declline="59" declcolumn="17"/>
-        <referencedby refid="classAQUA_1ae3ddff89a969a0d2a3d3c675ed5b8065" compoundref="AQUA_8cpp" startline="66" endline="83">AQUA::computeAQUAQuaternion</referencedby>
+        <location file="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" line="242" column="17" bodyfile="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" bodystart="242" bodyend="247" declfile="lib/GRUPO_QUAT/GRUPO_QUAT.h" declline="59" declcolumn="17"/>
+        <referencedby refid="classAQUA_1ae3ddff89a969a0d2a3d3c675ed5b8065" compoundref="AQUA_8cpp" startline="73" endline="89">AQUA::computeAQUAQuaternion</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespaceekf_1ab55e144edf7066b67232e15cca7b4646" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>float</type>
@@ -563,8 +733,98 @@ A matrix <emphasis>Lefth-Quaternion</emphasis> torna possível realizar o produt
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" line="227" column="7" bodyfile="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" bodystart="227" bodyend="241" declfile="lib/GRUPO_QUAT/GRUPO_QUAT.h" declline="56" declcolumn="7"/>
+        <location file="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" line="256" column="7" bodyfile="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" bodystart="256" bodyend="270" declfile="lib/GRUPO_QUAT/GRUPO_QUAT.h" declline="56" declcolumn="7"/>
         <referencedby refid="classAQUA_1a6adb2b857affb225b29fb91e6f6a7194" compoundref="AQUA_8cpp" startline="47" endline="58">AQUA::computeQuaternionMag</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespaceekf_1a79aece98f1e99172f29ec0ce8287dd33" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::Vector4f</type>
+        <definition>Eigen::Vector4f ekf::q_theta</definition>
+        <argsstring>(float &amp;phi)</argsstring>
+        <name>q_theta</name>
+        <param>
+          <type>float &amp;</type>
+          <declname>phi</declname>
+        </param>
+        <briefdescription>
+<para>Calcula o quaternion de atitude de rotação phi sobre o eixo x. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>phi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Eigen::Vector4f Quaternion de rotacao phi </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" line="277" column="17" bodyfile="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" bodystart="277" bodyend="279" declfile="lib/GRUPO_QUAT/GRUPO_QUAT.h" declline="75" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceekf_1a193584b4cd93691d0dc552ace5e1b445" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::Vector4f</type>
+        <definition>Eigen::Vector4f ekf::q_phi</definition>
+        <argsstring>(float &amp;theta)</argsstring>
+        <name>q_phi</name>
+        <param>
+          <type>float &amp;</type>
+          <declname>theta</declname>
+        </param>
+        <briefdescription>
+<para>Calcula o quaternion de atitude de rotação theta sobre o eixo y. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>theta</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Eigen::Vector4f Quaternion de rotacao theta </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" line="286" column="17" bodyfile="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" bodystart="286" bodyend="288" declfile="lib/GRUPO_QUAT/GRUPO_QUAT.h" declline="76" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceekf_1a24bc211c14d4e7d5ed48f895e3cdb75f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::Vector4f</type>
+        <definition>Eigen::Vector4f ekf::q_psi</definition>
+        <argsstring>(float &amp;psi)</argsstring>
+        <name>q_psi</name>
+        <param>
+          <type>float &amp;</type>
+          <declname>psi</declname>
+        </param>
+        <briefdescription>
+<para>Calcula o quaternion de atitude de rotação psi sobre o eixo z. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>psi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Eigen::Vector4f Quaternion de rotacao psi </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" line="295" column="17" bodyfile="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" bodystart="295" bodyend="297" declfile="lib/GRUPO_QUAT/GRUPO_QUAT.h" declline="77" declcolumn="17"/>
       </memberdef>
       <memberdef kind="function" id="namespaceekf_1afe4fb3935c9dc91fcc8b57793f03a170" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -605,7 +865,7 @@ A matrix <emphasis>Lefth-Quaternion</emphasis> torna possível realizar o produt
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" line="293" column="6" bodyfile="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" bodystart="293" bodyend="327" declfile="lib/GRUPO_QUAT/GRUPO_QUAT.h" declline="64" declcolumn="6"/>
+        <location file="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" line="350" column="6" bodyfile="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" bodystart="350" bodyend="384" declfile="lib/GRUPO_QUAT/GRUPO_QUAT.h" declline="64" declcolumn="6"/>
         <references refid="namespacedrone_1a7475c0a87d5c8ae96bdc6cb6e9d54a29" compoundref="drone_8py" startline="21">drone.m</references>
       </memberdef>
       <memberdef kind="function" id="namespaceekf_1adf3091ade6b7c85db9dd5e6c238b57d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -634,7 +894,7 @@ A matrix <emphasis>Lefth-Quaternion</emphasis> torna possível realizar o produt
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" line="328" column="17" bodyfile="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" bodystart="328" bodyend="337"/>
+        <location file="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" line="385" column="17" bodyfile="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" bodystart="385" bodyend="394"/>
       </memberdef>
       <memberdef kind="function" id="namespaceekf_1a9a53e61c76edeebffe35da19a63b983f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -662,7 +922,7 @@ A matrix <emphasis>Lefth-Quaternion</emphasis> torna possível realizar o produt
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" line="343" column="6" bodyfile="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" bodystart="343" bodyend="343" declfile="lib/GRUPO_QUAT/GRUPO_QUAT.h" declline="71" declcolumn="6"/>
+        <location file="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" line="400" column="6" bodyfile="lib/GRUPO_QUAT/GRUPO_QUAT.cpp" bodystart="400" bodyend="400" declfile="lib/GRUPO_QUAT/GRUPO_QUAT.h" declline="71" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceekf_1a18db01f168af4cf4cabb02159b657be4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Eigen::Matrix4f</type>

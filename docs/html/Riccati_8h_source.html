@@ -70,19 +70,17 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="Riccati_8h.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#ifndef RICCATI_H</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">  #define RICCATI_H</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">  #ifdef __GNUC__</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="comment">// #include &quot;../../../quadricopterFinal/lib/GRUPO_QUAT/GRUPO_QUAT.h&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #define DEBUG</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">    #include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #define PRINT_MAT(X) cout &lt;&lt; #X &lt;&lt; &quot;:\n&quot;</span> &lt;&lt; X &lt;&lt; &quot;\n&quot;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">  #else</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">    #include &quot;Arduino.h&quot;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="GRUPO__QUAT_8h.html">GRUPO_QUAT.h</a>&quot;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">  #endif</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">  #include &lt;eigen3/Eigen/Dense&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#ifndef RICCATI_H</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define RICCATI_H</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;eigen3/Eigen/Dense&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef __XTENSA__</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="Riccati_8h.html#ad72dbcf6d0153db1b8d8a58001feed83">   16</a></span>&#160;<span class="preprocessor">#define DEBUG</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="Riccati_8h.html#a92102ea2f9ade1cc1a6dcce355db1677">   19</a></span>&#160;<span class="preprocessor">#define PRINT_MAT(X) cout &lt;&lt; #X &lt;&lt; &quot;:\n&quot;</span> &lt;&lt; X &lt;&lt; &quot;\n&quot;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;Arduino.h&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
 <div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classRiccati.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="classRiccati.html">Riccati</a> {</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
@@ -97,15 +95,14 @@ $(function() {
 <div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classRiccati.html#aef6ba29bba94e293a8ea4c279b565164">   40</a></span>&#160;  Eigen::MatrixXf <a class="code" href="classRiccati.html#aef6ba29bba94e293a8ea4c279b565164">Ls</a>;</div>
 <div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classRiccati.html#ab289ee3b6f819e200510a17344fc74e3">   41</a></span>&#160;  <span class="keywordtype">int</span> num_iterations = 0;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <a class="code" href="classRiccati.html">Riccati</a>(Eigen::MatrixXf &amp;_A, Eigen::MatrixXf &amp;_B, Eigen::MatrixXf &amp;_Q,</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;          Eigen::MatrixXf &amp;_R);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <a class="code" href="classRiccati.html">Riccati</a>(Eigen::MatrixXf &amp;A, Eigen::MatrixXf &amp;B, Eigen::MatrixXf &amp;Q,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;          Eigen::MatrixXf &amp;R);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordtype">bool</span> dareInteration(<span class="keyword">const</span> <span class="keywordtype">float</span> &amp;tolerance = 1.0E-5,</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                      <span class="keyword">const</span> uint16_t iter_max = 100);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordtype">bool</span> dareInteration(<span class="keyword">const</span> <span class="keywordtype">float</span> &amp;tolerance = 1.0E-4,</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                      <span class="keyword">const</span> uint16_t iter_max = 50);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;};</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">/* RICCATI_H */</span></div>
-<div class="ttc" id="aGRUPO__QUAT_8h_html"><div class="ttname"><a href="GRUPO__QUAT_8h.html">GRUPO_QUAT.h</a></div><div class="ttdoc">Cabecalho com funcoes de quaternion.</div></div>
 <div class="ttc" id="aclassRiccati_html"><div class="ttname"><a href="classRiccati.html">Riccati</a></div><div class="ttdef"><b>Definition:</b> <a href="Riccati_8h_source.html#l00024">Riccati.h:24</a></div></div>
 <div class="ttc" id="aclassRiccati_html_a301a6f535f228e71c09320583bb49d4e"><div class="ttname"><a href="classRiccati.html#a301a6f535f228e71c09320583bb49d4e">Riccati::I</a></div><div class="ttdeci">Eigen::MatrixXf I</div><div class="ttdef"><b>Definition:</b> <a href="Riccati_8h_source.html#l00038">Riccati.h:38</a></div></div>
 <div class="ttc" id="aclassRiccati_html_a376f84745fd4a33cb6e058e0439f3dfb"><div class="ttname"><a href="classRiccati.html#a376f84745fd4a33cb6e058e0439f3dfb">Riccati::K</a></div><div class="ttdeci">Eigen::MatrixXf K</div><div class="ttdef"><b>Definition:</b> <a href="Riccati_8h_source.html#l00029">Riccati.h:29</a></div></div>
