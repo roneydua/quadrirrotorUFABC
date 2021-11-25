@@ -28,7 +28,11 @@
 
 ## 🧐 Sobre <a name = "about"></a>
 
-O projeto possui implementação de um filtro de Kalman dos erros de estado.
+Drive de código aberto desenvolvido durante pesquisa de mestrado na Universidade Federal do ABC, no curso de Pós-Graduação em Engenharia Mecânica.
+
+- [x] Estimado de estados internos
+- [x] Controle de corpo rígido com controle SDRE
+- [x] Leitor de RPM com sensor de efeito Hall
 
 
 ### Prerequisitos
